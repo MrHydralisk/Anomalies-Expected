@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ResearchTabDef>
+		<defName>AnomaliesExpected</defName>
+		<label>Anomalies Expected</label>
+		<generalTitle>Anomalies Expected research projects</generalTitle>
+		<generalDescription>Expansion of void-related technologies by studying unnatural entities.\n\nIt uses logic of anomaly research projects.\n\nProgress shown on Anomaly tab.</generalDescription>
+		<visibleByDefault>false</visibleByDefault>
+		<minMonolithLevelVisible>1</minMonolithLevelVisible>
+	</ResearchTabDef>
+
+	<ResearchProjectDef>
+		<defName>AESleepEnhancerSerum</defName>
+		<label>sleep enhancer serum</label>
+		<description>Synthesize a serum that stabilizes a person's rest efficiency.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>SerumSynthesis</li>
+		</prerequisites>
+		<knowledgeCost>35</knowledgeCost>
+		<knowledgeCategory>Basic</knowledgeCategory>
+		<researchViewX>0</researchViewX>
+		<researchViewY>0</researchViewY>
+		<generalRules>
+			<rulesStrings>
+				<li>subject->sleep enhancer serum</li>
+
+				<li>subject_story->stayed awake for long time and was fired due to be too efficient at work</li>
+				<li>subject_story->was accused of inventing insomnia</li>
+				<li>subject_story->could no longer make excuses due to oversleeping.</li>
+				<li>subject_story->started to live 10% more</li>
+
+				<li>subject_gerund->synthesizing sleep enhancer serums</li>
+			</rulesStrings>
+		</generalRules>
+	</ResearchProjectDef>
+
+</Defs>

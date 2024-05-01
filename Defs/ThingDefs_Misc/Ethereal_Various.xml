@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>AE_AnomalyIncoming</defName>
+    <label>anomaly (incoming)</label>
+    <graphicData>
+      <texPath>Things/Item/Resource/Bioferrite/Bioferrite_c</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutFlying</shaderType>
+      <drawSize>(2, 2)</drawSize>
+    </graphicData>
+    <skyfaller>
+      <movementType>ConstantSpeed</movementType>
+      <shadow>Things/Skyfaller/SkyfallerShadowRectangle</shadow>
+      <shadowSize>(2, 2)</shadowSize>
+      <ticksToImpactRange>780~780</ticksToImpactRange>
+      <anticipationSound>WarpedObelisk_Fall</anticipationSound>
+      <anticipationSoundTicks>780</anticipationSoundTicks>
+      <impactSound>WarpedObelisk_Impact</impactSound>
+      <rotateGraphicTowardsDirection>true</rotateGraphicTowardsDirection>
+      <motesPerCell>0</motesPerCell>
+      <explosionRadius>3</explosionRadius>
+      <explosionDamage>Bomb</explosionDamage>
+    </skyfaller>
+  </ThingDef>
+  
+</Defs>

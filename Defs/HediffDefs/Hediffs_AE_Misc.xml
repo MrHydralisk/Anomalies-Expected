@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+	<HediffDef>
+		<defName>Hediff_AEFatigue</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>fatigue</label>
+		<description>The body feels heavy and requires additional rest.</description>
+		<initialSeverity>0</initialSeverity>
+		<maxSeverity>3</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.25</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<statOffsets>
+					<RestFallRateFactor>0.75</RestFallRateFactor>
+					<RestRateMultiplier>-0.25</RestRateMultiplier>
+				</statOffsets>
+				<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_AnomalyBed</defName>
+		<label>ordinary bed</label>
+		<category>Basic</category>
+		<uiIconPath>UI/CodexEntries/AE_AnomalyBed</uiIconPath>
+		<useDescriptionFrom>AE_AnomalyBed</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_AnomalyBed</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_AnomalyBedSpawn</li>
+		</provocationIncidents>
+		<discoveredResearchProjects>
+			<li>AESleepEnhancerSerum</li>
+		</discoveredResearchProjects>
+		<orderInCategory>1300</orderInCategory>
+	</EntityCodexEntryDef>
+
+</Defs>

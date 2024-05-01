@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="SerumBase">
+		<defName>AESleepEnhancerSerum</defName>
+		<label>sleep enhancer serum</label>
+		<description>A syringe of clear, viscous fluid. Injected near the brainstem, it affect stressed part of the brain and distribute the load among neurons, making rest via sleep more time efficient.\n\nThe effect is temporary and does not stack.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AESleepEnhancerSerum</HediffDef>
+		</descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Serum/AESleepEnhancerSerum</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>60</MarketValue>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>Hediff_AESleepEnhancerSerum</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>SerumUsed</soundOnUsed>
+			</li>
+		</comps>
+		<costList>
+			<Neutroamine>2</Neutroamine>
+			<Bioferrite>15</Bioferrite>
+		</costList>
+		<recipeMaker>
+			<workAmount>720</workAmount>
+			<skillRequirements>
+				<Crafting>4</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>AESleepEnhancerSerum</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+</Defs>

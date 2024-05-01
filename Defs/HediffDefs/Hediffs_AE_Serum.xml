@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>Hediff_AESleepEnhancerSerum</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>sleep enhancer serum</label>
+		<description>This person has ingested a drug which enhanced their rest efficiency.</description>
+		<comps>
+			<li Class="HediffCompProperties_DisappearsDisableable">
+				<disappearsAfterTicks>900000</disappearsAfterTicks>
+				<showRemainingTime>true</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+		<stages>
+			<li>
+				<statOffsets>
+					<RestRateMultiplier>0.2</RestRateMultiplier>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

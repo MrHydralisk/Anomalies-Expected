@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_AnomalyBedSpawn</defName>
+		<label>ordinary bed</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromOrbit</workerClass>
+		<letterLabel>Found ordinary bed</letterLabel>
+		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like an ordinary bed, but with frame made of organic metal. It looks very comfortable to sleep on.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>10</earliestDay>
+		<baseChance>0.2</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>0</minAnomalyThreatLevel>
+		<minRefireDays>60</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableObjectDef>AE_AnomalyBed</DeployableObjectDef>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+
+</Defs>

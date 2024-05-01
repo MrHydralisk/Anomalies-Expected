@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Anomalies Expected</name>
+	<author>MrHydralisk</author>
+	<packageId>MrHydralisk.AnomaliesExpected</packageId>
+	<supportedVersions>
+		<li>1.5</li>
+	</supportedVersions>
+	<modIconPath IgnoreIfNoMatchingField="True">UI/Icons/AEModIcon</modIconPath>
+	<description>Additional anomalies for Anomaly DLC</description>
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.Anomaly</li>
+	</loadAfter>
+</ModMetaData>

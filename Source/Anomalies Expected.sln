@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anomalies Expected", "Anomalies Expected\Anomalies Expected.csproj", "{F0033B10-F4CE-47D8-BDC8-58CBE1653E87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		1.5|Any CPU = 1.5|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0033B10-F4CE-47D8-BDC8-58CBE1653E87}.1.5|Any CPU.ActiveCfg = 1.5|Any CPU
+		{F0033B10-F4CE-47D8-BDC8-58CBE1653E87}.1.5|Any CPU.Build.0 = 1.5|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE171D07-E135-4AF1-B1D0-1A2743E0D079}
+	EndGlobalSection
+EndGlobal
