@@ -22,7 +22,7 @@
 				<allowRepeatedUse>true</allowRepeatedUse>
 			</li>
 			<li Class="CompProperties_UseEffectPlaySound">
-				<soundOnUsed>SerumUsed</soundOnUsed>
+				<soundOnUsed>MechSerumUsed</soundOnUsed>
 			</li>
 		</comps>
 		<costList>
