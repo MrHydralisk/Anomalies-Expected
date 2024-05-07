@@ -37,6 +37,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AEStudyNote.cs" />
+    <Compile Include="Building_AEBed.cs" />
+    <Compile Include="CompAEStudyUnlocks.cs" />
     <Compile Include="CompProperties_AnomalyBed.cs" />
     <Compile Include="CompStudiableAE.cs" />
     <Compile Include="Comp_AnomalyBed.cs" />
