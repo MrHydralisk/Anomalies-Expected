@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<AESleepEnhancerSerum.label>сыворотка для улучшения сна</AESleepEnhancerSerum.label>
+	<AESleepEnhancerSerum.description>Шприц с прозрачной вязкой жидкостью. Введенный в ствол мозга, он воздействует на напряженную часть мозга и распределяет нагрузку между нейронами, делая отдых во время сна более эффективным.\n\nЭффект временный и не суммируется.</AESleepEnhancerSerum.description>
+	<AESleepEnhancerSerum.comps.CompUsable.useLabel>Использовать {0_label}</AESleepEnhancerSerum.comps.CompUsable.useLabel>
+	<AESleepEnhancerSerum.ingestible.ingestCommandString>Поглотить {0}</AESleepEnhancerSerum.ingestible.ingestCommandString>
+	<AESleepEnhancerSerum.ingestible.ingestReportString>Поглощает {0}</AESleepEnhancerSerum.ingestible.ingestReportString>
+
+</LanguageData>
