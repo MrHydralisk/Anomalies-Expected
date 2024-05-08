@@ -8,9 +8,6 @@
 		<nomatch Class="PatchOperationSequence">
 			<operations>
 				<li Class="PatchOperationRemove">
-					<xpath>Defs/ThingDef[defName="AESleepEnhancerSerum"]</xpath>
-				</li>
-				<li Class="PatchOperationRemove">
 					<xpath>Defs/EntityCodexEntryDef[defName="AE_EntityCodexEntry_AnomalyBed"]</xpath>
 				</li>
 				<li Class="PatchOperationReplace">
@@ -45,102 +42,95 @@
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/ThingDef[defName="AE_AnomalyBed"]/comps/li[3]</xpath>
 				</li>
-				<li Class="PatchOperationRemove">
+				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="AESleepEnhancerSerum"]</xpath>
+					<value>
+						<ThingDef ParentName="ResourceBase">
+							<defName>AESleepEnhancerSerum</defName>
+							<label>sleep enhancer serum</label>
+							<description>A syringe of clear, viscous fluid. Injected near the brainstem, it affect stressed part of the brain and distribute the load among neurons, making rest via sleep more time efficient.\n\nThe effect is temporary and does not stack.</description>
+							<descriptionHyperlinks>
+								<HediffDef>Hediff_AESleepEnhancerSerum</HediffDef>
+							</descriptionHyperlinks>
+							<graphicData>
+								<texPath>Things/Item/Serum/AESleepEnhancerSerum</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<drawSize>0.8</drawSize>
+							</graphicData>
+							<thingClass>ThingWithComps</thingClass>
+							<stackLimit>10</stackLimit>
+							<socialPropernessMatters>false</socialPropernessMatters>
+							<orderedTakeGroup>Drug</orderedTakeGroup>
+							<statBases>
+								<MaxHitPoints>60</MaxHitPoints>
+								<MarketValue>60</MarketValue>
+								<Mass>0.5</Mass>
+								<Flammability>0.7</Flammability>
+							</statBases>
+							<thingCategories>
+								<li>Drugs</li>
+							</thingCategories>
+							<thingSetMakerTags>
+								<li>RewardStandardLowFreq</li>
+							</thingSetMakerTags>
+							<tradeTags>
+								<li>Serum</li>
+							</tradeTags>
+							<ingestible>
+								<preferability>NeverForNutrition</preferability>
+								<maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+								<defaultNumToIngestAtOnce>1</defaultNumToIngestAtOnce>
+								<drugCategory>Medical</drugCategory>
+								<foodType>Processed</foodType>
+								<baseIngestTicks>100</baseIngestTicks>
+								<chairSearchRadius>0</chairSearchRadius>
+								<ingestSound>Ingest_Pill</ingestSound>
+								<ingestHoldUsesTable>false</ingestHoldUsesTable>
+								<ingestCommandString>Ingest {0}</ingestCommandString>
+								<ingestReportString>Ingesting {0}.</ingestReportString>
+								<showIngestFloatOption>false</showIngestFloatOption>
+								<outcomeDoers>
+									<li Class="IngestionOutcomeDoer_UseThing"/>
+								</outcomeDoers>
+							</ingestible>
+							<comps>
+								<li Class="CompProperties_Drug">
+									<listOrder>1200</listOrder>
+									<teetotalerCanConsume>true</teetotalerCanConsume>
+								</li>
+								<li Class="CompProperties_Usable">
+									<useLabel>Use {0_label}</useLabel>
+									<useJob>Ingest</useJob>
+									<showUseGizmo>true</showUseGizmo>
+								</li>
+								<li Class="CompProperties_UseEffectAddHediff">
+									<hediffDef>Hediff_AESleepEnhancerSerum</hediffDef>
+									<allowRepeatedUse>true</allowRepeatedUse>
+								</li>
+								<li Class="CompProperties_UseEffectPlaySound">
+									<soundOnUsed>MechSerumUsed</soundOnUsed>
+								</li>
+							</comps>
+							<costList>
+								<Neutroamine>2</Neutroamine>
+								<Steel>15</Steel>
+							</costList>
+							<recipeMaker>
+								<workAmount>720</workAmount>
+								<skillRequirements>
+									<Crafting>4</Crafting>
+								</skillRequirements>
+								<researchPrerequisite>AESleepEnhancerSerum</researchPrerequisite>
+								<productCount>1</productCount>
+								<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+								<workSkill>Crafting</workSkill>
+								<recipeUsers>
+									<li>DrugLab</li>
+								</recipeUsers>
+							</recipeMaker>
+						</ThingDef>
+					</value>
 				</li>
-				<!-- <li Class="PatchOperationReplace"> -->
-					<!-- <xpath>Defs/ThingDef[defName="AESleepEnhancerSerum"]</xpath> -->
-					<!-- <value> -->
-						<!-- <ThingDef ParentName="ResourceBase"> -->
-							<!-- <defName>AESleepEnhancerSerum</defName> -->
-							<!-- <label>sleep enhancer serum</label> -->
-							<!-- <description>A syringe of clear, viscous fluid. Injected near the brainstem, it affect stressed part of the brain and distribute the load among neurons, making rest via sleep more time efficient.\n\nThe effect is temporary and does not stack.</description> -->
-							<!-- <descriptionHyperlinks> -->
-								<!-- <HediffDef>Hediff_AESleepEnhancerSerum</HediffDef> -->
-							<!-- </descriptionHyperlinks> -->
-							<!-- <graphicData> -->
-								<!-- <texPath>Things/Item/Serum/AESleepEnhancerSerum</texPath> -->
-								<!-- <graphicClass>Graphic_Single</graphicClass> -->
-								<!-- <drawSize>0.8</drawSize> -->
-							<!-- </graphicData> -->
-							<!-- <thingClass>ThingWithComps</thingClass> -->
-							<!-- <stackLimit>10</stackLimit> -->
-							<!-- <socialPropernessMatters>false</socialPropernessMatters> -->
-							<!-- <orderedTakeGroup>Drug</orderedTakeGroup> -->
-							<!-- <statBases> -->
-								<!-- <MaxHitPoints>60</MaxHitPoints> -->
-								<!-- <MarketValue>60</MarketValue> -->
-								<!-- <Mass>0.5</Mass> -->
-								<!-- <Flammability>0.7</Flammability> -->
-							<!-- </statBases> -->
-							<!-- <thingCategories> -->
-								<!-- <li>Drugs</li> -->
-							<!-- </thingCategories> -->
-							<!-- <thingSetMakerTags> -->
-								<!-- <li>RewardStandardLowFreq</li> -->
-							<!-- </thingSetMakerTags> -->
-							<!-- <tradeTags> -->
-								<!-- <li>Serum</li> -->
-							<!-- </tradeTags> -->
-							<!-- <ingestible> -->
-								<!-- <preferability>NeverForNutrition</preferability> -->
-								<!-- <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce> -->
-								<!-- <defaultNumToIngestAtOnce>1</defaultNumToIngestAtOnce> -->
-								<!-- <drugCategory>Medical</drugCategory> -->
-								<!-- <foodType>Processed</foodType> -->
-								<!-- <baseIngestTicks>100</baseIngestTicks> -->
-								<!-- <chairSearchRadius>0</chairSearchRadius> -->
-								<!-- <ingestSound>Ingest_Pill</ingestSound> -->
-								<!-- <ingestHoldUsesTable>false</ingestHoldUsesTable> -->
-								<!-- <ingestCommandString>Ingest {0}</ingestCommandString> -->
-								<!-- <ingestReportString>Ingesting {0}.</ingestReportString> -->
-								<!-- <showIngestFloatOption>false</showIngestFloatOption> -->
-								<!-- <outcomeDoers> -->
-									<!-- <li Class="IngestionOutcomeDoer_UseThing"/> -->
-								<!-- </outcomeDoers> -->
-							<!-- </ingestible> -->
-							<!-- <comps> -->
-								<!-- <li Class="CompProperties_Drug"> -->
-									<!-- <listOrder>1200</listOrder> -->
-									<!-- <teetotalerCanConsume>true</teetotalerCanConsume> -->
-								<!-- </li> -->
-								<!-- <li Class="CompProperties_Usable"> -->
-									<!-- <useLabel>Use {0_label}</useLabel> -->
-									<!-- <useJob>Ingest</useJob> -->
-									<!-- <showUseGizmo>true</showUseGizmo> -->
-									<!-- <allowedMutants> -->
-										<!-- <li>Ghoul</li> -->
-									<!-- </allowedMutants> -->
-								<!-- </li> -->
-								<!-- <li Class="CompProperties_Serum"/> -->
-								<!-- <li Class="CompProperties_UseEffectAddHediff"> -->
-									<!-- <hediffDef>Hediff_AESleepEnhancerSerum</hediffDef> -->
-									<!-- <allowRepeatedUse>true</allowRepeatedUse> -->
-								<!-- </li> -->
-								<!-- <li Class="CompProperties_UseEffectPlaySound"> -->
-									<!-- <soundOnUsed>SerumUsed</soundOnUsed> -->
-								<!-- </li> -->
-							<!-- </comps> -->
-							<!-- <costList> -->
-								<!-- <Neutroamine>2</Neutroamine> -->
-								<!-- <Bioferrite>15</Bioferrite> -->
-							<!-- </costList> -->
-							<!-- <recipeMaker> -->
-								<!-- <workAmount>720</workAmount> -->
-								<!-- <skillRequirements> -->
-									<!-- <Crafting>4</Crafting> -->
-								<!-- </skillRequirements> -->
-								<!-- <researchPrerequisite>AESleepEnhancerSerum</researchPrerequisite> -->
-								<!-- <productCount>1</productCount> -->
-								<!-- <workSpeedStat>DrugSynthesisSpeed</workSpeedStat> -->
-								<!-- <workSkill>Crafting</workSkill> -->
-								<!-- <recipeUsers> -->
-									<!-- <li>DrugLab</li> -->
-								<!-- </recipeUsers> -->
-							<!-- </recipeMaker> -->
-						<!-- </ThingDef> -->
-					<!-- </value> -->
-				<!-- </li> -->
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ResearchProjectDef[defName="AESleepEnhancerSerum"]/prerequisites</xpath>
 					<value>
