@@ -12,8 +12,8 @@ While usually I try to explain in mod description how mod content work in detail
 On some study notes label and description of anomaly might change to fit the current understanding of the anomaly.
 
 Currently available:
-1 Anomaly of basic category
-1 Anomaly of advanced category
+* 1 Anomaly of basic category
+* 1 Anomaly of advanced category
 
 ### Ordinary Bed
 
