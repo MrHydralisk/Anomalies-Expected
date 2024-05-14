@@ -6,8 +6,17 @@
 	<AESleepEnhancerSerum.generalRules.rulesStrings.0>subject->сыворотка для улучшения сна</AESleepEnhancerSerum.generalRules.rulesStrings.0>
 	<AESleepEnhancerSerum.generalRules.rulesStrings.1>subject_story->долго не спал и был уволен из-за слишком эффективной работы</AESleepEnhancerSerum.generalRules.rulesStrings.1>
 	<AESleepEnhancerSerum.generalRules.rulesStrings.2>subject_story->был обвинен в изобретении бессонницы</AESleepEnhancerSerum.generalRules.rulesStrings.2>
-	<AESleepEnhancerSerum.generalRules.rulesStrings.3>subject_story->больше не мог оправдываться тем, что проспал.</AESleepEnhancerSerum.generalRules.rulesStrings.3>
+	<AESleepEnhancerSerum.generalRules.rulesStrings.3>subject_story->больше не мог оправдываться тем, что проспал</AESleepEnhancerSerum.generalRules.rulesStrings.3>
 	<AESleepEnhancerSerum.generalRules.rulesStrings.4>subject_story->стал жить на 10% больше</AESleepEnhancerSerum.generalRules.rulesStrings.4>
 	<AESleepEnhancerSerum.generalRules.rulesStrings.5>subject_gerund->синтезируется сыворотка для улучшения сна</AESleepEnhancerSerum.generalRules.rulesStrings.5>
+
+	<AERegenSerum.label>сыворотка регенерации</AERegenSerum.label>
+	<AERegenSerum.description>Синтезировать сыворотку, повышающую лечебный фактор организма.</AERegenSerum.description>
+	<AERegenSerum.generalRules.rulesStrings.0>subject->сыворотка регенерации</AERegenSerum.generalRules.rulesStrings.0>
+	<AERegenSerum.generalRules.rulesStrings.1>subject_story->все заживает, как на собаке</AERegenSerum.generalRules.rulesStrings.1>
+	<AERegenSerum.generalRules.rulesStrings.2>subject_story->никогда не остается в больнице надолго</AERegenSerum.generalRules.rulesStrings.2>
+	<AERegenSerum.generalRules.rulesStrings.3>subject_story->раньше использовался для тренировок мехов</AERegenSerum.generalRules.rulesStrings.3>
+	<AERegenSerum.generalRules.rulesStrings.4>subject_story->смог восстановить мышцы, нервы и кожу всего лишь из оставшейся кости руки</AERegenSerum.generalRules.rulesStrings.4>
+	<AERegenSerum.generalRules.rulesStrings.5>subject_gerund->синтезируется сыворотка регенерации</AERegenSerum.generalRules.rulesStrings.5>
 
 </LanguageData>

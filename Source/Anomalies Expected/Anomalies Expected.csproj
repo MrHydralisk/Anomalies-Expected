@@ -40,10 +40,11 @@
     <Compile Include="AEStudyNote.cs" />
     <Compile Include="Building_AEBed.cs" />
     <Compile Include="CompAEStudyUnlocks.cs" />
+    <Compile Include="CompProperties_AnomalyHospitalBed.cs" />
     <Compile Include="CompProperties_AnomalyBed.cs" />
     <Compile Include="CompStudiableAE.cs" />
+    <Compile Include="Comp_AnomalyHospitalBed.cs" />
     <Compile Include="Comp_AnomalyBed.cs" />
-    <Compile Include="ThingDefOfLocal.cs" />
     <Compile Include="HediffDefOfLocal.cs" />
     <Compile Include="IncidentDefExtension.cs" />
     <Compile Include="IncidentWorker_DeployFromOrbit.cs" />

@@ -19,4 +19,22 @@
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>
 
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_AnomalyHospitalBed</defName>
+		<label>ordinary hospital bed</label>
+		<category>Advanced</category>
+		<uiIconPath>UI/CodexEntries/AE_AnomalyHospitalBed</uiIconPath>
+		<useDescriptionFrom>AE_AnomalyHospitalBed</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_AnomalyHospitalBed</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_AnomalyHospitalBedSpawn</li>
+		</provocationIncidents>
+		<discoveredResearchProjects>
+			<li>AERegenSerum</li>
+		</discoveredResearchProjects>
+		<orderInCategory>1300</orderInCategory>
+	</EntityCodexEntryDef>
+
 </Defs>

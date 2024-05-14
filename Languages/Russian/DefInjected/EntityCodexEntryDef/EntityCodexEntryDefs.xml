@@ -2,5 +2,7 @@
 <LanguageData>
 
 	<AE_EntityCodexEntry_AnomalyBed.label>обычная кровать</AE_EntityCodexEntry_AnomalyBed.label>
+	
+	<AE_EntityCodexEntry_AnomalyHospitalBed.label>обычная медицинская кровать</AE_EntityCodexEntry_AnomalyHospitalBed.label>
 
 </LanguageData>

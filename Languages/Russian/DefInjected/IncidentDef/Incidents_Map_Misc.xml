@@ -5,4 +5,8 @@
 	<AE_IncidentDef_AnomalyBedSpawn.letterLabel>Найдена обычная кровать</AE_IncidentDef_AnomalyBedSpawn.letterLabel>
 	<AE_IncidentDef_AnomalyBedSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это обычная кровать, но с каркасом из органического металла. Она выглядит очень удобной для сна.</AE_IncidentDef_AnomalyBedSpawn.letterText>
   
+	<AE_IncidentDef_AnomalyHospitalBedSpawn.label>обычная медицинская кровать</AE_IncidentDef_AnomalyHospitalBedSpawn.label>
+	<AE_IncidentDef_AnomalyHospitalBedSpawn.letterLabel>Найдена обычная медицинская кровать</AE_IncidentDef_AnomalyHospitalBedSpawn.letterLabel>
+	<AE_IncidentDef_AnomalyHospitalBedSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это обычная кровать, специально предназначенная для использования в больницах, но с каркасом из органического металла. Медицинский планшет, лежащий на кровати, с написанным на нем текстом.</AE_IncidentDef_AnomalyHospitalBedSpawn.letterText>
+  
 </LanguageData>

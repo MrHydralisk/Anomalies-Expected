@@ -28,10 +28,36 @@
 
 				<li>subject_story->stayed awake for long time and was fired due to be too efficient at work</li>
 				<li>subject_story->was accused of inventing insomnia</li>
-				<li>subject_story->could no longer make excuses due to oversleeping.</li>
+				<li>subject_story->could no longer make excuses due to oversleeping</li>
 				<li>subject_story->started to live 10% more</li>
 
 				<li>subject_gerund->synthesizing sleep enhancer serums</li>
+			</rulesStrings>
+		</generalRules>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>AERegenSerum</defName>
+		<label>regen serum</label>
+		<description>Synthesize a serum that increase the body's healing factor.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>SerumSynthesis</li>
+		</prerequisites>
+		<knowledgeCost>45</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>1</researchViewX>
+		<researchViewY>0</researchViewY>
+		<generalRules>
+			<rulesStrings>
+				<li>subject->regen serum</li>
+
+				<li>subject_story->everything is healing like a dog's</li>
+				<li>subject_story->never stays long in the hospital</li>
+				<li>subject_story->used to be the designated punching bag for mech training</li>
+				<li>subject_story->was able to regenerate muscles, nerves, and skin, from just the remaining bone of an arm</li>
+
+				<li>subject_gerund->synthesizing regen serums</li>
 			</rulesStrings>
 		</generalRules>
 	</ResearchProjectDef>

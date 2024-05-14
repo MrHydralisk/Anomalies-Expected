@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Manifest>
 	<identifier>MrHydralisk.AnomaliesExpected</identifier>
-	<version>1.0.3.0</version>
+	<version>1.1.0.0</version>
 	<suggests>
 		<li>MrHydralisk.VOEAdditionalOutposts</li>
 		<li>MrHydralisk.UndergroundVault</li>

@@ -7,9 +7,6 @@
 		</mods>
 		<nomatch Class="PatchOperationSequence">
 			<operations>
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/EntityCodexEntryDef[defName="AE_EntityCodexEntry_AnomalyBed"]</xpath>
-				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="AE_AnomalyIncoming"]/graphicData/texPath</xpath>
 					<value>
@@ -27,6 +24,18 @@
 					<value>
 						<impactSound>DropPod_Impact</impactSound>
 					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ResearchTabDef[defName="AnomaliesExpected"]/visibleByDefault</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ResearchTabDef[defName="AnomaliesExpected"]/minMonolithLevelVisible</xpath>
+				</li>
+				
+				
+				
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/EntityCodexEntryDef[defName="AE_EntityCodexEntry_AnomalyBed"]</xpath>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="AE_AnomalyBed"]/costList</xpath>
@@ -158,11 +167,142 @@
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/ResearchProjectDef[defName="AESleepEnhancerSerum"]/knowledgeCategory</xpath>
 				</li>
+				
+				
+				
 				<li Class="PatchOperationRemove">
-					<xpath>Defs/ResearchTabDef[defName="AnomaliesExpected"]/visibleByDefault</xpath>
+					<xpath>Defs/EntityCodexEntryDef[defName="AE_EntityCodexEntry_AnomalyHospitalBed"]</xpath>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="AE_AnomalyHospitalBed"]/costList</xpath>
+					<value>
+						<costList>
+							<Steel>120</Steel>
+							<ComponentIndustrial>5</ComponentIndustrial>
+						</costList>
+					</value>
 				</li>
 				<li Class="PatchOperationRemove">
-					<xpath>Defs/ResearchTabDef[defName="AnomaliesExpected"]/minMonolithLevelVisible</xpath>
+					<xpath>Defs/ThingDef[defName="AE_AnomalyHospitalBed"]/comps/li[2]/knowledgeCategory</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="AE_AnomalyHospitalBed"]/comps/li[3]</xpath>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="AERegenSerum"]</xpath>
+					<value>
+						<ThingDef ParentName="ResourceBase">
+							<defName>AERegenSerum</defName>
+							<label>regen serum</label>
+							<description>A syringe of crimson, viscous fluid. Injected in bloodstream, it affect damaged tissue and increase healing factor.\n\nThe effect is temporary and does not stack.</description>
+							<descriptionHyperlinks>
+								<HediffDef>Hediff_AERegenSerum</HediffDef>
+							</descriptionHyperlinks>
+							<graphicData>
+								<texPath>Things/Item/Serum/AERegenSerum</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<drawSize>0.8</drawSize>
+							</graphicData>
+							<thingClass>ThingWithComps</thingClass>
+							<stackLimit>10</stackLimit>
+							<socialPropernessMatters>false</socialPropernessMatters>
+							<orderedTakeGroup>Drug</orderedTakeGroup>
+							<statBases>
+								<MaxHitPoints>60</MaxHitPoints>
+								<MarketValue>75</MarketValue>
+								<Mass>0.5</Mass>
+								<Flammability>0.7</Flammability>
+							</statBases>
+							<thingCategories>
+								<li>Drugs</li>
+							</thingCategories>
+							<thingSetMakerTags>
+								<li>RewardStandardLowFreq</li>
+							</thingSetMakerTags>
+							<tradeTags>
+								<li>Serum</li>
+							</tradeTags>
+							<ingestible>
+								<preferability>NeverForNutrition</preferability>
+								<maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+								<defaultNumToIngestAtOnce>1</defaultNumToIngestAtOnce>
+								<drugCategory>Medical</drugCategory>
+								<foodType>Processed</foodType>
+								<baseIngestTicks>100</baseIngestTicks>
+								<chairSearchRadius>0</chairSearchRadius>
+								<ingestSound>Ingest_Pill</ingestSound>
+								<ingestHoldUsesTable>false</ingestHoldUsesTable>
+								<ingestCommandString>Ingest {0}</ingestCommandString>
+								<ingestReportString>Ingesting {0}.</ingestReportString>
+								<showIngestFloatOption>false</showIngestFloatOption>
+								<outcomeDoers>
+									<li Class="IngestionOutcomeDoer_UseThing"/>
+								</outcomeDoers>
+							</ingestible>
+							<comps>
+								<li Class="CompProperties_Drug">
+									<listOrder>1200</listOrder>
+									<teetotalerCanConsume>true</teetotalerCanConsume>
+								</li>
+								<li Class="CompProperties_Usable">
+									<useLabel>Use {0_label}</useLabel>
+									<useJob>Ingest</useJob>
+									<showUseGizmo>true</showUseGizmo>
+								</li>
+								<li Class="CompProperties_UseEffectAddHediff">
+									<hediffDef>Hediff_AERegenSerum</hediffDef>
+									<allowRepeatedUse>true</allowRepeatedUse>
+								</li>
+								<li Class="CompProperties_UseEffectPlaySound">
+									<soundOnUsed>MechSerumUsed</soundOnUsed>
+								</li>
+							</comps>
+							<costList>
+								<Neutroamine>2</Neutroamine>
+								<Steel>15</Steel>
+							</costList>
+							<recipeMaker>
+								<workAmount>720</workAmount>
+								<skillRequirements>
+									<Crafting>7</Crafting>
+								</skillRequirements>
+								<researchPrerequisite>AERegenSerum</researchPrerequisite>
+								<productCount>1</productCount>
+								<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+								<workSkill>Crafting</workSkill>
+								<recipeUsers>
+									<li>DrugLab</li>
+								</recipeUsers>
+							</recipeMaker>
+						</ThingDef>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="AERegenSerum"]/prerequisites</xpath>
+					<value>
+						<prerequisites>
+							<li>DrugProduction</li>
+							<li>MicroelectronicsBasics</li>
+						</prerequisites>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ResearchProjectDef[defName="AERegenSerum"]</xpath>
+					<value>
+						<techLevel>Industrial</techLevel>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ResearchProjectDef[defName="AERegenSerum"]</xpath>
+					<value>
+						<baseCost>1000</baseCost>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ResearchProjectDef[defName="AERegenSerum"]/knowledgeCost</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ResearchProjectDef[defName="AERegenSerum"]/knowledgeCategory</xpath>
 				</li>
 			</operations>
 		</nomatch>

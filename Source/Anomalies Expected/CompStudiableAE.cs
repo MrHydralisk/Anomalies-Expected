@@ -8,6 +8,10 @@ namespace AnomaliesExpected
     {
         public override void Study(Pawn studier, float studyAmount, float anomalyKnowledgeAmount = 0f)
         {
+            if (studier.Dead)
+            {
+                studier = studier.Map?.mapPawns?.FreeColonists?.RandomElement();
+            }
             bool completed = Completed;
             if (studyAmount > 0)
             {

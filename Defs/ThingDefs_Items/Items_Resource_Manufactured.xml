@@ -37,5 +37,42 @@
 			<researchPrerequisite>AESleepEnhancerSerum</researchPrerequisite>
 		</recipeMaker>
 	</ThingDef>
+	
+	<ThingDef ParentName="SerumBase">
+		<defName>AERegenSerum</defName>
+		<label>regen serum</label>
+		<description>A syringe of crimson, viscous fluid. Injected in bloodstream, it affect damaged tissue and increase healing factor.\n\nThe effect is temporary and does not stack.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AERegenSerum</HediffDef>
+		</descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Serum/AERegenSerum</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>75</MarketValue>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>Hediff_AERegenSerum</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>MechSerumUsed</soundOnUsed>
+			</li>
+		</comps>		
+		<costList>
+			<Meat_Human>15</Meat_Human>
+			<Bioferrite>15</Bioferrite>
+		</costList>
+		<recipeMaker>
+			<workAmount>720</workAmount>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>AERegenSerum</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
 
 </Defs>

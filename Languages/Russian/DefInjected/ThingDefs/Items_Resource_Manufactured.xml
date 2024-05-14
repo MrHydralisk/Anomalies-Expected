@@ -6,5 +6,11 @@
 	<AESleepEnhancerSerum.comps.CompUsable.useLabel>Использовать {0_label}</AESleepEnhancerSerum.comps.CompUsable.useLabel>
 	<AESleepEnhancerSerum.ingestible.ingestCommandString>Поглотить {0}</AESleepEnhancerSerum.ingestible.ingestCommandString>
 	<AESleepEnhancerSerum.ingestible.ingestReportString>Поглощает {0}</AESleepEnhancerSerum.ingestible.ingestReportString>
+	
+	<AERegenSerum.label>сыворотка регенерации</AERegenSerum.label>
+	<AERegenSerum.description>Шприц с красной вязкой жидкостью. Введенный в кровоток, он воздействует на поврежденные ткани и увеличивает фактор заживления.\n\nЭффект временный и не суммируется.</AERegenSerum.description>
+	<AERegenSerum.comps.CompUsable.useLabel>Использовать {0_label}</AERegenSerum.comps.CompUsable.useLabel>
+	<AERegenSerum.ingestible.ingestCommandString>Поглотить {0}</AERegenSerum.ingestible.ingestCommandString>
+	<AERegenSerum.ingestible.ingestReportString>Поглощает {0}</AERegenSerum.ingestible.ingestReportString>
 
 </LanguageData>

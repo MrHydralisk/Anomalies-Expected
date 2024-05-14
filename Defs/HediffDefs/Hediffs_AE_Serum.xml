@@ -21,5 +21,26 @@
 			</li>
 		</stages>
 	</HediffDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>Hediff_AERegenSerum</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>regen serum</label>
+		<description>This person has ingested a drug which enhanced their healing factor.</description>
+		<comps>
+			<li Class="HediffCompProperties_DisappearsDisableable">
+				<disappearsAfterTicks>300000</disappearsAfterTicks>
+				<showRemainingTime>true</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+		<stages>
+			<li>
+				<statOffsets>
+					<InjuryHealingFactor>1.5</InjuryHealingFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
 
 </Defs>
