@@ -181,4 +181,18 @@
 		</inspectorTabs>
 	</ThingDef>
 	
+	<ThingDef ParentName="BuildingBase">
+		<defName>AE_MeatGrinder</defName>
+		<label>meat grinder</label>
+		<description>A cozy mattress and sheets on a frame made of organic metal for resting.\n\nSeems like the only way to understand it more is for someone to sleep on it.</description>
+		<thingClass>Building_WorkTable</thingClass>
+		<graphicData>
+			<texPath>Things/Building/AE_MeatGrinder</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2.76,2.76)</drawSize>
+		</graphicData>
+		<size>(1,1)</size>
+		<uiIconScale>0.75</uiIconScale>
+	</ThingDef>
+	
 </Defs>
