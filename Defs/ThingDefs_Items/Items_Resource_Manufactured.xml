@@ -38,6 +38,8 @@
 		</recipeMaker>
 	</ThingDef>
 	
+	
+	
 	<ThingDef ParentName="SerumBase">
 		<defName>AERegenSerum</defName>
 		<label>regen serum</label>
@@ -72,6 +74,46 @@
 				<Crafting>7</Crafting>
 			</skillRequirements>
 			<researchPrerequisite>AERegenSerum</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	
+	
+	<ThingDef ParentName="SerumBase">
+		<defName>AEFruitInhibitorSerum</defName>
+		<label>giant apple inhibitor serum</label>
+		<description>A syringe filled with purple fluid. Injected in bloodstream, it removes the effect given by the Giant Apple.\n\nThe effect is not instant.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AEForbiddenFruit</HediffDef>
+			<HediffDef>Hediff_AEForbiddenFruitWithdrawal</HediffDef>
+		</descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Serum/AEFruitInhibitorSerum</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>35</MarketValue>
+		</statBases>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_UseEffectReplaceHediff">
+				<hediffDefFrom>Hediff_AEForbiddenFruit</hediffDefFrom>
+				<hediffDefTo>Hediff_AEForbiddenFruitWithdrawal</hediffDefTo>
+				<severityTransfere>1</severityTransfere>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>MechSerumUsed</soundOnUsed>
+			</li>
+		</comps>
+		<costList>
+			<Bioferrite>12</Bioferrite>
+		</costList>
+		<recipeMaker>
+			<workAmount>570</workAmount>
+			<skillRequirements>
+				<Crafting>3</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>AEFruitInhibitorSerum</researchPrerequisite>
 		</recipeMaker>
 	</ThingDef>
 

@@ -9,4 +9,8 @@
 	<AE_IncidentDef_AnomalyHospitalBedSpawn.letterLabel>Найдена обычная медицинская кровать</AE_IncidentDef_AnomalyHospitalBedSpawn.letterLabel>
 	<AE_IncidentDef_AnomalyHospitalBedSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это обычная кровать, специально предназначенная для использования в больницах, но с каркасом из органического металла. Медицинский планшет, лежащий на кровати, с написанным на нем текстом.</AE_IncidentDef_AnomalyHospitalBedSpawn.letterText>
   
+	<AE_IncidentDef_ForbiddenFruitSpawn.label>огромное яблоко</AE_IncidentDef_ForbiddenFruitSpawn.label>
+	<AE_IncidentDef_ForbiddenFruitSpawn.letterLabel>Найдена огромное яблоко</AE_IncidentDef_ForbiddenFruitSpawn.letterLabel>
+	<AE_IncidentDef_ForbiddenFruitSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это огромное яблоко.</AE_IncidentDef_ForbiddenFruitSpawn.letterText>
+  
 </LanguageData>

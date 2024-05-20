@@ -9,6 +9,8 @@ namespace AnomaliesExpected
         public string currentAnomalyDesc;
         public string currentAnomalyDescPart;
 
+        public int NextIndex => nextIndex;
+
         public override string TransformLabel(string label)
         {
             if (!currentAnomalyLabel.NullOrEmpty())

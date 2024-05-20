@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<ThoughtDef>
+		<defName>Thought_AEForbiddenFruit</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>Hediff_AEForbiddenFruit</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+		<stages>
+			<li>
+				<visible>false</visible>
+			</li>
+			<li>
+				<visible>false</visible>
+			</li>
+			<li>
+				<visible>false</visible>
+			</li>
+			<li>
+				<label>Cautious of overstepping boundaries</label>
+				<description>Yearning for enlightenment, yet cautious not to overstep their bounds.</description>
+				<baseMoodEffect>-6</baseMoodEffect>
+			</li>
+			<li>
+				<label>Fearing the wrath</label>
+				<description>Fearing the wrath of the divine for seeking knowledge not meant for mortals.</description>
+				<baseMoodEffect>-12</baseMoodEffect>
+			</li>
+			<li>
+				<label>The Hour of Judgment</label>
+				<description>Pleading for forgiveness for tasting the Forbidden Fruit.</description>
+				<baseMoodEffect>-24</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+  
+</Defs>

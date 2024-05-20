@@ -12,7 +12,7 @@ While usually I try to explain in mod description how mod content work in detail
 On some study notes label and description of anomaly might change to fit the current understanding of the anomaly.
 
 Currently available:
-* 1 Anomaly of basic category
+* 2 Anomaly of basic category
 * 1 Anomaly of advanced category
 
 ### Ordinary Bed
@@ -22,6 +22,12 @@ Currently available:
 ### Ordinary Hospital Bed
 
 *Your colonist noticed some object falling from the sky nearby. At close inspection it seems like an ordinary bed specially designed for use in hospitals, but with frame made of organic metal. Medical clipboard lying on the bed with some text written on it.*
+
+More anomalies in development and will be added, when ready.
+
+### Giant Apple
+
+*Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a quite giant apple.*
 
 More anomalies in development and will be added, when ready.
 

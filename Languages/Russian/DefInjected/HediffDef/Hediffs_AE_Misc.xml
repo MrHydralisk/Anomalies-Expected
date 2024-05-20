@@ -4,4 +4,20 @@
 	<Hediff_AEFatigue.label>усталость</Hediff_AEFatigue.label>
 	<Hediff_AEFatigue.description>Тело ощущается тяжелым и требует дополнительного отдыха.</Hediff_AEFatigue.description>
   
+  
+  
+	<Hediff_AEForbiddenFruit.label>эффект плода</Hediff_AEForbiddenFruit.label>
+	<Hediff_AEForbiddenFruit.description>Эффект, который плод оказал на организм.\nПохоже, это сделало разум носителя острее, сделав его более мудрым.</Hediff_AEForbiddenFruit.description>
+	<Hediff_AEForbiddenFruit.stages.0.label>Искание</Hediff_AEForbiddenFruit.stages.0.label>
+	<Hediff_AEForbiddenFruit.stages.1.label>Осознанность</Hediff_AEForbiddenFruit.stages.1.label>
+	<Hediff_AEForbiddenFruit.stages.2.label>Просветление</Hediff_AEForbiddenFruit.stages.2.label>
+	<Hediff_AEForbiddenFruit.stages.3.label>Преображение</Hediff_AEForbiddenFruit.stages.3.label>
+	<Hediff_AEForbiddenFruit.stages.4.label>Возмездие</Hediff_AEForbiddenFruit.stages.4.label>
+	<Hediff_AEForbiddenFruit.stages.5.label>Гнев</Hediff_AEForbiddenFruit.stages.5.label>
+  
+	<Hediff_AEForbiddenFruitWithdrawal.label>ингибитор эффекта плода</Hediff_AEForbiddenFruitWithdrawal.label>
+	<Hediff_AEForbiddenFruitWithdrawal.description>Снятие эффекта, который плод оказал на организм.\nПохоже, что это уменьшает ощущение внешнего давления на хозяина.</Hediff_AEForbiddenFruitWithdrawal.description>
+	<Hediff_AEForbiddenFruitWithdrawal.stages.0.label>Прощение</Hediff_AEForbiddenFruitWithdrawal.stages.0.label>
+	<Hediff_AEForbiddenFruitWithdrawal.stages.1.label>Покаяние</Hediff_AEForbiddenFruitWithdrawal.stages.1.label>
+  
 </LanguageData>

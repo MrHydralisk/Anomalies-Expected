@@ -12,5 +12,11 @@
 	<AERegenSerum.comps.CompUsable.useLabel>Использовать {0_label}</AERegenSerum.comps.CompUsable.useLabel>
 	<AERegenSerum.ingestible.ingestCommandString>Поглотить {0}</AERegenSerum.ingestible.ingestCommandString>
 	<AERegenSerum.ingestible.ingestReportString>Поглощает {0}</AERegenSerum.ingestible.ingestReportString>
+	
+	<AEFruitInhibitorSerum.label>сыворотка-ингибитор огромного яблока</AEFruitInhibitorSerum.label>
+	<AEFruitInhibitorSerum.description>Шприц, наполненный фиолетовой жидкостью. Введенный в кровоток, он снимает эффект гигантского яблока.\n\nЭффект не мгновенный.</AEFruitInhibitorSerum.description>
+	<AEFruitInhibitorSerum.comps.CompUsable.useLabel>Использовать {0_label}</AEFruitInhibitorSerum.comps.CompUsable.useLabel>
+	<AEFruitInhibitorSerum.ingestible.ingestCommandString>Поглотить {0}</AEFruitInhibitorSerum.ingestible.ingestCommandString>
+	<AEFruitInhibitorSerum.ingestible.ingestReportString>Поглощает {0}</AEFruitInhibitorSerum.ingestible.ingestReportString>
 
 </LanguageData>

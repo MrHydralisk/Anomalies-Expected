@@ -61,5 +61,28 @@
 			</rulesStrings>
 		</generalRules>
 	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>AEFruitInhibitorSerum</defName>
+		<label>giant apple inhibitor serum</label>
+		<description>Synthesize a serum that removes the effect given by the Giant Apple.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>SerumSynthesis</li>
+		</prerequisites>
+		<knowledgeCost>25</knowledgeCost>
+		<knowledgeCategory>Basic</knowledgeCategory>
+		<researchViewX>0</researchViewX>
+		<researchViewY>1</researchViewY>
+		<generalRules>
+			<rulesStrings>
+				<li>subject->giant apple inhibitor serum</li>
+
+				<li>subject_story->no longer afraid of giant apple</li>
+
+				<li>subject_gerund->synthesizing giant apple inhibitor serums</li>
+			</rulesStrings>
+		</generalRules>
+	</ResearchProjectDef>
 
 </Defs>

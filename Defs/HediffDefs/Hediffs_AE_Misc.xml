@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  
+
 	<HediffDef>
 		<defName>Hediff_AEFatigue</defName>
 		<hediffClass>HediffWithComps</hediffClass>
@@ -25,5 +25,136 @@
 			</li>
 		</stages>
 	</HediffDef>
-
+	
+	
+	
+	<HediffDef>
+		<defName>Hediff_AEForbiddenFruit</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>fruit's effects</label>
+		<description>The effects the fruit had on the body.\nIt appears to have made the host's thoughts sharper, making it more wise.</description>
+		<initialSeverity>0.01</initialSeverity>
+		<lethalSeverity>5.5</lethalSeverity>
+		<maxSeverity>5.5</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>0.5</severityPerDay>
+				<showHoursToRecover>false</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>Seeking</label>
+				<statOffsets>
+					<GlobalLearningFactor>0.05</GlobalLearningFactor>
+					<ReadingSpeed>0.05</ReadingSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<label>Awareness</label>
+				<minSeverity>1</minSeverity>
+				<statOffsets>
+					<GlobalLearningFactor>0.15</GlobalLearningFactor>
+					<ReadingSpeed>0.1</ReadingSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<label>Enlightenment</label>
+				<minSeverity>2</minSeverity>
+				<statOffsets>
+					<GlobalLearningFactor>0.3</GlobalLearningFactor>
+					<ReadingSpeed>0.15</ReadingSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<label>Transcendence</label>
+				<minSeverity>3</minSeverity>
+				<statOffsets>
+					<GlobalLearningFactor>0.5</GlobalLearningFactor>
+					<ReadingSpeed>0.2</ReadingSpeed>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>0.9</postFactor>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>Retribution</label>
+				<minSeverity>4</minSeverity>
+				<statOffsets>
+					<GlobalLearningFactor>0.5</GlobalLearningFactor>
+					<ReadingSpeed>0.2</ReadingSpeed>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>0.5</postFactor>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>Wrath</label>
+				<minSeverity>5</minSeverity>
+				<severityGainFactor>0</severityGainFactor>
+				<lifeThreatening>true</lifeThreatening>
+				<statOffsets>
+					<GlobalLearningFactor>0.5</GlobalLearningFactor>
+					<ReadingSpeed>0.2</ReadingSpeed>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>0.25</postFactor>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>Hediff_AEForbiddenFruitWithdrawal</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>fruit's effects inhibitor</label>
+		<description>Withdrawal of the effects the fruit had on the body.\nIt appears to decrease the host's experience of outwordly pressure.</description>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>5.5</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-1</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>Forgiveness </label>
+				<statOffsets>
+					<GlobalLearningFactor>-0.10</GlobalLearningFactor>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>0.95</postFactor>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>Repentance</label>
+				<minSeverity>3</minSeverity>
+				<statOffsets>
+					<GlobalLearningFactor>-0.20</GlobalLearningFactor>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>0.75</postFactor>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	
 </Defs>

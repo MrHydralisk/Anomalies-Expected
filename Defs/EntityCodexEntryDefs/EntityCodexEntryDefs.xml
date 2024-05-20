@@ -37,4 +37,22 @@
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>
 
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_ForbiddenFruit</defName>
+		<label>giant apple</label>
+		<category>Basic</category>
+		<uiIconPath>UI/CodexEntries/AE_ForbiddenFruit</uiIconPath>
+		<useDescriptionFrom>AE_ForbiddenFruit</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_ForbiddenFruit</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_ForbiddenFruitSpawn</li>
+		</provocationIncidents>
+		<discoveredResearchProjects>
+			<li>AEFruitInhibitorSerum</li>
+		</discoveredResearchProjects>
+		<orderInCategory>1300</orderInCategory>
+	</EntityCodexEntryDef>
+
 </Defs>

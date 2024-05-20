@@ -24,6 +24,12 @@
 					<value>
 						<impactSound>DropPod_Impact</impactSound>
 					</value>
+				</li>				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="AE_ActiveDropPodAnomaly"]/graphicData/texPath</xpath>
+					<value>
+						<texPath>Things/Special/DropPod</texPath>
+					</value>
 				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/ResearchTabDef[defName="AnomaliesExpected"]/visibleByDefault</xpath>
@@ -303,6 +309,135 @@
 				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/ResearchProjectDef[defName="AERegenSerum"]/knowledgeCategory</xpath>
+				</li>
+				
+				
+				
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/EntityCodexEntryDef[defName="AE_EntityCodexEntry_ForbiddenFruit"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="AE_ForbiddenFruit"]/comps/li[2]/knowledgeCategory</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="AE_ForbiddenFruit"]/comps/li[3]</xpath>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="AEFruitInhibitorSerum"]</xpath>
+					<value>
+						<ThingDef ParentName="ResourceBase">
+							<defName>AEFruitInhibitorSerum</defName>
+							<label>giant apple inhibitor serum</label>
+							<description>A syringe filled with purple fluid. Injected in bloodstream, it removes the effect given by the Giant Apple.\n\nThe effect is not instant.</description>
+							<descriptionHyperlinks>
+								<HediffDef>Hediff_AEForbiddenFruit</HediffDef>
+								<HediffDef>Hediff_AEForbiddenFruitWithdrawal</HediffDef>
+							</descriptionHyperlinks>
+							<graphicData>
+								<texPath>Things/Item/Serum/AEFruitInhibitorSerum</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<drawSize>0.8</drawSize>
+							</graphicData>
+							<thingClass>ThingWithComps</thingClass>
+							<stackLimit>10</stackLimit>
+							<socialPropernessMatters>false</socialPropernessMatters>
+							<orderedTakeGroup>Drug</orderedTakeGroup>
+							<statBases>
+								<MaxHitPoints>60</MaxHitPoints>
+								<MarketValue>35</MarketValue>
+								<Mass>0.5</Mass>
+								<Flammability>0.7</Flammability>
+							</statBases>
+							<thingCategories>
+								<li>Drugs</li>
+							</thingCategories>
+							<thingSetMakerTags>
+								<li>RewardStandardLowFreq</li>
+							</thingSetMakerTags>
+							<tradeTags>
+								<li>Serum</li>
+							</tradeTags>
+							<ingestible>
+								<preferability>NeverForNutrition</preferability>
+								<maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+								<defaultNumToIngestAtOnce>1</defaultNumToIngestAtOnce>
+								<drugCategory>Medical</drugCategory>
+								<foodType>Processed</foodType>
+								<baseIngestTicks>100</baseIngestTicks>
+								<chairSearchRadius>0</chairSearchRadius>
+								<ingestSound>Ingest_Pill</ingestSound>
+								<ingestHoldUsesTable>false</ingestHoldUsesTable>
+								<ingestCommandString>Ingest {0}</ingestCommandString>
+								<ingestReportString>Ingesting {0}.</ingestReportString>
+								<showIngestFloatOption>false</showIngestFloatOption>
+								<outcomeDoers>
+									<li Class="IngestionOutcomeDoer_UseThing"/>
+								</outcomeDoers>
+							</ingestible>
+							<comps>
+								<li Class="CompProperties_Drug">
+									<listOrder>1200</listOrder>
+									<teetotalerCanConsume>true</teetotalerCanConsume>
+								</li>
+								<li Class="CompProperties_Usable">
+									<useLabel>Use {0_label}</useLabel>
+									<useJob>Ingest</useJob>
+									<showUseGizmo>true</showUseGizmo>
+								</li>
+								<li Class="AnomaliesExpected.CompProperties_UseEffectReplaceHediff">
+									<hediffDefFrom>Hediff_AEForbiddenFruit</hediffDefFrom>
+									<hediffDefTo>Hediff_AEForbiddenFruitWithdrawal</hediffDefTo>
+									<severityTransfere>1</severityTransfere>
+								</li>
+								<li Class="CompProperties_UseEffectPlaySound">
+									<soundOnUsed>MechSerumUsed</soundOnUsed>
+								</li>
+							</comps>
+							<costList>
+								<Steel>12</Steel>
+							</costList>
+							<recipeMaker>
+								<workAmount>570</workAmount>
+								<skillRequirements>
+									<Crafting>3</Crafting>
+								</skillRequirements>
+								<researchPrerequisite>AEFruitInhibitorSerum</researchPrerequisite>
+								<productCount>1</productCount>
+								<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+								<workSkill>Crafting</workSkill>
+								<recipeUsers>
+									<li>DrugLab</li>
+								</recipeUsers>
+							</recipeMaker>
+						</ThingDef>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="AEFruitInhibitorSerum"]/prerequisites</xpath>
+					<value>
+						<prerequisites>
+							<li>DrugProduction</li>
+							<li>MicroelectronicsBasics</li>
+						</prerequisites>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ResearchProjectDef[defName="AEFruitInhibitorSerum"]</xpath>
+					<value>
+						<techLevel>Industrial</techLevel>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ResearchProjectDef[defName="AEFruitInhibitorSerum"]</xpath>
+					<value>
+						<baseCost>1200</baseCost>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ResearchProjectDef[defName="AEFruitInhibitorSerum"]/knowledgeCost</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ResearchProjectDef[defName="AEFruitInhibitorSerum"]/knowledgeCategory</xpath>
 				</li>
 			</operations>
 		</nomatch>

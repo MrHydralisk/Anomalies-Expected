@@ -19,4 +19,10 @@
 	<AERegenSerum.generalRules.rulesStrings.4>subject_story->смог восстановить мышцы, нервы и кожу всего лишь из оставшейся кости руки</AERegenSerum.generalRules.rulesStrings.4>
 	<AERegenSerum.generalRules.rulesStrings.5>subject_gerund->синтезируется сыворотка регенерации</AERegenSerum.generalRules.rulesStrings.5>
 
+	<AEFruitInhibitorSerum.label>сыворотка-ингибитор огромного яблока</AEFruitInhibitorSerum.label>
+	<AEFruitInhibitorSerum.description>Синтезировать сыворотку, снижающую эффект огромного яблока.</AEFruitInhibitorSerum.description>
+	<AEFruitInhibitorSerum.generalRules.rulesStrings.0>subject->сыворотка-ингибитор огромного яблока</AEFruitInhibitorSerum.generalRules.rulesStrings.0>
+	<AEFruitInhibitorSerum.generalRules.rulesStrings.1>subject_story->больше не боится огромного яблока</AEFruitInhibitorSerum.generalRules.rulesStrings.1>
+	<AEFruitInhibitorSerum.generalRules.rulesStrings.2>subject_gerund->синтезируется сыворотка-ингибитор огромного яблока</AEFruitInhibitorSerum.generalRules.rulesStrings.2>
+
 </LanguageData>

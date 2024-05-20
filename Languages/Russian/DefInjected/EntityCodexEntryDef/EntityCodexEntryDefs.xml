@@ -4,5 +4,7 @@
 	<AE_EntityCodexEntry_AnomalyBed.label>обычная кровать</AE_EntityCodexEntry_AnomalyBed.label>
 	
 	<AE_EntityCodexEntry_AnomalyHospitalBed.label>обычная медицинская кровать</AE_EntityCodexEntry_AnomalyHospitalBed.label>
+	
+	<AE_EntityCodexEntry_ForbiddenFruit.label>огромное яблоко</AE_EntityCodexEntry_ForbiddenFruit.label>
 
 </LanguageData>

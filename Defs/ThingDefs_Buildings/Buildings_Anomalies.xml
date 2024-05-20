@@ -19,7 +19,7 @@
 			<Beauty>1</Beauty>
 			<BedRestEffectiveness>0.25</BedRestEffectiveness>
 			<Comfort>0.25</Comfort>
-		</statBases>    
+		</statBases>
 		<stuffCategories Inherit="False"/>
 		<costStuffCount/>
 		<costList>
@@ -97,7 +97,7 @@
 			<MedicalTendQualityOffset>0.15</MedicalTendQualityOffset>
 			<SurgerySuccessChanceFactor>1.2</SurgerySuccessChanceFactor>
 			<BirthRitualQualityOffset MayRequire="Ludeon.RimWorld.Biotech">10</BirthRitualQualityOffset>
-		</statBases>    
+		</statBases>
 		<costList>
 			<Bioferrite>120</Bioferrite>
 			<ComponentIndustrial>5</ComponentIndustrial>
@@ -167,14 +167,14 @@
 					</li>
 				</studyNotes>
 			</li>
-		  <li Class="CompProperties_AffectedByFacilities">
-			<linkableFacilities>
-			  <li>VitalsMonitor</li>
-			  <li>EndTable</li>
-			  <li>Dresser</li>
-			  <li MayRequire="Ludeon.RimWorld.Ideology">SleepAccelerator</li>
-			</linkableFacilities>
-		  </li>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>VitalsMonitor</li>
+					<li>EndTable</li>
+					<li>Dresser</li>
+					<li MayRequire="Ludeon.RimWorld.Ideology">SleepAccelerator</li>
+				</linkableFacilities>
+			</li>
 		</comps>
 		<inspectorTabs>
 			<li>ITab_StudyNotes</li>

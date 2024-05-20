@@ -2,5 +2,7 @@
 <LanguageData>
 
 	<AE_AnomalyIncoming.label>аномалия (приближается)</AE_AnomalyIncoming.label>
+	
+	<AE_ActiveDropPodAnomaly.label>аномальная транспортная капсула (активирована)</AE_ActiveDropPodAnomaly.label>
 
 </LanguageData>
