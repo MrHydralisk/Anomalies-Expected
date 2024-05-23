@@ -17,27 +17,30 @@ namespace AnomaliesExpected
         public List<IntVec3> ConsumtionCells => consumtionCellsCached ?? (consumtionCellsCached = GenRadial.RadialCellsAround(parent.Position, 1.9f, useCenter: false).ToList());
         private List<IntVec3> consumtionCellsCached;
 
+        private List<Corpse> Consumables => ConsumtionCells.SelectMany((IntVec3 iv3) => parent.Map.thingGrid.ThingsListAtFast(iv3)).Where((Thing t) => t is Corpse).Select((Thing t) => t as Corpse).ToList();
+
+        public bool isHaveConsumables => (Consumables?.Count ?? 0) > 0;
+
         protected CompStudiable Studiable => studiableCached ?? (studiableCached = parent.TryGetComp<CompStudiable>());
         private CompStudiable studiableCached;
 
         public bool isActive = true;
+
+        private float ButcherEfficiency = 1.5f; // 0.75f - 1.25f for Skill 0 - 20
 
         public override void CompTickRare()
         {
             base.CompTickRare();
             if (isActive)
             {
-                List<Thing> consumables = ConsumtionCells.SelectMany((IntVec3 iv3) => parent.Map.thingGrid.ThingsListAtFast(iv3)).ToList();
                 bool isConsumed = false;
-                if (consumables.Count > 0)
+                if (isHaveConsumables)
                 {
-                    foreach (Thing consumable in consumables)
+                    foreach (Corpse consumable in Consumables)
                     {
-                        if (Butcher(consumable))
-                        {
-                            isConsumed = true;
-                            break;
-                        }
+                        Butcher(consumable);
+                        isConsumed = true;
+                        break;
                     }
                 }
                 if (!isConsumed)
@@ -47,29 +50,24 @@ namespace AnomaliesExpected
             }
         }
 
-        public bool Butcher(Thing thing)
+        public void Butcher(Corpse corpse)
         {
-            if (thing is Corpse corpse)
+            IEnumerable<Thing> products = corpse.ButcherProducts(parent.Map?.mapPawns?.FreeColonists?.RandomElement(), ButcherEfficiency);
+            foreach (Thing product in products)
             {
-                IEnumerable<Thing> products = corpse.ButcherProducts(parent.Map?.mapPawns?.FreeColonists?.RandomElement(), 1);
-                foreach (Thing product in products)
+                GenPlace.TryPlaceThing(product, parent.Position, parent.Map, ThingPlaceMode.Near, null, delegate (IntVec3 newLoc)
                 {
-                    GenPlace.TryPlaceThing(product, parent.Position, parent.Map, ThingPlaceMode.Near, null, delegate (IntVec3 newLoc)
+                    foreach (Thing item in parent.Map.thingGrid.ThingsListAtFast(newLoc))
                     {
-                        foreach (Thing item in parent.Map.thingGrid.ThingsListAtFast(newLoc))
+                        if (item == parent)
                         {
-                            if (item == parent)
-                            {
-                                return false;
-                            }
+                            return false;
                         }
-                        return true;
-                    });
-                }
-                corpse.Destroy();
-                return true;
+                    }
+                    return true;
+                });
             }
-            return false;
+            corpse.Destroy();
         }
 
         private void CreateCorpseStockpile()
