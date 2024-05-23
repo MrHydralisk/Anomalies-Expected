@@ -217,7 +217,7 @@
 		<passability>PassThroughOnly</passability>
 		<pathCost>50</pathCost>
 		<surfaceType>Item</surfaceType>
-		<tickerType>Long</tickerType>
+		<tickerType>Rare</tickerType>
 		<designationCategory/>
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_MeatGrinder" />
