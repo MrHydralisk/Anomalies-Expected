@@ -38,16 +38,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AEStudyNote.cs" />
+    <Compile Include="Building_AE.cs" />
     <Compile Include="Building_AEBed.cs" />
+    <Compile Include="CompProperties\CompProperties_MeatGrinder.cs" />
     <Compile Include="CompProperties\CompProperties_UseEffectReplaceHediff.cs" />
     <Compile Include="Comp\CompAEStudyUnlocks.cs" />
     <Compile Include="CompProperties\CompProperties_AnomalyHospitalBed.cs" />
     <Compile Include="CompProperties\CompProperties_AnomalyBed.cs" />
     <Compile Include="Comp\CompStudiableAE.cs" />
+    <Compile Include="Comp\Comp_MeatGrinder.cs" />
     <Compile Include="Comp\Comp_ForbiddenFruit.cs" />
     <Compile Include="Comp\Comp_AnomalyHospitalBed.cs" />
     <Compile Include="Comp\Comp_AnomalyBed.cs" />
-    <Compile Include="HediffDefOfLocal.cs" />
+    <Compile Include="DefOfLocal\HediffDefOfLocal.cs" />
+    <Compile Include="DefOfLocal\ThingCategoryDefOfLocal.cs" />
+    <Compile Include="DefOfLocal\SpecialThingFilterDefOfLocal.cs" />
     <Compile Include="IncidentDefExtension.cs" />
     <Compile Include="IncidentWorker_DeployThingFromOrbit.cs" />
     <Compile Include="IncidentWorker_DeployFromOrbit.cs" />

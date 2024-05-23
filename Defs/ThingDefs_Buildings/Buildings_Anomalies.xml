@@ -185,7 +185,7 @@
 		<defName>AE_MeatGrinder</defName>
 		<label>meat grinder</label>
 		<description>A cozy mattress and sheets on a frame made of organic metal for resting.\n\nSeems like the only way to understand it more is for someone to sleep on it.</description>
-		<thingClass>Building_WorkTable</thingClass>
+		<thingClass>AnomaliesExpected.Building_AE</thingClass>
 		<graphicData>
 			<texPath>Things/Building/AE_MeatGrinder</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -193,6 +193,35 @@
 		</graphicData>
 		<size>(1,1)</size>
 		<uiIconScale>0.75</uiIconScale>
+		<canOverlapZones>false</canOverlapZones>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+		  <li>BuildingsFurniture</li>
+		</thingCategories>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<altitudeLayer>Building</altitudeLayer>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<costList>
+			<Bioferrite>45</Bioferrite>
+		</costList>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>20</Mass>
+			<WorkToBuild>2000</WorkToBuild>
+			<MaxHitPoints>180</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<Cleanliness>-30</Cleanliness>
+		</statBases>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<surfaceType>Item</surfaceType>
+		<tickerType>Long</tickerType>
+		<designationCategory/>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_MeatGrinder" />
+		</comps>
 	</ThingDef>
 	
 </Defs>
