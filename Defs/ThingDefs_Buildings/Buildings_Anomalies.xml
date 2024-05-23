@@ -217,10 +217,72 @@
 		<passability>PassThroughOnly</passability>
 		<pathCost>50</pathCost>
 		<surfaceType>Item</surfaceType>
-		<tickerType>Rare</tickerType>
+		<tickerType>Normal</tickerType>
 		<designationCategory/>
 		<comps>
-			<li Class="AnomaliesExpected.CompProperties_MeatGrinder" />
+			<li Class="AnomaliesExpected.CompProperties_MeatGrinder">
+				<activeTicks>250</activeTicks>
+				<cooldownTicks>10000</cooldownTicks>
+				<ticksToActivate>250</ticksToActivate>
+				<activateTexPath>Things/Building/AE_MeatGrinder</activateTexPath>
+        
+				<activateLabelString>Press button</activateLabelString>
+				<activateDescString>Press button to activate machine.</activateDescString>
+				<guiLabelString>Choose who should activate this.</guiLabelString>
+				<jobString>press button</jobString>
+				<activatingStringPending>pressing button {0}</activatingStringPending>
+				<activatingString>pressing button {0}: {1}s</activatingString>
+
+				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
+				<fleckOnUsedScale>4</fleckOnUsedScale>
+				<soundActivate>PsychicAnimalPulserCast</soundActivate>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<Moods>
+					<li>
+						<tick>720000</tick>
+						<tickConsumed>360000</tickConsumed>
+						<isDanger>true</isDanger>
+						<Label>130</Label>
+						<butcherEfficiency>1.75</butcherEfficiency>
+					</li>
+					<li>
+						<tick>540000</tick>
+						<tickConsumed>72000</tickConsumed>
+						<bodyPartDefs>
+							<li>Arm</li>
+							<li>Leg</li>
+						</bodyPartDefs>
+						<Label>90</Label>
+						<butcherEfficiency>1.5</butcherEfficiency>
+					</li>
+					<li>
+						<tick>360000</tick>
+						<tickConsumed>24000</tickConsumed>
+						<bodyPartDefs>
+							<li>Hand</li>
+							<li>Foot</li>
+						</bodyPartDefs>
+						<Label>60</Label>
+						<butcherEfficiency>1.25</butcherEfficiency>
+					</li>
+					<li>
+						<tick>180000</tick>
+						<tickConsumed>4000</tickConsumed>
+						<bodyPartDefs>
+							<li>Finger</li>
+						</bodyPartDefs>
+						<Label>40</Label>
+						<butcherEfficiency>1</butcherEfficiency>
+					</li>
+				</Moods>
+			</li>
 		</comps>
 	</ThingDef>
 	
