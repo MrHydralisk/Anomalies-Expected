@@ -3,7 +3,7 @@ using Verse;
 
 namespace AnomaliesExpected
 {
-    public class CompProperties_UseEffectReplaceHediff : CompProperties_UseEffect
+    public class CompProperties_UseEffectReplaceHediff : CompProperties_UseEffectAddHediff
     {
         public HediffDef hediffDefFrom;
 
