@@ -7,10 +7,10 @@ namespace AnomaliesExpected
     public class CompProperties_MeatGrinder : CompProperties_Interactable
     {
         public float nonHumanMult = 0.1f;
-        public int tickPerBody = 180000;
-        public int tickPerForced = 30000;
+        public int tickPerBody = 90000;
+        public int tickPerForced = 60000;
         public int tickMax = 1080000;
-        public int tickMin = -180000;
+        public int tickMin = -60000;
         public float butcherEfficiency = 0.75f;
         public List<MeatGrinderMood> Moods;
         public JobDef jobDef;

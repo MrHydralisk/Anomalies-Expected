@@ -18,7 +18,7 @@ namespace AnomaliesExpected
         public List<IntVec3> ConsumtionCells => consumtionCellsCached ?? (consumtionCellsCached = GenRadial.RadialCellsAround(parent.Position, 1.9f, useCenter: false).ToList());
         private List<IntVec3> consumtionCellsCached;
 
-        private List<Corpse> Consumables => ConsumtionCells.SelectMany((IntVec3 iv3) => parent.Map.thingGrid.ThingsListAtFast(iv3)).Where((Thing t) => t is Corpse).Select((Thing t) => t as Corpse).ToList();
+        private List<Corpse> Consumables => ConsumtionCells.SelectMany((IntVec3 iv3) => parent.Map.thingGrid.ThingsListAtFast(iv3)).Where((Thing t) => t is Corpse && Settings.AllowedToAccept(t)).Select((Thing t) => t as Corpse).ToList();
 
         public bool isHaveConsumables => (Consumables?.Count ?? 0) > 0;
 
@@ -31,6 +31,9 @@ namespace AnomaliesExpected
         private int TickForced;
 
         private int TickDiff => Mathf.Max(Mathf.Min(Find.TickManager.TicksGame - TickFrom, Props.tickMax), Props.tickMin);
+
+        public StorageSettings Settings => settingsCached ?? (settingsCached = createStorageSettings());
+        public StorageSettings settingsCached;
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
@@ -70,7 +73,7 @@ namespace AnomaliesExpected
                     if (Find.TickManager.TicksGame >= TickForced)
                     {
                         MeatGrinderMood mood = currMood;
-                        float timeTillNext = 60000;
+                        float timeTillNext = Props.tickPerForced;
                         if (mood == null)
                         {
                             timeTillNext = timeTillNext * 2;
@@ -84,6 +87,17 @@ namespace AnomaliesExpected
                     }
                 }
             }
+        }
+
+        public StorageSettings createStorageSettings()
+        {
+            StorageSettings sSettings = new StorageSettings();
+            sSettings.SetFromPreset(StorageSettingsPreset.CorpseStockpile);
+            sSettings.filter.SetAllow(ThingCategoryDefOf.CorpsesMechanoid, allow: false);
+            sSettings.filter.SetAllow(ThingCategoryDefOfLocal.CorpsesEntity, allow: false);
+            sSettings.filter.SetAllow(SpecialThingFilterDefOf.AllowCorpsesUnnatural, allow: false);
+            sSettings.filter.SetAllow(SpecialThingFilterDefOfLocal.AllowRotten, allow: false);
+            return sSettings;
         }
 
         public void AffectMoodTimer(int valueAdd)
