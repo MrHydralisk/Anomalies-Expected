@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<AnomaliesExpected.MeatGrinder.Consumed>{1} of {0} was consumed by {2}</AnomaliesExpected.MeatGrinder.Consumed>
+	<AnomaliesExpected.MeatGrinder.ConsumedFully>{0} was fully consumed by {1}</AnomaliesExpected.MeatGrinder.ConsumedFully>
+	<AnomaliesExpected.MeatGrinder.Noise>Noise: {0} dB</AnomaliesExpected.MeatGrinder.Noise>
+</LanguageData>

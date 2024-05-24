@@ -196,7 +196,7 @@
 		<canOverlapZones>false</canOverlapZones>
 		<minifiedDef>MinifiedThing</minifiedDef>
 		<thingCategories>
-		  <li>BuildingsFurniture</li>
+			<li>BuildingsFurniture</li>
 		</thingCategories>
 		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
 		<altitudeLayer>Building</altitudeLayer>
@@ -235,7 +235,8 @@
 
 				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
 				<fleckOnUsedScale>4</fleckOnUsedScale>
-				<soundActivate>PsychicAnimalPulserCast</soundActivate>
+				<soundActivate>FlickSwitch</soundActivate>
+				<soundConsume>AE_ButcherCorpseFlesh</soundConsume>
 
 				<targetingParameters>
 					<canTargetBuildings>false</canTargetBuildings>
@@ -244,12 +245,14 @@
 					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
 				</targetingParameters>
 				
+				<jobDef>AE_CalledMeatGrinder</jobDef>
+				
 				<Moods>
 					<li>
 						<tick>720000</tick>
 						<tickConsumed>360000</tickConsumed>
 						<isDanger>true</isDanger>
-						<Label>130</Label>
+						<noise>130</noise>
 						<butcherEfficiency>1.75</butcherEfficiency>
 					</li>
 					<li>
@@ -259,7 +262,7 @@
 							<li>Arm</li>
 							<li>Leg</li>
 						</bodyPartDefs>
-						<Label>90</Label>
+						<noise>90</noise>
 						<butcherEfficiency>1.5</butcherEfficiency>
 					</li>
 					<li>
@@ -269,7 +272,7 @@
 							<li>Hand</li>
 							<li>Foot</li>
 						</bodyPartDefs>
-						<Label>60</Label>
+						<noise>60</noise>
 						<butcherEfficiency>1.25</butcherEfficiency>
 					</li>
 					<li>
@@ -278,7 +281,7 @@
 						<bodyPartDefs>
 							<li>Finger</li>
 						</bodyPartDefs>
-						<Label>40</Label>
+						<noise>40</noise>
 						<butcherEfficiency>1</butcherEfficiency>
 					</li>
 				</Moods>

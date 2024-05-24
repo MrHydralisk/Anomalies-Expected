@@ -4,6 +4,8 @@ using System.Linq;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.AI;
+using Verse.Sound;
 
 namespace AnomaliesExpected
 {
@@ -20,14 +22,13 @@ namespace AnomaliesExpected
 
         public bool isHaveConsumables => (Consumables?.Count ?? 0) > 0;
 
-        protected CompStudiable Studiable => studiableCached ?? (studiableCached = parent.TryGetComp<CompStudiable>());
-        private CompStudiable studiableCached;
-
         public bool isActive;
 
         public MeatGrinderMood currMood => Props.Moods.FirstOrDefault((MeatGrinderMood mgm) => TickDiff > mgm.tick);
 
         private int TickFrom;
+
+        private int TickForced;
 
         private int TickDiff => Mathf.Max(Mathf.Min(Find.TickManager.TicksGame - TickFrom, Props.tickMax), Props.tickMin);
 
@@ -37,28 +38,50 @@ namespace AnomaliesExpected
             if (!respawningAfterLoad)
             {
                 TickFrom = Find.TickManager.TicksGame;
+                TickForced = Find.TickManager.TicksGame + 180000;
             }
         }
 
         public override void CompTick()
         {
             base.CompTick();
-            if (isActive && Find.TickManager.TicksGame % 250 == 0)
+            if (Find.TickManager.TicksGame % 250 == 0)
             {
-                bool isConsumed = false;
-                if (isHaveConsumables)
+                if (isActive)
                 {
-                    foreach (Corpse consumable in Consumables)
+                    bool isConsumed = false;
+                    if (isHaveConsumables)
                     {
-                        Butcher(consumable);
-                        isConsumed = true;
-                        break;
+                        foreach (Corpse consumable in Consumables)
+                        {
+                            Butcher(consumable);
+                            isConsumed = true;
+                            break;
+                        }
+                    }
+                    if (!isConsumed)
+                    {
+                        isActive = false;
+                        StartCooldown();
                     }
                 }
-                if (!isConsumed)
+                else
                 {
-                    isActive = false;
-                    StartCooldown();
+                    if (Find.TickManager.TicksGame >= TickForced)
+                    {
+                        MeatGrinderMood mood = currMood;
+                        float timeTillNext = 60000;
+                        if (mood == null)
+                        {
+                            timeTillNext = timeTillNext * 2;
+                        }
+                        else
+                        {
+                            CallMeatGrinder();
+                            timeTillNext = timeTillNext * (60f / mood.noise);
+                        }
+                        TickForced = Find.TickManager.TicksGame + (int)(timeTillNext * (0.5f + Rand.Value));
+                    }
                 }
             }
         }
@@ -67,6 +90,10 @@ namespace AnomaliesExpected
         {
             TickFrom = Mathf.Min(Mathf.Max(TickFrom + valueAdd, Find.TickManager.TicksGame - Props.tickMax), Find.TickManager.TicksGame - Props.tickMin);
             FilthMaker.TryMakeFilth(parent.Position, parent.Map, ThingDefOf.Filth_Blood, (int)(valueAdd / 1000f));
+            if (!Props.soundConsume.NullOrUndefined())
+            {
+                Props.soundConsume.PlayOneShot(SoundInfo.InMap(parent));
+            }
         }
 
         protected override void StartCooldown()
@@ -105,8 +132,9 @@ namespace AnomaliesExpected
                 bool isConsumed = false;
                 if (mood.isDanger)
                 {
+                    Messages.Message("AnomaliesExpected.MeatGrinder.ConsumedFully".Translate(caster.LabelCap, this.parent.LabelCap).RawText, this.parent, MessageTypeDefOf.NegativeEvent);
                     caster.Kill(new DamageInfo(DamageDefOf.Cut, 500, instigator: this.parent));
-                    caster.Destroy();
+                    caster.Corpse.Destroy();
                     isConsumed = true;
                 }
                 else
@@ -114,7 +142,10 @@ namespace AnomaliesExpected
                     IEnumerable<BodyPartRecord> bodyParts = caster.health.hediffSet.GetNotMissingParts().Where((BodyPartRecord bpr) => mood.bodyPartDefs.Contains(bpr.def));
                     if (bodyParts.Count() > 0)
                     {
-                        DamageWorker.DamageResult damageResult = caster.TakeDamage(new DamageInfo(DamageDefOf.Cut, 500, hitPart: bodyParts.RandomElement(), instigator: this.parent));
+                        DamageInfo dm = new DamageInfo(DamageDefOf.Cut, 500, hitPart: bodyParts.RandomElement(), instigator: this.parent);
+                        dm.SetAllowDamagePropagation(false);
+                        DamageWorker.DamageResult damageResult = caster.TakeDamage(dm);
+                        Messages.Message("AnomaliesExpected.MeatGrinder.Consumed".Translate(caster.LabelCap, damageResult.LastHitPart.Label, this.parent.LabelCap).RawText, this.parent, MessageTypeDefOf.NegativeEvent);
                         isConsumed = true;
                     }
                 }
@@ -122,6 +153,21 @@ namespace AnomaliesExpected
                 {
                     AffectMoodTimer(mood.tickConsumed);
                 }
+            }
+        }
+
+        public void CallMeatGrinder()
+        {
+            Job job = JobMaker.MakeJob(Props.jobDef, parent);
+            parent.Map?.mapPawns?.FreeColonists?.RandomElement().jobs.TryTakeOrderedJob(job, JobTag.Misc);
+
+            if (!Props.soundActivate.NullOrUndefined())
+            {
+                Props.soundActivate.PlayOneShot(SoundInfo.InMap(parent));
+            }
+            if (Props.fleckOnUsed != null)
+            {
+                FleckMaker.AttachedOverlay(this.parent, Props.fleckOnUsed, Vector3.zero, Props.fleckOnUsedScale * 1.5f);
             }
         }
 
@@ -158,6 +204,44 @@ namespace AnomaliesExpected
                     action = CreateCorpseStockpile
                 };
             }
+            if (DebugSettings.ShowDevGizmos)
+            {
+                yield return new Command_Action
+                {
+                    action = delegate
+                    {
+                        CallMeatGrinder();
+                    },
+                    defaultLabel = "Dev: Call",
+                    defaultDesc = "Call Pawn to press button"
+                }; 
+                yield return new Command_Action
+                {
+                    action = delegate
+                    {
+                        TickForced -= 2500;
+                    },
+                    defaultLabel = "Dev: Decrease Call",
+                    defaultDesc = $"Decrease timer till call Pawn to press button: {(TickForced - Find.TickManager.TicksGame).ToStringTicksToDays()}"
+                }; 
+                yield return new Command_Action
+                {
+                    action = delegate
+                    {
+                        Log.Message($"MeatGrinder at {Find.TickManager.TicksGame}:\nisActive {isActive}\nTickFrom {TickFrom}\nTickForced {TickForced}");
+                    },
+                    defaultLabel = "Dev: Log",
+                    defaultDesc = $"Log values: {Find.TickManager.TicksGame}:\nisActive {isActive}\nTickFrom {TickFrom}/{(Find.TickManager.TicksGame - TickFrom).ToStringTicksToDays()}\nTickForced {TickForced}/{(TickForced - Find.TickManager.TicksGame).ToStringTicksToDays()}"
+                }; 
+            }
+        }
+
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+            Scribe_Values.Look(ref isActive, "isActive", false);
+            Scribe_Values.Look(ref TickFrom, "TickFrom", Find.TickManager.TicksGame);
+            Scribe_Values.Look(ref TickForced, "TickForced", Find.TickManager.TicksGame);
         }
 
         protected override void OnInteracted(Pawn caster)
@@ -184,7 +268,7 @@ namespace AnomaliesExpected
         {
             List<string> inspectStrings = new List<string>();
             MeatGrinderMood mood = currMood;
-            inspectStrings.Add($"Noise: {mood?.Label ?? "0"} dB");
+            inspectStrings.Add("AnomaliesExpected.MeatGrinder.Noise".Translate(mood?.noise ?? 0).RawText);
             return String.Join("\n", inspectStrings);
         }
     }

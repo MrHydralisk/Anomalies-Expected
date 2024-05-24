@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<SoundDef>
+		<defName>AE_ButcherCorpseFlesh</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Folder">
+						<clipFolderPath>Interact/Work/Butcher/Butcher_Meat</clipFolderPath>
+					</li>
+				</grains>
+				<volumeRange>12~12</volumeRange>
+				<pitchRange>0.9311765~1.091765</pitchRange>
+				<distRange>25~50</distRange>
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+</Defs>

@@ -54,6 +54,7 @@
     <Compile Include="DefOfLocal\ThingCategoryDefOfLocal.cs" />
     <Compile Include="DefOfLocal\SpecialThingFilterDefOfLocal.cs" />
     <Compile Include="IncidentDefExtension.cs" />
+    <Compile Include="JobDriver_CalledMeatGrinder.cs" />
     <Compile Include="IncidentWorker_DeployThingFromOrbit.cs" />
     <Compile Include="IncidentWorker_DeployFromOrbit.cs" />
     <Compile Include="Comp\CompUseEffect_ReplaceHediff.cs" />

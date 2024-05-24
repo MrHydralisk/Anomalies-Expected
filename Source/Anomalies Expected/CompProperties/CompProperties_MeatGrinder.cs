@@ -13,6 +13,8 @@ namespace AnomaliesExpected
         public int tickMin = -180000;
         public float butcherEfficiency = 0.75f;
         public List<MeatGrinderMood> Moods;
+        public JobDef jobDef;
+        public SoundDef soundConsume;
         public CompProperties_MeatGrinder()
         {
             compClass = typeof(Comp_MeatGrinder);
@@ -26,6 +28,6 @@ namespace AnomaliesExpected
         public List<BodyPartDef> bodyPartDefs;
         public float butcherEfficiency;
         public bool isDanger;
-        public string Label;
+        public int noise;
     }
 }
