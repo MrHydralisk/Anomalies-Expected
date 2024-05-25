@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>GrinderStomach</defName>
+		<label>grinder stomach</label>
+		<labelNoun>a grinder stomach</labelNoun>
+		<description>An installed grinder stomach. A person with this has a much lower chance of getting food poisoning, and is immune to some stomach diseases. An integrated lattice-dust healing system automatically repairs any damage to the artificial organ. It is better than a biological stomach in almost every way.</description>
+		<descriptionHyperlinks><ThingDef>GrinderStomach</ThingDef></descriptionHyperlinks>
+		<spawnThingOnRemoved>GrinderStomach</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<makeImmuneTo>
+					<li>GutWorms</li>
+				</makeImmuneTo>
+				<foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
+				<statFactors>
+					<RawNutritionFactor MayRequire="Ludeon.RimWorld.Biotech">2</RawNutritionFactor>
+				</statFactors>
+				<hungerRateFactor>1.5</hungerRateFactor>
+			</li>
+		</stages>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>2</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<HediffDef ParentName="AddedBodyPartBase">
+		<defName>GrinderJaw</defName>
+		<label>grinder jaw</label>
+		<labelNoun>a grinder jaw</labelNoun>
+		<description>An installed grinder jaw. Made out of biosynthetic bone, with plasteel tooth replacements and a set of micro servomotors for the full range of motion.</description>
+		<descriptionHyperlinks>
+			<ThingDef>GrinderJaw</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>GrinderJaw</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statFactors>
+					<EatingSpeed>2</EatingSpeed>
+				</statFactors>
+				<painOffset>0.15</painOffset>
+				<capMods>
+				  <li>
+					<capacity>Eating</capacity>
+					<postFactor>2</postFactor>
+				  </li>
+				  <li>
+					<capacity>Talking</capacity>
+					<postFactor>0.8</postFactor>
+				  </li>
+				</capMods>
+			</li>
+		</stages>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>2</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>grinder jaw</label>
+						<capacities>
+							<li>Bite</li>
+						</capacities>
+						<power>32</power>
+						<chanceFactor>0.3</chanceFactor>
+						<cooldownTime>2</cooldownTime>
+						<soundMeleeHit>Pawn_Melee_PowerClaw_Hit</soundMeleeHit>
+						<soundMeleeMiss>Pawn_Melee_PowerClaw_Miss</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+		</comps>
+	</HediffDef>
+	
+</Defs>

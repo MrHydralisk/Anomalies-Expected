@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallGrinderStomach</defName>
+		<label>install grinder stomach</label>
+		<description>Install a grinder stomach.</description>
+		<descriptionHyperlinks>
+			<ThingDef>GrinderStomach</ThingDef>
+			<HediffDef>GrinderStomach</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing grinder stomach.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>GrinderStomach</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>GrinderStomach</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Stomach</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>GrinderStomach</addsHediff>
+	</RecipeDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallGrinderJaw</defName>
+		<label>Install grinder jaw</label>
+		<description>Install grinder jaw.</description>
+		<jobString>Installing grinder jaw.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>GrinderJaw</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>GrinderJaw</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Jaw</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>GrinderJaw</addsHediff>
+	</RecipeDef>
+
+</Defs>

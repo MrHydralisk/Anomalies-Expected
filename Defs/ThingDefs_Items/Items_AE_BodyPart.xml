@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef Name="BodyPartAnomalyAEBase" ParentName="BodyPartBase" Abstract="True">
+		<techLevel>Industrial</techLevel>
+		<thingCategories>
+			<li>BodyParts</li>
+		</thingCategories>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(107,56,76)</color>
+		</graphicData>
+		<tradeTags>
+			<li>AEbodyPart</li>
+		</tradeTags>
+		<techHediffsTags>
+			<li>Advanced</li>
+		</techHediffsTags>
+		<statBases>
+			<WorkToMake>32000</WorkToMake>
+		</statBases>
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<unfinishedThingDef>UnfinishedHealthItemAnomalyAE</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>Bionics</researchPrerequisite>
+			<recipeUsers>
+				<li>FabricationBench</li>
+			</recipeUsers>
+			<displayPriority>1300</displayPriority>
+		</recipeMaker>
+	</ThingDef>
+	
+	<ThingDef ParentName="UnfinishedBase">
+		<defName>UnfinishedHealthItemAnomalyAE</defName>
+		<label>unfinished anomaly part</label>
+		<description>An unfinished anomaly part.</description>
+		<statBases>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Item/Unfinished/UnfinishedHealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<color>(107,56,76)</color>
+		</graphicData>
+		<stuffCategories Inherit="false"/>
+	</ThingDef>
+
+	<ThingCategoryDef>
+		<defName>BodyPartsAnomalyAE</defName>
+		<label>anomaly</label>
+		<parent>BodyParts</parent>
+	</ThingCategoryDef>
+
+	<ThingDef ParentName="BodyPartAnomalyAEBase">
+		<defName>GrinderStomach</defName>
+		<label>grinder stomach</label>
+		<description>An advanced artificial stomach with sensors and chemical synthesizers that efficiently digest nearly any energy-bearing foodstuff. A person with this has a much lower chance of getting food poisoning, and is immune to some stomach diseases. An integrated lattice-dust healing system automatically repairs any damage to the artificial organ. It is better than a biological stomach in almost every way.</description>
+		<descriptionHyperlinks><RecipeDef>InstallGrinderStomach</RecipeDef></descriptionHyperlinks>
+		<costList>
+			<Meat_Twisted>100</Meat_Twisted>
+			<ComponentSpacer>3</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>2</Mass>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>Bionics</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<ThingDef ParentName="BodyPartAnomalyAEBase">
+		<defName>GrinderJaw</defName>
+		<label>grinder jaw</label>
+		<description>An artificial jaw replacement. Made out of biosynthetic bone, with plasteel tooth replacements and a set of micro servomotors for the full range of motion.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallGrinderJaw</RecipeDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Meat_Twisted>75</Meat_Twisted>
+			<ComponentSpacer>2</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>1.5</Mass>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>Bionics</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+  
+</Defs>
