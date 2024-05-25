@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using RimWorld.Planet;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -34,6 +35,9 @@ namespace AnomaliesExpected
 
         public StorageSettings Settings => settingsCached ?? (settingsCached = createStorageSettings());
         public StorageSettings settingsCached;
+
+        protected CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = parent.TryGetComp<CompAEStudyUnlocks>());
+        private CompAEStudyUnlocks studyUnlocksCached;
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
@@ -228,15 +232,74 @@ namespace AnomaliesExpected
                     },
                     defaultLabel = "Dev: Call",
                     defaultDesc = "Call Pawn to press button"
-                }; 
+                };
                 yield return new Command_Action
                 {
                     action = delegate
                     {
-                        TickForced -= 2500;
+                        List<FloatMenuOption> floatMenuOptions = new List<FloatMenuOption>();
+                        floatMenuOptions.Add(new FloatMenuOption("Increase by 3d", delegate
+                        {
+                            TickFrom -= 180000;
+                        }));
+                        floatMenuOptions.Add(new FloatMenuOption("Increase by 1d", delegate
+                        {
+                            TickFrom -= 60000;
+                        }));
+                        floatMenuOptions.Add(new FloatMenuOption("Increase by 1h", delegate
+                        {
+                            TickFrom -= 2500;
+                        }));
+                        floatMenuOptions.Add(new FloatMenuOption("Decrease by 1h", delegate
+                        {
+                            TickFrom += 2500;
+                        }));
+                        floatMenuOptions.Add(new FloatMenuOption("Decrease by 1d", delegate
+                        {
+                            TickFrom += 60000;
+                        }));
+                        floatMenuOptions.Add(new FloatMenuOption("Decrease by 3d", delegate
+                        {
+                            TickFrom += 180000;
+                        }));
+                        Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
                     },
-                    defaultLabel = "Dev: Decrease Call",
-                    defaultDesc = $"Decrease timer till call Pawn to press button: {(TickForced - Find.TickManager.TicksGame).ToStringTicksToDays()}"
+                    defaultLabel = "Dev: Change Mood",
+                    defaultDesc = $"Change timer for Mood: {TickDiff.ToStringTicksToDays()}"
+                };
+                yield return new Command_Action
+                {
+                    action = delegate
+                    {
+                        List<FloatMenuOption> floatMenuOptions = new List<FloatMenuOption>();
+                        floatMenuOptions.Add(new FloatMenuOption("Increase by 3d", delegate
+                        {
+                            TickForced += 180000;
+                        }));
+                        floatMenuOptions.Add(new FloatMenuOption("Increase by 1d", delegate
+                        {
+                            TickForced += 60000;
+                        }));
+                        floatMenuOptions.Add(new FloatMenuOption("Increase by 1h", delegate
+                        {
+                            TickForced += 2500;
+                        }));
+                        floatMenuOptions.Add(new FloatMenuOption("Decrease by 1h", delegate
+                        {
+                            TickForced -= 2500;
+                        }));
+                        floatMenuOptions.Add(new FloatMenuOption("Decrease by 1d", delegate
+                        {
+                            TickForced -= 60000;
+                        }));
+                        floatMenuOptions.Add(new FloatMenuOption("Decrease by 3d", delegate
+                        {
+                            TickForced -= 180000;
+                        }));
+                        Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
+                    },
+                    defaultLabel = "Dev: Change Call",
+                    defaultDesc = $"Change timer till call Pawn to press button: {(TickForced - Find.TickManager.TicksGame).ToStringTicksToDays()}"
                 }; 
                 yield return new Command_Action
                 {
@@ -281,8 +344,21 @@ namespace AnomaliesExpected
         public override string CompInspectStringExtra()
         {
             List<string> inspectStrings = new List<string>();
-            MeatGrinderMood mood = currMood;
-            inspectStrings.Add("AnomaliesExpected.MeatGrinder.Noise".Translate(mood?.noise ?? 0).RawText);
+            int study = StudyUnlocks?.NextIndex ?? 3;
+            if (study > 0)
+            {
+                MeatGrinderMood mood = currMood;
+                inspectStrings.Add("AnomaliesExpected.MeatGrinder.Noise".Translate(mood?.noise ?? 0).RawText);
+                if (study > 1 && (mood?.bodyPartDefs?.Count() ?? 0) > 0 )
+                {
+                    inspectStrings.Add("AnomaliesExpected.MeatGrinder.BodyParts".Translate(String.Join(", ", mood.bodyPartDefs.Select(b => b.LabelCap))).RawText);
+                }
+                if (study > 2 && (mood?.isDanger ?? false))
+                {
+                    inspectStrings.Add("AnomaliesExpected.MeatGrinder.Danger".Translate().RawText);
+                }
+            }
+            inspectStrings.Add(base.CompInspectStringExtra());
             return String.Join("\n", inspectStrings);
         }
     }

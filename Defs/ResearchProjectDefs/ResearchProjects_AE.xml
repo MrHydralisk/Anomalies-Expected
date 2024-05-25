@@ -71,8 +71,8 @@
 			<li>SerumSynthesis</li>
 		</prerequisites>
 		<knowledgeCost>25</knowledgeCost>
-		<knowledgeCategory>Basic</knowledgeCategory>
-		<researchViewX>0</researchViewX>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>1</researchViewX>
 		<researchViewY>1</researchViewY>
 		<generalRules>
 			<rulesStrings>
@@ -81,6 +81,55 @@
 				<li>subject_story->no longer afraid of giant apple</li>
 
 				<li>subject_gerund->synthesizing giant apple inhibitor serums</li>
+			</rulesStrings>
+		</generalRules>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>AEGrinderStomach</defName>
+		<label>grinder stomach</label>
+		<description>Produce grinder stomach, which replicate Meat Grinder structure.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>Prosthetics</li>
+		</prerequisites>
+		<knowledgeCost>10</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>1</researchViewX>
+		<researchViewY>2</researchViewY>
+		<generalRules>
+			<rulesStrings>
+				<li>subject->grinder stomach</li>
+
+				<li>subject_story->could finally win every eating challenge</li>
+				<li>subject_story->won every "Worst Dinner Guest" award</li>
+
+				<li>subject_gerund->creating grinder stomach</li>
+			</rulesStrings>
+		</generalRules>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>AEGrinderJaw</defName>
+		<label>grinder jaw</label>
+		<description>Produce grinder jaw, which replicate Meat Grinder structure.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>AEGrinderStomach</li>
+		</prerequisites>
+		<knowledgeCost>15</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>2</researchViewX>
+		<researchViewY>2</researchViewY>
+		<generalRules>
+			<rulesStrings>
+				<li>subject->grinder jaw</li>
+
+				<li>subject_story->could literally eat anything</li>
+				<li>subject_story->was a lifesaver on long missions... until he accidentally ate a spaceship crew</li>
+				<li>subject_story->could mince a steak in seconds</li>
+
+				<li>subject_gerund->creating grinder jaw</li>
 			</rulesStrings>
 		</generalRules>
 	</ResearchProjectDef>
