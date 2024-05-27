@@ -344,16 +344,16 @@ namespace AnomaliesExpected
         public override string CompInspectStringExtra()
         {
             List<string> inspectStrings = new List<string>();
-            int study = StudyUnlocks?.NextIndex ?? 3;
-            if (study > 0)
+            int study = StudyUnlocks?.NextIndex ?? 4;
+            if (study > 1)
             {
                 MeatGrinderMood mood = currMood;
                 inspectStrings.Add("AnomaliesExpected.MeatGrinder.Noise".Translate(mood?.noise ?? 0).RawText);
-                if (study > 1 && (mood?.bodyPartDefs?.Count() ?? 0) > 0 )
+                if (study > 2 && (mood?.bodyPartDefs?.Count() ?? 0) > 0 )
                 {
                     inspectStrings.Add("AnomaliesExpected.MeatGrinder.BodyParts".Translate(String.Join(", ", mood.bodyPartDefs.Select(b => b.LabelCap))).RawText);
                 }
-                if (study > 2 && (mood?.isDanger ?? false))
+                if (study > 3 && (mood?.isDanger ?? false))
                 {
                     inspectStrings.Add("AnomaliesExpected.MeatGrinder.Danger".Translate().RawText);
                 }
