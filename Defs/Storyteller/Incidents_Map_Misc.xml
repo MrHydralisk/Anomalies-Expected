@@ -21,7 +21,7 @@
 			<li Class="AnomaliesExpected.IncidentDefExtension">
 				<DeployableObjectDef>AE_AnomalyBed</DeployableObjectDef>
 				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
-				<ChanceFactorPowPerBuilding>0.7</ChanceFactorPowPerBuilding>
+				<ChanceFactorPowPerBuilding>0.3</ChanceFactorPowPerBuilding>
 			</li>
 		</modExtensions>
 	</IncidentDef>
@@ -62,10 +62,10 @@
 		<letterLabel>Found giant apple</letterLabel>
 		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a quite giant apple.</letterText>
 		<letterDef>NeutralEvent</letterDef>
-		<earliestDay>10</earliestDay>
+		<earliestDay>30</earliestDay>
 		<baseChance>0.2</baseChance>
 		<requireColonistsPresent>True</requireColonistsPresent>
-		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+		<minAnomalyThreatLevel>0</minAnomalyThreatLevel>
 		<minRefireDays>120</minRefireDays>
 		<modExtensions>
 			<li Class="AnomaliesExpected.IncidentDefExtension">
@@ -75,6 +75,31 @@
 				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
 				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
 				<ChanceFactorPowPerBuilding>0.7</ChanceFactorPowPerBuilding>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_MeatGrinderSpawn</defName>
+		<label>industrial metal box</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromOrbit</workerClass>
+		<letterLabel>Found industrial metal box</letterLabel>
+		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like an industrial-looking metal box as tall as a table. Several small doors interrupt the smooth surface on its sides, while a big hole with hidden inside blades sits atop it. A lone button rests next to the hole, hinting at some unknown function.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>60</earliestDay>
+		<baseChance>0.1</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+		<minRefireDays>120</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableObjectDef>AE_MeatGrinder</DeployableObjectDef>
+				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>0.3</ChanceFactorPowPerBuilding>
 			</li>
 		</modExtensions>
 	</IncidentDef>

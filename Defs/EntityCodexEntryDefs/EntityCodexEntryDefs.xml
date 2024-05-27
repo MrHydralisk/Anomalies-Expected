@@ -55,4 +55,23 @@
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>
 
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_MeatGrinder</defName>
+		<label>industrial metal box</label>
+		<category>Advanced</category>
+		<uiIconPath>UI/CodexEntries/AE_MeatGrinder</uiIconPath>
+		<useDescriptionFrom>AE_MeatGrinder</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_MeatGrinder</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_MeatGrinderSpawn</li>
+		</provocationIncidents>
+		<discoveredResearchProjects>
+			<li>AEGrinderStomach</li>
+			<li>AEGrinderJaw</li>
+		</discoveredResearchProjects>
+		<orderInCategory>1300</orderInCategory>
+	</EntityCodexEntryDef>
+
 </Defs>
