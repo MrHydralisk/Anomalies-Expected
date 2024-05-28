@@ -439,6 +439,74 @@
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/ResearchProjectDef[defName="AEFruitInhibitorSerum"]/knowledgeCategory</xpath>
 				</li>
+				
+				
+				
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/EntityCodexEntryDef[defName="AE_EntityCodexEntry_MeatGrinder"]</xpath>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="AE_MeatGrinder"]/costList</xpath>
+					<value>
+						<costList>
+							<Steel>45</Steel>
+						</costList>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="AE_MeatGrinder"]/killedLeavings</xpath>
+					<value>
+						<killedLeavings>
+							<AEGrinderJaw>1</AEGrinderJaw>
+							<AEGrinderStomach>1</AEGrinderStomach>
+							<Meat_Human>150</Meat_Human>
+						</killedLeavings>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="AE_MeatGrinder"]/comps/li[2]/knowledgeCategory</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="AE_MeatGrinder"]/comps/li[3]</xpath>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="AEGrinderStomach"]/costList</xpath>
+					<value>
+						<costList>
+							<Meat_Human>75</Meat_Human>
+							<Steel>25</Steel>
+							<ComponentIndustrial>1</ComponentIndustrial>
+						</costList>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="AEGrinderJaw"]/costList</xpath>
+					<value>
+						<costList>
+							<Meat_Human>100</Meat_Human>
+							<Steel>35</Steel>
+							<ComponentIndustrial>1</ComponentIndustrial>
+						</costList>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ResearchProjectDef[defName="AEGrinderStomach" or defName="AEGrinderJaw"]</xpath>
+					<value>
+						<techLevel>Industrial</techLevel>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ResearchProjectDef[defName="AEGrinderStomach" or defName="AEGrinderJaw"]</xpath>
+					<value>
+						<baseCost>750</baseCost>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ResearchProjectDef[defName="AEGrinderStomach" or defName="AEGrinderJaw"]/knowledgeCost</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ResearchProjectDef[defName="AEGrinderStomach" or defName="AEGrinderJaw"]/knowledgeCategory</xpath>
+				</li>
 			</operations>
 		</nomatch>
 	</Operation>
