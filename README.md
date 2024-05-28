@@ -13,7 +13,7 @@ On some study notes label and description of anomaly might change to fit the cur
 
 Currently available:
 * 2 Anomaly of basic category
-* 1 Anomaly of advanced category
+* 2 Anomaly of advanced category
 
 ### Ordinary Bed
 
@@ -23,11 +23,13 @@ Currently available:
 
 *Your colonist noticed some object falling from the sky nearby. At close inspection it seems like an ordinary bed specially designed for use in hospitals, but with frame made of organic metal. Medical clipboard lying on the bed with some text written on it.*
 
-More anomalies in development and will be added, when ready.
-
 ### Giant Apple
 
 *Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a quite giant apple.*
+
+### Industrial Metal Box
+
+*Your colonist noticed some object falling from the sky nearby. At close inspection it seems like an industrial-looking metal box as tall as a table. Several small doors interrupt the smooth surface on its sides, while a big hole with hidden inside blades sits atop it. A lone button rests next to the hole, hinting at some unknown function.*
 
 More anomalies in development and will be added, when ready.
 
@@ -51,4 +53,4 @@ Anomalies Expected mod should be safe to add to existing save. But when you want
 
 ## To Do
 
-New 4+ anomalies
+New 2+ anomalies

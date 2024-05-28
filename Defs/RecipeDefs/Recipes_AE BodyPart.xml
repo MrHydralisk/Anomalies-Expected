@@ -35,6 +35,10 @@
 		<defName>InstallAEGrinderJaw</defName>
 		<label>Install grinder jaw</label>
 		<description>Install grinder jaw.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AEGrinderJaw</ThingDef>
+			<HediffDef>AEGrinderJaw</HediffDef>
+		</descriptionHyperlinks>
 		<jobString>Installing grinder jaw.</jobString>
 		<ingredients>
 			<li>

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
-using RimWorld.Planet;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -14,7 +13,7 @@ namespace AnomaliesExpected
     {
         public new CompProperties_MeatGrinder Props => (CompProperties_MeatGrinder)props;
 
-        public static readonly CachedTexture CreateCorpseStockpileIcon = new CachedTexture("UI/Icons/CorpseStockpileZone");
+        public static readonly CachedTexture CreateCorpseStockpileIcon = new CachedTexture(ModsConfig.AnomalyActive ? "UI/Icons/CorpseStockpileZone" : "UI/Designators/ZoneCreate_Stockpile");
 
         public List<IntVec3> ConsumtionCells => consumtionCellsCached ?? (consumtionCellsCached = GenRadial.RadialCellsAround(parent.Position, 1.9f, useCenter: false).ToList());
         private List<IntVec3> consumtionCellsCached;
@@ -98,8 +97,11 @@ namespace AnomaliesExpected
             StorageSettings sSettings = new StorageSettings();
             sSettings.SetFromPreset(StorageSettingsPreset.CorpseStockpile);
             sSettings.filter.SetAllow(ThingCategoryDefOf.CorpsesMechanoid, allow: false);
-            sSettings.filter.SetAllow(ThingCategoryDefOfLocal.CorpsesEntity, allow: false);
-            sSettings.filter.SetAllow(SpecialThingFilterDefOf.AllowCorpsesUnnatural, allow: false);
+            if (ModsConfig.AnomalyActive)
+            {
+                sSettings.filter.SetAllow(ThingCategoryDefOfLocal.CorpsesEntity, allow: false);
+                sSettings.filter.SetAllow(SpecialThingFilterDefOf.AllowCorpsesUnnatural, allow: false);
+            }
             sSettings.filter.SetAllow(SpecialThingFilterDefOfLocal.AllowRotten, allow: false);
             return sSettings;
         }
@@ -193,8 +195,11 @@ namespace AnomaliesExpected
         {
             Zone_Stockpile stockpile = new Zone_Stockpile(StorageSettingsPreset.CorpseStockpile, parent.Map.zoneManager);
             stockpile.settings.filter.SetAllow(ThingCategoryDefOf.CorpsesMechanoid, allow: false);
-            stockpile.settings.filter.SetAllow(ThingCategoryDefOfLocal.CorpsesEntity, allow: false);
-            stockpile.settings.filter.SetAllow(SpecialThingFilterDefOf.AllowCorpsesUnnatural, allow: false);
+            if (ModsConfig.AnomalyActive)
+            {
+                stockpile.settings.filter.SetAllow(ThingCategoryDefOfLocal.CorpsesEntity, allow: false);
+                stockpile.settings.filter.SetAllow(SpecialThingFilterDefOf.AllowCorpsesUnnatural, allow: false);
+            }
             stockpile.settings.filter.SetAllow(SpecialThingFilterDefOfLocal.AllowRotten, allow: false);
             parent.Map.zoneManager.RegisterZone(stockpile);
             foreach (IntVec3 c in ConsumtionCells)

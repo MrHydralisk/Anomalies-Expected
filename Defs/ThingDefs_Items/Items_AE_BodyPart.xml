@@ -4,7 +4,7 @@
 	<ThingDef Name="BodyPartAnomalyAEBase" ParentName="BodyPartBase" Abstract="True">
 		<techLevel>Industrial</techLevel>
 		<thingCategories>
-			<li>BodyParts</li>
+			<li>BodyPartsAnomalyAE</li>
 		</thingCategories>
 		<graphicData>
 			<texPath>Things/Item/Health/HealthItem</texPath>
