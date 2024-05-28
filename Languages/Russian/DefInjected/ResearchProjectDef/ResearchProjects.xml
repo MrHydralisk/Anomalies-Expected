@@ -24,5 +24,22 @@
 	<AEFruitInhibitorSerum.generalRules.rulesStrings.0>subject->сыворотка-ингибитор огромного яблока</AEFruitInhibitorSerum.generalRules.rulesStrings.0>
 	<AEFruitInhibitorSerum.generalRules.rulesStrings.1>subject_story->больше не боится огромного яблока</AEFruitInhibitorSerum.generalRules.rulesStrings.1>
 	<AEFruitInhibitorSerum.generalRules.rulesStrings.2>subject_gerund->синтезируется сыворотка-ингибитор огромного яблока</AEFruitInhibitorSerum.generalRules.rulesStrings.2>
+	
+	
+	
+	<AEGrinderStomach.label>желудок-измельчитель</AEGrinderStomach.label>
+	<AEGrinderStomach.description>Создать желудок-измельчитель, повторяющий структуру мясорубки</AEGrinderStomach.description>
+	<AEGrinderStomach.generalRules.rulesStrings.0>желудок-измельчитель</AEGrinderStomach.generalRules.rulesStrings.0>
+	<AEGrinderStomach.generalRules.rulesStrings.1>может, наконец, выиграть все соревнования по поеданию</AEGrinderStomach.generalRules.rulesStrings.1>
+	<AEGrinderStomach.generalRules.rulesStrings.2>выиграл каждую награду «Худший гость на званом ужине»</AEGrinderStomach.generalRules.rulesStrings.2>
+	<AEGrinderStomach.generalRules.rulesStrings.3>создание желудка-измельчителя</AEGrinderStomach.generalRules.rulesStrings.3>
+
+	<AEGrinderJaw.label>челюсть-измельчитель</AEGrinderJaw.label>
+	<AEGrinderJaw.description>Создать челюсть-измельчитель, повторяющие структуру мясорубки</AEGrinderJaw.description>
+	<AEGrinderJaw.generalRules.rulesStrings.0>челюсть-измельчитель</AEGrinderJaw.generalRules.rulesStrings.0>
+	<AEGrinderJaw.generalRules.rulesStrings.1>может буквально съесть всё что угодно</AEGrinderJaw.generalRules.rulesStrings.1>
+	<AEGrinderJaw.generalRules.rulesStrings.2>был спасателем в длительных миссиях... пока случайно не съел экипаж космического корабля</AEGrinderJaw.generalRules.rulesStrings.2>
+	<AEGrinderJaw.generalRules.rulesStrings.3>может прожевать целый стейк за секунды</AEGrinderJaw.generalRules.rulesStrings.3>
+	<AEGrinderJaw.generalRules.rulesStrings.4>создание челюсти-измельчителя</AEGrinderJaw.generalRules.rulesStrings.4>
 
 </LanguageData>

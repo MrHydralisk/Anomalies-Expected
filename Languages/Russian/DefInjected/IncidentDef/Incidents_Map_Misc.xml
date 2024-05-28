@@ -12,5 +12,9 @@
 	<AE_IncidentDef_ForbiddenFruitSpawn.label>огромное яблоко</AE_IncidentDef_ForbiddenFruitSpawn.label>
 	<AE_IncidentDef_ForbiddenFruitSpawn.letterLabel>Найдена огромное яблоко</AE_IncidentDef_ForbiddenFruitSpawn.letterLabel>
 	<AE_IncidentDef_ForbiddenFruitSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это огромное яблоко.</AE_IncidentDef_ForbiddenFruitSpawn.letterText>
+	
+	<AE_IncidentDef_MeatGrinderSpawn.label>промышленный металлический ящик</AE_IncidentDef_MeatGrinderSpawn.label>
+	<AE_IncidentDef_MeatGrinderSpawn.letterLabel>Найден промышленный металлический ящик</AE_IncidentDef_MeatGrinderSpawn.letterLabel>
+	<AE_IncidentDef_MeatGrinderSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении он похож на индустриальный металлический ящик высотой со стол. Маленькие дверцы прерывают гладкую поверхность по бокам, а сверху находится большое отверстие со скрытыми внутри лезвиями. Рядом с отверстием находится одинокая кнопка, намекающая на какую-то неизвестную функцию.</AE_IncidentDef_MeatGrinderSpawn.letterText>
   
 </LanguageData>

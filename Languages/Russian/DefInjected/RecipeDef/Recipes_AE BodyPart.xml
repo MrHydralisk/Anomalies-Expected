@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+	<InstallAEGrinderStomach.label>установить желудок-измельчитель</InstallAEGrinderStomach.label>
+	<InstallAEGrinderStomach.description>Установит желудок-измельчитель</InstallAEGrinderStomach.description>
+	<InstallAEGrinderStomach.jobString>Устанавливает желудок-измельчитель</InstallAEGrinderStomach.jobString>
+	
+	<InstallAEGrinderJaw.label>установить челюсть-измельчитель</InstallAEGrinderJaw.label>
+	<InstallAEGrinderJaw.description>Установит челюсть-измельчитель</InstallAEGrinderJaw.description>
+	<InstallAEGrinderJaw.jobString>Устанавливает челюсть-измельчитель</InstallAEGrinderJaw.jobString>
+  
+</LanguageData>
