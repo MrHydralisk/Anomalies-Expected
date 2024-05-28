@@ -71,8 +71,8 @@
 			<li>SerumSynthesis</li>
 		</prerequisites>
 		<knowledgeCost>25</knowledgeCost>
-		<knowledgeCategory>Advanced</knowledgeCategory>
-		<researchViewX>1</researchViewX>
+		<knowledgeCategory>Basic</knowledgeCategory>
+		<researchViewX>0</researchViewX>
 		<researchViewY>1</researchViewY>
 		<generalRules>
 			<rulesStrings>
@@ -96,7 +96,7 @@
 		<knowledgeCost>10</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>1</researchViewX>
-		<researchViewY>2</researchViewY>
+		<researchViewY>1</researchViewY>
 		<generalRules>
 			<rulesStrings>
 				<li>subject->grinder stomach</li>
@@ -120,7 +120,7 @@
 		<knowledgeCost>15</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>2</researchViewX>
-		<researchViewY>2</researchViewY>
+		<researchViewY>1</researchViewY>
 		<generalRules>
 			<rulesStrings>
 				<li>subject->grinder jaw</li>
