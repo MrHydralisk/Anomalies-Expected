@@ -18,5 +18,11 @@
 	<AEFruitInhibitorSerum.comps.CompUsable.useLabel>Использовать {0_label}</AEFruitInhibitorSerum.comps.CompUsable.useLabel>
 	<AEFruitInhibitorSerum.ingestible.ingestCommandString>Поглотить {0}</AEFruitInhibitorSerum.ingestible.ingestCommandString>
 	<AEFruitInhibitorSerum.ingestible.ingestReportString>Поглощает {0}</AEFruitInhibitorSerum.ingestible.ingestReportString>
+	
+	<AEBingingFoodSerum.label>сыворотка обжорства</AEBingingFoodSerum.label>
+	<AEBingingFoodSerum.description>Шприц с зелёной вязкой жидкостью. Введенный в пищевод, он стимулирует пищеварительную систему и заставляет человека чувствовать сильный голод к хорошей еде.\n\nЭффект временный и не суммируется.</AEBingingFoodSerum.description>
+	<AEBingingFoodSerum.comps.CompUsable.useLabel>Использовать {0_label}</AEBingingFoodSerum.comps.CompUsable.useLabel>
+	<AEBingingFoodSerum.ingestible.ingestCommandString>Поглотить {0}</AEBingingFoodSerum.ingestible.ingestCommandString>
+	<AEBingingFoodSerum.ingestible.ingestReportString>Поглощает {0}</AEBingingFoodSerum.ingestible.ingestReportString>
 
 </LanguageData>

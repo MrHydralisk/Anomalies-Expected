@@ -132,7 +132,7 @@
 			<drawSize>0.8</drawSize>
 		</graphicData>
 		<statBases>
-			<MarketValue>75</MarketValue>
+			<MarketValue>15</MarketValue>
 		</statBases>
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_UseEffectAddMentalState">

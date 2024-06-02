@@ -6,5 +6,9 @@
 	<AE_EntityCodexEntry_AnomalyHospitalBed.label>обычная медицинская кровать</AE_EntityCodexEntry_AnomalyHospitalBed.label>
 	
 	<AE_EntityCodexEntry_ForbiddenFruit.label>огромное яблоко</AE_EntityCodexEntry_ForbiddenFruit.label>
+	
+	<AE_EntityCodexEntry_MeatGrinder.label>промышленный металлический ящик</AE_EntityCodexEntry_MeatGrinder.label>
+
+	<AE_EntityCodexEntry_BakingPies.label>большой пирог</AE_EntityCodexEntry_BakingPies.label>
 
 </LanguageData>

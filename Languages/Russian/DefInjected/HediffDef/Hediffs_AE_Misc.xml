@@ -20,4 +20,9 @@
 	<Hediff_AEForbiddenFruitWithdrawal.stages.0.label>Прощение</Hediff_AEForbiddenFruitWithdrawal.stages.0.label>
 	<Hediff_AEForbiddenFruitWithdrawal.stages.1.label>Покаяние</Hediff_AEForbiddenFruitWithdrawal.stages.1.label>
   
+  
+  
+	<Hediff_AEDigestingPie.label>переваривание пирога</Hediff_AEDigestingPie.label>
+	<Hediff_AEDigestingPie.description>Ощущение тяжести в желудке.</Hediff_AEDigestingPie.description>
+  
 </LanguageData>

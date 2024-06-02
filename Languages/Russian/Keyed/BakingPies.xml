@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<AnomaliesExpected.BakingPies.Amount>Количество кусков пирога: {0}</AnomaliesExpected.BakingPies.Amount>
+	<AnomaliesExpected.BakingPies.Time>Время до создания кусков пирога: {0}</AnomaliesExpected.BakingPies.Time>
+</LanguageData>
