@@ -15,7 +15,7 @@
 		<earliestDay>10</earliestDay>
 		<baseChance>0.2</baseChance>
 		<requireColonistsPresent>True</requireColonistsPresent>
-		<minAnomalyThreatLevel>0</minAnomalyThreatLevel>
+		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
 		<minRefireDays>60</minRefireDays>
 		<modExtensions>
 			<li Class="AnomaliesExpected.IncidentDefExtension">
@@ -40,7 +40,7 @@
 		<earliestDay>30</earliestDay>
 		<baseChance>0.1</baseChance>
 		<requireColonistsPresent>True</requireColonistsPresent>
-		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
 		<minRefireDays>120</minRefireDays>
 		<modExtensions>
 			<li Class="AnomaliesExpected.IncidentDefExtension">
@@ -65,7 +65,7 @@
 		<earliestDay>30</earliestDay>
 		<baseChance>0.2</baseChance>
 		<requireColonistsPresent>True</requireColonistsPresent>
-		<minAnomalyThreatLevel>0</minAnomalyThreatLevel>
+		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
 		<minRefireDays>120</minRefireDays>
 		<modExtensions>
 			<li Class="AnomaliesExpected.IncidentDefExtension">
@@ -93,7 +93,7 @@
 		<earliestDay>60</earliestDay>
 		<baseChance>0.1</baseChance>
 		<requireColonistsPresent>True</requireColonistsPresent>
-		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
 		<minRefireDays>120</minRefireDays>
 		<modExtensions>
 			<li Class="AnomaliesExpected.IncidentDefExtension">
@@ -106,20 +106,20 @@
   
 	<IncidentDef>
 		<defName>AE_IncidentDef_BakingPiesSpawn</defName>
-		<label>ordinary bed</label>
+		<label>big pie</label>
 		<category>Misc</category>
 		<targetTags>
 			<li>Map_PlayerHome</li>
 		</targetTags>
 		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingFromOrbit</workerClass>
-		<letterLabel>Found ordinary bed</letterLabel>
+		<letterLabel>Found big pie</letterLabel>
 		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a round big pie on a plate. It looks appetizing.</letterText>
 		<letterDef>NeutralEvent</letterDef>
 		<earliestDay>60</earliestDay>
 		<baseChance>0.1</baseChance>
 		<requireColonistsPresent>True</requireColonistsPresent>
-		<minAnomalyThreatLevel>0</minAnomalyThreatLevel>
-		<minRefireDays>120</minRefireDays>
+		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+		<minRefireDays>240</minRefireDays>
 		<modExtensions>
 			<li Class="AnomaliesExpected.IncidentDefExtension">
 				<DeployableThingDefs>
