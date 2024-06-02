@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 	<AnomaliesExpected.BakingPies.Amount>Amount of pie pieces: {0}</AnomaliesExpected.BakingPies.Amount>
+	<AnomaliesExpected.BakingPies.Time>Time till creating new pieces: {0}</AnomaliesExpected.BakingPies.Time>
 </LanguageData>

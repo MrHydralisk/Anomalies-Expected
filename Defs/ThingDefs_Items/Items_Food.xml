@@ -5,7 +5,7 @@
 	<ThingDef>
 		<defName>AE_BakingPies</defName>
 		<label>big pie</label>
-		<description>A normal looking apple, if not for it giant size. Despite its immense size, the apple seems perfectly ripe, its skin giving slightly with the promise of juicy sweetness.\n\nSeems like you can take a bite of it.</description>
+		<description>A round big pie on a plate. It is a baked dish with a pastry crust surrounding the filling.\n\nIt looks appetizing.</description>
 		<thingClass>ThingWithComps</thingClass>
 		<category>Item</category>
 		<genericMarketSellable>false</genericMarketSellable>
@@ -37,85 +37,80 @@
 		<allowedArchonexusCount>1</allowedArchonexusCount>
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_BakingPies">
+				<ticksToActivate>5000</ticksToActivate>
+				<activateTexPath>Things/Item/Consumable/AE_BakingPies</activateTexPath>
+        
+				<activateLabelString>Consume</activateLabelString>
+				<activateDescString>Make someone pour out concentrated stomach acid and fully consume it.</activateDescString>
+				<guiLabelString>Choose who should consume this.</guiLabelString>
+				<jobString>consume</jobString>
+				<activatingStringPending>consuming {0}</activatingStringPending>
+				<activatingString>consuming {0}: {1}s</activatingString>
+
+				<soundActivate>AE_RawVegetableEat</soundActivate>
+				<interactionEffecter>EatVegetarian</interactionEffecter>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
 				<piePiece>AE_BakingPiesPiece</piePiece>
 				<tickPerSpawn>60000</tickPerSpawn>
-			</li>	
-			<!-- <li Class="CompProperties_Interactable"> -->
-				<!-- <compClass>AnomaliesExpected.Comp_ForbiddenFruit</compClass> -->
-				<!-- <activeTicks>1</activeTicks> -->
-				<!-- <cooldownTicks>30000</cooldownTicks> -->
-				<!-- <ticksToActivate>250</ticksToActivate> -->
-				<!-- <activateTexPath>Things/Item/Special/AE_ForbiddenFruit</activateTexPath> -->
-        
-				<!-- <activateLabelString>Take a bite</activateLabelString> -->
-				<!-- <activateDescString>Make someone take a bite of this apple and consume it.</activateDescString> -->
-				<!-- <guiLabelString>Choose who should bite this.</guiLabelString> -->
-				<!-- <jobString>bite</jobString> -->
-				<!-- <activatingStringPending>biting {0}</activatingStringPending> -->
-				<!-- <activatingString>biting {0}: {1}s</activatingString> -->
-
-				<!-- <fleckOnUsed>PsycastAreaEffect</fleckOnUsed> -->
-				<!-- <fleckOnUsedScale>3</fleckOnUsedScale> -->
-				<!-- <soundActivate>PsychicAnimalPulserCast</soundActivate> -->
-
-				<!-- <targetingParameters> -->
-					<!-- <canTargetBuildings>false</canTargetBuildings> -->
-					<!-- <canTargetAnimals>false</canTargetAnimals> -->
-					<!-- <canTargetMechs>false</canTargetMechs> -->
-					<!-- <onlyTargetControlledPawns>true</onlyTargetControlledPawns> -->
-				<!-- </targetingParameters> -->
-			<!-- </li> -->
-			<!-- <li Class="CompProperties_Studiable"> -->
-				<!-- <frequencyTicks>120000</frequencyTicks> -->
-				<!-- <knowledgeCategory>Basic</knowledgeCategory> -->
-				<!-- <anomalyKnowledge>1</anomalyKnowledge> -->
-				<!-- <minMonolithLevelForStudy>1</minMonolithLevelForStudy> -->
-				<!-- <showToggleGizmo>true</showToggleGizmo> -->
-			<!-- </li> -->
-			<!-- <li Class="CompProperties_StudyUnlocks"> -->
-				<!-- <compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass> -->
-				<!-- <studyNotes> -->
-					<!-- <li Class="AnomaliesExpected.AEStudyNote"> -->
-						<!-- <AnomalyLabel>holy apple</AnomalyLabel> -->
-						<!-- <AnomalyDesc>A normal looking apple, if not for it giant size. Despite its immense size, the apple seems perfectly ripe, its skin giving slightly with the promise of juicy sweetness.\n\nThe apple regenerates after being bitten, allowing for partial consumption.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc> -->
-						<!-- <threshold>0.01</threshold> -->
-						<!-- <label>#1/4 Giant apple study report</label> -->
-						<!-- <text>Regenerative Properties of a Giant Apple\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nA giant apple exhibited remarkable resilience, resisting damage from blades, fire, and blunt force. Consumption triggered rapid regeneration of bitten pieces and a positive subjective experience in the subject. Further research is needed to explore potential applications and long-term effects of the apple's anomalous properties.\n\nObservations:\nSubject was presented with a standard steel knife. {PAWN_nameDef} attempted to cut apple, but to no avail.\nSubject attempted to smash apple onto solid ground. It remained completely undamaged.\n{PAWN_nameDef} exposed apple to a controlled fire for 30 minutes. Upon extinguishing the fire, the apple exhibited no signs of charring or melting.\nSubject was instructed to bite the apple without swallowing the piece. {PAWN_nameDef} was able to effortlessly bit off a portion of apple and put it next to apple itself. The bitten portion displayed rapid decomposition, while the remaining apple regenerated the missing piece within a short period.\n\nOutcome:\nNo hostile response was observed during interaction.\nAfter experiment {PAWN_nameDef} reported a sensation of "holiness" upon biting the apple.\n\nDiscussion:\nThe giant apple appears indestructible by conventional means.\nThe apple can be bitten and consumed by humans. \nThe apple possesses a regenerative property that activates upon consumption of a portion.\nThe anomalous properties of giant apple have potential applications and risks that need to be explored.\nTemporary giant apple has been classified as Class-0 (Safe) anomaly.\n\nRecommendations:\nFurther experimentation of biting and eating of apple is required to explore effects it have on human body.</text> -->
-					<!-- </li> -->
-					<!-- <li Class="AnomaliesExpected.AEStudyNote"> -->
-						<!-- <AnomalyLabel>holy apple</AnomalyLabel> -->
-						<!-- <AnomalyDesc>A normal looking apple, if not for it giant size. Despite its immense size, the apple seems perfectly ripe, its skin giving slightly with the promise of juicy sweetness.\n\nThe apple regenerates after being bitten, allowing for partial consumption. Which increases the speed of learning and knowledge acquisition by the consumer.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc> -->
-						<!-- <threshold>2</threshold> -->
-						<!-- <label>#2/4 Giant apple study report</label> -->
-						<!-- <text>Enhanced Learning and Divine Inspiration\n\nSubject: [REDACTED]\n\nAbstract:\nConsumption of a giant anomalous apple led to a drastic increase in learning speed and knowledge retention in the Subject. The Subject reported experiencing divine inspiration and a heightened understanding of a divine entity. Further research is needed to understand the source of the knowledge and potential long-term effects.\n\nObservations:\nSubject was instructed to bite the apple and swallow the piece. After consumption, [REDACTED] reported experiencing a surge of divine inspiration, accompanied by a newfound sense of wisdom. Notably, the Subject achieved a breakthrough on a previously encountered task that had posed an initial challenge.\nSubject was then instructed to consume another bite of the apple. [REDACTED] reported a further increase in their understanding of the divine will.\n\nOutcome:\nSubject demonstrated a significant improvement in knowledge retention and learning speed compared to pre-experiment baseline.\n[REDACTED] described gaining access to previously unconsidered perspectives and experiencing a heightened sense of connection to a divine entity.\n\nDiscussion:\nThese findings suggest that consumption of the anomalous apple facilitates accelerated learning and knowledge acquisition in the subject. The rate of learning appears to correlate with the amount of apple consumed. \nFurther investigation is required to determine the source of this knowledge and the potential long-term effects of repeated exposure.\n\nRecommendations:\nContinued experimentation with controlled apple consumption is necessary to fully understand the cognitive effects on the subject. Monitoring of the subject's health and mental state is crucial throughout the research process.</text> -->
-					<!-- </li> -->
-					<!-- <li Class="AnomaliesExpected.AEStudyNote"> -->
-						<!-- <AnomalyLabel>the forbidden fruit of knowledge</AnomalyLabel> -->
-						<!-- <AnomalyDesc>A normal looking apple, if not for it giant size. Despite its immense size, the apple seems perfectly ripe, its skin giving slightly with the promise of juicy sweetness.\n\nThe apple regenerates after being bitten, allowing for partial consumption. Which increases the speed of learning and knowledge acquisition by the consumer. Long term consumption can anger the divine entity, leading to the death of consumer.\n\nClassified as Class-1 (Caution) anomaly.</AnomalyDesc> -->
-						<!-- <threshold>3</threshold> -->
-						<!-- <label>#3/4 Giant apple study report</label> -->
-						<!-- <text>The Forbidden Fruit of Knowledge\n\nSubject: [REDACTED]\n\nAbstract:\nFurther consumption of the anomalous apple yielded greater knowledge, but triggered fear and connection to an angered divine entity perceiving the fruit as forbidden. The subject fainted and reported about potential death from continuation of consumption. The experiment highlights long-term risks and necessitates an inhibitor serum to counter the connection. The anomaly has been reclassified as Class-1 (Caution).\n\nObservations:\nFollowing previous successful trials with partial apple consumption, Subject was instructed to repeat the procedure. [REDACTED] reported a significantly larger influx of knowledge compared to prior experiences. However, Subject also exhibited signs of mild dizziness and expressed a troubling feeling that the acquired knowledge was not meant for them.\nFurther consumption of the apple resulted in a partial loss of consciousness and fear in Subject. [REDACTED] reported establishing a partial connection with a divine entity, who expressed anger at their consumption of The Forbidden Fruit. Subject displayed agitation, screaming about never touching the fruit again and pleading for forgiveness.\n\nOutcome:\n[REDACTED] experienced significant stress and subsequently fainted.\nUpon regaining consciousness, Subject explained that he was able to partially understand the divine entity and its anger regarding the consumption of the forbidden fruit, which was not meant for humans. [REDACTED] further reported that continued interaction with the fruit during this entity's Wrath could result in their death.\n\nDiscussion:\nThis experiment highlights the potential risks associated with long-term exposure to the apple's effects.\nNotably, one researcher proposed the development of an inhibitor serum to potentially counter the subject's connection with the divine entity.\nReclassified holy apple of knowledge as Class-1 (Caution) anomaly, due to reaction and information from [REDACTED].\n\nRecommendations:\nFurther experimentation with the proposed inhibitor serum is necessary to assess its effectiveness in mitigating the negative effects of the apple.</text> -->
-					<!-- </li> -->
-					<!-- <li Class="AnomaliesExpected.AEStudyNote"> -->
-						<!-- <AnomalyLabel>the forbidden fruit of knowledge</AnomalyLabel> -->
-						<!-- <AnomalyDesc>A normal looking apple, if not for it giant size. Despite its immense size, the apple seems perfectly ripe, its skin giving slightly with the promise of juicy sweetness. It consumtion allow consciousness connection with a higher dimensional being.\n\nThe apple regenerates after being bitten, allowing for partial consumption. Which increases the speed of learning and knowledge acquisition by the consumer. Long term consumption can anger the divine entity, leading to the death of consumer.\n\nClassified as Class-1 (Caution) anomaly.</AnomalyDesc> -->
-						<!-- <threshold>5</threshold> -->
-						<!-- <label>#4/4 Giant apple study report</label> -->
-						<!-- <text>Theory Regarding Giant Apple\n\nSubject: [REDACTED]\n\nAbstract:\nInhibitor serum successfully severed the connection between a [REDACTED] and a higher-dimensional entity triggered by consuming a forbidden knowledge fruit. The disconnection caused a temporary learning speed decline but no lasting harm. Subject theorizes the fruit originates from the entity's garden and facilitates knowledge exchange. The entity fears humanity reaching its level and hinders excessive knowledge gain. Removal or controlled use with safety protocols are recommended for the giant apple.\n\nObservations:\nSubject was instructed to inject giant apple inhibitor serum during divine entity's Wrath period. Following the injection, [REDACTED] reported a significant decrease in stress levels and a diminished ability to perceive the entity's voice. Subject further described a general sense of improvement. \nAfter several days, [REDACTED] confirmed a complete severance of the connection with the divine entity.\n\nOutcome:\nGiant apple inhibitor serum successfully severed Subject's connection with the divine entity. \nHowever, Subject also experienced a temporary decline in learning speed over the course of the observation period.\n\nHypothesis:\nBased on the overall experience, [REDACTED] proposes a theory regarding the origin of The Forbidden Fruit of Knowledge. Subject suggests that the fruit originates from a garden controlled by the encountered divine entity. Consumption of the fruit establishes a connection between the consumer's consciousness and the entity, facilitating the exchange of knowledge and thoughts. [REDACTED] further hypothesizes that the divine entity, existing in a higher dimension, possesses the capability to observe and potentially influence our facility on a level not accessible to humans. The appearance of the fruit outside our facility is attributed to interdimensional travel. While the entity seems indifferent to lower levels of knowledge access, it fears the potential of humanity achieving its level of understanding. This fear manifests as attempts to hinder excessive knowledge acquisition through the fruit. Disconnecting from the entity's mind via the serum injection allows it to gradually forget about our existence, similar to how a human might forget an insignificant ant encountered in an anthill.\n\nDiscussion:\nThe severance of the connection with the entity through the serum requires time and comes with a temporary learning speed penalty. However, post-disconnection observations indicate no lasting negative effects for the subject.\n\nRecommendations:\nRemoval: Given the potential for accidental death due to excessive consumption, it removal from facility may be the most prudent course of action.\nControlled Use: Alternatively, if hypothesis is right, then continued use of giant apple, under controlled and monitored conditions, could offer substantial benefits in terms of learning and knowledge acquisition. This approach, however, necessitates thorough risk assessment and the development of safety protocols to safeguard colonists' well-being.</text> -->
-					<!-- </li> -->
-				<!-- </studyNotes> -->
-			<!-- </li> -->
-			<!-- <li Class="CompProperties_Forbiddable"/> -->
+				<ConsumptionHediffDef>Hediff_AEDigestingPie</ConsumptionHediffDef>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>60000</frequencyTicks>
+				<knowledgeCategory>Basic</knowledgeCategory>
+				<anomalyKnowledge>0.5</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<showToggleGizmo>true</showToggleGizmo>
+			</li>
+			<li Class="CompProperties_StudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotes>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>vatrushka</AnomalyLabel>
+						<AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>0.01</threshold>
+						<label>#1/4 Big pie study report</label>
+						<text>The Indestructible Vatrushka\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nA seemingly ordinary vatrushka exhibited remarkable resilience. Standard tools and fire failed to damage the pastry or its plate, which displayed self-repair capabilities. Consumption attempts proved impossible due to its impregnability. Classified as Class-0 (Safe) with further investigation recommended.\n\nObservations:\nSubject was presented with a standard steel knife. {PAWN_nameDef} attempted to cut a piece of big pie, but to no avail.\nSubject attempted to smash big pie on a plate onto solid ground. While the plate holding the big pie cracked upon impact, the crack spontaneously repaired itself within moments.\n{PAWN_nameDef} exposed big pie to a controlled fire for 30 minutes. Upon extinguishing the fire, the pie exhibited no signs of charring or melting.\nSubject was instructed to attempt biting a portion of the vatrushka without swallowing. Biting through the outer dough proved impossible.\n\nOutcome:\nThroughout the testing procedures, big pie displayed no hostile reaction\n\nDiscussion:\nThe big pie appears to possess anomalous properties rendering it indestructible by conventional means.\nThe big pie's physical properties prevent human consumption due to its resistance to biting and overall size.\nA possible connection exists between the big pie and its plate, as evidenced by the shared regenerative property displayed upon damage.\nAnalysis of the composition of the big pie showed similarities with vatrushka.\nTemporary big pie has been classified as Class-0 (Safe) anomaly.\n\nRecommendations:\nContinued surveillance of the big pie is recommended to explore the possibility of further anomalous properties.</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>vatrushka</AnomalyLabel>
+						<AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged. It can replicate a piece of itself, which can be consumed.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>1</threshold>
+						<label>#2/4 Big pie study report</label>
+						<text>Vatrushka Replication and its Implications\n\nSubject: [REDACTED]\n\nAbstract:\nAnomalous vatrushka displayed self-replication, generating a consumable piece of pie on it own plate. The consumed piece exhibited normal digestion, but slowed Subject's movement. This suggests that vatrushka might provide sustenance while requiring further study of its risks. Controlled consumption warrants exploration as a solution to food shortages.\n\nObservations:\nSecurity footage revealed the spontaneous appearance of a smaller piece of pie within the containment area.\nThis smaller piece underwent testing identical to the original, exhibiting the same anomalous properties as big pie.\nDue to its smaller size, [REDACTED] was able to fully consume the replicated piece.\nThe subject reported a feeling of heaviness in their stomach but no other abnormalities.\nNotably, the plate previously holding the replicated piece vaporized upon piece consumption\n\nOutcome:\nSubsequent scans revealed the consumed pie piece undergoing a slow digestion process within [REDACTED]'s stomach. Interestingly, this digestion coincided with a decrease in the subject's movement speed.\n\nDiscussion:\nThe big pie appears capable of self-replication, generating smaller pieces that retain the original's anomalous properties. Further investigation is required to understand the mechanism behind this replication\nInterestingly, the consumed piece displayed normal nutritional value during digestion. This suggests the possibility of the vatrushka serving as a potential solution to food shortages within the facility.\n\nRecommendations:\nControlled consumption of replicated pie pieces should be considered as a means to address potential food shortages.\nStrict monitoring of the number of replicated pieces within containment is crucial to prevent overabundance.</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>vatrushka</AnomalyLabel>
+						<AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged. Each day will replicate a piece of itself based on the amount of existing pieces, which can be consumed.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>2</threshold>
+						<label>#3/4 Giant apple study report</label>
+						<text>Possible Containment Overflow\n\nAbstract:\nThe anomalous big pie replicates proportionally to its existing pieces. Consumed pieces don't affect replication rate. Controlled consumption is necessary to prevent overwhelming facility with pie pieces.\n\nObservations:\nAn extensive review of security footage was conducted, focusing on the frequency and quantity of replicated pie pieces appearing within the containment area.\n\nOutcome:\nA clear correlation was identified between the number of existing pie pieces and the number of newly replicated pieces:\n- Big pie = new 1 piece\n- Big pie + 1 piece = new 2 piece\n- Big pie + 3 piece = new 4 piece\n- Big pie + 1 piece + 2 consumed piece = new 2 piece\nThe time interval between the appearance of new pieces was approximately 24 hours.\n\nDiscussion:\nThe number of newly replicated pie pieces appears directly proportional to the total number of existing pieces within the containment area. Notably, the consumption of previously replicated pieces does not seem to impact the rate of new piece generation\nThis uncontrolled replication poses a significant risk of overwhelming the containment area with pie pieces. Careful monitoring and controlled consumption of newly replicated pieces are crucial to maintain a manageable quantity.\n\nRecommendations:\nThe implementation of a controlled consumption program for newly replicated vatrushka pieces is recommended to regulate the total number of pieces within the facility.</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>Self-Baking Pies</AnomalyLabel>
+						<AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack. A remarkable colony of sentient yeast that have made cake their primary habitat.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged. Each day will replicate a piece of itself based on the amount of existing pieces, which can be consumed.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>5</threshold>
+						<label>#4/4 Giant apple study report</label>
+						<text>Theory Regarding Big Pie\n\nAbstract:\nSelf-Baking Pies (SBP) exhibits potential for interdimensional travel and exponential growth. Hypothesis suggests offspring drain resources of the planet and mature into similar entities. Humans possess a possible defense mechanism in their genes through digestion. Destruction or controlled use with robust safety protocols are recommended.\n\nHypothesis:\nBased on observations from all experiments, a theory regarding the Self-Baking Pies (SBP) origin and behavior was proposed.\nA remarkable colony of sentient yeast that have made cake their primary habitat.\nIt suggested that it possesses a potential for interdimensional travel. Upon arriving in a world with suitable conditions (oxygen-rich atmosphere and abundant organic/mineral content), it transporting offspring to current dimension\nEach offspring facilitates the SBP's interdimensional travel by gathering energy from the surrounding environment.\nOnce all offspring are transferred, they consume resources of the planet to grow and mature into entities similar to the original SBP, allowing continued exponential propagation across realities.\nThe SBP exhibits exceptional resilience to external damage, but may be susceptible to degradation by concentrated stomach acid within a human digestive system.\nWhile this poses an existential threat due to potential uncontrolled spread, our digestive systems appear to contain unique genes that enable the destruction of SBP regenrative capabilities. This implies a potential past encounter between humanity and SBP entities, resulting in an evolutionary defense mechanism against their colonization efforts.\n\nDiscussion:\nFurther research should explore the possibility of utilizing highly concentrated stomach acid to weaken the main SBP, potentially enabling full consumption. It's important to note that this approach could have a more significant impact on the consumer compared to consuming individual SBP pieces.\nThe current classification of the SBP remains Class-0 (Safe) as it does not pose an immediate threat to personnel within the facility.\n\n[Redacted] High Level Access Required:\nThe potential for rapid, uncontrolled SBP replication poses a significant risk. We must closely monitor the number of existing SBP pieces. Loss of control could elevate the threat level to higher than even Class-5, potentially causing our reality to succumb to SBP and end up being consumed. Drawing from simulated reality theory, an uncontrolled spread of SBP pieces could potentially lead to a system crash, if their numbers reach critical levels.\n\nRecommendations:\nDestruction: Given the potential for exponential growth, destruction of the vatrushka using concentrated stomach acid may be the most prudent course of action\nControlled Use: If the hypothesis holds true, continued utilization of the vatrushka under controlled and monitored conditions could offer a sustainable food source for the facility. This approach, however, requires thorough risk assessment and robust safety protocols to prevent uncontrolled replication.</text>
+					</li>
+				</studyNotes>
+			</li>
 		</comps>
-		<!-- <inspectorTabs> -->
-			<!-- <li>ITab_StudyNotes</li> -->
-		<!-- </inspectorTabs> -->
+		<inspectorTabs>
+			<li>ITab_StudyNotes</li>
+		</inspectorTabs>
 	</ThingDef>
 
 	<ThingDef>
 		<defName>AE_BakingPiesPiece</defName>
 		<label>piece of pie</label>
-		<description>A high-quality packaged meal, manufactured for use in survival situations. While it never rots, it can still deteriorate if left outside. Great for traveling.</description>
+		<description>A piece of a big pie.\n\nA sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged.</description>
 		<thingClass>ThingWithComps</thingClass>
 		<graphicData>
 			<texPath>Things/Item/Consumable/AE_BakingPiesPiece</texPath>
@@ -146,9 +141,6 @@
 		</thingCategories>
 		<alwaysHaulable>true</alwaysHaulable>
 		<comps>
-			<!-- <li> -->
-				<!-- <compClass>AnomaliesExpected.Comp_ForbiddenFruit</compClass> -->
-			<!-- </li>	 -->
 			<li Class="CompProperties_Forbiddable"/>
 			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="CompProperties_MetalhorrorInfectible"/>
 		</comps>
@@ -168,39 +160,12 @@
 			<optimalityOffsetFeedingAnimals>-40</optimalityOffsetFeedingAnimals>
 			<baseIngestTicks>1000</baseIngestTicks>
 			<outcomeDoers>
-			<li Class="IngestionOutcomeDoer_GiveHediff">
-			  <hediffDef>GoJuiceHigh</hediffDef>
-			  <severity>0.5</severity>
-			  <toleranceChemical>GoJuice</toleranceChemical>
-			</li>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>Hediff_AEDigestingPie</hediffDef>
+					<severity>0.05</severity>
+				</li>
 			</outcomeDoers>
 		</ingestible>
 	</ThingDef>
-
-	<!-- <ThingDef ParentName="MealBase"> -->
-		<!-- <defName>AE_BakingPies</defName> -->
-		<!-- <label>pie</label> -->
-		<!-- <description>A high-quality packaged meal, manufactured for use in survival situations. While it never rots, it can still deteriorate if left outside. Great for traveling.</description> -->
-		<!-- <graphicData> -->
-			<!-- <texPath>Things/Item/Consumable/AE_BakingPies</texPath> -->
-			<!-- <graphicClass>Graphic_Single</graphicClass> -->
-			<!-- <drawSize>(0.75,0.75)</drawSize> -->
-		<!-- </graphicData> -->
-		<!-- <statBases> -->
-			<!-- <DeteriorationRate>0.25</DeteriorationRate> -->
-			<!-- <MarketValue>24</MarketValue> -->
-			<!-- <Mass>0.3</Mass> -->
-			<!-- <WorkToMake>450</WorkToMake> -->
-			<!-- <Nutrition>0.9</Nutrition> -->
-		<!-- </statBases> -->
-		<!-- <ingestible> -->
-			<!-- <preferability>MealSimple</preferability> -->
-			<!-- <optimalityOffsetHumanlikes>-5</optimalityOffsetHumanlikes> -->
-			<!-- <optimalityOffsetFeedingAnimals>-10</optimalityOffsetFeedingAnimals> -->
-			<!-- <ingestEffect>EatVegetarian</ingestEffect> -->
-			<!-- <ingestSound>Meal_Eat</ingestSound> -->
-		<!-- </ingestible> -->
-		<!-- <allowedArchonexusCount>40</allowedArchonexusCount> -->
-	<!-- </ThingDef> -->
 
 </Defs>

@@ -7,9 +7,9 @@ using Verse;
 
 namespace AnomaliesExpected
 {
-    public class Comp_BakingPies : ThingComp
+    public class Comp_BakingPies : CompInteractable
     {
-        public CompProperties_BakingPies Props => (CompProperties_BakingPies)props;
+        public new CompProperties_BakingPies Props => (CompProperties_BakingPies)props;
 
         private List<Thing> piePieces = new List<Thing>();
 
@@ -20,12 +20,15 @@ namespace AnomaliesExpected
         protected CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = parent.TryGetComp<CompAEStudyUnlocks>());
         private CompAEStudyUnlocks studyUnlocksCached;
 
+        public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? 4) < 4;
+
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
             if (!respawningAfterLoad)
             {
                 TickSpawn = Find.TickManager.TicksGame + Props.tickPerSpawn;
+                piePieces.Add(parent);
             }
         }
 
@@ -63,6 +66,7 @@ namespace AnomaliesExpected
                             bool isPlaced = GenPlace.TryPlaceThing(piece, pos, map, ThingPlaceMode.Near, null);
                             if (isPlaced)
                             {
+                                FleckMaker.Static(piece.Position, map, FleckDefOf.PsycastSkipFlashEntry, 0.2f);
                                 amount -= 1;
                                 if (amount <= 0)
                                 {
@@ -129,7 +133,7 @@ namespace AnomaliesExpected
                         Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
                     },
                     defaultLabel = "Dev: Change Spawn",
-                    defaultDesc = $"Change timer till spawn piece of pie: {(TickSpawn - Find.TickManager.TicksGame).ToStringTicksToDays()}"
+                    defaultDesc = $"Change timer till spawn piece of pie: {(TickSpawn - Find.TickManager.TicksGame).ToStringTicksToPeriodVerbose()}"
                 };
                 yield return new Command_Action
                 {
@@ -138,9 +142,15 @@ namespace AnomaliesExpected
                         SpawnPiePiece();
                     },
                     defaultLabel = "Dev: Spawn",
-                    defaultDesc = $"Spawn piece of pie: {(TickSpawn - Find.TickManager.TicksGame).ToStringTicksToDays()}"
+                    defaultDesc = $"Spawn piece of pie: {(TickSpawn - Find.TickManager.TicksGame).ToStringTicksToPeriodVerbose()}"
                 };
             }
+        }
+
+        protected override void OnInteracted(Pawn caster)
+        {
+            HealthUtility.AdjustSeverity(caster, Props.ConsumptionHediffDef, 1);
+            parent.Destroy();
         }
 
         public override void PostExposeData()
@@ -158,6 +168,10 @@ namespace AnomaliesExpected
             if (study > 1)
             {
                 inspectStrings.Add("AnomaliesExpected.BakingPies.Amount".Translate(piePiecesExisting).RawText);
+                if (study > 2)
+                {
+                    inspectStrings.Add("AnomaliesExpected.BakingPies.Time".Translate((TickSpawn - Find.TickManager.TicksGame).ToStringTicksToPeriodVerbose()).RawText);
+                }
             }
             return String.Join("\n", inspectStrings);
         }

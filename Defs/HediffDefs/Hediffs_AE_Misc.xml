@@ -156,5 +156,29 @@
 			</li>
 		</stages>
 	</HediffDef>
+
+	<HediffDef>
+		<defName>Hediff_AEDigestingPie</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>digesting pie</label>
+		<description>Feeling heavy in the stomach.</description>
+		<initialSeverity>0</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.05</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<statOffsets>
+					<MoveSpeed>-5</MoveSpeed>
+				</statOffsets>
+				<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+			</li>
+		</stages>
+	</HediffDef>
 	
 </Defs>
