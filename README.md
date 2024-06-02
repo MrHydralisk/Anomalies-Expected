@@ -9,10 +9,11 @@ If you want more anomalies to explore and experiment with, then you might like t
 Mod adding new anomalies for Anomaly DLC. With it own benefits and risks.
 Most anomalies here give you some benefit for keeping them in colony with it own containment risks, rather than being just a temporary threat event to the colony like most of anomalies from DLC.
 While usually I try to explain in mod description how mod content work in details, due to the main interest of anomalies is to discover and study them, I won't spoil it.
+Have it own research tab Anomalies Expected, which work same way as Anomaly tab.
 On some study notes label and description of anomaly might change to fit the current understanding of the anomaly.
 
 Currently available:
-* 2 Anomaly of basic category
+* 3 Anomaly of basic category
 * 2 Anomaly of advanced category
 
 ### Ordinary Bed
@@ -30,6 +31,10 @@ Currently available:
 ### Industrial Metal Box
 
 *Your colonist noticed some object falling from the sky nearby. At close inspection it seems like an industrial-looking metal box as tall as a table. Several small doors interrupt the smooth surface on its sides, while a big hole with hidden inside blades sits atop it. A lone button rests next to the hole, hinting at some unknown function.*
+
+### Big Pie
+
+*Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a round big pie on a plate. It looks appetizing.*
 
 More anomalies in development and will be added, when ready.
 
@@ -53,4 +58,4 @@ Anomalies Expected mod should be safe to add to existing save. But when you want
 
 ## To Do
 
-New 2+ anomalies
+New 1+ anomalies
