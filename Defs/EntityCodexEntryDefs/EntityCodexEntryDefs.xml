@@ -74,4 +74,22 @@
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>
 
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_BakingPies</defName>
+		<label>big pie</label>
+		<category>Basic</category>
+		<uiIconPath>UI/CodexEntries/AE_BakingPies</uiIconPath>
+		<useDescriptionFrom>AE_BakingPies</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_BakingPies</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_BakingPiesSpawn</li>
+		</provocationIncidents>
+		<discoveredResearchProjects>
+			<li>AEBingingFoodSerum</li>
+		</discoveredResearchProjects>
+		<orderInCategory>1300</orderInCategory>
+	</EntityCodexEntryDef>
+
 </Defs>

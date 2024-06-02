@@ -134,4 +134,28 @@
 		</generalRules>
 	</ResearchProjectDef>
 
+	<ResearchProjectDef>
+		<defName>AEBingingFoodSerum</defName>
+		<label>binging food serum</label>
+		<description>Synthesize a serum that makes person pigging out on food.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>SerumSynthesis</li>
+		</prerequisites>
+		<knowledgeCost>30</knowledgeCost>
+		<knowledgeCategory>Basic</knowledgeCategory>
+		<researchViewX>0</researchViewX>
+		<researchViewY>2</researchViewY>
+		<generalRules>
+			<rulesStrings>
+				<li>subject->binging food serum</li>
+
+				<li>subject_story->ate all food in the facility</li>
+				<li>subject_story->stomach rumbling could be heard for several kilometers</li>
+
+				<li>subject_gerund->synthesizing binging food serums</li>
+			</rulesStrings>
+		</generalRules>
+	</ResearchProjectDef>
+
 </Defs>

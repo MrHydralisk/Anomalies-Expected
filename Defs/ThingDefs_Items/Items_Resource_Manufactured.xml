@@ -116,5 +116,43 @@
 			<researchPrerequisite>AEFruitInhibitorSerum</researchPrerequisite>
 		</recipeMaker>
 	</ThingDef>
+	
+	
+	
+	<ThingDef ParentName="SerumBase">
+		<defName>AEBingingFoodSerum</defName>
+		<label>binging food serum</label>
+		<description>A syringe of green, viscous fluid. Injected in esophagus, it stimulates the digestive system and makes person feel really hungry for a good meal.\n\nThe effect is temporary and does not stack.</description>
+		<descriptionHyperlinks>
+			<mentalStateDef>Binging_Food</mentalStateDef>
+		</descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Serum/AEBingingFoodSerum</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>75</MarketValue>
+		</statBases>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_UseEffectAddMentalState">
+				<mentalStateDef>Binging_Food</mentalStateDef>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>MechSerumUsed</soundOnUsed>
+			</li>
+		</comps>		
+		<costList>
+			<Milk>9</Milk>
+			<Bioferrite>9</Bioferrite>
+		</costList>
+		<recipeMaker>
+			<workAmount>540</workAmount>
+			<skillRequirements>
+				<Crafting>3</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>AEBingingFoodSerum</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
 
 </Defs>
