@@ -40,6 +40,7 @@
     <Compile Include="AEStudyNote.cs" />
     <Compile Include="Building_AE.cs" />
     <Compile Include="Building_AEBed.cs" />
+    <Compile Include="CompProperties\CompProperties_BeamTarget.cs" />
     <Compile Include="CompProperties\CompProperties_MeatGrinder.cs" />
     <Compile Include="CompProperties\CompProperties_BakingPies.cs" />
     <Compile Include="CompProperties\CompProperties_UseEffectAddMentalState.cs" />
@@ -49,6 +50,7 @@
     <Compile Include="CompProperties\CompProperties_AnomalyBed.cs" />
     <Compile Include="Comp\CompStudiableAE.cs" />
     <Compile Include="Comp\CompUseEffect_UseEffectAddMentalState.cs" />
+    <Compile Include="Comp\Comp_BeamTarget.cs" />
     <Compile Include="Comp\Comp_BakingPies.cs" />
     <Compile Include="Comp\Comp_MeatGrinder.cs" />
     <Compile Include="Comp\Comp_ForbiddenFruit.cs" />

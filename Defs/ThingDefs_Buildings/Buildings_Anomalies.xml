@@ -346,4 +346,59 @@
 		</inspectorTabs>
 	</ThingDef>
 	
+	<ThingDef ParentName="BuildingBase">
+		<defName>AE_BeamTarget</defName>
+		<label>beam target</label>
+		<description>Required for orbital trading. You can only sell goods to orbital traders if they're near an orbital trade beacon. Can be placed indoors.</description>
+		<thingClass>Building_OrbitalTradeBeacon</thingClass>
+		<graphicData>
+			<texPath>Things/Building/AE_BeamTarget</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shadowData>
+				<volume>(0.3, 0.2, 0.3)</volume>
+				<offset>(0,0,-0.1)</offset>
+			</shadowData>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<useHitPoints>false</useHitPoints>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsMisc</li>
+		</thingCategories>
+		<statBases>
+			<WorkToBuild>800</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Mass>5</Mass>
+		</statBases>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<fillPercent>0.15</fillPercent>
+		<costList>
+			<Steel>40</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Small</destroySound>
+		</building>
+		<tickerType>Rare</tickerType>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_BeamTarget"/>
+		</comps>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<pathCost>14</pathCost>
+		<designationCategory>Misc</designationCategory>
+		<uiOrder>2100</uiOrder>
+		<rotatable>false</rotatable>
+		<placeWorkers>
+			<li>PlaceWorker_ShowTradeBeaconRadius</li>
+		</placeWorkers>
+		<designationHotKey>Misc2</designationHotKey>
+		<researchPrerequisites>
+			<li>MicroelectronicsBasics</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
 </Defs>
