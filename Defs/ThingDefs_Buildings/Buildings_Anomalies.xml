@@ -364,38 +364,50 @@
 		</graphicData>
 		<altitudeLayer>Building</altitudeLayer>
 		<useHitPoints>false</useHitPoints>
+		<rotatable>false</rotatable>
 		<minifiedDef>MinifiedThingAE</minifiedDef>
 		<thingCategories>
 			<li>BuildingsMisc</li>
 		</thingCategories>
 		<statBases>
-			<WorkToBuild>800</WorkToBuild>
 			<Flammability>0</Flammability>
 			<Mass>5</Mass>
 		</statBases>
-		<drawerType>MapMeshAndRealTime</drawerType>
+		<building>
+			<deconstructible>false</deconstructible>
+		</building>
+		<drawerType>MapMeshOnly</drawerType>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<fillPercent>0.15</fillPercent>
-		<costList>
-			<Steel>40</Steel>
-			<ComponentIndustrial>1</ComponentIndustrial>
-		</costList>
-		<building>
-			<destroySound>BuildingDestroyed_Metal_Small</destroySound>
-		</building>
+		<pathCost>14</pathCost>
 		<tickerType>Normal</tickerType>
 		<comps>
-			<li Class="AnomaliesExpected.CompProperties_BeamTarget"/>
+			<li Class="AnomaliesExpected.CompProperties_BeamTarget">
+				<activeTicks>250</activeTicks>
+				<cooldownTicks>300000</cooldownTicks>
+				<ticksToActivate>100</ticksToActivate>
+				<activateTexPath>Things/Building/AE_BeamTarget</activateTexPath>
+        
+				<activateLabelString>Press button</activateLabelString>
+				<activateDescString>Press button to activate machine.</activateDescString>
+				<guiLabelString>Choose who should activate this.</guiLabelString>
+				<jobString>press button</jobString>
+				<activatingStringPending>pressing button {0}</activatingStringPending>
+				<activatingString>pressing button {0}: {1}s</activatingString>
+
+				<soundActivate>FlickSwitch</soundActivate>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+			</li>
 		</comps>
-		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
-		<pathCost>14</pathCost>
-		<designationCategory>Misc</designationCategory>
-		<uiOrder>2100</uiOrder>
-		<rotatable>false</rotatable>
 		<placeWorkers>
-			<li>PlaceWorker_ShowTradeBeaconRadius</li>
+			<li>AnomaliesExpected.PlaceWorker_ShowBeamTargetRadius</li>
 		</placeWorkers>
-		<designationHotKey>Misc2</designationHotKey>
 	</ThingDef>
 	
 </Defs>

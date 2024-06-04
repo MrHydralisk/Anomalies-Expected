@@ -1,26 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using RimWorld;
 using UnityEngine;
 using Verse;
-using Verse.AI;
 
 namespace AnomaliesExpected
 {
-    public class Comp_BeamTarget : ThingComp
+    public class Comp_BeamTarget : CompInteractable
     {
-        public CompProperties_BeamTarget Props => (CompProperties_BeamTarget)props;
+        public new CompProperties_BeamTarget Props => (CompProperties_BeamTarget)props;
 
         private int beamNextCount = 1;
-
         private int beamMaxCount = 1;
-
         private int TickNextState;
 
         private bool isActive;
 
         private BeamTargetState beamTargetState = BeamTargetState.Searching;
+
+        protected CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = parent.TryGetComp<CompAEStudyUnlocks>());
+        private CompAEStudyUnlocks studyUnlocksCached;
+
+        public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? 4) < 4;
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
@@ -36,7 +37,7 @@ namespace AnomaliesExpected
                 }
                 else
                 {
-                    TickNextState = Find.TickManager.TicksGame + Props.beamIntervalRange.min;
+                    TickNextState = Find.TickManager.TicksGame + Props.beamIntervalRange.max;
                     isActive = true;
                 }
             }
@@ -109,14 +110,19 @@ namespace AnomaliesExpected
         public void SkipToRandom()
         {
             Map map = parent.Map;
+            IntVec3 result = IntVec3.Invalid;
             if (CellFinder.TryFindRandomCell(map, delegate (IntVec3 newLoc)
             {
                 return newLoc.Walkable(map) && !newLoc.Fogged(map) && newLoc.GetFirstPawn(map) == null && newLoc.GetRoom(map) != parent.Position.GetRoom(map);
-            }, out var result))
+            }, out result) || CellFinder.TryFindRandomCell(map, delegate (IntVec3 newLoc)
             {
-                FleckMaker.Static(parent.Position, map, FleckDefOf.PsycastSkipInnerExit, 0.3f);
-                FleckMaker.Static(result, map, FleckDefOf.PsycastSkipFlashEntry, 0.3f);
-                Messages.Message("AnomaliesExpected.BeamTarget.LeftContainment".Translate(parent.LabelCap).RawText, this.parent, MessageTypeDefOf.NegativeEvent);
+                return newLoc.Walkable(map) && !newLoc.Fogged(map) && newLoc.GetFirstPawn(map) == null;
+            }, out result))
+            {
+                FleckMaker.Static(parent.Position, map, FleckDefOf.PsycastSkipInnerExit, Props.teleportationFleckRadius);
+                FleckMaker.Static(result, map, FleckDefOf.PsycastSkipFlashEntry, Props.teleportationFleckRadius);
+                LookTargets lookTarget = new LookTargets(parent.Position, map);
+                Messages.Message("AnomaliesExpected.BeamTarget.LeftContainment".Translate(parent.LabelCap).RawText, lookTarget, MessageTypeDefOf.NegativeEvent);
                 parent.Position = result;
             }
         }
@@ -184,41 +190,46 @@ namespace AnomaliesExpected
             }
         }
 
-        //public override void PostExposeData()
-        //{
-        //    base.PostExposeData();
-        //    Scribe_Collections.Look(ref storedSeverityList, "storedSeverityList", LookMode.Value);
-        //}
+        protected override void OnInteracted(Pawn caster)
+        {
+            ManualActivation();
+        }
+
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+            Scribe_Values.Look(ref beamNextCount, "beamNextCount", 1);
+            Scribe_Values.Look(ref beamMaxCount, "beamMaxCount", 1);
+            Scribe_Values.Look(ref TickNextState, "TickNextState", Find.TickManager.TicksGame + Props.beamIntervalRange.min);
+            Scribe_Values.Look(ref isActive, "isActive", true);
+            Scribe_Values.Look(ref beamTargetState, "beamTargetState", BeamTargetState.Searching);
+        }
 
         public override string CompInspectStringExtra()
         {
             List<string> inspectStrings = new List<string>();
-            //int study = StudyUnlocks?.NextIndex ?? 4;
-            //if (study > 1)
-            //{
-            //    MeatGrinderMood mood = currMood;
-            //    inspectStrings.Add("AnomaliesExpected.MeatGrinder.Noise".Translate(mood?.noise ?? 0).RawText);
-            //    if (study > 2 && (mood?.bodyPartDefs?.Count() ?? 0) > 0)
-            //    {
-            //        inspectStrings.Add("AnomaliesExpected.MeatGrinder.BodyParts".Translate(String.Join(", ", mood.bodyPartDefs.Select(b => b.LabelCap))).RawText);
-            //    }
-            //    if (study > 3 && (mood?.isDanger ?? false))
-            //    {
-            //        inspectStrings.Add("AnomaliesExpected.MeatGrinder.Danger".Translate().RawText);
-            //    }
-            //}
-            inspectStrings.Add($"{beamNextCount}/{Props.beamMaxCount} Lights");
-            inspectStrings.Add($"{beamTargetState.ToString()} State");
-            if (parent.ParentHolder is MinifiedThing && beamTargetState == BeamTargetState.Activating)
+            int study = StudyUnlocks?.NextIndex ?? 4;
+            if (study > 1)
             {
-                inspectStrings.Add($"{Math.Max(TickNextState + Props.ticksWhenCarried - Find.TickManager.TicksGame, Props.ticksWhenCarried)} Time");
-                inspectStrings.Add($"Button pressed");
+                inspectStrings.Add("AnomaliesExpected.BeamTarget.Indicator".Translate(beamNextCount, Props.beamMaxCount).RawText);
+                if (study > 2)
+                {
+                    inspectStrings.Add("AnomaliesExpected.BeamTarget.State".Translate(beamTargetState == BeamTargetState.Searching ? "AnomaliesExpected.BeamTarget.StateSearching".Translate() : "AnomaliesExpected.BeamTarget.StateActivating".Translate()).RawText);
+                }
+                if (beamTargetState == BeamTargetState.Activating)
+                {
+                    if (parent.ParentHolder is MinifiedThing)
+                    {
+                        inspectStrings.Add("AnomaliesExpected.BeamTarget.TimeTillBeam".Translate(Math.Max(TickNextState + Props.ticksWhenCarried - Find.TickManager.TicksGame, Props.ticksWhenCarried).ToStringTicksToPeriodVerbose()).RawText);
+                        inspectStrings.Add("AnomaliesExpected.BeamTarget.ButtonHold".Translate().RawText);
+                    }
+                    else
+                    {
+                        inspectStrings.Add("AnomaliesExpected.BeamTarget.TimeTillBeam".Translate(Math.Max(TickNextState - Find.TickManager.TicksGame, 0).ToStringTicksToPeriodVerbose()).RawText);
+                    }
+                }
             }
-            else
-            {
-                inspectStrings.Add($"{Math.Max(TickNextState - Find.TickManager.TicksGame, 0)} Time");
-            }
-            //inspectStrings.Add(base.CompInspectStringExtra());
+            inspectStrings.Add(base.CompInspectStringExtra());
             return String.Join("\n", inspectStrings);
         }
 

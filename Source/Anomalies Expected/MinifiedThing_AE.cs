@@ -15,7 +15,6 @@ namespace AnomaliesExpected
         {
             if (Spawned)
             {
-
                 InstallBlueprintUtility.CancelBlueprintsFor(this);
                 innerContainer.TryDropAll(Position, Map, ThingPlaceMode.Near);
                 this.Destroy();

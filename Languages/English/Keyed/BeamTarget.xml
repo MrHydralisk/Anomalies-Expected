@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<AnomaliesExpected.BeamTarget.Indicator>{0}/{1} lights on the indicator are lit</AnomaliesExpected.BeamTarget.Indicator>
+	<AnomaliesExpected.BeamTarget.State>Current state: {0}</AnomaliesExpected.BeamTarget.State>
+	<AnomaliesExpected.BeamTarget.StateSearching>Searching</AnomaliesExpected.BeamTarget.StateSearching>
+	<AnomaliesExpected.BeamTarget.StateActivating>Activating</AnomaliesExpected.BeamTarget.StateActivating>
+	<AnomaliesExpected.BeamTarget.TimeTillBeam>Time before high energy burst: {0}</AnomaliesExpected.BeamTarget.TimeTillBeam>
+	<AnomaliesExpected.BeamTarget.ButtonHold>Holding button</AnomaliesExpected.BeamTarget.ButtonHold>
+	<AnomaliesExpected.BeamTarget.LeftContainment>{0} left containment</AnomaliesExpected.BeamTarget.LeftContainment>
+</LanguageData>
