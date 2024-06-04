@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AEStudyNote.cs" />
+    <Compile Include="MinifiedThing_AE.cs" />
     <Compile Include="Building_AE.cs" />
     <Compile Include="Building_AEBed.cs" />
     <Compile Include="CompProperties\CompProperties_BeamTarget.cs" />

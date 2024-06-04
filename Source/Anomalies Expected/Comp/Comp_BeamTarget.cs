@@ -16,6 +16,63 @@ namespace AnomaliesExpected
 
         private int beamMaxCount = 1;
 
+        private int TickNextState;
+
+        private bool isActive;
+
+        private BeamTargetState beamTargetState = BeamTargetState.Searching;
+
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            base.PostSpawnSetup(respawningAfterLoad);
+            if (!respawningAfterLoad)
+            {
+                if (isActive)
+                {
+                    if (beamTargetState == BeamTargetState.Activating)
+                    {
+                        TickNextState = Find.TickManager.TicksGame + Math.Max(TickNextState - Find.TickManager.TicksGame + Props.ticksWhenCarried, Props.ticksWhenCarried);
+                    }
+                }
+                else
+                {
+                    TickNextState = Find.TickManager.TicksGame + Props.beamIntervalRange.min;
+                    isActive = true;
+                }
+            }
+        }
+
+        public override void CompTick()
+        {
+            base.CompTick(); 
+            if (Find.TickManager.TicksGame >= TickNextState)
+            {
+                switch (beamTargetState)
+                {
+                    case BeamTargetState.Searching:
+                        {
+                            beamTargetState = BeamTargetState.Activating;
+                            SkipToRandom();
+                            TickNextState = Find.TickManager.TicksGame + Props.ticksPerBeamActivationPreparation;
+                            break;
+                        }
+                    case BeamTargetState.Activating:
+                        {
+                            beamTargetState = BeamTargetState.Searching;
+                            SpawnBeams();
+                            TickNextState = Find.TickManager.TicksGame + Props.beamIntervalRange.RandomInRange;
+                            break;
+                        }
+                }
+            }
+        }
+
+        public void ManualActivation()
+        {
+            beamTargetState = BeamTargetState.Activating;
+            TickNextState = Find.TickManager.TicksGame + Props.ticksWhenCarried;
+        }
+
         public void SpawnBeams()
         {
             SpawnBeam(parent.Position);
@@ -76,6 +133,40 @@ namespace AnomaliesExpected
                 {
                     action = delegate
                     {
+                        List<FloatMenuOption> floatMenuOptions = new List<FloatMenuOption>();
+                        floatMenuOptions.Add(new FloatMenuOption("Increase by 3d", delegate
+                        {
+                            TickNextState += 180000;
+                        }));
+                        floatMenuOptions.Add(new FloatMenuOption("Increase by 1d", delegate
+                        {
+                            TickNextState += 60000;
+                        }));
+                        floatMenuOptions.Add(new FloatMenuOption("Increase by 1h", delegate
+                        {
+                            TickNextState += 2500;
+                        }));
+                        floatMenuOptions.Add(new FloatMenuOption("Decrease by 1h", delegate
+                        {
+                            TickNextState -= 2500;
+                        }));
+                        floatMenuOptions.Add(new FloatMenuOption("Decrease by 1d", delegate
+                        {
+                            TickNextState -= 60000;
+                        }));
+                        floatMenuOptions.Add(new FloatMenuOption("Decrease by 3d", delegate
+                        {
+                            TickNextState -= 180000;
+                        }));
+                        Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
+                    },
+                    defaultLabel = "Dev: Change TickNextState",
+                    defaultDesc = $"Change timer for State: {(TickNextState - Find.TickManager.TicksGame).ToStringTicksToDays()}"
+                };
+                yield return new Command_Action
+                {
+                    action = delegate
+                    {
                         SpawnBeams();
                     },
                     defaultLabel = "Dev: Beam now",
@@ -117,8 +208,24 @@ namespace AnomaliesExpected
             //    }
             //}
             inspectStrings.Add($"{beamNextCount}/{Props.beamMaxCount} Lights");
+            inspectStrings.Add($"{beamTargetState.ToString()} State");
+            if (parent.ParentHolder is MinifiedThing && beamTargetState == BeamTargetState.Activating)
+            {
+                inspectStrings.Add($"{Math.Max(TickNextState + Props.ticksWhenCarried - Find.TickManager.TicksGame, Props.ticksWhenCarried)} Time");
+                inspectStrings.Add($"Button pressed");
+            }
+            else
+            {
+                inspectStrings.Add($"{Math.Max(TickNextState - Find.TickManager.TicksGame, 0)} Time");
+            }
             //inspectStrings.Add(base.CompInspectStringExtra());
             return String.Join("\n", inspectStrings);
+        }
+
+        public enum BeamTargetState
+        {
+            Searching,
+            Activating
         }
     }
 }

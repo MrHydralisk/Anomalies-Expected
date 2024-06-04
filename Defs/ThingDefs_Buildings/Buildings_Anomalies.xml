@@ -350,7 +350,7 @@
 		<defName>AE_BeamTarget</defName>
 		<label>beam target</label>
 		<description>Required for orbital trading. You can only sell goods to orbital traders if they're near an orbital trade beacon. Can be placed indoors.</description>
-		<thingClass>Building_OrbitalTradeBeacon</thingClass>
+		<thingClass>AnomaliesExpected.Building_AE</thingClass>
 		<graphicData>
 			<texPath>Things/Building/AE_BeamTarget</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -364,7 +364,7 @@
 		</graphicData>
 		<altitudeLayer>Building</altitudeLayer>
 		<useHitPoints>false</useHitPoints>
-		<minifiedDef>MinifiedThing</minifiedDef>
+		<minifiedDef>MinifiedThingAE</minifiedDef>
 		<thingCategories>
 			<li>BuildingsMisc</li>
 		</thingCategories>
@@ -383,7 +383,7 @@
 		<building>
 			<destroySound>BuildingDestroyed_Metal_Small</destroySound>
 		</building>
-		<tickerType>Rare</tickerType>
+		<tickerType>Normal</tickerType>
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_BeamTarget"/>
 		</comps>
@@ -396,9 +396,6 @@
 			<li>PlaceWorker_ShowTradeBeaconRadius</li>
 		</placeWorkers>
 		<designationHotKey>Misc2</designationHotKey>
-		<researchPrerequisites>
-			<li>MicroelectronicsBasics</li>
-		</researchPrerequisites>
 	</ThingDef>
 	
 </Defs>
