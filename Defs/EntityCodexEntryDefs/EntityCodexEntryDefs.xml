@@ -92,4 +92,19 @@
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>
 
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_BeamTarget</defName>
+		<label>transmitter</label>
+		<category>Advanced</category>
+		<uiIconPath>UI/CodexEntries/AE_BeamTarget</uiIconPath>
+		<useDescriptionFrom>AE_BeamTarget</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_BeamTarget</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_BeamTargetSpawn</li>
+		</provocationIncidents>
+		<orderInCategory>1300</orderInCategory>
+	</EntityCodexEntryDef>
+
 </Defs>

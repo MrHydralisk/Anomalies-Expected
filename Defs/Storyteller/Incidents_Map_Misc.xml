@@ -131,5 +131,30 @@
 			</li>
 		</modExtensions>
 	</IncidentDef>
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_BeamTargetSpawn</defName>
+		<label>transmitter</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromOrbit</workerClass>
+		<letterLabel>Found transmitter</letterLabel>
+		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a small device with pneumatic retractable stops. On its body there are indicators with lights, an antenna and a small button. It looks like military grade.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>60</earliestDay>
+		<baseChance>0.1</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minRefireDays>180</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableObjectDef>AE_BeamTarget</DeployableObjectDef>
+				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>0.1</ChanceFactorPowPerBuilding>
+			</li>
+		</modExtensions>
+	</IncidentDef>
 
 </Defs>
