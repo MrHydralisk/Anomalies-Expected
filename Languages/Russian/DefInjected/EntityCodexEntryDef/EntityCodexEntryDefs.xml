@@ -10,5 +10,7 @@
 	<AE_EntityCodexEntry_MeatGrinder.label>промышленный металлический ящик</AE_EntityCodexEntry_MeatGrinder.label>
 
 	<AE_EntityCodexEntry_BakingPies.label>большой пирог</AE_EntityCodexEntry_BakingPies.label>
+	
+	<AE_EntityCodexEntry_BeamTarget.label>передатчик</AE_EntityCodexEntry_BeamTarget.label>
 
 </LanguageData>
