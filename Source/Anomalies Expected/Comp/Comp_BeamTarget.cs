@@ -209,10 +209,10 @@ namespace AnomaliesExpected
         {
             List<string> inspectStrings = new List<string>();
             int study = StudyUnlocks?.NextIndex ?? 4;
-            if (study > 1)
+            if (study > 0)
             {
                 inspectStrings.Add("AnomaliesExpected.BeamTarget.Indicator".Translate(beamNextCount, Props.beamMaxCount).RawText);
-                if (study > 2)
+                if (study > 1)
                 {
                     inspectStrings.Add("AnomaliesExpected.BeamTarget.State".Translate(beamTargetState == BeamTargetState.Searching ? "AnomaliesExpected.BeamTarget.StateSearching".Translate() : "AnomaliesExpected.BeamTarget.StateActivating".Translate()).RawText);
                 }
