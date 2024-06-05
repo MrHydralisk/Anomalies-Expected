@@ -12,7 +12,7 @@ namespace AnomaliesExpected
 
         private int beamNextCount = 1;
         private int beamMaxCount = 1;
-        private int TickNextState;
+        private int TickNextState = 20000;
 
         private bool isActive;
 

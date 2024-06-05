@@ -634,6 +634,18 @@
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/ResearchProjectDef[defName="AEBingingFoodSerum"]/knowledgeCategory</xpath>
 				</li>
+				
+				
+				
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/EntityCodexEntryDef[defName="AE_EntityCodexEntry_BeamTarget"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="AE_BeamTarget"]/comps/li[2]/knowledgeCategory</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="AE_BeamTarget"]/comps/li[3]</xpath>
+				</li>
 			</operations>
 		</nomatch>
 	</Operation>
