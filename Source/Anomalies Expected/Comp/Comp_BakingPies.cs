@@ -156,7 +156,7 @@ namespace AnomaliesExpected
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Collections.Look(ref piePieces, "piePieces", LookMode.Value);
+            Scribe_Collections.Look(ref piePieces, "piePieces", LookMode.Reference);
             Scribe_Values.Look(ref TickSpawn, "TickSpawn", Find.TickManager.TicksGame + Props.tickPerSpawn);
         }
 
