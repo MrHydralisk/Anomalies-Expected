@@ -29,26 +29,37 @@
 	
 	<AEGrinderStomach.label>желудок-измельчитель</AEGrinderStomach.label>
 	<AEGrinderStomach.description>Создать желудок-измельчитель, повторяющий структуру мясорубки</AEGrinderStomach.description>
-	<AEGrinderStomach.generalRules.rulesStrings.0>желудок-измельчитель</AEGrinderStomach.generalRules.rulesStrings.0>
-	<AEGrinderStomach.generalRules.rulesStrings.1>может, наконец, выиграть все соревнования по поеданию</AEGrinderStomach.generalRules.rulesStrings.1>
-	<AEGrinderStomach.generalRules.rulesStrings.2>выиграл каждую награду «Худший гость на званом ужине»</AEGrinderStomach.generalRules.rulesStrings.2>
-	<AEGrinderStomach.generalRules.rulesStrings.3>создание желудка-измельчителя</AEGrinderStomach.generalRules.rulesStrings.3>
+	<AEGrinderStomach.generalRules.rulesStrings.0>subject->желудок-измельчитель</AEGrinderStomach.generalRules.rulesStrings.0>
+	<AEGrinderStomach.generalRules.rulesStrings.1>subject_story->может, наконец, выиграть все соревнования по поеданию</AEGrinderStomach.generalRules.rulesStrings.1>
+	<AEGrinderStomach.generalRules.rulesStrings.2>subject_story->выиграл каждую награду «Худший гость на званом ужине»</AEGrinderStomach.generalRules.rulesStrings.2>
+	<AEGrinderStomach.generalRules.rulesStrings.3>subject_gerund->создание желудка-измельчителя</AEGrinderStomach.generalRules.rulesStrings.3>
 
 	<AEGrinderJaw.label>челюсть-измельчитель</AEGrinderJaw.label>
 	<AEGrinderJaw.description>Создать челюсть-измельчитель, повторяющие структуру мясорубки</AEGrinderJaw.description>
-	<AEGrinderJaw.generalRules.rulesStrings.0>челюсть-измельчитель</AEGrinderJaw.generalRules.rulesStrings.0>
-	<AEGrinderJaw.generalRules.rulesStrings.1>может буквально съесть всё что угодно</AEGrinderJaw.generalRules.rulesStrings.1>
-	<AEGrinderJaw.generalRules.rulesStrings.2>был спасателем в длительных миссиях... пока случайно не съел экипаж космического корабля</AEGrinderJaw.generalRules.rulesStrings.2>
-	<AEGrinderJaw.generalRules.rulesStrings.3>может прожевать целый стейк за секунды</AEGrinderJaw.generalRules.rulesStrings.3>
-	<AEGrinderJaw.generalRules.rulesStrings.4>создание челюсти-измельчителя</AEGrinderJaw.generalRules.rulesStrings.4>
+	<AEGrinderJaw.generalRules.rulesStrings.0>subject->челюсть-измельчитель</AEGrinderJaw.generalRules.rulesStrings.0>
+	<AEGrinderJaw.generalRules.rulesStrings.1>subject_story->может буквально съесть всё что угодно</AEGrinderJaw.generalRules.rulesStrings.1>
+	<AEGrinderJaw.generalRules.rulesStrings.2>subject_story->был спасателем в длительных миссиях... пока случайно не съел экипаж космического корабля</AEGrinderJaw.generalRules.rulesStrings.2>
+	<AEGrinderJaw.generalRules.rulesStrings.3>subject_story->может прожевать целый стейк за секунды</AEGrinderJaw.generalRules.rulesStrings.3>
+	<AEGrinderJaw.generalRules.rulesStrings.4>subject_gerund->создание челюсти-измельчителя</AEGrinderJaw.generalRules.rulesStrings.4>
 	
 	
 	
 	<AEBingingFoodSerum.label>сыворотка обжорства</AEBingingFoodSerum.label>
 	<AEBingingFoodSerum.description>Синтезировать сыворотку, которая заставит человека объедаться едой.</AEBingingFoodSerum.description>
-	<AEBingingFoodSerum.generalRules.rulesStrings.0>сыворотка обжорства</AEBingingFoodSerum.generalRules.rulesStrings.0>
-	<AEBingingFoodSerum.generalRules.rulesStrings.1>съелвсю еду в комплексе</AEBingingFoodSerum.generalRules.rulesStrings.1>
-	<AEBingingFoodSerum.generalRules.rulesStrings.2>урчание живота было слышно на несколько километров вокруг</AEBingingFoodSerum.generalRules.rulesStrings.2>
-	<AEBingingFoodSerum.generalRules.rulesStrings.3>синтезируется сыворотка обжорства</AEBingingFoodSerum.generalRules.rulesStrings.3>
+	<AEBingingFoodSerum.generalRules.rulesStrings.0>subject->сыворотка обжорства</AEBingingFoodSerum.generalRules.rulesStrings.0>
+	<AEBingingFoodSerum.generalRules.rulesStrings.1>subject_story->съелвсю еду в комплексе</AEBingingFoodSerum.generalRules.rulesStrings.1>
+	<AEBingingFoodSerum.generalRules.rulesStrings.2>subject_story->урчание живота было слышно на несколько километров вокруг</AEBingingFoodSerum.generalRules.rulesStrings.2>
+	<AEBingingFoodSerum.generalRules.rulesStrings.3>subject_gerund->синтезируется сыворотка обжорства</AEBingingFoodSerum.generalRules.rulesStrings.3>
+	
+	
+	
+	<AEOrbitalBeamTargeter.label>целеуказатель для точечного луча</AEOrbitalBeamTargeter.label>
+	<AEOrbitalBeamTargeter.description>Создать устройство целеуказания для спутниковой сети сбора солнечной энергии на основе устройства аномалии передатчика.</AEOrbitalBeamTargeter.description>
+	<AEOrbitalBeamTargeter.generalRules.rulesStrings.0>subject->целеуказатель для точечного луча</AEOrbitalBeamTargeter.generalRules.rulesStrings.0>
+	<AEOrbitalBeamTargeter.generalRules.rulesStrings.1>subject_story->ночь превратилась в день</AEOrbitalBeamTargeter.generalRules.rulesStrings.1>
+	<AEOrbitalBeamTargeter.generalRules.rulesStrings.2>subject_story->расплавил все статуи в другом поселении</AEOrbitalBeamTargeter.generalRules.rulesStrings.2>
+	<AEOrbitalBeamTargeter.generalRules.rulesStrings.3>subject_story->смог остановить проход врагов через узкий каньон</AEOrbitalBeamTargeter.generalRules.rulesStrings.3>
+	<AEOrbitalBeamTargeter.generalRules.rulesStrings.4>subject_story->украл всю древнюю солнечную энергию</AEOrbitalBeamTargeter.generalRules.rulesStrings.4>
+	<AEOrbitalBeamTargeter.generalRules.rulesStrings.5>subject_gerund->создание целеуказатель для точечного луча</AEOrbitalBeamTargeter.generalRules.rulesStrings.5>
 
 </LanguageData>

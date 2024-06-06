@@ -38,6 +38,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AEStudyNote.cs" />
+    <Compile Include="DefOfLocal\ThingDefOfLocal.cs" />
+    <Compile Include="AEPowerBeam.cs" />
+    <Compile Include="Verb_AEPowerBeam.cs" />
     <Compile Include="PlaceWorker_ShowBeamTargetRadius.cs" />
     <Compile Include="MinifiedThing_AE.cs" />
     <Compile Include="Building_AE.cs" />

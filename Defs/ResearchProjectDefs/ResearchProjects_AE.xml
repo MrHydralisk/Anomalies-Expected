@@ -157,5 +157,31 @@
 			</rulesStrings>
 		</generalRules>
 	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>AEOrbitalBeamTargeter</defName>
+		<label>precise orbital beam targeter</label>
+		<description>Produce a targeting unit for a network of power-collection satellites based on understanding of transmitter anomaly.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>AdvancedFabrication</li>
+		</prerequisites>
+		<knowledgeCost>100</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>1</researchViewX>
+		<researchViewY>2</researchViewY>
+		<generalRules>
+			<rulesStrings>
+				<li>subject->precise orbital beam targeter</li>
+
+				<li>subject_story->the night was bright as day</li>
+				<li>subject_story->melted every statue in other village</li>
+				<li>subject_story->was able to prevent enemies from going through narrow canyon</li>
+				<li>subject_story->stole all ancient solar power</li>
+
+				<li>subject_gerund->crafting precise orbital beam targeter</li>
+			</rulesStrings>
+		</generalRules>
+	</ResearchProjectDef>
 
 </Defs>

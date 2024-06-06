@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="OrbitalUtilityBase">
+		<defName>AEOrbitalBeamTargeter</defName>
+		<label>precise orbital beam targeter</label>
+		<description>A targeting unit for a network of power-collection satellites based on understanding of transmitter anomaly. Once aimed at a target, it directs ancient satellites to begin beaming power down in a thin column of electromagnetic energy. You'll be aiming it at enemies, at which point the power column will turn the small area into a thousand-degree inferno. This will last until the satellites detect the unsafe targeting, shut connection to themselves down, and permanently deactivate the targeter after using it for 3 times.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponSpecial/OrbitalBeamTargeter/OrbitalBeamTargeter</texPath>
+			<drawSize>(0.7,0.7)</drawSize>
+		</graphicData>
+		<apparel>
+			<ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
+			<wornGraphicPath>Things/Item/Equipment/WeaponSpecial/OrbitalBeamTargeter/OrbitalBeamTargeter</wornGraphicPath>
+			<wornGraphicData>
+				<renderUtilityAsPack>true</renderUtilityAsPack>
+				<north>
+					<male><offset>(0.25, -0.25)</offset></male>
+					<female><offset>(0.25,-0.25)</offset></female>
+					<thin><offset>(0.15,-0.25)</offset></thin>
+					<hulk><offset>(0.25,-0.3)</offset></hulk>
+					<fat><offset>(0.45,-0.25)</offset></fat>
+				</north>
+				<south>
+					<male><offset>(-0.3, -0.25)</offset></male>
+					<female><offset>(-0.3,-0.25)</offset></female>
+					<thin><offset>(-0.2,-0.25)</offset></thin>
+					<hulk><offset>(-0.3,-0.3)</offset></hulk>
+					<fat><offset>(-0.5,-0.25)</offset></fat>
+				</south>
+				<east>
+					<offset>(-0.05,-0.3)</offset>
+				</east>
+
+				<male><scale>(0.4,0.4)</scale></male>
+				<female><scale>(0.4,0.4)</scale></female>
+				<thin><scale>(0.4,0.4)</scale></thin>
+				<hulk><scale>(0.4,0.4)</scale></hulk>
+				<fat><scale>(0.4,0.4)</scale></fat>
+			</wornGraphicData>
+		</apparel>
+		<statBases>
+			<MarketValue>600</MarketValue>
+			<WorkToMake>45000</WorkToMake>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>AEOrbitalBeamTargeter</researchPrerequisite>
+			<unfinishedThingDef>UnfinishedPack</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>12</Crafting>
+			</skillRequirements>
+			<recipeUsers Inherit="False">
+				<li>FabricationBench</li>
+			</recipeUsers>
+			<displayPriority>1300</displayPriority>
+		</recipeMaker>
+		<costList>
+			<Bioferrite>90</Bioferrite>
+			<ComponentSpacer>1</ComponentSpacer>
+		</costList>
+		<verbs>
+			<li>
+				<verbClass>AnomaliesExpected.Verb_AEPowerBeam</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<useableInPocketMaps>false</useableInPocketMaps>
+				<warmupTime>5</warmupTime>
+				<ai_AvoidFriendlyFireRadius>2.5</ai_AvoidFriendlyFireRadius>
+				<range>30.9</range>
+				<burstShotCount>1</burstShotCount>
+				<soundAiming>OrbitalTargeter_Aiming</soundAiming>
+				<soundCast>OrbitalTargeter_Fire</soundCast>
+				<onlyManualCast>true</onlyManualCast>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CompProperties_ApparelReloadable">
+				<maxCharges>3</maxCharges>
+				<destroyOnEmpty>true</destroyOnEmpty>
+				<hotKey>Misc4</hotKey>
+				<chargeNoun>charge</chargeNoun>
+				<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+			</li>
+		</comps>
+	</ThingDef>
+
+</Defs>

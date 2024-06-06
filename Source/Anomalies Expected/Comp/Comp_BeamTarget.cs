@@ -46,7 +46,7 @@ namespace AnomaliesExpected
         public override void CompTick()
         {
             base.CompTick(); 
-            if (Find.TickManager.TicksGame >= TickNextState)
+            if (Find.TickManager.TicksGame >= TickNextState && parent.Spawned)
             {
                 switch (beamTargetState)
                 {

@@ -104,6 +104,9 @@
 		<provocationIncidents>
 			<li>AE_IncidentDef_BeamTargetSpawn</li>
 		</provocationIncidents>
+		<discoveredResearchProjects>
+			<li>AEOrbitalBeamTargeter</li>
+		</discoveredResearchProjects>
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>
 

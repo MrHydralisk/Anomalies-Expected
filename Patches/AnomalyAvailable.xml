@@ -646,6 +646,34 @@
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/ThingDef[defName="AE_BeamTarget"]/comps/li[3]</xpath>
 				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="AEOrbitalBeamTargeter"]/costList</xpath>
+					<value>
+						<costList>
+							<Steel>60</Steel>
+							<Plasteel>30</Plasteel>
+							<ComponentSpacer>1</ComponentSpacer>
+						</costList>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ResearchProjectDef[defName="AEOrbitalBeamTargeter"]</xpath>
+					<value>
+						<techLevel>Spacer</techLevel>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ResearchProjectDef[defName="AEOrbitalBeamTargeter"]</xpath>
+					<value>
+						<baseCost>3200</baseCost>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ResearchProjectDef[defName="AEOrbitalBeamTargeter"]/knowledgeCost</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ResearchProjectDef[defName="AEOrbitalBeamTargeter"]/knowledgeCategory</xpath>
+				</li>
 			</operations>
 		</nomatch>
 	</Operation>

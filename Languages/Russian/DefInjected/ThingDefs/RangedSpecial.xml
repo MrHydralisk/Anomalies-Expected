@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<AEPowerBeam.label>точечный луч</AEPowerBeam.label>
+	<AEOrbitalBeamTargeter.label>целеуказатель для точечного луча</AEOrbitalBeamTargeter.label>
+	<AEOrbitalBeamTargeter.description>Устройство целеуказания для спутниковой сети сбора солнечной энергии на основе устройства аномалии передатчика. При получении координат цели система отправляет спутникам-излучателям команду на концентрацию электромагнитного точечного луча в заданной области. Электромагнитный луч создаст в указанном вами месте небольшой тысячеградусный ад. Через некоторое время система распознает небезопасное использование, отключит излучатели спутников и навсегда деактивирует связь с вашим целеуказателем после 3 использований.</AEOrbitalBeamTargeter.description>
+	<AEOrbitalBeamTargeter.comps.CompApparelReloadable.chargeNoun>заряд</AEOrbitalBeamTargeter.comps.CompApparelReloadable.chargeNoun>
+	<AEOrbitalBeamTargeter.comps.CompApparelReloadable.cooldownGerund>перезаряжается</AEOrbitalBeamTargeter.comps.CompApparelReloadable.cooldownGerund>
+	<AEOrbitalBeamTargeter.verbs.Verb_AEPowerBeam.label>целеуказатель для точечного луча</AEOrbitalBeamTargeter.verbs.Verb_AEPowerBeam.label>
+
+</LanguageData>
