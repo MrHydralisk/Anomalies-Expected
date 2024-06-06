@@ -14,7 +14,7 @@ On some study notes label and description of anomaly might change to fit the cur
 
 Currently available:
 * 3 Anomaly of basic category
-* 2 Anomaly of advanced category
+* 3 Anomaly of advanced category
 
 ### Ordinary Bed
 
@@ -35,6 +35,10 @@ Currently available:
 ### Big Pie
 
 *Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a round big pie on a plate. It looks appetizing.*
+
+### Transmitter
+
+*Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a small device with pneumatic retractable stops. On its body there are indicators with lights, an antenna and a small button. It looks like military grade.*
 
 More anomalies in development and will be added, when ready.
 
@@ -58,4 +62,4 @@ Anomalies Expected mod should be safe to add to existing save. But when you want
 
 ## To Do
 
-New 1+ anomalies
+New anomalies after a break.
