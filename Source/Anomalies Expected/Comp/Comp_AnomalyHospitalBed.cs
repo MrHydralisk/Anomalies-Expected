@@ -19,9 +19,12 @@ namespace AnomaliesExpected
 
         Building_Bed Bed => parent as Building_Bed;
 
-        public override void CompTickRare()
+        private int tickSign;
+
+        public bool canSign => Find.TickManager.TicksGame - tickSign > Props.ticksPerSign;
+
+        public void Sign()
         {
-            base.CompTickRare();
             List<Pawn> BedPawns = Bed.CurOccupants.ToList();
             if (BedPawns.Count > 0)
             {
@@ -32,7 +35,7 @@ namespace AnomaliesExpected
                     {
                         Consume(BedPawn);
                     }
-                    else if (BedPawn.health.HasHediffsNeedingTend())
+                    else
                     {
                         Heal(BedPawn);
                     }
@@ -122,13 +125,36 @@ namespace AnomaliesExpected
             {
                 yield return gizmo;
             }
+            yield return new Command_Action
+            {
+                action = delegate
+                {
+                    Sign();
+                    tickSign = Find.TickManager.TicksGame;
+                },
+                defaultLabel = "AnomaliesExpected.AnomalyHospitalBed.Sign.Label".Translate(),
+                defaultDesc = "AnomaliesExpected.AnomalyHospitalBed.Sign.Desc" .Translate(),
+                icon = parent.def.uiIcon,
+                Disabled = !canSign || ((Bed.CurOccupants?.Count() ?? 0) == 0),
+                disabledReason = canSign ? "AnomaliesExpected.AnomalyHospitalBed.Sign.Empty".Translate() : "AnomaliesExpected.AnomalyHospitalBed.Sign.Reloading".Translate((tickSign + Props.ticksPerSign - Find.TickManager.TicksGame).ToStringTicksToPeriod())
+
+            };
             if (DebugSettings.ShowDevGizmos)
             {
                 yield return new Command_Action
                 {
                     action = delegate
                     {
-                        Pawn BedPawn = Bed.CurOccupants?.First();
+                        Sign();
+                    },
+                    defaultLabel = "Dev: Sign now",
+                    defaultDesc = $"Put a signature [Can = {(Bed.CurOccupants?.Count() ?? 0) > 0}]"
+                };
+                yield return new Command_Action
+                {
+                    action = delegate
+                    {
+                        Pawn BedPawn = Bed.CurOccupants?.FirstOrDefault();
                         if (BedPawn != null)
                         {
                             Heal(BedPawn);
@@ -141,7 +167,7 @@ namespace AnomaliesExpected
                 {
                     action = delegate
                     {
-                        Pawn BedPawn = Bed.CurOccupants?.First();
+                        Pawn BedPawn = Bed.CurOccupants?.FirstOrDefault();
                         if (BedPawn != null)
                         {
                             Consume(BedPawn);
@@ -169,6 +195,7 @@ namespace AnomaliesExpected
         {
             base.PostExposeData();
             Scribe_Collections.Look(ref storedSeverityList, "storedSeverityList", LookMode.Value);
+            Scribe_Values.Look(ref tickSign, "tickSign", Find.TickManager.TicksGame);
         }
 
         public override string CompInspectStringExtra()

@@ -113,7 +113,6 @@
 		<pathCost>42</pathCost>
 		<leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
 		<staticSunShadowHeight>0.17</staticSunShadowHeight>
-		<tickerType>Rare</tickerType>
 		<designationCategory/>
 		<uiIconScale>0.90</uiIconScale>
 		<comps>

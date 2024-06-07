@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<AnomaliesExpected.AnomalyHospitalBed.Sign.Label>Put a signature</AnomaliesExpected.AnomalyHospitalBed.Sign.Label>
+	<AnomaliesExpected.AnomalyHospitalBed.Sign.Desc>Put a signature on a medical clipboard where it indicates patient information</AnomaliesExpected.AnomalyHospitalBed.Sign.Desc>
+	<AnomaliesExpected.AnomalyHospitalBed.Sign.Empty>No patient on a bed</AnomaliesExpected.AnomalyHospitalBed.Sign.Empty>
+	<AnomaliesExpected.AnomalyHospitalBed.Sign.Reloading>Can sign in {0}</AnomaliesExpected.AnomalyHospitalBed.Sign.Reloading>
+</LanguageData>

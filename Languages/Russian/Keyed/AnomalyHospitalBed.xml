@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<AnomaliesExpected.AnomalyHospitalBed.Sign.Label>Поставить подпись</AnomaliesExpected.AnomalyHospitalBed.Sign.Label>
+	<AnomaliesExpected.AnomalyHospitalBed.Sign.Desc>Поставить подпись на медицинском планшете где указана информация о пациенте</AnomaliesExpected.AnomalyHospitalBed.Sign.Desc>
+	<AnomaliesExpected.AnomalyHospitalBed.Sign.Empty>Нет пациента на кровати</AnomaliesExpected.AnomalyHospitalBed.Sign.Empty>
+	<AnomaliesExpected.AnomalyHospitalBed.Sign.Reloading>Можно подписать через {0}</AnomaliesExpected.AnomalyHospitalBed.Sign.Reloading>
+</LanguageData>

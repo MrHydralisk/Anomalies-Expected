@@ -6,6 +6,7 @@ namespace AnomaliesExpected
     {
         public int ClipboardSize = 5;
         public int MaxMissed = 10;
+        public int ticksPerSign = 10000;
         public float TendQuality = 1;
         public float MaxDamage = 5;
         public float MultInjury = 1;
