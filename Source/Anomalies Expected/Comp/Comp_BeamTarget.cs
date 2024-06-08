@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace AnomaliesExpected
 {
@@ -119,7 +120,9 @@ namespace AnomaliesExpected
                 return newLoc.Walkable(map) && !newLoc.Fogged(map) && newLoc.GetFirstPawn(map) == null;
             }, out result))
             {
+                SoundDefOfLocal.Psycast_Skip_Exit.PlayOneShot(new TargetInfo(parent.Position, map));
                 FleckMaker.Static(parent.Position, map, FleckDefOf.PsycastSkipInnerExit, Props.teleportationFleckRadius);
+                SoundDefOf.Psycast_Skip_Entry.PlayOneShot(new TargetInfo(parent.Position, map));
                 FleckMaker.Static(result, map, FleckDefOf.PsycastSkipFlashEntry, Props.teleportationFleckRadius);
                 LookTargets lookTarget = new LookTargets(parent.Position, map);
                 Messages.Message("AnomaliesExpected.BeamTarget.LeftContainment".Translate(parent.LabelCap).RawText, lookTarget, MessageTypeDefOf.NegativeEvent);

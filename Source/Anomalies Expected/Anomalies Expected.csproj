@@ -38,8 +38,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AEStudyNote.cs" />
+    <Compile Include="CompProperties\CompProperties_CanDestroyedAfterStudy.cs" />
+    <Compile Include="Comp\Comp_CanDestroyedAfterStudy.cs" />
+    <Compile Include="DefOfLocal\SoundDefOfLocal.cs" />
     <Compile Include="DefOfLocal\ThingDefOfLocal.cs" />
     <Compile Include="AEPowerBeam.cs" />
+    <Compile Include="AEMod.cs" />
+    <Compile Include="AESettings.cs" />
+    <Compile Include="JobDriver\JobDriver_RemoveAnomaly.cs" />
     <Compile Include="Verb_AEPowerBeam.cs" />
     <Compile Include="PlaceWorker_ShowBeamTargetRadius.cs" />
     <Compile Include="MinifiedThing_AE.cs" />
@@ -64,10 +70,10 @@
     <Compile Include="DefOfLocal\HediffDefOfLocal.cs" />
     <Compile Include="DefOfLocal\ThingCategoryDefOfLocal.cs" />
     <Compile Include="DefOfLocal\SpecialThingFilterDefOfLocal.cs" />
-    <Compile Include="IncidentDefExtension.cs" />
-    <Compile Include="JobDriver_CalledMeatGrinder.cs" />
-    <Compile Include="IncidentWorker_DeployThingFromOrbit.cs" />
-    <Compile Include="IncidentWorker_DeployFromOrbit.cs" />
+    <Compile Include="IncidentWorker\IncidentDefExtension.cs" />
+    <Compile Include="JobDriver\JobDriver_CalledMeatGrinder.cs" />
+    <Compile Include="IncidentWorker\IncidentWorker_DeployThingFromOrbit.cs" />
+    <Compile Include="IncidentWorker\IncidentWorker_DeployFromOrbit.cs" />
     <Compile Include="Comp\CompUseEffect_ReplaceHediff.cs" />
   </ItemGroup>
   <ItemGroup>

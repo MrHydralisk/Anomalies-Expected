@@ -8,6 +8,21 @@ namespace AnomaliesExpected
         private const int DurationTicks = 1000;
         private float BeamRadius => verbProps.ai_AvoidFriendlyFireRadius;
 
+        private int lastTickBTSearch;
+
+        public Thing BeamTarget
+        {
+            get
+            {
+                if (BeamTargetCached == null || !BeamTargetCached.Spawned || BeamTargetCached.Destroyed)
+                {
+                    BeamTargetCached = Find.AnyPlayerHomeMap.listerBuildings.allBuildingsColonist.FirstOrDefault((Building b) => b.HasComp<Comp_BeamTarget>());
+                }
+                return BeamTargetCached;
+            }
+        }
+        private Thing BeamTargetCached;
+
         protected override bool TryCastShot()
         {
             if (currentTarget.HasThing && currentTarget.Thing.Map != caster.Map)
@@ -22,6 +37,20 @@ namespace AnomaliesExpected
             obj.StartStrike();
             base.ReloadableCompSource?.UsedOnce();
             return true;
+        }
+
+        public override bool Available()
+        {
+            if (AEMod.Settings.PoweBeamRequireBeamTarget && BeamTarget == null)
+            {
+                if ((Find.TickManager.TicksGame > lastTickBTSearch + 500))
+                {
+                    Messages.Message("AnomaliesExpected.PowerBeam.BeamTargetMissing".Translate(caster.LabelCap).RawText, caster, MessageTypeDefOf.NeutralEvent, false);
+                    lastTickBTSearch = Find.TickManager.TicksGame;
+                }
+                return false;
+            }
+            return base.Available();
         }
 
         public override float HighlightFieldRadiusAroundTarget(out bool needLOSToCenter)

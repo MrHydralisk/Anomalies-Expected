@@ -7,4 +7,7 @@
 	<AnomaliesExpected.BeamTarget.TimeTillBeam>Time before high energy burst: {0}</AnomaliesExpected.BeamTarget.TimeTillBeam>
 	<AnomaliesExpected.BeamTarget.ButtonHold>Holding button</AnomaliesExpected.BeamTarget.ButtonHold>
 	<AnomaliesExpected.BeamTarget.LeftContainment>{0} left containment</AnomaliesExpected.BeamTarget.LeftContainment>
+	<AnomaliesExpected.BeamTarget.DestroyedAfterStudy>Generating satellite data</AnomaliesExpected.BeamTarget.DestroyedAfterStudy>
+	
+	<AnomaliesExpected.PowerBeam.BeamTargetMissing>{0} wasn't able to connect to Transmitter</AnomaliesExpected.PowerBeam.BeamTargetMissing>
 </LanguageData>

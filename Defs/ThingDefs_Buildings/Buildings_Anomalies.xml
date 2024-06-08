@@ -381,6 +381,9 @@
 		<fillPercent>0.15</fillPercent>
 		<pathCost>14</pathCost>
 		<tickerType>Normal</tickerType>
+		<killedLeavings>
+			<Shard>1</Shard>
+		</killedLeavings>
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_BeamTarget">
 				<activeTicks>250</activeTicks>
@@ -452,6 +455,31 @@
 						<text>Theory Regarding Transmitter\n\nAbstract:\nAnalysis of the Orbital Beam Training Target (OBTT) suggests its origin as an archeotech device for coordinating power satellites. The bottom button likely served as a safety measure for personnel. The OBTT exhibits concerning modifications: self-repair via organic material and teleportation based on satellite data (prioritizing buildings). While potentially repurposable as a weapon, its critical classification remains due to safety risks and teleportation capabilities. Removal or controlled use require careful consideration due to inherent risks.\n\nHypothesis:\nBased on observations from all experiments and data from transmission, a theory regarding the Orbital Beam Training Target (OBTT) origin and behavior was proposed.\nOBTT was build by archotech engineers to test and coordinate network of multiple power-collection satellites. Lit lamps on the indicator represent the amount of satellites it was able to connect. While digital dial represent time it takes for satellites to aim at the OBTT as the target. Additional safety feature was installed in it as button at the bottom, which allowed ground personal to delay attack to evacuate firing zone. Strong pneumatic retractable stops was installed to keep OBTT in one place during beam effect. While it was made of military grade composite to withstand multiple usage, it appears to have undergone alterations. Seems like organic metal infestated the device making it to regenerate any damage from beam. Additionally it acquired ability to self-teleport. Target of teleportation selected via processing of big amount of recieved data from satellite imaging, to prioritize building as targets. Due to the interference in the atmosphere satellite imaging not always available, making it pick random spot nearby to teleport to. Since it was made for military practice it doesn't risk being permamently deactivated by the satellites, but still require some time (~5 days) between manual activation.\n\nDiscussion:\nBased on our current understanding of the OBTT, it has the potential to be repurposed as a powerful military-grade tool. Additionally, its self-teleportation ability requires a high level of surveillance capability for preventive measures against activation in vital facility zones.\nThe current classification of the OBTT remains Class-4 (Critical) as it still pose an immediate threat to the facility and it personal, even with current safety protocols.\n\nRecommendations:\nRemoval: Given the potential for it indestructability, destruction is impossible but it can be send to the other part of the world. The OBTT teleportation abilities still present a risk of it returning to the facility one day.\nControlled Use: If the hypothesis holds true, continued utilization of the OBTT under controlled and monitored conditions could offer a sustainable fire power for the facility defense. This approach, however, requires thorough risk assessment and robust safety protocols to prevent it activation in vital zones.</text>
 					</li>
 				</studyNotes>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_CanDestroyedAfterStudy">
+				<ticksToActivate>1200</ticksToActivate>
+				<maintainProgress>true</maintainProgress>
+				<activateTexPath>UI/Buttons/Abandon</activateTexPath>
+        
+				<activateLabelString>Removal</activateLabelString>
+				<activateDescString>Modify satellite data to make it teleport far away from the colony. [Will destroy it]</activateDescString>
+				<guiLabelString>Choose who should remove this.</guiLabelString>
+				<jobString>modify data</jobString>
+				<activatingStringPending>modifying data for {0}</activatingStringPending>
+				<activatingString>modifying data for {0}: {1}s</activatingString>
+
+				<fleckOnAnomaly>PsycastSkipInnerExit</fleckOnAnomaly>
+				<fleckOnAnomalyScale>1</fleckOnAnomalyScale>
+				<soundActivate>Psycast_Skip_Entry</soundActivate>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<jobDef>AE_RemoveAnomaly</jobDef>
 			</li>
 		</comps>
 		<inspectorTabs>

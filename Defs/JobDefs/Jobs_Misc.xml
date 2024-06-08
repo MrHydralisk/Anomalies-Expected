@@ -6,5 +6,11 @@
 		<driverClass>AnomaliesExpected.JobDriver_CalledMeatGrinder</driverClass>
 		<reportString>pressing button.</reportString>
 	</JobDef>
+
+	<JobDef>
+		<defName>AE_RemoveAnomaly</defName>
+		<driverClass>AnomaliesExpected.JobDriver_RemoveAnomaly</driverClass>
+		<reportString>removing TargetA.</reportString>
+	</JobDef>
   
 </Defs>

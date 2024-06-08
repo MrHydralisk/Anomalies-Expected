@@ -2,5 +2,7 @@
 <LanguageData>
 
 	<AE_CalledMeatGrinder.reportString>нажимает кнопку</AE_CalledMeatGrinder.reportString>
+	
+	<AE_RemoveAnomaly.reportString>уничтожает TargetA.</AE_RemoveAnomaly.reportString>
 
 </LanguageData>

@@ -4,6 +4,7 @@ using System.Linq;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace AnomaliesExpected
 {
@@ -66,6 +67,7 @@ namespace AnomaliesExpected
                             bool isPlaced = GenPlace.TryPlaceThing(piece, pos, map, ThingPlaceMode.Near, null);
                             if (isPlaced)
                             {
+                                SoundDefOf.Psycast_Skip_Entry.PlayOneShot(new TargetInfo(piece.Position, map));
                                 FleckMaker.Static(piece.Position, map, FleckDefOf.PsycastSkipFlashEntry, 0.2f);
                                 amount -= 1;
                                 if (amount <= 0)
