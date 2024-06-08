@@ -457,7 +457,7 @@
 				</studyNotes>
 			</li>
 			<li Class="AnomaliesExpected.CompProperties_CanDestroyedAfterStudy">
-				<ticksToActivate>1200</ticksToActivate>
+				<ticksToActivate>180000</ticksToActivate>
 				<maintainProgress>true</maintainProgress>
 				<activateTexPath>UI/Buttons/Abandon</activateTexPath>
         
