@@ -2,4 +2,5 @@
 <LanguageData>
 	<AnomaliesExpected.BakingPies.Amount>Amount of pie pieces: {0}</AnomaliesExpected.BakingPies.Amount>
 	<AnomaliesExpected.BakingPies.Time>Time till creating new pieces: {0}</AnomaliesExpected.BakingPies.Time>
+	<AnomaliesExpected.BakingPies.SpawnPiePiece>The number of {0} pieces has changed</AnomaliesExpected.BakingPies.SpawnPiePiece>
 </LanguageData>

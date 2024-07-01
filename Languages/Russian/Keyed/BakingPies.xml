@@ -2,4 +2,5 @@
 <LanguageData>
 	<AnomaliesExpected.BakingPies.Amount>Количество кусков пирога: {0}</AnomaliesExpected.BakingPies.Amount>
 	<AnomaliesExpected.BakingPies.Time>Время до создания кусков пирога: {0}</AnomaliesExpected.BakingPies.Time>
+	<AnomaliesExpected.BakingPies.SpawnPiePiece>Количество кусков {0} изменилось</AnomaliesExpected.BakingPies.SpawnPiePiece>
 </LanguageData>
