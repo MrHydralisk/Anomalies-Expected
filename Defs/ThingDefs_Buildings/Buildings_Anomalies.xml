@@ -296,7 +296,7 @@
 				<knowledgeCategory>Advanced</knowledgeCategory>
 				<knowledgeFactorOutdoors>0</knowledgeFactorOutdoors>
 				<anomalyKnowledge>1</anomalyKnowledge>
-				<minMonolithLevelForStudy>2</minMonolithLevelForStudy>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
 				<studyEnabledByDefault>false</studyEnabledByDefault>
 			</li>
 			<li Class="CompProperties_StudyUnlocks">
@@ -413,7 +413,7 @@
 				<knowledgeCategory>Advanced</knowledgeCategory>
 				<knowledgeFactorOutdoors>0</knowledgeFactorOutdoors>
 				<anomalyKnowledge>1</anomalyKnowledge>
-				<minMonolithLevelForStudy>2</minMonolithLevelForStudy>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
 				<studyEnabledByDefault>false</studyEnabledByDefault>
 			</li>
 			<li Class="CompProperties_StudyUnlocks">
