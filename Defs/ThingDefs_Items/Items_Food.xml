@@ -128,7 +128,7 @@
 			<Mass>0.32</Mass>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Nutrition>0.9</Nutrition>
-			<MarketValue>200</MarketValue>
+			<MarketValue>12</MarketValue>
 		</statBases>
 		<altitudeLayer>Item</altitudeLayer>
 		<stackLimit>1</stackLimit>
