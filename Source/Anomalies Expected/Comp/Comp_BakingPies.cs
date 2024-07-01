@@ -33,6 +33,25 @@ namespace AnomaliesExpected
             }
         }
 
+        public override void PostDestroy(DestroyMode mode, Map previousMap)
+        {
+            if (AEMod.Settings.DespawnPiecesOnDestroy)
+            {
+                for (int i = piePieces.Count() - 1; i >= 0; i--)
+                {
+                    Thing piece = piePieces[i];
+                    if (piece != null && !piece.Destroyed && piece.Spawned)
+                    {
+                        TargetInfo targetInfo = new TargetInfo(piece.Position, piece.Map);
+                        SoundDefOfLocal.Psycast_Skip_Exit.PlayOneShot(targetInfo);
+                        FleckMaker.Static(targetInfo.Cell, targetInfo.Map, FleckDefOf.PsycastSkipInnerExit, 0.2f);
+                        piece.Destroy();
+                    }
+                }
+            }
+            base.PostDestroy(mode, previousMap);
+        }
+
         public override void CompTickLong()
         {
             base.CompTickLong();
@@ -50,6 +69,10 @@ namespace AnomaliesExpected
                 piePieces.Insert(0, parent);
             }
             int amount = piePiecesExisting;
+            if (AEMod.Settings.ReplicationLimit > 0)
+            {
+                amount = Mathf.Min(amount, AEMod.Settings.ReplicationLimit);
+            }
             int l = 0;
             for (int i = 0; i < piePieces.Count; i++)
             {
@@ -67,8 +90,9 @@ namespace AnomaliesExpected
                             bool isPlaced = GenPlace.TryPlaceThing(piece, pos, map, ThingPlaceMode.Near, null);
                             if (isPlaced)
                             {
-                                SoundDefOf.Psycast_Skip_Entry.PlayOneShot(new TargetInfo(piece.Position, map));
-                                FleckMaker.Static(piece.Position, map, FleckDefOf.PsycastSkipFlashEntry, 0.2f);
+                                TargetInfo targetInfo = new TargetInfo(piece.Position, piece.Map);
+                                SoundDefOf.Psycast_Skip_Entry.PlayOneShot(targetInfo);
+                                FleckMaker.Static(targetInfo.Cell, targetInfo.Map, FleckDefOf.PsycastSkipFlashEntry, 0.2f);
                                 amount -= 1;
                                 if (amount <= 0)
                                 {

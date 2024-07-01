@@ -2,5 +2,8 @@
 <LanguageData>
 	<AnomaliesExpected.Settings.Title>Anomalies Expected</AnomaliesExpected.Settings.Title>
 	
-	<AnomaliesExpected.Settings.PoweBeamRequireBeamTarget>Precise Orbital Beam Targeter require existence Transmitter to call Beam</AnomaliesExpected.Settings.PoweBeamRequireBeamTarget>
+	<AnomaliesExpected.Settings.BakingPies.ReplicationLimit>Limit max amount of Pie Pieces per replication to {0} (0 = unlimited)</AnomaliesExpected.Settings.BakingPies.ReplicationLimit>
+	<AnomaliesExpected.Settings.BakingPies.DespawnPiecesOnDestroy>All Pie Pieces will despawn, when Big Pie destroyed</AnomaliesExpected.Settings.BakingPies.DespawnPiecesOnDestroy>
+	
+	<AnomaliesExpected.Settings.BeamTarget.PoweBeamRequireBeamTarget>Precise Orbital Beam Targeter require existence Transmitter to call Beam</AnomaliesExpected.Settings.BeamTarget.PoweBeamRequireBeamTarget>
 </LanguageData>

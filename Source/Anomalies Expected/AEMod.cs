@@ -18,7 +18,11 @@ namespace AnomaliesExpected
             base.DoSettingsWindowContents(inRect);
             Listing_Standard options = new Listing_Standard();
             options.Begin(inRect);
-            options.CheckboxLabeled("AnomaliesExpected.Settings.PoweBeamRequireBeamTarget".Translate().RawText, ref Settings.PoweBeamRequireBeamTarget);
+            options.Label("AnomaliesExpected.Settings.BakingPies.ReplicationLimit".Translate(Settings.ReplicationLimit.ToString()));
+            Settings.ReplicationLimit = (int)options.Slider(Settings.ReplicationLimit, 0, 5000);
+            options.CheckboxLabeled("AnomaliesExpected.Settings.BakingPies.DespawnPiecesOnDestroy".Translate().RawText, ref Settings.DespawnPiecesOnDestroy);
+            options.GapLine();
+            options.CheckboxLabeled("AnomaliesExpected.Settings.BeamTarget.PoweBeamRequireBeamTarget".Translate().RawText, ref Settings.PoweBeamRequireBeamTarget);
             options.End();
         }
 
