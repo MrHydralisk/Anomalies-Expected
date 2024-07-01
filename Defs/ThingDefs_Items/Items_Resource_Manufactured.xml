@@ -122,7 +122,7 @@
 	<ThingDef ParentName="SerumBase">
 		<defName>AEBingingFoodSerum</defName>
 		<label>binging food serum</label>
-		<description>A syringe of green, viscous fluid. Injected in esophagus, it stimulates the digestive system and makes person feel really hungry for a good meal.\n\nThe effect is temporary and does not stack.</description>
+		<description>A syringe of green, viscous fluid. Injected in esophagus, it stimulates the digestive system and makes person feel really hungry for a good meal. Additionally reduces Big Pie effect.\n\nThe effect is temporary and does not stack.</description>
 		<descriptionHyperlinks>
 			<mentalStateDef>Binging_Food</mentalStateDef>
 		</descriptionHyperlinks>
@@ -137,6 +137,11 @@
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_UseEffectAddMentalState">
 				<mentalStateDef>Binging_Food</mentalStateDef>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_UseEffecRemoveHediff">
+				<hediffDef>Hediff_AEDigestingPie</hediffDef>
+				<severity>0.5</severity>
+				<requireHediffToUse>false</requireHediffToUse>
 			</li>
 			<li Class="CompProperties_UseEffectPlaySound">
 				<soundOnUsed>MechSerumUsed</soundOnUsed>

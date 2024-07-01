@@ -39,6 +39,8 @@
   <ItemGroup>
     <Compile Include="AEStudyNote.cs" />
     <Compile Include="CompProperties\CompProperties_CanDestroyedAfterStudy.cs" />
+    <Compile Include="CompProperties\CompProperties_UseEffecRemoveHediff.cs" />
+    <Compile Include="Comp\CompUseEffect_RemoveHediff.cs" />
     <Compile Include="Comp\Comp_CanDestroyedAfterStudy.cs" />
     <Compile Include="DefOfLocal\SoundDefOfLocal.cs" />
     <Compile Include="DefOfLocal\ThingDefOfLocal.cs" />
