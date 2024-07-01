@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using NAudio.Utils;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -120,12 +121,13 @@ namespace AnomaliesExpected
                 return newLoc.Walkable(map) && !newLoc.Fogged(map) && newLoc.GetFirstPawn(map) == null;
             }, out result))
             {
-                SoundDefOfLocal.Psycast_Skip_Exit.PlayOneShot(new TargetInfo(parent.Position, map));
-                FleckMaker.Static(parent.Position, map, FleckDefOf.PsycastSkipInnerExit, Props.teleportationFleckRadius);
-                SoundDefOf.Psycast_Skip_Entry.PlayOneShot(new TargetInfo(parent.Position, map));
-                FleckMaker.Static(result, map, FleckDefOf.PsycastSkipFlashEntry, Props.teleportationFleckRadius);
-                LookTargets lookTarget = new LookTargets(parent.Position, map);
-                Messages.Message("AnomaliesExpected.BeamTarget.LeftContainment".Translate(parent.LabelCap).RawText, lookTarget, MessageTypeDefOf.NegativeEvent);
+                TargetInfo targetInfoFrom = new TargetInfo(parent.Position, parent.Map);
+                SoundDefOfLocal.Psycast_Skip_Exit.PlayOneShot(targetInfoFrom);
+                FleckMaker.Static(targetInfoFrom.Cell, targetInfoFrom.Map, FleckDefOf.PsycastSkipInnerExit, Props.teleportationFleckRadius);
+                TargetInfo targetInfoTo = new TargetInfo(result, parent.Map);
+                SoundDefOf.Psycast_Skip_Entry.PlayOneShot(targetInfoTo);
+                FleckMaker.Static(targetInfoTo.Cell, targetInfoFrom.Map, FleckDefOf.PsycastSkipFlashEntry, Props.teleportationFleckRadius);
+                Messages.Message("AnomaliesExpected.BeamTarget.LeftContainment".Translate(parent.LabelCap).RawText, targetInfoFrom, MessageTypeDefOf.NegativeEvent);
                 parent.Position = result;
             }
         }
