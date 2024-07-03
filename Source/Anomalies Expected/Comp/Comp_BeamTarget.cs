@@ -127,7 +127,14 @@ namespace AnomaliesExpected
                 TargetInfo targetInfoTo = new TargetInfo(result, parent.Map);
                 SoundDefOf.Psycast_Skip_Entry.PlayOneShot(targetInfoTo);
                 FleckMaker.Static(targetInfoTo.Cell, targetInfoFrom.Map, FleckDefOf.PsycastSkipFlashEntry, Props.teleportationFleckRadius);
-                Messages.Message("AnomaliesExpected.BeamTarget.LeftContainment".Translate(parent.LabelCap).RawText, targetInfoFrom, MessageTypeDefOf.NegativeEvent);
+                if (AEMod.Settings.BeamTargetLetter)
+                {
+                    Find.LetterStack.ReceiveLetter("AnomaliesExpected.BeamTarget.LeftContainment".Translate(parent.LabelCap).RawText, "AnomaliesExpected.BeamTarget.LeftContainmentText".Translate(parent.LabelCap), LetterDefOf.ThreatSmall, targetInfoFrom);
+                }
+                else
+                {
+                    Messages.Message("AnomaliesExpected.BeamTarget.LeftContainment".Translate(parent.LabelCap).RawText, targetInfoFrom, MessageTypeDefOf.NegativeEvent);
+                }
                 parent.Position = result;
             }
         }

@@ -73,7 +73,10 @@ namespace AnomaliesExpected
             {
                 amount = Mathf.Min(amount, AEMod.Settings.ReplicationLimit);
             }
-            Messages.Message("AnomaliesExpected.BakingPies.SpawnPiePiece".Translate(parent.LabelCap).RawText, new TargetInfo(parent.Position, parent.Map), MessageTypeDefOf.NeutralEvent);
+            if (AEMod.Settings.SpawnPiePieceNotification)
+            {
+                Messages.Message("AnomaliesExpected.BakingPies.SpawnPiePiece".Translate(parent.LabelCap).RawText, new TargetInfo(parent.Position, parent.Map), MessageTypeDefOf.NeutralEvent);
+            }
             int l = 0;
             for (int i = 0; i < piePieces.Count; i++)
             {

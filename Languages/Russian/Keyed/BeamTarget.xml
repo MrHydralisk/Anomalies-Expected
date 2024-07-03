@@ -7,6 +7,7 @@
 	<AnomaliesExpected.BeamTarget.TimeTillBeam>Время до энергетического луча: {0}</AnomaliesExpected.BeamTarget.TimeTillBeam>
 	<AnomaliesExpected.BeamTarget.ButtonHold>Удерживает кнопку</AnomaliesExpected.BeamTarget.ButtonHold>
 	<AnomaliesExpected.BeamTarget.LeftContainment>{0} покинул зону содержания</AnomaliesExpected.BeamTarget.LeftContainment>
+	<AnomaliesExpected.BeamTarget.LeftContainmentText>{0} покинул зону содержания. Необходимо срочно определить его местоположение, чтобы снизить сопутствующий ущерб.</AnomaliesExpected.BeamTarget.LeftContainmentText>
 	<AnomaliesExpected.BeamTarget.DestroyedAfterStudy>Создание данных спутника</AnomaliesExpected.BeamTarget.DestroyedAfterStudy>
 	
 	<AnomaliesExpected.PowerBeam.BeamTargetMissing>{0} не смог подключиться к Передатчику</AnomaliesExpected.PowerBeam.BeamTargetMissing>
