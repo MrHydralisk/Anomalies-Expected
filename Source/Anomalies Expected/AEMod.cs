@@ -25,6 +25,10 @@ namespace AnomaliesExpected
             options.GapLine();
             options.CheckboxLabeled("AnomaliesExpected.Settings.BeamTarget.PoweBeamRequireBeamTarget".Translate().RawText, ref Settings.PoweBeamRequireBeamTarget);
             options.CheckboxLabeled("AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter".Translate().RawText, ref Settings.BeamTargetLetter);
+            if (Current.Game != null && options.ButtonText("AnomaliesExpected.Settings.ResearchTab.Unlock".Translate().RawText))
+            {
+                Find.ResearchManager.Notify_MonolithLevelChanged(Find.Anomaly.Level);
+            }
             options.End();
         }
 

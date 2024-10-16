@@ -15,7 +15,7 @@ namespace AnomaliesExpected
         private CompStudiable studiableCached;
 
         private List<Tuple<string, float>> storedSeverityList = new List<Tuple<string, float>>();
-        private float combinedStoredSeverity => storedSeverityList.Sum(e => e.Item2);
+        private float combinedStoredSeverity => (storedSeverityList ?? (storedSeverityList = new List<Tuple<string, float>>())).Sum(e => e.Item2);
 
         Building_Bed Bed => parent as Building_Bed;
 

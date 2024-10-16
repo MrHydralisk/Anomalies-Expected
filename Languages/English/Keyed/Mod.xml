@@ -8,4 +8,6 @@
 	
 	<AnomaliesExpected.Settings.BeamTarget.PoweBeamRequireBeamTarget>Precise Orbital Beam Targeter require existence Transmitter to call Beam</AnomaliesExpected.Settings.BeamTarget.PoweBeamRequireBeamTarget>
 	<AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter>Will get letter instead of message, when Transmitter leaving containment</AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter>
+	
+	<AnomaliesExpected.Settings.ResearchTab.Unlock>Try Unlock Anomalies Expected Research Tab</AnomaliesExpected.Settings.ResearchTab.Unlock>
 </LanguageData>

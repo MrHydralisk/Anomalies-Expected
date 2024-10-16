@@ -8,4 +8,6 @@
 	
 	<AnomaliesExpected.Settings.PoweBeamRequireBeamTarget>Целеуказатель для Точечного Луча требует существование Передатчика для активации Луча</AnomaliesExpected.Settings.PoweBeamRequireBeamTarget>
 	<AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter>Письмо вместо уведомления, когда Передатчик покидает зону содержания</AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter>
+	
+	<AnomaliesExpected.Settings.ResearchTab.Unlock>Попытаться разблокировать Anomalies Expected исследовательские проекты</AnomaliesExpected.Settings.ResearchTab.Unlock>
 </LanguageData>
