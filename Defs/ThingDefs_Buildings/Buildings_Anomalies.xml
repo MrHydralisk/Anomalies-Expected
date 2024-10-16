@@ -116,7 +116,18 @@
 		<designationCategory/>
 		<uiIconScale>0.90</uiIconScale>
 		<comps>
-			<li Class="AnomaliesExpected.CompProperties_AnomalyHospitalBed"/>
+			<li Class="AnomaliesExpected.CompProperties_AnomalyHospitalBed">
+				<ClipboardSize>5</ClipboardSize>
+				<MaxMissed>10</MaxMissed>
+				<ticksPerSign>10000</ticksPerSign>
+				<TendQuality>1</TendQuality>
+				<MaxDamage>5</MaxDamage>
+				<MultInjury>1</MultInjury>
+				<MultInfection>100</MultInfection>
+				<MultBloodLoss>50</MultBloodLoss>
+				<StudyHealMult>0.005</StudyHealMult>
+				<StudyConsumeMult>0.015</StudyConsumeMult>
+			</li>
 			<li Class="CompProperties_Studiable">
 				<compClass>AnomaliesExpected.CompStudiableAE</compClass>
 				<frequencyTicks>120000</frequencyTicks>
@@ -289,6 +300,13 @@
 						<butcherEfficiency>1</butcherEfficiency>
 					</li>
 				</Moods>
+				
+				<nonHumanMult>0.1</nonHumanMult>
+				<tickPerBody>90000</tickPerBody>
+				<tickPerForced>60000</tickPerForced>
+				<tickMax>1080000</tickMax>
+				<tickMin>-60000</tickMin>
+				<butcherEfficiency>0.75</butcherEfficiency>
 			</li>
 			<li Class="CompProperties_Studiable">
 				<compClass>AnomaliesExpected.CompStudiableAE</compClass>
@@ -406,6 +424,17 @@
 					<canTargetMechs>false</canTargetMechs>
 					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
 				</targetingParameters>
+				
+				<beamMaxCount>5</beamMaxCount>
+				<beamDuration>2500</beamDuration>
+				<beamSubRadius>10</beamSubRadius>
+				<ticksPerBeamActivationPreparation>5000</ticksPerBeamActivationPreparation>
+				<ticksWhenCarried>500</ticksWhenCarried>
+				<teleportationFleckRadius>0.4</teleportationFleckRadius>
+				<beamIntervalRange>
+					<min>60000</min>
+					<max>180000</max>
+				</beamIntervalRange>
 			</li>
 			<li Class="CompProperties_Studiable">
 				<compClass>AnomaliesExpected.CompStudiableAE</compClass>
