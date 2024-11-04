@@ -15,8 +15,20 @@ namespace AnomaliesExpected
 
         public static readonly CachedTexture CreateCorpseStockpileIcon = new CachedTexture(ModsConfig.AnomalyActive ? "UI/Icons/CorpseStockpileZone" : "UI/Designators/ZoneCreate_Stockpile");
 
-        public List<IntVec3> ConsumtionCells => consumtionCellsCached ?? (consumtionCellsCached = GenRadial.RadialCellsAround(parent.Position, 1.9f, useCenter: false).ToList());
+        public List<IntVec3> ConsumtionCells
+        {
+            get
+            {
+                if (consumtionCellsCached == null || parent.Position != lastPosition)
+                {
+                    consumtionCellsCached = GenRadial.RadialCellsAround(parent.Position, 1.9f, useCenter: false).ToList();
+                    lastPosition = parent.Position;
+                }
+                return consumtionCellsCached;
+            }
+        }
         private List<IntVec3> consumtionCellsCached;
+        private IntVec3 lastPosition;
 
         private List<Corpse> Consumables => ConsumtionCells.SelectMany((IntVec3 iv3) => parent.Map.thingGrid.ThingsListAtFast(iv3)).Where((Thing t) => t is Corpse && Settings.AllowedToAccept(t)).Select((Thing t) => t as Corpse).ToList();
 
@@ -305,7 +317,7 @@ namespace AnomaliesExpected
                     },
                     defaultLabel = "Dev: Change Call",
                     defaultDesc = $"Change timer till call Pawn to press button: {(TickForced - Find.TickManager.TicksGame).ToStringTicksToDays()}"
-                }; 
+                };
                 yield return new Command_Action
                 {
                     action = delegate
@@ -314,7 +326,7 @@ namespace AnomaliesExpected
                     },
                     defaultLabel = "Dev: Log",
                     defaultDesc = $"Log values: {Find.TickManager.TicksGame}:\nisActive {isActive}\nTickFrom {TickFrom}/{(Find.TickManager.TicksGame - TickFrom).ToStringTicksToDays()}\nTickForced {TickForced}/{(TickForced - Find.TickManager.TicksGame).ToStringTicksToDays()}"
-                }; 
+                };
             }
         }
 
@@ -354,7 +366,7 @@ namespace AnomaliesExpected
             {
                 MeatGrinderMood mood = currMood;
                 inspectStrings.Add("AnomaliesExpected.MeatGrinder.Noise".Translate(mood?.noise ?? 0).RawText);
-                if (study > 2 && (mood?.bodyPartDefs?.Count() ?? 0) > 0 )
+                if (study > 2 && (mood?.bodyPartDefs?.Count() ?? 0) > 0)
                 {
                     inspectStrings.Add("AnomaliesExpected.MeatGrinder.BodyParts".Translate(String.Join(", ", mood.bodyPartDefs.Select(b => b.LabelCap))).RawText);
                 }
