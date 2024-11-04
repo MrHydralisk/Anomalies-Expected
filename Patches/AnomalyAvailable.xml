@@ -412,6 +412,9 @@
 						</ThingDef>
 					</value>
 				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/HediffDef[defName="Hediff_AEForbiddenFruit"]/stages/li[0 or 1 or 2 or 3 or 4 or 5]/statFactors</xpath>
+				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ResearchProjectDef[defName="AEFruitInhibitorSerum"]/prerequisites</xpath>
 					<value>
@@ -655,6 +658,9 @@
 							<ComponentSpacer>1</ComponentSpacer>
 						</costList>
 					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="AE_BeamTarget"]/killedLeavings</xpath>
 				</li>
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/ResearchProjectDef[defName="AEOrbitalBeamTargeter"]</xpath>
