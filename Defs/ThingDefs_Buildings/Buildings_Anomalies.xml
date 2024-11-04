@@ -315,7 +315,7 @@
 				<knowledgeFactorOutdoors>0</knowledgeFactorOutdoors>
 				<anomalyKnowledge>1</anomalyKnowledge>
 				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
-				<studyEnabledByDefault>false</studyEnabledByDefault>
+				<showToggleGizmo>true</showToggleGizmo>
 			</li>
 			<li Class="CompProperties_StudyUnlocks">
 				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
@@ -443,7 +443,7 @@
 				<knowledgeFactorOutdoors>0</knowledgeFactorOutdoors>
 				<anomalyKnowledge>1</anomalyKnowledge>
 				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
-				<studyEnabledByDefault>false</studyEnabledByDefault>
+				<showToggleGizmo>true</showToggleGizmo>
 			</li>
 			<li Class="CompProperties_StudyUnlocks">
 				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
