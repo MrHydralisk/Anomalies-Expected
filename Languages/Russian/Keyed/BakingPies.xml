@@ -3,4 +3,7 @@
 	<AnomaliesExpected.BakingPies.Amount>Количество кусков пирога: {0}</AnomaliesExpected.BakingPies.Amount>
 	<AnomaliesExpected.BakingPies.Time>Время до создания кусков пирога: {0}</AnomaliesExpected.BakingPies.Time>
 	<AnomaliesExpected.BakingPies.SpawnPiePiece>Количество кусков {0} изменилось</AnomaliesExpected.BakingPies.SpawnPiePiece>
+	
+	<AnomaliesExpected.BakingPies.EndGame.Label>Куски пирога достигли критического количества</AnomaliesExpected.BakingPies.EndGame.Label>
+	<AnomaliesExpected.BakingPies.EndGame.Text>Куски пирога переполнили комплекс и начали распространяться по всей планете. Комплекс заполнен {0} кусками пирога и {1} вышли за пределы контрлируемой территории.\n\nЕсли исследование {2} было завершено, то у нас есть последний шанс остановить всё это. Если же нет, то у нас нет никаких надежд на какое-либо сдерживание.\n\nЧерез дни или недели планета покроется кусками пирога и будет поглощена. Что означает, что это конец для данной колонии и всего населения планеты.</AnomaliesExpected.BakingPies.EndGame.Text>
 </LanguageData>

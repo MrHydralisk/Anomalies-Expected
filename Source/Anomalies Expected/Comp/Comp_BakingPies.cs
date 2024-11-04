@@ -121,6 +121,11 @@ namespace AnomaliesExpected
                     i--;
                 }
             }
+            if (amount > 100)
+            {
+                Find.TickManager.Pause();
+                Find.LetterStack.ReceiveLetter("AnomaliesExpected.BakingPies.EndGame.Label".Translate(), "AnomaliesExpected.BakingPies.EndGame.Text".Translate(piePiecesExisting, amount, parent.LabelCap), LetterDefOf.GameEnded, parent);
+            }
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()

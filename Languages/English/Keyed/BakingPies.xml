@@ -3,4 +3,7 @@
 	<AnomaliesExpected.BakingPies.Amount>Amount of pie pieces: {0}</AnomaliesExpected.BakingPies.Amount>
 	<AnomaliesExpected.BakingPies.Time>Time till creating new pieces: {0}</AnomaliesExpected.BakingPies.Time>
 	<AnomaliesExpected.BakingPies.SpawnPiePiece>The number of {0} pieces has changed</AnomaliesExpected.BakingPies.SpawnPiePiece>
+	
+	<AnomaliesExpected.BakingPies.EndGame.Label>Pie Pieces Critical Mass</AnomaliesExpected.BakingPies.EndGame.Label>
+	<AnomaliesExpected.BakingPies.EndGame.Text>Pie Pieces overflow facility and start spreading around the planet. Facility filled with {0} Pie Pieces and {1} left the currently controlled zone of a map.\n\nIf study of {2} is done, then you have one last hope of stopping this. If not, then you have no hopes in containing it anymore.\n\nIt will take multiple days or weeks till the planet will be filled and consumed by pie. Which mean that this is the end for the colony and for everyone on this planet.</AnomaliesExpected.BakingPies.EndGame.Text>
 </LanguageData>
