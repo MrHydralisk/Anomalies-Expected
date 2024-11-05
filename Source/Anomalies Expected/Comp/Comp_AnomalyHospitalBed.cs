@@ -68,6 +68,10 @@ namespace AnomaliesExpected
                 {
                     Missed++;
                 }
+                if (isDonorMode)
+                {
+                    severityDealt *= Props.SeverityPerDmgDonorMult;
+                }
                 float severityLeft = severityRecord.Severity - severityDealt;
                 if (severityLeft > 0)
                 {
@@ -154,6 +158,7 @@ namespace AnomaliesExpected
                 };
                 command_Toggle.activateSound = SoundDefOf.Tick_Tiny;
                 command_Toggle.icon = parent.def.uiIcon;
+                command_Toggle.defaultIconColor = isDonorMode ? Color.red : Color.white;
                 yield return command_Toggle;
             }
             if (DebugSettings.ShowDevGizmos)

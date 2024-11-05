@@ -5,5 +5,5 @@
 	<AnomaliesExpected.AnomalyHospitalBed.Sign.Empty>No patient on a bed</AnomaliesExpected.AnomalyHospitalBed.Sign.Empty>
 	<AnomaliesExpected.AnomalyHospitalBed.Sign.Reloading>Can sign in {0}</AnomaliesExpected.AnomalyHospitalBed.Sign.Reloading>
 	<AnomaliesExpected.AnomalyHospitalBed.isDonor.Label>Donor</AnomaliesExpected.AnomalyHospitalBed.isDonor.Label>
-	<AnomaliesExpected.AnomalyHospitalBed.isDonor.Desc>Check the box next to "is a donor"</AnomaliesExpected.AnomalyHospitalBed.isDonor.Desc>
+	<AnomaliesExpected.AnomalyHospitalBed.isDonor.Desc>Check the box next to "is a donor". 50% used to maintain the functionality of the organic metal frame.</AnomaliesExpected.AnomalyHospitalBed.isDonor.Desc>
 </LanguageData>

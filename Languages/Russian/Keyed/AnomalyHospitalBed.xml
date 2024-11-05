@@ -5,5 +5,5 @@
 	<AnomaliesExpected.AnomalyHospitalBed.Sign.Empty>Нет пациента на кровати</AnomaliesExpected.AnomalyHospitalBed.Sign.Empty>
 	<AnomaliesExpected.AnomalyHospitalBed.Sign.Reloading>Можно подписать через {0}</AnomaliesExpected.AnomalyHospitalBed.Sign.Reloading>
 	<AnomaliesExpected.AnomalyHospitalBed.isDonor.Label>Донор</AnomaliesExpected.AnomalyHospitalBed.isDonor.Label>
-	<AnomaliesExpected.AnomalyHospitalBed.isDonor.Desc>Поставить галочку напротив "является донором"</AnomaliesExpected.AnomalyHospitalBed.isDonor.Desc>
+	<AnomaliesExpected.AnomalyHospitalBed.isDonor.Desc>Поставить галочку напротив "является донором". 50% используется для поддержания функциональности органического металлического каркаса.</AnomaliesExpected.AnomalyHospitalBed.isDonor.Desc>
 </LanguageData>

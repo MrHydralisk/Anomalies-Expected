@@ -127,6 +127,7 @@
 				<MultBloodLoss>50</MultBloodLoss>
 				<StudyHealMult>0.005</StudyHealMult>
 				<StudyConsumeMult>0.015</StudyConsumeMult>
+				<SeverityPerDmgDonorMult>0.5</SeverityPerDmgDonorMult>
 			</li>
 			<li Class="CompProperties_Studiable">
 				<compClass>AnomaliesExpected.CompStudiableAE</compClass>

@@ -14,6 +14,7 @@ namespace AnomaliesExpected
         public float MultBloodLoss = 50;
         public float StudyHealMult = 0.005f;
         public float StudyConsumeMult = 0.015f;
+        public float SeverityPerDmgDonorMult = 0.5f;
 
         public CompProperties_AnomalyHospitalBed()
         {
