@@ -4,4 +4,6 @@
 	<AnomaliesExpected.AnomalyHospitalBed.Sign.Desc>Put a signature on a medical clipboard where it indicates patient information</AnomaliesExpected.AnomalyHospitalBed.Sign.Desc>
 	<AnomaliesExpected.AnomalyHospitalBed.Sign.Empty>No patient on a bed</AnomaliesExpected.AnomalyHospitalBed.Sign.Empty>
 	<AnomaliesExpected.AnomalyHospitalBed.Sign.Reloading>Can sign in {0}</AnomaliesExpected.AnomalyHospitalBed.Sign.Reloading>
+	<AnomaliesExpected.AnomalyHospitalBed.isDonor.Label>Donor</AnomaliesExpected.AnomalyHospitalBed.isDonor.Label>
+	<AnomaliesExpected.AnomalyHospitalBed.isDonor.Desc>Check the box next to "is a donor"</AnomaliesExpected.AnomalyHospitalBed.isDonor.Desc>
 </LanguageData>

@@ -14,6 +14,9 @@ namespace AnomaliesExpected
         protected CompStudiable Studiable => studiableCached ?? (studiableCached = parent.TryGetComp<CompStudiable>());
         private CompStudiable studiableCached;
 
+        protected CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = parent.TryGetComp<CompAEStudyUnlocks>());
+        private CompAEStudyUnlocks studyUnlocksCached;
+
         private List<SeverityRecord> storedSeverityList = new List<SeverityRecord>();
         private float combinedStoredSeverity => (storedSeverityList ?? (storedSeverityList = new List<SeverityRecord>())).Sum(sr => sr.Severity);
 
@@ -22,6 +25,7 @@ namespace AnomaliesExpected
         private int tickSign;
 
         public bool canSign => Find.TickManager.TicksGame - tickSign > Props.ticksPerSign;
+        public bool isDonorMode;
 
         public void Sign()
         {
@@ -31,7 +35,7 @@ namespace AnomaliesExpected
                 for (int i = 0; i < BedPawns.Count; i++)
                 {
                     Pawn BedPawn = BedPawns[i];
-                    if (Rand.Range(1, Props.ClipboardSize) <= storedSeverityList.Count)
+                    if (isDonorMode || Rand.Range(1, Props.ClipboardSize) <= storedSeverityList.Count)
                     {
                         Consume(BedPawn);
                     }
@@ -138,6 +142,20 @@ namespace AnomaliesExpected
                 disabledReason = canSign ? "AnomaliesExpected.AnomalyHospitalBed.Sign.Empty".Translate() : "AnomaliesExpected.AnomalyHospitalBed.Sign.Reloading".Translate((tickSign + Props.ticksPerSign - Find.TickManager.TicksGame).ToStringTicksToPeriod())
 
             };
+            if ((StudyUnlocks?.NextIndex ?? 5) >= 5)
+            {
+                Command_Toggle command_Toggle = new Command_Toggle();
+                command_Toggle.defaultLabel = "AnomaliesExpected.AnomalyHospitalBed.isDonor.Label".Translate();
+                command_Toggle.defaultDesc = "AnomaliesExpected.AnomalyHospitalBed.isDonor.Desc".Translate();
+                command_Toggle.isActive = () => isDonorMode;
+                command_Toggle.toggleAction = delegate
+                {
+                    isDonorMode = !isDonorMode;
+                };
+                command_Toggle.activateSound = SoundDefOf.Tick_Tiny;
+                command_Toggle.icon = parent.def.uiIcon;
+                yield return command_Toggle;
+            }
             if (DebugSettings.ShowDevGizmos)
             {
                 yield return new Command_Action
@@ -196,6 +214,7 @@ namespace AnomaliesExpected
             Scribe_Collections.Look(ref storedSeverityList, "storedSeverityList", LookMode.Deep);
             storedSeverityList.RemoveAll(sr => sr == null || sr.Severity == 0);
             Scribe_Values.Look(ref tickSign, "tickSign", Find.TickManager.TicksGame);
+            Scribe_Values.Look(ref isDonorMode, "isDonorMode", false);
         }
 
         public override string CompInspectStringExtra()
