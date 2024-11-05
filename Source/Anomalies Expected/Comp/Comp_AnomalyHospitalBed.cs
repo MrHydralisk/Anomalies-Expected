@@ -14,8 +14,8 @@ namespace AnomaliesExpected
         protected CompStudiable Studiable => studiableCached ?? (studiableCached = parent.TryGetComp<CompStudiable>());
         private CompStudiable studiableCached;
 
-        private List<Tuple<string, float>> storedSeverityList = new List<Tuple<string, float>>();
-        private float combinedStoredSeverity => (storedSeverityList ?? (storedSeverityList = new List<Tuple<string, float>>())).Sum(e => e.Item2);
+        private List<SeverityRecord> storedSeverityList = new List<SeverityRecord>();
+        private float combinedStoredSeverity => (storedSeverityList ?? (storedSeverityList = new List<SeverityRecord>())).Sum(sr => sr.Severity);
 
         Building_Bed Bed => parent as Building_Bed;
 
@@ -49,8 +49,8 @@ namespace AnomaliesExpected
             int Missed = 0;
             while (combinedStoredSeverity > 0 && Missed < Props.MaxMissed && !pawn.Dead)
             {
-                Tuple<string, float> tuple = storedSeverityList.FirstOrDefault();
-                float severityDealt = Mathf.Min(tuple.Item2, Props.MaxDamage);
+                SeverityRecord severityRecord = storedSeverityList.FirstOrDefault();
+                float severityDealt = Mathf.Min(severityRecord.Severity, Props.MaxDamage);
                 DamageWorker.DamageResult damageResult = pawn.TakeDamage(new DamageInfo(Rand.RangeInclusive(0, 3) switch
                 {
                     0 => DamageDefOf.Blunt,
@@ -64,20 +64,20 @@ namespace AnomaliesExpected
                 {
                     Missed++;
                 }
-                float severityLeft = tuple.Item2 - severityDealt;
+                float severityLeft = severityRecord.Severity - severityDealt;
                 if (severityLeft > 0)
                 {
-                    storedSeverityList.Replace(tuple, new Tuple<string, float>(tuple.Item1, severityLeft));
+                    storedSeverityList.Replace(severityRecord, new SeverityRecord(severityRecord.Name, severityLeft));
                 }
                 else
                 {
-                    storedSeverityList.Remove(tuple);
+                    storedSeverityList.Remove(severityRecord);
                 }
                 Consumed += severityDealt;
             }
             if (Consumed > 0)
             {
-                storedSeverityList.SortByDescending(e => e.Item2);
+                storedSeverityList.SortByDescending(sr => sr.Severity);
                 Studiable.Study(pawn, 0, Consumed * Props.StudyConsumeMult);
             }
         }
@@ -112,9 +112,8 @@ namespace AnomaliesExpected
             }
             if (severityHealed > 0)
             {
-                Tuple<string, float> tuple = storedSeverityList.FirstOrDefault();
-                storedSeverityList.Add(Tuple.Create(pawn.LabelCap, severityHealed));
-                storedSeverityList.SortByDescending(e => e.Item2);
+                storedSeverityList.Add(new SeverityRecord(pawn.LabelCap, severityHealed));
+                storedSeverityList.SortByDescending(sr => sr.Severity);
                 Studiable.Study(pawn, 0, severityHealed * Props.StudyHealMult);
             }
         }
@@ -194,7 +193,8 @@ namespace AnomaliesExpected
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Collections.Look(ref storedSeverityList, "storedSeverityList", LookMode.Value);
+            Scribe_Collections.Look(ref storedSeverityList, "storedSeverityList", LookMode.Deep);
+            storedSeverityList.RemoveAll(sr => sr == null || sr.Severity == 0);
             Scribe_Values.Look(ref tickSign, "tickSign", Find.TickManager.TicksGame);
         }
 
@@ -203,17 +203,46 @@ namespace AnomaliesExpected
             List<string> inspectStrings = new List<string>();
             for (int i = 0; i < Props.ClipboardSize; i++)
             {
-                Tuple<string, float> tuple = storedSeverityList.ElementAtOrDefault(i);
-                if (tuple == null)
+                SeverityRecord severityRecord = storedSeverityList.ElementAtOrDefault(i);
+                if (severityRecord == null)
                 {
                     inspectStrings.Add($"{i + 1}. ____________ (___)");
                 }
                 else
                 {
-                    inspectStrings.Add($"{i + 1}. {tuple.Item1} ({tuple.Item2})");
+                    inspectStrings.Add($"{i + 1}. {severityRecord.Name} ({severityRecord.Severity})");
                 }
             }
             return String.Join("\n", inspectStrings);
+        }
+
+        public class SeverityRecord : IExposable
+        {
+            public string Name;
+            public float Severity;
+
+            public SeverityRecord()
+            {
+                Name = "Unknown";
+                Severity = 0;
+            }
+
+            public SeverityRecord(string name, float severity)
+            {
+                Name = name;
+                Severity = severity;
+            }
+
+            public void ExposeData()
+            {
+                Scribe_Values.Look(ref Name, "Name");
+                Scribe_Values.Look(ref Severity, "Severity");
+            }
+
+            public override string ToString()
+            {
+                return $"{Name}, {Severity}";
+            }
         }
     }
 }
