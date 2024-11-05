@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -25,6 +26,18 @@ namespace AnomaliesExpected
             {
                 Job job = JobMaker.MakeJob(Props.jobDef, parent);
                 target.Pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+            }
+        }
+
+        public override IEnumerable<Gizmo> CompGetGizmosExtra()
+        {
+            foreach (Gizmo gizmo in base.CompGetGizmosExtra())
+            {
+                if (gizmo is Command_Action command_Action)
+                {
+                    command_Action.hotKey = KeyBindingDefOf.Misc8;
+                }
+                yield return gizmo;
             }
         }
 

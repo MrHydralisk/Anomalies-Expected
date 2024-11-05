@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using System.Collections.Generic;
 using System.Linq;
 using Verse;
 
@@ -20,6 +21,18 @@ namespace AnomaliesExpected
                 Severity = 1f;
             }
             HealthUtility.AdjustSeverity(pawn, HediffDefOfLocal.Hediff_AEForbiddenFruit, Severity);
+        }
+
+        public override IEnumerable<Gizmo> CompGetGizmosExtra()
+        {
+            foreach (Gizmo gizmo in base.CompGetGizmosExtra())
+            {
+                if (gizmo is Command_Action command_Action)
+                {
+                    command_Action.hotKey = KeyBindingDefOf.Misc6;
+                }
+                yield return gizmo;
+            }
         }
 
         protected override void OnInteracted(Pawn caster)

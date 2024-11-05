@@ -227,6 +227,10 @@ namespace AnomaliesExpected
         {
             foreach (Gizmo gizmo in base.CompGetGizmosExtra())
             {
+                if (gizmo is Command_Action command_Action)
+                {
+                    command_Action.hotKey = KeyBindingDefOf.Misc6;
+                }
                 yield return gizmo;
             }
             if (ConsumtionCells.Any((IntVec3 c) => (parent.Map.zoneManager.ZoneAt(c) == null)))
@@ -236,6 +240,7 @@ namespace AnomaliesExpected
                     defaultLabel = "CreateCorpseStockpile".Translate(),
                     defaultDesc = "CreateCorpseStockpileDesc".Translate(),
                     icon = CreateCorpseStockpileIcon.Texture,
+                    hotKey = KeyBindingDefOf.Misc11,
                     action = CreateCorpseStockpile
                 };
             }

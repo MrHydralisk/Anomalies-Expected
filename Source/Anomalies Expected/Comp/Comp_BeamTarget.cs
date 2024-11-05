@@ -143,6 +143,10 @@ namespace AnomaliesExpected
         {
             foreach (Gizmo gizmo in base.CompGetGizmosExtra())
             {
+                if (gizmo is Command_Action command_Action)
+                {
+                    command_Action.hotKey = KeyBindingDefOf.Misc6;
+                }
                 yield return gizmo;
             }
             if (DebugSettings.ShowDevGizmos)

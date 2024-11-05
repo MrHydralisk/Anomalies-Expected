@@ -142,6 +142,7 @@ namespace AnomaliesExpected
                 defaultLabel = "AnomaliesExpected.AnomalyHospitalBed.Sign.Label".Translate(),
                 defaultDesc = "AnomaliesExpected.AnomalyHospitalBed.Sign.Desc" .Translate(),
                 icon = parent.def.uiIcon,
+                hotKey = KeyBindingDefOf.Misc6,
                 Disabled = !canSign || ((Bed.CurOccupants?.Count() ?? 0) == 0),
                 disabledReason = canSign ? "AnomaliesExpected.AnomalyHospitalBed.Sign.Empty".Translate() : "AnomaliesExpected.AnomalyHospitalBed.Sign.Reloading".Translate((tickSign + Props.ticksPerSign - Find.TickManager.TicksGame).ToStringTicksToPeriod())
 
@@ -159,6 +160,7 @@ namespace AnomaliesExpected
                 command_Toggle.activateSound = SoundDefOf.Tick_Tiny;
                 command_Toggle.icon = parent.def.uiIcon;
                 command_Toggle.defaultIconColor = isDonorMode ? Color.red : Color.white;
+                command_Toggle.hotKey = KeyBindingDefOf.Misc5;
                 yield return command_Toggle;
             }
             if (DebugSettings.ShowDevGizmos)
