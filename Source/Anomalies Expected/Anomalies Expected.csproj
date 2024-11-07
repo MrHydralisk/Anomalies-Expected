@@ -38,9 +38,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AEStudyNote.cs" />
+    <Compile Include="CompProperties\CompProperties_BloodLake.cs" />
     <Compile Include="CompProperties\CompProperties_CanDestroyedAfterStudy.cs" />
     <Compile Include="CompProperties\CompProperties_UseEffecRemoveHediff.cs" />
     <Compile Include="Comp\CompUseEffect_RemoveHediff.cs" />
+    <Compile Include="Comp\Comp_BloodLake.cs" />
     <Compile Include="Comp\Comp_CanDestroyedAfterStudy.cs" />
     <Compile Include="DefOfLocal\SoundDefOfLocal.cs" />
     <Compile Include="DefOfLocal\ThingDefOfLocal.cs" />
@@ -48,6 +50,8 @@
     <Compile Include="AEMod.cs" />
     <Compile Include="AESettings.cs" />
     <Compile Include="JobDriver\JobDriver_RemoveAnomaly.cs" />
+    <Compile Include="Structures\BloodLakeSummonPattern.cs" />
+    <Compile Include="Structures\BloodLakeSummonHistory.cs" />
     <Compile Include="Verb_AEPowerBeam.cs" />
     <Compile Include="PlaceWorker_ShowBeamTargetRadius.cs" />
     <Compile Include="MinifiedThing_AE.cs" />

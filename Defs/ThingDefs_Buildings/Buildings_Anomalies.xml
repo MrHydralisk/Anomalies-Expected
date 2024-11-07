@@ -520,4 +520,258 @@
 		</placeWorkers>
 	</ThingDef>
 	
+	<ThingDef Name="BuildingAE_BloodLakeBase" ParentName="BuildingBase" Abstract="True">
+		<thingClass>AnomaliesExpected.Building_AE</thingClass>
+		<graphicData>
+			<color>(235,0,0)</color>
+		</graphicData>
+		<drawerType>RealtimeOnly</drawerType>
+		<canOverlapZones>false</canOverlapZones>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<altitudeLayer>FloorEmplacement</altitudeLayer>
+		<useHitPoints>false</useHitPoints>
+		<rotatable>false</rotatable>
+		<destroyable>false</destroyable>
+		<passability>PassThroughOnly</passability>
+		<pathCost>300</pathCost>
+		<holdsRoof>true</holdsRoof>
+		<statBases>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<building>
+			<isEdifice>true</isEdifice>
+			<deconstructible>false</deconstructible>
+			<isTargetable>false</isTargetable>
+			<isInert>true</isInert>
+			<claimable>false</claimable>
+			<expandHomeArea>false</expandHomeArea>
+		</building>
+		
+		<!--<uiIconScale>0.75</uiIconScale>
+		<canOverlapZones>false</canOverlapZones>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsFurniture</li>
+		</thingCategories>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<altitudeLayer>Building</altitudeLayer>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<costList>
+			<Bioferrite>45</Bioferrite>
+		</costList>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>20</Mass>
+			<WorkToBuild>2000</WorkToBuild>
+			<MaxHitPoints>180</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<Cleanliness>-30</Cleanliness>
+		</statBases>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<surfaceType>Item</surfaceType>
+		<tickerType>Normal</tickerType>
+		<designationCategory/>-->
+		
+		<comps>
+			<!--<li Class="CompProperties_LeaveFilthOnDestroyed">
+				<filthDef>Filth_LooseGround</filthDef>
+				<thickness>5</thickness>
+			</li>-->
+		  <li>
+			<compClass>CompColorable</compClass>
+		  </li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="BuildingAE_BloodLakeBase">
+		<defName>AE_BloodPuddle</defName>
+		<label>blood puddle</label>
+		<description>A massive, foreboding hole that connects the surface with a dark network of underground caves. It is possible to climb down into the caverns below.</description>
+		<graphicData>
+			<texPath>Things/Building/AE_BloodPuddle</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		
+		<!--<uiIconScale>0.75</uiIconScale>
+		<canOverlapZones>false</canOverlapZones>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsFurniture</li>
+		</thingCategories>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<altitudeLayer>Building</altitudeLayer>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<costList>
+			<Bioferrite>45</Bioferrite>
+		</costList>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>20</Mass>
+			<WorkToBuild>2000</WorkToBuild>
+			<MaxHitPoints>180</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<Cleanliness>-30</Cleanliness>
+		</statBases>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<surfaceType>Item</surfaceType>
+		<tickerType>Normal</tickerType>
+		<designationCategory/>-->
+		
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_BloodLake">
+				<activeTicks>1</activeTicks>
+				<cooldownTicks>30000</cooldownTicks>
+				<ticksToActivate>250</ticksToActivate>
+				<activateTexPath>Things/Item/Special/AE_ForbiddenFruit</activateTexPath>
+        
+				<activateLabelString>Take a bite</activateLabelString>
+				<activateDescString>Make someone take a bite of this apple and consume it.</activateDescString>
+				<guiLabelString>Choose who should bite this.</guiLabelString>
+				<jobString>bite</jobString>
+				<activatingStringPending>biting {0}</activatingStringPending>
+				<activatingString>biting {0}: {1}s</activatingString>
+
+				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
+				<fleckOnUsedScale>3</fleckOnUsedScale>
+				<soundActivate>PsychicAnimalPulserCast</soundActivate>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<summonPatterns>
+					<li>
+						<intervalRange>
+							<min>60000</min>
+							<max>180000</max>
+						</intervalRange>
+						<resourcesAvailable>1</resourcesAvailable>
+						<resourcesAvailableMult>
+							<li>1</li>
+							<li>2</li>
+							<li>3</li>
+						</resourcesAvailableMult>
+						<pawnKinds>
+							<Fingerspike>1</Fingerspike>
+							<Toughspike>3</Toughspike>
+						</pawnKinds>
+					</li>
+				</summonPatterns>
+				<inactiveColor>(100,30,30)</inactiveColor>
+				<activeColor>(255,0,0)</activeColor>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="BuildingAE_BloodLakeBase">
+		<defName>AE_BloodLake</defName>
+		<label>blood lake</label>
+		<description>A massive, foreboding hole that connects the surface with a dark network of underground caves. It is possible to climb down into the caverns below.</description>
+		<graphicData>
+			<texPath>Things/Building/AE_BloodLake</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(6,4)</drawSize>
+		</graphicData>
+		<size>(5,3)</size>
+		
+		<!--<uiIconScale>0.75</uiIconScale>
+		<canOverlapZones>false</canOverlapZones>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsFurniture</li>
+		</thingCategories>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<altitudeLayer>Building</altitudeLayer>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<costList>
+			<Bioferrite>45</Bioferrite>
+		</costList>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Mass>20</Mass>
+			<WorkToBuild>2000</WorkToBuild>
+			<MaxHitPoints>180</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<Cleanliness>-30</Cleanliness>
+		</statBases>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<surfaceType>Item</surfaceType>
+		<tickerType>Normal</tickerType>
+		<designationCategory/>-->
+		
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_BloodLake">
+				<activeTicks>1</activeTicks>
+				<cooldownTicks>30000</cooldownTicks>
+				<ticksToActivate>250</ticksToActivate>
+				<activateTexPath>Things/Item/Special/AE_ForbiddenFruit</activateTexPath>
+        
+				<activateLabelString>Take a bite</activateLabelString>
+				<activateDescString>Make someone take a bite of this apple and consume it.</activateDescString>
+				<guiLabelString>Choose who should bite this.</guiLabelString>
+				<jobString>bite</jobString>
+				<activatingStringPending>biting {0}</activatingStringPending>
+				<activatingString>biting {0}: {1}s</activatingString>
+
+				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
+				<fleckOnUsedScale>3</fleckOnUsedScale>
+				<soundActivate>PsychicAnimalPulserCast</soundActivate>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<summonPatterns>
+					<li>
+						<intervalRange>
+							<min>240000</min>
+							<max>360000</max>
+						</intervalRange>
+						<assaultColony>true</assaultColony>
+						<resourcesAvailableMult>
+							<li>0.5</li>
+							<li>0.75</li>
+							<li>1</li>
+							<li>1.25</li>
+						</resourcesAvailableMult>
+					</li>
+					<li>
+						<intervalRange>
+							<min>30000</min>
+							<max>90000</max>
+						</intervalRange>
+						<resourcesAvailable>2</resourcesAvailable>
+						<resourcesAvailableMult>
+							<li>1</li>
+							<li>2</li>
+							<li>3</li>
+						</resourcesAvailableMult>
+						<pawnKinds>
+							<Fingerspike>1</Fingerspike>
+							<Toughspike>3</Toughspike>
+						</pawnKinds>
+					</li>
+				</summonPatterns>
+				<inactiveColor>(100,30,30)</inactiveColor>
+				<activeColor>(255,0,0)</activeColor>
+			</li>
+		</comps>
+	</ThingDef>
+	
 </Defs>
