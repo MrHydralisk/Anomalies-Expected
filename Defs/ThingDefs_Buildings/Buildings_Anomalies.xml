@@ -651,20 +651,32 @@
 				
 				<summonPatterns>
 					<li>
+						<name>Wave</name>
 						<intervalRange>
 							<min>60000</min>
 							<max>180000</max>
 						</intervalRange>
 						<resourcesAvailable>1</resourcesAvailable>
+						<resourcesAvailableSummonsRequired>
+							<li>0</li>
+							<li>2</li>
+							<li>4</li>
+						</resourcesAvailableSummonsRequired>
 						<resourcesAvailableMult>
 							<li>1</li>
 							<li>2</li>
 							<li>3</li>
 						</resourcesAvailableMult>
-						<pawnKinds>
-							<Fingerspike>1</Fingerspike>
-							<Toughspike>3</Toughspike>
-						</pawnKinds>
+						<pawnKindsWeighted>
+							<li>
+								<kindDef>Fingerspike</kindDef>
+								<count>1</count>
+							</li>
+							<li>
+								<kindDef>Trispike</kindDef>
+								<count>2</count>
+							</li>
+						</pawnKindsWeighted>
 					</li>
 				</summonPatterns>
 				<inactiveColor>(100,30,30)</inactiveColor>
@@ -739,33 +751,65 @@
 				
 				<summonPatterns>
 					<li>
+						<name>Raid</name>
 						<intervalRange>
 							<min>240000</min>
 							<max>360000</max>
 						</intervalRange>
 						<assaultColony>true</assaultColony>
+						<isRaid>true</isRaid>
+						<resourcesAvailableSummonsRequired>
+							<li>0</li>
+							<li>1</li>
+							<li>3</li>
+							<li>6</li>
+							<li>9</li>
+						</resourcesAvailableSummonsRequired>
 						<resourcesAvailableMult>
 							<li>0.5</li>
 							<li>0.75</li>
 							<li>1</li>
 							<li>1.25</li>
+							<li>1.5</li>
 						</resourcesAvailableMult>
+						<pawnKindsForcedCount>
+							<li>
+								<kindDef>Bulbfreak</kindDef>
+								<count>1</count>
+							</li>
+						</pawnKindsForcedCount>
 					</li>
 					<li>
+						<name>Wave</name>
 						<intervalRange>
 							<min>30000</min>
 							<max>90000</max>
 						</intervalRange>
 						<resourcesAvailable>2</resourcesAvailable>
+						<resourcesAvailableSummonsRequired>
+							<li>0</li>
+							<li>2</li>
+							<li>4</li>
+						</resourcesAvailableSummonsRequired>
 						<resourcesAvailableMult>
 							<li>1</li>
 							<li>2</li>
 							<li>3</li>
 						</resourcesAvailableMult>
-						<pawnKinds>
-							<Fingerspike>1</Fingerspike>
-							<Toughspike>3</Toughspike>
-						</pawnKinds>
+						<pawnKindsWeighted>
+							<li>
+								<kindDef>Fingerspike</kindDef>
+								<count>1</count>
+							</li>
+							<li>
+								<kindDef>Trispike</kindDef>
+								<count>2</count>
+							</li>
+							<li>
+								<kindDef>Toughspike</kindDef>
+								<count>3</count>
+							</li>
+						</pawnKindsWeighted>
 					</li>
 				</summonPatterns>
 				<inactiveColor>(100,30,30)</inactiveColor>

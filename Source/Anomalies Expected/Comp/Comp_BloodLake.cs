@@ -16,7 +16,7 @@ namespace AnomaliesExpected
         protected CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = parent.TryGetComp<CompAEStudyUnlocks>());
         private CompAEStudyUnlocks studyUnlocksCached;
 
-        public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? 4) < 4;
+        public override bool HideInteraction => true;//(StudyUnlocks?.NextIndex ?? 4) < 4;
 
         private List<BloodLakeSummonHistory> SummonHistories = new List<BloodLakeSummonHistory>();
 
@@ -27,10 +27,14 @@ namespace AnomaliesExpected
             for (int i = 0; i < Props.summonPatterns.Count; i++)
             {
                 BloodLakeSummonPattern summonPattern = Props.summonPatterns[i];
-                BloodLakeSummonHistory summonHistory = SummonHistories.FirstOrDefault((BloodLakeSummonHistory blsh) => blsh.summonPattern == summonPattern);
+                BloodLakeSummonHistory summonHistory = SummonHistories.FirstOrDefault((BloodLakeSummonHistory blsh) => blsh.patternName == summonPattern.name);
                 if (summonHistory == null)
                 {
-                    summonHistory = new BloodLakeSummonHistory() {  summonPattern = summonPattern , summonedTimes = 0, tickNextSummon = Find.TickManager.TicksGame + summonPattern.intervalRange.min };
+                    summonHistory = new BloodLakeSummonHistory(summonPattern, Find.TickManager.TicksGame + summonPattern.intervalRange.min, 0);
+                }
+                else
+                {
+                    summonHistory.summonPattern = summonPattern;
                 }
                 summonHistoriesNew.Add(summonHistory);
             }
@@ -41,18 +45,17 @@ namespace AnomaliesExpected
         {
             base.PostDraw();
             BloodLakeSummonHistory summonHistory = SummonHistories.FirstOrDefault();
-            float progress = 1;
             if (summonHistory != null)
             {
-                progress = (float)(summonHistory.tickNextSummon - Find.TickManager.TicksGame) / summonHistory.summonPattern.intervalRange.min;
+                float progress = (float)(summonHistory.tickNextSummon - Find.TickManager.TicksGame) / summonHistory.summonPattern.intervalRange.min;
+                parent.DrawColor = Color.Lerp(Props.activeColor, Props.inactiveColor, progress);
             }
-            parent.DrawColor = Color.Lerp(Props.activeColor, Props.inactiveColor, progress);
         }
 
         public override void CompTick()
         {
             base.CompTick();
-            for (int i = 0; i < SummonHistories.Count; i++)
+            for (int i = 0; i < SummonHistories.Count(); i++)
             {
                 BloodLakeSummonHistory summonHistory = SummonHistories[i];
                 if (Find.TickManager.TicksGame >= summonHistory.tickNextSummon)
@@ -61,38 +64,55 @@ namespace AnomaliesExpected
                     summonHistory.tickNextSummon = Find.TickManager.TicksGame + summonHistory.summonPattern.intervalRange.RandomInRange;
                 }
             }
-            //if (Find.TickManager.TicksGame >= TickNextState)
-            //{
-            //    List<Pawn> emergingFleshbeasts = new List<Pawn>();
-            //    PawnKindDef fingerspike = PawnKindDefOf.Fingerspike;
-            //    Pawn item = PawnGenerator.GeneratePawn(fingerspike, FactionUtility.DefaultFactionFrom(fingerspike.defaultFactionType));
-            //    emergingFleshbeasts.Add(item);
-            //    Summon(emergingFleshbeasts);
-            //    TickNextState = Find.TickManager.TicksGame + 20000/*Props.beamIntervalRange.max*/;
-            //}
         }
 
         protected void Summon(BloodLakeSummonHistory summonHistory)
         {
-            Log.Message($"points {StorytellerUtility.DefaultThreatPointsNow(parent.Map)}");
-
-
             List<Pawn> emergingFleshbeasts = new List<Pawn>();
             BloodLakeSummonPattern summonPattern = summonHistory.summonPattern;
-            int indexSummon = Mathf.Min(summonHistory.summonedTimes, summonPattern.resourcesAvailableMult.Count() - 1); // add summonPatterSummonCount to decide when to increase resource
-            if (summonPattern.assaultColony)
+            int indexSummon = 0;
+            for (int i = 0; i < summonPattern.resourcesAvailableSummonsRequired.Count(); i++)
             {
-                emergingFleshbeasts = FleshbeastUtility.GetFleshbeastsForPoints(StorytellerUtility.DefaultThreatPointsNow(parent.Map), parent.Map);
+                if (summonPattern.resourcesAvailableSummonsRequired[i] <= summonHistory.summonedTimes)
+                {
+                    indexSummon = i;
+                }
+                else
+                {
+                    break;
+                }
             }
-            else
+            if (summonPattern.isRaid)
+            {
+                emergingFleshbeasts = FleshbeastUtility.GetFleshbeastsForPoints(StorytellerUtility.DefaultThreatPointsNow(parent.Map) * summonPattern.resourcesAvailableMult[indexSummon], parent.Map);
+            }
+            if (summonPattern.pawnKindsWeighted != null)
             {
                 int resourcesAvailable = Mathf.CeilToInt(summonPattern.resourcesAvailable * summonPattern.resourcesAvailableMult[indexSummon]);
                 while (resourcesAvailable > 0)
                 {
-                    PawnKindDefCount pawnKindDefCount = summonPattern.pawnKinds.Where((PawnKindDefCount pkdc) => pkdc.count <= resourcesAvailable).RandomElement();
-                    Pawn item = PawnGenerator.GeneratePawn(pawnKindDefCount.kindDef, FactionUtility.DefaultFactionFrom(pawnKindDefCount.kindDef.defaultFactionType));
-                    emergingFleshbeasts.Add(item);
-                    resourcesAvailable -= pawnKindDefCount.count;
+                    PawnKindCount pawnKindCount = summonPattern.pawnKindsWeighted.Where((PawnKindCount pkdc) => pkdc.count <= resourcesAvailable).RandomElement();
+                    if (pawnKindCount != null)
+                    {
+                        Pawn item = PawnGenerator.GeneratePawn(pawnKindCount.kindDef, FactionUtility.DefaultFactionFrom(pawnKindCount.kindDef.defaultFactionType));
+                        emergingFleshbeasts.Add(item);
+                        resourcesAvailable -= pawnKindCount.count;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+            if (summonPattern.pawnKindsForcedCount != null)
+            {
+                foreach (PawnKindCount pawnKindCount in summonPattern.pawnKindsForcedCount)
+                {
+                    for (int i = 0; i < pawnKindCount.count; i++)
+                    {
+                        Pawn item = PawnGenerator.GeneratePawn(pawnKindCount.kindDef, FactionUtility.DefaultFactionFrom(pawnKindCount.kindDef.defaultFactionType));
+                        emergingFleshbeasts.Add(item);
+                    }
                 }
             }
 
@@ -184,7 +204,9 @@ namespace AnomaliesExpected
                         List<FloatMenuOption> floatMenuOptions = new List<FloatMenuOption>();
                         foreach(BloodLakeSummonHistory summonHistory in SummonHistories)
                         {
-                            floatMenuOptions.Add(new FloatMenuOption($"Summon {string.Join(", ", summonHistory.summonPattern.pawnKinds.Select((PawnKindDefCount pkdc) => pkdc.kindDef.LabelCap))}", delegate
+                            BloodLakeSummonPattern summonPattern = summonHistory.summonPattern;
+                            string summonName = $"{summonPattern.name} {StorytellerUtility.DefaultThreatPointsNow(parent.Map)}";
+                            floatMenuOptions.Add(new FloatMenuOption($"Summon {summonName}", delegate
                             {
                                 Summon(summonHistory);
                             }));
@@ -193,6 +215,25 @@ namespace AnomaliesExpected
                     },
                     defaultLabel = "Dev: Summon now",
                     defaultDesc = "Summon pattern"
+                };
+                yield return new Command_Action
+                {
+                    action = delegate
+                    {
+                        List<FloatMenuOption> floatMenuOptions = new List<FloatMenuOption>();
+                        foreach(BloodLakeSummonHistory summonHistory in SummonHistories)
+                        {
+                            BloodLakeSummonPattern summonPattern = summonHistory.summonPattern;
+                            string summonName = $"{summonPattern.name} {StorytellerUtility.DefaultThreatPointsNow(parent.Map)}";
+                            floatMenuOptions.Add(new FloatMenuOption($"{summonHistory.summonedTimes} Summon {summonName}:\n{summonHistory.tickNextSummon - Find.TickManager.TicksGame}/{summonHistory.tickNextSummon}", delegate
+                            {
+                                Log.Message($"{summonHistory.summonedTimes} Summoned {summonName}:\n{summonHistory.tickNextSummon - Find.TickManager.TicksGame}/{summonHistory.tickNextSummon}\n{(float)(summonHistory.tickNextSummon - Find.TickManager.TicksGame) / summonHistory.summonPattern.intervalRange.min}");
+                            }));
+                        }
+                        Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
+                    },
+                    defaultLabel = "Dev: Log",
+                    defaultDesc = "Log data"
                 };
                 //    yield return new Command_Action
                 //    {
@@ -214,6 +255,7 @@ namespace AnomaliesExpected
         public override void PostExposeData()
         {
             base.PostExposeData();
+            Scribe_Collections.Look(ref SummonHistories, "SummonHistories", LookMode.Deep);
             //Scribe_Values.Look(ref beamNextCount, "beamNextCount", 1);
             //Scribe_Values.Look(ref beamMaxCount, "beamMaxCount", 1);
             //Scribe_Values.Look(ref TickNextState, "TickNextState", Find.TickManager.TicksGame + Props.beamIntervalRange.min);
