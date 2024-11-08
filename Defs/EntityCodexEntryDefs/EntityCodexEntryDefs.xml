@@ -111,4 +111,40 @@
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>
 
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_BloodPuddle</defName>
+		<label>blood puddle</label>
+		<category>Basic</category>
+		<uiIconPath>UI/CodexEntries/AE_BloodPuddle</uiIconPath>
+		<useDescriptionFrom>AE_BloodPuddle</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_BloodPuddle</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_BloodPuddleSpawn</li>
+		</provocationIncidents>
+		<!-- <discoveredResearchProjects> -->
+			<!-- <li>AEFruitInhibitorSerum</li> -->
+		<!-- </discoveredResearchProjects> -->
+		<orderInCategory>1300</orderInCategory>
+	</EntityCodexEntryDef>
+
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_BloodLake</defName>
+		<label>blood lake</label>
+		<category>Advanced</category>
+		<uiIconPath>UI/CodexEntries/AE_BloodLake</uiIconPath>
+		<useDescriptionFrom>AE_BloodLake</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_BloodLake</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_BloodLakeSpawn</li>
+		</provocationIncidents>
+		<!-- <discoveredResearchProjects> -->
+			<!-- <li>AEOrbitalBeamTargeter</li> -->
+		<!-- </discoveredResearchProjects> -->
+		<orderInCategory>1300</orderInCategory>
+	</EntityCodexEntryDef>
+
 </Defs>

@@ -537,6 +537,7 @@
 		<holdsRoof>true</holdsRoof>
 		<statBases>
 			<Flammability>0</Flammability>
+			<Cleanliness>-30</Cleanliness>
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<building>

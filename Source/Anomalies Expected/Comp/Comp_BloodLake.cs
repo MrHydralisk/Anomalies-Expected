@@ -224,8 +224,13 @@ namespace AnomaliesExpected
                         foreach(BloodLakeSummonHistory summonHistory in SummonHistories)
                         {
                             BloodLakeSummonPattern summonPattern = summonHistory.summonPattern;
-                            string summonName = $"{summonPattern.name} {StorytellerUtility.DefaultThreatPointsNow(parent.Map)}";
-                            floatMenuOptions.Add(new FloatMenuOption($"{summonHistory.summonedTimes} Summon {summonName}:\n{summonHistory.tickNextSummon - Find.TickManager.TicksGame}/{summonHistory.tickNextSummon}", delegate
+                            string summonName = summonPattern.name;
+                            if (summonPattern.isRaid)
+                            {
+                                summonName += $" {StorytellerUtility.DefaultThreatPointsNow(parent.Map)}";
+                            }
+                            int tickLeft = summonHistory.tickNextSummon - Find.TickManager.TicksGame;
+                            floatMenuOptions.Add(new FloatMenuOption($"{summonHistory.summonedTimes} Summon {summonName}:\n{tickLeft}/{summonHistory.tickNextSummon}\n{tickLeft.ToStringTicksToPeriod()}", delegate
                             {
                                 Log.Message($"{summonHistory.summonedTimes} Summoned {summonName}:\n{summonHistory.tickNextSummon - Find.TickManager.TicksGame}/{summonHistory.tickNextSummon}\n{(float)(summonHistory.tickNextSummon - Find.TickManager.TicksGame) / summonHistory.summonPattern.intervalRange.min}");
                             }));
@@ -267,6 +272,27 @@ namespace AnomaliesExpected
         {
             List<string> inspectStrings = new List<string>();
             //int study = StudyUnlocks?.NextIndex ?? 4;
+            BloodLakeSummonHistory summonHistory = SummonHistories.FirstOrDefault();
+            if (summonHistory != null)
+            {
+                int ticksLeft = summonHistory.tickNextSummon - Find.TickManager.TicksGame;
+                if (ticksLeft < 2500)
+                {
+                    inspectStrings.Add("Less than hour");
+                }
+                else if (ticksLeft < 15000)
+                {
+                    inspectStrings.Add("Low density");
+                }
+                else if (ticksLeft < 60000)
+                {
+                    inspectStrings.Add("High density");
+                }
+                else
+                {
+                    inspectStrings.Add("Almost solid");
+                }
+            }
             //if (study > 0)
             //{
             //    inspectStrings.Add("AnomaliesExpected.BeamTarget.Indicator".Translate(beamNextCount, Props.beamMaxCount).RawText);
