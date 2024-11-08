@@ -8,7 +8,7 @@ namespace AnomaliesExpected
         public bool DespawnPiecesOnDestroy = false;
         public bool SpawnPiePieceNotification = true;
         public bool PoweBeamRequireBeamTarget = true;
-        public bool BeamTargetLetter = false;
+        public bool BeamTargetLetter = true;
 
         public override void ExposeData()
         {
@@ -17,7 +17,7 @@ namespace AnomaliesExpected
             Scribe_Values.Look(ref DespawnPiecesOnDestroy, "DespawnPiecesOnDestroy", defaultValue: false);
             Scribe_Values.Look(ref SpawnPiePieceNotification, "SpawnPiePieceNotification", defaultValue: true);
             Scribe_Values.Look(ref PoweBeamRequireBeamTarget, "PoweBeamRequireBeamTarget", defaultValue: true);
-            Scribe_Values.Look(ref BeamTargetLetter, "BeamTargetLetter", defaultValue: false);
+            Scribe_Values.Look(ref BeamTargetLetter, "BeamTargetLetter", defaultValue: true);
         }
     }
 }

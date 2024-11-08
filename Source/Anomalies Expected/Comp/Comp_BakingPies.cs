@@ -14,9 +14,10 @@ namespace AnomaliesExpected
 
         private List<Thing> piePieces = new List<Thing>();
 
-        private int piePiecesExisting => piePieces.Count((Thing t) => !(t?.Destroyed ?? true));
+        private int piePiecesExisting = 1;
 
         private int TickSpawn;
+        private int TickCanCount;
 
         protected CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = parent.TryGetComp<CompAEStudyUnlocks>());
         private CompAEStudyUnlocks studyUnlocksCached;
@@ -29,8 +30,8 @@ namespace AnomaliesExpected
             if (!respawningAfterLoad)
             {
                 TickSpawn = Find.TickManager.TicksGame + Props.tickPerSpawn;
-                piePieces.Add(parent);
             }
+            CalculatePiePieces();
         }
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
@@ -62,13 +63,31 @@ namespace AnomaliesExpected
             }
         }
 
+        public int CalculatePiePieces(bool isNotRare = true)
+        {
+            if (isNotRare || Find.TickManager.TicksGame > TickCanCount + 60)
+            {
+                int countExisting = 1;
+                for (int i = piePieces.Count() - 1; i >= 0; i--)
+                {
+                    Thing piePiece = piePieces[i];
+                    if (piePiece == null || piePiece.Destroyed || piePiece.GetUniqueLoadID == parent.GetUniqueLoadID)
+                    {
+                        piePieces.RemoveAt(i);
+                        continue;
+                    }
+                    countExisting++;
+                }
+                piePieces.Insert(0, parent);
+                piePiecesExisting = countExisting;
+                TickCanCount = Find.TickManager.TicksGame + 60;
+            }
+            return piePiecesExisting;
+        }
+
         public void SpawnPiePiece()
         {
-            if (!piePieces.Contains(parent))
-            {
-                piePieces.Insert(0, parent);
-            }
-            int amount = piePiecesExisting;
+            int amount = CalculatePiePieces();
             if (AEMod.Settings.ReplicationLimit > 0)
             {
                 amount = Mathf.Min(amount, AEMod.Settings.ReplicationLimit);
@@ -78,7 +97,7 @@ namespace AnomaliesExpected
                 Messages.Message("AnomaliesExpected.BakingPies.SpawnPiePiece".Translate(parent.LabelCap).RawText, new TargetInfo(parent.Position, parent.Map), MessageTypeDefOf.NeutralEvent);
             }
             int l = 0;
-            for (int i = 0; i < piePieces.Count; i++)
+            for (int i = 0; i < piePieces.Count(); i++)
             {
                 Thing piePiece = piePieces.ElementAtOrDefault(i);
                 if (piePiece != null && !piePiece.Destroyed)
@@ -121,10 +140,11 @@ namespace AnomaliesExpected
                     i--;
                 }
             }
+            CalculatePiePieces();
             if (amount > 100)
             {
                 Find.TickManager.Pause();
-                Find.LetterStack.ReceiveLetter("AnomaliesExpected.BakingPies.EndGame.Label".Translate(), "AnomaliesExpected.BakingPies.EndGame.Text".Translate(piePiecesExisting, amount, parent.LabelCap), LetterDefOf.GameEnded, parent);
+                Find.LetterStack.ReceiveLetter("AnomaliesExpected.BakingPies.EndGame.Label".Translate(), "AnomaliesExpected.BakingPies.EndGame.Text".Translate(CalculatePiePieces(false), amount, parent.LabelCap), LetterDefOf.GameEnded, parent);
             }
         }
 
@@ -206,7 +226,7 @@ namespace AnomaliesExpected
             int study = StudyUnlocks?.NextIndex ?? 4;
             if (study > 1)
             {
-                inspectStrings.Add("AnomaliesExpected.BakingPies.Amount".Translate(piePiecesExisting).RawText);
+                inspectStrings.Add("AnomaliesExpected.BakingPies.Amount".Translate(CalculatePiePieces(false)).RawText);
                 if (study > 2)
                 {
                     inspectStrings.Add("AnomaliesExpected.BakingPies.Time".Translate((TickSpawn - Find.TickManager.TicksGame).ToStringTicksToPeriodVerbose()).RawText);
