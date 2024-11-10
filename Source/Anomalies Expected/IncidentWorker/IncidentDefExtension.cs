@@ -10,5 +10,7 @@ namespace AnomaliesExpected
         public ThingDef ActiveDropPodDef;
         public ThingDef SkyfallerDef;
         public float ChanceFactorPowPerBuilding;
+        public List<ThingDefCountClass> ChanceFactorPowPerOtherBuildings;
+        public bool isHaveArrow = true;
     }
 }

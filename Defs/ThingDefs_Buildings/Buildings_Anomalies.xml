@@ -582,9 +582,9 @@
 				<filthDef>Filth_LooseGround</filthDef>
 				<thickness>5</thickness>
 			</li>-->
-		  <li>
-			<compClass>CompColorable</compClass>
-		  </li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
 		</comps>
 	</ThingDef>
 	
@@ -595,36 +595,7 @@
 		<graphicData>
 			<texPath>Things/Building/AE_BloodPuddle</texPath>
 			<graphicClass>Graphic_Random</graphicClass>
-		</graphicData>
-		
-		<!--<uiIconScale>0.75</uiIconScale>
-		<canOverlapZones>false</canOverlapZones>
-		<minifiedDef>MinifiedThing</minifiedDef>
-		<thingCategories>
-			<li>BuildingsFurniture</li>
-		</thingCategories>
-		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-		<altitudeLayer>Building</altitudeLayer>
-		<castEdgeShadows>true</castEdgeShadows>
-		<staticSunShadowHeight>0.20</staticSunShadowHeight>
-		<costList>
-			<Bioferrite>45</Bioferrite>
-		</costList>
-		<fillPercent>0.5</fillPercent>
-		<useHitPoints>True</useHitPoints>
-		<statBases>
-			<Mass>20</Mass>
-			<WorkToBuild>2000</WorkToBuild>
-			<MaxHitPoints>180</MaxHitPoints>
-			<Flammability>0</Flammability>
-			<Cleanliness>-30</Cleanliness>
-		</statBases>
-		<passability>PassThroughOnly</passability>
-		<pathCost>50</pathCost>
-		<surfaceType>Item</surfaceType>
-		<tickerType>Normal</tickerType>
-		<designationCategory/>-->
-		
+		</graphicData>		
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_BloodLake">
 				<activeTicks>1</activeTicks>
@@ -653,35 +624,105 @@
 				<summonPatterns>
 					<li>
 						<name>Wave</name>
-						<intervalRange>
-							<min>60000</min>
-							<max>180000</max>
-						</intervalRange>
-						<resourcesAvailable>1</resourcesAvailable>
-						<resourcesAvailableSummonsRequired>
-							<li>0</li>
-							<li>2</li>
-							<li>4</li>
-						</resourcesAvailableSummonsRequired>
-						<resourcesAvailableMult>
-							<li>1</li>
-							<li>2</li>
-							<li>3</li>
-						</resourcesAvailableMult>
-						<pawnKindsWeighted>
+						<initialInterval>60000</initialInterval>
+						<stages>
 							<li>
-								<kindDef>Fingerspike</kindDef>
-								<count>1</count>
+								<SummonsRequired>0</SummonsRequired>
+								<intervalRange>
+									<min>60000</min>
+									<max>180000</max>
+								</intervalRange>
+								<resourcesAvailable>1</resourcesAvailable>
+								<resourcesAvailableMult>1</resourcesAvailableMult>
+								<pawnKindsWeighted>
+									<li>
+										<kindDef>Fingerspike</kindDef>
+										<count>1</count>
+									</li>
+									<li>
+										<kindDef>Trispike</kindDef>
+										<count>2</count>
+									</li>
+								</pawnKindsWeighted>
 							</li>
 							<li>
-								<kindDef>Trispike</kindDef>
-								<count>2</count>
+								<SummonsRequired>2</SummonsRequired>
+								<intervalRange>
+									<min>60000</min>
+									<max>180000</max>
+								</intervalRange>
+								<resourcesAvailable>1</resourcesAvailable>
+								<resourcesAvailableMult>2</resourcesAvailableMult>
+								<pawnKindsWeighted>
+									<li>
+										<kindDef>Fingerspike</kindDef>
+										<count>1</count>
+									</li>
+									<li>
+										<kindDef>Trispike</kindDef>
+										<count>2</count>
+									</li>
+								</pawnKindsWeighted>
 							</li>
-						</pawnKindsWeighted>
+							<li>
+								<SummonsRequired>4</SummonsRequired>
+								<intervalRange>
+									<min>60000</min>
+									<max>120000</max>
+								</intervalRange>
+								<resourcesAvailable>1</resourcesAvailable>
+								<resourcesAvailableMult>3</resourcesAvailableMult>
+								<pawnKindsWeighted>
+									<li>
+										<kindDef>Fingerspike</kindDef>
+										<count>1</count>
+									</li>
+									<li>
+										<kindDef>Trispike</kindDef>
+										<count>2</count>
+									</li>
+								</pawnKindsWeighted>
+							</li>
+						</stages>
 					</li>
 				</summonPatterns>
 				<inactiveColor>(100,30,30)</inactiveColor>
 				<activeColor>(255,0,0)</activeColor>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<compClass>AnomaliesExpected.CompStudiableAE</compClass>
+				<frequencyTicks>120000</frequencyTicks>
+				<knowledgeCategory>Basic</knowledgeCategory>
+				<knowledgeFactorOutdoors>1</knowledgeFactorOutdoors>
+				<anomalyKnowledge>0</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<showToggleGizmo>true</showToggleGizmo>
+			</li>
+			<li Class="CompProperties_StudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotes>
+					<li Class="AnomaliesExpected.AEStudyNote"> <!-- blood -->
+						<AnomalyLabel>blood puddle</AnomalyLabel>
+						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>0.01</threshold>
+						<label>#1/5 Transmitter study report</label>
+						<text>Unexplained Data Transmission and Indestructibility</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote"> <!-- density -->
+						<AnomalyLabel>orbital beacon</AnomalyLabel>
+						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero.\n\nClassified as Class-2 (Warning) anomaly.</AnomalyDesc>
+						<threshold>2</threshold>
+						<label>#2/5 Transmitter study report</label>
+						<text>Teleportation and High-Energy Beam</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote"> <!-- unable to continue study due to density -->
+						<AnomalyLabel>orbital beam beacon</AnomalyLabel>
+						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. Then they will have 12 min to leave the danger zone.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
+						<threshold>4</threshold>
+						<label>#3/5 Transmitter study report</label>
+						<text>Multiple Beams and Timer Delay</text>
+					</li>
+				</studyNotes>
 			</li>
 		</comps>
 	</ThingDef>
@@ -696,35 +737,6 @@
 			<drawSize>(6,4)</drawSize>
 		</graphicData>
 		<size>(5,3)</size>
-		
-		<!--<uiIconScale>0.75</uiIconScale>
-		<canOverlapZones>false</canOverlapZones>
-		<minifiedDef>MinifiedThing</minifiedDef>
-		<thingCategories>
-			<li>BuildingsFurniture</li>
-		</thingCategories>
-		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-		<altitudeLayer>Building</altitudeLayer>
-		<castEdgeShadows>true</castEdgeShadows>
-		<staticSunShadowHeight>0.20</staticSunShadowHeight>
-		<costList>
-			<Bioferrite>45</Bioferrite>
-		</costList>
-		<fillPercent>0.5</fillPercent>
-		<useHitPoints>True</useHitPoints>
-		<statBases>
-			<Mass>20</Mass>
-			<WorkToBuild>2000</WorkToBuild>
-			<MaxHitPoints>180</MaxHitPoints>
-			<Flammability>0</Flammability>
-			<Cleanliness>-30</Cleanliness>
-		</statBases>
-		<passability>PassThroughOnly</passability>
-		<pathCost>50</pathCost>
-		<surfaceType>Item</surfaceType>
-		<tickerType>Normal</tickerType>
-		<designationCategory/>-->
-		
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_BloodLake">
 				<activeTicks>1</activeTicks>
@@ -753,68 +765,209 @@
 				<summonPatterns>
 					<li>
 						<name>Raid</name>
-						<intervalRange>
-							<min>240000</min>
-							<max>360000</max>
-						</intervalRange>
+						<initialInterval>150000</initialInterval>
 						<assaultColony>true</assaultColony>
 						<isRaid>true</isRaid>
-						<resourcesAvailableSummonsRequired>
-							<li>0</li>
-							<li>1</li>
-							<li>3</li>
-							<li>6</li>
-							<li>9</li>
-						</resourcesAvailableSummonsRequired>
-						<resourcesAvailableMult>
-							<li>0.5</li>
-							<li>0.75</li>
-							<li>1</li>
-							<li>1.25</li>
-							<li>1.5</li>
-						</resourcesAvailableMult>
-						<pawnKindsForcedCount>
+						<stages>
 							<li>
-								<kindDef>Bulbfreak</kindDef>
-								<count>1</count>
+								<SummonsRequired>0</SummonsRequired>
+								<intervalRange>
+									<min>240000</min>
+									<max>360000</max>
+								</intervalRange>
+								<resourcesAvailableMult>0.5</resourcesAvailableMult>
+								<pawnKindsForcedCount>
+									<li>
+										<kindDef>Bulbfreak</kindDef>
+										<count>1</count>
+									</li>
+								</pawnKindsForcedCount>
 							</li>
-						</pawnKindsForcedCount>
+							<li>
+								<SummonsRequired>1</SummonsRequired>
+								<intervalRange>
+									<min>240000</min>
+									<max>360000</max>
+								</intervalRange>
+								<resourcesAvailableMult>0.75</resourcesAvailableMult>
+								<pawnKindsForcedCount>
+									<li>
+										<kindDef>Bulbfreak</kindDef>
+										<count>1</count>
+									</li>
+								</pawnKindsForcedCount>
+							</li>
+							<li>
+								<SummonsRequired>3</SummonsRequired>
+								<intervalRange>
+									<min>240000</min>
+									<max>360000</max>
+								</intervalRange>
+								<resourcesAvailableMult>1</resourcesAvailableMult>
+								<pawnKindsForcedCount>
+									<li>
+										<kindDef>Bulbfreak</kindDef>
+										<count>2</count>
+									</li>
+								</pawnKindsForcedCount>
+							</li>
+							<li>
+								<SummonsRequired>6</SummonsRequired>
+								<intervalRange>
+									<min>220000</min>
+									<max>300000</max>
+								</intervalRange>
+								<resourcesAvailableMult>1.25</resourcesAvailableMult>
+								<pawnKindsForcedCount>
+									<li>
+										<kindDef>Bulbfreak</kindDef>
+										<count>2</count>
+									</li>
+								</pawnKindsForcedCount>
+							</li>
+							<li>
+								<SummonsRequired>9</SummonsRequired>
+								<intervalRange>
+									<min>200000</min>
+									<max>280000</max>
+								</intervalRange>
+								<resourcesAvailableMult>1.5</resourcesAvailableMult>
+								<pawnKindsForcedCount>
+									<li>
+										<kindDef>Bulbfreak</kindDef>
+										<count>3</count>
+									</li>
+								</pawnKindsForcedCount>
+							</li>
+						</stages>
 					</li>
 					<li>
 						<name>Wave</name>
-						<intervalRange>
-							<min>30000</min>
-							<max>90000</max>
-						</intervalRange>
-						<resourcesAvailable>2</resourcesAvailable>
-						<resourcesAvailableSummonsRequired>
-							<li>0</li>
-							<li>2</li>
-							<li>4</li>
-						</resourcesAvailableSummonsRequired>
-						<resourcesAvailableMult>
-							<li>1</li>
-							<li>2</li>
-							<li>3</li>
-						</resourcesAvailableMult>
-						<pawnKindsWeighted>
+						<initialInterval>30000</initialInterval>
+						<stages>
 							<li>
-								<kindDef>Fingerspike</kindDef>
-								<count>1</count>
+								<SummonsRequired>0</SummonsRequired>
+								<intervalRange>
+									<min>30000</min>
+									<max>90000</max>
+								</intervalRange>
+								<resourcesAvailable>2</resourcesAvailable>
+								<resourcesAvailableMult>1</resourcesAvailableMult>
+								<pawnKindsWeighted>
+									<li>
+										<kindDef>Fingerspike</kindDef>
+										<count>1</count>
+									</li>
+									<li>
+										<kindDef>Trispike</kindDef>
+										<count>2</count>
+									</li>
+									<li>
+										<kindDef>Toughspike</kindDef>
+										<count>3</count>
+									</li>
+								</pawnKindsWeighted>
 							</li>
 							<li>
-								<kindDef>Trispike</kindDef>
-								<count>2</count>
+								<SummonsRequired>2</SummonsRequired>
+								<intervalRange>
+									<min>30000</min>
+									<max>90000</max>
+								</intervalRange>
+								<resourcesAvailable>2</resourcesAvailable>
+								<resourcesAvailableMult>2</resourcesAvailableMult>
+								<pawnKindsWeighted>
+									<li>
+										<kindDef>Fingerspike</kindDef>
+										<count>1</count>
+									</li>
+									<li>
+										<kindDef>Trispike</kindDef>
+										<count>2</count>
+									</li>
+									<li>
+										<kindDef>Toughspike</kindDef>
+										<count>3</count>
+									</li>
+								</pawnKindsWeighted>
 							</li>
 							<li>
-								<kindDef>Toughspike</kindDef>
-								<count>3</count>
+								<SummonsRequired>4</SummonsRequired>
+								<intervalRange>
+									<min>30000</min>
+									<max>75000</max>
+								</intervalRange>
+								<resourcesAvailable>2</resourcesAvailable>
+								<resourcesAvailableMult>3</resourcesAvailableMult>
+								<pawnKindsWeighted>
+									<li>
+										<kindDef>Fingerspike</kindDef>
+										<count>1</count>
+									</li>
+									<li>
+										<kindDef>Trispike</kindDef>
+										<count>2</count>
+									</li>
+									<li>
+										<kindDef>Toughspike</kindDef>
+										<count>3</count>
+									</li>
+								</pawnKindsWeighted>
 							</li>
-						</pawnKindsWeighted>
+						</stages>
 					</li>
 				</summonPatterns>
 				<inactiveColor>(100,30,30)</inactiveColor>
 				<activeColor>(255,0,0)</activeColor>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<compClass>AnomaliesExpected.CompStudiableAE</compClass>
+				<frequencyTicks>120000</frequencyTicks>
+				<knowledgeCategory>Advanced</knowledgeCategory>
+				<knowledgeFactorOutdoors>1</knowledgeFactorOutdoors>
+				<anomalyKnowledge>1</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<showToggleGizmo>true</showToggleGizmo>
+			</li>
+			<li Class="CompProperties_StudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotes>
+					<li Class="AnomaliesExpected.AEStudyNote"> <!-- blood and density and random flesh beast leak -->
+						<AnomalyLabel>transmitter</AnomalyLabel>
+						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>0.01</threshold>
+						<label>#1/5 Transmitter study report</label>
+						<text>Unexplained Data Transmission and Indestructibility</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote"> <!-- density going low and might leak big raid -->
+						<AnomalyLabel>orbital beacon</AnomalyLabel>
+						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero.\n\nClassified as Class-2 (Warning) anomaly.</AnomalyDesc>
+						<threshold>2</threshold>
+						<label>#2/5 Transmitter study report</label>
+						<text>Teleportation and High-Energy Beam</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote"> <!-- blood -->
+						<AnomalyLabel>orbital beam beacon</AnomalyLabel>
+						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. Then they will have 12 min to leave the danger zone.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
+						<threshold>4</threshold>
+						<label>#3/5 Transmitter study report</label>
+						<text>Multiple Beams and Timer Delay</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote"> <!-- blood -->
+						<AnomalyLabel>orbital beam beacon</AnomalyLabel>
+						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. It will not activate as long as the carrier keep holding down the button. Then they will have 12 min to leave the danger zone. Can be manually activated.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
+						<threshold>8</threshold>
+						<label>#4/5 Transmitter study report</label>
+						<text>Manual Activation and Combat Application</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>Orbital Beam Training Target</AnomalyLabel>
+						<AnomalyDesc>A military grade small device targetting power-collection satellites during training excercise. It pneumatic retractable stops allows it to hold still on ground. On its body there are indicators with lights and a small safety button. A compact antenna constantly sending and recieving data from satellites.\n\nAfter recieving enough data will teleport to a location nearby, preferably inside buildings, and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. It will not activate as long as the carrier keep holding down the button. Then they will have 12 min to leave the danger zone. Can be manually activated each 5 days.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
+						<threshold>12</threshold>
+						<label>#5/5 Transmitter study report</label>
+						<text>Theory Regarding Transmitter</text>
+					</li>
+				</studyNotes>
 			</li>
 		</comps>
 	</ThingDef>

@@ -49,6 +49,7 @@
     <Compile Include="AEPowerBeam.cs" />
     <Compile Include="AEMod.cs" />
     <Compile Include="AESettings.cs" />
+    <Compile Include="IncidentWorker\IncidentWorker_DeployFromUnderground.cs" />
     <Compile Include="JobDriver\JobDriver_RemoveAnomaly.cs" />
     <Compile Include="Structures\BloodLakeSummonPatternStage.cs" />
     <Compile Include="Structures\BloodLakeSummonPattern.cs" />

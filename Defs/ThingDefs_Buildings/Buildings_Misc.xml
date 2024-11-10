@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef>
+		<defName>AE_BloodPuddleSpawner</defName>
+		<label>underground emergence</label>
+		<description>Something is emerging from the ground here.</description>
+		<thingClass>BuildingGroundSpawner</thingClass>
+		<selectable>true</selectable>
+		<tickerType>Normal</tickerType>
+		<useHitPoints>false</useHitPoints>
+		<drawerType>RealtimeOnly</drawerType>
+		<size>(1, 1)</size>
+		<uiIconPath>UI/Icons/UndergroundEmergence</uiIconPath>
+		<building>
+			<groundSpawnerSustainedEffecter>EmergencePointSustained2X2</groundSpawnerSustainedEffecter>
+			<groundSpawnerCompleteEffecter>EmergencePointComplete2X2</groundSpawnerCompleteEffecter>
+			<groundSpawnerThingToSpawn>AE_BloodPuddle</groundSpawnerThingToSpawn>
+			<groundSpawnerSpawnDelay>600</groundSpawnerSpawnDelay>
+			<groundSpawnerDestroyAdjacent>true</groundSpawnerDestroyAdjacent>
+			<groundSpawnerSustainerSound>PitBurrowOpening</groundSpawnerSustainerSound>
+		</building>
+	</ThingDef>
+
+	<ThingDef>
+		<defName>AE_BloodLakeSpawner</defName>
+		<label>underground emergence</label>
+		<description>Something is emerging from the ground here.</description>
+		<thingClass>BuildingGroundSpawner</thingClass>
+		<selectable>true</selectable>
+		<tickerType>Normal</tickerType>
+		<useHitPoints>false</useHitPoints>
+		<drawerType>RealtimeOnly</drawerType>
+		<size>(5, 3)</size>
+		<uiIconPath>UI/Icons/UndergroundEmergence</uiIconPath>
+		<building>
+			<groundSpawnerSustainedEffecter>EmergencePointSustained8X8</groundSpawnerSustainedEffecter>
+			<groundSpawnerCompleteEffecter>EmergencePointComplete8X8</groundSpawnerCompleteEffecter>
+			<groundSpawnerThingToSpawn>AE_BloodLake</groundSpawnerThingToSpawn>
+			<groundSpawnerSpawnDelay>2500</groundSpawnerSpawnDelay>
+			<groundSpawnerDestroyAdjacent>true</groundSpawnerDestroyAdjacent>
+			<groundSpawnerSustainerSound>PitGateOpening</groundSpawnerSustainerSound>
+		</building>
+	</ThingDef>
+	
+</Defs>

@@ -164,7 +164,7 @@
 		<targetTags>
 			<li>Map_PlayerHome</li>
 		</targetTags>
-		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingFromOrbit</workerClass>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromUnderground</workerClass>
 		<letterLabel>Found blood puddle</letterLabel>
 		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a round big pie on a plate. It looks appetizing.</letterText>
 		<letterDef>NeutralEvent</letterDef>
@@ -175,12 +175,15 @@
 		<minRefireDays>10</minRefireDays>
 		<modExtensions>
 			<li Class="AnomaliesExpected.IncidentDefExtension">
-				<DeployableThingDefs>
-					<li>AE_BloodPuddle</li>
-				</DeployableThingDefs>
-				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
-				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
+				<DeployableObjectDef>AE_BloodPuddle</DeployableObjectDef>
+				<SkyfallerDef>AE_BloodPuddleSpawner</SkyfallerDef>
 				<ChanceFactorPowPerBuilding>1.1</ChanceFactorPowPerBuilding>
+				<ChanceFactorPowPerOtherBuildings>
+					<AE_BloodLake>
+						<chance>1.5</chance>
+					</AE_BloodLake>
+				</ChanceFactorPowPerOtherBuildings>
+				<isHaveArrow>false</isHaveArrow>
 			</li>
 		</modExtensions>
 	</IncidentDef>
@@ -192,7 +195,7 @@
 		<targetTags>
 			<li>Map_PlayerHome</li>
 		</targetTags>
-		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromOrbit</workerClass>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromUnderground</workerClass>
 		<letterLabel>Found blood lake</letterLabel>
 		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a small device with pneumatic retractable stops. On its body there are indicators with lights, an antenna and a small button. It looks like military grade.</letterText>
 		<letterDef>NeutralEvent</letterDef>
@@ -205,7 +208,7 @@
 		<modExtensions>
 			<li Class="AnomaliesExpected.IncidentDefExtension">
 				<DeployableObjectDef>AE_BloodLake</DeployableObjectDef>
-				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
+				<SkyfallerDef>AE_BloodLakeSpawner</SkyfallerDef>
 				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
 			</li>
 		</modExtensions>
