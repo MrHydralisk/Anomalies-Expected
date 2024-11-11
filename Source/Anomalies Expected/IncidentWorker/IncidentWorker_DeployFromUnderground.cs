@@ -1,5 +1,4 @@
-﻿using Mono.Unix.Native;
-using RimWorld;
+﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -14,6 +13,7 @@ namespace AnomaliesExpected
         public float ChanceFactorPowPerBuilding => Ext?.ChanceFactorPowPerBuilding ?? 1f;
         public List<ThingDefCountClass> ChanceFactorPowPerOtherBuildings => Ext?.ChanceFactorPowPerOtherBuildings;
         public bool isHaveArrow => Ext?.isHaveArrow ?? true;
+        public List<EntityCodexEntryDef> entityCodexEntryDefsRequired => Ext?.entityCodexEntryDefsRequired ?? null;
 
         public IncidentDefExtension Ext => def.GetModExtension<IncidentDefExtension>();
 
@@ -21,6 +21,15 @@ namespace AnomaliesExpected
         {
             ignoreTerrainAffordance = true
         };
+
+        protected override bool CanFireNowSub(IncidentParms parms)
+        {
+            if (ModsConfig.AnomalyActive && (entityCodexEntryDefsRequired?.Any(eced => !Find.EntityCodex.Discovered(eced)) ?? false))
+            {
+                return false;
+            }
+            return base.CanFireNowSub(parms);
+        }
 
         public override float ChanceFactorNow(IIncidentTarget target)
         {
@@ -34,12 +43,15 @@ namespace AnomaliesExpected
             {
                 chance *= Mathf.Pow(ChanceFactorPowPerBuilding, num);
             }
-            foreach (ThingDefCountClass tdcc in ChanceFactorPowPerOtherBuildings)
+            if (ChanceFactorPowPerOtherBuildings != null)
             {
-                int num1 = map.listerBuildings.allBuildingsNonColonist.Count((Building b) => b.def == tdcc.thingDef);
-                if (num1 > 0)
+                foreach (ThingDefCountClass tdcc in ChanceFactorPowPerOtherBuildings)
                 {
-                    chance *= Mathf.Pow(tdcc.DropChance, num1);
+                    int num1 = map.listerBuildings.allBuildingsNonColonist.Count((Building b) => b.def == tdcc.thingDef);
+                    if (num1 > 0)
+                    {
+                        chance *= Mathf.Pow(tdcc.DropChance, num1);
+                    }
                 }
             }
             return chance;
@@ -59,28 +71,5 @@ namespace AnomaliesExpected
             SendStandardLetter(def.letterLabel, def.letterText, def.letterDef ?? LetterDefOf.NeutralEvent, parms, isHaveArrow ? buildingGroundSpawner : null);
             return true;
         }
-
-        //protected override bool TryExecuteWorker(IncidentParms parms)
-        //{
-        //    Map map = (Map)parms.target;
-        //    List<Thing> things = new List<Thing>();
-        //    foreach (ThingDef deployThingDef in DeployableThingDefs)
-        //    {
-        //        things.Add(ThingMaker.MakeThing(deployThingDef));
-        //    }
-        //    IntVec3 intVec = DropCellFinder.RandomDropSpot(map);
-        //    ActiveDropPodInfo activeDropPodInfo = new ActiveDropPodInfo();
-        //    foreach (Thing item2 in things)
-        //    {
-        //        activeDropPodInfo.innerContainer.TryAdd(item2);
-        //    }
-        //    activeDropPodInfo.openDelay = 110;
-        //    activeDropPodInfo.leaveSlag = false;
-        //    ActiveDropPod activeDropPod = (ActiveDropPod)ThingMaker.MakeThing(ActiveDropPodDef);
-        //    activeDropPod.Contents = activeDropPodInfo;
-        //    SkyfallerMaker.SpawnSkyfaller(SkyfallerDef, activeDropPod, intVec, map);
-        //    SendStandardLetter(def.letterLabel, def.letterText, def.letterDef ?? LetterDefOf.NeutralEvent, parms, new TargetInfo(intVec, map));
-        //    return true;
-        //}
     }
 }

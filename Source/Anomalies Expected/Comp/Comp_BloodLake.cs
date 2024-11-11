@@ -135,6 +135,24 @@ namespace AnomaliesExpected
             summonHistory.summonedTimes++;
         }
 
+        public override void PostDestroy(DestroyMode mode, Map previousMap)
+        {
+            foreach (IntVec3 item in GenAdj.OccupiedRect(parent.Position, Rot4.North, parent.def.Size))
+            {
+                if (GenGrid.InBounds(item, previousMap))
+                {
+                    FilthMaker.TryMakeFilth(item, previousMap, Props.filthDef, Props.filthThickness);
+                }
+            }
+            foreach (IntVec3 item in GenAdj.OccupiedRect(parent.Position, Rot4.North, parent.def.Size + IntVec2.Two))
+            {
+                if (GenGrid.InBounds(item, previousMap))
+                {
+                    FilthMaker.TryMakeFilth(item, previousMap, ThingDefOf.Filth_Blood, 1);
+                }
+            }
+        }
+
         //public void ManualActivation()
         //{
         //    beamTargetState = BeamTargetState.Activating;

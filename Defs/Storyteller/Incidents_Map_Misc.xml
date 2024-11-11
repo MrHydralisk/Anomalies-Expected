@@ -169,7 +169,7 @@
 		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a round big pie on a plate. It looks appetizing.</letterText>
 		<letterDef>NeutralEvent</letterDef>
 		<earliestDay>5</earliestDay>
-		<baseChance>1</baseChance>
+		<baseChance>0.5</baseChance>
 		<requireColonistsPresent>True</requireColonistsPresent>
 		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
 		<minRefireDays>10</minRefireDays>
@@ -210,6 +210,9 @@
 				<DeployableObjectDef>AE_BloodLake</DeployableObjectDef>
 				<SkyfallerDef>AE_BloodLakeSpawner</SkyfallerDef>
 				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+				<entityCodexEntryDefsRequired>
+					<li>AE_EntityCodexEntry_BloodPuddle</li>
+				</entityCodexEntryDefsRequired>
 			</li>
 		</modExtensions>
 	</IncidentDef>

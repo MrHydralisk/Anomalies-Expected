@@ -531,7 +531,6 @@
 		<altitudeLayer>FloorEmplacement</altitudeLayer>
 		<useHitPoints>false</useHitPoints>
 		<rotatable>false</rotatable>
-		<destroyable>false</destroyable>
 		<passability>PassThroughOnly</passability>
 		<pathCost>300</pathCost>
 		<holdsRoof>true</holdsRoof>
@@ -578,10 +577,6 @@
 		<designationCategory/>-->
 		
 		<comps>
-			<!--<li Class="CompProperties_LeaveFilthOnDestroyed">
-				<filthDef>Filth_LooseGround</filthDef>
-				<thickness>5</thickness>
-			</li>-->
 			<li>
 				<compClass>CompColorable</compClass>
 			</li>
@@ -595,7 +590,7 @@
 		<graphicData>
 			<texPath>Things/Building/AE_BloodPuddle</texPath>
 			<graphicClass>Graphic_Random</graphicClass>
-		</graphicData>		
+		</graphicData>
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_BloodLake">
 				<activeTicks>1</activeTicks>
@@ -688,6 +683,8 @@
 				</summonPatterns>
 				<inactiveColor>(100,30,30)</inactiveColor>
 				<activeColor>(255,0,0)</activeColor>
+				<filthDef>Filth_LooseGround</filthDef>
+				<filthThickness>1</filthThickness>
 			</li>
 			<li Class="CompProperties_Studiable">
 				<compClass>AnomaliesExpected.CompStudiableAE</compClass>
@@ -701,21 +698,21 @@
 			<li Class="CompProperties_StudyUnlocks">
 				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
 				<studyNotes>
-					<li Class="AnomaliesExpected.AEStudyNote"> <!-- blood -->
+					<li Class="AnomaliesExpected.AEStudyNote"><!-- blood -->
 						<AnomalyLabel>blood puddle</AnomalyLabel>
 						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
 						<threshold>0.01</threshold>
 						<label>#1/5 Transmitter study report</label>
 						<text>Unexplained Data Transmission and Indestructibility</text>
 					</li>
-					<li Class="AnomaliesExpected.AEStudyNote"> <!-- density -->
+					<li Class="AnomaliesExpected.AEStudyNote"><!-- density -->
 						<AnomalyLabel>orbital beacon</AnomalyLabel>
 						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero.\n\nClassified as Class-2 (Warning) anomaly.</AnomalyDesc>
 						<threshold>2</threshold>
 						<label>#2/5 Transmitter study report</label>
 						<text>Teleportation and High-Energy Beam</text>
 					</li>
-					<li Class="AnomaliesExpected.AEStudyNote"> <!-- unable to continue study due to density -->
+					<li Class="AnomaliesExpected.AEStudyNote"><!-- unable to continue study due to density -->
 						<AnomalyLabel>orbital beam beacon</AnomalyLabel>
 						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. Then they will have 12 min to leave the danger zone.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
 						<threshold>4</threshold>
@@ -723,6 +720,34 @@
 						<text>Multiple Beams and Timer Delay</text>
 					</li>
 				</studyNotes>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_CanDestroyedAfterStudy">
+				<ticksToActivate>8000</ticksToActivate>
+				<maintainProgress>true</maintainProgress>
+				<activateTexPath>Designations/FillInPitBurrow</activateTexPath>
+        
+				<activateLabelString>Removal</activateLabelString>
+				<activateDescString>Modify satellite data to make it teleport far away from the colony. [Will destroy it]</activateDescString>
+				<guiLabelString>Choose who should remove this.</guiLabelString>
+				<jobString>modify data</jobString>
+				<activatingStringPending>modifying data for {0}</activatingStringPending>
+				<activatingString>modifying data for {0}: {1}s</activatingString>
+
+				<fleckOnAnomaly>PitGateCollapseDust</fleckOnAnomaly>
+				<fleckOnAnomalyScale>1</fleckOnAnomalyScale>
+				<soundActivate>PitBurrow_Collapse</soundActivate>				
+				<interactionEffecter>FillIn</interactionEffecter>
+				
+				<cooldownFleck>DirtBitsArching</cooldownFleck>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<jobDef>AE_RemoveAnomaly</jobDef>
 			</li>
 		</comps>
 	</ThingDef>
@@ -919,6 +944,8 @@
 				</summonPatterns>
 				<inactiveColor>(100,30,30)</inactiveColor>
 				<activeColor>(255,0,0)</activeColor>
+				<filthDef>Filth_LooseGround</filthDef>
+				<filthThickness>4</filthThickness>
 			</li>
 			<li Class="CompProperties_Studiable">
 				<compClass>AnomaliesExpected.CompStudiableAE</compClass>
@@ -932,28 +959,28 @@
 			<li Class="CompProperties_StudyUnlocks">
 				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
 				<studyNotes>
-					<li Class="AnomaliesExpected.AEStudyNote"> <!-- blood and density and random flesh beast leak -->
+					<li Class="AnomaliesExpected.AEStudyNote"><!-- blood and density and random flesh beast leak -->
 						<AnomalyLabel>transmitter</AnomalyLabel>
 						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
 						<threshold>0.01</threshold>
 						<label>#1/5 Transmitter study report</label>
 						<text>Unexplained Data Transmission and Indestructibility</text>
 					</li>
-					<li Class="AnomaliesExpected.AEStudyNote"> <!-- density going low and might leak big raid -->
+					<li Class="AnomaliesExpected.AEStudyNote"><!-- density going low and might leak big raid -->
 						<AnomalyLabel>orbital beacon</AnomalyLabel>
 						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero.\n\nClassified as Class-2 (Warning) anomaly.</AnomalyDesc>
 						<threshold>2</threshold>
 						<label>#2/5 Transmitter study report</label>
 						<text>Teleportation and High-Energy Beam</text>
 					</li>
-					<li Class="AnomaliesExpected.AEStudyNote"> <!-- blood -->
+					<li Class="AnomaliesExpected.AEStudyNote"><!-- blood -->
 						<AnomalyLabel>orbital beam beacon</AnomalyLabel>
 						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. Then they will have 12 min to leave the danger zone.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
 						<threshold>4</threshold>
 						<label>#3/5 Transmitter study report</label>
 						<text>Multiple Beams and Timer Delay</text>
 					</li>
-					<li Class="AnomaliesExpected.AEStudyNote"> <!-- blood -->
+					<li Class="AnomaliesExpected.AEStudyNote"><!-- blood -->
 						<AnomalyLabel>orbital beam beacon</AnomalyLabel>
 						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. It will not activate as long as the carrier keep holding down the button. Then they will have 12 min to leave the danger zone. Can be manually activated.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
 						<threshold>8</threshold>
@@ -968,6 +995,34 @@
 						<text>Theory Regarding Transmitter</text>
 					</li>
 				</studyNotes>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_CanDestroyedAfterStudy">
+				<ticksToActivate>120000</ticksToActivate>
+				<maintainProgress>true</maintainProgress>
+				<activateTexPath>Designations/FillInPitBurrow</activateTexPath>
+        
+				<activateLabelString>Removal</activateLabelString>
+				<activateDescString>Modify satellite data to make it teleport far away from the colony. [Will destroy it]</activateDescString>
+				<guiLabelString>Choose who should remove this.</guiLabelString>
+				<jobString>modify data</jobString>
+				<activatingStringPending>modifying data for {0}</activatingStringPending>
+				<activatingString>modifying data for {0}: {1}s</activatingString>
+
+				<fleckOnAnomaly>PitGateCollapseDust</fleckOnAnomaly>
+				<fleckOnAnomalyScale>5</fleckOnAnomalyScale>
+				<soundActivate>PitBurrow_Collapse</soundActivate>				
+				<interactionEffecter>FillIn</interactionEffecter>
+				
+				<cooldownFleck>DirtBitsArching</cooldownFleck>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<jobDef>AE_RemoveAnomaly</jobDef>
 			</li>
 		</comps>
 	</ThingDef>

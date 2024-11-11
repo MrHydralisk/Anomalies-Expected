@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using RimWorld;
+using System.Collections.Generic;
 using Verse;
 
 namespace AnomaliesExpected
@@ -12,5 +13,6 @@ namespace AnomaliesExpected
         public float ChanceFactorPowPerBuilding;
         public List<ThingDefCountClass> ChanceFactorPowPerOtherBuildings;
         public bool isHaveArrow = true;
+        public List<EntityCodexEntryDef> entityCodexEntryDefsRequired;
     }
 }
