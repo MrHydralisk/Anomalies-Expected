@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<WeatherDef ParentName="Underground">
+		<defName>AE_BloodLakeWeather</defName>
+		<label>blood lake</label>
+		<ambientSounds>
+			<li>Ambient_Undercave</li>
+		</ambientSounds>
+	</WeatherDef>
+	
+</Defs>
