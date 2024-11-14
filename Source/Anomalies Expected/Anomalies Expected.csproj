@@ -63,6 +63,7 @@
     <Compile Include="Structures\BloodLakeSummonPatternStage.cs" />
     <Compile Include="Structures\BloodLakeSummonPattern.cs" />
     <Compile Include="Structures\BloodLakeSummonHistory.cs" />
+    <Compile Include="DamageWorker_AddInjuryFleshmass.cs" />
     <Compile Include="Verb_AEPowerBeam.cs" />
     <Compile Include="PlaceWorker_ShowBeamTargetRadius.cs" />
     <Compile Include="MinifiedThing_AE.cs" />

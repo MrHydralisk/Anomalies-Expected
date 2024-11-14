@@ -58,17 +58,19 @@
 	</GenStepDef>
 
 	<GenStepDef>
-		<defName>AE_BloodLakeFleshmassSpitter</defName>
-		<order>353</order>
-		<genStep Class="AnomaliesExpected.GenStep_BloodLakeFleshmassSpitter"/>
-	</GenStepDef>
-
-	<GenStepDef>
 		<defName>AE_BloodLakeFleshmassSpitterGiant</defName>
 		<order>352</order>
 		<genStep Class="AnomaliesExpected.GenStep_BloodLakeFleshmassSpitter">
 			<numFleshSpitterPerTiles>5000</numFleshSpitterPerTiles>
 			<spitterDef>AE_FleshmassSpitterGiant</spitterDef>
+		</genStep>
+	</GenStepDef>
+
+	<GenStepDef>
+		<defName>AE_BloodLakeFleshmassSpitterMedium</defName>
+		<order>353</order>
+		<genStep Class="AnomaliesExpected.GenStep_BloodLakeFleshmassSpitter">
+			<spitterDef>AE_FleshmassSpitterMedium</spitterDef>
 		</genStep>
 	</GenStepDef>
 

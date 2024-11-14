@@ -48,12 +48,42 @@
 		</graphicData>
 		<projectile>
 			<shadowSize>2</shadowSize>
+			<damageDef>AcidBurnFleshmass</damageDef>
 			<spinRate>5</spinRate>
 			<damageAmountBase>30</damageAmountBase>
 			<speed>21</speed>
 			<arcHeightFactor>2</arcHeightFactor>
 			<explosionRadius>7.9</explosionRadius>
 			<explosionEffectLifetimeTicks>90</explosionEffectLifetimeTicks>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="FleshmassSpitter">
+		<defName>AE_FleshmassSpitterMedium</defName>
+		<verbs Inherit="False">
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+				<warmupTime>2.0</warmupTime>
+				<forcedMissRadius>3</forcedMissRadius>
+				<defaultProjectile>AE_Bullet_Shell_AcidSpitMedium</defaultProjectile>
+				<isMortar>true</isMortar>
+				<requireLineOfSight>false</requireLineOfSight>
+				<minRange>6.9</minRange>
+				<range>51.9</range>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>SpitterSpit</soundCast>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+	</ThingDef>
+
+	<ThingDef ParentName="Bullet_Shell_AcidSpit">
+		<defName>AE_Bullet_Shell_AcidSpitMedium</defName>
+		<projectile>
+			<damageDef>AcidBurnFleshmass</damageDef>
 		</projectile>
 	</ThingDef>
 
@@ -103,6 +133,7 @@
 		</graphicData>
 		<projectile>
 			<shadowSize>0.5</shadowSize>
+			<damageDef>AcidBurnFleshmass</damageDef>
 			<spinRate>40</spinRate>
 			<damageAmountBase>5</damageAmountBase>
 			<speed>70</speed>
