@@ -580,6 +580,9 @@
 				<compClass>CompColorable</compClass>
 			</li>
 		</comps>
+		<inspectorTabs>
+			<li>ITab_StudyNotes</li>
+		</inspectorTabs>
 	</ThingDef>
 	
 	<ThingDef ParentName="BuildingAE_BloodLakeBase">
@@ -1001,6 +1004,37 @@
 			<drawSize>(6,4)</drawSize>
 		</graphicData>
 		<size>(5,3)</size>
+		<comps>
+			<li Class="CompProperties_Studiable">
+				<compClass>AnomaliesExpected.CompStudiableAE</compClass>
+				<frequencyTicks>60000</frequencyTicks>
+				<knowledgeCategory>Advanced</knowledgeCategory>
+				<knowledgeFactorOutdoors>1</knowledgeFactorOutdoors>
+				<anomalyKnowledge>1</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<showToggleGizmo>true</showToggleGizmo>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotes>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>transmitter</AnomalyLabel>
+						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>0.01</threshold>
+						<label>#1/5 Transmitter study report B</label>
+						<text>B Unexplained Data Transmission and Indestructibility</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>orbital beacon</AnomalyLabel>
+						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero.\n\nClassified as Class-2 (Warning) anomaly.</AnomalyDesc>
+						<threshold>2</threshold>
+						<label>#2/5 Transmitter study report B</label>
+						<text>B Teleportation and High-Energy Beam</text>
+					</li>
+				</studyNotes>
+				<isSyncWithParent>true</isSyncWithParent>
+			</li>
+		</comps>
 	</ThingDef>
 	
 </Defs>

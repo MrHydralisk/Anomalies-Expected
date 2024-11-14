@@ -175,6 +175,7 @@ namespace AnomaliesExpected
                 pocketMapParent.sourceMap = Map;
                 subMap = MapGenerator.GenerateMap(Map.Size, pocketMapParent, ExtBloodLake.mapGeneratorDef, isPocketMap: true);
                 Find.World.pocketMaps.Add(pocketMapParent);
+                exitBuilding.StudyUnlocks.SetParentThing(this);
             }
         }
 
@@ -221,40 +222,55 @@ namespace AnomaliesExpected
             }
             if (DebugSettings.ShowDevGizmos)
             {
-                //    yield return new Command_Action
-                //    {
-                //        action = delegate
-                //        {
-                //            List<FloatMenuOption> floatMenuOptions = new List<FloatMenuOption>();
-                //            floatMenuOptions.Add(new FloatMenuOption("Increase by 3d", delegate
-                //            {
-                //                TickNextState += 180000;
-                //            }));
-                //            floatMenuOptions.Add(new FloatMenuOption("Increase by 1d", delegate
-                //            {
-                //                TickNextState += 60000;
-                //            }));
-                //            floatMenuOptions.Add(new FloatMenuOption("Increase by 1h", delegate
-                //            {
-                //                TickNextState += 2500;
-                //            }));
-                //            floatMenuOptions.Add(new FloatMenuOption("Decrease by 1h", delegate
-                //            {
-                //                TickNextState -= 2500;
-                //            }));
-                //            floatMenuOptions.Add(new FloatMenuOption("Decrease by 1d", delegate
-                //            {
-                //                TickNextState -= 60000;
-                //            }));
-                //            floatMenuOptions.Add(new FloatMenuOption("Decrease by 3d", delegate
-                //            {
-                //                TickNextState -= 180000;
-                //            }));
-                //            Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
-                //        },
-                //        defaultLabel = "Dev: Change TickNextState",
-                //        defaultDesc = $"Change timer for State: {(TickNextState - Find.TickManager.TicksGame).ToStringTicksToDays()}"
-                //    };
+                yield return new Command_Action
+                {
+                    action = delegate
+                    {
+                        List<FloatMenuOption> floatMenuOptions = new List<FloatMenuOption>();
+                        foreach (BloodLakeSummonHistory summonHistory in SummonHistories)
+                        {
+                            BloodLakeSummonPattern summonPattern = summonHistory.summonPattern;
+                            string summonName = summonPattern.name;
+                            if (summonPattern.isRaid)
+                            {
+                                summonName += $" {StorytellerUtility.DefaultThreatPointsNow(Map)}";
+                            }
+                            int tickLeft = summonHistory.tickNextSummon - Find.TickManager.TicksGame;
+                            floatMenuOptions.Add(new FloatMenuOption($"{summonHistory.summonedTimes} Summon {summonName}:\n{tickLeft}/{summonHistory.tickNextSummon}\n{tickLeft.ToStringTicksToPeriod()}", delegate
+                            {
+                                List<FloatMenuOption> floatMenuOptionsS = new List<FloatMenuOption>();
+                                floatMenuOptionsS.Add(new FloatMenuOption("Increase by 3d", delegate
+                                {
+                                    summonHistory.tickNextSummon += 180000;
+                                }));
+                                floatMenuOptionsS.Add(new FloatMenuOption("Increase by 1d", delegate
+                                {
+                                    summonHistory.tickNextSummon += 60000;
+                                }));
+                                floatMenuOptionsS.Add(new FloatMenuOption("Increase by 1h", delegate
+                                {
+                                    summonHistory.tickNextSummon += 2500;
+                                }));
+                                floatMenuOptionsS.Add(new FloatMenuOption("Decrease by 1h", delegate
+                                {
+                                    summonHistory.tickNextSummon -= 2500;
+                                }));
+                                floatMenuOptionsS.Add(new FloatMenuOption("Decrease by 1d", delegate
+                                {
+                                    summonHistory.tickNextSummon -= 60000;
+                                }));
+                                floatMenuOptionsS.Add(new FloatMenuOption("Decrease by 3d", delegate
+                                {
+                                    summonHistory.tickNextSummon -= 180000;
+                                }));
+                                Find.WindowStack.Add(new FloatMenu(floatMenuOptionsS));
+                            }));
+                        }
+                        Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
+                    },
+                    defaultLabel = "Dev: Change Wave Timer",
+                    defaultDesc = $"Change timer till next wave"
+                };
                 yield return new Command_Action
                 {
                     action = delegate
@@ -305,16 +321,27 @@ namespace AnomaliesExpected
                     {
                         GenerateSubMap();
                     },
-                    defaultLabel = "Dev: Generate Undercave",
-                    defaultDesc = "Generate Undercave"
+                    defaultLabel = "Dev: Generate Sub Map",
+                    defaultDesc = "Generate sub map for Blood Lake"
                 };
             }
         }
 
-        //protected override void OnInteracted(Pawn caster)
-        //{
-        //    //ManualActivation();
-        //}
+        private bool Validator(IntVec3 c, Map map)
+        {
+            if (!GenGrid.InBounds(c, map) || !c.Standable(map))
+            {
+                return false;
+            }
+            foreach (IntVec3 pos in GenAdj.CellsOccupiedBy(c, Rot4.North, ThingDefOfLocal.AE_BloodLakeExit.size + IntVec2.Two))
+            {
+                if (!GenGrid.InBounds(pos, map) || pos.DistanceToEdge(map) <= 2 || !pos.Standable(map))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
 
         public override Map GetOtherMap()
         {
@@ -334,11 +361,6 @@ namespace AnomaliesExpected
         {
             base.ExposeData();
             Scribe_Collections.Look(ref SummonHistories, "SummonHistories", LookMode.Deep);
-            //Scribe_Values.Look(ref beamNextCount, "beamNextCount", 1);
-            //Scribe_Values.Look(ref beamMaxCount, "beamMaxCount", 1);
-            //Scribe_Values.Look(ref TickNextState, "TickNextState", Find.TickManager.TicksGame + ExtBloodLake.beamIntervalRange.min);
-            //Scribe_Values.Look(ref isActive, "isActive", true);
-            //Scribe_Values.Look(ref beamTargetState, "beamTargetState", BeamTargetState.Searching);
             Scribe_References.Look(ref subMap, "subMap");
             Scribe_Values.Look(ref beenEntered, "beenEntered", defaultValue: false);
         }

@@ -6,7 +6,7 @@ namespace AnomaliesExpected
 {
     public class Building_AEMapPortal : MapPortal
     {
-        protected CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = GetComp<CompAEStudyUnlocks>());
+        public CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = GetComp<CompAEStudyUnlocks>());
         private CompAEStudyUnlocks studyUnlocksCached;
 
         public override string DescriptionFlavor
