@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="FleshmassSpitter">
+		<defName>AE_FleshmassSpitterGiant</defName>
+		<label>giant fleshmass spitter</label>
+		<description>A giant defensive fleshmass organ that can spit acid very long distances. The acid is a natural byproduct of toxins filtered from the surrounding biomass.</description>
+		<size>(3, 3)</size>
+		<statBases>
+			<MaxHitPoints>900</MaxHitPoints>
+		</statBases>
+		<graphicData>
+			<drawSize>(3.75, 3.75)</drawSize>
+		</graphicData>
+		<verbs Inherit="False">
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+				<warmupTime>4.0</warmupTime>
+				<forcedMissRadius>5</forcedMissRadius>
+				<defaultProjectile>AE_Bullet_Shell_AcidSpitGiant</defaultProjectile>
+				<isMortar>true</isMortar>
+				<requireLineOfSight>false</requireLineOfSight>
+				<minRange>8.9</minRange>
+				<range>201.9</range>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>SpitterSpit</soundCast>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<comps Inherit="False">
+			<li>
+				<compClass>CompFleshmassSpitter</compClass>
+			</li>
+			<li Class="CompProperties_FleshmassBase">
+				<size>3</size>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="Bullet_Shell_AcidSpit">
+		<defName>AE_Bullet_Shell_AcidSpitGiant</defName>
+		<label>giant acid spit</label>
+		<graphicData>
+			<drawSize>(1.5, 1.5)</drawSize>
+		</graphicData>
+		<projectile>
+			<shadowSize>2</shadowSize>
+			<spinRate>5</spinRate>
+			<damageAmountBase>30</damageAmountBase>
+			<speed>21</speed>
+			<arcHeightFactor>2</arcHeightFactor>
+			<explosionRadius>7.9</explosionRadius>
+			<explosionEffectLifetimeTicks>90</explosionEffectLifetimeTicks>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="FleshmassSpitter">
+		<defName>AE_FleshmassSpitterSmall</defName>
+		<label>small fleshmass spitter</label>
+		<description>A defensive fleshmass organ that can spit acid short distances. The acid is a natural byproduct of toxins filtered from the surrounding biomass.</description>
+		<size>(1, 1)</size>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+		</statBases>
+		<graphicData>
+			<drawSize>(1.25, 1.25)</drawSize>
+		</graphicData>
+		<verbs Inherit="False">
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+				<warmupTime>1.0</warmupTime>
+				<forcedMissRadius>1</forcedMissRadius>
+				<defaultProjectile>AE_Bullet_Shell_AcidSpitSmall</defaultProjectile>
+				<isMortar>true</isMortar>
+				<requireLineOfSight>false</requireLineOfSight>
+				<range>20.9</range>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>SpitterSpit</soundCast>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<comps Inherit="False">
+			<li>
+				<compClass>CompFleshmassSpitter</compClass>
+			</li>
+			<li Class="CompProperties_FleshmassBase">
+				<size>1</size>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="Bullet_Shell_AcidSpit">
+		<defName>AE_Bullet_Shell_AcidSpitSmall</defName>
+		<label>small acid spit</label>
+		<graphicData>
+			<drawSize>(0.5, 0.5)</drawSize>
+		</graphicData>
+		<projectile>
+			<shadowSize>0.5</shadowSize>
+			<spinRate>40</spinRate>
+			<damageAmountBase>5</damageAmountBase>
+			<speed>70</speed>
+			<arcHeightFactor>1</arcHeightFactor>
+			<explosionRadius>1.9</explosionRadius>
+			<explosionEffectLifetimeTicks>30</explosionEffectLifetimeTicks>
+		</projectile>
+	</ThingDef>
+	
+</Defs>

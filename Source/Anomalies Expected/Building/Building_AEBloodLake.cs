@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,26 +10,38 @@ using Verse.Sound;
 
 namespace AnomaliesExpected
 {
-    public class Comp_BloodLake : CompInteractable
+    public class Building_AEBloodLake : Building_AEMapPortal
     {
-        public new CompProperties_BloodLake Props => (CompProperties_BloodLake)props;
+        private static readonly CachedTexture EnterPitGateTex = new CachedTexture("UI/Commands/EnterPitGate");
+        protected override Texture2D EnterTex => EnterPitGateTex.Texture;
 
-        protected CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = parent.TryGetComp<CompAEStudyUnlocks>());
-        private CompAEStudyUnlocks studyUnlocksCached;
+        private static readonly CachedTexture ViewUndercaveTex = new CachedTexture("UI/Commands/ViewUndercave");
 
-        public override bool HideInteraction => true;//(StudyUnlocks?.NextIndex ?? 4) < 4;
+        public AE_BloodLakeExtension ExtBloodLake => extBloodLakeCached ?? (extBloodLakeCached = def.GetModExtension<AE_BloodLakeExtension>());
+        private AE_BloodLakeExtension extBloodLakeCached;
 
         private List<BloodLakeSummonHistory> SummonHistories = new List<BloodLakeSummonHistory>();
         private BloodLakeSummonHistory mainSummonHistory => mainSummonHistoryCached ?? (mainSummonHistoryCached = SummonHistories.FirstOrDefault());
         private BloodLakeSummonHistory mainSummonHistoryCached;
 
-        public override void PostSpawnSetup(bool respawningAfterLoad)
+        public Map subMap;
+        private BloodLakeMapComponent mapComponent => mapComponentCached ?? (mapComponentCached = subMap?.GetComponent<BloodLakeMapComponent>() ?? null);
+        private BloodLakeMapComponent mapComponentCached;
+        public Building_AEBloodLakeExit exitBuilding => mapComponent?.Exit;
+
+        private bool beenEntered;
+
+        public override string EnterCommandString => "EnterPitGate".Translate();
+
+        public override bool AutoDraftOnEnter => true;
+
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
-            base.PostSpawnSetup(respawningAfterLoad);
+            base.SpawnSetup(map, respawningAfterLoad);
             List<BloodLakeSummonHistory> summonHistoriesNew = new List<BloodLakeSummonHistory>();
-            for (int i = 0; i < Props.summonPatterns.Count; i++)
+            for (int i = 0; i < ExtBloodLake.summonPatterns.Count; i++)
             {
-                BloodLakeSummonPattern summonPattern = Props.summonPatterns[i];
+                BloodLakeSummonPattern summonPattern = ExtBloodLake.summonPatterns[i];
                 BloodLakeSummonHistory summonHistory = SummonHistories.FirstOrDefault((BloodLakeSummonHistory blsh) => blsh.patternName == summonPattern.name);
                 if (summonHistory == null)
                 {
@@ -43,19 +56,19 @@ namespace AnomaliesExpected
             SummonHistories = summonHistoriesNew;
         }
 
-        public override void PostDraw()
+        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            base.PostDraw();
+            base.DrawAt(drawLoc, flip);
             if (mainSummonHistory != null)
             {
                 float progress = (float)(mainSummonHistory.tickNextSummon - Find.TickManager.TicksGame) / mainSummonHistory.currentStage.intervalRange.min;
-                parent.DrawColor = Color.Lerp(Props.activeColor, Props.inactiveColor, progress);
+                DrawColor = Color.Lerp(ExtBloodLake.activeColor, ExtBloodLake.inactiveColor, progress);
             }
         }
 
-        public override void CompTick()
+        public override void Tick()
         {
-            base.CompTick();
+            base.Tick();
             for (int i = 0; i < SummonHistories.Count(); i++)
             {
                 BloodLakeSummonHistory summonHistory = SummonHistories[i];
@@ -74,7 +87,7 @@ namespace AnomaliesExpected
             BloodLakeSummonPatternStage summonPatternStage = summonHistory.currentStage;
             if (summonPattern.isRaid)
             {
-                emergingFleshbeasts = FleshbeastUtility.GetFleshbeastsForPoints(StorytellerUtility.DefaultThreatPointsNow(parent.Map) * summonPatternStage.resourcesAvailableMult, parent.Map);
+                emergingFleshbeasts = FleshbeastUtility.GetFleshbeastsForPoints(StorytellerUtility.DefaultThreatPointsNow(Map) * summonPatternStage.resourcesAvailableMult, Map);
             }
             if (summonPatternStage.pawnKindsWeighted != null)
             {
@@ -106,14 +119,14 @@ namespace AnomaliesExpected
                 }
             }
 
-            CellRect cellRect = GenAdj.OccupiedRect(parent.Position, Rot4.North, parent.def.Size);
+            CellRect cellRect = GenAdj.OccupiedRect(Position, Rot4.North, def.Size);
             List<PawnFlyer> list = new List<PawnFlyer>();
             List<IntVec3> list2 = new List<IntVec3>();
             foreach (Pawn emergingFleshbeast in emergingFleshbeasts)
             {
                 IntVec3 randomCell = cellRect.RandomCell;
-                GenSpawn.Spawn(emergingFleshbeast, randomCell, parent.Map);
-                if (CellFinder.TryFindRandomCellNear(parent.Position, parent.Map, Mathf.CeilToInt(parent.def.size.x / 2), (IntVec3 c) => !c.Fogged(parent.Map) && c.Walkable(parent.Map) && !c.Impassable(parent.Map), out var result))
+                GenSpawn.Spawn(emergingFleshbeast, randomCell, Map);
+                if (CellFinder.TryFindRandomCellNear(Position, Map, Mathf.CeilToInt(def.size.x / 2), (IntVec3 c) => !c.Fogged(Map) && c.Walkable(Map) && !c.Impassable(Map), out var result))
                 {
                     emergingFleshbeast.rotationTracker.FaceCell(result);
                     list.Add(PawnFlyer.MakeFlyer(ThingDefOf.PawnFlyer_Stun, emergingFleshbeast, result, null, null, flyWithCarriedThing: false));
@@ -126,48 +139,85 @@ namespace AnomaliesExpected
                 spawnRequest.initialDelay = 0;
                 if (summonPattern.assaultColony)
                 {
-                    spawnRequest.lord = LordMaker.MakeNewLord(Faction.OfEntities, new LordJob_FleshbeastAssault(), parent.Map);
+                    spawnRequest.lord = LordMaker.MakeNewLord(Faction.OfEntities, new LordJob_FleshbeastAssault(), Map);
                 }
-                parent.Map.deferredSpawner.AddRequest(spawnRequest);
-                SoundDefOf.Pawn_Fleshbeast_EmergeFromPitGate.PlayOneShot(parent);
+                Map.deferredSpawner.AddRequest(spawnRequest);
+                SoundDefOf.Pawn_Fleshbeast_EmergeFromPitGate.PlayOneShot(this);
                 emergingFleshbeasts.Clear();
             }
             summonHistory.summonedTimes++;
         }
 
-        public override void PostDestroy(DestroyMode mode, Map previousMap)
+        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
-            foreach (IntVec3 item in GenAdj.OccupiedRect(parent.Position, Rot4.North, parent.def.Size))
+            foreach (IntVec3 item in GenAdj.OccupiedRect(Position, Rot4.North, def.Size))
             {
-                if (GenGrid.InBounds(item, previousMap))
+                if (GenGrid.InBounds(item, Map))
                 {
-                    FilthMaker.TryMakeFilth(item, previousMap, Props.filthDef, Props.filthThickness);
+                    FilthMaker.TryMakeFilth(item, Map, ExtBloodLake.filthDef, ExtBloodLake.filthThickness);
                 }
             }
-            foreach (IntVec3 item in GenAdj.OccupiedRect(parent.Position, Rot4.North, parent.def.Size + IntVec2.Two))
+            foreach (IntVec3 item in GenAdj.OccupiedRect(Position, Rot4.North, def.Size + IntVec2.Two))
             {
-                if (GenGrid.InBounds(item, previousMap))
+                if (GenGrid.InBounds(item, Map))
                 {
-                    FilthMaker.TryMakeFilth(item, previousMap, ThingDefOf.Filth_Blood, 1);
+                    FilthMaker.TryMakeFilth(item, Map, ThingDefOf.Filth_Blood, 1);
                 }
+            }
+            base.Destroy(mode);
+        }
+
+        public void GenerateSubMap()
+        {
+            if (ExtBloodLake.mapGeneratorDef != null)
+            {
+                PocketMapParent pocketMapParent = WorldObjectMaker.MakeWorldObject(WorldObjectDefOf.PocketMap) as PocketMapParent;
+                pocketMapParent.sourceMap = Map;
+                subMap = MapGenerator.GenerateMap(Map.Size, pocketMapParent, ExtBloodLake.mapGeneratorDef, isPocketMap: true);
+                Find.World.pocketMaps.Add(pocketMapParent);
             }
         }
 
-        //public void ManualActivation()
-        //{
-        //    beamTargetState = BeamTargetState.Activating;
-        //    TickNextState = Find.TickManager.TicksGame + Props.ticksWhenCarried;
-        //}
-
-        public override IEnumerable<Gizmo> CompGetGizmosExtra()
+        public override void OnEntered(Pawn pawn)
         {
-            foreach (Gizmo gizmo in base.CompGetGizmosExtra())
+            base.OnEntered(pawn);
+            if (!beenEntered)
             {
-                if (gizmo is Command_Action command_Action)
-                {
-                    command_Action.hotKey = KeyBindingDefOf.Misc6;
-                }
+                beenEntered = true;
+                Find.LetterStack.ReceiveLetter("LetterLabelGateEntered".Translate(), "LetterGateEntered".Translate(), LetterDefOf.ThreatBig, new TargetInfo(exitBuilding));
+            }
+            if (Find.CurrentMap == base.Map)
+            {
+                SoundDefOf.TraversePitGate.PlayOneShot(this);
+            }
+            else if (Find.CurrentMap == exitBuilding.Map)
+            {
+                SoundDefOf.TraversePitGate.PlayOneShot(exitBuilding);
+            }
+        }
+
+        public override IEnumerable<Gizmo> GetGizmos()
+        {
+            foreach (Gizmo gizmo in base.GetGizmos())
+            {
+                //if (gizmo is Command_Action command_Action)
+                //{
+                //    command_Action.hotKey = KeyBindingDefOf.Misc6;
+                //}
                 yield return gizmo;
+            }
+            if (subMap != null)
+            {
+                yield return new Command_Action
+                {
+                    defaultLabel = "ViewUndercave".Translate(),
+                    defaultDesc = "ViewUndercaveDesc".Translate(),
+                    icon = ViewUndercaveTex.Texture,
+                    action = delegate
+                    {
+                        CameraJumper.TryJumpAndSelect(exitBuilding);
+                    }
+                };
             }
             if (DebugSettings.ShowDevGizmos)
             {
@@ -213,7 +263,7 @@ namespace AnomaliesExpected
                         foreach (BloodLakeSummonHistory summonHistory in SummonHistories)
                         {
                             BloodLakeSummonPattern summonPattern = summonHistory.summonPattern;
-                            string summonName = $"{summonPattern.name} {StorytellerUtility.DefaultThreatPointsNow(parent.Map)}";
+                            string summonName = $"{summonPattern.name} {StorytellerUtility.DefaultThreatPointsNow(Map)}";
                             floatMenuOptions.Add(new FloatMenuOption($"Summon {summonName}", delegate
                             {
                                 Summon(summonHistory);
@@ -236,7 +286,7 @@ namespace AnomaliesExpected
                             string summonName = summonPattern.name;
                             if (summonPattern.isRaid)
                             {
-                                summonName += $" {StorytellerUtility.DefaultThreatPointsNow(parent.Map)}";
+                                summonName += $" {StorytellerUtility.DefaultThreatPointsNow(Map)}";
                             }
                             int tickLeft = summonHistory.tickNextSummon - Find.TickManager.TicksGame;
                             floatMenuOptions.Add(new FloatMenuOption($"{summonHistory.summonedTimes} Summon {summonName}:\n{tickLeft}/{summonHistory.tickNextSummon}\n{tickLeft.ToStringTicksToPeriod()}", delegate
@@ -249,35 +299,51 @@ namespace AnomaliesExpected
                     defaultLabel = "Dev: Log",
                     defaultDesc = "Log data"
                 };
-                //    yield return new Command_Action
-                //    {
-                //        action = delegate
-                //        {
-                //            SkipToRandom();
-                //        },
-                //        defaultLabel = "Dev: Skip now",
-                //        defaultDesc = "Skip to random location"
-                //    };
+                yield return new Command_Action
+                {
+                    action = delegate
+                    {
+                        GenerateSubMap();
+                    },
+                    defaultLabel = "Dev: Generate Undercave",
+                    defaultDesc = "Generate Undercave"
+                };
             }
         }
 
-        protected override void OnInteracted(Pawn caster)
+        //protected override void OnInteracted(Pawn caster)
+        //{
+        //    //ManualActivation();
+        //}
+
+        public override Map GetOtherMap()
         {
-            //ManualActivation();
+            if (subMap == null)
+            {
+                GenerateSubMap();
+            }
+            return subMap;
         }
 
-        public override void PostExposeData()
+        public override IntVec3 GetDestinationLocation()
         {
-            base.PostExposeData();
+            return exitBuilding?.Position ?? IntVec3.Invalid;
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
             Scribe_Collections.Look(ref SummonHistories, "SummonHistories", LookMode.Deep);
             //Scribe_Values.Look(ref beamNextCount, "beamNextCount", 1);
             //Scribe_Values.Look(ref beamMaxCount, "beamMaxCount", 1);
-            //Scribe_Values.Look(ref TickNextState, "TickNextState", Find.TickManager.TicksGame + Props.beamIntervalRange.min);
+            //Scribe_Values.Look(ref TickNextState, "TickNextState", Find.TickManager.TicksGame + ExtBloodLake.beamIntervalRange.min);
             //Scribe_Values.Look(ref isActive, "isActive", true);
             //Scribe_Values.Look(ref beamTargetState, "beamTargetState", BeamTargetState.Searching);
+            Scribe_References.Look(ref subMap, "subMap");
+            Scribe_Values.Look(ref beenEntered, "beenEntered", defaultValue: false);
         }
 
-        public override string CompInspectStringExtra()
+        public override string GetInspectString()
         {
             List<string> inspectStrings = new List<string>();
             //int study = StudyUnlocks?.NextIndex ?? 4;
@@ -304,16 +370,16 @@ namespace AnomaliesExpected
             }
             //if (study > 0)
             //{
-            //    inspectStrings.Add("AnomaliesExpected.BeamTarget.Indicator".Translate(beamNextCount, Props.beamMaxCount).RawText);
+            //    inspectStrings.Add("AnomaliesExpected.BeamTarget.Indicator".Translate(beamNextCount, ExtBloodLake.beamMaxCount).RawText);
             //    if (study > 1)
             //    {
             //        inspectStrings.Add("AnomaliesExpected.BeamTarget.State".Translate(beamTargetState == BeamTargetState.Searching ? "AnomaliesExpected.BeamTarget.StateSearching".Translate() : "AnomaliesExpected.BeamTarget.StateActivating".Translate()).RawText);
             //    }
             //    if (beamTargetState == BeamTargetState.Activating)
             //    {
-            //        if (parent.ParentHolder is MinifiedThing)
+            //        if (ParentHolder is MinifiedThing)
             //        {
-            //            inspectStrings.Add("AnomaliesExpected.BeamTarget.TimeTillBeam".Translate(Math.Max(TickNextState + Props.ticksWhenCarried - Find.TickManager.TicksGame, Props.ticksWhenCarried).ToStringTicksToPeriodVerbose()).RawText);
+            //            inspectStrings.Add("AnomaliesExpected.BeamTarget.TimeTillBeam".Translate(Math.Max(TickNextState + ExtBloodLake.ticksWhenCarried - Find.TickManager.TicksGame, ExtBloodLake.ticksWhenCarried).ToStringTicksToPeriodVerbose()).RawText);
             //            inspectStrings.Add("AnomaliesExpected.BeamTarget.ButtonHold".Translate().RawText);
             //        }
             //        else
@@ -322,7 +388,7 @@ namespace AnomaliesExpected
             //        }
             //    }
             //}
-            inspectStrings.Add(base.CompInspectStringExtra());
+            inspectStrings.Add(base.GetInspectString());
             return String.Join("\n", inspectStrings);
         }
     }

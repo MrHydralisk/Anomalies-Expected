@@ -682,6 +682,20 @@
 				</li>
 			</operations>
 		</nomatch>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAttributeAdd">
+					<xpath>Defs/ThingDef[defName ="FleshmassSpitter"]</xpath>
+					<attribute>Name</attribute>
+					<value>FleshmassSpitter</value>
+				</li>
+				<li Class="PatchOperationAttributeAdd">
+					<xpath>Defs/ThingDef[defName ="Bullet_Shell_AcidSpit"]</xpath>
+					<attribute>Name</attribute>
+					<value>Bullet_Shell_AcidSpit</value>
+				</li>
+			</operations>
+		</match>
 	</Operation>
 
 </Patch>

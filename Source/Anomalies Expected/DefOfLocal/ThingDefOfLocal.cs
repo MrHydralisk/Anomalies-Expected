@@ -8,5 +8,9 @@ namespace AnomaliesExpected
     {
         [MayRequireAnomaly]
         public static ThingDef AEPowerBeam;
+        [MayRequireAnomaly]
+        public static ThingDef AE_BloodLake;
+        [MayRequireAnomaly]
+        public static ThingDef AE_BloodLakeExit;
     }
 }

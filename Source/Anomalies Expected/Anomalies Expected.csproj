@@ -37,12 +37,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BloodLakeMapComponent.cs" />
+    <Compile Include="Building\AE_BloodLakeExtension.cs" />
+    <Compile Include="Building\Building_AEBloodPuddle.cs" />
+    <Compile Include="Building\Building_AEBloodLakeExit.cs" />
+    <Compile Include="Building\Building_AEBloodLake.cs" />
+    <Compile Include="Building\Building_AEMapPortal.cs" />
+    <Compile Include="GenStep\GenStep_BloodLakeTerrain.cs" />
+    <Compile Include="GenStep\GenStep_BloodLakeFleshbeasts.cs" />
+    <Compile Include="GenStep\GenStep_BloodLakeFleshmassSpitter.cs" />
+    <Compile Include="GenStep\GenStep_BloodLakeFindExit.cs" />
+    <Compile Include="GenStep\GenStep_BloodLakeFleshSacks.cs" />
     <Compile Include="AEStudyNote.cs" />
-    <Compile Include="CompProperties\CompProperties_BloodLake.cs" />
     <Compile Include="CompProperties\CompProperties_CanDestroyedAfterStudy.cs" />
     <Compile Include="CompProperties\CompProperties_UseEffecRemoveHediff.cs" />
     <Compile Include="Comp\CompUseEffect_RemoveHediff.cs" />
-    <Compile Include="Comp\Comp_BloodLake.cs" />
     <Compile Include="Comp\Comp_CanDestroyedAfterStudy.cs" />
     <Compile Include="DefOfLocal\SoundDefOfLocal.cs" />
     <Compile Include="DefOfLocal\ThingDefOfLocal.cs" />
@@ -57,8 +66,8 @@
     <Compile Include="Verb_AEPowerBeam.cs" />
     <Compile Include="PlaceWorker_ShowBeamTargetRadius.cs" />
     <Compile Include="MinifiedThing_AE.cs" />
-    <Compile Include="Building_AE.cs" />
-    <Compile Include="Building_AEBed.cs" />
+    <Compile Include="Building\Building_AE.cs" />
+    <Compile Include="Building\Building_AEBed.cs" />
     <Compile Include="CompProperties\CompProperties_BeamTarget.cs" />
     <Compile Include="CompProperties\CompProperties_MeatGrinder.cs" />
     <Compile Include="CompProperties\CompProperties_BakingPies.cs" />
