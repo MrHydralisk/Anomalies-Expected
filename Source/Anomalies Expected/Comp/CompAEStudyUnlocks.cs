@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using UnityEngine;
 using Verse;
 
@@ -62,11 +63,12 @@ namespace AnomaliesExpected
                         TaggedString label = studyNote.label.Formatted("[REDACTED]".Named("PAWN"));
                         TaggedString text = studyNote.text.Formatted("[REDACTED]".Named("PAWN"));
                         ChoiceLetter choiceLetter = LetterMaker.MakeLetter(label, text, LetterDefOf.NeutralEvent, parent);
+                        choiceLetter.arrivalTick = Find.TickManager.TicksGame;
                         letters.Add(choiceLetter);
                         StudyComp.anomalyKnowledgeGained = Mathf.Max(StudyComp.anomalyKnowledgeGained, studyNote.threshold);
                     }
                 }
-                UpdateFromStudyNote();
+                UpdateFromStudyNotes();
             }
         }
 
@@ -75,9 +77,25 @@ namespace AnomaliesExpected
             letters.Add(keptLetter);
         }
 
+        public void UnlockStudyNoteManual(int index)
+        {
+            StudyNote studyNote = Props.studyNotesManualUnlockable.ElementAtOrDefault(index);
+            if (studyNote != null)
+            {
+                TaggedString label = studyNote.label.Formatted("[REDACTED]".Named("PAWN"));
+                TaggedString text = studyNote.text.Formatted("[REDACTED]".Named("PAWN"));
+                ChoiceLetter let = LetterMaker.MakeLetter(label, text, LetterDefOf.NeutralEvent, parent);
+                Find.LetterStack.ReceiveLetter(let);
+                ChoiceLetter choiceLetter = LetterMaker.MakeLetter(label, text, LetterDefOf.NeutralEvent, parent);
+                choiceLetter.arrivalTick = Find.TickManager.TicksGame;
+                letters.Add(choiceLetter);
+            }
+            UpdateFromStudyNote(studyNote);
+        }
+
         protected override void Notify_StudyLevelChanged(ChoiceLetter keptLetter)
         {
-            UpdateFromStudyNote();
+            UpdateFromStudyNotes();
             if (isHaveParentAnomaly)
             {
                 if (keptLetter.hyperlinkThingDefs == null)
@@ -92,17 +110,22 @@ namespace AnomaliesExpected
             }
         }
 
-        protected void UpdateFromStudyNote()
+        protected void UpdateFromStudyNotes()
         {
             if (studyProgress > 0 && studyProgress <= Props.studyNotes.Count)
             {
                 StudyNote studyNote = Props.studyNotes[studyProgress - 1];
-                if (studyNote is AEStudyNote aestudyNote)
-                {
-                    currentAnomalyLabel = aestudyNote.AnomalyLabel;
-                    currentAnomalyDesc = aestudyNote.AnomalyDesc;
-                    currentAnomalyDescPart = aestudyNote.AnomalyDescPart;
-                }
+                UpdateFromStudyNote(studyNote);
+            }
+        }
+
+        protected void UpdateFromStudyNote(StudyNote studyNote)
+        {
+            if (studyNote != null && studyNote is AEStudyNote aestudyNote)
+            {
+                currentAnomalyLabel = aestudyNote.AnomalyLabel;
+                currentAnomalyDesc = aestudyNote.AnomalyDesc;
+                currentAnomalyDescPart = aestudyNote.AnomalyDescPart;
             }
         }
 
@@ -110,7 +133,7 @@ namespace AnomaliesExpected
         {
             base.PostExposeData();
             Scribe_References.Look(ref parentThing, "parentThing");
-            UpdateFromStudyNote();
+            UpdateFromStudyNotes();
         }
     }
 }

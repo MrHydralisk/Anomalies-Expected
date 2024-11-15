@@ -587,7 +587,7 @@
 	
 	<ThingDef ParentName="BuildingAE_BloodLakeBase">
 		<defName>AE_BloodPuddle</defName>
-		<label>blood puddle</label>
+		<label>puddle</label>
 		<description>A massive, foreboding hole that connects the surface with a dark network of underground caves. It is possible to climb down into the caverns below.</description>
 		<thingClass>AnomaliesExpected.Building_AEBloodPuddle</thingClass>
 		<graphicData>
@@ -597,36 +597,36 @@
 		<comps>
 			<li Class="CompProperties_Studiable">
 				<compClass>AnomaliesExpected.CompStudiableAE</compClass>
-				<frequencyTicks>120000</frequencyTicks>
+				<frequencyTicks>60000</frequencyTicks>
 				<knowledgeCategory>Basic</knowledgeCategory>
 				<knowledgeFactorOutdoors>1</knowledgeFactorOutdoors>
-				<anomalyKnowledge>0</anomalyKnowledge>
+				<anomalyKnowledge>1</anomalyKnowledge>
 				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
 				<showToggleGizmo>true</showToggleGizmo>
 			</li>
 			<li Class="CompProperties_StudyUnlocks">
 				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
 				<studyNotes>
-					<li Class="AnomaliesExpected.AEStudyNote"><!-- blood -->
+					<li Class="AnomaliesExpected.AEStudyNote">
 						<AnomalyLabel>blood puddle</AnomalyLabel>
 						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
 						<threshold>0.01</threshold>
-						<label>#1/5 Transmitter study report</label>
-						<text>Unexplained Data Transmission and Indestructibility</text>
+						<label>#1/3 Blood Puddle study report</label>
+						<text>Liquid Analysis</text>
 					</li>
-					<li Class="AnomaliesExpected.AEStudyNote"><!-- density -->
-						<AnomalyLabel>orbital beacon</AnomalyLabel>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>blood puddle</AnomalyLabel>
 						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero.\n\nClassified as Class-2 (Warning) anomaly.</AnomalyDesc>
 						<threshold>2</threshold>
-						<label>#2/5 Transmitter study report</label>
-						<text>Teleportation and High-Energy Beam</text>
+						<label>#2/3 Blood Puddle study report</label>
+						<text>Density Decreasing</text>
 					</li>
-					<li Class="AnomaliesExpected.AEStudyNote"><!-- unable to continue study due to density -->
-						<AnomalyLabel>orbital beam beacon</AnomalyLabel>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>blood puddle</AnomalyLabel>
 						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. Then they will have 12 min to leave the danger zone.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
 						<threshold>4</threshold>
-						<label>#3/5 Transmitter study report</label>
-						<text>Multiple Beams and Timer Delay</text>
+						<label>#3/3 Blood Puddle study report</label>
+						<text>Continuation of the Study is Not Possible</text>
 					</li>
 				</studyNotes>
 			</li>
@@ -664,7 +664,7 @@
 			<summonPatterns>
 					<li>
 						<name>Wave</name>
-						<initialInterval>60000</initialInterval>
+						<initialInterval>75000</initialInterval>
 						<stages>
 							<li>
 								<SummonsRequired>0</SummonsRequired>
@@ -736,7 +736,7 @@
 	
 	<ThingDef ParentName="BuildingAE_BloodLakeBase">
 		<defName>AE_BloodLake</defName>
-		<label>blood lake</label>
+		<label>lake</label>
 		<description>A massive, foreboding hole that connects the surface with a dark network of underground caves. It is possible to climb down into the caverns below.</description>
 		<thingClass>AnomaliesExpected.Building_AEBloodLake</thingClass>
 		<graphicData>
@@ -758,45 +758,52 @@
 				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
 				<showToggleGizmo>true</showToggleGizmo>
 			</li>
-			<li Class="CompProperties_StudyUnlocks">
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
 				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
 				<studyNotes>
-					<li Class="AnomaliesExpected.AEStudyNote"><!-- blood and density and random flesh beast leak -->
-						<AnomalyLabel>transmitter</AnomalyLabel>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>blood lake</AnomalyLabel>
 						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
 						<threshold>0.01</threshold>
-						<label>#1/5 Transmitter study report</label>
-						<text>Unexplained Data Transmission and Indestructibility</text>
-					</li>
-					<li Class="AnomaliesExpected.AEStudyNote"><!-- density going low and might leak big raid -->
-						<AnomalyLabel>orbital beacon</AnomalyLabel>
-						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero.\n\nClassified as Class-2 (Warning) anomaly.</AnomalyDesc>
-						<threshold>2</threshold>
-						<label>#2/5 Transmitter study report</label>
-						<text>Teleportation and High-Energy Beam</text>
-					</li>
-					<li Class="AnomaliesExpected.AEStudyNote"><!-- blood -->
-						<AnomalyLabel>orbital beam beacon</AnomalyLabel>
-						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. Then they will have 12 min to leave the danger zone.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
-						<threshold>4</threshold>
-						<label>#3/5 Transmitter study report</label>
-						<text>Multiple Beams and Timer Delay</text>
-					</li>
-					<li Class="AnomaliesExpected.AEStudyNote"><!-- blood -->
-						<AnomalyLabel>orbital beam beacon</AnomalyLabel>
-						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. It will not activate as long as the carrier keep holding down the button. Then they will have 12 min to leave the danger zone. Can be manually activated.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
-						<threshold>8</threshold>
-						<label>#4/5 Transmitter study report</label>
-						<text>Manual Activation and Combat Application</text>
+						<label>#1/8 Blood Lake study report</label>
+						<text>Liquid Analysis</text>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<AnomalyLabel>Orbital Beam Training Target</AnomalyLabel>
-						<AnomalyDesc>A military grade small device targetting power-collection satellites during training excercise. It pneumatic retractable stops allows it to hold still on ground. On its body there are indicators with lights and a small safety button. A compact antenna constantly sending and recieving data from satellites.\n\nAfter recieving enough data will teleport to a location nearby, preferably inside buildings, and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. It will not activate as long as the carrier keep holding down the button. Then they will have 12 min to leave the danger zone. Can be manually activated each 5 days.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
-						<threshold>12</threshold>
-						<label>#5/5 Transmitter study report</label>
-						<text>Theory Regarding Transmitter</text>
+						<AnomalyLabel>blood lake</AnomalyLabel>
+						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero.\n\nClassified as Class-2 (Warning) anomaly.</AnomalyDesc>
+						<threshold>2</threshold>
+						<label>#2/8 Blood Lake study report</label>
+						<text>Rapid Density Decrease</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>blood lake</AnomalyLabel>
+						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. Then they will have 12 min to leave the danger zone.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
+						<threshold>3</threshold>
+						<label>#3/8 Blood Lake study report</label>
+						<text>Outcome of Encounter</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>blood lake</AnomalyLabel>
+						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. It will not activate as long as the carrier keep holding down the button. Then they will have 12 min to leave the danger zone. Can be manually activated.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
+						<threshold>5</threshold>
+						<label>#4/8 Blood Lake study report</label>
+						<text>Drone Usage Result</text>
 					</li>
 				</studyNotes>
+				<studyNotesManualUnlockable>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>blood lake</AnomalyLabel>
+						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. Then they will have 12 min to leave the danger zone.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
+						<label>#5/8 Blood Lake study report</label>
+						<text>Expedition Report</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>blood lake</AnomalyLabel>
+						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. It will not activate as long as the carrier keep holding down the button. Then they will have 12 min to leave the danger zone. Can be manually activated.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
+						<label>#8/8 Blood Lake study report</label>
+						<text>The End?</text>
+					</li>
+				</studyNotesManualUnlockable>
 			</li>
 			<li Class="AnomaliesExpected.CompProperties_CanDestroyedAfterStudy">
 				<ticksToActivate>120000</ticksToActivate>
@@ -995,7 +1002,7 @@
 	
 	<ThingDef ParentName="BuildingAE_BloodLakeBase">
 		<defName>AE_BloodLakeExit</defName>
-		<label>blood lake</label>
+		<label>blood lake exit</label>
 		<description>A massive, foreboding hole that connects the surface with a dark network of underground caves. It is possible to climb down into the caverns below.</description>
 		<thingClass>AnomaliesExpected.Building_AEBloodLakeExit</thingClass>
 		<graphicData>
@@ -1010,7 +1017,7 @@
 				<frequencyTicks>60000</frequencyTicks>
 				<knowledgeCategory>Advanced</knowledgeCategory>
 				<knowledgeFactorOutdoors>1</knowledgeFactorOutdoors>
-				<anomalyKnowledge>1</anomalyKnowledge>
+				<anomalyKnowledge>1.5</anomalyKnowledge>
 				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
 				<showToggleGizmo>true</showToggleGizmo>
 			</li>
@@ -1018,18 +1025,18 @@
 				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
 				<studyNotes>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<AnomalyLabel>transmitter</AnomalyLabel>
-						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<AnomalyLabel>blood lake exit</AnomalyLabel>
+						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. Then they will have 12 min to leave the danger zone.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
 						<threshold>0.01</threshold>
-						<label>#1/5 Transmitter study report B</label>
-						<text>B Unexplained Data Transmission and Indestructibility</text>
+						<label>#6/8 Blood Lake study report</label>
+						<text>Surrounded by Fleshmass</text>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<AnomalyLabel>orbital beacon</AnomalyLabel>
-						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero.\n\nClassified as Class-2 (Warning) anomaly.</AnomalyDesc>
-						<threshold>2</threshold>
-						<label>#2/5 Transmitter study report B</label>
-						<text>B Teleportation and High-Energy Beam</text>
+						<AnomalyLabel>blood lake exit</AnomalyLabel>
+						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. It will not activate as long as the carrier keep holding down the button. Then they will have 12 min to leave the danger zone. Can be manually activated.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
+						<threshold>8</threshold>
+						<label>#7/8 Blood Lake study report</label>
+						<text>Drone Usage Result</text>
 					</li>
 				</studyNotes>
 				<isSyncWithParent>true</isSyncWithParent>

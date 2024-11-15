@@ -176,6 +176,7 @@ namespace AnomaliesExpected
                 subMap = MapGenerator.GenerateMap(Map.Size, pocketMapParent, ExtBloodLake.mapGeneratorDef, isPocketMap: true);
                 Find.World.pocketMaps.Add(pocketMapParent);
                 exitBuilding.StudyUnlocks.SetParentThing(this);
+                StudyUnlocks.UnlockStudyNoteManual(0);
             }
         }
 
