@@ -25,6 +25,8 @@ namespace AnomaliesExpected
 
         public override bool AutoDraftOnEnter => true;
 
+        public Building_AE terminal => mapComponent?.Terminal;
+
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
             foreach (IntVec3 item in GenAdj.OccupiedRect(Position, Rot4.North, def.Size))
@@ -42,6 +44,15 @@ namespace AnomaliesExpected
                 }
             }
             base.Destroy(mode);
+        }
+
+        public override void DrawExtraSelectionOverlays()
+        {
+            base.DrawExtraSelectionOverlays();
+            if ((StudyUnlocks?.NextIndex ?? 2) >= 2)
+            {
+                new LookTargets(terminal).Highlight();
+            }
         }
 
         public override void OnEntered(Pawn pawn)

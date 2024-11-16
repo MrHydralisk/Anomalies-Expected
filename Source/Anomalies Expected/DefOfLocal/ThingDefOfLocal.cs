@@ -12,5 +12,7 @@ namespace AnomaliesExpected
         public static ThingDef AE_BloodLake;
         [MayRequireAnomaly]
         public static ThingDef AE_BloodLakeExit;
+        [MayRequireAnomaly]
+        public static ThingDef AE_BloodLakeTerminal;
     }
 }

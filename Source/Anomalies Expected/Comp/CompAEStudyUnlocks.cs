@@ -77,13 +77,13 @@ namespace AnomaliesExpected
             letters.Add(keptLetter);
         }
 
-        public void UnlockStudyNoteManual(int index)
+        public void UnlockStudyNoteManual(int index, string studier = "[REDACTED]")
         {
             StudyNote studyNote = Props.studyNotesManualUnlockable.ElementAtOrDefault(index);
             if (studyNote != null)
             {
-                TaggedString label = studyNote.label.Formatted("[REDACTED]".Named("PAWN"));
-                TaggedString text = studyNote.text.Formatted("[REDACTED]".Named("PAWN"));
+                TaggedString label = studyNote.label.Formatted(studier.Named("PAWN"));
+                TaggedString text = studyNote.text.Formatted(studier.Named("PAWN"));
                 ChoiceLetter let = LetterMaker.MakeLetter(label, text, LetterDefOf.NeutralEvent, parent);
                 Find.LetterStack.ReceiveLetter(let);
                 ChoiceLetter choiceLetter = LetterMaker.MakeLetter(label, text, LetterDefOf.NeutralEvent, parent);

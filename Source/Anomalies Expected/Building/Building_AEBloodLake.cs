@@ -7,6 +7,7 @@ using UnityEngine;
 using Verse;
 using Verse.AI.Group;
 using Verse.Sound;
+using static Mono.Security.X509.X520;
 
 namespace AnomaliesExpected
 {
@@ -29,7 +30,8 @@ namespace AnomaliesExpected
         private BloodLakeMapComponent mapComponentCached;
         public Building_AEBloodLakeExit exitBuilding => mapComponent?.Exit;
 
-        private bool beenEntered;
+        private bool isBeenEntered;
+        private bool isReadyToEnter => (StudyUnlocks?.NextIndex ?? 4) >= 4;
 
         public override string EnterCommandString => "EnterPitGate".Translate();
 
@@ -176,16 +178,33 @@ namespace AnomaliesExpected
                 subMap = MapGenerator.GenerateMap(Map.Size, pocketMapParent, ExtBloodLake.mapGeneratorDef, isPocketMap: true);
                 Find.World.pocketMaps.Add(pocketMapParent);
                 exitBuilding.StudyUnlocks.SetParentThing(this);
+                mapComponent?.Terminal?.StudyUnlocks.SetParentThing(this);
                 StudyUnlocks.UnlockStudyNoteManual(0);
             }
+        }
+
+        public override bool IsEnterable(out string reason)
+        {
+            reason = "";
+            if ((StudyUnlocks?.NextIndex ?? 3) < 3)
+            {
+                reason = "Too High Liquid Density";
+                return false;
+            }
+            if (!isReadyToEnter)
+            {
+                reason = "Exploring the Blood Lake Bottom With Drone";
+                return false;
+            }
+            return true;
         }
 
         public override void OnEntered(Pawn pawn)
         {
             base.OnEntered(pawn);
-            if (!beenEntered)
+            if (!isBeenEntered)
             {
-                beenEntered = true;
+                isBeenEntered = true;
                 Find.LetterStack.ReceiveLetter("LetterLabelGateEntered".Translate(), "LetterGateEntered".Translate(), LetterDefOf.ThreatBig, new TargetInfo(exitBuilding));
             }
             if (Find.CurrentMap == base.Map)
@@ -206,6 +225,10 @@ namespace AnomaliesExpected
                 //{
                 //    command_Action.hotKey = KeyBindingDefOf.Misc6;
                 //}
+                if (gizmo is Command_Action command_Action && command_Action.icon == EnterTex && !isReadyToEnter)
+                {
+                    continue;
+                }
                 yield return gizmo;
             }
             if (subMap != null)
@@ -325,23 +348,26 @@ namespace AnomaliesExpected
                     defaultLabel = "Dev: Generate Sub Map",
                     defaultDesc = "Generate sub map for Blood Lake"
                 };
-            }
-        }
-
-        private bool Validator(IntVec3 c, Map map)
-        {
-            if (!GenGrid.InBounds(c, map) || !c.Standable(map))
-            {
-                return false;
-            }
-            foreach (IntVec3 pos in GenAdj.CellsOccupiedBy(c, Rot4.North, ThingDefOfLocal.AE_BloodLakeExit.size + IntVec2.Two))
-            {
-                if (!GenGrid.InBounds(pos, map) || pos.DistanceToEdge(map) <= 2 || !pos.Standable(map))
+                //Temp
+                yield return new Command_Action
                 {
-                    return false;
-                }
+                    action = delegate
+                    {
+                        List<FloatMenuOption> floatMenuOptions = new List<FloatMenuOption>();
+                        floatMenuOptions.Add(new FloatMenuOption($"Destroy false", delegate
+                        {
+                            mapComponent.DestroySubMap();
+                        }));
+                        floatMenuOptions.Add(new FloatMenuOption($"Destroy true", delegate
+                        {
+                            mapComponent.DestroySubMap(true);
+                        }));
+                        Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
+                    },
+                    defaultLabel = "Dev: Destroy sub map",
+                    defaultDesc = "Destroy sub map"
+                };
             }
-            return true;
         }
 
         public override Map GetOtherMap()
@@ -363,7 +389,7 @@ namespace AnomaliesExpected
             base.ExposeData();
             Scribe_Collections.Look(ref SummonHistories, "SummonHistories", LookMode.Deep);
             Scribe_References.Look(ref subMap, "subMap");
-            Scribe_Values.Look(ref beenEntered, "beenEntered", defaultValue: false);
+            Scribe_Values.Look(ref isBeenEntered, "beenEntered", defaultValue: false);
         }
 
         public override string GetInspectString()

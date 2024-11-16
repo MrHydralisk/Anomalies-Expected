@@ -1034,7 +1034,7 @@
 					<li Class="AnomaliesExpected.AEStudyNote">
 						<AnomalyLabel>blood lake exit</AnomalyLabel>
 						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. It will not activate as long as the carrier keep holding down the button. Then they will have 12 min to leave the danger zone. Can be manually activated.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
-						<threshold>8</threshold>
+						<threshold>2</threshold>
 						<label>#7/8 Blood Lake study report</label>
 						<text>Drone Usage Result</text>
 					</li>
@@ -1042,6 +1042,84 @@
 				<isSyncWithParent>true</isSyncWithParent>
 			</li>
 		</comps>
+	</ThingDef>
+	
+	
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>AE_BloodLakeTerminal</defName>
+		<label>terminal</label>
+		<description>A massive, foreboding hole that connects the surface with a dark network of underground caves. It is possible to climb down into the caverns below.</description>
+		<thingClass>AnomaliesExpected.Building_AE</thingClass>
+		<graphicData>
+			<texPath>Things/Building/AE_AnomalyTerminal</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<fillPercent>0.20</fillPercent>
+		<canOverlapZones>false</canOverlapZones>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<altitudeLayer>FloorEmplacement</altitudeLayer>
+		<useHitPoints>false</useHitPoints>
+		<rotatable>false</rotatable>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<holdsRoof>true</holdsRoof>
+		<statBases>
+			<Flammability>0</Flammability>
+			<Cleanliness>0</Cleanliness>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<building>
+			<deconstructible>false</deconstructible>
+			<isTargetable>false</isTargetable>
+			<claimable>false</claimable>
+			<expandHomeArea>false</expandHomeArea>
+		</building>
+		<comps>
+			<li Class="CompProperties_Studiable">
+				<compClass>AnomaliesExpected.CompStudiableAE</compClass>
+				<frequencyTicks>60000</frequencyTicks>
+				<knowledgeCategory>Advanced</knowledgeCategory>
+				<knowledgeFactorOutdoors>1</knowledgeFactorOutdoors>
+				<anomalyKnowledge>0.75</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<showToggleGizmo>true</showToggleGizmo>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotes>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>colony terminal</AnomalyLabel>
+						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. Then they will have 12 min to leave the danger zone.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
+						<threshold>0.01</threshold>
+						<label>#1/3 Terminal study report</label>
+						<text>Flesh Experiments</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>colony terminal</AnomalyLabel>
+						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. It will not activate as long as the carrier keep holding down the button. Then they will have 12 min to leave the danger zone. Can be manually activated.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
+						<threshold>1</threshold>
+						<label>#2/3 Terminal study report</label>
+						<text>Breakthrough in Research</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>colony terminal</AnomalyLabel>
+						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. It will not activate as long as the carrier keep holding down the button. Then they will have 12 min to leave the danger zone. Can be manually activated.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
+						<threshold>2</threshold>
+						<label>#3/3 Terminal study report</label>
+						<text>Containment Breach</text>
+					</li>
+				</studyNotes>
+				<isSyncWithParent>true</isSyncWithParent>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>2</glowRadius>
+				<glowColor>(0,235,31,0)</glowColor>
+			</li>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_StudyNotes</li>
+		</inspectorTabs>
 	</ThingDef>
 	
 </Defs>
