@@ -88,6 +88,7 @@
 		</provocationIncidents>
 		<discoveredResearchProjects>
 			<li>AEBingingFoodSerum</li>
+			<li>AEHungerSuppressorSerum</li>
 		</discoveredResearchProjects>
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>

@@ -63,9 +63,9 @@
 				<verbClass>AnomaliesExpected.Verb_AEPowerBeam</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<useableInPocketMaps>false</useableInPocketMaps>
-				<warmupTime>5</warmupTime>
-				<ai_AvoidFriendlyFireRadius>2.5</ai_AvoidFriendlyFireRadius>
-				<range>30.9</range>
+				<warmupTime>3</warmupTime>
+				<ai_AvoidFriendlyFireRadius>3.5</ai_AvoidFriendlyFireRadius>
+				<range>55.9</range>
 				<burstShotCount>1</burstShotCount>
 				<soundAiming>OrbitalTargeter_Aiming</soundAiming>
 				<soundCast>OrbitalTargeter_Fire</soundCast>

@@ -7,6 +7,7 @@ namespace AnomaliesExpected
     public class CompProperties_MeatGrinder : CompProperties_Interactable
     {
         public float nonHumanMult = 0.1f;
+        public float consumptionRadius = 2.9f;
         public int tickPerBody = 90000;
         public int tickPerForced = 60000;
         public int tickMax = 1080000;

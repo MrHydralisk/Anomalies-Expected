@@ -2,7 +2,7 @@
 <LanguageData>
 
 	<AESleepEnhancerSerum.label>сыворотка для улучшения сна</AESleepEnhancerSerum.label>
-	<AESleepEnhancerSerum.description>Шприц с прозрачной вязкой жидкостью. Введенный в ствол мозга, он воздействует на напряженную часть мозга и распределяет нагрузку между нейронами, делая отдых во время сна более эффективным.\n\nЭффект временный и не суммируется.</AESleepEnhancerSerum.description>
+	<AESleepEnhancerSerum.description>Шприц с прозрачной вязкой жидкостью. Введенный в ствол мозга, он воздействует на напряженную часть мозга и распределяет нагрузку между нейронами, делая отдых во время сна более эффективным.\n\nЭффект временный и не суммируется.\n\nРаспорядок сна в среднем меняется с 16/8 к 20/4.</AESleepEnhancerSerum.description>
 	<AESleepEnhancerSerum.comps.CompUsable.useLabel>Использовать {0_label}</AESleepEnhancerSerum.comps.CompUsable.useLabel>
 	<AESleepEnhancerSerum.ingestible.ingestCommandString>Поглотить {0}</AESleepEnhancerSerum.ingestible.ingestCommandString>
 	<AESleepEnhancerSerum.ingestible.ingestReportString>Поглощает {0}</AESleepEnhancerSerum.ingestible.ingestReportString>
@@ -24,5 +24,11 @@
 	<AEBingingFoodSerum.comps.CompUsable.useLabel>Использовать {0_label}</AEBingingFoodSerum.comps.CompUsable.useLabel>
 	<AEBingingFoodSerum.ingestible.ingestCommandString>Поглотить {0}</AEBingingFoodSerum.ingestible.ingestCommandString>
 	<AEBingingFoodSerum.ingestible.ingestReportString>Поглощает {0}</AEBingingFoodSerum.ingestible.ingestReportString>
+	
+	<AEHungerSuppressorSerum.label>сыворотка подавления голода</AEHungerSuppressorSerum.label>
+	<AEHungerSuppressorSerum.description>Шприц с зелёной вязкой жидкостью. Введенный в пищевод, он содержит питательные вещества и влияет на метаболизм для увеличения эффективности расщепления питательных веществ и стимулирует тело на временное использования своих запасов.\n\nЭффект временный и не суммируется. После активного эффекта телу понадобится некоторое время на восстановление метаболизма к нормальному состоянию.\n\nАктивный эффект длится 1 день. В среднем увеличивает время до голода в 2 раза.</AEHungerSuppressorSerum.description>
+	<AEHungerSuppressorSerum.comps.CompUsable.useLabel>Использовать {0_label}</AEHungerSuppressorSerum.comps.CompUsable.useLabel>
+	<AEHungerSuppressorSerum.ingestible.ingestCommandString>Поглотить {0}</AEHungerSuppressorSerum.ingestible.ingestCommandString>
+	<AEHungerSuppressorSerum.ingestible.ingestReportString>Поглощает {0}</AEHungerSuppressorSerum.ingestible.ingestReportString>
 
 </LanguageData>

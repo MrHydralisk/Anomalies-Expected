@@ -7,7 +7,7 @@
     <thingClass>AnomaliesExpected.AEPowerBeam</thingClass>
     <comps>
       <li Class="CompProperties_OrbitalBeam">
-        <width>3</width>
+        <width>4</width>
         <color>(255, 151, 137, 242)</color>
         <sound>OrbitalBeam</sound>
       </li>

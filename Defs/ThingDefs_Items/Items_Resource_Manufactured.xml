@@ -4,7 +4,7 @@
 	<ThingDef ParentName="SerumBase">
 		<defName>AESleepEnhancerSerum</defName>
 		<label>sleep enhancer serum</label>
-		<description>A syringe of clear, viscous fluid. Injected near the brainstem, it affect stressed part of the brain and distribute the load among neurons, making rest via sleep more time efficient.\n\nThe effect is temporary and does not stack.</description>
+		<description>A syringe of clear, viscous fluid. Injected near the brainstem, it affect stressed part of the brain and distribute the load among neurons, making rest via sleep more time efficient.\n\nThe effect is temporary and does not stack.\n\nFrom 16/8 to 20/4 sleep shedule.</description>
 		<descriptionHyperlinks>
 			<HediffDef>Hediff_AESleepEnhancerSerum</HediffDef>
 		</descriptionHyperlinks>
@@ -63,7 +63,7 @@
 			<li Class="CompProperties_UseEffectPlaySound">
 				<soundOnUsed>MechSerumUsed</soundOnUsed>
 			</li>
-		</comps>		
+		</comps>
 		<costList>
 			<Meat_Human>15</Meat_Human>
 			<Bioferrite>15</Bioferrite>
@@ -125,6 +125,7 @@
 		<description>A syringe of green, viscous fluid. Injected in esophagus, it stimulates the digestive system and makes person feel really hungry for a good meal. Additionally reduces Big Pie effect.\n\nThe effect is temporary and does not stack.</description>
 		<descriptionHyperlinks>
 			<mentalStateDef>Binging_Food</mentalStateDef>
+			<HediffDef>Hediff_AEBingingFoodSerum</HediffDef>
 		</descriptionHyperlinks>
 		<graphicData>
 			<texPath>Things/Item/Serum/AEBingingFoodSerum</texPath>
@@ -138,6 +139,10 @@
 			<li Class="AnomaliesExpected.CompProperties_UseEffectAddMentalState">
 				<mentalStateDef>Binging_Food</mentalStateDef>
 			</li>
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>Hediff_AEBingingFoodSerum</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
+			</li>
 			<li Class="AnomaliesExpected.CompProperties_UseEffecRemoveHediff">
 				<hediffDef>Hediff_AEDigestingPie</hediffDef>
 				<severity>0.5</severity>
@@ -146,7 +151,7 @@
 			<li Class="CompProperties_UseEffectPlaySound">
 				<soundOnUsed>MechSerumUsed</soundOnUsed>
 			</li>
-		</comps>		
+		</comps>
 		<costList>
 			<Milk>9</Milk>
 			<Bioferrite>9</Bioferrite>
@@ -157,6 +162,43 @@
 				<Crafting>3</Crafting>
 			</skillRequirements>
 			<researchPrerequisite>AEBingingFoodSerum</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	<ThingDef ParentName="SerumBase">
+		<defName>AEHungerSuppressorSerum</defName>
+		<label>hunger suppressor serum</label>
+		<description>A syringe of green, viscous fluid. Injected in esophagus, it contains nutrients and changes metabolism to increase efficiency of digestive system and stimulate body to use it nutrient reserves for the time being.\n\nThe effect is temporary and does not stack. After effect it will take time to restore metabolism to normal state.\n\nActive effect lasts 1 day. Increase time x2 till malnourished.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AEHungerSuppressorSerum</HediffDef>
+		</descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Serum/AEHungerSuppressorSerum</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>75</MarketValue>
+			<Nutrition>1</Nutrition>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>Hediff_AEHungerSuppressorSerum</hediffDef>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>MechSerumUsed</soundOnUsed>
+			</li>
+		</comps>
+		<costList>
+			<RawPotatoes>40</RawPotatoes>
+			<Bioferrite>15</Bioferrite>
+		</costList>
+		<recipeMaker>
+			<workAmount>720</workAmount>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>AEHungerSuppressorSerum</researchPrerequisite>
 		</recipeMaker>
 	</ThingDef>
 

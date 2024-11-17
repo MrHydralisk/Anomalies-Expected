@@ -51,6 +51,13 @@
 	<AEBingingFoodSerum.generalRules.rulesStrings.2>subject_story->урчание живота было слышно на несколько километров вокруг</AEBingingFoodSerum.generalRules.rulesStrings.2>
 	<AEBingingFoodSerum.generalRules.rulesStrings.3>subject_gerund->синтезируется сыворотка обжорства</AEBingingFoodSerum.generalRules.rulesStrings.3>
 	
+	<AEBingingFoodSerum.label>сыворотка подавления голода</AEBingingFoodSerum.label>
+	<AEBingingFoodSerum.description>Синтезировать сыворотку, которая влияет на метаболизм человека для увеличения эффективности расщепления питательных веществ.</AEBingingFoodSerum.description>
+	<AEBingingFoodSerum.generalRules.rulesStrings.0>subject->сыворотка подавления голода</AEBingingFoodSerum.generalRules.rulesStrings.0>
+	<AEBingingFoodSerum.generalRules.rulesStrings.1>subject_story->выжил на одном сухпайке месяц</AEBingingFoodSerum.generalRules.rulesStrings.1>
+	<AEBingingFoodSerum.generalRules.rulesStrings.2>subject_story->не смог побороть заражение из-за нехватки питательных веществ для имунной системы</AEBingingFoodSerum.generalRules.rulesStrings.2>
+	<AEBingingFoodSerum.generalRules.rulesStrings.3>subject_gerund->синтезируется сыворотка подавления голода</AEBingingFoodSerum.generalRules.rulesStrings.3>
+	
 	
 	
 	<AEOrbitalBeamTargeter.label>целеуказатель для точечного луча</AEOrbitalBeamTargeter.label>

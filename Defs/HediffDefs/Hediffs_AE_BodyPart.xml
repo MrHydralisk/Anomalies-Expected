@@ -14,12 +14,14 @@
 			<li>
 				<makeImmuneTo>
 					<li>GutWorms</li>
+					<li>FoodPoisoning</li>
+					<li>MuscleParasites</li>
 				</makeImmuneTo>
 				<foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
 				<statFactors>
 					<RawNutritionFactor MayRequire="Ludeon.RimWorld.Biotech">2</RawNutritionFactor>
 				</statFactors>
-				<hungerRateFactor>1.25</hungerRateFactor>
+				<hungerRateFactor>1.15</hungerRateFactor>
 			</li>
 		</stages>
 		<addedPartProps>

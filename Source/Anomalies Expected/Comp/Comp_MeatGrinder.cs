@@ -21,7 +21,7 @@ namespace AnomaliesExpected
             {
                 if (consumtionCellsCached == null || parent.Position != lastPosition)
                 {
-                    consumtionCellsCached = GenRadial.RadialCellsAround(parent.Position, 1.9f, useCenter: false).ToList();
+                    consumtionCellsCached = GenRadial.RadialCellsAround(parent.Position, Props.consumptionRadius, useCenter: false).ToList();
                     lastPosition = parent.Position;
                 }
                 return consumtionCellsCached;
@@ -139,7 +139,7 @@ namespace AnomaliesExpected
         public void Butcher(Corpse corpse)
         {
             IEnumerable<Thing> products = corpse.ButcherProducts(parent.Map?.mapPawns?.FreeColonists?.RandomElement(), currMood?.butcherEfficiency ?? Props.butcherEfficiency);
-            List<IntVec3> cleanCells = GenRadial.RadialCellsAround(parent.Position, 1, useCenter: true).ToList();
+            List<IntVec3> cleanCells = GenRadial.RadialCellsAround(parent.Position, 2, useCenter: true).ToList();
             foreach (Thing product in products)
             {
                 GenPlace.TryPlaceThing(product, parent.Position, parent.Map, ThingPlaceMode.Near, null, delegate (IntVec3 newLoc)

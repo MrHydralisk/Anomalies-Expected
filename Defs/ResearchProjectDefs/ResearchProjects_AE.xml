@@ -46,7 +46,7 @@
 		</prerequisites>
 		<knowledgeCost>45</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
-		<researchViewX>1</researchViewX>
+		<researchViewX>5</researchViewX>
 		<researchViewY>0</researchViewY>
 		<generalRules>
 			<rulesStrings>
@@ -95,7 +95,7 @@
 		</prerequisites>
 		<knowledgeCost>10</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
-		<researchViewX>1</researchViewX>
+		<researchViewX>5</researchViewX>
 		<researchViewY>1</researchViewY>
 		<generalRules>
 			<rulesStrings>
@@ -119,7 +119,7 @@
 		</prerequisites>
 		<knowledgeCost>15</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
-		<researchViewX>2</researchViewX>
+		<researchViewX>6</researchViewX>
 		<researchViewY>1</researchViewY>
 		<generalRules>
 			<rulesStrings>
@@ -157,6 +157,30 @@
 			</rulesStrings>
 		</generalRules>
 	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>AEHungerSuppressorSerum</defName>
+		<label>hunger suppressor serum</label>
+		<description>Synthesize a serum that temporary changes person's metabolism to increase efficiency of nutrient breakdown.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>AEBingingFoodSerum</li>
+		</prerequisites>
+		<knowledgeCost>35</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>5</researchViewX>
+		<researchViewY>2</researchViewY>
+		<generalRules>
+			<rulesStrings>
+				<li>subject->hunger suppressor serum</li>
+
+				<li>subject_story->survived on one ration for a month</li>
+				<li>subject_story->wasn't able to fight illness, due to lack of nutrient for immune system</li>
+
+				<li>subject_gerund->synthesizing hunger suppressor serums</li>
+			</rulesStrings>
+		</generalRules>
+	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
 		<defName>AEOrbitalBeamTargeter</defName>
@@ -168,7 +192,7 @@
 		</prerequisites>
 		<knowledgeCost>100</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
-		<researchViewX>1</researchViewX>
+		<researchViewX>6</researchViewX>
 		<researchViewY>2</researchViewY>
 		<generalRules>
 			<rulesStrings>

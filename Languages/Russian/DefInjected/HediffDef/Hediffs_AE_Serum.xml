@@ -7,4 +7,13 @@
 	<Hediff_AERegenSerum.label>сыворотка регенерации</Hediff_AERegenSerum.label>
 	<Hediff_AERegenSerum.description>Этот человек принял препарат, который усилил его лечебный фактор.</Hediff_AERegenSerum.description>
   
+	<Hediff_AEBingingFoodSerum.label>сыворотка обжорства</Hediff_AEBingingFoodSerum.label>
+	<Hediff_AEBingingFoodSerum.description>Этот человек принял препарат, который стимулирует его пищеварительную систему.</Hediff_AEBingingFoodSerum.description>
+  
+	<Hediff_AEHungerSuppressorSerum.label>сыворотка подавления голода</Hediff_AEHungerSuppressorSerum.label>
+	<Hediff_AEHungerSuppressorSerum.description>Этот человек принял препарат, который влияет на метаболизм для увеличения эффективности расщепления питательных веществ, включая запасы тела.</Hediff_AEHungerSuppressorSerum.description>
+	<Hediff_AEHungerSuppressorSerum.stages.0.label>Эффект активен</Hediff_AEHungerSuppressorSerum.stages.0.label>
+	<Hediff_AEHungerSuppressorSerum.stages.1.label>Выведение из системы</Hediff_AEHungerSuppressorSerum.stages.1.label>
+	<Hediff_AEHungerSuppressorSerum.stages.2.label>Восстановление метаболизма</Hediff_AEHungerSuppressorSerum.stages.2.label>
+  
 </LanguageData>
