@@ -53,7 +53,7 @@ namespace AnomaliesExpected
 
         private bool Validator(IntVec3 c, Map map)
         {
-            if (!GenGrid.InBounds(c, map, 2) || c.DistanceToEdge(map) > 10 || !c.Standable(map))
+            if (!GenGrid.InBounds(c, map, 2) || c.x < 0 || c.z < 0 || c.DistanceToEdge(map) > 10 || !c.Standable(map))
             {
                 return false;
             }

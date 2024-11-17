@@ -15,7 +15,7 @@ namespace AnomaliesExpected
 
         public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? Props.minStudy) < Props.minStudy;
 
-        public void DestroyAnomaly()
+        public virtual void DestroyAnomaly(Pawn caster = null)
         {
             parent.Destroy();
         }
@@ -47,7 +47,7 @@ namespace AnomaliesExpected
             {
                 FleckMaker.Static(parent.Position, parent.Map, Props.fleckOnAnomaly, Props.fleckOnAnomalyScale);
             }
-            DestroyAnomaly();
+            DestroyAnomaly(caster);
         }
 
         public override string CompInspectStringExtra()
@@ -57,11 +57,11 @@ namespace AnomaliesExpected
             {
                 if (Props.remainingSecondsInInspectString)
                 {
-                    taggedString += "AnomaliesExpected.BeamTarget.DestroyedAfterStudy".Translate() + ": " + Mathf.FloorToInt((float)TicksToActivate * (1f - progress)).ToStringSecondsFromTicks("F0");
+                    taggedString += Props.interactionProgressString + ": " + Mathf.FloorToInt((float)TicksToActivate * (1f - progress)).ToStringSecondsFromTicks("F0");
                 }
                 else
                 {
-                    taggedString += "AnomaliesExpected.BeamTarget.DestroyedAfterStudy".Translate() + ": " + progress.ToStringPercent();
+                    taggedString += Props.interactionProgressString + ": " + progress.ToStringPercent();
                 }
             }
             return taggedString.Resolve();

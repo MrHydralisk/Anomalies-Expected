@@ -130,5 +130,6 @@
 	<AE_BeamTarget.comps.Comp_CanDestroyedAfterStudy.activatingStringPending>модифицировать данные для {0}</AE_BeamTarget.comps.Comp_CanDestroyedAfterStudy.activatingStringPending>
 	<AE_BeamTarget.comps.Comp_CanDestroyedAfterStudy.guiLabelString>Выберите кто извлечёт это из комплекса</AE_BeamTarget.comps.Comp_CanDestroyedAfterStudy.guiLabelString>
 	<AE_BeamTarget.comps.Comp_CanDestroyedAfterStudy.jobString>модифицировать данные</AE_BeamTarget.comps.Comp_CanDestroyedAfterStudy.jobString>
+	<AE_BeamTarget.comps.Comp_CanDestroyedAfterStudy.interactionProgressString>Создание данных спутника</AE_BeamTarget.comps.Comp_CanDestroyedAfterStudy.interactionProgressString>
 	
 </LanguageData>

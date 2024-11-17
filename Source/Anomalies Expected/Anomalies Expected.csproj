@@ -44,6 +44,8 @@
     <Compile Include="Building\Building_AEBloodLake.cs" />
     <Compile Include="Building\Building_AEMapPortal.cs" />
     <Compile Include="CompProperties\CompProperties_AEStudyUnlocks.cs" />
+    <Compile Include="Comp\Comp_BloodLakeTerminal.cs" />
+    <Compile Include="GenStep\GenStep_BloodLakeFleshmassUNest.cs" />
     <Compile Include="GenStep\GenStep_BloodLakeFindTerminal.cs" />
     <Compile Include="GenStep\GenStep_BloodLakeTerrain.cs" />
     <Compile Include="GenStep\GenStep_BloodLakeFleshbeasts.cs" />

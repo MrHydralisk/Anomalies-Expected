@@ -497,6 +497,7 @@
 				<jobString>modify data</jobString>
 				<activatingStringPending>modifying data for {0}</activatingStringPending>
 				<activatingString>modifying data for {0}: {1}s</activatingString>
+				<interactionProgressString>Generating satellite data</interactionProgressString>
 
 				<fleckOnAnomaly>PsycastSkipInnerExit</fleckOnAnomaly>
 				<fleckOnAnomalyScale>1</fleckOnAnomalyScale>
@@ -622,7 +623,7 @@
 						<text>Density Decreasing</text>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<AnomalyLabel>blood puddle</AnomalyLabel>
+						<AnomalyLabel>what left behind</AnomalyLabel>
 						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. Then they will have 12 min to leave the danger zone.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
 						<threshold>4</threshold>
 						<label>#3/3 Blood Puddle study report</label>
@@ -661,7 +662,7 @@
 		</comps>
 		<modExtensions>
 			<li Class="AnomaliesExpected.AE_BloodLakeExtension">
-			<summonPatterns>
+				<summonPatterns>
 					<li>
 						<name>Wave</name>
 						<initialInterval>75000</initialInterval>
@@ -724,6 +725,14 @@
 								</pawnKindsWeighted>
 							</li>
 						</stages>
+						<DensityCurve>
+							<points>
+								<li>2500, 1060</li>
+								<li>20000, 1839</li>
+								<li>60000, 3120</li>
+								<li>120000, 13590</li>
+							</points>
+						</DensityCurve>
 					</li>
 				</summonPatterns>
 				<inactiveColor>(100,30,30)</inactiveColor>
@@ -798,7 +807,7 @@
 						<text>Expedition Report</text>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<AnomalyLabel>blood lake</AnomalyLabel>
+						<AnomalyLabel>where we are no longer</AnomalyLabel>
 						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. It will not activate as long as the carrier keep holding down the button. Then they will have 12 min to leave the danger zone. Can be manually activated.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
 						<label>#8/8 Blood Lake study report</label>
 						<text>The End?</text>
@@ -836,7 +845,7 @@
 		</comps>
 		<modExtensions>
 			<li Class="AnomaliesExpected.AE_BloodLakeExtension">
-			<summonPatterns>
+				<summonPatterns>
 					<li>
 						<name>Raid</name>
 						<initialInterval>150000</initialInterval>
@@ -914,6 +923,15 @@
 								</pawnKindsForcedCount>
 							</li>
 						</stages>
+						<DensityCurve>
+							<points>
+								<li>2500, 657</li>
+								<li>20000, 820</li>
+								<li>60000, 1060</li>
+								<li>120000, 3120</li>
+								<li>180000, 13590</li>
+							</points>
+						</DensityCurve>
 					</li>
 					<li>
 						<name>Wave</name>
@@ -989,6 +1007,14 @@
 								</pawnKindsWeighted>
 							</li>
 						</stages>
+						<DensityCurve>
+							<points>
+								<li>2500, 1060</li>
+								<li>20000, 1839</li>
+								<li>60000, 3120</li>
+								<li>120000, 13590</li>
+							</points>
+						</DensityCurve>
 					</li>
 				</summonPatterns>
 				<inactiveColor>(100,30,30)</inactiveColor>
@@ -1025,14 +1051,14 @@
 				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
 				<studyNotes>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<AnomalyLabel>blood lake exit</AnomalyLabel>
+						<AnomalyLabel>blood lake on the other side</AnomalyLabel>
 						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. Then they will have 12 min to leave the danger zone.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
 						<threshold>0.01</threshold>
 						<label>#6/8 Blood Lake study report</label>
 						<text>Surrounded by Fleshmass</text>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<AnomalyLabel>blood lake exit</AnomalyLabel>
+						<AnomalyLabel>blood lake on the other side</AnomalyLabel>
 						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. It will not activate as long as the carrier keep holding down the button. Then they will have 12 min to leave the danger zone. Can be manually activated.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
 						<threshold>2</threshold>
 						<label>#7/8 Blood Lake study report</label>
@@ -1112,9 +1138,36 @@
 				</studyNotes>
 				<isSyncWithParent>true</isSyncWithParent>
 			</li>
+			<li Class="AnomaliesExpected.CompProperties_CanDestroyedAfterStudy">
+				<compClass>AnomaliesExpected.Comp_BloodLakeTerminal</compClass>
+				<ticksToActivate>2500</ticksToActivate>
+				<maintainProgress>true</maintainProgress>
+				<activateTexPath>Things/Mote/FeedbackShoot</activateTexPath>
+        
+				<activateLabelString>Initiate Reactor Meltdown</activateLabelString>
+				<activateDescString>Input the password into this terminal, which will initiate reactor meltdown deep underground. I explosion will reduce to atoms everything in this sector. Evacuation is required in advance. [Will destroy this map instantly after activation]</activateDescString>
+				<guiLabelString>Choose who should activate this.</guiLabelString>
+				<jobString>initiating meltdown</jobString>
+				<activatingStringPending>initiating meltdown for {0}</activatingStringPending>
+				<activatingString>initiating meltdown for {0}: {1}s</activatingString>
+				<interactionProgressString>Initiating reactor meltdown</interactionProgressString>
+
+				<soundActivate>Explosion_GiantBomb</soundActivate>				
+				<cooldownFleck MayRequire="Ludeon.RimWorld.Ideology">HackingTerminal</cooldownFleck>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<jobDef>AE_RemoveAnomaly</jobDef>
+				<minStudy>3</minStudy>
+			</li>
 			<li Class="CompProperties_Glower">
-				<glowRadius>2</glowRadius>
-				<glowColor>(0,235,31,0)</glowColor>
+				<glowRadius>11</glowRadius>
+				<glowColor>(74, 37, 2, 0)</glowColor>
 			</li>
 		</comps>
 		<inspectorTabs>

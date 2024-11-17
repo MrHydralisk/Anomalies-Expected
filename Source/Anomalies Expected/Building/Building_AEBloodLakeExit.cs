@@ -21,7 +21,7 @@ namespace AnomaliesExpected
         private BloodLakeMapComponent mapComponentCached;
         public Building_AEBloodLake entranceBuilding => mapComponent?.Entrance;
 
-        public override string EnterCommandString => "EnterPitGate".Translate();
+        public override string EnterCommandString => "AnomaliesExpected.BloodLake.Enter".Translate();
 
         public override bool AutoDraftOnEnter => true;
 
@@ -76,8 +76,8 @@ namespace AnomaliesExpected
             }
             yield return new Command_Action
             {
-                defaultLabel = "ViewSurface".Translate(),
-                defaultDesc = "ViewSurfaceDesc".Translate(),
+                defaultLabel = "AnomaliesExpected.BloodLake.ViewSubMap.Label".Translate(),
+                defaultDesc = "AnomaliesExpected.BloodLake.ViewSubMap.Desc".Translate(),
                 icon = ViewSurfaceTex.Texture,
                 action = delegate
                 {
@@ -99,48 +99,7 @@ namespace AnomaliesExpected
         public override string GetInspectString()
         {
             List<string> inspectStrings = new List<string>();
-            //int study = StudyUnlocks?.NextIndex ?? 4;
-            //BloodLakeSummonHistory summonHistory = SummonHistories.FirstOrDefault();
-            //if (summonHistory != null)
-            //{
-            //    int ticksLeft = summonHistory.tickNextSummon - Find.TickManager.TicksGame;
-            //    if (ticksLeft < 2500)
-            //    {
-            //        inspectStrings.Add("Less than hour");
-            //    }
-            //    else if (ticksLeft < 15000)
-            //    {
-            //        inspectStrings.Add("Low density");
-            //    }
-            //    else if (ticksLeft < 60000)
-            //    {
-            //        inspectStrings.Add("High density");
-            //    }
-            //    else
-            //    {
-            //        inspectStrings.Add("Almost solid");
-            //    }
-            //}
-            //if (study > 0)
-            //{
-            //    inspectStrings.Add("AnomaliesExpected.BeamTarget.Indicator".Translate(beamNextCount, ExtBloodLake.beamMaxCount).RawText);
-            //    if (study > 1)
-            //    {
-            //        inspectStrings.Add("AnomaliesExpected.BeamTarget.State".Translate(beamTargetState == BeamTargetState.Searching ? "AnomaliesExpected.BeamTarget.StateSearching".Translate() : "AnomaliesExpected.BeamTarget.StateActivating".Translate()).RawText);
-            //    }
-            //    if (beamTargetState == BeamTargetState.Activating)
-            //    {
-            //        if (ParentHolder is MinifiedThing)
-            //        {
-            //            inspectStrings.Add("AnomaliesExpected.BeamTarget.TimeTillBeam".Translate(Math.Max(TickNextState + ExtBloodLake.ticksWhenCarried - Find.TickManager.TicksGame, ExtBloodLake.ticksWhenCarried).ToStringTicksToPeriodVerbose()).RawText);
-            //            inspectStrings.Add("AnomaliesExpected.BeamTarget.ButtonHold".Translate().RawText);
-            //        }
-            //        else
-            //        {
-            //            inspectStrings.Add("AnomaliesExpected.BeamTarget.TimeTillBeam".Translate(Math.Max(TickNextState - Find.TickManager.TicksGame, 0).ToStringTicksToPeriodVerbose()).RawText);
-            //        }
-            //    }
-            //}
+            inspectStrings.Add("AnomaliesExpected.BloodLake.Density".Translate(657));
             inspectStrings.Add(base.GetInspectString());
             return String.Join("\n", inspectStrings);
         }

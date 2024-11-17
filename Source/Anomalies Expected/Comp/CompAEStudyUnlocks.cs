@@ -1,7 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using UnityEngine;
 using Verse;
 
@@ -60,8 +59,8 @@ namespace AnomaliesExpected
                     {
                         nextIndex = i + 1;
                         studyProgress = nextIndex;
-                        TaggedString label = studyNote.label.Formatted("[REDACTED]".Named("PAWN"));
-                        TaggedString text = studyNote.text.Formatted("[REDACTED]".Named("PAWN"));
+                        TaggedString label = studyNote.label.Formatted("AnomaliesExpected.Misc.Redacted".Translate().Named("PAWN"));
+                        TaggedString text = studyNote.text.Formatted("AnomaliesExpected.Misc.Redacted".Translate().Named("PAWN"));
                         ChoiceLetter choiceLetter = LetterMaker.MakeLetter(label, text, LetterDefOf.NeutralEvent, parent);
                         choiceLetter.arrivalTick = Find.TickManager.TicksGame;
                         letters.Add(choiceLetter);
@@ -77,11 +76,15 @@ namespace AnomaliesExpected
             letters.Add(keptLetter);
         }
 
-        public void UnlockStudyNoteManual(int index, string studier = "[REDACTED]")
+        public void UnlockStudyNoteManual(int index, string studier = "")
         {
             StudyNote studyNote = Props.studyNotesManualUnlockable.ElementAtOrDefault(index);
             if (studyNote != null)
             {
+                if (studier == "")
+                {
+                    studier = "AnomaliesExpected.Misc.Redacted".Translate();
+                }
                 TaggedString label = studyNote.label.Formatted(studier.Named("PAWN"));
                 TaggedString text = studyNote.text.Formatted(studier.Named("PAWN"));
                 ChoiceLetter let = LetterMaker.MakeLetter(label, text, LetterDefOf.NeutralEvent, parent);
@@ -112,7 +115,7 @@ namespace AnomaliesExpected
 
         protected void UpdateFromStudyNotes()
         {
-            if (studyProgress > 0 && studyProgress <= Props.studyNotes.Count)
+            if (studyProgress > 0 && studyProgress <= Props.studyNotes.Count())
             {
                 StudyNote studyNote = Props.studyNotes[studyProgress - 1];
                 UpdateFromStudyNote(studyNote);

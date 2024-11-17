@@ -143,4 +143,47 @@
 		</projectile>
 	</ThingDef>
 	
+	
+	
+		<ThingDef ParentName="BuildingBase">
+		<defName>AE_BloodLakeUndergroundNest</defName>
+		<label>underground fleshmass nest</label>
+		<description>A massive, foreboding hole that connects the surface with a dark network of underground caves. It is possible to climb down into the caverns below.</description>
+		<!-- <thingClass>AnomaliesExpected.Building_AEBloodLake</thingClass> -->
+		<graphicData>
+			<texPath>Things/Building/AE_BloodLakeUndergroundNest</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<size>(3,3)</size>
+		<!-- <drawerType>RealtimeOnly</drawerType> -->
+		<canOverlapZones>false</canOverlapZones>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<altitudeLayer>FloorEmplacement</altitudeLayer>
+		<useHitPoints>false</useHitPoints>
+		<rotatable>false</rotatable>
+		<!-- <passability>PassThroughOnly</passability> -->
+		<pathCost>30</pathCost>
+		<holdsRoof>true</holdsRoof>
+		<statBases>
+			<Flammability>0</Flammability>
+			<Cleanliness>-30</Cleanliness>
+		</statBases>
+		<tickerType>Never</tickerType>
+		<building>
+			<isEdifice>true</isEdifice>
+			<deconstructible>false</deconstructible>
+			<isTargetable>false</isTargetable>
+			<isInert>true</isInert>
+			<claimable>false</claimable>
+			<expandHomeArea>false</expandHomeArea>
+		</building>
+		<comps>
+			<li Class="CompProperties_Glower">
+				<glowRadius>18</glowRadius>
+				<glowColor>(150, 0, 0, 0)</glowColor>
+			</li>
+		</comps>
+	</ThingDef>
+	
 </Defs>

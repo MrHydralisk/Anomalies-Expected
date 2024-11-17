@@ -43,8 +43,16 @@
 	</GenStepDef>
 
 	<GenStepDef>
-		<defName>AE_BloodLakeFog</defName>
+		<defName>AE_BloodLakeFleshmassUndergroundNest</defName>
 		<order>304</order>
+		<genStep Class="AnomaliesExpected.GenStep_BloodLakeFleshmassUNest">
+			<BloodLakeUndergroundNest>AE_BloodLakeUndergroundNest</BloodLakeUndergroundNest>
+		</genStep>
+	</GenStepDef>
+
+	<GenStepDef>
+		<defName>AE_BloodLakeFog</defName>
+		<order>305</order>
 		<genStep Class="GenStep_Fog"/>
 	</GenStepDef>
 

@@ -11,6 +11,8 @@ namespace AnomaliesExpected
         public FleckDef fleckOnAnomaly;
         public float fleckOnAnomalyScale = 1;
 
+        public string interactionProgressString;
+
         public CompProperties_CanDestroyedAfterStudy()
         {
             compClass = typeof(Comp_CanDestroyedAfterStudy);

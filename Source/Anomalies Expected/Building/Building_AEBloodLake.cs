@@ -7,7 +7,6 @@ using UnityEngine;
 using Verse;
 using Verse.AI.Group;
 using Verse.Sound;
-using static Mono.Security.X509.X520;
 
 namespace AnomaliesExpected
 {
@@ -33,9 +32,10 @@ namespace AnomaliesExpected
         private bool isBeenEntered;
         private bool isReadyToEnter => (StudyUnlocks?.NextIndex ?? 4) >= 4;
 
-        public override string EnterCommandString => "EnterPitGate".Translate();
+        public override string EnterCommandString => "AnomaliesExpected.BloodLake.Enter".Translate();
 
         public override bool AutoDraftOnEnter => true;
+        public bool isDestroyedMap;
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
@@ -74,10 +74,18 @@ namespace AnomaliesExpected
             for (int i = 0; i < SummonHistories.Count(); i++)
             {
                 BloodLakeSummonHistory summonHistory = SummonHistories[i];
-                if (Find.TickManager.TicksGame >= summonHistory.tickNextSummon)
+                if (Find.TickManager.TicksGame >= summonHistory.tickNextSummon && (!summonHistory.summonPattern.isRaid || !(isDestroyedMap)))
                 {
-                    Summon(summonHistory);
-                    summonHistory.tickNextSummon = Find.TickManager.TicksGame + summonHistory.currentStage.intervalRange.RandomInRange;
+                    if (subMap?.mapPawns?.FreeColonistsAndPrisonersSpawned?.NullOrEmpty() ?? true)
+                    {
+                        Summon(summonHistory);
+                        summonHistory.tickNextSummon = Find.TickManager.TicksGame + summonHistory.currentStage.intervalRange.RandomInRange;
+                        continue;
+                    }
+                    else
+                    {
+                        summonHistory.tickNextSummon = Find.TickManager.TicksGame + 2500;
+                    }
                 }
             }
         }
@@ -188,12 +196,17 @@ namespace AnomaliesExpected
             reason = "";
             if ((StudyUnlocks?.NextIndex ?? 3) < 3)
             {
-                reason = "Too High Liquid Density";
+                reason = "AnomaliesExpected.BloodLake.Reason.CantEnterA".Translate();
                 return false;
             }
             if (!isReadyToEnter)
             {
-                reason = "Exploring the Blood Lake Bottom With Drone";
+                reason = "AnomaliesExpected.BloodLake.Reason.CantEnterB".Translate();
+                return false;
+            }
+            else if (isDestroyedMap)
+            {
+                reason = "AnomaliesExpected.BloodLake.Reason.CantEnterC".Translate();
                 return false;
             }
             return true;
@@ -205,7 +218,7 @@ namespace AnomaliesExpected
             if (!isBeenEntered)
             {
                 isBeenEntered = true;
-                Find.LetterStack.ReceiveLetter("LetterLabelGateEntered".Translate(), "LetterGateEntered".Translate(), LetterDefOf.ThreatBig, new TargetInfo(exitBuilding));
+                Find.LetterStack.ReceiveLetter("AnomaliesExpected.BloodLake.LetterEnter.Label".Translate(), "AnomaliesExpected.BloodLake.LetterEnter.Text".Translate(), LetterDefOf.ThreatBig, new TargetInfo(exitBuilding));
             }
             if (Find.CurrentMap == base.Map)
             {
@@ -221,22 +234,18 @@ namespace AnomaliesExpected
         {
             foreach (Gizmo gizmo in base.GetGizmos())
             {
-                //if (gizmo is Command_Action command_Action)
-                //{
-                //    command_Action.hotKey = KeyBindingDefOf.Misc6;
-                //}
-                if (gizmo is Command_Action command_Action && command_Action.icon == EnterTex && !isReadyToEnter)
+                if (gizmo is Command_Action command_Action && command_Action.icon == EnterTex && (!isReadyToEnter || isDestroyedMap))
                 {
                     continue;
                 }
                 yield return gizmo;
             }
-            if (subMap != null)
+            if (subMap != null && !isDestroyedMap)
             {
                 yield return new Command_Action
                 {
-                    defaultLabel = "ViewUndercave".Translate(),
-                    defaultDesc = "ViewUndercaveDesc".Translate(),
+                    defaultLabel = "AnomaliesExpected.BloodLake.ViewSubMap.Label".Translate(),
+                    defaultDesc = "AnomaliesExpected.BloodLake.ViewSubMap.Desc".Translate(),
                     icon = ViewUndercaveTex.Texture,
                     action = delegate
                     {
@@ -348,7 +357,6 @@ namespace AnomaliesExpected
                     defaultLabel = "Dev: Generate Sub Map",
                     defaultDesc = "Generate sub map for Blood Lake"
                 };
-                //Temp
                 yield return new Command_Action
                 {
                     action = delegate
@@ -390,53 +398,26 @@ namespace AnomaliesExpected
             Scribe_Collections.Look(ref SummonHistories, "SummonHistories", LookMode.Deep);
             Scribe_References.Look(ref subMap, "subMap");
             Scribe_Values.Look(ref isBeenEntered, "beenEntered", defaultValue: false);
+            Scribe_Values.Look(ref isDestroyedMap, "isDestroyedMap");
         }
 
         public override string GetInspectString()
         {
             List<string> inspectStrings = new List<string>();
-            //int study = StudyUnlocks?.NextIndex ?? 4;
-            BloodLakeSummonHistory summonHistory = SummonHistories.FirstOrDefault();
-            if (summonHistory != null)
+            int study = StudyUnlocks?.NextIndex ?? 4;
+            if (study >= 1)
             {
-                int ticksLeft = summonHistory.tickNextSummon - Find.TickManager.TicksGame;
-                if (ticksLeft < 2500)
+                BloodLakeSummonHistory summonHistory = SummonHistories.FirstOrDefault();
+                if (isDestroyedMap)
                 {
-                    inspectStrings.Add("Less than hour");
+                    summonHistory = SummonHistories.LastOrDefault();
                 }
-                else if (ticksLeft < 15000)
+                if (summonHistory != null)
                 {
-                    inspectStrings.Add("Low density");
-                }
-                else if (ticksLeft < 60000)
-                {
-                    inspectStrings.Add("High density");
-                }
-                else
-                {
-                    inspectStrings.Add("Almost solid");
+                    int ticksLeft = summonHistory.tickNextSummon - Find.TickManager.TicksGame;
+                    inspectStrings.Add("AnomaliesExpected.BloodLake.Density".Translate(summonHistory.summonPattern.DensityCurve.Evaluate(ticksLeft)));
                 }
             }
-            //if (study > 0)
-            //{
-            //    inspectStrings.Add("AnomaliesExpected.BeamTarget.Indicator".Translate(beamNextCount, ExtBloodLake.beamMaxCount).RawText);
-            //    if (study > 1)
-            //    {
-            //        inspectStrings.Add("AnomaliesExpected.BeamTarget.State".Translate(beamTargetState == BeamTargetState.Searching ? "AnomaliesExpected.BeamTarget.StateSearching".Translate() : "AnomaliesExpected.BeamTarget.StateActivating".Translate()).RawText);
-            //    }
-            //    if (beamTargetState == BeamTargetState.Activating)
-            //    {
-            //        if (ParentHolder is MinifiedThing)
-            //        {
-            //            inspectStrings.Add("AnomaliesExpected.BeamTarget.TimeTillBeam".Translate(Math.Max(TickNextState + ExtBloodLake.ticksWhenCarried - Find.TickManager.TicksGame, ExtBloodLake.ticksWhenCarried).ToStringTicksToPeriodVerbose()).RawText);
-            //            inspectStrings.Add("AnomaliesExpected.BeamTarget.ButtonHold".Translate().RawText);
-            //        }
-            //        else
-            //        {
-            //            inspectStrings.Add("AnomaliesExpected.BeamTarget.TimeTillBeam".Translate(Math.Max(TickNextState - Find.TickManager.TicksGame, 0).ToStringTicksToPeriodVerbose()).RawText);
-            //        }
-            //    }
-            //}
             inspectStrings.Add(base.GetInspectString());
             return String.Join("\n", inspectStrings);
         }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<AnomaliesExpected.BloodLake.UndergroundNestSpawn>Группа биошматов вылезает из подземного гнезда биомассы рядом</AnomaliesExpected.BloodLake.UndergroundNestSpawn>
+	<AnomaliesExpected.BloodLake.ReactorMeltdownExplosion>Реактор комплекса взорвался, отрезая связь с другим кровавым озером</AnomaliesExpected.BloodLake.ReactorMeltdownExplosion>
+	<AnomaliesExpected.BloodLake.Enter>Нырнуть в кровавое озеро</AnomaliesExpected.BloodLake.Enter>
+	<AnomaliesExpected.BloodLake.ViewSubMap.Label>Взглянуть по другую сторону</AnomaliesExpected.BloodLake.ViewSubMap.Label>
+	<AnomaliesExpected.BloodLake.ViewSubMap.Desc>Взглянуть на связанную карту по другую сторону</AnomaliesExpected.BloodLake.ViewSubMap.Desc>	
+	<AnomaliesExpected.BloodLake.Density>Плотность жидкости: {0} кг/м3</AnomaliesExpected.BloodLake.Density>
+	
+	<AnomaliesExpected.BloodLake.Reason.CantEnterA>Высокая плотность жидкости предотвращает любые попытки исследования</AnomaliesExpected.BloodLake.Reason.CantEnterA>
+	<AnomaliesExpected.BloodLake.Reason.CantEnterB>Подводный дрон исследует дно озера</AnomaliesExpected.BloodLake.Reason.CantEnterB>
+	<AnomaliesExpected.BloodLake.Reason.CantEnterC>Связь с другой стороной была потеряна</AnomaliesExpected.BloodLake.Reason.CantEnterC>
+	
+	<AnomaliesExpected.BloodLake.LetterEnter.Label>Територия подконтрольная биомассе</AnomaliesExpected.BloodLake.LetterEnter.Label>
+	<AnomaliesExpected.BloodLake.LetterEnter.Text>Перед нами лежит открытое пространство, одно оно кишит различными биошматами. Мы должны преготовится к яросным атакам со стороны окружающей сети биомассы.\n\nЕсли мы не готовы к такой конфронтации, то следует отступить обратно к нашей колонии и подготовится.</AnomaliesExpected.BloodLake.LetterEnter.Text>
+</LanguageData>

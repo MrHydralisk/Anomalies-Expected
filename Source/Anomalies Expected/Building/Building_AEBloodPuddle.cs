@@ -154,48 +154,10 @@ namespace AnomaliesExpected
         {
             foreach (Gizmo gizmo in base.GetGizmos())
             {
-                //if (gizmo is Command_Action command_Action)
-                //{
-                //    command_Action.hotKey = KeyBindingDefOf.Misc6;
-                //}
                 yield return gizmo;
             }
             if (DebugSettings.ShowDevGizmos)
             {
-                //    yield return new Command_Action
-                //    {
-                //        action = delegate
-                //        {
-                //            List<FloatMenuOption> floatMenuOptions = new List<FloatMenuOption>();
-                //            floatMenuOptions.Add(new FloatMenuOption("Increase by 3d", delegate
-                //            {
-                //                TickNextState += 180000;
-                //            }));
-                //            floatMenuOptions.Add(new FloatMenuOption("Increase by 1d", delegate
-                //            {
-                //                TickNextState += 60000;
-                //            }));
-                //            floatMenuOptions.Add(new FloatMenuOption("Increase by 1h", delegate
-                //            {
-                //                TickNextState += 2500;
-                //            }));
-                //            floatMenuOptions.Add(new FloatMenuOption("Decrease by 1h", delegate
-                //            {
-                //                TickNextState -= 2500;
-                //            }));
-                //            floatMenuOptions.Add(new FloatMenuOption("Decrease by 1d", delegate
-                //            {
-                //                TickNextState -= 60000;
-                //            }));
-                //            floatMenuOptions.Add(new FloatMenuOption("Decrease by 3d", delegate
-                //            {
-                //                TickNextState -= 180000;
-                //            }));
-                //            Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
-                //        },
-                //        defaultLabel = "Dev: Change TickNextState",
-                //        defaultDesc = $"Change timer for State: {(TickNextState - Find.TickManager.TicksGame).ToStringTicksToDays()}"
-                //    };
                 yield return new Command_Action
                 {
                     action = delegate
@@ -247,58 +209,21 @@ namespace AnomaliesExpected
         {
             base.ExposeData();
             Scribe_Collections.Look(ref SummonHistories, "SummonHistories", LookMode.Deep);
-            //Scribe_Values.Look(ref beamNextCount, "beamNextCount", 1);
-            //Scribe_Values.Look(ref beamMaxCount, "beamMaxCount", 1);
-            //Scribe_Values.Look(ref TickNextState, "TickNextState", Find.TickManager.TicksGame + ExtBloodLake.beamIntervalRange.min);
-            //Scribe_Values.Look(ref isActive, "isActive", true);
-            //Scribe_Values.Look(ref beamTargetState, "beamTargetState", BeamTargetState.Searching);
         }
 
         public override string GetInspectString()
         {
             List<string> inspectStrings = new List<string>();
-            //int study = StudyUnlocks?.NextIndex ?? 4;
-            BloodLakeSummonHistory summonHistory = SummonHistories.FirstOrDefault();
-            if (summonHistory != null)
+            int study = StudyUnlocks?.NextIndex ?? 4;
+            if (study >= 1)
             {
-                int ticksLeft = summonHistory.tickNextSummon - Find.TickManager.TicksGame;
-                if (ticksLeft < 2500)
+                BloodLakeSummonHistory summonHistory = SummonHistories.FirstOrDefault();
+                if (summonHistory != null)
                 {
-                    inspectStrings.Add("Less than hour");
-                }
-                else if (ticksLeft < 15000)
-                {
-                    inspectStrings.Add("Low density");
-                }
-                else if (ticksLeft < 60000)
-                {
-                    inspectStrings.Add("High density");
-                }
-                else
-                {
-                    inspectStrings.Add("Almost solid");
+                    int ticksLeft = summonHistory.tickNextSummon - Find.TickManager.TicksGame;
+                    inspectStrings.Add("AnomaliesExpected.BloodLake.Density".Translate(summonHistory.summonPattern.DensityCurve.Evaluate(ticksLeft)));
                 }
             }
-            //if (study > 0)
-            //{
-            //    inspectStrings.Add("AnomaliesExpected.BeamTarget.Indicator".Translate(beamNextCount, ExtBloodLake.beamMaxCount).RawText);
-            //    if (study > 1)
-            //    {
-            //        inspectStrings.Add("AnomaliesExpected.BeamTarget.State".Translate(beamTargetState == BeamTargetState.Searching ? "AnomaliesExpected.BeamTarget.StateSearching".Translate() : "AnomaliesExpected.BeamTarget.StateActivating".Translate()).RawText);
-            //    }
-            //    if (beamTargetState == BeamTargetState.Activating)
-            //    {
-            //        if (ParentHolder is MinifiedThing)
-            //        {
-            //            inspectStrings.Add("AnomaliesExpected.BeamTarget.TimeTillBeam".Translate(Math.Max(TickNextState + ExtBloodLake.ticksWhenCarried - Find.TickManager.TicksGame, ExtBloodLake.ticksWhenCarried).ToStringTicksToPeriodVerbose()).RawText);
-            //            inspectStrings.Add("AnomaliesExpected.BeamTarget.ButtonHold".Translate().RawText);
-            //        }
-            //        else
-            //        {
-            //            inspectStrings.Add("AnomaliesExpected.BeamTarget.TimeTillBeam".Translate(Math.Max(TickNextState - Find.TickManager.TicksGame, 0).ToStringTicksToPeriodVerbose()).RawText);
-            //        }
-            //    }
-            //}
             inspectStrings.Add(base.GetInspectString());
             return String.Join("\n", inspectStrings);
         }
