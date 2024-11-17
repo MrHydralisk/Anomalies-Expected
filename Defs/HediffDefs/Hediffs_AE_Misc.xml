@@ -198,5 +198,23 @@
 			</li>
 		</stages>
 	</HediffDef>
+
+	<HediffDef>
+		<defName>Hediff_AEDogTag</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>dog tag</label>
+		<description>I can psychically feel the imprint of the person who once owned it.</description>
+		<initialSeverity>0</initialSeverity>
+		<maxSeverity>20</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<statOffsets>
+					<PsychicSensitivity>0.05</PsychicSensitivity>
+				</statOffsets>
+				<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+			</li>
+		</stages>
+	</HediffDef>
 	
 </Defs>

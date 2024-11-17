@@ -105,5 +105,66 @@
 			<li>ITab_StudyNotes</li>
 		</inspectorTabs>
 	</ThingDef>
+	
+	<ThingDef>
+		<defName>AE_DogTag</defName>
+		<label>Ripped off dog tag</label>
+		<description>A tiny plasteel tag, bearing basic details about an individual, typically used to identify casualties.\n\nIt's been torn off, and the name on it seems familiar to you. Maybe someone can interact with it.</description>
+		<thingClass>ThingWithComps</thingClass>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Item/Special/AE_AnomalyDogTag</texPath>
+			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+			<drawSize>(0.75,0.75)</drawSize>
+		</graphicData>
+		<category>Item</category>
+		<genericMarketSellable>false</genericMarketSellable>
+		<drawerType>MapMeshOnly</drawerType>
+		<tickerType>Never</tickerType>
+		<rotatable>true</rotatable>
+		<altitudeLayer>Item</altitudeLayer>
+		<selectable>true</selectable>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<alwaysHaulable>true</alwaysHaulable>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<pathCost>1</pathCost>
+		<statBases>
+			<Mass>1</Mass>
+			<Beauty>10</Beauty>
+			<Flammability>0</Flammability>
+			<MarketValue>5</MarketValue>
+		</statBases>
+		<thingCategories>
+			<li>ItemsMisc</li>
+		</thingCategories>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_DogTag">
+				<activeTicks>1</activeTicks>
+				<ticksToActivate>250</ticksToActivate>
+				<activateTexPath>Things/Item/Special/AE_AnomalyDogTag</activateTexPath>
+        
+				<activateLabelString>Touch</activateLabelString>
+				<activateDescString>Make someone touch the dog tag.</activateDescString>
+				<guiLabelString>Choose who should touch this.</guiLabelString>
+				<jobString>touch</jobString>
+				<activatingStringPending>touching {0}</activatingStringPending>
+				<activatingString>touching {0}: {1}s</activatingString>
+
+				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
+				<fleckOnUsedScale>1</fleckOnUsedScale>
+				<soundActivate>PsychicAnimalPulserCast</soundActivate>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<hediffOnUse>Hediff_AEDogTag</hediffOnUse>
+			</li>
+		</comps>
+	</ThingDef>
   
 </Defs>

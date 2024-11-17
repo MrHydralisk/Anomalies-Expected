@@ -33,6 +33,7 @@
 			<li>AE_BloodLakeFleshmassSpitterMedium</li>
 			<li>AE_BloodLakeFleshmassSpitterSmall</li>
 			<!-- <li>AE_BloodLakeFleshmassLeech</li> -->
+			<li>AE_BloodLakeFindDogTag</li>
 			<li>AE_BloodLakeFleshbeasts</li>
 		</genSteps>
 	</MapGeneratorDef>

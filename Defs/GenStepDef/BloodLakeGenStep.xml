@@ -101,6 +101,12 @@
 	</GenStepDef>
 
 	<GenStepDef>
+		<defName>AE_BloodLakeFindDogTag</defName>
+		<order>500</order>
+		<genStep Class="AnomaliesExpected.GenStep_BloodLakeFindDogTag"/>
+	</GenStepDef>
+
+	<GenStepDef>
 		<defName>AE_BloodLakeFleshbeasts</defName>
 		<order>650</order>
 		<genStep Class="AnomaliesExpected.GenStep_BloodLakeFleshbeasts">

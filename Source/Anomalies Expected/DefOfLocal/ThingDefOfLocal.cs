@@ -16,5 +16,7 @@ namespace AnomaliesExpected
         public static ThingDef AE_BloodLakeTerminal;
         [MayRequireAnomaly]
         public static ThingDef AE_BloodLakeUndergroundNest;
+        [MayRequireAnomaly]
+        public static ThingDef AE_DogTag;
     }
 }
