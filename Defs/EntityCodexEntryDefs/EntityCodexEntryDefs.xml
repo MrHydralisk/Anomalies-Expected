@@ -113,7 +113,7 @@
 
 	<EntityCodexEntryDef>
 		<defName>AE_EntityCodexEntry_BloodPuddle</defName>
-		<label>blood puddle</label>
+		<label>strange puddle</label>
 		<category>Basic</category>
 		<uiIconPath>UI/CodexEntries/AE_BloodPuddle</uiIconPath>
 		<useDescriptionFrom>AE_BloodPuddle</useDescriptionFrom>
@@ -131,7 +131,7 @@
 
 	<EntityCodexEntryDef>
 		<defName>AE_EntityCodexEntry_BloodLake</defName>
-		<label>blood lake</label>
+		<label>strange lake</label>
 		<category>Advanced</category>
 		<uiIconPath>UI/CodexEntries/AE_BloodLake</uiIconPath>
 		<useDescriptionFrom>AE_BloodLake</useDescriptionFrom>

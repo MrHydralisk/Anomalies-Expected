@@ -588,7 +588,7 @@
 	
 	<ThingDef ParentName="BuildingAE_BloodLakeBase">
 		<defName>AE_BloodPuddle</defName>
-		<label>puddle</label>
+		<label>strange puddle</label>
 		<description>A massive, foreboding hole that connects the surface with a dark network of underground caves. It is possible to climb down into the caverns below.</description>
 		<thingClass>AnomaliesExpected.Building_AEBloodPuddle</thingClass>
 		<graphicData>
@@ -636,12 +636,12 @@
 				<maintainProgress>true</maintainProgress>
 				<activateTexPath>Designations/FillInPitBurrow</activateTexPath>
         
-				<activateLabelString>Removal</activateLabelString>
-				<activateDescString>Modify satellite data to make it teleport far away from the colony. [Will destroy it]</activateDescString>
-				<guiLabelString>Choose who should remove this.</guiLabelString>
-				<jobString>modify data</jobString>
-				<activatingStringPending>modifying data for {0}</activatingStringPending>
-				<activatingString>modifying data for {0}: {1}s</activatingString>
+				<activateLabelString>Destroy</activateLabelString>
+				<activateDescString>Add chemicals to dissolve and fill it with soil. [Will destroy it]</activateDescString>
+				<guiLabelString>Choose who should destroy this.</guiLabelString>
+				<jobString>dissolve and fill in</jobString>
+				<activatingStringPending>dissolving and filling for {0}</activatingStringPending>
+				<activatingString>dissolving and filling for {0}: {1}s</activatingString>
 
 				<fleckOnAnomaly>PitGateCollapseDust</fleckOnAnomaly>
 				<fleckOnAnomalyScale>1</fleckOnAnomalyScale>
@@ -745,7 +745,7 @@
 	
 	<ThingDef ParentName="BuildingAE_BloodLakeBase">
 		<defName>AE_BloodLake</defName>
-		<label>lake</label>
+		<label>strange lake</label>
 		<description>A massive, foreboding hole that connects the surface with a dark network of underground caves. It is possible to climb down into the caverns below.</description>
 		<thingClass>AnomaliesExpected.Building_AEBloodLake</thingClass>
 		<graphicData>
@@ -819,12 +819,12 @@
 				<maintainProgress>true</maintainProgress>
 				<activateTexPath>Designations/FillInPitBurrow</activateTexPath>
         
-				<activateLabelString>Removal</activateLabelString>
-				<activateDescString>Modify satellite data to make it teleport far away from the colony. [Will destroy it]</activateDescString>
-				<guiLabelString>Choose who should remove this.</guiLabelString>
-				<jobString>modify data</jobString>
-				<activatingStringPending>modifying data for {0}</activatingStringPending>
-				<activatingString>modifying data for {0}: {1}s</activatingString>
+				<activateLabelString>Destroy</activateLabelString>
+				<activateDescString>Add chemicals to dissolve and fill it with soil. [Will destroy it]</activateDescString>
+				<guiLabelString>Choose who should destroy this.</guiLabelString>
+				<jobString>dissolve and fill in</jobString>
+				<activatingStringPending>dissolving and filling for {0}</activatingStringPending>
+				<activatingString>dissolving and filling for {0}: {1}s</activatingString>
 
 				<fleckOnAnomaly>PitGateCollapseDust</fleckOnAnomaly>
 				<fleckOnAnomalyScale>5</fleckOnAnomalyScale>
@@ -1051,14 +1051,14 @@
 				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
 				<studyNotes>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<AnomalyLabel>blood lake on the other side</AnomalyLabel>
+						<AnomalyLabel>blood lake from the other side</AnomalyLabel>
 						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. Then they will have 12 min to leave the danger zone.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
 						<threshold>0.01</threshold>
 						<label>#6/8 Blood Lake study report</label>
 						<text>Surrounded by Fleshmass</text>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<AnomalyLabel>blood lake on the other side</AnomalyLabel>
+						<AnomalyLabel>blood lake from the other side</AnomalyLabel>
 						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. It will not activate as long as the carrier keep holding down the button. Then they will have 12 min to leave the danger zone. Can be manually activated.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
 						<threshold>2</threshold>
 						<label>#7/8 Blood Lake study report</label>

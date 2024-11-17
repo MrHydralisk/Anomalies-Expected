@@ -159,13 +159,13 @@
   
 	<IncidentDef>
 		<defName>AE_IncidentDef_BloodPuddleSpawn</defName>
-		<label>blood puddle</label>
+		<label>strange puddle</label>
 		<category>Misc</category>
 		<targetTags>
 			<li>Map_PlayerHome</li>
 		</targetTags>
 		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromUnderground</workerClass>
-		<letterLabel>Found blood puddle</letterLabel>
+		<letterLabel>Found strange puddle</letterLabel>
 		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a round big pie on a plate. It looks appetizing.</letterText>
 		<letterDef>NeutralEvent</letterDef>
 		<earliestDay>5</earliestDay>
@@ -190,13 +190,13 @@
   
 	<IncidentDef>
 		<defName>AE_IncidentDef_BloodLakeSpawn</defName>
-		<label>blood lake</label>
+		<label>strange lake</label>
 		<category>Misc</category>
 		<targetTags>
 			<li>Map_PlayerHome</li>
 		</targetTags>
 		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromUnderground</workerClass>
-		<letterLabel>Found blood lake</letterLabel>
+		<letterLabel>Found strange lake</letterLabel>
 		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a small device with pneumatic retractable stops. On its body there are indicators with lights, an antenna and a small button. It looks like military grade.</letterText>
 		<letterDef>NeutralEvent</letterDef>
 		<minThreatPoints>500</minThreatPoints>
