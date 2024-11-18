@@ -658,6 +658,13 @@
 				</targetingParameters>
 				
 				<jobDef>AE_RemoveAnomaly</jobDef>
+				<minStudy>3</minStudy>
+				<DestroyUnlockResearchDef>AEBloodPump</DestroyUnlockResearchDef>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_BloodSource">
+				<ResourceDef>AE_BloodLiquid</ResourceDef>
+				<ResourceAmount>10</ResourceAmount>
+				<UnlockedByResearchDef>AEBloodPump</UnlockedByResearchDef>
 			</li>
 		</comps>
 		<modExtensions>
@@ -841,6 +848,13 @@
 				</targetingParameters>
 				
 				<jobDef>AE_RemoveAnomaly</jobDef>
+				<minStudy>4</minStudy>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_BloodSource">
+				<ResourceDef>AE_BloodLiquid</ResourceDef>
+				<ResourceAmount>30</ResourceAmount>
+				<MaxPumps>5</MaxPumps>
+				<UnlockedByResearchDef>AEBloodPump</UnlockedByResearchDef>
 			</li>
 		</comps>
 		<modExtensions>

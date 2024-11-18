@@ -13,7 +13,17 @@ namespace AnomaliesExpected
         protected CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = parent.TryGetComp<CompAEStudyUnlocks>());
         private CompAEStudyUnlocks studyUnlocksCached;
 
-        public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? Props.minStudy) < Props.minStudy;
+        public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? Props.minStudy) < Props.minStudy && !isCanDestroyEarly;
+        protected bool isCanDestroyEarly;
+
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            base.PostSpawnSetup(respawningAfterLoad);
+            if (!respawningAfterLoad)
+            {
+                isCanDestroyEarly = Props.DestroyUnlockResearchDef?.IsFinished ?? false;
+            }
+        }
 
         public virtual void DestroyAnomaly(Pawn caster = null)
         {
@@ -48,6 +58,11 @@ namespace AnomaliesExpected
                 FleckMaker.Static(parent.Position, parent.Map, Props.fleckOnAnomaly, Props.fleckOnAnomalyScale);
             }
             DestroyAnomaly(caster);
+        }
+
+        public void ExposeData()
+        {
+            Scribe_Values.Look(ref isCanDestroyEarly, "isCanDestroyEarly", false);
         }
 
         public override string CompInspectStringExtra()

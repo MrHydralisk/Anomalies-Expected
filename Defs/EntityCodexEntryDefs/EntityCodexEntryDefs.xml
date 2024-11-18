@@ -123,9 +123,9 @@
 		<provocationIncidents>
 			<li>AE_IncidentDef_BloodPuddleSpawn</li>
 		</provocationIncidents>
-		<!-- <discoveredResearchProjects> -->
-			<!-- <li>AEFruitInhibitorSerum</li> -->
-		<!-- </discoveredResearchProjects> -->
+		<discoveredResearchProjects>
+			<li>AEBloodPump</li>
+		</discoveredResearchProjects>
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>
 
@@ -141,9 +141,9 @@
 		<provocationIncidents>
 			<li>AE_IncidentDef_BloodLakeSpawn</li>
 		</provocationIncidents>
-		<!-- <discoveredResearchProjects> -->
-			<!-- <li>AEOrbitalBeamTargeter</li> -->
-		<!-- </discoveredResearchProjects> -->
+		<discoveredResearchProjects>
+			<li>AEBloodFiltering</li>
+		</discoveredResearchProjects>
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>
 

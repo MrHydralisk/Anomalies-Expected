@@ -6,6 +6,7 @@ namespace AnomaliesExpected
     public class CompProperties_CanDestroyedAfterStudy : CompProperties_Interactable
     {
         public int minStudy = 5;
+        public ResearchProjectDef DestroyUnlockResearchDef;
         public JobDef jobDef;
 
         public FleckDef fleckOnAnomaly;

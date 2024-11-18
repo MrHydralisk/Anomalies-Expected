@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<AnomaliesExpected.BloodPump.Available>Connected blood liquid pumps: {0}/{1}</AnomaliesExpected.BloodPump.Available>
+	<AnomaliesExpected.BloodPump.Connected>Connected to any blood-like liquid source</AnomaliesExpected.BloodPump.Connected>
+	<AnomaliesExpected.BloodPump.NotConnected>Not connected to any blood-like liquid source</AnomaliesExpected.BloodPump.NotConnected>
+	<AnomaliesExpected.BloodPump.Disconnected>Pump was disconnected from blood-like liquid source</AnomaliesExpected.BloodPump.Disconnected>
+</LanguageData>
