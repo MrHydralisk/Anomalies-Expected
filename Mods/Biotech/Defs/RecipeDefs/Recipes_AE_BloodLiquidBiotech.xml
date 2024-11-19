@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RecipeDef Name="RecipeMakeAEBloodLiquidHemogenPack" Abstract="True">
+		<description>Purify blood-like liquid for transfusion.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AE_BloodLiquid</ThingDef>
+			<ThingDef>Neutroamine</ThingDef>
+			<ThingDef>HemogenPack</ThingDef>
+		</descriptionHyperlinks>
+		<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+		<soundWorking>Standard_Drop</soundWorking>
+		<effectWorking>Cremate</effectWorking>
+		<workSkill>Intellectual</workSkill>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AE_BloodLiquid</li>
+				<li>Neutroamine</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<recipeUsers>
+			<li>DrugLab</li>
+		</recipeUsers>
+		<researchPrerequisite>AEBloodPump</researchPrerequisite>
+	</RecipeDef>
+
+	<RecipeDef ParentName="RecipeMakeAEBloodLiquidHemogenPack">
+		<defName>MakeAEBloodLiquidHemogenPack</defName>
+		<label>purify blood-like liquid</label>
+		<jobString>Purifying blood-like liquid.</jobString>
+		<products>
+			<HemogenPack>1</HemogenPack>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AE_BloodLiquid</li>
+					</thingDefs>
+				</filter>
+				<count>12</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Neutroamine</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<workAmount>1000</workAmount>
+		<skillRequirements>
+			<Intellectual>6</Intellectual>
+		</skillRequirements>
+	</RecipeDef>
+
+	<RecipeDef ParentName="RecipeMakeAEBloodLiquidHemogenPack">
+		<defName>MakeAEBloodLiquidHemogenPackBulk</defName>
+		<label>purify blood-like liquid x4</label>
+		<jobString>Purifying blood-like liquid x4.</jobString>
+		<products>
+			<HemogenPack>4</HemogenPack>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AE_BloodLiquid</li>
+					</thingDefs>
+				</filter>
+				<count>48</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Neutroamine</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+		</ingredients>
+		<workAmount>3600</workAmount>
+		<skillRequirements>
+			<Intellectual>10</Intellectual>
+		</skillRequirements>
+	</RecipeDef>
+
+	<RecipeDef ParentName="RecipeMakeAEBloodLiquidHemogenPack">
+		<defName>MakeAEBloodLiquidHemogenPackMass</defName>
+		<label>purify blood-like liquid x16</label>
+		<jobString>Purifying blood-like liquid x16.</jobString>
+		<products>
+			<HemogenPack>16</HemogenPack>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AE_BloodLiquid</li>
+					</thingDefs>
+				</filter>
+				<count>192</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Neutroamine</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<workAmount>12800</workAmount>
+		<skillRequirements>
+			<Intellectual>14</Intellectual>
+		</skillRequirements>
+	</RecipeDef>
+
+</Defs>

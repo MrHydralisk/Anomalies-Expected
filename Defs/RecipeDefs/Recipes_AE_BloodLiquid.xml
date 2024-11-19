@@ -39,7 +39,7 @@
 				<count>8</count>
 			</li>
 		</ingredients>
-		<workAmount>1500</workAmount>
+		<workAmount>1100</workAmount>
 		<skillRequirements>
 			<Crafting>8</Crafting>
 		</skillRequirements>
@@ -62,7 +62,7 @@
 				<count>32</count>
 			</li>
 		</ingredients>
-		<workAmount>5400</workAmount>
+		<workAmount>3960</workAmount>
 		<skillRequirements>
 			<Crafting>10</Crafting>
 		</skillRequirements>
@@ -85,9 +85,9 @@
 				<count>128</count>
 			</li>
 		</ingredients>
-		<workAmount>19200</workAmount>
+		<workAmount>14080</workAmount>
 		<skillRequirements>
-			<Crafting>11</Crafting>
+			<Crafting>12</Crafting>
 		</skillRequirements>
 	</RecipeDef>
 
