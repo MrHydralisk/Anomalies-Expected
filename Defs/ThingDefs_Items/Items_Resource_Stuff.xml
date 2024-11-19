@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
+
 	<ThingDef ParentName="ResourceBase">
 		<defName>AE_BloodLiquid</defName>
 		<label>blood-like liquid</label>

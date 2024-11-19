@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
+using Verse.Sound;
 
 namespace AnomaliesExpected
 {
@@ -15,6 +16,7 @@ namespace AnomaliesExpected
         private int TickTillNextSpawn;
         protected float Radius => parent.def.specialDisplayRadius;
 
+        private Sustainer sustainer;
         public ThingWithComps Source;
         public Comp_BloodSource SourceComp => sourceCompCached ?? (sourceCompCached = Source.GetComp<Comp_BloodSource>());
         private Comp_BloodSource sourceCompCached;
@@ -60,6 +62,18 @@ namespace AnomaliesExpected
                 {
                     GenerateResource();
                 }
+                if (!Props.soundWorking.NullOrUndefined())
+                {
+                    if (sustainer == null || sustainer.Ended)
+                    {
+                        sustainer = Props.soundWorking.TrySpawnSustainer(SoundInfo.InMap(parent));
+                    }
+                    sustainer.Maintain();
+                }
+                else if (sustainer != null && !sustainer.Ended)
+                {
+                    sustainer.End();
+                }
             }
         }
 
@@ -75,6 +89,15 @@ namespace AnomaliesExpected
             Source = null;
             sourceCompCached = null;
             Messages.Message("AnomaliesExpected.BloodPump.Disconnected".Translate(parent.LabelCap).RawText, parent, MessageTypeDefOf.NeutralEvent);
+        }
+
+        public override void PostDeSpawn(Map map)
+        {
+            base.PostDeSpawn(map);
+            if (sustainer != null && !sustainer.Ended)
+            {
+                sustainer.End();
+            }
         }
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)

@@ -214,7 +214,7 @@
 		<description>Synthesize a serum that makes person pigging out on food.\n\nAllow removal of new versions of related anomaly without full study in future.</description>
 		<tab>AnomaliesExpected</tab>
 		<prerequisites>
-			<!-- <li>SerumSynthesis</li> -->
+			<li>MicroelectronicsBasics</li>
 		</prerequisites>
 		<knowledgeCost>50</knowledgeCost>
 		<knowledgeCategory>Basic</knowledgeCategory>
@@ -238,7 +238,7 @@
 		<description>Synthesize a serum that makes person pigging out on food.\n\nAllow removal of new versions of related anomaly without full study in future.</description>
 		<tab>AnomaliesExpected</tab>
 		<prerequisites>
-			<!-- <li>SerumSynthesis</li> -->
+			<li>AEBloodPump</li>
 		</prerequisites>
 		<knowledgeCost>100</knowledgeCost>
 		<knowledgeCategory>Basic</knowledgeCategory>

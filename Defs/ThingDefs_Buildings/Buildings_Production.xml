@@ -16,17 +16,6 @@
 				<rect>(0.2,0.2,0.6,0.6)</rect>
 			</damageData>
 		</graphicData>
-		<comps>
-			<li Class="CompProperties_Forbiddable"/>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>150</basePowerConsumption>
-			</li>
-			<li Class="AnomaliesExpected.CompProperties_BloodPump">
-				<TickPerSpawn>60000</TickPerSpawn>
-				<soundWorking>MoisturePump_Ambience</soundWorking>
-			</li>
-		</comps>
 		<tickerType>Rare</tickerType>
 		<altitudeLayer>Building</altitudeLayer>
 		<statBases>
@@ -42,7 +31,7 @@
 			<destroySound>BuildingDestroyed_Metal_Small</destroySound>
 		</building>
 		<costList>
-			<Steel>75</Steel>
+			<Bioferrite>75</Bioferrite>
 			<ComponentIndustrial>4</ComponentIndustrial>
 		</costList>
 		<specialDisplayRadius>6.9</specialDisplayRadius>
@@ -53,6 +42,17 @@
 		<placeWorkers>
 			<li>AnomaliesExpected.PlaceWorker_ShowBloodPumpConnection</li>
 		</placeWorkers>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>150</basePowerConsumption>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_BloodPump">
+				<TickPerSpawn>60000</TickPerSpawn>
+				<soundWorking>MoisturePump_Ambience</soundWorking>
+			</li>
+		</comps>
 		<researchPrerequisites>
 			<li>AEBloodPump</li>
 		</researchPrerequisites>
