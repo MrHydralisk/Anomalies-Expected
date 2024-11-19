@@ -6,7 +6,7 @@
 		<label>blood-like liquid</label>
 		<description>An exotic blood-like substance which can change it own density. Can be extracted from related anomalies. If it filtered well enough it can be used as any blood substitute.</description>
 		<graphicData>
-			<texPath>Things/Item/Resource/Bioferrite</texPath>
+			<texPath>Things/Item/Resource/AE_BloodLiquid</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<genericMarketSellable>false</genericMarketSellable>
@@ -18,6 +18,7 @@
 			<MarketValue>0.25</MarketValue>
 			<Mass>0.05</Mass>
 		</statBases>
+		<stackLimit>150</stackLimit>
 		<thingCategories>
 			<li>ResourcesRaw</li>
 		</thingCategories>

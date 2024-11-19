@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -61,6 +62,7 @@ namespace AnomaliesExpected
                 if (TickTillNextSpawn <= 0)
                 {
                     GenerateResource();
+                    TickTillNextSpawn = Props.TickPerSpawn;
                 }
                 if (!Props.soundWorking.NullOrUndefined())
                 {
@@ -122,6 +124,7 @@ namespace AnomaliesExpected
                     action = delegate
                     {
                         GenerateResource();
+                        TickTillNextSpawn = Props.TickPerSpawn;
                     },
                     defaultLabel = "Dev: Generate Resource",
                     defaultDesc = "Generate Resource from blood source"
@@ -137,16 +140,17 @@ namespace AnomaliesExpected
 
         public override string CompInspectStringExtra()
         {
-            TaggedString taggedString;
+            List<string> inspectStrings = new List<string>();
             if (isConnected)
             {
-                taggedString += "AnomaliesExpected.BloodPump.Connected".Translate();
+                inspectStrings.Add("AnomaliesExpected.BloodPump.Connected".Translate(Source.LabelCap));
+                inspectStrings.Add("AnomaliesExpected.BloodPump.TimeTillSpawn".Translate(TickTillNextSpawn.ToStringTicksToPeriod()));
             }
             else
             {
-                taggedString += "AnomaliesExpected.BloodPump.NotConnected".Translate();
+                inspectStrings.Add("AnomaliesExpected.BloodPump.NotConnected".Translate());
             }
-            return taggedString.Resolve();
+            return String.Join("\n", inspectStrings);
         }
     }
 }

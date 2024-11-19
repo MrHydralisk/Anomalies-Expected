@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Verse;
 
@@ -37,12 +38,13 @@ namespace AnomaliesExpected
 
         public override string CompInspectStringExtra()
         {
-            TaggedString taggedString;
+            List<string> inspectStrings = new List<string>();
             if (Props.UnlockedByResearchDef.IsFinished)
             {
-                taggedString += "AnomaliesExpected.BloodPump.Available".Translate(bloodPumps.Count(), Props.MaxPumps);
+                inspectStrings.Add("AnomaliesExpected.BloodPump.Available".Translate(bloodPumps.Count(), Props.MaxPumps));
+                inspectStrings.Add("AnomaliesExpected.BloodPump.CanExtractAmount".Translate(Props.ResourceAmount));
             }
-            return taggedString.Resolve();
+            return String.Join("\n", inspectStrings);
         }
     }
 }
