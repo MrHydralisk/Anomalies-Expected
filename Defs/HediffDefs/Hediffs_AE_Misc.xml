@@ -148,7 +148,7 @@
 		</comps>
 		<stages>
 			<li>
-				<label>Forgiveness </label>
+				<label>Forgiveness</label>
 				<statOffsets>
 					<GlobalLearningFactor>-0.10</GlobalLearningFactor>
 				</statOffsets>
@@ -213,6 +213,44 @@
 					<PsychicSensitivity>0.05</PsychicSensitivity>
 				</statOffsets>
 				<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>Hediff_AEBloodLiquidConcentration</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>blood-like liquid concentration</label>
+		<description>The body feels heavy and requires additional rest.</description>
+		<initialSeverity>0</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.35</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>minor</label>
+				<becomeVisible>false</becomeVisible>
+			</li>
+			<li>
+				<minSeverity>0.25</minSeverity>
+				<label>minor</label>
+			</li>
+			<li>
+				<minSeverity>0.45</minSeverity>
+				<label>moderate</label>
+			</li>
+			<li>
+				<minSeverity>0.60</minSeverity>
+				<label>severe</label>
+			</li>
+			<li>
+				<minSeverity>0.85</minSeverity>
+				<label>extreme</label>
 			</li>
 		</stages>
 	</HediffDef>

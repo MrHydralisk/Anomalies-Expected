@@ -12,5 +12,12 @@
 		<driverClass>AnomaliesExpected.JobDriver_RemoveAnomaly</driverClass>
 		<reportString>removing TargetA.</reportString>
 	</JobDef>
+
+	<JobDef>
+		<defName>AE_ApplyUsableTo</defName>
+		<driverClass>AnomaliesExpected.JobDriver_ApplyUsableTo</driverClass>
+		<reportString>applying TargetA to TargetB.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
   
 </Defs>
