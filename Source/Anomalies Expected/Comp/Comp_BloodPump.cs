@@ -27,7 +27,7 @@ namespace AnomaliesExpected
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            if (!respawningAfterLoad)
+            if (!respawningAfterLoad || !isConnected)
             {
                 if (!TryFindSource())
                 {
@@ -88,9 +88,13 @@ namespace AnomaliesExpected
 
         public void LostSource()
         {
+            if (isConnected)
+            {
+                SourceComp.RemovePump(this.parent);
+                Messages.Message("AnomaliesExpected.BloodPump.Disconnected".Translate(parent.LabelCap).RawText, parent, MessageTypeDefOf.NeutralEvent);
+            }
             Source = null;
             sourceCompCached = null;
-            Messages.Message("AnomaliesExpected.BloodPump.Disconnected".Translate(parent.LabelCap).RawText, parent, MessageTypeDefOf.NeutralEvent);
         }
 
         public override void PostDeSpawn(Map map)
@@ -100,15 +104,7 @@ namespace AnomaliesExpected
             {
                 sustainer.End();
             }
-        }
-
-        public override void PostDestroy(DestroyMode mode, Map previousMap)
-        {
-            if (isConnected)
-            {
-                SourceComp.RemovePump(this.parent);
-            }
-            base.PostDestroy(mode, previousMap);
+            LostSource();
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()

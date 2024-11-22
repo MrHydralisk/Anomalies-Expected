@@ -19,21 +19,30 @@
 		<tickerType>Rare</tickerType>
 		<altitudeLayer>Building</altitudeLayer>
 		<statBases>
-			<MaxHitPoints>150</MaxHitPoints>
-			<WorkToBuild>1500</WorkToBuild>
+			<MaxHitPoints>300</MaxHitPoints>
+			<WorkToBuild>7500</WorkToBuild>
 			<Flammability>0</Flammability>
 			<Beauty>-8</Beauty>
+			<Mass>26</Mass>
 		</statBases>
 		<fillPercent>0.15</fillPercent>
 		<building>
 			<ai_chillDestination>false</ai_chillDestination>
 			<ai_neverTrashThis>true</ai_neverTrashThis>
 			<destroySound>BuildingDestroyed_Metal_Small</destroySound>
+			<uninstallWork>1800</uninstallWork>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
 		</building>
 		<costList>
 			<Bioferrite>75</Bioferrite>
 			<ComponentIndustrial>4</ComponentIndustrial>
 		</costList>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
 		<specialDisplayRadius>6.9</specialDisplayRadius>
 		<pathCost>30</pathCost>
 		<passability>PassThroughOnly</passability>
