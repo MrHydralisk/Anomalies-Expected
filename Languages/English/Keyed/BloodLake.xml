@@ -7,6 +7,8 @@
 	<AnomaliesExpected.BloodLake.ViewSubMap.Desc>View the connected map on the other side</AnomaliesExpected.BloodLake.ViewSubMap.Desc>	
 	<AnomaliesExpected.BloodLake.Density>Liquid density: {0} kg/m3</AnomaliesExpected.BloodLake.Density>
 	
+	<AnomaliesExpected.BloodLake.AlreadyExists>Strange Lake already exist</AnomaliesExpected.BloodLake.AlreadyExists>
+	
 	<AnomaliesExpected.BloodLake.Reason.CantEnterA>High liquid density prevents exploration</AnomaliesExpected.BloodLake.Reason.CantEnterA>
 	<AnomaliesExpected.BloodLake.Reason.CantEnterB>Underwater drone currently surveying lakebed</AnomaliesExpected.BloodLake.Reason.CantEnterB>
 	<AnomaliesExpected.BloodLake.Reason.CantEnterC>Connection with other side lost</AnomaliesExpected.BloodLake.Reason.CantEnterC>

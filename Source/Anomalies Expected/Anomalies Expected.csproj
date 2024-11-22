@@ -58,6 +58,7 @@
     <Compile Include="Comp\Comp_BloodSource.cs" />
     <Compile Include="Comp\Comp_BloodPump.cs" />
     <Compile Include="Comp\Comp_DogTag.cs" />
+    <Compile Include="DefOfLocal\IncidentDefOfLocal.cs" />
     <Compile Include="GenStep\GenStep_BloodLakeFindDogTag.cs" />
     <Compile Include="GenStep\GenStep_BloodLakeFleshmassUNest.cs" />
     <Compile Include="GenStep\GenStep_BloodLakeFindTerminal.cs" />
@@ -67,6 +68,8 @@
     <Compile Include="GenStep\GenStep_BloodLakeFindExit.cs" />
     <Compile Include="GenStep\GenStep_BloodLakeFleshSacks.cs" />
     <Compile Include="JobDriver\JobDriver_ApplyUsableTo.cs" />
+    <Compile Include="PsychicRitualToil_AESummonBloodLake.cs" />
+    <Compile Include="PsychicRitualDef_AESummonBloodLake.cs" />
     <Compile Include="Structures\AEStudyNote.cs" />
     <Compile Include="CompProperties\CompProperties_CanDestroyedAfterStudy.cs" />
     <Compile Include="CompProperties\CompProperties_UseEffecRemoveHediff.cs" />

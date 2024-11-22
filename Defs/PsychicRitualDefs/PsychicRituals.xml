@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AnomaliesExpected.PsychicRitualDef_AESummonBloodLake>
+		<defName>SummonBloodLake</defName>
+		<label>provoke strange lake</label>
+		<description>Use a psychic pulse to distort the fabric of reality, resulting in the formation of a crimson lake in the ground somewhere in the local area.</description>
+		<iconPath>UI/PsychicRituals/PsychicRitual_AESummonBloodLake</iconPath>
+		<researchPrerequisite>AEBloodFiltering</researchPrerequisite>
+		<outcomeDescription>Use a psychic pulse to distort the fabric of reality, resulting in the formation of a crimson lake in the ground somewhere in the local area.</outcomeDescription>
+		<hoursUntilOutcome>8</hoursUntilOutcome>
+		<castableOnPocketMaps>false</castableOnPocketMaps>
+		<requiredOffering>
+			<filter>
+				<thingDefs>
+					<li>AE_BloodLiquid</li>
+				</thingDefs>
+			</filter>
+			<count>150</count>
+		</requiredOffering>
+		<cooldownHours>1080</cooldownHours>
+		<chanterRole>ChanterAdvanced</chanterRole>
+	</AnomaliesExpected.PsychicRitualDef_AESummonBloodLake>
+
+</Defs>
