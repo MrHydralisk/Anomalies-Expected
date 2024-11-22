@@ -14,8 +14,9 @@
 			<drawSize>0.8</drawSize>
 		</graphicData>
 		<statBases>
-			<MarketValue>60</MarketValue>
+			<MarketValue>35</MarketValue>
 		</statBases>
+		<tradeability>Sellable</tradeability>
 		<comps>
 			<li Class="CompProperties_UseEffectAddHediff">
 				<hediffDef>Hediff_AESleepEnhancerSerum</hediffDef>
@@ -53,8 +54,9 @@
 			<drawSize>0.8</drawSize>
 		</graphicData>
 		<statBases>
-			<MarketValue>75</MarketValue>
+			<MarketValue>70</MarketValue>
 		</statBases>
+		<tradeability>Sellable</tradeability>
 		<comps>
 			<li Class="CompProperties_UseEffectAddHediff">
 				<hediffDef>Hediff_AERegenSerum</hediffDef>
@@ -93,7 +95,7 @@
 			<drawSize>0.8</drawSize>
 		</graphicData>
 		<statBases>
-			<MarketValue>35</MarketValue>
+			<MarketValue>18</MarketValue>
 		</statBases>
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_UseEffectReplaceHediff">
@@ -133,7 +135,7 @@
 			<drawSize>0.8</drawSize>
 		</graphicData>
 		<statBases>
-			<MarketValue>15</MarketValue>
+			<MarketValue>30</MarketValue>
 		</statBases>
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_UseEffectAddMentalState">
@@ -178,9 +180,10 @@
 			<drawSize>0.8</drawSize>
 		</graphicData>
 		<statBases>
-			<MarketValue>75</MarketValue>
+			<MarketValue>65</MarketValue>
 			<Nutrition>1</Nutrition>
 		</statBases>
+		<tradeability>Sellable</tradeability>
 		<comps>
 			<li Class="CompProperties_UseEffectAddHediff">
 				<hediffDef>Hediff_AEHungerSuppressorSerum</hediffDef>
@@ -201,11 +204,13 @@
 			<researchPrerequisite>AEHungerSuppressorSerum</researchPrerequisite>
 		</recipeMaker>
 	</ThingDef>
+	
+	
 
 	<ThingDef ParentName="SerumBase">
 		<defName>AE_BloodLiquidInjector</defName>
 		<label>blood-like liquid injector</label>
-		<description>A one-use super-dose of mechanites tuned to heal health conditions. The mechanites will target and heal the single worst health condition affecting someone at any given time. Works even on health conditions that would otherwise be incurable. The mechanites can even transmute themselves into organic matter, forming new limbs or organs as needed.</description>
+		<description>A one-use dose of blood-like liquid. This liquid, when administered, transmute to replace someo of lost blood and increases its density around major wounds to prevent further blood loss. It prioritizes the 5 most severe injuries, focusing on those with the highest bleeding rates. Precise dosing is crucial to avoid excessive blood-liquid levels in the bloodstream.</description>
 		<thingClass>ThingWithComps</thingClass>
 		<graphicData>
 			<texPath>Things/Item/Serum/AEBloodLiquidInjector</texPath>
@@ -214,7 +219,7 @@
 		<stackLimit>10</stackLimit>
 		<useHitPoints>true</useHitPoints>
 		<statBases>
-			<MarketValue>1300</MarketValue>
+			<MarketValue>28</MarketValue>
 		</statBases>
 		<tradeability>Sellable</tradeability>
 		<ingestible>
@@ -235,7 +240,7 @@
 				<amountOfInjuries>5</amountOfInjuries>
 				<tendQualityRange>0.4~0.8</tendQualityRange>
 				<sideEffectHediff>Hediff_AEBloodLiquidConcentration</sideEffectHediff>
-				<sideEffectHediffSeverityAdd>0.15</sideEffectHediffSeverityAdd>
+				<sideEffectHediffSeverityAdd>0.18</sideEffectHediffSeverityAdd>
 			</li>
 			<li Class="CompProperties_Targetable">
 				<compClass>AnomaliesExpected.CompTargetable_SinglePawnUseFirstEffect</compClass>
@@ -250,14 +255,14 @@
 		</comps>
 		<costList>
 			<AE_BloodLiquid>10</AE_BloodLiquid>
-			<Bioferrite>15</Bioferrite>
+			<Bioferrite>10</Bioferrite>
 		</costList>
 		<recipeMaker>
-			<workAmount>1500</workAmount>
+			<workAmount>1200</workAmount>
 			<skillRequirements>
 				<Crafting>10</Crafting>
 			</skillRequirements>
-			<researchPrerequisite>AEBloodPump</researchPrerequisite>
+			<researchPrerequisite>AEBloodFiltering</researchPrerequisite>
 		</recipeMaker>
 	</ThingDef>
 

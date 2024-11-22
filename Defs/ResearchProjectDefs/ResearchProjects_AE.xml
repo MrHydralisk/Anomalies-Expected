@@ -241,7 +241,11 @@
 			<li>AEBloodPump</li>
 		</prerequisites>
 		<knowledgeCost>100</knowledgeCost>
-		<knowledgeCategory>Basic</knowledgeCategory>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+    <!-- <techprintCount>2</techprintCount> -->
+    <!-- <heldByFactionCategoryTags> -->
+      <!-- <li>Entities</li> -->
+    <!-- </heldByFactionCategoryTags> -->
 		<researchViewX>5</researchViewX>
 		<researchViewY>3</researchViewY>
 		<generalRules>

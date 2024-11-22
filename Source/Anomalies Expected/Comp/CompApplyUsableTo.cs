@@ -46,13 +46,6 @@ namespace AnomaliesExpected
                 AcceptanceReport acceptanceReport = CanBeUsedBy(myPawn, Props.ignoreOtherReservations);
                 FloatMenuOption floatMenuOption = FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(FloatMenuOptionLabel(myPawn), delegate
                 {
-                    foreach (CompUseEffect comp in parent.GetComps<CompUseEffect>())
-                    {
-                        if (comp.SelectedUseOption(myPawn))
-                        {
-                            return;
-                        }
-                    }
                     TryStartUseJob(myPawn, myPawn, Props.ignoreOtherReservations);
                 }, priority: Props.floatMenuOptionPriority, itemIcon: Icon, iconColor: IconColor), myPawn, parent);
                 if (!acceptanceReport.Accepted)

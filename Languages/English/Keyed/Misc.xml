@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 	<AnomaliesExpected.Misc.Redacted>[REDACTED]</AnomaliesExpected.Misc.Redacted>
+	
+	<AnomaliesExpected.Misc.FleshbeastEmergeOnStage.Message>The fleshmass has detached from {0} and transformed into a fleshbeast!</AnomaliesExpected.Misc.FleshbeastEmergeOnStage.Message>
 </LanguageData>

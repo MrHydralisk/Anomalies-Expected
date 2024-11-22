@@ -19,7 +19,7 @@
 		<recipeUsers>
 			<li>BiofuelRefinery</li>
 		</recipeUsers>
-		<researchPrerequisite>AEBloodFiltering</researchPrerequisite>
+		<researchPrerequisite>AEBloodPump</researchPrerequisite>
 	</RecipeDef>
 
 	<RecipeDef ParentName="RecipeMakeAEBloodLiquidBioferrite">
@@ -27,7 +27,7 @@
 		<label>filter out bioferrite</label>
 		<jobString>Filtering out bioferite.</jobString>
 		<products>
-			<Bioferrite>1</Bioferrite>
+			<Bioferrite>2</Bioferrite>
 		</products>
 		<ingredients>
 			<li>
@@ -50,7 +50,7 @@
 		<label>filter out bioferrite x4</label>
 		<jobString>Filtering out bioferite x4.</jobString>
 		<products>
-			<Bioferrite>4</Bioferrite>
+			<Bioferrite>8</Bioferrite>
 		</products>
 		<ingredients>
 			<li>
@@ -73,7 +73,7 @@
 		<label>filter out bioferrite x16</label>
 		<jobString>Filtering out bioferite x16.</jobString>
 		<products>
-			<Bioferrite>16</Bioferrite>
+			<Bioferrite>32</Bioferrite>
 		</products>
 		<ingredients>
 			<li>

@@ -37,6 +37,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompProperties\HediffCompProperties_FleshbeastEmergeOnStage.cs" />
     <Compile Include="CompProperties\CompProperties_UseEffectBloodLiquidInjector.cs" />
     <Compile Include="Comp\CompApplyUsableTo.cs" />
     <Compile Include="Comp\CompTargetable_SinglePawnUseFirstEffect.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="CompProperties\CompProperties_ApplyUsableTo.cs" />
     <Compile Include="CompProperties\CompProperties_DogTag.cs" />
     <Compile Include="Comp\CompUseEffect_BloodLiquidInjector.cs" />
+    <Compile Include="Comp\HediffComp_FleshbeastEmergeOnStage.cs" />
     <Compile Include="Comp\Comp_BloodLakeTerminal.cs" />
     <Compile Include="Comp\Comp_BloodSource.cs" />
     <Compile Include="Comp\Comp_BloodPump.cs" />
