@@ -29,7 +29,7 @@
 			<MarketValue>260</MarketValue>
 		</statBases>
 		<thingCategories>
-			<li>ItemsMisc</li>
+			<li>ItemsAnomalies</li>
 		</thingCategories>
 		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
 		<allowedArchonexusCount>1</allowedArchonexusCount>

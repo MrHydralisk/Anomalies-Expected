@@ -1134,6 +1134,7 @@
 						<threshold>0.01</threshold>
 						<label>#1/3 Terminal study report</label>
 						<text>Flesh Experiments</text>
+						<ThingDefSpawn>AE_ResearchNotesBLA</ThingDefSpawn>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
 						<AnomalyLabel>colony terminal</AnomalyLabel>
@@ -1141,6 +1142,7 @@
 						<threshold>1</threshold>
 						<label>#2/3 Terminal study report</label>
 						<text>Breakthrough in Research</text>
+						<ThingDefSpawn>AE_ResearchNotesBLB</ThingDefSpawn>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
 						<AnomalyLabel>colony terminal</AnomalyLabel>
@@ -1148,6 +1150,7 @@
 						<threshold>2</threshold>
 						<label>#3/3 Terminal study report</label>
 						<text>Containment Breach</text>
+						<ThingDefSpawn>AE_ResearchNotesBLC</ThingDefSpawn>
 					</li>
 				</studyNotes>
 				<isSyncWithParent>true</isSyncWithParent>

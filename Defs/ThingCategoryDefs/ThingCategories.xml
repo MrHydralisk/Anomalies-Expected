@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingCategoryDef>
+		<defName>ItemsAnomalies</defName>
+		<label>anomalies</label>
+		<parent>Items</parent>
+	</ThingCategoryDef>
+	
+	<ThingCategoryDef>
+		<defName>AnomalyStudyNotes</defName>
+		<label>research notes</label>
+		<parent>ItemsAnomalies</parent>
+	</ThingCategoryDef>
+  
+</Defs>

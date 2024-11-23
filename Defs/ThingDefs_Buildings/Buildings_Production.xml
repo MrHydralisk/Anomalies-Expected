@@ -6,7 +6,7 @@
 		<label>blood-like liquid pump</label>
 		<description>Collect blood-like liquid from nearby anomalous source.</description>
 		<graphicData>
-			<texPath>Things/Building/Misc/MoisturePump</texPath>
+			<texPath>Things/Building/AE_BloodPump</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shadowData>
 				<volume>(0.58, 0.35, 0.25)</volume>

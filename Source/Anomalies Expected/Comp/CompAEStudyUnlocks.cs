@@ -129,6 +129,17 @@ namespace AnomaliesExpected
                 currentAnomalyLabel = aestudyNote.AnomalyLabel;
                 currentAnomalyDesc = aestudyNote.AnomalyDesc;
                 currentAnomalyDescPart = aestudyNote.AnomalyDescPart;
+                if (aestudyNote.ThingDefSpawn != null)
+                {
+                    ThingWithComps thing = ThingMaker.MakeThing(aestudyNote.ThingDefSpawn) as ThingWithComps;
+                    Thing monolith = Find.Anomaly.monolith;
+                    GenPlace.TryPlaceThing(thing, monolith.Position, monolith.Map, ThingPlaceMode.Near, null);
+                    CompAnalyzableUnlockResearch compAnalyzable;
+                    if ((compAnalyzable = thing.GetComp<CompAnalyzableUnlockResearch>()) == null || compAnalyzable.ResearchUnlocked.Any(r => !r.AnalyzedThingsRequirementsMet))
+                    {
+                        Find.LetterStack.ReceiveLetter("AnomaliesExpected.Misc.ResearchNote.Letter.Label".Translate(thing.LabelCap).RawText, "AnomaliesExpected.Misc.ResearchNote.Letter.Desc".Translate(parent.LabelCap, thing.LabelCap), LetterDefOf.PositiveEvent, thing);
+                    }
+                }
             }
         }
 

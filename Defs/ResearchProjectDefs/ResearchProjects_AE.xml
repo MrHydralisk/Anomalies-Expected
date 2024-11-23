@@ -46,7 +46,7 @@
 		</prerequisites>
 		<knowledgeCost>45</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
-		<researchViewX>5</researchViewX>
+		<researchViewX>4</researchViewX>
 		<researchViewY>0</researchViewY>
 		<generalRules>
 			<rulesStrings>
@@ -95,7 +95,7 @@
 		</prerequisites>
 		<knowledgeCost>10</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
-		<researchViewX>5</researchViewX>
+		<researchViewX>4</researchViewX>
 		<researchViewY>1</researchViewY>
 		<generalRules>
 			<rulesStrings>
@@ -119,7 +119,7 @@
 		</prerequisites>
 		<knowledgeCost>15</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
-		<researchViewX>6</researchViewX>
+		<researchViewX>5</researchViewX>
 		<researchViewY>1</researchViewY>
 		<generalRules>
 			<rulesStrings>
@@ -144,7 +144,7 @@
 		</prerequisites>
 		<knowledgeCost>30</knowledgeCost>
 		<knowledgeCategory>Basic</knowledgeCategory>
-		<researchViewX>4</researchViewX>
+		<researchViewX>3</researchViewX>
 		<researchViewY>2</researchViewY>
 		<generalRules>
 			<rulesStrings>
@@ -168,7 +168,7 @@
 		</prerequisites>
 		<knowledgeCost>35</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
-		<researchViewX>5</researchViewX>
+		<researchViewX>4</researchViewX>
 		<researchViewY>2</researchViewY>
 		<generalRules>
 			<rulesStrings>
@@ -192,7 +192,7 @@
 		</prerequisites>
 		<knowledgeCost>100</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
-		<researchViewX>6</researchViewX>
+		<researchViewX>5</researchViewX>
 		<researchViewY>2</researchViewY>
 		<generalRules>
 			<rulesStrings>
@@ -218,7 +218,7 @@
 		</prerequisites>
 		<knowledgeCost>50</knowledgeCost>
 		<knowledgeCategory>Basic</knowledgeCategory>
-		<researchViewX>4</researchViewX>
+		<researchViewX>3</researchViewX>
 		<researchViewY>3</researchViewY>
 		<generalRules>
 			<rulesStrings>
@@ -242,11 +242,88 @@
 		</prerequisites>
 		<knowledgeCost>100</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
-    <!-- <techprintCount>2</techprintCount> -->
-    <!-- <heldByFactionCategoryTags> -->
-      <!-- <li>Entities</li> -->
-    <!-- </heldByFactionCategoryTags> -->
+		<researchViewX>4</researchViewX>
+		<researchViewY>3</researchViewY>
+		<generalRules>
+			<rulesStrings>
+				<li>subject->binging food serum</li>
+
+				<li>subject_story->ate all food in the facility</li>
+				<li>subject_story->stomach rumbling could be heard for several kilometers</li>
+
+				<li>subject_gerund->synthesizing binging food serums</li>
+			</rulesStrings>
+		</generalRules>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>AEBloodLakeTerminalA</defName>
+		<label>study notes #BL01</label>
+		<description>Synthesize a serum that makes person pigging out on food.\n\nAllow removal of new versions of related anomaly without full study in future.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>AEBloodFiltering</li>
+		</prerequisites>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesBLA</li>
+		</requiredAnalyzed>
+		<knowledgeCost>30</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>5</researchViewX>
+		<researchViewY>3</researchViewY>
+		<generalRules>
+			<rulesStrings>
+				<li>subject->binging food serum</li>
+
+				<li>subject_story->ate all food in the facility</li>
+				<li>subject_story->stomach rumbling could be heard for several kilometers</li>
+
+				<li>subject_gerund->synthesizing binging food serums</li>
+			</rulesStrings>
+		</generalRules>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>AEBloodLakeTerminalB</defName>
+		<label>study notes #BL02</label>
+		<description>Synthesize a serum that makes person pigging out on food.\n\nAllow removal of new versions of related anomaly without full study in future.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>AEBloodLakeTerminalA</li>
+		</prerequisites>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesBLB</li>
+		</requiredAnalyzed>
+		<knowledgeCost>60</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>6</researchViewX>
+		<researchViewY>3</researchViewY>
+		<generalRules>
+			<rulesStrings>
+				<li>subject->binging food serum</li>
+
+				<li>subject_story->ate all food in the facility</li>
+				<li>subject_story->stomach rumbling could be heard for several kilometers</li>
+
+				<li>subject_gerund->synthesizing binging food serums</li>
+			</rulesStrings>
+		</generalRules>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>AEBloodLakeTerminalC</defName>
+		<label>study notes #BL03</label>
+		<description>Synthesize a serum that makes person pigging out on food.\n\nAllow removal of new versions of related anomaly without full study in future.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>AEBloodLakeTerminalB</li>
+		</prerequisites>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesBLC</li>
+		</requiredAnalyzed>
+		<knowledgeCost>90</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>7</researchViewX>
 		<researchViewY>3</researchViewY>
 		<generalRules>
 			<rulesStrings>

@@ -11,5 +11,6 @@ namespace AnomaliesExpected
         public string AnomalyDesc;
         [MustTranslate]
         public string AnomalyDescPart;
+        public ThingDef ThingDefSpawn;
     }
 }
