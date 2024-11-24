@@ -3,6 +3,7 @@
 	<AnomaliesExpected.Misc.Redacted>[REDACTED]</AnomaliesExpected.Misc.Redacted>
 	
 	<AnomaliesExpected.Misc.FleshbeastEmergeOnStage.Message>The fleshmass has detached from {0} and transformed into a fleshbeast!</AnomaliesExpected.Misc.FleshbeastEmergeOnStage.Message>
+	<AnomaliesExpected.Misc.FleshmassSpitter.Attacking>A {0} is attacking!</AnomaliesExpected.Misc.FleshmassSpitter.Attacking>
 	
 	<AnomaliesExpected.Misc.ResearchNote.Letter.Label>{0} available for study</AnomaliesExpected.Misc.ResearchNote.Letter.Label>
 	<AnomaliesExpected.Misc.ResearchNote.Letter.Desc>After examining the {0}, the {1} is now accessible. Your researchers can now use research benches to begin researching how to utilize the technology.</AnomaliesExpected.Misc.ResearchNote.Letter.Desc>

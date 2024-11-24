@@ -21,8 +21,8 @@
 				<defaultProjectile>AE_Bullet_Shell_AcidSpitGiant</defaultProjectile>
 				<isMortar>true</isMortar>
 				<requireLineOfSight>false</requireLineOfSight>
-				<minRange>8.9</minRange>
-				<range>201.9</range>
+				<minRange>29.9</minRange>
+				<range>401.9</range>
 				<burstShotCount>1</burstShotCount>
 				<soundCast>SpitterSpit</soundCast>
 				<targetParams>
@@ -31,8 +31,10 @@
 			</li>
 		</verbs>
 		<comps Inherit="False">
-			<li>
-				<compClass>CompFleshmassSpitter</compClass>
+			<li Class="AnomaliesExpected.CompProperties_AEFleshmassSpitter">
+				<SpitIntervalInitRangeTicks>10000~15000</SpitIntervalInitRangeTicks>
+				<SpitIntervalRangeTicks>15000~25000</SpitIntervalRangeTicks>
+				<isAbleToFireThroughRoof>true</isAbleToFireThroughRoof>
 			</li>
 			<li Class="CompProperties_FleshmassBase">
 				<size>3</size>
@@ -69,7 +71,7 @@
 				<defaultProjectile>AE_Bullet_Shell_AcidSpitMedium</defaultProjectile>
 				<isMortar>true</isMortar>
 				<requireLineOfSight>false</requireLineOfSight>
-				<minRange>6.9</minRange>
+				<minRange>8.9</minRange>
 				<range>51.9</range>
 				<burstShotCount>1</burstShotCount>
 				<soundCast>SpitterSpit</soundCast>
@@ -78,6 +80,15 @@
 				</targetParams>
 			</li>
 		</verbs>
+		<comps Inherit="False">
+			<li Class="AnomaliesExpected.CompProperties_AEFleshmassSpitter">
+				<SpitIntervalInitRangeTicks>3500~6250</SpitIntervalInitRangeTicks>
+				<SpitIntervalRangeTicks>6250~13750</SpitIntervalRangeTicks>
+			</li>
+			<li Class="CompProperties_FleshmassBase">
+				<size>2</size>
+			</li>
+		</comps>
 	</ThingDef>
 
 	<ThingDef ParentName="Bullet_Shell_AcidSpit">
@@ -116,8 +127,9 @@
 			</li>
 		</verbs>
 		<comps Inherit="False">
-			<li>
-				<compClass>CompFleshmassSpitter</compClass>
+			<li Class="AnomaliesExpected.CompProperties_AEFleshmassSpitter">
+				<SpitIntervalInitRangeTicks>1000~2500</SpitIntervalInitRangeTicks>
+				<SpitIntervalRangeTicks>2500~7500</SpitIntervalRangeTicks>
 			</li>
 			<li Class="CompProperties_FleshmassBase">
 				<size>1</size>
@@ -149,20 +161,17 @@
 		<defName>AE_BloodLakeUndergroundNest</defName>
 		<label>underground fleshmass nest</label>
 		<description>A massive, foreboding hole that connects the surface with a dark network of underground caves. It is possible to climb down into the caverns below.</description>
-		<!-- <thingClass>AnomaliesExpected.Building_AEBloodLake</thingClass> -->
 		<graphicData>
 			<texPath>Things/Building/AE_BloodLakeUndergroundNest</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(3,3)</drawSize>
 		</graphicData>
 		<size>(3,3)</size>
-		<!-- <drawerType>RealtimeOnly</drawerType> -->
 		<canOverlapZones>false</canOverlapZones>
 		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
 		<altitudeLayer>FloorEmplacement</altitudeLayer>
 		<useHitPoints>false</useHitPoints>
 		<rotatable>false</rotatable>
-		<!-- <passability>PassThroughOnly</passability> -->
 		<pathCost>30</pathCost>
 		<holdsRoof>true</holdsRoof>
 		<statBases>

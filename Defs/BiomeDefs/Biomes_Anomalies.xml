@@ -10,9 +10,9 @@
 		<plantDensity>0.20</plantDensity>
 		<wildAnimalsCanWanderInto>false</wildAnimalsCanWanderInto>
 		<baseWeatherCommonalities>
-			<AE_BloodLakeWeather>1</AE_BloodLakeWeather>
+			<AE_BloodLakeWeatherClear>1</AE_BloodLakeWeatherClear>
 		</baseWeatherCommonalities>
-		<diseaseMtbDays>15</diseaseMtbDays>
+		<diseaseMtbDays>10</diseaseMtbDays>
 		<diseases>
 			<li>
 				<diseaseInc>Disease_FibrousMechanites</diseaseInc>

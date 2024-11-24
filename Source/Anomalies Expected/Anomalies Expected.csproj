@@ -37,6 +37,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompProperties\CompProperties_AEFleshmassSpitter.cs" />
     <Compile Include="CompProperties\HediffCompProperties_FleshbeastEmergeOnStage.cs" />
     <Compile Include="CompProperties\CompProperties_UseEffectBloodLiquidInjector.cs" />
     <Compile Include="Comp\CompApplyUsableTo.cs" />
@@ -53,11 +54,13 @@
     <Compile Include="CompProperties\CompProperties_ApplyUsableTo.cs" />
     <Compile Include="CompProperties\CompProperties_DogTag.cs" />
     <Compile Include="Comp\CompUseEffect_BloodLiquidInjector.cs" />
+    <Compile Include="Comp\Comp_AEFleshmassSpitter.cs" />
     <Compile Include="Comp\HediffComp_FleshbeastEmergeOnStage.cs" />
     <Compile Include="Comp\Comp_BloodLakeTerminal.cs" />
     <Compile Include="Comp\Comp_BloodSource.cs" />
     <Compile Include="Comp\Comp_BloodPump.cs" />
     <Compile Include="Comp\Comp_DogTag.cs" />
+    <Compile Include="DefOfLocal\GameConditionDefOfLocal.cs" />
     <Compile Include="DefOfLocal\IncidentDefOfLocal.cs" />
     <Compile Include="GenStep\GenStep_BloodLakeFindDogTag.cs" />
     <Compile Include="GenStep\GenStep_BloodLakeFleshmassUNest.cs" />
@@ -68,6 +71,7 @@
     <Compile Include="GenStep\GenStep_BloodLakeFindExit.cs" />
     <Compile Include="GenStep\GenStep_BloodLakeFleshSacks.cs" />
     <Compile Include="JobDriver\JobDriver_ApplyUsableTo.cs" />
+    <Compile Include="GameCondition_AEBloodFog.cs" />
     <Compile Include="PsychicRitualToil_AESummonBloodLake.cs" />
     <Compile Include="PsychicRitualDef_AESummonBloodLake.cs" />
     <Compile Include="Structures\AEStudyNote.cs" />

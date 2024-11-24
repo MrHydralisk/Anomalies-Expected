@@ -9,5 +9,6 @@ namespace AnomaliesExpected
         public static HediffDef Hediff_AEFatigue;
         public static HediffDef Hediff_AEForbiddenFruit;
         public static HediffDef Hediff_AEForbiddenFruitWithdrawal;
+        public static HediffDef Hediff_AEBloodLiquidConcentration;
     }
 }
