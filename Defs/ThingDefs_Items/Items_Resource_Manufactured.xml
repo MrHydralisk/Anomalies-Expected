@@ -266,4 +266,54 @@
 		</recipeMaker>
 	</ThingDef>
 
+	<ThingDef ParentName="ResourceBase">
+		<defName>AE_FleshmassCyst</defName>
+		<label>fleshmass cyst</label>
+		<description>An exotic blood-like substance which can change it own density. Can be extracted from related anomalies. If it filtered well enough it can be used as any blood substitute.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/AEFleshmassCyst</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(0.75, 0.75)</drawSize>
+		</graphicData>
+		<genericMarketSellable>false</genericMarketSellable>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+			<MarketValue>0.25</MarketValue>
+			<Mass>0.05</Mass>
+		</statBases>
+		<tradeability>Sellable</tradeability>
+		<stackLimit>10</stackLimit>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>AE_FleshmassTumor</defName>
+		<label>fleshmass tumor</label>
+		<description>An exotic blood-like substance which can change it own density. Can be extracted from related anomalies. If it filtered well enough it can be used as any blood substitute.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/AEFleshmassTumor</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(0.75, 0.75)</drawSize>
+		</graphicData>
+		<genericMarketSellable>false</genericMarketSellable>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+			<MarketValue>0.25</MarketValue>
+			<Mass>0.05</Mass>
+		</statBases>
+		<tradeability>Sellable</tradeability>
+		<stackLimit>10</stackLimit>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+	</ThingDef>
+
 </Defs>

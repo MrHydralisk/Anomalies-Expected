@@ -38,6 +38,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompProperties\CompProperties_AEFleshmassSpitter.cs" />
+    <Compile Include="CompProperties\HediffCompProperties_FleshmassMutation.cs" />
+    <Compile Include="CompProperties\HediffCompProperties_SpawnThingOnDeath.cs" />
     <Compile Include="CompProperties\HediffCompProperties_FleshbeastEmergeOnStage.cs" />
     <Compile Include="CompProperties\CompProperties_UseEffectBloodLiquidInjector.cs" />
     <Compile Include="Comp\CompApplyUsableTo.cs" />
@@ -56,6 +58,8 @@
     <Compile Include="Comp\CompUseEffect_BloodLiquidInjector.cs" />
     <Compile Include="Comp\Comp_AEFleshmassSpitter.cs" />
     <Compile Include="Comp\HediffComp_FleshbeastEmergeOnStage.cs" />
+    <Compile Include="Comp\HediffComp_SpawnThingOnDeath.cs" />
+    <Compile Include="Comp\HediffComp_FleshmassMutation.cs" />
     <Compile Include="Comp\Comp_BloodLakeTerminal.cs" />
     <Compile Include="Comp\Comp_BloodSource.cs" />
     <Compile Include="Comp\Comp_BloodPump.cs" />
@@ -72,6 +76,7 @@
     <Compile Include="GenStep\GenStep_BloodLakeFleshSacks.cs" />
     <Compile Include="JobDriver\JobDriver_ApplyUsableTo.cs" />
     <Compile Include="GameCondition_AEBloodFog.cs" />
+    <Compile Include="Recipe_AEInitiateFleshmassMutation.cs" />
     <Compile Include="PsychicRitualToil_AESummonBloodLake.cs" />
     <Compile Include="PsychicRitualDef_AESummonBloodLake.cs" />
     <Compile Include="Structures\AEStudyNote.cs" />

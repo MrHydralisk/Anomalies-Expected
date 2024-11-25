@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RecipeDef>
+		<defName>MakeAEFleshmassCyst</defName>
+		<label>incubate fleshmass cyst</label>
+		<description>Separate bioferrite from blood-like liquid by filtering it.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AE_FleshmassCyst</ThingDef>
+			<ThingDef>AE_BloodLiquid</ThingDef>
+		</descriptionHyperlinks>
+		<jobString>Filtering out bioferite.</jobString>
+		<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<effectWorking>ButcherFlesh</effectWorking>
+		<interruptIfIngredientIsRotting>true</interruptIfIngredientIsRotting>
+		<workSkill>Crafting</workSkill>
+		<products>
+			<AE_FleshmassCyst>1</AE_FleshmassCyst>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AE_BloodLiquid</li>
+					</thingDefs>
+				</filter>
+				<count>30</count>
+			</li>
+			<li>
+				<filter>
+					<categories>
+						<li>Corpses</li>
+					</categories>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<forceHiddenSpecialFilters>
+			<li>AllowFresh</li>
+		</forceHiddenSpecialFilters>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AE_BloodLiquid</li>
+			</thingDefs>
+			<categories>
+				<li>CorpsesHumanlike</li>
+			</categories>
+			<specialFiltersToDisallow>
+				<li>AllowRotten</li>
+				<li>AllowCorpsesUnnatural</li>
+			</specialFiltersToDisallow>
+			<disallowDoesntProduceMeat>true</disallowDoesntProduceMeat>
+		</fixedIngredientFilter>
+		<workAmount>2500</workAmount>
+		<skillRequirements>
+			<Crafting>10</Crafting>
+		</skillRequirements>
+		<recipeUsers>
+			<li>SerumCentrifuge</li>
+		</recipeUsers>
+		<researchPrerequisite>AEBloodLakeTerminalA</researchPrerequisite>
+	</RecipeDef>
+
+	<RecipeDef Name="SurgeryAEFleshmassCystBase" ParentName="SurgeryFlesh" Abstract="True">
+		<descriptionHyperlinks>
+			<ThingDef>AE_FleshmassCyst</ThingDef>
+		</descriptionHyperlinks>
+		<uiIconThing>AE_FleshmassCyst</uiIconThing>
+		<workerClass>AnomaliesExpected.Recipe_AEInitiateFleshmassMutation</workerClass>
+		<displayPriority>1300</displayPriority>
+		<workAmount>2500</workAmount>
+		<developmentalStageFilter>Adult</developmentalStageFilter>
+		<recipeUsers>
+			<li>Human</li>
+			<li MayRequire="Ludeon.RimWorld.Anomaly">CreepJoiner</li>
+		</recipeUsers>
+		<jobString>Implanting fleshmass cyst.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AE_FleshmassCyst</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<categories>
+						<li>Medicine</li>
+					</categories>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AE_FleshmassCyst</li>
+			</thingDefs>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+		</fixedIngredientFilter>
+		<skillRequirements>
+			<Medicine>8</Medicine>
+		</skillRequirements>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryAEFleshmassCystBase">
+		<defName>MakeAEFleshmassTumor</defName>
+		<label>incubate fleshmass tumor</label>
+		<description>A fleshmass cyst will be implanted into the subject's body to incubate a fleshmass tumor. This ultimately leading to the subject's death and the mutation of their body into a new tumor.</description>
+		<workerClass>Recipe_AddHediff</workerClass>
+		<workAmount>7500</workAmount>
+		<descriptionHyperlinks>
+			<ThingDef>AE_FleshmassTumor</ThingDef>
+			<HediffDef>Hediff_AEFleshmassTumorIncubation</HediffDef>
+		</descriptionHyperlinks>
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<targetsBodyPart>false</targetsBodyPart>
+		<addsHediff>Hediff_AEFleshmassTumorIncubation</addsHediff>
+		<skillRequirements>
+			<Medicine>12</Medicine>
+		</skillRequirements>
+		<surgerySuccessChanceFactor>99999</surgerySuccessChanceFactor>
+		<researchPrerequisite>AEBloodLakeTerminalB</researchPrerequisite>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryAEFleshmassCystBase">
+		<defName>IncubateAEFleshmassStomach</defName>
+		<label>incubate fleshmass stomach</label>
+		<description>A fleshmass cyst will be implanted into the subject's body to incubate a fleshmass tumor. This ultimately leading to the subject's death and the mutation of their body into a new tumor.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AEFleshmassCystAssimilation</HediffDef>
+			<HediffDef>FleshmassStomach</HediffDef>
+		</descriptionHyperlinks>
+		<addsHediff>FleshmassStomach</addsHediff>
+		<appliedOnFixedBodyParts>
+			<li>Stomach</li>
+		</appliedOnFixedBodyParts>
+		<researchPrerequisite>AEBloodLakeTerminalA</researchPrerequisite>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryAEFleshmassCystBase">
+		<defName>IncubateAEFleshmassLung</defName>
+		<label>incubate fleshmass lung</label>
+		<description>A fleshmass cyst will be implanted into the subject's body to incubate a fleshmass tumor. This ultimately leading to the subject's death and the mutation of their body into a new tumor.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AEFleshmassCystAssimilation</HediffDef>
+			<HediffDef>FleshmassLung</HediffDef>
+		</descriptionHyperlinks>
+		<addsHediff>FleshmassLung</addsHediff>
+		<appliedOnFixedBodyParts>
+			<li>Lung</li>
+		</appliedOnFixedBodyParts>
+		<researchPrerequisite>AEBloodLakeTerminalA</researchPrerequisite>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryAEFleshmassCystBase">
+		<defName>IncubateAEFleshmassLiver</defName>
+		<label>incubate fleshmass liver</label>
+		<description>A fleshmass cyst will be implanted into the subject's body to incubate a fleshmass tumor. This ultimately leading to the subject's death and the mutation of their body into a new tumor.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AEFleshmassCystAssimilation</HediffDef>
+			<HediffDef>AE_FleshmassLiver</HediffDef>
+		</descriptionHyperlinks>
+		<addsHediff>AE_FleshmassLiver</addsHediff>
+		<appliedOnFixedBodyParts>
+			<li>Liver</li>
+		</appliedOnFixedBodyParts>
+		<researchPrerequisite>AEBloodLakeTerminalA</researchPrerequisite>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryAEFleshmassCystBase">
+		<defName>IncubateAEFleshmassEye</defName>
+		<label>incubate fleshmass eye</label>
+		<description>A fleshmass cyst will be implanted into the subject's body to incubate a fleshmass tumor. This ultimately leading to the subject's death and the mutation of their body into a new tumor.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AEFleshmassCystAssimilation</HediffDef>
+			<HediffDef>AE_FleshmassEye</HediffDef>
+		</descriptionHyperlinks>
+		<addsHediff>AE_FleshmassEye</addsHediff>
+		<appliedOnFixedBodyParts>
+			<li>Eye</li>
+		</appliedOnFixedBodyParts>
+		<researchPrerequisite>AEBloodLakeTerminalA</researchPrerequisite>
+	</RecipeDef>
+
+	<RecipeDef Name="SurgeryAEFleshmassTumorBase" ParentName="SurgeryAEFleshmassCystBase" Abstract="True">
+		<descriptionHyperlinks Inherit="False">
+			<ThingDef>AE_FleshmassTumor</ThingDef>
+		</descriptionHyperlinks>
+		<uiIconThing>AE_FleshmassTumor</uiIconThing>
+		<displayPriority>1301</displayPriority>
+		<workAmount>7500</workAmount>
+		<jobString>Implanting fleshmass tumor.</jobString>
+		<ingredients Inherit="False">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AE_FleshmassTumor</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<categories>
+						<li>Medicine</li>
+					</categories>
+				</filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AE_FleshmassTumor</li>
+			</thingDefs>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+		</fixedIngredientFilter>
+		<skillRequirements>
+			<Medicine>12</Medicine>
+		</skillRequirements>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryAEFleshmassTumorBase">
+		<defName>IncubateAEFleshmassKidney</defName>
+		<label>incubate fleshmass kidney</label>
+		<description>A fleshmass cyst will be implanted into the subject's body to incubate a fleshmass tumor. This ultimately leading to the subject's death and the mutation of their body into a new tumor.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AEFleshmassTumorAssimilation</HediffDef>
+			<HediffDef>AE_FleshmassKidney</HediffDef>
+		</descriptionHyperlinks>
+		<addsHediff>AE_FleshmassKidney</addsHediff>
+		<appliedOnFixedBodyParts>
+			<li>Kidney</li>
+		</appliedOnFixedBodyParts>
+		<researchPrerequisite>AEBloodLakeTerminalB</researchPrerequisite>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryAEFleshmassTumorBase">
+		<defName>IncubateAEFleshmassHeart</defName>
+		<label>incubate fleshmass heart</label>
+		<description>A fleshmass cyst will be implanted into the subject's body to incubate a fleshmass tumor. This ultimately leading to the subject's death and the mutation of their body into a new tumor.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AEFleshmassTumorAssimilation</HediffDef>
+			<HediffDef>AE_FleshmassHeart</HediffDef>
+		</descriptionHyperlinks>
+		<addsHediff>AE_FleshmassHeart</addsHediff>
+		<appliedOnFixedBodyParts>
+			<li>Heart</li>
+		</appliedOnFixedBodyParts>
+		<researchPrerequisite>AEBloodLakeTerminalB</researchPrerequisite>
+	</RecipeDef>
+
+</Defs>
