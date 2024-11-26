@@ -255,5 +255,20 @@
 		</appliedOnFixedBodyParts>
 		<researchPrerequisite>AEBloodLakeTerminalB</researchPrerequisite>
 	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryAEFleshmassTumorBase">
+		<defName>IncubateAEFleshmassBrainTumor</defName>
+		<label>incubate fleshmass brain tumor</label>
+		<description>A fleshmass cyst will be implanted into the subject's body to incubate a fleshmass tumor. This ultimately leading to the subject's death and the mutation of their body into a new tumor.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AEFleshmassTumorAssimilation</HediffDef>
+			<HediffDef>AE_FleshmassBrainTumor</HediffDef>
+		</descriptionHyperlinks>
+		<addsHediff>AE_FleshmassBrainTumor</addsHediff>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<researchPrerequisite>AEBloodLakeTerminalB</researchPrerequisite>
+	</RecipeDef>
 
 </Defs>

@@ -170,4 +170,48 @@
 		</comps>
 	</HediffDef>
 	
+	<HediffDef>
+		<defName>AE_FleshmassBrainTumor</defName>
+		<hediffClass>Hediff_Level</hediffClass>
+		<label>fleshmass brain tumor</label>
+		<description>An implant which increases a mechanitor's control group count and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 6 times to increase its effect.</description>
+		<!-- <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor> -->
+		<isBad>false</isBad>
+		<priceImpact>true</priceImpact>
+		<initialSeverity>1</initialSeverity>
+		<minSeverity>0</minSeverity>
+		<maxSeverity>5</maxSeverity>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<levelIsQuantity>true</levelIsQuantity>
+		<duplicationAllowed>false</duplicationAllowed>
+		<stages>
+			<li>
+				<minSeverity>1</minSeverity>
+				<painOffset>0.15</painOffset>
+			</li>
+			<li>
+				<minSeverity>2</minSeverity>
+				<painOffset>0.05</painOffset>
+			</li>
+			<li>
+				<minSeverity>3</minSeverity>
+				<painOffset>-0.05</painOffset>
+			</li>
+			<li>
+				<minSeverity>4</minSeverity>
+				<painOffset>-0.20</painOffset>
+			</li>
+			<li>
+				<minSeverity>5</minSeverity>
+				<painOffset>-0.39</painOffset>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_FleshbeastEmerge">
+				<letterLabel>Fleshmass operation</letterLabel>
+				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass brain tumor has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+			</li>
+		</comps>
+	</HediffDef>
+	
 </Defs>

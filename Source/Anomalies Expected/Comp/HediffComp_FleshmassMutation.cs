@@ -25,7 +25,17 @@ namespace AnomaliesExpected
             if (ModsConfig.AnomalyActive)
             {
                 Pawn pawn = parent.pawn;
-                pawn.health.AddHediff(hediffToAdd, parent.Part);
+
+                Hediff firstHediffOfDef = pawn.health.hediffSet.hediffs.FirstOrDefault((Hediff h) => h.def == hediffToAdd && (parent.Part == null || h.Part == parent.Part));
+                if (firstHediffOfDef == null)
+                {
+                    pawn.health.AddHediff(hediffToAdd, parent.Part);
+                }
+                else if (firstHediffOfDef is Hediff_Level)
+                {
+                    ((Hediff_Level)firstHediffOfDef).ChangeLevel(1);
+                }
+
                 Messages.Message("AnomaliesExpected.Misc.FleshmassMutation.Message".Translate(pawn.Label, hediffToAdd?.label ?? "---"), pawn, MessageTypeDefOf.NeutralEvent);
                 parent.pawn.health.RemoveHediff(parent);
             }
