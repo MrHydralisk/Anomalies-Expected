@@ -35,7 +35,7 @@ namespace AnomaliesExpected
                 {
                     Find.LetterStack.ReceiveLetter(Props.letterLabel.Translate(), Props.letterText.Translate(label), Props.letterDef ?? LetterDefOf.NeutralEvent, thing);
                 }
-            }            
+            }
         }
     }
 }

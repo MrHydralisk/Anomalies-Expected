@@ -37,11 +37,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompProperties\CompProperties_AbilitySpawnFleshbeast.cs" />
+    <Compile Include="CompProperties\CompProperties_AbilitySpewLiquid.cs" />
     <Compile Include="CompProperties\CompProperties_AEFleshmassSpitter.cs" />
+    <Compile Include="CompProperties\CompProperties_AbilitySpitLiquid.cs" />
     <Compile Include="CompProperties\HediffCompProperties_FleshmassMutation.cs" />
     <Compile Include="CompProperties\HediffCompProperties_SpawnThingOnDeath.cs" />
     <Compile Include="CompProperties\HediffCompProperties_FleshbeastEmergeOnStage.cs" />
     <Compile Include="CompProperties\CompProperties_UseEffectBloodLiquidInjector.cs" />
+    <Compile Include="Comp\CompAbilityEffect_SpawnFleshbeast.cs" />
+    <Compile Include="Comp\CompAbilityEffect_SpewLiquid.cs" />
     <Compile Include="Comp\CompApplyUsableTo.cs" />
     <Compile Include="Comp\CompTargetable_SinglePawnUseFirstEffect.cs" />
     <Compile Include="BloodLakeMapComponent.cs" />
@@ -56,14 +61,17 @@
     <Compile Include="CompProperties\CompProperties_ApplyUsableTo.cs" />
     <Compile Include="CompProperties\CompProperties_DogTag.cs" />
     <Compile Include="Comp\CompUseEffect_BloodLiquidInjector.cs" />
+    <Compile Include="Comp\CompAbilityEffect_SpitLiquid.cs" />
     <Compile Include="Comp\Comp_AEFleshmassSpitter.cs" />
     <Compile Include="Comp\HediffComp_FleshbeastEmergeOnStage.cs" />
+    <Compile Include="Comp\HediffComp_WoundClotting.cs" />
     <Compile Include="Comp\HediffComp_SpawnThingOnDeath.cs" />
     <Compile Include="Comp\HediffComp_FleshmassMutation.cs" />
     <Compile Include="Comp\Comp_BloodLakeTerminal.cs" />
     <Compile Include="Comp\Comp_BloodSource.cs" />
     <Compile Include="Comp\Comp_BloodPump.cs" />
     <Compile Include="Comp\Comp_DogTag.cs" />
+    <Compile Include="DamageWorker_PsychicFlash.cs" />
     <Compile Include="DefOfLocal\GameConditionDefOfLocal.cs" />
     <Compile Include="DefOfLocal\IncidentDefOfLocal.cs" />
     <Compile Include="GenStep\GenStep_BloodLakeFindDogTag.cs" />

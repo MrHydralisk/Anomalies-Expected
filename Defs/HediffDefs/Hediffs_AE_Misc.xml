@@ -263,4 +263,36 @@
 		</stages>
 	</HediffDef>
 	
+	<HediffDef>
+		<defName>Hediff_AEDestabilization</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>destabilization mutation</label>
+		<description>Destabilization of biological structure to amplify creaturely physical performance. The creature's life expectancy will be drastically reduced due to the mutation.</description>
+		<skinShader>Metalblood</skinShader>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<lethalSeverity>1</lethalSeverity>
+		<isBad>true</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>1</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<painFactor>0.25</painFactor>
+				<totalBleedFactor>0.25</totalBleedFactor>
+				<statOffsets>
+					<ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.7</ArmorRating_Blunt>
+					<ArmorRating_Heat>0.5</ArmorRating_Heat>
+				</statOffsets>
+				<statFactors>
+				  <IncomingDamageFactor>0.75</IncomingDamageFactor>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	
 </Defs>

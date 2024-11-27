@@ -157,7 +157,7 @@
 	
 	
 	
-		<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BuildingBase">
 		<defName>AE_BloodLakeUndergroundNest</defName>
 		<label>underground fleshmass nest</label>
 		<description>A massive, foreboding hole that connects the surface with a dark network of underground caves. It is possible to climb down into the caverns below.</description>

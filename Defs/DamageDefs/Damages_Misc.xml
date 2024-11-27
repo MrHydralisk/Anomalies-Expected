@@ -9,5 +9,14 @@
 		<hediff>AcidBurn</hediff>
 		<scaleDamageToBuildingsBasedOnFlammability>false</scaleDamageToBuildingsBasedOnFlammability>
 	</DamageDef>
+
+	<DamageDef ParentName="Flame">
+		<defName>AEPsychicFlash</defName>
+		<label>psychic flash</label>
+		<externalViolence>true</externalViolence>
+		<workerClass>AnomaliesExpected.DamageWorker_PsychicFlash</workerClass>
+		<impactSoundType>Electric</impactSoundType>
+		<scaleDamageToBuildingsBasedOnFlammability>false</scaleDamageToBuildingsBasedOnFlammability>
+	</DamageDef>
   
 </Defs>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AbilityCategoryDef>
+		<defName>AEAnomaliesExpected</defName>
+		<displayOrder>1300</displayOrder>
+	</AbilityCategoryDef>
+
+	<AbilityDef>
+		<defName>AEAcidSpew</defName>
+		<label>acid spew</label>
+		<description>Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them.</description>
+		<iconPath>UI/Abilities/AcidSpray</iconPath>
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayOrder>1300</displayOrder>
+		<category>AEAnomaliesExpected</category>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>4.9</range>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>AcidSpray_Resolve</soundCast>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilitySpewLiquid">
+				<damageDef>AcidBurn</damageDef>
+				<damAmount>14</damAmount>
+				<armorPenetration>0.8</armorPenetration>
+				<lineWidthEnd>10</lineWidthEnd>
+				<filthDef>Filth_SpentAcid</filthDef>
+				<sprayEffecter>AcidSpray_Directional</sprayEffecter>
+				<canHitFilledCells>true</canHitFilledCells>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef>
+		<defName>AEAcidSpit</defName>
+		<label>acid spit</label>
+		<description>Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them.</description>
+		<iconPath>UI/Abilities/AcidSpray</iconPath>
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayOrder>1300</displayOrder>
+		<category>AEAnomaliesExpected</category>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>1</warmupTime>
+			<requireLineOfSight>false</requireLineOfSight>
+			<range>25.9</range>
+			<soundCast>AcidSpray_Resolve</soundCast>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilitySpitLiquid">
+				<projectileDef>AE_Bullet_Shell_AcidSpitAbility</projectileDef>
+				<sprayEffecter>AcidSpray_Directional</sprayEffecter>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<ThingDef ParentName="Bullet_Shell_AcidSpit">
+		<defName>AE_Bullet_Shell_AcidSpitAbility</defName>
+		<label>acid spit</label>
+		<graphicData>
+			<drawSize>(1.25, 1.25)</drawSize>
+		</graphicData>
+		<projectile>
+			<shadowSize>1</shadowSize>
+			<damageDef>AcidBurn</damageDef>
+			<spinRate>5</spinRate>
+			<damageAmountBase>25</damageAmountBase>
+			<armorPenetrationBase>0.8</armorPenetrationBase>
+			<stoppingPower>1</stoppingPower>
+			<speed>21</speed>
+			<arcHeightFactor>3</arcHeightFactor>
+			<explosionRadius>3.9</explosionRadius>
+			<explosionEffectLifetimeTicks>60</explosionEffectLifetimeTicks>
+		</projectile>
+	</ThingDef>
+
+	<AbilityDef>
+		<defName>AEPsychicFlash</defName>
+		<label>psychic flash</label>
+		<description>Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them.</description>
+		<iconPath>UI/Abilities/VoidTerror</iconPath>
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayOrder>1300</displayOrder>
+		<category>AEAnomaliesExpected</category>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<warmupEffecter>HoraxianSpellDark_Warmup</warmupEffecter>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>4.9</range>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>VoidTerrorCast</soundCast>
+			<targetParams>
+				<canTargetBuildings>false</canTargetBuildings>
+				<onlyTargetPsychicSensitive>true</onlyTargetPsychicSensitive>
+				<neverTargetIncapacitated>true</neverTargetIncapacitated>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilitySpewLiquid">
+				<damageDef>AEPsychicFlash</damageDef>
+				<damAmount>-1</damAmount>
+				<lineWidthEnd>8</lineWidthEnd>
+				<canHitFilledCells>true</canHitFilledCells>
+			</li>
+			<li Class="CompProperties_AbilityConnectingFleckLine">
+				<fleckDef>PsycastPsychicLine</fleckDef>
+			</li>
+			<li Class="CompProperties_AbilityEffecterOnTarget">
+				<effecterDef>VoidTerror_Target</effecterDef>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef>
+		<defName>AESpawnKidneyFleshbeast</defName>
+		<label>spawn fleshbeast</label>
+		<description>Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them.</description>
+		<iconPath>UI/CodexEntries/Fleshbeasts</iconPath>
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayOrder>1300</displayOrder>
+		<category>AEAnomaliesExpected</category>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<warmupEffecter>HoraxianAbilityCasting</warmupEffecter>
+		<charges>2</charges>
+		<cooldownPerCharge>true</cooldownPerCharge>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<warmupTime>0.5</warmupTime>
+			<violent>false</violent>
+			<soundCast>Pawn_Fleshbeast_EmergeFromPitGate</soundCast>
+			<targetable>false</targetable>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilitySpawnFleshbeast">
+				<pawnKindCount>
+					<kindDef>Fingerspike</kindDef>
+					<count>1</count>
+				</pawnKindCount>
+				<addHediff>Hediff_AEDestabilization</addHediff>
+			</li>
+		</comps>
+	</AbilityDef>
+
+</Defs>

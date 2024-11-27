@@ -6,6 +6,7 @@
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>incubating fleshmass tumor</label>
 		<description>All bodily functions are redirected to sustain the growth of the fleshmass tumor, a fatal process, as the cyst has become inextricably intertwined with the organ structure. However, the cyst is dependent on the host's survival.</description>
+		<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
 		<initialSeverity>0.001</initialSeverity>
 		<maxSeverity>1</maxSeverity>
 		<lethalSeverity>1</lethalSeverity>
@@ -39,6 +40,7 @@
 		<label>fleshmass cyst assimilates</label>
 		<description>TThe fleshmass cyst, implanted within the host's body, is undergoing assimilation, resulting in considerable pain. The cyst is dependent on the host's survival.</description>
 		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
 		<initialSeverity>0.001</initialSeverity>
 		<maxSeverity>1</maxSeverity>
 		<isBad>false</isBad>
@@ -65,11 +67,17 @@
 		<defaultInstallPart>Liver</defaultInstallPart>
 		<stages>
 			<li>
-				<painOffset>0.07</painOffset>
+				<painOffset>0.06</painOffset>
+				<statOffsets>
+					<ImmunityGainSpeed>0.5</ImmunityGainSpeed>
+				</statOffsets>
+				<totalBleedFactor>0.75</totalBleedFactor>
 			</li>
 		</stages>
 		<addedPartProps>
 			<solid>true</solid>
+			<partEfficiency>1.20</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
 		</addedPartProps>
 		<comps>
 			<li Class="HediffCompProperties_FleshbeastEmerge">
@@ -80,23 +88,47 @@
 	</HediffDef>
   
 	<HediffDef ParentName="AddedMutationBase">
-		<defName>AE_FleshmassEye</defName>
-		<label>fleshmass eye</label>
-		<labelNoun>a fleshmass eye</labelNoun>
+		<defName>AE_FleshmassAcidCavity</defName>
+		<hediffClass>Hediff_Implant</hediffClass>
+		<label>fleshmass acid cavity</label>
+		<labelNoun>a fleshmass acid cavity</labelNoun>
 		<description>A cancerous mass of semi-sentient flesh. The harsh acid it produces is painful, but strong enough to prevent most food poisoning.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
-		<defaultInstallPart>Eye</defaultInstallPart>
+		<defaultInstallPart>Sternum</defaultInstallPart>
+		<abilities>
+			<li>AEAcidSpit</li>
+		</abilities>
 		<stages>
 			<li>
-				<painOffset>0.02</painOffset>
+				<painOffset>0.05</painOffset>
 			</li>
 		</stages>
-		<addedPartProps>
-			<solid>true</solid>
-		</addedPartProps>
 		<comps>
 			<li Class="HediffCompProperties_FleshbeastEmerge">
 				<letterLabel>Fleshmass operation</letterLabel>
-				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass eye has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass acid cavity has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+			</li>
+		</comps>
+	</HediffDef>
+  
+	<HediffDef ParentName="AddedMutationBase">
+		<defName>AE_FleshmassAcidGland</defName>
+		<hediffClass>Hediff_Implant</hediffClass>
+		<label>fleshmass acid gland</label>
+		<labelNoun>a fleshmass acid gland</labelNoun>
+		<description>A cancerous mass of semi-sentient flesh. The harsh acid it produces is painful, but strong enough to prevent most food poisoning.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<defaultInstallPart>Neck</defaultInstallPart>
+		<abilities>
+			<li>AEAcidSpew</li>
+		</abilities>
+		<stages>
+			<li>
+				<painOffset>0.03</painOffset>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_FleshbeastEmerge">
+				<letterLabel>Fleshmass operation</letterLabel>
+				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass acid gland has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
 			</li>
 		</comps>
 	</HediffDef>
@@ -108,6 +140,7 @@
 		<label>fleshmass tumor assimilates</label>
 		<description>TThe fleshmass tumor, implanted within the host's body, is undergoing assimilation, resulting in substantial pain. The tumor is dependent on the host's survival.</description>
 		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
 		<initialSeverity>0.001</initialSeverity>
 		<maxSeverity>1</maxSeverity>
 		<isBad>false</isBad>
@@ -127,11 +160,14 @@
 	</HediffDef>
   
 	<HediffDef ParentName="AddedMutationBase">
-		<defName>AE_FleshmassKidney</defName>
-		<label>fleshmass kidney</label>
-		<labelNoun>a fleshmass kidney</labelNoun>
+		<defName>AE_FleshmassEye</defName>
+		<label>fleshmass eye</label>
+		<labelNoun>a fleshmass eye</labelNoun>
 		<description>A cancerous mass of semi-sentient flesh. The harsh acid it produces is painful, but strong enough to prevent most food poisoning.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
-		<defaultInstallPart>Kidney</defaultInstallPart>
+		<defaultInstallPart>Eye</defaultInstallPart>
+		<abilities>
+			<li>AEPsychicFlash</li>
+		</abilities>
 		<stages>
 			<li>
 				<painOffset>0.02</painOffset>
@@ -139,6 +175,64 @@
 		</stages>
 		<addedPartProps>
 			<solid>true</solid>
+			<partEfficiency>1.30</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<comps>
+			<li Class="HediffCompProperties_FleshbeastEmerge">
+				<letterLabel>Fleshmass operation</letterLabel>
+				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass eye has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+			</li>
+		</comps>
+	</HediffDef>
+  
+	<HediffDef ParentName="AddedMutationBase">
+		<defName>AE_FleshmassEar</defName>
+		<label>fleshmass ear</label>
+		<labelNoun>a fleshmass ear</labelNoun>
+		<description>A cancerous mass of semi-sentient flesh. The harsh acid it produces is painful, but strong enough to prevent most food poisoning.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<defaultInstallPart>Ear</defaultInstallPart>
+		<stages>
+			<li>
+				<painOffset>0.02</painOffset>
+				<statOffsets>
+					<PsychicSensitivity>0.1</PsychicSensitivity>
+					<MeditationFocusGain MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">0.07</MeditationFocusGain>
+					<PsychicEntropyRecoveryRate MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">0.06</PsychicEntropyRecoveryRate>
+				</statOffsets>
+			</li>
+		</stages>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.30</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<comps>
+			<li Class="HediffCompProperties_FleshbeastEmerge">
+				<letterLabel>Fleshmass operation</letterLabel>
+				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass ear has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+			</li>
+		</comps>
+	</HediffDef>
+  
+	<HediffDef ParentName="AddedMutationBase">
+		<defName>AE_FleshmassKidney</defName>
+		<label>fleshmass kidney</label>
+		<labelNoun>a fleshmass kidney</labelNoun>
+		<description>A cancerous mass of semi-sentient flesh. The harsh acid it produces is painful, but strong enough to prevent most food poisoning.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<defaultInstallPart>Kidney</defaultInstallPart>
+		<abilities>
+			<li>AESpawnKidneyFleshbeast</li>
+		</abilities>
+		<stages>
+			<li>
+				<painOffset>0.02</painOffset>
+			</li>
+		</stages>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.30</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
 		</addedPartProps>
 		<comps>
 			<li Class="HediffCompProperties_FleshbeastEmerge">
@@ -157,12 +251,18 @@
 		<stages>
 			<li>
 				<painOffset>0.04</painOffset>
+				<naturalHealingFactor>2</naturalHealingFactor>
 			</li>
 		</stages>
 		<addedPartProps>
 			<solid>true</solid>
+			<partEfficiency>1.30</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
 		</addedPartProps>
 		<comps>
+			<li>
+				<compClass>AnomaliesExpected.HediffComp_WoundClotting</compClass>
+			</li>
 			<li Class="HediffCompProperties_FleshbeastEmerge">
 				<letterLabel>Fleshmass operation</letterLabel>
 				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass heart has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
@@ -175,7 +275,7 @@
 		<hediffClass>Hediff_Level</hediffClass>
 		<label>fleshmass brain tumor</label>
 		<description>An implant which increases a mechanitor's control group count and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 6 times to increase its effect.</description>
-		<!-- <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor> -->
+		<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
 		<isBad>false</isBad>
 		<priceImpact>true</priceImpact>
 		<initialSeverity>1</initialSeverity>
@@ -187,23 +287,23 @@
 		<stages>
 			<li>
 				<minSeverity>1</minSeverity>
-				<painOffset>0.15</painOffset>
+				<painOffset>0.3</painOffset>
 			</li>
 			<li>
 				<minSeverity>2</minSeverity>
-				<painOffset>0.05</painOffset>
+				<painOffset>0.1</painOffset>
 			</li>
 			<li>
 				<minSeverity>3</minSeverity>
-				<painOffset>-0.05</painOffset>
+				<painOffset>-0.1</painOffset>
 			</li>
 			<li>
 				<minSeverity>4</minSeverity>
-				<painOffset>-0.20</painOffset>
+				<painOffset>-0.3</painOffset>
 			</li>
 			<li>
 				<minSeverity>5</minSeverity>
-				<painOffset>-0.39</painOffset>
+				<painOffset>-0.5</painOffset>
 			</li>
 		</stages>
 		<comps>
