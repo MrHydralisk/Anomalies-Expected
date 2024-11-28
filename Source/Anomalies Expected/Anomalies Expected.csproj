@@ -37,6 +37,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompProperties\CompProperties_AbilityFleshbeastCommand.cs" />
     <Compile Include="CompProperties\CompProperties_AbilitySpawnFleshbeast.cs" />
     <Compile Include="CompProperties\CompProperties_AbilitySpewLiquid.cs" />
     <Compile Include="CompProperties\CompProperties_AEFleshmassSpitter.cs" />
@@ -47,6 +48,7 @@
     <Compile Include="CompProperties\CompProperties_UseEffectBloodLiquidInjector.cs" />
     <Compile Include="Comp\CompAbilityEffect_SpawnFleshbeast.cs" />
     <Compile Include="Comp\CompAbilityEffect_SpewLiquid.cs" />
+    <Compile Include="Comp\CompAbilityEffect_FleshbeastCommand.cs" />
     <Compile Include="Comp\CompApplyUsableTo.cs" />
     <Compile Include="Comp\CompTargetable_SinglePawnUseFirstEffect.cs" />
     <Compile Include="BloodLakeMapComponent.cs" />

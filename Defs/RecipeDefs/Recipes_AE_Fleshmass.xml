@@ -312,6 +312,8 @@
 		<descriptionHyperlinks>
 			<HediffDef>Hediff_AEFleshmassTumorAssimilation</HediffDef>
 			<HediffDef>AE_FleshmassBrainTumor</HediffDef>
+			<AbilityDef>AEFleshbeastCommandMove</AbilityDef>
+			<AbilityDef>AEFleshbeastCommandGather</AbilityDef>
 		</descriptionHyperlinks>
 		<addsHediff>AE_FleshmassBrainTumor</addsHediff>
 		<appliedOnFixedBodyParts>

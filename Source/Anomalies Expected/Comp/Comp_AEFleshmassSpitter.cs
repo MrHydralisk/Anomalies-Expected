@@ -146,7 +146,7 @@ namespace AnomaliesExpected
                     AttackVerb.TryStartCastOn(thing);
                     lastSpitTick = Find.TickManager.TicksGame;
                     nextSpitDelay = Props.SpitIntervalRangeTicks.RandomInRange;
-                    Messages.Message("AnomaliesExpected.Misc.FleshmassSpitter.Attacking".Translate(parent.Label), parent, MessageTypeDefOf.NegativeEvent);
+                    Messages.Message("AnomaliesExpected.Fleshmass.FleshmassSpitter.Attacking".Translate(parent.Label), parent, MessageTypeDefOf.NegativeEvent);
                 }
             }
         }

@@ -11,7 +11,7 @@
 		<label>acid spew</label>
 		<description>Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them.</description>
 		<iconPath>UI/Abilities/AcidSpray</iconPath>
-		<cooldownTicksRange>30000</cooldownTicksRange>
+		<cooldownTicksRange>10000</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
 		<displayOrder>1300</displayOrder>
 		<category>AEAnomaliesExpected</category>
@@ -44,7 +44,7 @@
 		<label>acid spit</label>
 		<description>Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them.</description>
 		<iconPath>UI/Abilities/AcidSpray</iconPath>
-		<cooldownTicksRange>30000</cooldownTicksRange>
+		<cooldownTicksRange>60000</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
 		<displayOrder>1300</displayOrder>
 		<category>AEAnomaliesExpected</category>
@@ -95,7 +95,7 @@
 		<iconPath>UI/Abilities/VoidTerror</iconPath>
 		<cooldownTicksRange>30000</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
-		<displayOrder>1300</displayOrder>
+		<displayOrder>1301</displayOrder>
 		<category>AEAnomaliesExpected</category>
 		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
 		<warmupEffecter>HoraxianSpellDark_Warmup</warmupEffecter>
@@ -104,6 +104,7 @@
 			<verbClass>Verb_CastAbility</verbClass>
 			<range>4.9</range>
 			<warmupTime>0.5</warmupTime>
+			<requireLineOfSight>true</requireLineOfSight>
 			<soundCast>VoidTerrorCast</soundCast>
 			<targetParams>
 				<canTargetBuildings>false</canTargetBuildings>
@@ -117,11 +118,7 @@
 				<damAmount>-1</damAmount>
 				<lineWidthEnd>8</lineWidthEnd>
 				<canHitFilledCells>true</canHitFilledCells>
-			</li>
-			<li Class="CompProperties_AbilityConnectingFleckLine">
 				<fleckDef>PsycastPsychicLine</fleckDef>
-			</li>
-			<li Class="CompProperties_AbilityEffecterOnTarget">
 				<effecterDef>VoidTerror_Target</effecterDef>
 			</li>
 		</comps>
@@ -134,7 +131,7 @@
 		<iconPath>UI/CodexEntries/Fleshbeasts</iconPath>
 		<cooldownTicksRange>30000</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
-		<displayOrder>1300</displayOrder>
+		<displayOrder>1302</displayOrder>
 		<category>AEAnomaliesExpected</category>
 		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
 		<warmupEffecter>HoraxianAbilityCasting</warmupEffecter>
@@ -158,7 +155,51 @@
 					<kindDef>Fingerspike</kindDef>
 					<count>1</count>
 				</pawnKindCount>
+				<maxAmount>3</maxAmount>
 				<addHediff>Hediff_AEDestabilization</addHediff>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef Name="AEFleshbeastCommandBase">
+		<defName>AEFleshbeastCommandMove</defName>
+		<label>move to</label>
+		<description>Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them.</description>
+		<iconPath>UI/Abilities/AECommandFleshbeast</iconPath>
+		<cooldownTicksRange>2500</cooldownTicksRange>
+		<displayOrder>1303</displayOrder>
+		<category>AEAnomaliesExpected</category>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<warmupEffecter>HoraxianAbilityCasting</warmupEffecter>
+		<charges>5</charges>
+		<cooldownPerCharge>true</cooldownPerCharge>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>0.5</warmupTime>
+			<requireLineOfSight>false</requireLineOfSight>
+			<range>50.9</range>
+			<violent>false</violent>
+			<soundCast>Pawn_Fleshbeast_EmergeFromPitGate</soundCast>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilityFleshbeastCommand">
+				<gatherRadius>9.9</gatherRadius>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef ParentName="AEFleshbeastCommandBase">
+		<defName>AEFleshbeastCommandGather</defName>
+		<label>call</label>
+		<description>Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them.</description>
+		<comps Inherit="false">
+			<li Class="AnomaliesExpected.CompProperties_AbilityFleshbeastCommand">
+				<gatherRadius>9.9</gatherRadius>
+				<isCall>true</isCall>
 			</li>
 		</comps>
 	</AbilityDef>

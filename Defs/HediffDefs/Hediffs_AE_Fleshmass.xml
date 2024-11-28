@@ -284,6 +284,10 @@
 		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
 		<levelIsQuantity>true</levelIsQuantity>
 		<duplicationAllowed>false</duplicationAllowed>
+		<abilities>
+			<li>AEFleshbeastCommandMove</li>
+			<li>AEFleshbeastCommandGather</li>
+		</abilities>
 		<stages>
 			<li>
 				<minSeverity>1</minSeverity>

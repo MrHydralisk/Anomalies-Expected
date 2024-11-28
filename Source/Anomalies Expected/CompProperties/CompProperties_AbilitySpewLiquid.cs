@@ -18,6 +18,14 @@ namespace AnomaliesExpected
 
         public bool canHitFilledCells;
 
+        public FleckDef fleckDef;
+
+        public EffecterDef effecterDef;
+
+        public int maintainForTicks = -1;
+
+        public float scale = 1f;
+
         public CompProperties_AbilitySpewLiquid()
         {
             compClass = typeof(CompAbilityEffect_SpewLiquid);

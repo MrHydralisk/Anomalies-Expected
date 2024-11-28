@@ -6,6 +6,9 @@ namespace AnomaliesExpected
     public class CompProperties_AbilitySpawnFleshbeast : CompProperties_AbilityEffect
     {
         public PawnKindCount pawnKindCount;
+
+        public int maxAmount;
+
         public HediffDef addHediff;
 
         public CompProperties_AbilitySpawnFleshbeast()

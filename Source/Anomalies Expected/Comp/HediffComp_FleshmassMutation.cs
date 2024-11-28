@@ -36,7 +36,7 @@ namespace AnomaliesExpected
                     ((Hediff_Level)firstHediffOfDef).ChangeLevel(1);
                 }
 
-                Messages.Message("AnomaliesExpected.Misc.FleshmassMutation.Message".Translate(pawn.Label, hediffToAdd?.label ?? "---"), pawn, MessageTypeDefOf.NeutralEvent);
+                Messages.Message("AnomaliesExpected.Fleshmass.FleshmassMutation.Message".Translate(pawn.Label, hediffToAdd?.label ?? "---"), pawn, MessageTypeDefOf.NeutralEvent);
                 parent.pawn.health.RemoveHediff(parent);
             }
         }

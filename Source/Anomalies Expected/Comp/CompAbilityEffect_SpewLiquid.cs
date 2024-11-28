@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Verse;
 
@@ -17,6 +18,22 @@ namespace AnomaliesExpected
         {
             GenExplosion.DoExplosion(target.Cell, parent.pawn.MapHeld, 0f, Props.damageDef, Pawn, postExplosionSpawnThingDef: Props.filthDef, damAmount: Props.damAmount, armorPenetration: Props.armorPenetration, explosionSound: null, weapon: null, projectile: null, intendedTarget: null, postExplosionSpawnChance: 1f, postExplosionSpawnThingCount: 1, postExplosionGasType: null, applyDamageToExplosionCellsNeighbors: false, preExplosionSpawnThingDef: null, preExplosionSpawnChance: 0f, preExplosionSpawnThingCount: 1, chanceToStartFire: 0f, damageFalloff: false, direction: null, ignoredThings: null, affectedAngle: null, doVisualEffects: false, propagationSpeed: 0.6f, excludeRadius: 0f, doSoundEffects: false, postExplosionSpawnThingDefWater: null, screenShakeFactor: 1f, flammabilityChanceCurve: parent.verb.verbProps.flammabilityAttachFireChanceCurve, overrideCells: AffectedCells(target));
             base.Apply(target, dest);
+            if (Props.fleckDef != null)
+            {
+                FleckMaker.ConnectingLine(parent.pawn.DrawPos, target.CenterVector3, Props.fleckDef, parent.pawn.Map);
+            }
+            if (Props.effecterDef != null)
+            {
+                Effecter effecter = ((!target.HasThing) ? Props.effecterDef.Spawn(target.Cell, parent.pawn.Map, Props.scale) : Props.effecterDef.Spawn(target.Thing, parent.pawn.Map, Props.scale));
+                if (Props.maintainForTicks > 0)
+                {
+                    parent.AddEffecterToMaintain(effecter, target.Cell, Props.maintainForTicks);
+                }
+                else
+                {
+                    effecter.Cleanup();
+                }
+            }
         }
 
         public override IEnumerable<PreCastAction> GetPreCastActions()

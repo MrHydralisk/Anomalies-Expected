@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<AnomaliesExpected.Fleshmass.FleshbeastEmergeOnStage.Message>The fleshmass has detached from {0} and transformed into a fleshbeast!</AnomaliesExpected.Fleshmass.FleshbeastEmergeOnStage.Message>
+	<AnomaliesExpected.Fleshmass.FleshmassMutation.Message>{0} mutated into {1}</AnomaliesExpected.Fleshmass.FleshmassMutation.Message>
+	
+	<AnomaliesExpected.Fleshmass.IsIgnoreEnemies.Label>Reaction to enemies</AnomaliesExpected.Fleshmass.IsIgnoreEnemies.Label>
+	<AnomaliesExpected.Fleshmass.IsIgnoreEnemies.Desc>Enable/Disable reaction on surrounding enemies during command execution.</AnomaliesExpected.Fleshmass.IsIgnoreEnemies.Desc>
+	<AnomaliesExpected.Fleshmass.MaxSummons>Spawned {0}/{1}</AnomaliesExpected.Fleshmass.MaxSummons>
+	<AnomaliesExpected.Fleshmass.NothingToCommand>Nothing to command</AnomaliesExpected.Fleshmass.NothingToCommand>
+	
+	<AnomaliesExpected.Fleshmass.FleshmassSpitter.Attacking>A {0} is attacking!</AnomaliesExpected.Fleshmass.FleshmassSpitter.Attacking>
+</LanguageData>

@@ -26,7 +26,7 @@ namespace AnomaliesExpected
                 Pawn pawn = parent.pawn;
                 Pawn pawn2 = PawnGenerator.GeneratePawn(new PawnGenerationRequest(PawnKindDefOf.Trispike, Faction.OfEntities, PawnGenerationContext.NonPlayer, -1, forceGenerateNewPawn: false, allowDead: false, allowDowned: false, canGeneratePawnRelations: true, mustBeCapableOfViolence: false, 1f, forceAddFreeWarmLayerIfNeeded: false, allowGay: true, allowPregnant: false, allowFood: true, allowAddictions: true, inhabitant: false, certainlyBeenInCryptosleep: false, forceRedressWorldPawnIfFormerColonist: false, worldPawnFactionDoesntMatter: false, 0f, 0f, null, 1f, null, null, null, null, null, 0f, 0f));
                 GenSpawn.Spawn(pawn2, CellFinder.StandableCellNear(pawn.Position, pawn.Map, 2f), pawn.Map);
-                Messages.Message("AnomaliesExpected.Misc.FleshbeastEmergeOnStage.Message".Translate(pawn.Label), pawn, MessageTypeDefOf.ThreatSmall);
+                Messages.Message("AnomaliesExpected.Fleshmass.FleshbeastEmergeOnStage.Message".Translate(pawn.Label), pawn, MessageTypeDefOf.ThreatSmall);
             }
         }
 
