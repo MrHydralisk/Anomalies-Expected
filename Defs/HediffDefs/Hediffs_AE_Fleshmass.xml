@@ -242,6 +242,7 @@
 		<stages>
 			<li>
 				<painOffset>0.02</painOffset>
+				<hungerRateFactor>1.1</hungerRateFactor>
 			</li>
 		</stages>
 		<addedPartProps>
@@ -366,7 +367,7 @@
 				<painOffset>-0.03</painOffset>
 				<naturalHealingFactor>1.06</naturalHealingFactor>
 				<totalBleedFactor>0.9</totalBleedFactor>
-				<hungerRateFactor>1.1</hungerRateFactor>
+				<hungerRateFactor>1.3</hungerRateFactor>
 				<statOffsets>
 					<PawnBeauty>-5</PawnBeauty>
 				</statOffsets>
@@ -376,7 +377,7 @@
 				<painOffset>-0.06</painOffset>
 				<naturalHealingFactor>1.12</naturalHealingFactor>
 				<totalBleedFactor>0.9</totalBleedFactor>
-				<hungerRateFactor>1.1</hungerRateFactor>
+				<hungerRateFactor>1.3</hungerRateFactor>
 				<statOffsets>
 					<PawnBeauty>-5</PawnBeauty>
 				</statOffsets>
@@ -386,7 +387,7 @@
 				<painOffset>-0.09</painOffset>
 				<naturalHealingFactor>1.18</naturalHealingFactor>
 				<totalBleedFactor>0.9</totalBleedFactor>
-				<hungerRateFactor>1.1</hungerRateFactor>
+				<hungerRateFactor>1.3</hungerRateFactor>
 				<capMods>
 					<li>
 						<capacity>Consciousness</capacity>
@@ -410,7 +411,7 @@
 				<painOffset>-0.12</painOffset>
 				<naturalHealingFactor>1.24</naturalHealingFactor>
 				<totalBleedFactor>0.9</totalBleedFactor>
-				<hungerRateFactor>1.1</hungerRateFactor>
+				<hungerRateFactor>1.2</hungerRateFactor>
 				<capMods>
 					<li>
 						<capacity>Consciousness</capacity>
@@ -496,7 +497,7 @@
 				<painOffset>-0.21</painOffset>
 				<naturalHealingFactor>1.42</naturalHealingFactor>
 				<totalBleedFactor>0.8</totalBleedFactor>
-				<hungerRateFactor>1.2</hungerRateFactor>
+				<hungerRateFactor>1.1</hungerRateFactor>
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
@@ -528,7 +529,7 @@
 				<painOffset>-0.24</painOffset>
 				<naturalHealingFactor>1.48</naturalHealingFactor>
 				<totalBleedFactor>0.8</totalBleedFactor>
-				<hungerRateFactor>1.2</hungerRateFactor>
+				<hungerRateFactor>1.1</hungerRateFactor>
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
@@ -560,7 +561,7 @@
 				<painOffset>-0.27</painOffset>
 				<naturalHealingFactor>1.54</naturalHealingFactor>
 				<totalBleedFactor>0.8</totalBleedFactor>
-				<hungerRateFactor>1.2</hungerRateFactor>
+				<hungerRateFactor>1</hungerRateFactor>
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
@@ -592,7 +593,7 @@
 				<painOffset>-0.3</painOffset>
 				<naturalHealingFactor>1.6</naturalHealingFactor>
 				<totalBleedFactor>0.8</totalBleedFactor>
-				<hungerRateFactor>1.3</hungerRateFactor>
+				<hungerRateFactor>0.95</hungerRateFactor>
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
@@ -624,7 +625,7 @@
 				<painOffset>-0.33</painOffset>
 				<naturalHealingFactor>1.66</naturalHealingFactor>
 				<totalBleedFactor>0.7</totalBleedFactor>
-				<hungerRateFactor>1.3</hungerRateFactor>
+				<hungerRateFactor>0.9</hungerRateFactor>
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
@@ -656,7 +657,7 @@
 				<painOffset>-0.36</painOffset>
 				<naturalHealingFactor>1.72</naturalHealingFactor>
 				<totalBleedFactor>0.7</totalBleedFactor>
-				<hungerRateFactor>1.3</hungerRateFactor>
+				<hungerRateFactor>0.9</hungerRateFactor>
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
@@ -688,7 +689,7 @@
 				<painOffset>-0.39</painOffset>
 				<naturalHealingFactor>1.78</naturalHealingFactor>
 				<totalBleedFactor>0.7</totalBleedFactor>
-				<hungerRateFactor>1.3</hungerRateFactor>
+				<hungerRateFactor>0.85</hungerRateFactor>
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
@@ -720,7 +721,7 @@
 				<painOffset>-0.42</painOffset>
 				<naturalHealingFactor>1.84</naturalHealingFactor>
 				<totalBleedFactor>0.7</totalBleedFactor>
-				<hungerRateFactor>1.3</hungerRateFactor>
+				<hungerRateFactor>0.85</hungerRateFactor>
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
@@ -753,7 +754,7 @@
 				<painOffset>-0.45</painOffset>
 				<naturalHealingFactor>1.9</naturalHealingFactor>
 				<totalBleedFactor>0.7</totalBleedFactor>
-				<hungerRateFactor>1.1</hungerRateFactor>
+				<hungerRateFactor>0.8</hungerRateFactor>
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
