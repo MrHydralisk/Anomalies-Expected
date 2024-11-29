@@ -31,7 +31,7 @@ namespace AnomaliesExpected
                 {
                     pawn.health.AddHediff(hediffToAdd, parent.Part);
                 }
-                else if (firstHediffOfDef is Hediff_Level)
+                else if (firstHediffOfDef is Hediff_Level && !(firstHediffOfDef is Hediff_GroupedLevel))
                 {
                     ((Hediff_Level)firstHediffOfDef).ChangeLevel(1);
                 }

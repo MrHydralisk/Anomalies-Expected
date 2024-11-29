@@ -25,7 +25,7 @@ namespace AnomaliesExpected
             base.Apply(target, dest);
             for (int i = 0; i < Props.pawnKindCount.count && i + children.Count() < Props.maxAmount; i++)
             {
-                Pawn pawn2 = PawnGenerator.GeneratePawn(new PawnGenerationRequest(PawnKindDefOf.Fingerspike, pawn.Faction, PawnGenerationContext.NonPlayer, -1, forceGenerateNewPawn: false, allowDead: false, allowDowned: false, canGeneratePawnRelations: true, mustBeCapableOfViolence: false, 1f, forceAddFreeWarmLayerIfNeeded: false, allowGay: true, allowPregnant: false, allowFood: true, allowAddictions: true, inhabitant: false, certainlyBeenInCryptosleep: false, forceRedressWorldPawnIfFormerColonist: false, worldPawnFactionDoesntMatter: false, 0f, 0f, null, 1f, null, null, null, null, null, 0f, 0f));
+                Pawn pawn2 = PawnGenerator.GeneratePawn(new PawnGenerationRequest(Props.pawnKindCount.kindDef, pawn.Faction, PawnGenerationContext.NonPlayer, -1, forceGenerateNewPawn: false, allowDead: false, allowDowned: false, canGeneratePawnRelations: true, mustBeCapableOfViolence: false, 1f, forceAddFreeWarmLayerIfNeeded: false, allowGay: true, allowPregnant: false, allowFood: true, allowAddictions: true, inhabitant: false, certainlyBeenInCryptosleep: false, forceRedressWorldPawnIfFormerColonist: false, worldPawnFactionDoesntMatter: false, 0f, 0f, null, 1f, null, null, null, null, null, 0f, 0f));
                 GenSpawn.Spawn(pawn2, CellFinder.StandableCellNear(target.Cell, pawn.Map, 2f), pawn.Map);
                 FilthMaker.TryMakeFilth(target.Cell, pawn.Map, ThingDefOf.Filth_CorpseBile);
                 if (Props.addHediff != null)

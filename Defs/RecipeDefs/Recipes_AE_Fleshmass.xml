@@ -187,6 +187,17 @@
 		</appliedOnFixedBodyParts>
 		<researchPrerequisite>AEBloodLakeTerminalA</researchPrerequisite>
 	</RecipeDef>
+
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveAEFleshmassAcidCavity</defName>
+		<label>remove fleshmass acid cavity</label>
+		<description>Remove the fleshmass acid cavity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>AE_FleshmassAcidCavity</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Removing fleshmass acid cavity.</jobString>
+		<removesHediff>AE_FleshmassAcidCavity</removesHediff>
+	</RecipeDef>
 	
 	<RecipeDef ParentName="SurgeryAEFleshmassCystBase">
 		<defName>IncubateAEFleshmassAcidGland</defName>
@@ -202,6 +213,17 @@
 			<li>Neck</li>
 		</appliedOnFixedBodyParts>
 		<researchPrerequisite>AEBloodLakeTerminalA</researchPrerequisite>
+	</RecipeDef>
+
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveAEFleshmassAcidGland</defName>
+		<label>remove fleshmass acid gland</label>
+		<description>Remove the fleshmass acid gland.</description>
+		<descriptionHyperlinks>
+			<HediffDef>AE_FleshmassAcidGland</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Removing fleshmass acid gland.</jobString>
+		<removesHediff>AE_FleshmassAcidGland</removesHediff>
 	</RecipeDef>
 
 	<RecipeDef Name="SurgeryAEFleshmassTumorBase" ParentName="SurgeryAEFleshmassCystBase" Abstract="True">
@@ -320,6 +342,43 @@
 			<li>Brain</li>
 		</appliedOnFixedBodyParts>
 		<researchPrerequisite>AEBloodLakeTerminalB</researchPrerequisite>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryAEFleshmassTumorBase">
+		<defName>IncubateAEFleshmassBodyMutation</defName>
+		<label>incubate fleshmass body mutation</label>
+		<description>A fleshmass cyst will be implanted into the subject's body to incubate a fleshmass tumor. This ultimately leading to the subject's death and the mutation of their body into a new tumor.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AEFleshmassTumorAssimilation</HediffDef>
+			<HediffDef>AE_FleshmassBodyMutation</HediffDef>
+			<AbilityDef>AESpawnBodyMutationFleshbeast</AbilityDef>
+		</descriptionHyperlinks>
+		<addsHediff>AE_FleshmassBodyMutation</addsHediff>
+		<ingredients Inherit="False">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AE_FleshmassTumor</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+			<li>
+				<filter>
+					<categories>
+						<li>Medicine</li>
+					</categories>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<incompatibleWithHediffTags>
+			<li>ArmorGland</li>
+		</incompatibleWithHediffTags>
+		<researchPrerequisite>AEBloodLakeTerminalC</researchPrerequisite>
 	</RecipeDef>
 
 </Defs>

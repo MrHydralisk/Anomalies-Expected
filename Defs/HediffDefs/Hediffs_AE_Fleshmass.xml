@@ -85,6 +85,9 @@
 				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass liver has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
 			</li>
 		</comps>
+		<tags>
+			<li>FleshmassBodyMutation</li>
+		</tags>
 	</HediffDef>
   
 	<HediffDef ParentName="AddedMutationBase">
@@ -108,6 +111,9 @@
 				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass acid cavity has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
 			</li>
 		</comps>
+		<tags>
+			<li>FleshmassBodyMutation</li>
+		</tags>
 	</HediffDef>
   
 	<HediffDef ParentName="AddedMutationBase">
@@ -131,6 +137,9 @@
 				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass acid gland has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
 			</li>
 		</comps>
+		<tags>
+			<li>FleshmassBodyMutation</li>
+		</tags>
 	</HediffDef>
 
 
@@ -184,6 +193,9 @@
 				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass eye has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
 			</li>
 		</comps>
+		<tags>
+			<li>FleshmassBodyMutation</li>
+		</tags>
 	</HediffDef>
   
 	<HediffDef ParentName="AddedMutationBase">
@@ -213,6 +225,9 @@
 				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass ear has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
 			</li>
 		</comps>
+		<tags>
+			<li>FleshmassBodyMutation</li>
+		</tags>
 	</HediffDef>
   
 	<HediffDef ParentName="AddedMutationBase">
@@ -240,6 +255,9 @@
 				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass kidney has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
 			</li>
 		</comps>
+		<tags>
+			<li>FleshmassBodyMutation</li>
+		</tags>
 	</HediffDef>
   
 	<HediffDef ParentName="AddedMutationBase">
@@ -268,6 +286,9 @@
 				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass heart has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
 			</li>
 		</comps>
+		<tags>
+			<li>FleshmassBodyMutation</li>
+		</tags>
 	</HediffDef>
 	
 	<HediffDef>
@@ -295,19 +316,19 @@
 			</li>
 			<li>
 				<minSeverity>2</minSeverity>
-				<painOffset>0.1</painOffset>
+				<painOffset>0.15</painOffset>
 			</li>
 			<li>
 				<minSeverity>3</minSeverity>
-				<painOffset>-0.1</painOffset>
+				<painOffset>0</painOffset>
 			</li>
 			<li>
 				<minSeverity>4</minSeverity>
-				<painOffset>-0.3</painOffset>
+				<painOffset>-0.15</painOffset>
 			</li>
 			<li>
 				<minSeverity>5</minSeverity>
-				<painOffset>-0.5</painOffset>
+				<painOffset>-0.3</painOffset>
 			</li>
 		</stages>
 		<comps>
@@ -316,6 +337,459 @@
 				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass brain tumor has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
 			</li>
 		</comps>
+		<tags>
+			<li>FleshmassBodyMutation</li>
+		</tags>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>AE_FleshmassBodyMutation</defName>
+		<hediffClass>AnomaliesExpected.Hediff_GroupedLevel</hediffClass>
+		<label>fleshmass body mutation</label>
+		<description>An implant which increases a mechanitor's control group count and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 6 times to increase its effect.</description>
+		<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
+		<isBad>false</isBad>
+		<priceImpact>true</priceImpact>
+		<initialSeverity>1</initialSeverity>
+		<minSeverity>0</minSeverity>
+		<maxSeverity>15</maxSeverity>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<levelIsQuantity>true</levelIsQuantity>
+		<duplicationAllowed>false</duplicationAllowed>
+		<defaultInstallPart>Torso</defaultInstallPart>
+		<abilities>
+			<li>AESpawnBodyMutationFleshbeast</li>
+		</abilities>
+		<stages>
+			<li>
+				<minSeverity>1</minSeverity>
+				<painOffset>-0.03</painOffset>
+				<naturalHealingFactor>1.06</naturalHealingFactor>
+				<totalBleedFactor>0.9</totalBleedFactor>
+				<hungerRateFactor>1.1</hungerRateFactor>
+				<statOffsets>
+					<PawnBeauty>-5</PawnBeauty>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>2</minSeverity>
+				<painOffset>-0.06</painOffset>
+				<naturalHealingFactor>1.12</naturalHealingFactor>
+				<totalBleedFactor>0.9</totalBleedFactor>
+				<hungerRateFactor>1.1</hungerRateFactor>
+				<statOffsets>
+					<PawnBeauty>-5</PawnBeauty>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>3</minSeverity>
+				<painOffset>-0.09</painOffset>
+				<naturalHealingFactor>1.18</naturalHealingFactor>
+				<totalBleedFactor>0.9</totalBleedFactor>
+				<hungerRateFactor>1.1</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.02</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.02</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.02</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<PawnBeauty>-5</PawnBeauty>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>4</minSeverity>
+				<painOffset>-0.12</painOffset>
+				<naturalHealingFactor>1.24</naturalHealingFactor>
+				<totalBleedFactor>0.9</totalBleedFactor>
+				<hungerRateFactor>1.1</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.02</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.02</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.02</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<PawnBeauty>-5</PawnBeauty>
+					<ImmunityGainSpeed>0.1</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>5</minSeverity>
+				<painOffset>-0.15</painOffset>
+				<naturalHealingFactor>1.3</naturalHealingFactor>
+				<totalBleedFactor>0.9</totalBleedFactor>
+				<hungerRateFactor>1.2</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.1</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.02</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.02</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.02</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<PawnBeauty>-5</PawnBeauty>
+					<ImmunityGainSpeed>0.1</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>6</minSeverity>
+				<painOffset>-0.18</painOffset>
+				<naturalHealingFactor>1.36</naturalHealingFactor>
+				<totalBleedFactor>0.8</totalBleedFactor>
+				<hungerRateFactor>1.2</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.1</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.04</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.04</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.04</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>0.98</IncomingDamageFactor>
+				</statFactors>
+				<statOffsets>
+					<PawnBeauty>-4</PawnBeauty>
+					<ImmunityGainSpeed>0.1</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>7</minSeverity>
+				<painOffset>-0.21</painOffset>
+				<naturalHealingFactor>1.42</naturalHealingFactor>
+				<totalBleedFactor>0.8</totalBleedFactor>
+				<hungerRateFactor>1.2</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.1</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.04</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.04</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.04</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>0.96</IncomingDamageFactor>
+				</statFactors>
+				<statOffsets>
+					<PawnBeauty>-4</PawnBeauty>
+					<ImmunityGainSpeed>0.2</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>8</minSeverity>
+				<painOffset>-0.24</painOffset>
+				<naturalHealingFactor>1.48</naturalHealingFactor>
+				<totalBleedFactor>0.8</totalBleedFactor>
+				<hungerRateFactor>1.2</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.1</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.04</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.04</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.04</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>0.94</IncomingDamageFactor>
+				</statFactors>
+				<statOffsets>
+					<PawnBeauty>-4</PawnBeauty>
+					<ImmunityGainSpeed>0.2</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>9</minSeverity>
+				<painOffset>-0.27</painOffset>
+				<naturalHealingFactor>1.54</naturalHealingFactor>
+				<totalBleedFactor>0.8</totalBleedFactor>
+				<hungerRateFactor>1.2</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.1</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.06</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.06</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.06</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>0.92</IncomingDamageFactor>
+				</statFactors>
+				<statOffsets>
+					<PawnBeauty>-4</PawnBeauty>
+					<ImmunityGainSpeed>0.2</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>10</minSeverity>
+				<painOffset>-0.3</painOffset>
+				<naturalHealingFactor>1.6</naturalHealingFactor>
+				<totalBleedFactor>0.8</totalBleedFactor>
+				<hungerRateFactor>1.3</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.2</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.06</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.06</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.06</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>0.9</IncomingDamageFactor>
+				</statFactors>
+				<statOffsets>
+					<PawnBeauty>-4</PawnBeauty>
+					<ImmunityGainSpeed>0.3</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>11</minSeverity>
+				<painOffset>-0.33</painOffset>
+				<naturalHealingFactor>1.66</naturalHealingFactor>
+				<totalBleedFactor>0.7</totalBleedFactor>
+				<hungerRateFactor>1.3</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.2</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.06</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.06</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.06</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>0.88</IncomingDamageFactor>
+				</statFactors>
+				<statOffsets>
+					<PawnBeauty>-3</PawnBeauty>
+					<ImmunityGainSpeed>0.3</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>12</minSeverity>
+				<painOffset>-0.36</painOffset>
+				<naturalHealingFactor>1.72</naturalHealingFactor>
+				<totalBleedFactor>0.7</totalBleedFactor>
+				<hungerRateFactor>1.3</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.2</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.08</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.08</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.08</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>0.86</IncomingDamageFactor>
+				</statFactors>
+				<statOffsets>
+					<PawnBeauty>-3</PawnBeauty>
+					<ImmunityGainSpeed>0.3</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>13</minSeverity>
+				<painOffset>-0.39</painOffset>
+				<naturalHealingFactor>1.78</naturalHealingFactor>
+				<totalBleedFactor>0.7</totalBleedFactor>
+				<hungerRateFactor>1.3</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.2</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.08</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.08</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.08</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>0.84</IncomingDamageFactor>
+				</statFactors>
+				<statOffsets>
+					<PawnBeauty>-3</PawnBeauty>
+					<ImmunityGainSpeed>0.4</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>14</minSeverity>
+				<painOffset>-0.42</painOffset>
+				<naturalHealingFactor>1.84</naturalHealingFactor>
+				<totalBleedFactor>0.7</totalBleedFactor>
+				<hungerRateFactor>1.3</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.2</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.08</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.08</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.08</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>0.82</IncomingDamageFactor>
+				</statFactors>
+				<statOffsets>
+					<PawnBeauty>-3</PawnBeauty>
+					<ImmunityGainSpeed>0.4</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<label>full adaptation</label>
+				<minSeverity>15</minSeverity>
+				<painOffset>-0.45</painOffset>
+				<naturalHealingFactor>1.9</naturalHealingFactor>
+				<totalBleedFactor>0.7</totalBleedFactor>
+				<hungerRateFactor>1.1</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.25</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.1</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.1</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.1</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>0.8</IncomingDamageFactor>
+				</statFactors>
+				<statOffsets>
+					<PawnBeauty>-3</PawnBeauty>
+					<ImmunityGainSpeed>0.4</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_FleshbeastEmerge">
+				<letterLabel>Fleshmass operation</letterLabel>
+				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass brain tumor has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+			</li>
+		</comps>
+		<tags>
+			<li>ArmorGland</li>
+		</tags>
 	</HediffDef>
 	
 </Defs>

@@ -124,19 +124,13 @@
 		</comps>
 	</AbilityDef>
 
-	<AbilityDef>
-		<defName>AESpawnKidneyFleshbeast</defName>
-		<label>spawn fleshbeast</label>
-		<description>Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them.</description>
+	<AbilityDef Name="AESpawnFleshbeastBase" Abstract="True">
 		<iconPath>UI/CodexEntries/Fleshbeasts</iconPath>
-		<cooldownTicksRange>30000</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
 		<displayOrder>1302</displayOrder>
 		<category>AEAnomaliesExpected</category>
 		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
 		<warmupEffecter>HoraxianAbilityCasting</warmupEffecter>
-		<charges>2</charges>
-		<cooldownPerCharge>true</cooldownPerCharge>
 		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
@@ -149,6 +143,15 @@
 				<canTargetSelf>true</canTargetSelf>
 			</targetParams>
 		</verbProperties>
+	</AbilityDef>
+
+	<AbilityDef ParentName="AESpawnFleshbeastBase">
+		<defName>AESpawnKidneyFleshbeast</defName>
+		<label>spawn Fingerspike</label>
+		<description>Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them.</description>
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<charges>2</charges>
+		<cooldownPerCharge>true</cooldownPerCharge>
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_AbilitySpawnFleshbeast">
 				<pawnKindCount>
@@ -156,6 +159,23 @@
 					<count>1</count>
 				</pawnKindCount>
 				<maxAmount>3</maxAmount>
+				<addHediff>Hediff_AEDestabilization</addHediff>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef ParentName="AESpawnFleshbeastBase">
+		<defName>AESpawnBodyMutationFleshbeast</defName>
+		<label>spawn Toughspike</label>
+		<description>Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them.</description>
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilitySpawnFleshbeast">
+				<pawnKindCount>
+					<kindDef>Toughspike</kindDef>
+					<count>1</count>
+				</pawnKindCount>
+				<maxAmount>2</maxAmount>
 				<addHediff>Hediff_AEDestabilization</addHediff>
 			</li>
 		</comps>

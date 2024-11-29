@@ -86,6 +86,7 @@
     <Compile Include="GenStep\GenStep_BloodLakeFleshSacks.cs" />
     <Compile Include="JobDriver\JobDriver_ApplyUsableTo.cs" />
     <Compile Include="GameCondition_AEBloodFog.cs" />
+    <Compile Include="Hediff_GroupedLevel.cs" />
     <Compile Include="Recipe_AEInitiateFleshmassMutation.cs" />
     <Compile Include="PsychicRitualToil_AESummonBloodLake.cs" />
     <Compile Include="PsychicRitualDef_AESummonBloodLake.cs" />

@@ -12,5 +12,6 @@ namespace AnomaliesExpected
         public static HediffDef Hediff_AEBloodLiquidConcentration;
         public static HediffDef Hediff_AEFleshmassCystAssimilation;
         public static HediffDef Hediff_AEFleshmassTumorAssimilation;
+        public static HediffDef AE_FleshmassBodyMutation;
     }
 }

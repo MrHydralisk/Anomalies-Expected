@@ -25,6 +25,15 @@
 					<betterThanNatural>true</betterThanNatural>
 				</value>
 			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/HediffDef[defName="FleshmassStomach" or defName="FleshmassLung"]</xpath>
+				<order>Append</order>
+				<value>
+					<tags>
+						<li>FleshmassBodyMutation</li>
+					</tags>
+				</value>
+			</li>
 		</operations>
 	</Operation>
 
