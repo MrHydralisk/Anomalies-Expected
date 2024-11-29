@@ -103,7 +103,7 @@
 			</categories>
 		</fixedIngredientFilter>
 		<skillRequirements>
-			<Medicine>8</Medicine>
+			<Medicine>6</Medicine>
 		</skillRequirements>
 	</RecipeDef>
 	
@@ -121,7 +121,7 @@
 		<targetsBodyPart>false</targetsBodyPart>
 		<addsHediff>Hediff_AEFleshmassTumorIncubation</addsHediff>
 		<skillRequirements>
-			<Medicine>12</Medicine>
+			<Medicine>9</Medicine>
 		</skillRequirements>
 		<surgerySuccessChanceFactor>99999</surgerySuccessChanceFactor>
 		<researchPrerequisite>AEBloodLakeTerminalB</researchPrerequisite>
@@ -261,7 +261,7 @@
 			</categories>
 		</fixedIngredientFilter>
 		<skillRequirements>
-			<Medicine>12</Medicine>
+			<Medicine>9</Medicine>
 		</skillRequirements>
 	</RecipeDef>
 	
