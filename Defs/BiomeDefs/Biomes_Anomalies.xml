@@ -4,7 +4,7 @@
 	<BiomeDef>
 		<defName>AE_BloodLakeBiome</defName>
 		<label>blood lake</label>
-		<description>This cave is filled with the putrid stench of rotting flesh.</description>
+		<description>Flashmass infected area on the other side of Blood Lake.</description>
 		<generatesNaturally>false</generatesNaturally>
 		<animalDensity>0</animalDensity>
 		<plantDensity>0.20</plantDensity>

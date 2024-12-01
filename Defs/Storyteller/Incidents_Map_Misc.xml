@@ -166,7 +166,7 @@
 		</targetTags>
 		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromUnderground</workerClass>
 		<letterLabel>Found strange puddle</letterLabel>
-		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a round big pie on a plate. It looks appetizing.</letterText>
+		<letterText>Your colonist noticed some small ground vibration. It seems like a pool of liquid seeping up from beneath the ground.</letterText>
 		<letterDef>NeutralEvent</letterDef>
 		<earliestDay>5</earliestDay>
 		<baseChance>0.5</baseChance>
@@ -183,7 +183,6 @@
 						<chance>1.5</chance>
 					</AE_BloodLake>
 				</ChanceFactorPowPerOtherBuildings>
-				<isHaveArrow>false</isHaveArrow>
 			</li>
 		</modExtensions>
 	</IncidentDef>
@@ -197,7 +196,7 @@
 		</targetTags>
 		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromUnderground</workerClass>
 		<letterLabel>Found strange lake</letterLabel>
-		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a small device with pneumatic retractable stops. On its body there are indicators with lights, an antenna and a small button. It looks like military grade.</letterText>
+		<letterText>Your colonist noticed some strong ground vibration. It seems like a giant pool of liquid seeping up from beneath the ground.</letterText>
 		<letterDef>NeutralEvent</letterDef>
 		<minThreatPoints>500</minThreatPoints>
 		<earliestDay>60</earliestDay>

@@ -210,7 +210,7 @@
 	<ThingDef ParentName="SerumBase">
 		<defName>AE_BloodLiquidInjector</defName>
 		<label>blood-like liquid injector</label>
-		<description>A one-use dose of blood-like liquid. This liquid, when administered, transmute to replace someo of lost blood and increases its density around major wounds to prevent further blood loss. It prioritizes the 5 most severe injuries, focusing on those with the highest bleeding rates. Precise dosing is crucial to avoid excessive blood-liquid levels in the bloodstream.</description>
+		<description>A one-use dose of blood-like liquid. This liquid, when administered, transmute to replace some of lost blood and increases its density around major wounds to prevent further blood loss. It prioritizes the 5 most severe injuries, focusing on those with the highest bleeding rates. Precise dosing is crucial to avoid excessive blood-liquid levels in the bloodstream.</description>
 		<thingClass>ThingWithComps</thingClass>
 		<graphicData>
 			<texPath>Things/Item/Serum/AEBloodLiquidInjector</texPath>
@@ -262,14 +262,14 @@
 			<skillRequirements>
 				<Crafting>10</Crafting>
 			</skillRequirements>
-			<researchPrerequisite>AEBloodFiltering</researchPrerequisite>
+			<researchPrerequisite>AEBloodInjector</researchPrerequisite>
 		</recipeMaker>
 	</ThingDef>
 
 	<ThingDef ParentName="ResourceBase">
 		<defName>AE_FleshmassCyst</defName>
 		<label>fleshmass cyst</label>
-		<description>An exotic blood-like substance which can change it own density. Can be extracted from related anomalies. If it filtered well enough it can be used as any blood substitute.</description>
+		<description>A parasitic, pulsating small mass of flesh, capable of rapid growth and transformation. Сapable of embedding itself within a host and drawing sustenance from their body.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/AEFleshmassCyst</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -294,7 +294,7 @@
 	<ThingDef ParentName="ResourceBase">
 		<defName>AE_FleshmassTumor</defName>
 		<label>fleshmass tumor</label>
-		<description>An exotic blood-like substance which can change it own density. Can be extracted from related anomalies. If it filtered well enough it can be used as any blood substitute.</description>
+		<description>A living, pulsating mass of flesh with it own will, capable of rapid growth and transformation. Сapable of embedding itself within a host and drawing sustenance from their body.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/AEFleshmassTumor</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

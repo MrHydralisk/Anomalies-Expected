@@ -38,7 +38,7 @@
 	<HediffDef>
 		<defName>Hediff_AEFleshmassCystAssimilation</defName>
 		<label>fleshmass cyst assimilates</label>
-		<description>TThe fleshmass cyst, implanted within the host's body, is undergoing assimilation, resulting in considerable pain. The cyst is dependent on the host's survival.</description>
+		<description>The fleshmass cyst, implanted within the host's body, is undergoing assimilation, resulting in considerable pain. The cyst is dependent on the host's survival.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
 		<initialSeverity>0.001</initialSeverity>
@@ -63,7 +63,7 @@
 		<defName>AE_FleshmassLiver</defName>
 		<label>fleshmass liver</label>
 		<labelNoun>a fleshmass liver</labelNoun>
-		<description>A cancerous mass of semi-sentient flesh. The harsh acid it produces is painful, but strong enough to prevent most food poisoning.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<description>A cancerous mass of semi-sentient flesh. Strives to prolong the host's life by mitigating illness or blood loss.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
 		<defaultInstallPart>Liver</defaultInstallPart>
 		<stages>
 			<li>
@@ -95,7 +95,7 @@
 		<hediffClass>Hediff_Implant</hediffClass>
 		<label>fleshmass acid cavity</label>
 		<labelNoun>a fleshmass acid cavity</labelNoun>
-		<description>A cancerous mass of semi-sentient flesh. The harsh acid it produces is painful, but strong enough to prevent most food poisoning.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<description>A cancerous mass of semi-sentient flesh. Generate and store a sticky acid substance within a newly formed cavity in the sternum, along with acid-tolerant tissues in the throat. They can spit this acid to strike a distant target, where it will stick to enemies and burn them.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
 		<defaultInstallPart>Sternum</defaultInstallPart>
 		<abilities>
 			<li>AEAcidSpit</li>
@@ -121,7 +121,7 @@
 		<hediffClass>Hediff_Implant</hediffClass>
 		<label>fleshmass acid gland</label>
 		<labelNoun>a fleshmass acid gland</labelNoun>
-		<description>A cancerous mass of semi-sentient flesh. The harsh acid it produces is painful, but strong enough to prevent most food poisoning.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<description>A cancerous mass of semi-sentient flesh. Generate and store a sticky acid substance withing a newly formed gland, along with acid-tolerant tissues in the mouth. They can spew this acid over an area, where it will stick to enemies and burn them.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
 		<defaultInstallPart>Neck</defaultInstallPart>
 		<abilities>
 			<li>AEAcidSpew</li>
@@ -172,7 +172,7 @@
 		<defName>AE_FleshmassEye</defName>
 		<label>fleshmass eye</label>
 		<labelNoun>a fleshmass eye</labelNoun>
-		<description>A cancerous mass of semi-sentient flesh. The harsh acid it produces is painful, but strong enough to prevent most food poisoning.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<description>A cancerous mass of semi-sentient flesh. In addition to improved vision it can generate concentrated burst of psychic energy to strike targets in front of them.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
 		<defaultInstallPart>Eye</defaultInstallPart>
 		<abilities>
 			<li>AEPsychicFlash</li>
@@ -202,7 +202,7 @@
 		<defName>AE_FleshmassEar</defName>
 		<label>fleshmass ear</label>
 		<labelNoun>a fleshmass ear</labelNoun>
-		<description>A cancerous mass of semi-sentient flesh. The harsh acid it produces is painful, but strong enough to prevent most food poisoning.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<description>A cancerous mass of semi-sentient flesh. Increasing host's psychic sensitivity and conductivity.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
 		<defaultInstallPart>Ear</defaultInstallPart>
 		<stages>
 			<li>
@@ -234,7 +234,7 @@
 		<defName>AE_FleshmassKidney</defName>
 		<label>fleshmass kidney</label>
 		<labelNoun>a fleshmass kidney</labelNoun>
-		<description>A cancerous mass of semi-sentient flesh. The harsh acid it produces is painful, but strong enough to prevent most food poisoning.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<description>A cancerous mass of semi-sentient flesh. Will grow fleshmass that can be mutated into Fingerspike afflicted with by destabilization mutation.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
 		<defaultInstallPart>Kidney</defaultInstallPart>
 		<abilities>
 			<li>AESpawnKidneyFleshbeast</li>
@@ -265,7 +265,7 @@
 		<defName>AE_FleshmassHeart</defName>
 		<label>fleshmass heart</label>
 		<labelNoun>a fleshmass heart</labelNoun>
-		<description>A cancerous mass of semi-sentient flesh. The harsh acid it produces is painful, but strong enough to prevent most food poisoning.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<description>A cancerous mass of semi-sentient flesh. Drastically increase regeneration and blood clotting.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
 		<defaultInstallPart>Heart</defaultInstallPart>
 		<stages>
 			<li>
@@ -296,7 +296,7 @@
 		<defName>AE_FleshmassBrainTumor</defName>
 		<hediffClass>Hediff_Level</hediffClass>
 		<label>fleshmass brain tumor</label>
-		<description>An implant which increases a mechanitor's control group count and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 6 times to increase its effect.</description>
+		<description>A cancerous mass of semi-sentient flesh. The tumor possesses its own neural network capable of controlling allied fleshbeasts.\n\nThe organ has its own neural structures and may become dangerous if removed.\n\nIt effect on the brain's pain centers depends on amount of fleshmass tumors assimilated in the host's brain up to 5.</description>
 		<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
 		<isBad>false</isBad>
 		<priceImpact>true</priceImpact>
@@ -347,7 +347,7 @@
 		<defName>AE_FleshmassBodyMutation</defName>
 		<hediffClass>AnomaliesExpected.Hediff_GroupedLevel</hediffClass>
 		<label>fleshmass body mutation</label>
-		<description>An implant which increases a mechanitor's control group count and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 6 times to increase its effect.</description>
+		<description>A cancerous mass of semi-sentient flesh. Mutate the host's entire body and seamlessly integrate fleshmass organs, significantly enhancing bodily functions. Will grow fleshmass that can be mutated into Toughspike afflicted with by destabilization mutation.\n\nThe organ has its own neural structures and may become dangerous if removed.\n\nIt effect depends on amount of fleshmass mutations in the host's body up to 15.</description>
 		<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
 		<isBad>false</isBad>
 		<priceImpact>true</priceImpact>

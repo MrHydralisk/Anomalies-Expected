@@ -211,7 +211,7 @@
 	<ResearchProjectDef>
 		<defName>AEBloodPump</defName>
 		<label>blood liquid pump</label>
-		<description>Synthesize a serum that makes person pigging out on food.\n\nAllow removal of new versions of related anomaly without full study in future.</description>
+		<description>Acquire fundamental knowledge of the blood-like liquid, including its collection through pumps and the separation of bioferrite from blood. This enables the destruction of new Blood Puddles without full study.</description>
 		<tab>AnomaliesExpected</tab>
 		<prerequisites>
 			<li>MicroelectronicsBasics</li>
@@ -220,7 +220,7 @@
 		<knowledgeCategory>Basic</knowledgeCategory>
 		<researchViewX>3</researchViewX>
 		<researchViewY>3</researchViewY>
-		<generalRules>
+		<!-- <generalRules>
 			<rulesStrings>
 				<li>subject->binging food serum</li>
 
@@ -229,13 +229,13 @@
 
 				<li>subject_gerund->synthesizing binging food serums</li>
 			</rulesStrings>
-		</generalRules>
+		</generalRules> -->
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
-		<defName>AEBloodFiltering</defName>
-		<label>blood filtering</label>
-		<description>Synthesize a serum that makes person pigging out on food.\n\nAllow removal of new versions of related anomaly without full study in future.</description>
+		<defName>AEBloodInjector</defName>
+		<label>blood injector</label>
+		<description>Learn how create blood-like liquid injectors for on field treatment and how to summon new Blood Lake.</description>
 		<tab>AnomaliesExpected</tab>
 		<prerequisites>
 			<li>AEBloodPump</li>
@@ -244,7 +244,7 @@
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>4</researchViewX>
 		<researchViewY>3</researchViewY>
-		<generalRules>
+		<!-- <generalRules>
 			<rulesStrings>
 				<li>subject->binging food serum</li>
 
@@ -253,16 +253,16 @@
 
 				<li>subject_gerund->synthesizing binging food serums</li>
 			</rulesStrings>
-		</generalRules>
+		</generalRules> -->
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
 		<defName>AEBloodLakeTerminalA</defName>
 		<label>study notes #BL01</label>
-		<description>Synthesize a serum that makes person pigging out on food.\n\nAllow removal of new versions of related anomaly without full study in future.</description>
+		<description>Acquire knowledge of fleshmass cyst creation and new operations for mutating fleshmass organs from cyst.</description>
 		<tab>AnomaliesExpected</tab>
 		<prerequisites>
-			<li>AEBloodFiltering</li>
+			<li>AEBloodInjector</li>
 		</prerequisites>
 		<requiredAnalyzed>
 			<li>AE_ResearchNotesBLA</li>
@@ -271,7 +271,7 @@
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>5</researchViewX>
 		<researchViewY>3</researchViewY>
-		<generalRules>
+		<!-- <generalRules>
 			<rulesStrings>
 				<li>subject->binging food serum</li>
 
@@ -280,13 +280,13 @@
 
 				<li>subject_gerund->synthesizing binging food serums</li>
 			</rulesStrings>
-		</generalRules>
+		</generalRules> -->
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
 		<defName>AEBloodLakeTerminalB</defName>
 		<label>study notes #BL02</label>
-		<description>Synthesize a serum that makes person pigging out on food.\n\nAllow removal of new versions of related anomaly without full study in future.</description>
+		<description>Acquire knowledge of fleshmass tumor incubation operation and new operations for mutating fleshmass organs from tumor.</description>
 		<tab>AnomaliesExpected</tab>
 		<prerequisites>
 			<li>AEBloodLakeTerminalA</li>
@@ -298,7 +298,7 @@
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>6</researchViewX>
 		<researchViewY>3</researchViewY>
-		<generalRules>
+		<!-- <generalRules>
 			<rulesStrings>
 				<li>subject->binging food serum</li>
 
@@ -307,13 +307,13 @@
 
 				<li>subject_gerund->synthesizing binging food serums</li>
 			</rulesStrings>
-		</generalRules>
+		</generalRules> -->
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
 		<defName>AEBloodLakeTerminalC</defName>
 		<label>study notes #BL03</label>
-		<description>Synthesize a serum that makes person pigging out on food.\n\nAllow removal of new versions of related anomaly without full study in future.</description>
+		<description>Acquire knowledge of new operation for fleshmass mutation of host's body from tumor.</description>
 		<tab>AnomaliesExpected</tab>
 		<prerequisites>
 			<li>AEBloodLakeTerminalB</li>
@@ -325,7 +325,7 @@
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>7</researchViewX>
 		<researchViewY>3</researchViewY>
-		<generalRules>
+		<!-- <generalRules>
 			<rulesStrings>
 				<li>subject->binging food serum</li>
 
@@ -334,7 +334,7 @@
 
 				<li>subject_gerund->synthesizing binging food serums</li>
 			</rulesStrings>
-		</generalRules>
+		</generalRules> -->
 	</ResearchProjectDef>
 
 </Defs>

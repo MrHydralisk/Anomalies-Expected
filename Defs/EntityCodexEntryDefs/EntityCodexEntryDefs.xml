@@ -142,7 +142,7 @@
 			<li>AE_IncidentDef_BloodLakeSpawn</li>
 		</provocationIncidents>
 		<discoveredResearchProjects>
-			<li>AEBloodFiltering</li>
+			<li>AEBloodInjector</li>
 		</discoveredResearchProjects>
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>

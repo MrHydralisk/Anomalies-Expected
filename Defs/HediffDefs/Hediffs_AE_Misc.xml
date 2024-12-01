@@ -225,7 +225,7 @@
 		<defName>Hediff_AEBloodLiquidConcentration</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>blood-like liquid concentration</label>
-		<description>The body feels heavy and requires additional rest.</description>
+		<description>A blood-like liquid is introduced into the body. At high concentration it might mutate flesh into something hostile. The body will eventually filter out the substance.</description>
 		<initialSeverity>0</initialSeverity>
 		<maxSeverity>1</maxSeverity>
 		<isBad>false</isBad>

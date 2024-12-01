@@ -42,7 +42,7 @@
 	<AbilityDef>
 		<defName>AEAcidSpit</defName>
 		<label>acid spit</label>
-		<description>Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them.</description>
+		<description>Spit a sticky acid substance from acid cavity in the sternum up through the mouth to strike a distant target. The acid will stick to targets and burn them.</description>
 		<iconPath>UI/Abilities/AcidSpray</iconPath>
 		<cooldownTicksRange>60000</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
@@ -91,7 +91,7 @@
 	<AbilityDef>
 		<defName>AEPsychicFlash</defName>
 		<label>psychic flash</label>
-		<description>Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them.</description>
+		<description>A concentrated burst of psychic energy, fired from the eyes and striking targets in front of them.</description>
 		<iconPath>UI/Abilities/VoidTerror</iconPath>
 		<cooldownTicksRange>30000</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
@@ -148,7 +148,7 @@
 	<AbilityDef ParentName="AESpawnFleshbeastBase">
 		<defName>AESpawnKidneyFleshbeast</defName>
 		<label>spawn Fingerspike</label>
-		<description>Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them.</description>
+		<description>Grow fleshmass from kidney and mutate it into a Fingerspike. This fleshbeast is afflicted with by destabilization mutation, granting it enhanced physical capabilities but a shortened lifespan.</description>
 		<cooldownTicksRange>30000</cooldownTicksRange>
 		<charges>2</charges>
 		<cooldownPerCharge>true</cooldownPerCharge>
@@ -167,7 +167,7 @@
 	<AbilityDef ParentName="AESpawnFleshbeastBase">
 		<defName>AESpawnBodyMutationFleshbeast</defName>
 		<label>spawn Toughspike</label>
-		<description>Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them.</description>
+		<description>Grow fleshmass from whole body and mutate it into a Toughspike. This fleshbeast is afflicted with by destabilization mutation, granting it enhanced physical capabilities but a shortened lifespan.</description>
 		<cooldownTicksRange>30000</cooldownTicksRange>
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_AbilitySpawnFleshbeast">
@@ -183,8 +183,8 @@
 
 	<AbilityDef Name="AEFleshbeastCommandBase">
 		<defName>AEFleshbeastCommandMove</defName>
-		<label>move to</label>
-		<description>Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them.</description>
+		<label>command: move to</label>
+		<description>Send a psychic command to surrounding fleshbeasts to move in a specific direction.</description>
 		<iconPath>UI/Abilities/AECommandFleshbeast</iconPath>
 		<cooldownTicksRange>2500</cooldownTicksRange>
 		<displayOrder>1303</displayOrder>
@@ -214,8 +214,8 @@
 
 	<AbilityDef ParentName="AEFleshbeastCommandBase">
 		<defName>AEFleshbeastCommandGather</defName>
-		<label>call</label>
-		<description>Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them.</description>
+		<label>command: call</label>
+		<description>Send a psychic command to fleshbeasts in specific area to move to the caster.</description>
 		<comps Inherit="false">
 			<li Class="AnomaliesExpected.CompProperties_AbilityFleshbeastCommand">
 				<gatherRadius>9.9</gatherRadius>
