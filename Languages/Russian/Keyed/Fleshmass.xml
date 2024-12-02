@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<AnomaliesExpected.Fleshmass.FleshbeastEmergeOnStage.Message>Биомасса оторвалась от {0} и мутировала в биошмата!</AnomaliesExpected.Fleshmass.FleshbeastEmergeOnStage.Message>
+	<AnomaliesExpected.Fleshmass.FleshmassMutation.Message>{0} мутировала в {1}</AnomaliesExpected.Fleshmass.FleshmassMutation.Message>
+	
+	<AnomaliesExpected.Fleshmass.IsIgnoreEnemies.Label>Реакция на врагов</AnomaliesExpected.Fleshmass.IsIgnoreEnemies.Label>
+	<AnomaliesExpected.Fleshmass.IsIgnoreEnemies.Desc>Включить/Выключить реакцию на окружающих врагов во время выполнения команды.</AnomaliesExpected.Fleshmass.IsIgnoreEnemies.Desc>
+	<AnomaliesExpected.Fleshmass.MaxSummons>Можно породить {0}/{1}</AnomaliesExpected.Fleshmass.MaxSummons>
+	<AnomaliesExpected.Fleshmass.NothingToCommand>Нечем командовать</AnomaliesExpected.Fleshmass.NothingToCommand>
+	
+	<AnomaliesExpected.Fleshmass.FleshmassSpitter.Attacking>{0} атакует!</AnomaliesExpected.Fleshmass.FleshmassSpitter.Attacking>
+</LanguageData>

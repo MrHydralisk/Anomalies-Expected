@@ -24,5 +24,13 @@
 	<AE_IncidentDef_BeamTargetSpawn.label>передатчик</AE_IncidentDef_BeamTargetSpawn.label>
 	<AE_IncidentDef_BeamTargetSpawn.letterLabel>Найден передатчик</AE_IncidentDef_BeamTargetSpawn.letterLabel>
 	<AE_IncidentDef_BeamTargetSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении он похож на Маленькое устройство с пневматическими выдвижными опоры. На корпусе имеются индикаторы со светодиодами, антенна и маленькая кнопка. Похоже на оборудование военного назначения.</AE_IncidentDef_BeamTargetSpawn.letterText>
+	
+	<AE_IncidentDef_BloodPuddleSpawn.label>странная лужа</AE_IncidentDef_BloodPuddleSpawn.label>
+	<AE_IncidentDef_BloodPuddleSpawn.letterLabel>Найдена странная лужа</AE_IncidentDef_BloodPuddleSpawn.letterLabel>
+	<AE_IncidentDef_BloodPuddleSpawn.letterText>Ваш колонист зафиксировал незначительные сейсмические колебания. Похоже, что из-под земли просачивается лужа жидкости.</AE_IncidentDef_BloodPuddleSpawn.letterText>
+
+	<AE_IncidentDef_BloodLakeSpawn.label>странное озеро</AE_IncidentDef_BloodLakeSpawn.label>
+	<AE_IncidentDef_BloodLakeSpawn.letterLabel>Найдено странное озеро</AE_IncidentDef_BloodLakeSpawn.letterLabel>
+	<AE_IncidentDef_BloodLakeSpawn.letterText>Ваш колонист зафиксировал значительные сейсмические колебания. Похоже, что из-под земли просачивается озеро жидкости.</AE_IncidentDef_BloodLakeSpawn.letterText>
   
 </LanguageData>

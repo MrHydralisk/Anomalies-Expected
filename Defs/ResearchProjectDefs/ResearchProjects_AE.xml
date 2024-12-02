@@ -210,7 +210,7 @@
 
 	<ResearchProjectDef>
 		<defName>AEBloodPump</defName>
-		<label>blood liquid pump</label>
+		<label>blood-like liquid pump</label>
 		<description>Acquire fundamental knowledge of the blood-like liquid, including its collection through pumps and the separation of bioferrite from blood. This enables the destruction of new Blood Puddles without full study.</description>
 		<tab>AnomaliesExpected</tab>
 		<prerequisites>
@@ -234,7 +234,7 @@
 
 	<ResearchProjectDef>
 		<defName>AEBloodInjector</defName>
-		<label>blood injector</label>
+		<label>blood-like liquid injector</label>
 		<description>Learn how create blood-like liquid injectors for on field treatment and how to summon new Blood Lake.</description>
 		<tab>AnomaliesExpected</tab>
 		<prerequisites>

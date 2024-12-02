@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+	<MakeAEFleshmassCyst.label>выращивать кисту из биомассы</MakeAEFleshmassCyst.label>
+	<MakeAEFleshmassCyst.description>Наполнить человеческий труп кровяной жидкостью, чтобы вырастить в нем киста из биомассы. Киста поглотит всю плоть, доступную внутри тела.</MakeAEFleshmassCyst.description>
+	<MakeAEFleshmassCyst.jobString>Выращивает кисту из биомассы.</MakeAEFleshmassCyst.jobString>
+
+	<MakeAEFleshmassTumor.label>выращивать опухоль из биомассы</MakeAEFleshmassTumor.label>
+	<MakeAEFleshmassTumor.description>Биомассовая киста будет имплантирована в тело субъекта для инкубации биомассовой опухоли. Это в конечном итоге приведет к смерти субъекта и мутации его тела в новую опухоль.</MakeAEFleshmassTumor.description>
+	<MakeAEFleshmassTumor.jobString>Выращивает опухоль из биомассы.</MakeAEFleshmassTumor.jobString>
+
+	<IncubateAEFleshmassStomach.label>выращивать желудок из биомассы</IncubateAEFleshmassStomach.label>
+	<IncubateAEFleshmassStomach.description>Киста из биомассы будет имплантирована в тело субъекта для инкубации желудка из биомассы. Это болезненный процесс, который займет один день для ассимиляции кисты внутри тела хозяина.</IncubateAEFleshmassStomach.description>
+	<IncubateAEFleshmassStomach.jobString>Имплантирует кисту из биомассы.</IncubateAEFleshmassStomach.jobString>
+
+	<IncubateAEFleshmassLung.label>выращивать лёгкое из биомассы</IncubateAEFleshmassLung.label>
+	<IncubateAEFleshmassLung.description>Киста из биомассы будет имплантирована в тело субъекта для инкубации лёгкого из биомассы. Это болезненный процесс, который займет один день для ассимиляции кисты внутри тела хозяина.</IncubateAEFleshmassLung.description>
+	<IncubateAEFleshmassLung.jobString>Имплантирует кисту из биомассы.</IncubateAEFleshmassLung.jobString>
+
+	<IncubateAEFleshmassLiver.label>выращивать печень из биомассы</IncubateAEFleshmassLiver.label>
+	<IncubateAEFleshmassLiver.description>Киста из биомассы будет имплантирована в тело субъекта для инкубации печени из биомассы. Это болезненный процесс, который займет один день для ассимиляции кисты внутри тела хозяина.</IncubateAEFleshmassLiver.description>
+	<IncubateAEFleshmassLiver.jobString>Имплантирует кисту из биомассы.</IncubateAEFleshmassLiver.jobString>
+
+	<IncubateAEFleshmassAcidCavity.label>выращивать кислотную полость из биомассы</IncubateAEFleshmassAcidCavity.label>
+	<IncubateAEFleshmassAcidCavity.description>Киста из биомассы будет имплантирована в тело субъекта для инкубации кислотной полости из биомассы. Это болезненный процесс, который займет один день для ассимиляции кисты внутри тела хозяина.</IncubateAEFleshmassAcidCavity.description>
+	<IncubateAEFleshmassAcidCavity.jobString/>
+
+	<RemoveAEFleshmassAcidCavity.label>удалить кислотную полость из биомассы</RemoveAEFleshmassAcidCavity.label>
+	<RemoveAEFleshmassAcidCavity.description>Удалить кислотную полость из биомассы.</RemoveAEFleshmassAcidCavity.description>
+	<RemoveAEFleshmassAcidCavity.jobString>Удаляет кислотную полость из биомассы</RemoveAEFleshmassAcidCavity.jobString>
+
+	<IncubateAEFleshmassAcidGland.label>выращивать кислотную гланду из биомассы</IncubateAEFleshmassAcidGland.label>
+	<IncubateAEFleshmassAcidGland.description>Киста из биомассы будет имплантирована в тело субъекта для инкубации кислотной гланды из биомассы. Это болезненный процесс, который займет один день для ассимиляции кисты внутри тела хозяина.</IncubateAEFleshmassAcidGland.description>
+	<IncubateAEFleshmassAcidGland.jobString>Имплантирует кисту из биомассы.</IncubateAEFleshmassAcidGland.jobString>
+
+	<RemoveAEFleshmassAcidGland.label>удалить кислотную гланду из биомассы</RemoveAEFleshmassAcidGland.label>
+	<RemoveAEFleshmassAcidGland.description>Удалить кислотную гланду из биомассы.</RemoveAEFleshmassAcidGland.description>
+	<RemoveAEFleshmassAcidGland.jobString>Удаляет кислотную гланду из биомассы</RemoveAEFleshmassAcidGland.jobString>
+
+	<IncubateAEFleshmassEye.label>выращивать глаз из биомассы</IncubateAEFleshmassEye.label>
+	<IncubateAEFleshmassEye.description>Опухоль из биомассы будет имплантирована в тело субъекта для инкубации глаза из биомассы. Это болезненный процесс, который займет два дня для ассимиляции опухоли внутри тела хозяина.</IncubateAEFleshmassEye.description>
+	<IncubateAEFleshmassEye.jobString>Имплантирует опухоль из биомассы.</IncubateAEFleshmassEye.jobString>
+
+	<IncubateAEFleshmassEar.label>выращивать ухо из биомассы</IncubateAEFleshmassEar.label>
+	<IncubateAEFleshmassEar.description>Опухоль из биомассы будет имплантирована в тело субъекта для инкубации уха из биомассы. Это болезненный процесс, который займет два дня для ассимиляции опухоли внутри тела хозяина.</IncubateAEFleshmassEar.description>
+	<IncubateAEFleshmassEar.jobString>Имплантирует опухоль из биомассы.</IncubateAEFleshmassEar.jobString>
+
+	<IncubateAEFleshmassKidney.label>выращивать почку из биомассы</IncubateAEFleshmassKidney.label>
+	<IncubateAEFleshmassKidney.description>Опухоль из биомассы будет имплантирована в тело субъекта для инкубации почки из биомассы. Это болезненный процесс, который займет два дня для ассимиляции опухоли внутри тела хозяина.</IncubateAEFleshmassKidney.description>
+	<IncubateAEFleshmassKidney.jobString>Имплантирует опухоль из биомассы.</IncubateAEFleshmassKidney.jobString>
+
+	<IncubateAEFleshmassHeart.label>выращивать сердце из биомассы</IncubateAEFleshmassHeart.label>
+	<IncubateAEFleshmassHeart.description>Опухоль из биомассы будет имплантирована в тело субъекта для инкубации сердца из биомассы. Это болезненный процесс, который займет два дня для ассимиляции опухоли внутри тела хозяина.</IncubateAEFleshmassHeart.description>
+	<IncubateAEFleshmassHeart.jobString>Имплантирует опухоль из биомассы.</IncubateAEFleshmassHeart.jobString>
+
+	<IncubateAEFleshmassBrainTumor.label>выращивать опухоль головного мозга из биомассы</IncubateAEFleshmassBrainTumor.label>
+	<IncubateAEFleshmassBrainTumor.description>Опухоль из биомассы будет имплантирована в тело субъекта для инкубации опухоли головного мозга из биомассы. Это болезненный процесс, который займет два дня для ассимиляции опухоли внутри тела хозяина.\n\nМожет быть импланирована до 5 раз.</IncubateAEFleshmassBrainTumor.description>
+	<IncubateAEFleshmassBrainTumor.jobString>Имплантирует опухоль из биомассы.</IncubateAEFleshmassBrainTumor.jobString>
+
+	<IncubateAEFleshmassBodyMutation.label>выращивать мутацию тела из биомассы</IncubateAEFleshmassBodyMutation.label>
+	<IncubateAEFleshmassBodyMutation.description>Опухоль из биомассы будет имплантирована в тело субъекта для мутирования всего тела носителя и интегрирует органы из биомассы. Это болезненный процесс, который займет два дня для ассимиляции опухоли внутри тела хозяина.\n\nЭффект зависит от количества мутаций из биомассы в теле носителя до 15.</IncubateAEFleshmassBodyMutation.description>
+	<IncubateAEFleshmassBodyMutation.jobString>Имплантирует опухоль из биомассы.</IncubateAEFleshmassBodyMutation.jobString>
+  
+</LanguageData>

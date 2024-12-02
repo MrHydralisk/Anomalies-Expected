@@ -12,5 +12,9 @@
 	<AE_EntityCodexEntry_BakingPies.label>большой пирог</AE_EntityCodexEntry_BakingPies.label>
 	
 	<AE_EntityCodexEntry_BeamTarget.label>передатчик</AE_EntityCodexEntry_BeamTarget.label>
+	
+	<AE_EntityCodexEntry_BloodPuddle.label>странная лужа</AE_EntityCodexEntry_BloodPuddle.label>
+	
+	<AE_EntityCodexEntry_BloodLake.label>странное озеро</AE_EntityCodexEntry_BloodLake.label>
 
 </LanguageData>

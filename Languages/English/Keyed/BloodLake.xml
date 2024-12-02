@@ -4,7 +4,7 @@
 	<AnomaliesExpected.BloodLake.ReactorMeltdownExplosion>The facility's reactor exploded, severing the connection with other Blood Lake</AnomaliesExpected.BloodLake.ReactorMeltdownExplosion>
 	<AnomaliesExpected.BloodLake.Enter>Dive into blood lake</AnomaliesExpected.BloodLake.Enter>
 	<AnomaliesExpected.BloodLake.ViewSubMap.Label>View the other side</AnomaliesExpected.BloodLake.ViewSubMap.Label>
-	<AnomaliesExpected.BloodLake.ViewSubMap.Desc>View the connected map on the other side</AnomaliesExpected.BloodLake.ViewSubMap.Desc>	
+	<AnomaliesExpected.BloodLake.ViewSubMap.Desc>View the connected map on the other side</AnomaliesExpected.BloodLake.ViewSubMap.Desc>
 	<AnomaliesExpected.BloodLake.Density>Liquid density: {0} kg/m3</AnomaliesExpected.BloodLake.Density>
 	
 	<AnomaliesExpected.BloodLake.AlreadyExists>Strange Lake already exist</AnomaliesExpected.BloodLake.AlreadyExists>

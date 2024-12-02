@@ -68,5 +68,22 @@
 	<AEOrbitalBeamTargeter.generalRules.rulesStrings.3>subject_story->смог остановить проход врагов через узкий каньон</AEOrbitalBeamTargeter.generalRules.rulesStrings.3>
 	<AEOrbitalBeamTargeter.generalRules.rulesStrings.4>subject_story->украл всю древнюю солнечную энергию</AEOrbitalBeamTargeter.generalRules.rulesStrings.4>
 	<AEOrbitalBeamTargeter.generalRules.rulesStrings.5>subject_gerund->создание целеуказатель для точечного луча</AEOrbitalBeamTargeter.generalRules.rulesStrings.5>
+	
+	
+	
+	<AEBloodPump.label>насос кровиподобной жидкости</AEBloodPump.label>
+	<AEBloodPump.description>Получить фундаментальные знания о кровиподобной жидкости, включая ее сбор с помощью насосов и отделение биоферрита от крови. Это позволит уничтожать новые Кровавые Лужи без необходимости полного изучения.</AEBloodPump.description>
+
+	<AEBloodInjector.label>инъектор кровиподобной жидкости</AEBloodInjector.label>
+	<AEBloodInjector.description>Изучить создание инъекторов с кровиподобной жидкостью для полевого лечения и ритуал вызова нового Кровавого Озера.</AEBloodInjector.description>
+
+	<AEBloodLakeTerminalA.label>научные заметки #BL01</AEBloodLakeTerminalA.label>
+	<AEBloodLakeTerminalA.description>Изучить создание кист из биомассы и новые операции по мутации органов из биомассы из кист.</AEBloodLakeTerminalA.description>
+
+	<AEBloodLakeTerminalB.label>научные заметки #BL02</AEBloodLakeTerminalB.label>
+	<AEBloodLakeTerminalB.description>Изучить операцию инкубации опухоли из биомассы и новые операции по мутации органов из биомассы из опухоли.</AEBloodLakeTerminalB.description>
+
+	<AEBloodLakeTerminalC.label>научные заметки #BL03</AEBloodLakeTerminalC.label>
+	<AEBloodLakeTerminalC.description>Изучить новую операцию по мутации тела хозяина из биомассы из опухоли.</AEBloodLakeTerminalC.description>
 
 </LanguageData>

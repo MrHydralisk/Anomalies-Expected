@@ -267,7 +267,7 @@
 		<defName>Hediff_AEDestabilization</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>destabilization mutation</label>
-		<description>Destabilization of biological structure to amplify creaturely physical performance. The creature's life expectancy will be drastically reduced due to the mutation.</description>
+		<description>Destabilization of biological structure to amplify creature physical performance. The creature's life expectancy will be drastically reduced due to the mutation.</description>
 		<skinShader>Metalblood</skinShader>
 		<initialSeverity>0.01</initialSeverity>
 		<maxSeverity>1</maxSeverity>

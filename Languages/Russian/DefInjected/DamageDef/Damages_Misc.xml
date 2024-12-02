@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<AcidBurnFleshmass.label>кислотный ожог</AcidBurnFleshmass.label>
+	<AcidBurnFleshmass.deathMessage>{0} сгорел до смерти.</AcidBurnFleshmass.deathMessage>
+	<AEPsychicFlash.label>психическая вспышка</AEPsychicFlash.label>
+	<AEPsychicFlash.deathMessage>{0} сгорел до смерти.</AEPsychicFlash.deathMessage>
+
+</LanguageData>

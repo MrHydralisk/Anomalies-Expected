@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 	<AnomaliesExpected.Misc.Redacted>[УДАЛЕНО]</AnomaliesExpected.Misc.Redacted>
+	
+	<AnomaliesExpected.Misc.ResearchNote.Letter.Label>{0} доступен к изучению</AnomaliesExpected.Misc.ResearchNote.Letter.Label>
+	<AnomaliesExpected.Misc.ResearchNote.Letter.Desc>После изучения {0}, исследование {1} теперь доступно. Исследователи могут использовать исследовательский стол, чтобы начать исследование того как использовать технологию.</AnomaliesExpected.Misc.ResearchNote.Letter.Desc>
 </LanguageData>

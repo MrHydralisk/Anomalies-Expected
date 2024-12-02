@@ -24,5 +24,21 @@
   
 	<Hediff_AEDigestingPie.label>переваривание пирога</Hediff_AEDigestingPie.label>
 	<Hediff_AEDigestingPie.description>Ощущение тяжести в желудке.</Hediff_AEDigestingPie.description>
+	
+	
+	
+	<Hediff_AEDogTag.label>идентификационный жетон</Hediff_AEDogTag.label>
+	<Hediff_AEDogTag.description>Я могу психически чувствовать связь с человеком, которому жетон раньше принадлежал.</Hediff_AEDogTag.description>
+
+	<Hediff_AEBloodLiquidConcentration.label>высокая концентрация кровиподобной жидкости</Hediff_AEBloodLiquidConcentration.label>
+	<Hediff_AEBloodLiquidConcentration.description>Кровиподобная жидкость циркулирует в теле. При высокой концентрации может привести к мутации в нечто враждебное. Организм в конечном итоге выведет это вещество.</Hediff_AEBloodLiquidConcentration.description>
+	<Hediff_AEBloodLiquidConcentration.stages.minor-0.label>лёгкая</Hediff_AEBloodLiquidConcentration.stages.minor-0.label>
+	<Hediff_AEBloodLiquidConcentration.stages.minor-1.label>лёгкая</Hediff_AEBloodLiquidConcentration.stages.minor-1.label>
+	<Hediff_AEBloodLiquidConcentration.stages.moderate.label>умеренная</Hediff_AEBloodLiquidConcentration.stages.moderate.label>
+	<Hediff_AEBloodLiquidConcentration.stages.severe.label>тяжелая</Hediff_AEBloodLiquidConcentration.stages.severe.label>
+	<Hediff_AEBloodLiquidConcentration.stages.extreme.label>экстремальная</Hediff_AEBloodLiquidConcentration.stages.extreme.label>
+
+	<Hediff_AEDestabilization.label>дестабилизирующая мутация</Hediff_AEDestabilization.label>
+	<Hediff_AEDestabilization.description>Дестабилизация биологической структуры для улучшения физических параметров существа. Продолжительность жизни существа значительно уменьшится из-за данной мутации.</Hediff_AEDestabilization.description>
   
 </LanguageData>

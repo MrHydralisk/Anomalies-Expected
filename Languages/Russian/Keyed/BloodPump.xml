@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<AnomaliesExpected.BloodPump.Available>Подключённые помпы кровиподобной жидкости: {0}/{1}</AnomaliesExpected.BloodPump.Available>
+	<AnomaliesExpected.BloodPump.CanExtractAmount>Каждая помпа может извлечь {0} кровиподобной жидкости</AnomaliesExpected.BloodPump.CanExtractAmount>
+	<AnomaliesExpected.BloodPump.Connected>Соединён с источником кровиподобной жидкости: {0}</AnomaliesExpected.BloodPump.Connected>
+	<AnomaliesExpected.BloodPump.NotConnected>Не соединён ни с каким источником кровиподобной жидкости</AnomaliesExpected.BloodPump.NotConnected>
+	<AnomaliesExpected.BloodPump.TimeTillSpawn>Время до следующего извлечения: {0}</AnomaliesExpected.BloodPump.TimeTillSpawn>
+	<AnomaliesExpected.BloodPump.Disconnected>Помпа была отключена от источника кровиподобной жидкости</AnomaliesExpected.BloodPump.Disconnected>
+</LanguageData>

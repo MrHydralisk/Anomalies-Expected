@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+	<AEAcidSpew.label>кислотное распыление</AEAcidSpew.label>
+	<AEAcidSpew.description>Распыляет вязкую кислотную субстанцию из желез в шее через рот по всей целевой области. Кислота прилипнет к целям и сожжет их.</AEAcidSpew.description>
+
+	<AEAcidSpit.label>кислотный плевок</AEAcidSpit.label>
+	<AEAcidSpit.description>Выплевывает вязкую кислотную субстанцию из кислотной полости в грудине через рот, чтобы поразить дальнюю цель. Кислота прилипнет к целям и сожжет их.</AEAcidSpit.description>
+
+	<AEPsychicFlash.label>психическая вспышка</AEPsychicFlash.label>
+	<AEPsychicFlash.description>Сфокусированный всплеск психической энергии, испускаемый глазами и поражающий цели перед собой.</AEPsychicFlash.description>
+
+	<AESpawnKidneyFleshbeast.label>вырастить пальцешипа</AESpawnKidneyFleshbeast.label>
+	<AESpawnKidneyFleshbeast.description>Выращивает биомассу, которая может быть мутирована в пальцешип. Этот биошмат подвержен дестабилизирующей мутациии, что дало ему повышенные физические способности, но сократило продолжительность жизни.</AESpawnKidneyFleshbeast.description>
+
+	<AESpawnBodyMutationFleshbeast.label>вырастить твёрдошип</AESpawnBodyMutationFleshbeast.label>
+	<AESpawnBodyMutationFleshbeast.description>Выращивает биомассу, которая может быть мутирована в твёрдошип. Этот биошмат подвержен дестабилизирующей мутациии, что дало ему повышенные физические способности, но сократило продолжительность жизни.</AESpawnBodyMutationFleshbeast.description>
+
+	<AEFleshbeastCommandMove.label>команда: двигаться</AEFleshbeastCommandMove.label>
+	<AEFleshbeastCommandMove.description>Отправить психический приказ окружающим биошматам двигаться к выбранному месту.</AEFleshbeastCommandMove.description>
+
+	<AEFleshbeastCommandGather.label>команды: зов</AEFleshbeastCommandGather.label>
+	<AEFleshbeastCommandGather.description>Отправить психический приказ боишматам в определенной области двигаться к источнику приказа.</AEFleshbeastCommandGather.description>
+
+</LanguageData>

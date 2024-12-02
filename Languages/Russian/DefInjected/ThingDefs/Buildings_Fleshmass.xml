@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+	<AE_FleshmassSpitterGiant.label>огромный биомассомёт</AE_FleshmassSpitterGiant.label>
+	<AE_FleshmassSpitterGiant.description>Огромный защитный орган из биомассы, стреляющий кислотой на дальние расстояния. Его кислота — естественное производное токсинов, отфильтрованных из окружающей биомассы.</AE_FleshmassSpitterGiant.description>
+	<AE_FleshmassSpitterGiant.verbs.Verb_Shoot.label>огромный биомассомёт</AE_FleshmassSpitterGiant.verbs.Verb_Shoot.label>
+	<AE_Bullet_Shell_AcidSpitGiant.label>огромная кислотная слюна</AE_Bullet_Shell_AcidSpitGiant.label>
+
+	<AE_FleshmassSpitterMedium.label>биомассомёт</AE_FleshmassSpitterMedium.label>
+	<AE_FleshmassSpitterMedium.description>Защитный орган из биомассы, стреляющий кислотой на дальние расстояния. Его кислота — естественное производное токсинов, отфильтрованных из окружающей биомассы.</AE_FleshmassSpitterMedium.description>
+	<AE_FleshmassSpitterMedium.verbs.Verb_Shoot.label>биомассомёт</AE_FleshmassSpitterMedium.verbs.Verb_Shoot.label>
+	<AE_Bullet_Shell_AcidSpitMedium.label>кислотная слюна</AE_Bullet_Shell_AcidSpitMedium.label>
+
+	<AE_FleshmassSpitterSmall.label>малый биомассомёт</AE_FleshmassSpitterSmall.label>
+	<AE_FleshmassSpitterSmall.description>Защитный орган из биомассы, стреляющий кислотой на короткие дистанции. Его кислота — естественное производное токсинов, отфильтрованных из окружающей биомассы.</AE_FleshmassSpitterSmall.description>
+	<AE_FleshmassSpitterSmall.verbs.Verb_Shoot.label>малый биомассомёт</AE_FleshmassSpitterSmall.verbs.Verb_Shoot.label>
+	<AE_Bullet_Shell_AcidSpitSmall.label>малая кислотная слюна</AE_Bullet_Shell_AcidSpitSmall.label>
+
+	<AE_Bullet_Shell_AcidSpitAbility.label>кислотная слюна</AE_Bullet_Shell_AcidSpitAbility.label>
+
+	<AE_BloodLakeUndergroundNest.label>подземное гнездо биошматов</AE_BloodLakeUndergroundNest.label>
+	<AE_BloodLakeUndergroundNest.description>Огромная, мрачная пропасть, соединяющая поверхность с подземной сетью проходов и туннелей, зараженной биомассой.</AE_BloodLakeUndergroundNest.description>
+	
+</LanguageData>

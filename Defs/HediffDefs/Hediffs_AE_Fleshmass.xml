@@ -147,7 +147,7 @@
 	<HediffDef>
 		<defName>Hediff_AEFleshmassTumorAssimilation</defName>
 		<label>fleshmass tumor assimilates</label>
-		<description>TThe fleshmass tumor, implanted within the host's body, is undergoing assimilation, resulting in substantial pain. The tumor is dependent on the host's survival.</description>
+		<description>The fleshmass tumor, implanted within the host's body, is undergoing assimilation, resulting in substantial pain. The tumor is dependent on the host's survival.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
 		<initialSeverity>0.001</initialSeverity>

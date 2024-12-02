@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<AnomaliesExpected.DogTag.Interacted>{0} был поглощён при прикосновении {1}</AnomaliesExpected.DogTag.Interacted>
+	<AnomaliesExpected.DogTag.WrongPawn>Они ничего не чувствуют от взаимодействия с ним</AnomaliesExpected.DogTag.WrongPawn>
+	<AnomaliesExpected.DogTag.PawnLabel>Имя: {0}</AnomaliesExpected.DogTag.PawnLabel>
+</LanguageData>

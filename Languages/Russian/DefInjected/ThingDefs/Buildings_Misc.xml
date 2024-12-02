@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<AE_BloodPuddleSpawner.label>появление из недр земли</AE_BloodPuddleSpawner.label>
+	<AE_BloodPuddleSpawner.description>Что-то воявляется из недр земли здесь.</AE_BloodPuddleSpawner.description>
+
+	<AE_BloodLakeSpawner.label>появление из недр земли</AE_BloodLakeSpawner.label>
+	<AE_BloodLakeSpawner.description>Что-то воявляется из недр земли здесь.</AE_BloodLakeSpawner.description>
+
+</LanguageData>

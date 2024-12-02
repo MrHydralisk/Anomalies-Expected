@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+	<MakeAEBloodLiquidBioferrite.label>отделить биоферрит</MakeAEBloodLiquidBioferrite.label>
+	<MakeAEBloodLiquidBioferrite.description>Отделить биоферрт от кровиподобной жидкости используя фильтрацию.</MakeAEBloodLiquidBioferrite.description>
+	<MakeAEBloodLiquidBioferrite.jobString>Отделяет биоферрит.</MakeAEBloodLiquidBioferrite.jobString>
+	<MakeAEBloodLiquidBioferriteBulk.label>отделить биоферрит x4</MakeAEBloodLiquidBioferriteBulk.label>
+	<MakeAEBloodLiquidBioferriteBulk.description>Отделить биоферрт от кровиподобной жидкости используя фильтрацию.</MakeAEBloodLiquidBioferriteBulk.description>
+	<MakeAEBloodLiquidBioferriteBulk.jobString>Отделяет биоферрит x4.</MakeAEBloodLiquidBioferriteBulk.jobString>
+	<MakeAEBloodLiquidBioferriteMass.label>отделить биоферрит x16</MakeAEBloodLiquidBioferriteMass.label>
+	<MakeAEBloodLiquidBioferriteMass.description>Отделить биоферрт от кровиподобной жидкости используя фильтрацию.</MakeAEBloodLiquidBioferriteMass.description>
+	<MakeAEBloodLiquidBioferriteMass.jobString>Отделяет биоферрит x16.</MakeAEBloodLiquidBioferriteMass.jobString>
+  
+	<MakeAEBloodLiquidHemogenPack.label>очистить кровиподобную жидкость</MakeAEBloodLiquidHemogenPack.label>
+	<MakeAEBloodLiquidHemogenPack.description>Очистить кровиподобную жидкость для переливания.</MakeAEBloodLiquidHemogenPack.description>
+	<MakeAEBloodLiquidHemogenPack.jobString>Очищает кровиподобную жидкость.</MakeAEBloodLiquidHemogenPack.jobString>
+	<MakeAEBloodLiquidHemogenPackBulk.label>очистить кровиподобную жидкость x4</MakeAEBloodLiquidHemogenPackBulk.label>
+	<MakeAEBloodLiquidHemogenPackBulk.description>Очистить кровиподобную жидкость для переливания.</MakeAEBloodLiquidHemogenPackBulk.description>
+	<MakeAEBloodLiquidHemogenPackBulk.jobString>Очищает кровиподобную жидкость x4.</MakeAEBloodLiquidHemogenPackBulk.jobString>
+	<MakeAEBloodLiquidHemogenPackMass.label>очистить кровиподобную жидкость x16</MakeAEBloodLiquidHemogenPackMass.label>
+	<MakeAEBloodLiquidHemogenPackMass.description>Очистить кровиподобную жидкость для переливания.</MakeAEBloodLiquidHemogenPackMass.description>
+	<MakeAEBloodLiquidHemogenPackMass.jobString>Очищает кровиподобную жидкость x16.</MakeAEBloodLiquidHemogenPackMass.jobString>
+  
+</LanguageData>

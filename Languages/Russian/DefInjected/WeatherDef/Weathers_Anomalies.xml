@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+	<AE_BloodLakeWeatherClear.label>пасмурная погода</AE_BloodLakeWeatherClear.label>
+	<AE_BloodLakeWeatherClear.description>Мрачное небо, покрытое темными тучами.</AE_BloodLakeWeatherClear.description>
+
+	<AE_BloodLakeWeatherBloodFog.label>высокая концентрация кровиподобной жидкости</AE_BloodLakeWeatherBloodFog.label>
+	<AE_BloodLakeWeatherBloodFog.description>Густой, зловещий кроваво-красный туман окутывает окрестности. Этот туман - прямое следствие высокой концентрации кровиподобной жидкости в воздухе. Несмотря на кажущуюся безвредность, возникает едва уловимое чувство страха. Это явление, несомненно, повлияет на всех существ, находящихся вне закрытых помещений.</AE_BloodLakeWeatherBloodFog.description>
+
+</LanguageData>

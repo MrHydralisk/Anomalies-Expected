@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<AE_BloodPump.label>насос кровиподобной жидкости</AE_BloodPump.label>
+	<AE_BloodPump.description>Собирает кровиподобную жидкость из ближайшего аномального источника.</AE_BloodPump.description>
+
+</LanguageData>

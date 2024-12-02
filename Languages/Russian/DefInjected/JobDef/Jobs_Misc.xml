@@ -4,5 +4,7 @@
 	<AE_CalledMeatGrinder.reportString>нажимает кнопку</AE_CalledMeatGrinder.reportString>
 	
 	<AE_RemoveAnomaly.reportString>уничтожает TargetA.</AE_RemoveAnomaly.reportString>
+	
+	<AE_ApplyUsableTo.reportString>применияет TargetA к TargetB.</AE_ApplyUsableTo.reportString>
 
 </LanguageData>

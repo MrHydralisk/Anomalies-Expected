@@ -66,5 +66,16 @@
 
 	<AE_BakingPiesPiece.label>кусок пирога</AE_BakingPiesPiece.label>
 	<AE_BakingPiesPiece.description>Кусок большого пирога.\n\nСладкий круглый рулет из теста с глубоким углублением в центре составляет основу этого блюда на тарелке. Центр украшает восхитительная начинка из мягкого творога. Запеченное до золотистого цвета, это лакомство идеально подходит для сытного завтрака или восхитительного перекуса. Удивительная колония разумных дрожжей использует пирог своей основной средой обитания.\n\nЭто блюдо, несмотря на свой заманчиво-мягкий вид, обладает неожиданной стойкостью к повреждениям. Его нельзя порезать, укусить или иным образом повредить.</AE_BakingPiesPiece.description>
+	
+	
+	
+	<AE_DogTag.label>Оторванный идентификационный жетон</AE_DogTag.label>
+	<AE_DogTag.description>Маленький пласталевый жетон с базовой информацией о носителе, обычно используемый для идентификации жертв.\n\nОн оторван, и имя на нем кажется вам знакомым. Возможно, кто-то может взаимодействовать с ним.</AE_DogTag.description>
+	<AE_DogTag.comps.Comp_DogTag.activateDescString>Дотронуться кем-то до жетона</AE_DogTag.comps.Comp_DogTag.activateDescString>
+	<AE_DogTag.comps.Comp_DogTag.activateLabelString>Дотронуться</AE_DogTag.comps.Comp_DogTag.activateLabelString>
+	<AE_DogTag.comps.Comp_DogTag.activatingString>дотрагивается до {0}: {1}с</AE_DogTag.comps.Comp_DogTag.activatingString>
+	<AE_DogTag.comps.Comp_DogTag.activatingStringPending>дотрагивается до {0}</AE_DogTag.comps.Comp_DogTag.activatingStringPending>
+	<AE_DogTag.comps.Comp_DogTag.guiLabelString>Выберите кто должен дотронуться до этого.</AE_DogTag.comps.Comp_DogTag.guiLabelString>
+	<AE_DogTag.comps.Comp_DogTag.jobString>дотронуться</AE_DogTag.comps.Comp_DogTag.jobString>
 
 </LanguageData>

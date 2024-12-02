@@ -4,8 +4,10 @@
 	<AnomaliesExpected.BloodLake.ReactorMeltdownExplosion>Реактор комплекса взорвался, отрезая связь с другим кровавым озером</AnomaliesExpected.BloodLake.ReactorMeltdownExplosion>
 	<AnomaliesExpected.BloodLake.Enter>Нырнуть в кровавое озеро</AnomaliesExpected.BloodLake.Enter>
 	<AnomaliesExpected.BloodLake.ViewSubMap.Label>Взглянуть по другую сторону</AnomaliesExpected.BloodLake.ViewSubMap.Label>
-	<AnomaliesExpected.BloodLake.ViewSubMap.Desc>Взглянуть на связанную карту по другую сторону</AnomaliesExpected.BloodLake.ViewSubMap.Desc>	
+	<AnomaliesExpected.BloodLake.ViewSubMap.Desc>Взглянуть на связанную карту по другую сторону</AnomaliesExpected.BloodLake.ViewSubMap.Desc>
 	<AnomaliesExpected.BloodLake.Density>Плотность жидкости: {0} кг/м3</AnomaliesExpected.BloodLake.Density>
+		
+	<AnomaliesExpected.BloodLake.AlreadyExists>Странное озеро уже существуют</AnomaliesExpected.BloodLake.AlreadyExists>
 	
 	<AnomaliesExpected.BloodLake.Reason.CantEnterA>Высокая плотность жидкости предотвращает любые попытки исследования</AnomaliesExpected.BloodLake.Reason.CantEnterA>
 	<AnomaliesExpected.BloodLake.Reason.CantEnterB>Подводный дрон исследует дно озера</AnomaliesExpected.BloodLake.Reason.CantEnterB>
