@@ -3,37 +3,6 @@
 
 	<Operation Class="PatchOperationSequence">
 		<operations>
-			<li Class="PatchOperationAdd">
-				<xpath>Defs/MutantDef[defName="Ghoul"]/drugWhitelist</xpath>
-				<order>Append</order>
-				<value>
-					<li>AERegenSerum</li>
-				</value>
-			</li>
-			<li Class="PatchOperationAdd">
-				<xpath>Defs/HediffDef[@Name="AddedMutationBase"]</xpath>
-				<order>Append</order>
-				<value>
-					<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
-				</value>
-			</li>
-			<li Class="PatchOperationAdd">
-				<xpath>Defs/HediffDef[defName="FleshmassStomach" or defName="FleshmassLung"]/addedPartProps</xpath>
-				<order>Append</order>
-				<value>
-					<partEfficiency>1.20</partEfficiency>
-					<betterThanNatural>true</betterThanNatural>
-				</value>
-			</li>
-			<li Class="PatchOperationAdd">
-				<xpath>Defs/HediffDef[defName="FleshmassStomach" or defName="FleshmassLung"]</xpath>
-				<order>Append</order>
-				<value>
-					<tags>
-						<li>FleshmassBodyMutation</li>
-					</tags>
-				</value>
-			</li>
 		</operations>
 	</Operation>
 

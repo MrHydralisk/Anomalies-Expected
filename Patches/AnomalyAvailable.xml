@@ -24,7 +24,7 @@
 					<value>
 						<impactSound>DropPod_Impact</impactSound>
 					</value>
-				</li>				
+				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="AE_ActiveDropPodAnomaly"]/graphicData/texPath</xpath>
 					<value>
@@ -611,6 +611,96 @@
 					</value>
 				</li>
 				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="AEHungerSuppressorSerum"]</xpath>
+					<value>
+						<ThingDef ParentName="ResourceBase">
+							<defName>AEHungerSuppressorSerum</defName>
+							<label>hunger suppressor serum</label>
+							<description>A syringe of green, viscous fluid. Injected in esophagus, it contains nutrients and changes metabolism to increase efficiency of digestive system and stimulate body to use it nutrient reserves for the time being.\n\nThe effect is temporary and does not stack. After effect it will take time to restore metabolism to normal state.\n\nActive effect lasts 1 day. Increase time x2 till malnourished.</description>
+							<descriptionHyperlinks>
+								<HediffDef>Hediff_AEHungerSuppressorSerum</HediffDef>
+							</descriptionHyperlinks>
+							<graphicData>
+								<texPath>Things/Item/Serum/AEHungerSuppressorSerum</texPath>
+								<graphicClass>Graphic_Single</graphicClass>
+								<drawSize>0.8</drawSize>
+							</graphicData>
+							<thingClass>ThingWithComps</thingClass>
+							<stackLimit>10</stackLimit>
+							<socialPropernessMatters>false</socialPropernessMatters>
+							<orderedTakeGroup>Drug</orderedTakeGroup>
+							<statBases>
+								<MaxHitPoints>60</MaxHitPoints>
+								<MarketValue>65</MarketValue>
+								<Nutrition>1</Nutrition>
+								<Mass>0.5</Mass>
+								<Flammability>0.7</Flammability>
+							</statBases>
+							<tradeability>Sellable</tradeability>
+							<thingCategories>
+								<li>Drugs</li>
+							</thingCategories>
+							<thingSetMakerTags>
+								<li>RewardStandardLowFreq</li>
+							</thingSetMakerTags>
+							<tradeTags>
+								<li>Serum</li>
+							</tradeTags>
+							<ingestible>
+								<preferability>NeverForNutrition</preferability>
+								<maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+								<defaultNumToIngestAtOnce>1</defaultNumToIngestAtOnce>
+								<drugCategory>Medical</drugCategory>
+								<foodType>Processed</foodType>
+								<baseIngestTicks>100</baseIngestTicks>
+								<chairSearchRadius>0</chairSearchRadius>
+								<ingestSound>Ingest_Pill</ingestSound>
+								<ingestHoldUsesTable>false</ingestHoldUsesTable>
+								<ingestCommandString>Ingest {0}</ingestCommandString>
+								<ingestReportString>Ingesting {0}.</ingestReportString>
+								<showIngestFloatOption>false</showIngestFloatOption>
+								<outcomeDoers>
+									<li Class="IngestionOutcomeDoer_UseThing"/>
+								</outcomeDoers>
+							</ingestible>
+							<comps>
+								<li Class="CompProperties_Drug">
+									<listOrder>1200</listOrder>
+									<teetotalerCanConsume>true</teetotalerCanConsume>
+								</li>
+								<li Class="CompProperties_Usable">
+									<useLabel>Use {0_label}</useLabel>
+									<useJob>Ingest</useJob>
+									<showUseGizmo>true</showUseGizmo>
+								</li>
+								<li Class="CompProperties_UseEffectAddHediff">
+									<hediffDef>Hediff_AEHungerSuppressorSerum</hediffDef>
+								</li>
+								<li Class="CompProperties_UseEffectPlaySound">
+									<soundOnUsed>MechSerumUsed</soundOnUsed>
+								</li>
+							</comps>
+							<costList>
+								<RawPotatoes>40</RawPotatoes>
+								<Steel>15</Steel>
+							</costList>
+							<recipeMaker>
+								<workAmount>720</workAmount>
+								<skillRequirements>
+									<Crafting>7</Crafting>
+								</skillRequirements>
+								<researchPrerequisite>AEHungerSuppressorSerum</researchPrerequisite>
+								<productCount>1</productCount>
+								<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+								<workSkill>Crafting</workSkill>
+								<recipeUsers>
+									<li>DrugLab</li>
+								</recipeUsers>
+							</recipeMaker>
+						</ThingDef>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
 					<xpath>Defs/ResearchProjectDef[defName="AEBingingFoodSerum"]/prerequisites</xpath>
 					<value>
 						<prerequisites>
@@ -620,22 +710,22 @@
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
-					<xpath>Defs/ResearchProjectDef[defName="AEBingingFoodSerum"]</xpath>
+					<xpath>Defs/ResearchProjectDef[defName="AEBingingFoodSerum" or defName="AEHungerSuppressorSerum"]</xpath>
 					<value>
 						<techLevel>Industrial</techLevel>
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
-					<xpath>Defs/ResearchProjectDef[defName="AEBingingFoodSerum"]</xpath>
+					<xpath>Defs/ResearchProjectDef[defName="AEBingingFoodSerum" or defName="AEHungerSuppressorSerum"]</xpath>
 					<value>
 						<baseCost>900</baseCost>
 					</value>
 				</li>
 				<li Class="PatchOperationRemove">
-					<xpath>Defs/ResearchProjectDef[defName="AEBingingFoodSerum"]/knowledgeCost</xpath>
+					<xpath>Defs/ResearchProjectDef[defName="AEBingingFoodSerum" or defName="AEHungerSuppressorSerum"]/knowledgeCost</xpath>
 				</li>
 				<li Class="PatchOperationRemove">
-					<xpath>Defs/ResearchProjectDef[defName="AEBingingFoodSerum"]/knowledgeCategory</xpath>
+					<xpath>Defs/ResearchProjectDef[defName="AEBingingFoodSerum" or defName="AEHungerSuppressorSerum"]/knowledgeCategory</xpath>
 				</li>
 				
 				
@@ -680,10 +770,92 @@
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/ResearchProjectDef[defName="AEOrbitalBeamTargeter"]/knowledgeCategory</xpath>
 				</li>
+				
+				
+				
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/AbilityCategoryDef[defName="AEAnomaliesExpected"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/AbilityDef[defName="AEAcidSpew" or defName="AEAcidSpit" or defName="AEPsychicFlash" or @Name="AESpawnFleshbeastBase" or @ParentName="AESpawnFleshbeastBase" or @Name="AEFleshbeastCommandBase" or @ParentName="AEFleshbeastCommandBase"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="AE_Bullet_Shell_AcidSpitAbility" or defName="Mote_AEBloodLiquidInjector" or @Name="BuildingAE_BloodLakeBase" or @ParentName="BuildingAE_BloodLakeBase" or defName="AE_BloodLakeTerminal" or @ParentName="FleshmassSpitter" or @ParentName="Bullet_Shell_AcidSpit" or defName="AE_BloodLakeUndergroundNest" or defName="AE_BloodPuddleSpawner" or defName="AE_BloodLakeSpawner" or defName="AE_BloodPump" or @Name="AEResearchNotesBase" or @ParentName="AEResearchNotesBase" or defName="AE_BloodLiquidInjector" or defName="AE_FleshmassCyst" or defName="AE_FleshmassTumor" or defName="AE_BloodLiquid" or defName="AE_DogTag"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/BiomeDef[defName="AE_BloodLakeBiome"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/DamageDef[defName="AcidBurnFleshmass" or defName="AEPsychicFlash"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/EntityCodexEntryDef[defName="AE_EntityCodexEntry_BloodPuddle" or defName="AE_EntityCodexEntry_BloodLake"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GameConditionDef[defName="AE_BloodFog"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/GenStepDef[defName="AE_BloodLakeTerrain" or defName="AE_BloodLakeScatterRuinsSimple" or defName="AE_BloodLakeScatterShrines" or defName="AE_BloodLakeFindExit" or defName="AE_BloodLakeFindTerminal" or defName="AE_BloodLakeFleshmassUndergroundNest" or defName="AE_BloodLakeFog" or defName="AE_BloodLakeFleshmass" or defName="AE_BloodLakeFleshSacks" or defName="AE_BloodLakeFleshmassSpitterGiant" or defName="AE_BloodLakeFleshmassSpitterMedium" or defName="AE_BloodLakeFleshmassSpitterSmall" or defName="AE_BloodLakeFindDogTag" or defName="AE_BloodLakeFleshbeasts"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/HediffDef[defName="Hediff_AEFleshmassTumorIncubation" or defName="Hediff_AEFleshmassCystAssimilation" or defName="AE_FleshmassLiver" or defName="AE_FleshmassAcidCavity" or defName="AE_FleshmassAcidGland" or defName="Hediff_AEFleshmassTumorAssimilation" or defName="AE_FleshmassEye" or defName="AE_FleshmassEar" or defName="AE_FleshmassKidney" or defName="AE_FleshmassHeart" or defName="AE_FleshmassBrainTumor" or defName="AE_FleshmassBodyMutation" or defName="Hediff_AEDogTag" or defName="Hediff_AEBloodLiquidConcentration" or defName="Hediff_AEDestabilization"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/MapGeneratorDef[defName="AE_BloodLakeMapGenerator"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/AnomaliesExpected.PsychicRitualDef_AESummonBloodLake[defName="SummonBloodLake"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/RecipeDef[@Name="RecipeMakeAEBloodLiquidBioferrite" or @ParentName="RecipeMakeAEBloodLiquidBioferrite" or defName="MakeAEFleshmassCyst" or @Name="SurgeryAEFleshmassCystBase" or @ParentName="SurgeryAEFleshmassCystBase" or defName="RemoveAEFleshmassAcidCavity" or defName="RemoveAEFleshmassAcidGland" or @ParentName="SurgeryAEFleshmassTumorBase"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ResearchProjectDef[defName="AEBloodPump" or defName="AEBloodInjector" or defName="AEBloodLakeTerminalA" or defName="AEBloodLakeTerminalB" or defName="AEBloodLakeTerminalC"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/IncidentDef[defName="AE_IncidentDef_BloodPuddleSpawn" or defName="AE_IncidentDef_BloodLakeSpawn" or defName="AE_BloodLakeWeatherBloodFog"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingCategoryDef[defName="AnomalyStudyNotes"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/WeatherDef[defName="AE_BloodLakeWeatherClear" or defName="AE_BloodLakeWeatherBloodFog"]</xpath>
+				</li>
 			</operations>
 		</nomatch>
 		<match Class="PatchOperationSequence">
 			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/MutantDef[defName="Ghoul"]/drugWhitelist</xpath>
+					<order>Append</order>
+					<value>
+						<li>AERegenSerum</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/HediffDef[@Name="AddedMutationBase"]</xpath>
+					<order>Append</order>
+					<value>
+						<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/HediffDef[defName="FleshmassStomach" or defName="FleshmassLung"]/addedPartProps</xpath>
+					<order>Append</order>
+					<value>
+						<partEfficiency>1.20</partEfficiency>
+						<betterThanNatural>true</betterThanNatural>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/HediffDef[defName="FleshmassStomach" or defName="FleshmassLung"]</xpath>
+					<order>Append</order>
+					<value>
+						<tags>
+							<li>FleshmassBodyMutation</li>
+						</tags>
+					</value>
+				</li>
 				<li Class="PatchOperationAttributeAdd">
 					<xpath>Defs/ThingDef[defName ="FleshmassSpitter"]</xpath>
 					<attribute>Name</attribute>
