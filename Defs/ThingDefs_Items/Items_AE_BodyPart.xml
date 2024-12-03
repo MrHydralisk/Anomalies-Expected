@@ -38,12 +38,6 @@
 		</recipeMaker>
 	</ThingDef>
 	
-	<ThingCategoryDef>
-		<defName>BodyPartsAnomalyAE</defName>
-		<label>anomaly</label>
-		<parent>BodyParts</parent>
-	</ThingCategoryDef>
-	
 	<ThingDef ParentName="BodyPartAnomalyAEBase">
 		<defName>AEGrinderStomach</defName>
 		<label>grinder stomach</label>

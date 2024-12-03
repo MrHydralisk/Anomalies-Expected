@@ -1,9 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+	
+	<ThingCategoryDef>
+		<defName>BodyPartsAnomalyAE</defName>
+		<label>anomaly</label>
+		<parent>BodyParts</parent>
+	</ThingCategoryDef>
 
 	<ThingCategoryDef>
 		<defName>ItemsAnomalies</defName>
-		<label>anomalies</label>
+		<label>anomaly</label>
 		<parent>Items</parent>
 	</ThingCategoryDef>
 	
