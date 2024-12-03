@@ -8,7 +8,8 @@ namespace AnomaliesExpected
 {
     public class CompAEStudyUnlocks : CompStudyUnlocks
     {
-        public new CompProperties_AEStudyUnlocks Props => (CompProperties_AEStudyUnlocks)props;
+        public new CompProperties_StudyUnlocks Props => (CompProperties_StudyUnlocks)props;
+        public bool isSyncWithParent => (Props is CompProperties_AEStudyUnlocks aeProps) ? aeProps.isSyncWithParent : false;
 
         public string currentAnomalyLabel;
         public string currentAnomalyDesc;
@@ -50,7 +51,7 @@ namespace AnomaliesExpected
         public void SetParentThing(ThingWithComps ParentThing)
         {
             parentThing = ParentThing;
-            if (isHaveParentAnomaly && Props.isSyncWithParent && compAEStudyUnlocksParent != null)
+            if (isHaveParentAnomaly && isSyncWithParent && compAEStudyUnlocksParent != null)
             {
                 for (int i = 0; i < Props.studyNotes.Count(); i++)
                 {
@@ -78,22 +79,25 @@ namespace AnomaliesExpected
 
         public void UnlockStudyNoteManual(int index, string studier = "")
         {
-            StudyNote studyNote = Props.studyNotesManualUnlockable.ElementAtOrDefault(index);
-            if (studyNote != null)
+            if (Props is CompProperties_AEStudyUnlocks aeProps)
             {
-                if (studier == "")
+                StudyNote studyNote = aeProps.studyNotesManualUnlockable.ElementAtOrDefault(index);
+                if (studyNote != null)
                 {
-                    studier = "AnomaliesExpected.Misc.Redacted".Translate();
+                    if (studier == "")
+                    {
+                        studier = "AnomaliesExpected.Misc.Redacted".Translate();
+                    }
+                    TaggedString label = studyNote.label.Formatted(studier.Named("PAWN"));
+                    TaggedString text = studyNote.text.Formatted(studier.Named("PAWN"));
+                    ChoiceLetter let = LetterMaker.MakeLetter(label, text, LetterDefOf.NeutralEvent, parent);
+                    Find.LetterStack.ReceiveLetter(let);
+                    ChoiceLetter choiceLetter = LetterMaker.MakeLetter(label, text, LetterDefOf.NeutralEvent, parent);
+                    choiceLetter.arrivalTick = Find.TickManager.TicksGame;
+                    letters.Add(choiceLetter);
                 }
-                TaggedString label = studyNote.label.Formatted(studier.Named("PAWN"));
-                TaggedString text = studyNote.text.Formatted(studier.Named("PAWN"));
-                ChoiceLetter let = LetterMaker.MakeLetter(label, text, LetterDefOf.NeutralEvent, parent);
-                Find.LetterStack.ReceiveLetter(let);
-                ChoiceLetter choiceLetter = LetterMaker.MakeLetter(label, text, LetterDefOf.NeutralEvent, parent);
-                choiceLetter.arrivalTick = Find.TickManager.TicksGame;
-                letters.Add(choiceLetter);
-            }
-            UpdateFromStudyNote(studyNote);
+                UpdateFromStudyNote(studyNote);
+            }            
         }
 
         protected override void Notify_StudyLevelChanged(ChoiceLetter keptLetter)

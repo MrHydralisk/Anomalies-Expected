@@ -12,9 +12,16 @@ While usually I try to explain in mod description how mod content work in detail
 Have it own research tab Anomalies Expected, which work same way as Anomaly tab.
 On some study notes label and description of anomaly might change to fit the current understanding of the anomaly.
 
+Anomalies Classification:
+* Class 0 anomaly "Safe".
+* Class 1 anomaly "Caution".
+* Class 2 anomaly "Warning".
+* Class 3 anomaly "Danger".
+* Class 4 anomaly "Critical".
+
 Currently available:
-* 3 Anomaly of basic category
-* 3 Anomaly of advanced category
+* 4 Anomaly of basic category
+* 4 Anomaly of advanced category
 
 ### Ordinary Bed
 
@@ -40,7 +47,13 @@ Currently available:
 
 *Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a small device with pneumatic retractable stops. On its body there are indicators with lights, an antenna and a small button. It looks like military grade.*
 
-More anomalies in development and will be added, when ready.
+### Strange Puddle
+
+*Your colonist noticed some small ground vibration. It seems like a pool of liquid seeping up from beneath the ground.*
+
+### Strange Lake
+
+*Your colonist noticed some strong ground vibration. It seems like a giant pool of liquid seeping up from beneath the ground.*
 
 ## Links
 
@@ -62,4 +75,4 @@ Anomalies Expected mod should be safe to add to existing save. But when you want
 
 ## To Do
 
-New anomalies after a break.
+- More anomalies in development and will be added, when ready.

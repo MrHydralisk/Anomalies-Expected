@@ -605,7 +605,7 @@
 				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
 				<showToggleGizmo>true</showToggleGizmo>
 			</li>
-			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+			<li Class="CompProperties_StudyUnlocks">
 				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
 				<studyNotes>
 					<li Class="AnomaliesExpected.AEStudyNote">
