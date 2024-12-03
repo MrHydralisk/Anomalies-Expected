@@ -143,6 +143,9 @@
 		</provocationIncidents>
 		<discoveredResearchProjects>
 			<li>AEBloodInjector</li>
+			<li>AEBloodLakeTerminalA</li>
+			<li>AEBloodLakeTerminalB</li>
+			<li>AEBloodLakeTerminalC</li>
 		</discoveredResearchProjects>
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>

@@ -37,6 +37,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HarmonyPatches.cs" />
     <Compile Include="CompProperties\CompProperties_AbilityFleshbeastCommand.cs" />
     <Compile Include="CompProperties\CompProperties_AbilitySpawnFleshbeast.cs" />
     <Compile Include="CompProperties\CompProperties_AbilitySpewLiquid.cs" />
