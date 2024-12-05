@@ -29,6 +29,9 @@ namespace AnomaliesExpected
             {
                 Find.ResearchManager.Notify_MonolithLevelChanged(Find.Anomaly.Level);
             }
+            options.GapLine();
+            options.Label("AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestMult".Translate(Settings.UndergroundFleshmassNestMult.ToString()));
+            Settings.UndergroundFleshmassNestMult = Mathf.Round(options.Slider(Settings.UndergroundFleshmassNestMult, 0.1f, 2f) * 10f) / 10f;
             options.End();
         }
 

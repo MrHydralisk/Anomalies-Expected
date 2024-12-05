@@ -102,7 +102,7 @@ namespace AnomaliesExpected
                 }
                 Thing UndergroundNest = UndergroundNests.Where((Thing t) => t.Position.DistanceTo(pos) > 15).OrderBy((Thing t) => t.Position.DistanceTo(pos)).FirstOrDefault();
                 ThingDef thingDef = ThingDefOfLocal.AE_BloodLakeUndergroundNest;
-                List<Pawn> emergingFleshbeasts = FleshbeastUtility.GetFleshbeastsForPoints(StorytellerUtility.DefaultThreatPointsNow(map) * Mathf.Max(1, (1 + map.gameConditionManager.ActiveConditions.Count())), map);
+                List<Pawn> emergingFleshbeasts = FleshbeastUtility.GetFleshbeastsForPoints(StorytellerUtility.DefaultThreatPointsNow(map) * Mathf.Max(1, (1 + map.gameConditionManager.ActiveConditions.Count())) * AEMod.Settings.UndergroundFleshmassNestMult, map);
                 CellRect cellRect = GenAdj.OccupiedRect(UndergroundNest.Position, Rot4.North, thingDef.Size);
                 List<PawnFlyer> list = new List<PawnFlyer>();
                 List<IntVec3> list2 = new List<IntVec3>();

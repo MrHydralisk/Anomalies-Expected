@@ -9,6 +9,7 @@ namespace AnomaliesExpected
         public bool SpawnPiePieceNotification = true;
         public bool PoweBeamRequireBeamTarget = true;
         public bool BeamTargetLetter = true;
+        public float UndergroundFleshmassNestMult = 0.3f;
 
         public override void ExposeData()
         {
@@ -18,6 +19,7 @@ namespace AnomaliesExpected
             Scribe_Values.Look(ref SpawnPiePieceNotification, "SpawnPiePieceNotification", defaultValue: true);
             Scribe_Values.Look(ref PoweBeamRequireBeamTarget, "PoweBeamRequireBeamTarget", defaultValue: true);
             Scribe_Values.Look(ref BeamTargetLetter, "BeamTargetLetter", defaultValue: true);
+            Scribe_Values.Look(ref UndergroundFleshmassNestMult, "UndergroundFleshmassNestMult", defaultValue: 0.3f);
         }
     }
 }
