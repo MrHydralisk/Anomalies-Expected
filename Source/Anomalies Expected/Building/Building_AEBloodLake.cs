@@ -174,6 +174,10 @@ namespace AnomaliesExpected
                     FilthMaker.TryMakeFilth(item, Map, ThingDefOf.Filth_Blood, 1);
                 }
             }
+            if (subMap != null && !isDestroyedMap)
+            {
+                mapComponent.DestroySubMap();
+            }
             base.Destroy(mode);
         }
 
@@ -357,24 +361,27 @@ namespace AnomaliesExpected
                     defaultLabel = "Dev: Generate Sub Map",
                     defaultDesc = "Generate sub map for Blood Lake"
                 };
-                yield return new Command_Action
+                if (subMap != null && !isDestroyedMap)
                 {
-                    action = delegate
+                    yield return new Command_Action
                     {
-                        List<FloatMenuOption> floatMenuOptions = new List<FloatMenuOption>();
-                        floatMenuOptions.Add(new FloatMenuOption($"Destroy false", delegate
+                        action = delegate
                         {
-                            mapComponent.DestroySubMap();
-                        }));
-                        floatMenuOptions.Add(new FloatMenuOption($"Destroy true", delegate
-                        {
-                            mapComponent.DestroySubMap(true);
-                        }));
-                        Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
-                    },
-                    defaultLabel = "Dev: Destroy sub map",
-                    defaultDesc = "Destroy sub map"
-                };
+                            List<FloatMenuOption> floatMenuOptions = new List<FloatMenuOption>();
+                            floatMenuOptions.Add(new FloatMenuOption($"Destroy false", delegate
+                            {
+                                mapComponent.DestroySubMap();
+                            }));
+                            floatMenuOptions.Add(new FloatMenuOption($"Destroy true", delegate
+                            {
+                                mapComponent.DestroySubMap(true);
+                            }));
+                            Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
+                        },
+                        defaultLabel = "Dev: Destroy sub map",
+                        defaultDesc = "Destroy sub map"
+                    };
+                }
             }
         }
 
