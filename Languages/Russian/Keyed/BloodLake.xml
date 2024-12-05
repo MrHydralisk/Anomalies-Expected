@@ -13,6 +13,9 @@
 	<AnomaliesExpected.BloodLake.Reason.CantEnterB>Подводный дрон исследует дно озера</AnomaliesExpected.BloodLake.Reason.CantEnterB>
 	<AnomaliesExpected.BloodLake.Reason.CantEnterC>Связь с другой стороной была потеряна</AnomaliesExpected.BloodLake.Reason.CantEnterC>
 	
+	<AnomaliesExpected.BloodLake.LetterRaid.Label>Орда биошматов</AnomaliesExpected.BloodLake.LetterRaid.Label>
+	<AnomaliesExpected.BloodLake.LetterRaid.Text>Плотность жидкости в кровавом озере упала слишком низко. Орда биошматов вылезает из него.</AnomaliesExpected.BloodLake.LetterRaid.Text>
+	
 	<AnomaliesExpected.BloodLake.LetterEnter.Label>Територия подконтрольная биомассе</AnomaliesExpected.BloodLake.LetterEnter.Label>
 	<AnomaliesExpected.BloodLake.LetterEnter.Text>Перед нами лежит открытое пространство, одно оно кишит различными биошматами. Мы должны преготовится к яросным атакам со стороны окружающей сети биомассы.\n\nЕсли мы не готовы к такой конфронтации, то следует отступить обратно к нашей колонии и подготовится.</AnomaliesExpected.BloodLake.LetterEnter.Text>
 </LanguageData>

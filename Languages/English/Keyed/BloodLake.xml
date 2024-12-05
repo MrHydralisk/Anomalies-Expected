@@ -13,6 +13,9 @@
 	<AnomaliesExpected.BloodLake.Reason.CantEnterB>Underwater drone currently surveying lakebed</AnomaliesExpected.BloodLake.Reason.CantEnterB>
 	<AnomaliesExpected.BloodLake.Reason.CantEnterC>Connection with other side lost</AnomaliesExpected.BloodLake.Reason.CantEnterC>
 	
+	<AnomaliesExpected.BloodLake.LetterRaid.Label>Fleshbeasts hoard</AnomaliesExpected.BloodLake.LetterRaid.Label>
+	<AnomaliesExpected.BloodLake.LetterRaid.Text>Blood Lake liquid density fall too low. A hoard of fleshbeasts is emerging from it.</AnomaliesExpected.BloodLake.LetterRaid.Text>
+	
 	<AnomaliesExpected.BloodLake.LetterEnter.Label>Fleshmass territory</AnomaliesExpected.BloodLake.LetterEnter.Label>
 	<AnomaliesExpected.BloodLake.LetterEnter.Text>The open space lies before us, yet it's swarming with different kinds of fleshbeasts. We must brace ourselves for a ferocious attacks from the surrounding fleshmass network.\n\nIf we're not ready to confront this threat, we should fall back to our colony and arm ourselves.</AnomaliesExpected.BloodLake.LetterEnter.Text>
 </LanguageData>

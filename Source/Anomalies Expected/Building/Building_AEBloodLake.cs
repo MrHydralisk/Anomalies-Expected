@@ -156,6 +156,7 @@ namespace AnomaliesExpected
                 emergingFleshbeasts.Clear();
             }
             summonHistory.summonedTimes++;
+            Find.LetterStack.ReceiveLetter("AnomaliesExpected.BloodLake.LetterRaid.Label".Translate(), "AnomaliesExpected.BloodLake.LetterRaid.Text".Translate(), LetterDefOf.ThreatBig, this);
         }
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
