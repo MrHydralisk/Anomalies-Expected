@@ -6,7 +6,7 @@
 	<AnomaliesExpected.Settings.BakingPies.DespawnPiecesOnDestroy>Все куски пирога исчезнут, когда большой пирог будет съеден</AnomaliesExpected.Settings.BakingPies.DespawnPiecesOnDestroy>
 	<AnomaliesExpected.Settings.BakingPies.SpawnPiePieceNotification>Уведомление при создании новых кусков</AnomaliesExpected.Settings.BakingPies.SpawnPiePieceNotification>
 	
-	<AnomaliesExpected.Settings.PoweBeamRequireBeamTarget>Целеуказатель для Точечного Луча требует существование Передатчика для активации Луча</AnomaliesExpected.Settings.PoweBeamRequireBeamTarget>
+	<AnomaliesExpected.Settings.BeamTarget.PoweBeamRequireBeamTarget>Целеуказатель для Точечного Луча требует существование Передатчика для активации Луча</AnomaliesExpected.Settings.BeamTarget.PoweBeamRequireBeamTarget>
 	<AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter>Письмо вместо уведомления, когда Передатчик покидает зону содержания</AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter>
 	
 	<AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestMult>Установить множитель на количество очков опасности для вычисления количества генерируемых биошматов в гнёздах {0}</AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestMult>

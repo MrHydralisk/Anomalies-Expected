@@ -32,8 +32,8 @@
 		</verbs>
 		<comps Inherit="False">
 			<li Class="AnomaliesExpected.CompProperties_AEFleshmassSpitter">
-				<SpitIntervalInitRangeTicks>10000~15000</SpitIntervalInitRangeTicks>
-				<SpitIntervalRangeTicks>15000~25000</SpitIntervalRangeTicks>
+				<SpitIntervalInitRangeTicks>20000~50000</SpitIntervalInitRangeTicks>
+				<SpitIntervalRangeTicks>15000~45000</SpitIntervalRangeTicks>
 				<isAbleToFireThroughRoof>true</isAbleToFireThroughRoof>
 			</li>
 			<li Class="CompProperties_FleshmassBase">
@@ -53,7 +53,7 @@
 			<damageDef>AcidBurnFleshmass</damageDef>
 			<spinRate>5</spinRate>
 			<damageAmountBase>30</damageAmountBase>
-			<speed>21</speed>
+			<speed>18</speed>
 			<arcHeightFactor>2</arcHeightFactor>
 			<explosionRadius>7.9</explosionRadius>
 			<explosionEffectLifetimeTicks>90</explosionEffectLifetimeTicks>
@@ -82,7 +82,7 @@
 		</verbs>
 		<comps Inherit="False">
 			<li Class="AnomaliesExpected.CompProperties_AEFleshmassSpitter">
-				<SpitIntervalInitRangeTicks>3500~6250</SpitIntervalInitRangeTicks>
+				<SpitIntervalInitRangeTicks>5500~11000</SpitIntervalInitRangeTicks>
 				<SpitIntervalRangeTicks>6250~13750</SpitIntervalRangeTicks>
 			</li>
 			<li Class="CompProperties_FleshmassBase">
@@ -128,7 +128,7 @@
 		</verbs>
 		<comps Inherit="False">
 			<li Class="AnomaliesExpected.CompProperties_AEFleshmassSpitter">
-				<SpitIntervalInitRangeTicks>1000~2500</SpitIntervalInitRangeTicks>
+				<SpitIntervalInitRangeTicks>2500~5500</SpitIntervalInitRangeTicks>
 				<SpitIntervalRangeTicks>2500~7500</SpitIntervalRangeTicks>
 			</li>
 			<li Class="CompProperties_FleshmassBase">
