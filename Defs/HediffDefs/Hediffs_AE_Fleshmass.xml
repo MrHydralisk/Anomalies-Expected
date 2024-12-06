@@ -141,6 +141,36 @@
 			<li>FleshmassBodyMutation</li>
 		</tags>
 	</HediffDef>
+  
+	<HediffDef ParentName="AddedMutationBase">
+		<defName>AE_FleshmassNose</defName>
+		<label>fleshmass nose</label>
+		<labelNoun>a fleshmass nose</labelNoun>
+		<description>A cancerous mass of semi-sentient flesh. Its internal structure functions similarly to a rudimentary gas mask filter, partially blocking the entry of toxins into the host's body.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<defaultInstallPart>Nose</defaultInstallPart>
+		<stages>
+			<li>
+				<painOffset>0.04</painOffset>
+				<statOffsets>
+				  <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">0.4</ToxicEnvironmentResistance>
+				</statOffsets>
+			</li>
+		</stages>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.20</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<comps>
+			<li Class="HediffCompProperties_FleshbeastEmerge">
+				<letterLabel>Fleshmass operation</letterLabel>
+				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass nose has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+			</li>
+		</comps>
+		<tags>
+			<li>FleshmassBodyMutation</li>
+		</tags>
+	</HediffDef>
 
 
   

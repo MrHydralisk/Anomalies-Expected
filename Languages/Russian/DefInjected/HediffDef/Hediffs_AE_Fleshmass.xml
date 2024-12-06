@@ -41,6 +41,12 @@
 	<AE_FleshmassEar.comps.HediffComp_FleshbeastEmerge.letterText>{PAWN_nameDef} плохо {PAWN_gender ? перенёс : перенесла} операцию. Попытка удалить ухо из биомассы обернулась нападением. Извивающийся комок плоти отделился от носителя и превратился в биошмата!</AE_FleshmassEar.comps.HediffComp_FleshbeastEmerge.letterText>
 	<AE_FleshmassEar.labelNoun>ухо из биомассы</AE_FleshmassEar.labelNoun>
 
+	<AE_FleshmassNose.label>нос из биомассы</AE_FleshmassNose.label>
+	<AE_FleshmassNose.description>Злокачественная биомасса с зачатками разума. Внутренняя структура схожа с простым фильтром противогаза, частично блокирующим попадание токсинов в тело носителя.\n\nОрган обладает собственной нейронной сетью и может представлять угрозу в случае удаления.</AE_FleshmassNose.description>
+	<AE_FleshmassNose.comps.HediffComp_FleshbeastEmerge.letterLabel>Операция на биомассе</AE_FleshmassNose.comps.HediffComp_FleshbeastEmerge.letterLabel>
+	<AE_FleshmassNose.comps.HediffComp_FleshbeastEmerge.letterText>{PAWN_nameDef} плохо {PAWN_gender ? перенёс : перенесла} операцию. Попытка удалить нос из биомассы обернулась нападением. Извивающийся комок плоти отделился от носителя и превратился в биошмата!</AE_FleshmassNose.comps.HediffComp_FleshbeastEmerge.letterText>
+	<AE_FleshmassNose.labelNoun>нос из биомассы</AE_FleshmassNose.labelNoun>
+
 	<AE_FleshmassKidney.label>почка из биомассы</AE_FleshmassKidney.label>
 	<AE_FleshmassKidney.description>Злокачественная биомасса с зачатками разума. Выращивает биомассу, которая может быть мутирована в пальцешип под действием дестабилизирующей мутации.\n\nОрган обладает собственной нейронной сетью и может представлять угрозу в случае удаления.</AE_FleshmassKidney.description>
 	<AE_FleshmassKidney.comps.HediffComp_FleshbeastEmerge.letterLabel>Операция на биомассе</AE_FleshmassKidney.comps.HediffComp_FleshbeastEmerge.letterLabel>

@@ -41,6 +41,10 @@
 	<IncubateAEFleshmassEar.description>Киста из биомассы будет имплантирована в тело субъекта для инкубации уха из биомассы. Это болезненный процесс, который займет один день для ассимиляции кисты внутри тела хозяина.</IncubateAEFleshmassEar.description>
 	<IncubateAEFleshmassEar.jobString>Имплантирует опухоль из биомассы.</IncubateAEFleshmassEar.jobString>
 
+	<IncubateAEFleshmassNose.label>выращивать нос из биомассы</IncubateAEFleshmassNose.label>
+	<IncubateAEFleshmassNose.description>Киста из биомассы будет имплантирована в тело субъекта для инкубации носа из биомассы. Это болезненный процесс, который займет один день для ассимиляции кисты внутри тела хозяина.</IncubateAEFleshmassNose.description>
+	<IncubateAEFleshmassNose.jobString>Имплантирует опухоль из биомассы.</IncubateAEFleshmassNose.jobString>
+
 	<IncubateAEFleshmassEye.label>выращивать глаз из биомассы</IncubateAEFleshmassEye.label>
 	<IncubateAEFleshmassEye.description>Опухоль из биомассы будет имплантирована в тело субъекта для инкубации глаза из биомассы. Это болезненный процесс, который займет два дня для ассимиляции опухоли внутри тела хозяина.</IncubateAEFleshmassEye.description>
 	<IncubateAEFleshmassEye.jobString>Имплантирует опухоль из биомассы.</IncubateAEFleshmassEye.jobString>

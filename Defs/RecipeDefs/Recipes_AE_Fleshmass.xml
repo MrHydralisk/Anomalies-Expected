@@ -248,6 +248,21 @@
 		</appliedOnFixedBodyParts>
 		<researchPrerequisite>AEBloodLakeTerminalB</researchPrerequisite>
 	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryAEFleshmassCystBase">
+		<defName>IncubateAEFleshmassNose</defName>
+		<label>incubate fleshmass nose</label>
+		<description>A fleshmass cyst will be implanted into the subject's body to incubate a fleshmass nose. This is a painful process that will take one day for cyst to assimilate within host's body.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AEFleshmassTumorAssimilation</HediffDef>
+			<HediffDef>AE_FleshmassNose</HediffDef>
+		</descriptionHyperlinks>
+		<addsHediff>AE_FleshmassNose</addsHediff>
+		<appliedOnFixedBodyParts>
+			<li>Nose</li>
+		</appliedOnFixedBodyParts>
+		<researchPrerequisite>AEBloodLakeTerminalA</researchPrerequisite>
+	</RecipeDef>
 
 	<RecipeDef Name="SurgeryAEFleshmassTumorBase" ParentName="SurgeryAEFleshmassCystBase" Abstract="True">
 		<descriptionHyperlinks Inherit="False">
