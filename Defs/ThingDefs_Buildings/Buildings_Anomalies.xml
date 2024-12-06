@@ -848,7 +848,7 @@
 				</targetingParameters>
 				
 				<jobDef>AE_RemoveAnomaly</jobDef>
-				<minStudy>4</minStudy>
+				<minStudy>5</minStudy>
 			</li>
 			<li Class="AnomaliesExpected.CompProperties_BloodSource">
 				<ResourceDef>AE_BloodLiquid</ResourceDef>

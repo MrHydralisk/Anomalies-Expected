@@ -13,8 +13,9 @@ namespace AnomaliesExpected
         protected CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = parent.TryGetComp<CompAEStudyUnlocks>());
         private CompAEStudyUnlocks studyUnlocksCached;
 
-        public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? Props.minStudy) < Props.minStudy && !isCanDestroyEarly;
+        public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? Props.minStudy) < Props.minStudy && !isCanDestroyEarly && !isCanDestroyForced;
         protected bool isCanDestroyEarly;
+        public bool isCanDestroyForced;
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
@@ -63,6 +64,7 @@ namespace AnomaliesExpected
         public void ExposeData()
         {
             Scribe_Values.Look(ref isCanDestroyEarly, "isCanDestroyEarly", false);
+            Scribe_Values.Look(ref isCanDestroyForced, "isCanDestroyForced", false);
         }
 
         public override string CompInspectStringExtra()
