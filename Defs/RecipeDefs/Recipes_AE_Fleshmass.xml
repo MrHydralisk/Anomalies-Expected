@@ -191,7 +191,7 @@
 		<appliedOnFixedBodyParts>
 			<li>Sternum</li>
 		</appliedOnFixedBodyParts>
-		<researchPrerequisite>AEBloodLakeTerminalA</researchPrerequisite>
+		<researchPrerequisite>AEBloodLakeTerminalB</researchPrerequisite>
 	</RecipeDef>
 
 	<RecipeDef ParentName="SurgeryRemoveImplantBase">
@@ -232,6 +232,21 @@
 		<jobString>Removing fleshmass acid gland.</jobString>
 		<mutantBlacklist Inherit="false" />
 		<removesHediff>AE_FleshmassAcidGland</removesHediff>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryAEFleshmassCystBase">
+		<defName>IncubateAEFleshmassEar</defName>
+		<label>incubate fleshmass ear</label>
+		<description>A fleshmass cyst will be implanted into the subject's body to incubate a fleshmass ear. This is a painful process that will take one day for cyst to assimilate within host's body.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AEFleshmassTumorAssimilation</HediffDef>
+			<HediffDef>AE_FleshmassEar</HediffDef>
+		</descriptionHyperlinks>
+		<addsHediff>AE_FleshmassEar</addsHediff>
+		<appliedOnFixedBodyParts>
+			<li>Ear</li>
+		</appliedOnFixedBodyParts>
+		<researchPrerequisite>AEBloodLakeTerminalB</researchPrerequisite>
 	</RecipeDef>
 
 	<RecipeDef Name="SurgeryAEFleshmassTumorBase" ParentName="SurgeryAEFleshmassCystBase" Abstract="True">
@@ -276,7 +291,7 @@
 	<RecipeDef ParentName="SurgeryAEFleshmassTumorBase">
 		<defName>IncubateAEFleshmassEye</defName>
 		<label>incubate fleshmass eye</label>
-		<description>A fleshmass tumor will be implanted into the subject's body to incubate a fleshmass eye. This is a painful process that will take two days for cyst to assimilate within host's body.</description>
+		<description>A fleshmass tumor will be implanted into the subject's body to incubate a fleshmass eye. This is a painful process that will take two days for tumor to assimilate within host's body.</description>
 		<descriptionHyperlinks>
 			<HediffDef>Hediff_AEFleshmassCystAssimilation</HediffDef>
 			<HediffDef>AE_FleshmassEye</HediffDef>
@@ -290,24 +305,9 @@
 	</RecipeDef>
 	
 	<RecipeDef ParentName="SurgeryAEFleshmassTumorBase">
-		<defName>IncubateAEFleshmassEar</defName>
-		<label>incubate fleshmass ear</label>
-		<description>A fleshmass tumor will be implanted into the subject's body to incubate a fleshmass ear. This is a painful process that will take two days for cyst to assimilate within host's body.</description>
-		<descriptionHyperlinks>
-			<HediffDef>Hediff_AEFleshmassTumorAssimilation</HediffDef>
-			<HediffDef>AE_FleshmassEar</HediffDef>
-		</descriptionHyperlinks>
-		<addsHediff>AE_FleshmassEar</addsHediff>
-		<appliedOnFixedBodyParts>
-			<li>Ear</li>
-		</appliedOnFixedBodyParts>
-		<researchPrerequisite>AEBloodLakeTerminalB</researchPrerequisite>
-	</RecipeDef>
-	
-	<RecipeDef ParentName="SurgeryAEFleshmassTumorBase">
 		<defName>IncubateAEFleshmassKidney</defName>
 		<label>incubate fleshmass kidney</label>
-		<description>A fleshmass tumor will be implanted into the subject's body to incubate a fleshmass kidney. This is a painful process that will take two days for cyst to assimilate within host's body.</description>
+		<description>A fleshmass tumor will be implanted into the subject's body to incubate a fleshmass kidney. This is a painful process that will take two days for tumor to assimilate within host's body.</description>
 		<descriptionHyperlinks>
 			<HediffDef>Hediff_AEFleshmassTumorAssimilation</HediffDef>
 			<HediffDef>AE_FleshmassKidney</HediffDef>
@@ -323,7 +323,7 @@
 	<RecipeDef ParentName="SurgeryAEFleshmassTumorBase">
 		<defName>IncubateAEFleshmassHeart</defName>
 		<label>incubate fleshmass heart</label>
-		<description>A fleshmass tumor will be implanted into the subject's body to incubate a fleshmass heart. This is a painful process that will take two days for cyst to assimilate within host's body.</description>
+		<description>A fleshmass tumor will be implanted into the subject's body to incubate a fleshmass heart. This is a painful process that will take two days for tumor to assimilate within host's body.</description>
 		<descriptionHyperlinks>
 			<HediffDef>Hediff_AEFleshmassTumorAssimilation</HediffDef>
 			<HediffDef>AE_FleshmassHeart</HediffDef>
@@ -338,7 +338,7 @@
 	<RecipeDef ParentName="SurgeryAEFleshmassTumorBase">
 		<defName>IncubateAEFleshmassBrainTumor</defName>
 		<label>incubate fleshmass brain tumor</label>
-		<description>A fleshmass tumor will be implanted into the subject's body to incubate a fleshmass brain tumor. This is a painful process that will take two days for cyst to assimilate within host's body.\n\nCan be implanted up to 5 times.</description>
+		<description>A fleshmass tumor will be implanted into the subject's body to incubate a fleshmass brain tumor. This is a painful process that will take two days for tumor to assimilate within host's body.\n\nCan be implanted up to 5 times.</description>
 		<descriptionHyperlinks>
 			<HediffDef>Hediff_AEFleshmassTumorAssimilation</HediffDef>
 			<HediffDef>AE_FleshmassBrainTumor</HediffDef>
@@ -355,7 +355,7 @@
 	<RecipeDef ParentName="SurgeryAEFleshmassTumorBase">
 		<defName>IncubateAEFleshmassBodyMutation</defName>
 		<label>incubate fleshmass body mutation</label>
-		<description>A fleshmass tumor will be implanted into the subject's body to mutate the host's entire body and seamlessly integrate fleshmass organs. This is a painful process that will take two days for cyst to assimilate within host's body.\n\nIt effect depends on amount of fleshmass mutations in the host's body up to 15.</description>
+		<description>A fleshmass tumor will be implanted into the subject's body to mutate the host's entire body and seamlessly integrate fleshmass organs. This is a painful process that will take two days for tumor to assimilate within host's body.\n\nIt effect depends on amount of fleshmass mutations in the host's body up to 15.</description>
 		<descriptionHyperlinks>
 			<HediffDef>Hediff_AEFleshmassTumorAssimilation</HediffDef>
 			<HediffDef>AE_FleshmassBodyMutation</HediffDef>
