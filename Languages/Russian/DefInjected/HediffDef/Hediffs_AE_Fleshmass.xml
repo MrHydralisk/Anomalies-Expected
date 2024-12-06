@@ -54,7 +54,7 @@
 	<AE_FleshmassHeart.labelNoun>сердце из биомассы</AE_FleshmassHeart.labelNoun>
 
 	<AE_FleshmassBrainTumor.label>опухоль головного мозга из биомассы</AE_FleshmassBrainTumor.label>
-	<AE_FleshmassBrainTumor.description>Злокачественная биомасса с зачатками разума. Опухоль имеет свою нейронную сеть позволяющую контролировать союзных биошматов.\n\nОрган обладает собственной нейронной сетью и может представлять угрозу в случае удаления.\n\nЭффект на болевые центры головного мозга зависит от количества ассимилированных опухолей в головном мозге носителя до 5 штук.</AE_FleshmassBrainTumor.description>
+	<AE_FleshmassBrainTumor.description>Злокачественная биомасса с зачатками разума. Опухоль имеет свою нейронную сеть позволяющую контролировать союзных биошматов.\n\nОрган обладает собственной нейронной сетью и может представлять угрозу в случае удаления.\n\nЭффект на болевые центры головного мозга и радиу действия зависит от количества ассимилированных опухолей в головном мозге носителя до 5 штук.</AE_FleshmassBrainTumor.description>
 	<AE_FleshmassBrainTumor.comps.HediffComp_FleshbeastEmerge.letterLabel>Операция на биомассе</AE_FleshmassBrainTumor.comps.HediffComp_FleshbeastEmerge.letterLabel>
 	<AE_FleshmassBrainTumor.comps.HediffComp_FleshbeastEmerge.letterText>{PAWN_nameDef} плохо {PAWN_gender ? перенёс : перенесла} операцию. Попытка удалить опухоль головного мозга из биомассы обернулась нападением. Извивающийся комок плоти отделился от носителя и превратился в биошмата!</AE_FleshmassBrainTumor.comps.HediffComp_FleshbeastEmerge.letterText>
 

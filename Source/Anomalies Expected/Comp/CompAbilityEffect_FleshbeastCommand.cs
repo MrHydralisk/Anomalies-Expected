@@ -13,6 +13,11 @@ namespace AnomaliesExpected
 
         private bool isIgnoreEnemies;
 
+        public float radius => Props.gatherRadius * level;
+        public int level => HediffFleshmassBrainTumor?.level ?? 3;
+        public Hediff_Level HediffFleshmassBrainTumor => HediffFleshmassBrainTumorCached ?? (HediffFleshmassBrainTumorCached = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOfLocal.AE_FleshmassBrainTumor) as Hediff_Level);
+        public Hediff_Level HediffFleshmassBrainTumorCached;
+
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
             LocalTargetInfo self = new LocalTargetInfo(pawn);
@@ -39,11 +44,11 @@ namespace AnomaliesExpected
         {
             if (Props.isCall)
             {
-                GenDraw.DrawRadiusRing(target.Cell, Props.gatherRadius);
+                GenDraw.DrawRadiusRing(target.Cell, radius);
             }
             else
             {
-                GenDraw.DrawRadiusRing(pawn.Position, Props.gatherRadius);
+                GenDraw.DrawRadiusRing(pawn.Position, radius);
             }
         }
 
@@ -74,7 +79,7 @@ namespace AnomaliesExpected
             }
             if (pawn.Faction != null)
             {
-                foreach (IntVec3 item in GenRadial.RadialCellsAround(Props.isCall ? target.Cell : pawn.Position, Props.gatherRadius, true))
+                foreach (IntVec3 item in GenRadial.RadialCellsAround(Props.isCall ? target.Cell : pawn.Position, radius, true))
                 {
                     List<Thing> thingList = item.GetThingList(pawn.Map);
                     for (int i = 0; i < thingList.Count; i++)
@@ -98,7 +103,7 @@ namespace AnomaliesExpected
             List<Pawn> fleshbeasts = new List<Pawn>();
             if (pawn.Faction != null)
             {
-                foreach (IntVec3 item in GenRadial.RadialCellsAround(target.Cell, Props.gatherRadius, true))
+                foreach (IntVec3 item in GenRadial.RadialCellsAround(target.Cell, radius, true))
                 {
                     List<Thing> thingList = item.GetThingList(pawn.Map);
                     for (int i = 0; i < thingList.Count; i++)

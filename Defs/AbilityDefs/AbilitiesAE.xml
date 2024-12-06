@@ -207,7 +207,7 @@
 		</verbProperties>
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_AbilityFleshbeastCommand">
-				<gatherRadius>9.9</gatherRadius>
+				<gatherRadius>2.9</gatherRadius>
 			</li>
 		</comps>
 	</AbilityDef>
@@ -218,7 +218,7 @@
 		<description>Send a psychic command to fleshbeasts in specific area to move to the caster.</description>
 		<comps Inherit="false">
 			<li Class="AnomaliesExpected.CompProperties_AbilityFleshbeastCommand">
-				<gatherRadius>9.9</gatherRadius>
+				<gatherRadius>2.9</gatherRadius>
 				<isCall>true</isCall>
 			</li>
 		</comps>

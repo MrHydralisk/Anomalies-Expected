@@ -296,7 +296,7 @@
 		<defName>AE_FleshmassBrainTumor</defName>
 		<hediffClass>Hediff_Level</hediffClass>
 		<label>fleshmass brain tumor</label>
-		<description>A cancerous mass of semi-sentient flesh. The tumor possesses its own neural network capable of controlling allied fleshbeasts.\n\nThe organ has its own neural structures and may become dangerous if removed.\n\nIt effect on the brain's pain centers depends on amount of fleshmass tumors assimilated in the host's brain up to 5.</description>
+		<description>A cancerous mass of semi-sentient flesh. The tumor possesses its own neural network capable of controlling allied fleshbeasts.\n\nThe organ has its own neural structures and may become dangerous if removed.\n\nIt effect on the brain's pain centers and radius of effect depends on amount of fleshmass tumors assimilated in the host's brain up to 5.</description>
 		<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
 		<isBad>false</isBad>
 		<priceImpact>true</priceImpact>
