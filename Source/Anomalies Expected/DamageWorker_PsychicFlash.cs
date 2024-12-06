@@ -10,10 +10,11 @@ namespace AnomaliesExpected
         {
             if (thing is Pawn pawn)
             {
+                float statCasterValue = (dinfo.Instigator as Pawn)?.GetStatValue(StatDefOf.PsychicSensitivity) ?? 1;
                 float statValue = pawn.GetStatValue(StatDefOf.PsychicSensitivity);
                 if (statValue > 0f)
                 {
-                    pawn.stances?.stunner?.StunFor(Mathf.RoundToInt(120f * statValue), null);
+                    pawn.stances?.stunner?.StunFor(Mathf.RoundToInt(250f * statCasterValue * statValue), null);
                 }
             }
             return base.Apply(dinfo, thing);
