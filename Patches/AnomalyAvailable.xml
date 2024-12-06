@@ -833,6 +833,21 @@
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
+					<xpath>Defs/MutantDef[defName="Ghoul"]/removesHediffs</xpath>
+					<order>Append</order>
+					<value>
+						<li>Hediff_AEFleshmassCystAssimilation</li>
+						<li>AE_FleshmassAcidCavity</li>
+						<li>Hediff_AEFleshmassTumorAssimilation</li>
+						<li>AE_FleshmassEye</li>
+						<li>AE_FleshmassEar</li>
+						<li>AE_FleshmassKidney</li>
+						<li>AE_FleshmassHeart</li>
+						<li>AE_FleshmassBrainTumor</li>
+						<li>AE_FleshmassBodyMutation</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
 					<xpath>Defs/HediffDef[@Name="AddedMutationBase"]</xpath>
 					<order>Append</order>
 					<value>

@@ -75,6 +75,9 @@
 			<li>Human</li>
 			<li MayRequire="Ludeon.RimWorld.Anomaly">CreepJoiner</li>
 		</recipeUsers>
+		<mutantBlacklist>
+			<li>Ghoul</li>
+		</mutantBlacklist>
 		<jobString>Implanting fleshmass cyst.</jobString>
 		<ingredients>
 			<li>
@@ -135,6 +138,7 @@
 			<HediffDef>Hediff_AEFleshmassCystAssimilation</HediffDef>
 			<HediffDef>FleshmassStomach</HediffDef>
 		</descriptionHyperlinks>
+		<mutantBlacklist Inherit="false" />
 		<addsHediff>FleshmassStomach</addsHediff>
 		<appliedOnFixedBodyParts>
 			<li>Stomach</li>
@@ -150,6 +154,7 @@
 			<HediffDef>Hediff_AEFleshmassCystAssimilation</HediffDef>
 			<HediffDef>FleshmassLung</HediffDef>
 		</descriptionHyperlinks>
+		<mutantBlacklist Inherit="false" />
 		<addsHediff>FleshmassLung</addsHediff>
 		<appliedOnFixedBodyParts>
 			<li>Lung</li>
@@ -165,6 +170,7 @@
 			<HediffDef>Hediff_AEFleshmassCystAssimilation</HediffDef>
 			<HediffDef>AE_FleshmassLiver</HediffDef>
 		</descriptionHyperlinks>
+		<mutantBlacklist Inherit="false" />
 		<addsHediff>AE_FleshmassLiver</addsHediff>
 		<appliedOnFixedBodyParts>
 			<li>Liver</li>
@@ -208,6 +214,7 @@
 			<HediffDef>AE_FleshmassAcidGland</HediffDef>
 			<AbilityDef>AEAcidSpew</AbilityDef>
 		</descriptionHyperlinks>
+		<mutantBlacklist Inherit="false" />
 		<addsHediff>AE_FleshmassAcidGland</addsHediff>
 		<appliedOnFixedBodyParts>
 			<li>Neck</li>
@@ -223,6 +230,7 @@
 			<HediffDef>AE_FleshmassAcidGland</HediffDef>
 		</descriptionHyperlinks>
 		<jobString>Removing fleshmass acid gland.</jobString>
+		<mutantBlacklist Inherit="false" />
 		<removesHediff>AE_FleshmassAcidGland</removesHediff>
 	</RecipeDef>
 
