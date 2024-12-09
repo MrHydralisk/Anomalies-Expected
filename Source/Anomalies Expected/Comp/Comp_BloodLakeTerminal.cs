@@ -10,7 +10,7 @@ namespace AnomaliesExpected
 
         public override void DestroyAnomaly(Pawn caster)
         {
-            mapComponent.Entrance.StudyUnlocks.UnlockStudyNoteManual(1, caster.LabelCap);
+            mapComponent.Entrance.StudyUnlocks.UnlockStudyNoteManual(1, caster.LabelShortCap);
             mapComponent.DestroySubMap();
         }
     }

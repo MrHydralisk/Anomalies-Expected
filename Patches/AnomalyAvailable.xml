@@ -822,7 +822,7 @@
 					<xpath>Defs/WeatherDef[defName="AE_BloodLakeWeatherClear" or defName="AE_BloodLakeWeatherBloodFog"]</xpath>
 				</li>
 				<li Class="PatchOperationRemove">
-					<xpath>Defs/ThoughtDef[defName="Thought_AEForbiddenFruit"]</xpath>
+					<xpath>Defs/ThoughtDef[defName="Thought_AEFleshmassLung"]</xpath>
 				</li>
 			</operations>
 		</nomatch>
@@ -840,6 +840,7 @@
 					<order>Append</order>
 					<value>
 						<li>Hediff_AEFleshmassCystAssimilation</li>
+						<li>AE_FleshmassStomach</li>
 						<li>AE_FleshmassAcidCavity</li>
 						<li>Hediff_AEFleshmassTumorAssimilation</li>
 						<li>AE_FleshmassEye</li>
@@ -848,6 +849,8 @@
 						<li>AE_FleshmassHeart</li>
 						<li>AE_FleshmassBrainTumor</li>
 						<li>AE_FleshmassBodyMutation</li>
+						<li>Hediff_AEFleshmassPartRestoration</li>
+						<li>AE_FleshmassOrganogenesisCore</li>
 					</value>
 				</li>
 				<li Class="PatchOperationAttributeAdd">

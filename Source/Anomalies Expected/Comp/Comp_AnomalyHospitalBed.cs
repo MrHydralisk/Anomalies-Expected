@@ -120,7 +120,7 @@ namespace AnomaliesExpected
             }
             if (severityHealed > 0)
             {
-                storedSeverityList.Add(new SeverityRecord(pawn.LabelCap, severityHealed));
+                storedSeverityList.Add(new SeverityRecord(pawn.LabelShortCap, severityHealed));
                 storedSeverityList.SortByDescending(sr => sr.Severity);
                 Studiable.Study(pawn, 0, severityHealed * Props.StudyHealMult);
             }

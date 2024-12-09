@@ -164,7 +164,7 @@ namespace AnomaliesExpected
                 bool isConsumed = false;
                 if (mood.isDanger)
                 {
-                    Messages.Message("AnomaliesExpected.MeatGrinder.ConsumedFully".Translate(caster.LabelCap, this.parent.LabelCap).RawText, this.parent, MessageTypeDefOf.NegativeEvent);
+                    Messages.Message("AnomaliesExpected.MeatGrinder.ConsumedFully".Translate(caster.LabelShortCap, this.parent.LabelCap).RawText, this.parent, MessageTypeDefOf.NegativeEvent);
                     caster.Kill(new DamageInfo(DamageDefOf.Cut, 500, instigator: this.parent));
                     caster.Corpse.Destroy();
                     isConsumed = true;
@@ -177,7 +177,7 @@ namespace AnomaliesExpected
                         DamageInfo dm = new DamageInfo(DamageDefOf.Cut, 500, hitPart: bodyParts.RandomElement(), instigator: this.parent);
                         dm.SetAllowDamagePropagation(false);
                         DamageWorker.DamageResult damageResult = caster.TakeDamage(dm);
-                        Messages.Message("AnomaliesExpected.MeatGrinder.Consumed".Translate(caster.LabelCap, damageResult.LastHitPart.Label, this.parent.LabelCap).RawText, this.parent, MessageTypeDefOf.NegativeEvent);
+                        Messages.Message("AnomaliesExpected.MeatGrinder.Consumed".Translate(caster.LabelShortCap, damageResult.LastHitPart.Label, this.parent.LabelCap).RawText, this.parent, MessageTypeDefOf.NegativeEvent);
                         isConsumed = true;
                     }
                 }

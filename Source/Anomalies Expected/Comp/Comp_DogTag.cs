@@ -15,7 +15,7 @@ namespace AnomaliesExpected
         {
             if (owner != null)
             {
-                PawnLabel = owner.LabelCap;
+                PawnLabel = owner.LabelShortCap;
                 PawnUniqueLoadID = owner.GetUniqueLoadID();
             }
         }
@@ -26,7 +26,7 @@ namespace AnomaliesExpected
             {
                 HealthUtility.AdjustSeverity(caster, Props.hediffOnUse, 1);
             }
-            Messages.Message("AnomaliesExpected.DogTag.Interacted".Translate(parent.Label, caster.LabelCap).RawText, caster, MessageTypeDefOf.PositiveEvent);
+            Messages.Message("AnomaliesExpected.DogTag.Interacted".Translate(parent.Label, caster.LabelShortCap).RawText, caster, MessageTypeDefOf.PositiveEvent);
             parent.Destroy();
         }
 
