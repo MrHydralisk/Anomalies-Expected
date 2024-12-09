@@ -33,7 +33,7 @@ namespace AnomaliesExpected
                             break;
                         }
                 }
-                return (!pawn.health.hediffSet.hediffs.Any((Hediff x) => x.Part == record && ((x.def == recipe.addsHediff && (!(x is Hediff_Level hl) || (hl.level >= x.def.maxSeverity))) || (x.def == mutation && ((x as HediffWithComps).GetComp<HediffComp_FleshmassMutation>()?.hediffToAdd ?? null) == recipe.addsHediff) || !recipe.CompatibleWithHediff(x.def)))) ? true : false;
+                return (!pawn.health.hediffSet.hediffs.Any((Hediff x) => x.Part == record && ((x.def == recipe.addsHediff && (!(x is Hediff_Level hl) || (hl.level >= x.def.maxSeverity))) || ((x.def == mutation || x.def == HediffDefOfLocal.Hediff_AEFleshmassPartRestoration) && ((x as HediffWithComps).GetComp<HediffComp_FleshmassMutation>()?.hediffToAdd ?? null) == recipe.addsHediff) || !recipe.CompatibleWithHediff(x.def)))) ? true : false;
             });
         }
 

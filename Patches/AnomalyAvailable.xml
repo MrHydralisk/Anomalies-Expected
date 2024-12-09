@@ -777,7 +777,7 @@
 					<xpath>Defs/AbilityCategoryDef[defName="AEAnomaliesExpected"]</xpath>
 				</li>
 				<li Class="PatchOperationRemove">
-					<xpath>Defs/AbilityDef[defName="AEAcidSpew" or defName="AEAcidSpit" or defName="AEPsychicFlash" or @Name="AESpawnFleshbeastBase" or @ParentName="AESpawnFleshbeastBase" or @Name="AEFleshbeastCommandBase" or @ParentName="AEFleshbeastCommandBase"]</xpath>
+					<xpath>Defs/AbilityDef[defName="AEAcidSpew" or defName="AEAcidSpit" or defName="AEPsychicFlash" or @Name="AESpawnFleshbeastBase" or @ParentName="AESpawnFleshbeastBase" or @Name="AEFleshbeastCommandBase" or @ParentName="AEFleshbeastCommandBase" or defName="AEFleshmassStomach"]</xpath>
 				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/ThingDef[defName="AE_Bullet_Shell_AcidSpitAbility" or defName="Mote_AEBloodLiquidInjector" or @Name="BuildingAE_BloodLakeBase" or @ParentName="BuildingAE_BloodLakeBase" or defName="AE_BloodLakeTerminal" or @ParentName="FleshmassSpitter" or @ParentName="Bullet_Shell_AcidSpit" or defName="AE_BloodLakeUndergroundNest" or defName="AE_BloodPuddleSpawner" or defName="AE_BloodLakeSpawner" or defName="AE_BloodPump" or @Name="AEResearchNotesBase" or @ParentName="AEResearchNotesBase" or defName="AE_BloodLiquidInjector" or defName="AE_FleshmassCyst" or defName="AE_FleshmassTumor" or defName="AE_BloodLiquid" or defName="AE_DogTag"]</xpath>
@@ -798,7 +798,7 @@
 					<xpath>Defs/GenStepDef[defName="AE_BloodLakeTerrain" or defName="AE_BloodLakeScatterRuinsSimple" or defName="AE_BloodLakeScatterShrines" or defName="AE_BloodLakeFindExit" or defName="AE_BloodLakeFindTerminal" or defName="AE_BloodLakeFleshmassUndergroundNest" or defName="AE_BloodLakeFog" or defName="AE_BloodLakeFleshmass" or defName="AE_BloodLakeFleshSacks" or defName="AE_BloodLakeFleshmassSpitterGiant" or defName="AE_BloodLakeFleshmassSpitterMedium" or defName="AE_BloodLakeFleshmassSpitterSmall" or defName="AE_BloodLakeFindDogTag" or defName="AE_BloodLakeFleshbeasts"]</xpath>
 				</li>
 				<li Class="PatchOperationRemove">
-					<xpath>Defs/HediffDef[defName="Hediff_AEFleshmassTumorIncubation" or defName="Hediff_AEFleshmassCystAssimilation" or defName="AE_FleshmassLiver" or defName="AE_FleshmassAcidCavity" or defName="AE_FleshmassAcidGland" or defName="Hediff_AEFleshmassTumorAssimilation" or defName="AE_FleshmassEye" or defName="AE_FleshmassEar" or defName="AE_FleshmassKidney" or defName="AE_FleshmassHeart" or defName="AE_FleshmassBrainTumor" or defName="AE_FleshmassBodyMutation" or defName="Hediff_AEDogTag" or defName="Hediff_AEBloodLiquidConcentration" or defName="Hediff_AEDestabilization"]</xpath>
+					<xpath>Defs/HediffDef[defName="Hediff_AEFleshmassTumorIncubation" or defName="Hediff_AEFleshmassCystAssimilation" or defName="AE_FleshmassStomach" or defName="AE_FleshmassLung" or defName="AE_FleshmassLiver" or defName="AE_FleshmassAcidCavity" or defName="AE_FleshmassAcidGland" or defName="Hediff_AEFleshmassTumorAssimilation" or defName="AE_FleshmassEye" or defName="AE_FleshmassEar" or defName="AE_FleshmassNose" or defName="AE_FleshmassKidney" or defName="AE_FleshmassHeart" or defName="AE_FleshmassBrainTumor" or defName="AE_FleshmassBodyMutation" or defName="Hediff_AEFleshmassPartRestoration" or defName="AE_FleshmassOrganogenesisCore" or defName="Hediff_AEDogTag" or defName="Hediff_AEBloodLiquidConcentration" or defName="Hediff_AEDestabilization"]</xpath>
 				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/MapGeneratorDef[defName="AE_BloodLakeMapGenerator"]</xpath>
@@ -820,6 +820,9 @@
 				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/WeatherDef[defName="AE_BloodLakeWeatherClear" or defName="AE_BloodLakeWeatherBloodFog"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThoughtDef[defName="Thought_AEForbiddenFruit"]</xpath>
 				</li>
 			</operations>
 		</nomatch>
@@ -845,30 +848,6 @@
 						<li>AE_FleshmassHeart</li>
 						<li>AE_FleshmassBrainTumor</li>
 						<li>AE_FleshmassBodyMutation</li>
-					</value>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/HediffDef[@Name="AddedMutationBase"]</xpath>
-					<order>Append</order>
-					<value>
-						<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
-					</value>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/HediffDef[defName="FleshmassStomach" or defName="FleshmassLung"]/addedPartProps</xpath>
-					<order>Append</order>
-					<value>
-						<partEfficiency>1.20</partEfficiency>
-						<betterThanNatural>true</betterThanNatural>
-					</value>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/HediffDef[defName="FleshmassStomach" or defName="FleshmassLung"]</xpath>
-					<order>Append</order>
-					<value>
-						<tags>
-							<li>FleshmassBodyMutation</li>
-						</tags>
 					</value>
 				</li>
 				<li Class="PatchOperationAttributeAdd">

@@ -224,4 +224,38 @@
 		</comps>
 	</AbilityDef>
 
+	<AbilityDef>
+		<defName>AEFleshmassStomach</defName>
+		<label>metabolic recycling</label>
+		<description>Break down and reabsorb nutrients from its own tissue.</description>
+		<iconPath>UI/Icons/ThingCategories/Foods</iconPath>
+		<cooldownTicksRange>60000</cooldownTicksRange>
+		<displayOrder>1304</displayOrder>
+		<category>AEAnomaliesExpected</category>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<warmupEffecter>EatMeat</warmupEffecter>
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<targetRequired>False</targetRequired>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>5</warmupTime>
+			<requireLineOfSight>false</requireLineOfSight>
+			<violent>false</violent>
+			<soundCast>AE_RawMeatEat</soundCast>
+			<targetable>false</targetable>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilityFleshmassStomach">
+				<damAmount>18</damAmount>
+				<nutAmount>0.9</nutAmount>
+			</li>
+		</comps>
+	</AbilityDef>
+
 </Defs>

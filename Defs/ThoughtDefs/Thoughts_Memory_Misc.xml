@@ -34,5 +34,20 @@
 			</li>
 		</stages>
 	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>Thought_AEFleshmassLung</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>AE_FleshmassLung</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+		<stages>
+			<li>
+				<label>Fleshmass lung stimulation</label>
+				<description>Feeling light headed. What a nice feeling.</description>
+				<baseMoodEffect>4</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
   
 </Defs>

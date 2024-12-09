@@ -22,4 +22,7 @@
 	<AEFleshbeastCommandGather.label>команды: зов</AEFleshbeastCommandGather.label>
 	<AEFleshbeastCommandGather.description>Отправить психический приказ боишматам в определенной области двигаться к источнику приказа.</AEFleshbeastCommandGather.description>
 
+	<AEFleshmassStomach.label>метаболическая переработка</AEFleshmassStomach.label>
+	<AEFleshmassStomach.description>Разложение и повторное поглощение питательных веществ из собственных тканей.</AEFleshmassStomach.description>
+
 </LanguageData>

@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace AnomaliesExpected
@@ -8,8 +9,9 @@ namespace AnomaliesExpected
         public HediffCompProperties_FleshmassMutation Props => (HediffCompProperties_FleshmassMutation)props;
 
         public HediffDef hediffToAdd;
+        public int hediffLevel = -1;
 
-        public override string CompLabelInBracketsExtra => hediffToAdd?.label;
+        public override string CompLabelInBracketsExtra => $"{hediffToAdd?.label ?? "---"} {Mathf.Round(parent.Severity * 100 / parent.def.maxSeverity)}%";
 
         public override void CompPostTick(ref float severityAdjustment)
         {
@@ -20,7 +22,7 @@ namespace AnomaliesExpected
             }
         }
 
-        private void Mutation()
+        protected virtual void Mutation()
         {
             if (ModsConfig.AnomalyActive)
             {
@@ -29,7 +31,11 @@ namespace AnomaliesExpected
                 Hediff firstHediffOfDef = pawn.health.hediffSet.hediffs.FirstOrDefault((Hediff h) => h.def == hediffToAdd && (parent.Part == null || h.Part == parent.Part));
                 if (firstHediffOfDef == null)
                 {
-                    pawn.health.AddHediff(hediffToAdd, parent.Part);
+                    Hediff hediff = pawn.health.AddHediff(hediffToAdd, parent.Part);
+                    if (hediff is Hediff_Level hediff_Level && hediffLevel > -1)
+                    {
+                        hediff_Level.SetLevelTo(hediffLevel);
+                    }
                 }
                 else if (firstHediffOfDef is Hediff_Level && !(firstHediffOfDef is Hediff_GroupedLevel))
                 {
@@ -44,6 +50,7 @@ namespace AnomaliesExpected
         public override void CompExposeData()
         {
             Scribe_Defs.Look(ref hediffToAdd, "hediffToAdd");
+            Scribe_Values.Look(ref hediffLevel, "hediffLevel", -1);
         }
     }
 }

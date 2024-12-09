@@ -136,10 +136,11 @@
 		<description>A fleshmass cyst will be implanted into the subject's body to incubate a fleshmass stomach. This is a painful process that will take one day for cyst to assimilate within host's body.</description>
 		<descriptionHyperlinks>
 			<HediffDef>Hediff_AEFleshmassCystAssimilation</HediffDef>
-			<HediffDef>FleshmassStomach</HediffDef>
+			<HediffDef>AE_FleshmassStomach</HediffDef>
+			<AbilityDef>AEFleshmassStomach</AbilityDef>
 		</descriptionHyperlinks>
 		<mutantBlacklist Inherit="false" />
-		<addsHediff>FleshmassStomach</addsHediff>
+		<addsHediff>AE_FleshmassStomach</addsHediff>
 		<appliedOnFixedBodyParts>
 			<li>Stomach</li>
 		</appliedOnFixedBodyParts>
@@ -152,10 +153,10 @@
 		<description>A fleshmass cyst will be implanted into the subject's body to incubate a fleshmass lung. This is a painful process that will take one day for cyst to assimilate within host's body.</description>
 		<descriptionHyperlinks>
 			<HediffDef>Hediff_AEFleshmassCystAssimilation</HediffDef>
-			<HediffDef>FleshmassLung</HediffDef>
+			<HediffDef>AE_FleshmassLung</HediffDef>
 		</descriptionHyperlinks>
 		<mutantBlacklist Inherit="false" />
-		<addsHediff>FleshmassLung</addsHediff>
+		<addsHediff>AE_FleshmassLung</addsHediff>
 		<appliedOnFixedBodyParts>
 			<li>Lung</li>
 		</appliedOnFixedBodyParts>
@@ -370,7 +371,7 @@
 	<RecipeDef ParentName="SurgeryAEFleshmassTumorBase">
 		<defName>IncubateAEFleshmassBodyMutation</defName>
 		<label>incubate fleshmass body mutation</label>
-		<description>A fleshmass tumor will be implanted into the subject's body to mutate the host's entire body and seamlessly integrate fleshmass organs. This is a painful process that will take two days for tumor to assimilate within host's body.\n\nIt effect depends on amount of fleshmass mutations in the host's body up to 15.</description>
+		<description>A fleshmass tumor will be implanted into the subject's body to mutate the host's entire body and replacing some tissue with fleshmass. This is a painful process that will take two days for tumor to assimilate within host's body.\n\nIt effect depends on amount of fleshmass mutations in the host's body up to 15.</description>
 		<descriptionHyperlinks>
 			<HediffDef>Hediff_AEFleshmassTumorAssimilation</HediffDef>
 			<HediffDef>AE_FleshmassBodyMutation</HediffDef>
@@ -401,6 +402,56 @@
 		<incompatibleWithHediffTags>
 			<li>ArmorGland</li>
 		</incompatibleWithHediffTags>
+		<researchPrerequisite>AEBloodLakeTerminalC</researchPrerequisite>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryAEFleshmassTumorBase">
+		<defName>IncubateAEFleshmassOrganogenesisCore</defName>
+		<label>incubate fleshmass organogenesis core</label>
+		<description>A fleshmass tumor will be implanted into the subject's body to seamlessly integrate with fleshmass organs, allowing them to regrow even after full destruction. It will take five days for fleshmass cells, left within the host's body, to regenerate into a new organ.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AEFleshmassTumorAssimilation</HediffDef>
+			<HediffDef>AE_FleshmassOrganogenesisCore</HediffDef>
+		</descriptionHyperlinks>
+		<addsHediff>AE_FleshmassOrganogenesisCore</addsHediff>
+		<ingredients Inherit="False">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AE_FleshmassTumor</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Shard</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<categories>
+						<li>Medicine</li>
+					</categories>
+				</filter>
+				<count>4</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AE_FleshmassTumor</li>
+				<li>Shard</li>
+			</thingDefs>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
 		<researchPrerequisite>AEBloodLakeTerminalC</researchPrerequisite>
 	</RecipeDef>
 

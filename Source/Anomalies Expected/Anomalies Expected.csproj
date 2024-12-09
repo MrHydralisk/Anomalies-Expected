@@ -37,6 +37,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompProperties\CompProperties_AbilityFleshmassStomach.cs" />
+    <Compile Include="Comp\CompAbilityEffect_FleshmassStomach.cs" />
+    <Compile Include="Comp\HediffComp_FleshmassRestoration.cs" />
+    <Compile Include="DefOfLocal\BodyPartDefOfLocal.cs" />
     <Compile Include="HarmonyPatches.cs" />
     <Compile Include="CompProperties\CompProperties_AbilityFleshbeastCommand.cs" />
     <Compile Include="CompProperties\CompProperties_AbilitySpawnFleshbeast.cs" />

@@ -54,7 +54,7 @@ namespace AnomaliesExpected
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            if (!parent.GizmoDisabled(out _))
+            if ((pawn.Drafted || parent.def.displayGizmoWhileUndrafted) && parent.GizmosVisible())
             {
                 Command_Toggle command_Toggle = new Command_Toggle();
                 command_Toggle.defaultLabel = "AnomaliesExpected.Fleshmass.IsIgnoreEnemies.Label".Translate();
@@ -67,6 +67,8 @@ namespace AnomaliesExpected
                 command_Toggle.activateSound = SoundDefOf.Tick_Tiny;
                 command_Toggle.icon = parent.def.uiIcon;
                 command_Toggle.Order = 5f + (((float?)parent.def.category?.displayOrder) ?? 0f) / 100f + (float)parent.def.displayOrder / 1000f + (float)parent.def.level / 10000f;
+                command_Toggle.Disabled = parent.GizmoDisabled(out string reason);
+                command_Toggle.disabledReason = reason;
                 yield return command_Toggle;
             }
         }

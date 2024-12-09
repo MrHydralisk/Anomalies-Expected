@@ -12,6 +12,8 @@ namespace AnomaliesExpected
         [MayRequireAnomaly]
         public static HediffDef Hediff_AEBloodLiquidConcentration;
         [MayRequireAnomaly]
+        public static HediffDef Hediff_AEFleshmassPartRestoration;
+        [MayRequireAnomaly]
         public static HediffDef Hediff_AEFleshmassCystAssimilation;
         [MayRequireAnomaly]
         public static HediffDef Hediff_AEFleshmassTumorAssimilation;
@@ -19,5 +21,7 @@ namespace AnomaliesExpected
         public static HediffDef AE_FleshmassBrainTumor;
         [MayRequireAnomaly]
         public static HediffDef AE_FleshmassBodyMutation;
+        [MayRequireAnomaly]
+        public static HediffDef AE_FleshmassOrganogenesisCore;
     }
 }

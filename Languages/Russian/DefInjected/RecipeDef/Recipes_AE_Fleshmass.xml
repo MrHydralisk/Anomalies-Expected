@@ -62,7 +62,11 @@
 	<IncubateAEFleshmassBrainTumor.jobString>Имплантирует опухоль из биомассы.</IncubateAEFleshmassBrainTumor.jobString>
 
 	<IncubateAEFleshmassBodyMutation.label>выращивать мутацию тела из биомассы</IncubateAEFleshmassBodyMutation.label>
-	<IncubateAEFleshmassBodyMutation.description>Опухоль из биомассы будет имплантирована в тело субъекта для мутирования всего тела носителя и интегрирует органы из биомассы. Это болезненный процесс, который займет два дня для ассимиляции опухоли внутри тела хозяина.\n\nЭффект зависит от количества мутаций из биомассы в теле носителя до 15.</IncubateAEFleshmassBodyMutation.description>
+	<IncubateAEFleshmassBodyMutation.description>Опухоль из биомассы будет имплантирована в тело субъекта для мутирования всего тела носителя и замены части тканей биомассы. Это болезненный процесс, который займет два дня для ассимиляции опухоли внутри тела хозяина.\n\nЭффект зависит от количества мутаций из биомассы в теле носителя до 15.</IncubateAEFleshmassBodyMutation.description>
 	<IncubateAEFleshmassBodyMutation.jobString>Имплантирует опухоль из биомассы.</IncubateAEFleshmassBodyMutation.jobString>
+
+	<IncubateAEFleshmassOrganogenesisCore.label>выращивать ядро органогенеза из биомассы</IncubateAEFleshmassOrganogenesisCore.label>
+	<IncubateAEFleshmassOrganogenesisCore.description>Опухоль из биомассы будет имплантирована в тело субъекта и бесшовно интегрируется с органами из биомассы, позволяя им регенерировать даже после практически полного разрушения. Это болезненный процесс, который займет два дня для ассимиляции опухоли внутри тела хозяина.</IncubateAEFleshmassOrganogenesisCore.description>
+	<IncubateAEFleshmassOrganogenesisCore.jobString>Имплантирует опухоль из биомассы.</IncubateAEFleshmassOrganogenesisCore.jobString>
   
 </LanguageData>
