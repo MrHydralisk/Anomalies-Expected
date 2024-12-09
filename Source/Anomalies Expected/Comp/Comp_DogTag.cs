@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
+using UnityEngine;
 using Verse;
 
 namespace AnomaliesExpected
@@ -15,7 +16,18 @@ namespace AnomaliesExpected
         {
             if (owner != null)
             {
-                PawnLabel = owner.LabelShortCap;
+                char[] chars = owner.LabelShortCap.ToCharArray();
+                List<int> indexToCensor = new List<int>();
+                for (int i = 0; i < chars.Length; i++)
+                {
+                    indexToCensor.Add(i);
+                }
+                int amountToCensor = Mathf.RoundToInt(chars.Length * Props.chanceToCensor);
+                foreach (int i in indexToCensor.TakeRandom(amountToCensor))
+                {
+                    chars[i] = Props.symbolsToCensor.RandomElement();
+                }
+                PawnLabel = new string(chars);
                 PawnUniqueLoadID = owner.GetUniqueLoadID();
             }
         }

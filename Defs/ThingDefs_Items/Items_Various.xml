@@ -163,6 +163,8 @@
 				</targetingParameters>
 				
 				<hediffOnUse>Hediff_AEDogTag</hediffOnUse>
+				<chanceToCensor>0.5</chanceToCensor>
+				<symbolsToCensor>/|\—</symbolsToCensor>
 			</li>
 		</comps>
 	</ThingDef>
