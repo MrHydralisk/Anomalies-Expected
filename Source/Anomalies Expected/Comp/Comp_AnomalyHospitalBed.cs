@@ -1,7 +1,7 @@
-﻿using System;
+﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -140,7 +140,7 @@ namespace AnomaliesExpected
                     tickSign = Find.TickManager.TicksGame;
                 },
                 defaultLabel = "AnomaliesExpected.AnomalyHospitalBed.Sign.Label".Translate(),
-                defaultDesc = "AnomaliesExpected.AnomalyHospitalBed.Sign.Desc" .Translate(),
+                defaultDesc = "AnomaliesExpected.AnomalyHospitalBed.Sign.Desc".Translate(),
                 icon = parent.def.uiIcon,
                 hotKey = KeyBindingDefOf.Misc6,
                 Disabled = !canSign || ((Bed.CurOccupants?.Count() ?? 0) == 0),

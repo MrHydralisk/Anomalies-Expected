@@ -1,7 +1,4 @@
-﻿using RimWorld;
-using System.Text;
-using Verse;
-using Verse.Noise;
+﻿using Verse;
 
 namespace AnomaliesExpected
 {

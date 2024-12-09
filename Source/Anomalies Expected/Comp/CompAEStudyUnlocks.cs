@@ -97,7 +97,7 @@ namespace AnomaliesExpected
                     letters.Add(choiceLetter);
                 }
                 UpdateFromStudyNote(studyNote);
-            }            
+            }
         }
 
         protected override void Notify_StudyLevelChanged(ChoiceLetter keptLetter)

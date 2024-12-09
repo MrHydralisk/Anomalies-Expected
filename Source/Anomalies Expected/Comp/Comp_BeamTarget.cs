@@ -1,7 +1,6 @@
-﻿using System;
+﻿using RimWorld;
+using System;
 using System.Collections.Generic;
-using NAudio.Utils;
-using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
@@ -47,7 +46,7 @@ namespace AnomaliesExpected
 
         public override void CompTick()
         {
-            base.CompTick(); 
+            base.CompTick();
             if (Find.TickManager.TicksGame >= TickNextState && parent.Spawned)
             {
                 switch (beamTargetState)

@@ -19,7 +19,7 @@ namespace AnomaliesExpected
                 TerrainDef terrainDef = null;
                 terrainDef = ((edifice == null || edifice.def.Fillage != FillCategory.Full) && !(caves[cell] > 0f)) ? TerrainFrom(cell, map, elevation[cell], false) : TerrainFrom(cell, map, elevation[cell], true);
                 terrainGrid.SetTerrain(cell, terrainDef);
-                if(terrainDef == TerrainDefOf.Sand)
+                if (terrainDef == TerrainDefOf.Sand)
                 {
                     terrainGrid.SetTerrain(cell, terrainDefDefault);
                 }

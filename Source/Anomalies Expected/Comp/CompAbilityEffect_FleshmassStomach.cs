@@ -18,7 +18,7 @@ namespace AnomaliesExpected
             DamageInfo dmg = new DamageInfo(DamageDefOf.AcidBurn, Props.damAmount, hitPart: pawn.def.race.body.GetPartsWithDef(BodyPartDefOfLocal.Stomach).First());
             dmg.SetAllowDamagePropagation(false);
             dmg.SetIgnoreArmor(true);
-            pawn.TakeDamage(dmg);            
+            pawn.TakeDamage(dmg);
         }
     }
 }
