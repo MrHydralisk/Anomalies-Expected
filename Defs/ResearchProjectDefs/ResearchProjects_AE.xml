@@ -216,7 +216,7 @@
 		<prerequisites>
 			<li>MicroelectronicsBasics</li>
 		</prerequisites>
-		<knowledgeCost>50</knowledgeCost>
+		<knowledgeCost>30</knowledgeCost>
 		<knowledgeCategory>Basic</knowledgeCategory>
 		<researchViewX>3</researchViewX>
 		<researchViewY>3</researchViewY>
@@ -240,7 +240,7 @@
 		<prerequisites>
 			<li>AEBloodPump</li>
 		</prerequisites>
-		<knowledgeCost>100</knowledgeCost>
+		<knowledgeCost>60</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>4</researchViewX>
 		<researchViewY>3</researchViewY>
@@ -267,7 +267,7 @@
 		<requiredAnalyzed>
 			<li>AE_ResearchNotesBLA</li>
 		</requiredAnalyzed>
-		<knowledgeCost>30</knowledgeCost>
+		<knowledgeCost>20</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>5</researchViewX>
 		<researchViewY>3</researchViewY>
@@ -284,7 +284,7 @@
 		<requiredAnalyzed>
 			<li>AE_ResearchNotesBLB</li>
 		</requiredAnalyzed>
-		<knowledgeCost>60</knowledgeCost>
+		<knowledgeCost>40</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>6</researchViewX>
 		<researchViewY>3</researchViewY>
@@ -301,7 +301,7 @@
 		<requiredAnalyzed>
 			<li>AE_ResearchNotesBLC</li>
 		</requiredAnalyzed>
-		<knowledgeCost>90</knowledgeCost>
+		<knowledgeCost>80</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>7</researchViewX>
 		<researchViewY>3</researchViewY>
