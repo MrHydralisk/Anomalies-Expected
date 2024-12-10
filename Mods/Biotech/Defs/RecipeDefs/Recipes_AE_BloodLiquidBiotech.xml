@@ -29,7 +29,7 @@
 		<label>purify blood-like liquid</label>
 		<jobString>Purifying blood-like liquid.</jobString>
 		<products>
-			<HemogenPack>1</HemogenPack>
+			<HemogenPack>2</HemogenPack>
 		</products>
 		<ingredients>
 			<li>
@@ -38,7 +38,7 @@
 						<li>AE_BloodLiquid</li>
 					</thingDefs>
 				</filter>
-				<count>12</count>
+				<count>20</count>
 			</li>
 			<li>
 				<filter>
@@ -60,7 +60,7 @@
 		<label>purify blood-like liquid x4</label>
 		<jobString>Purifying blood-like liquid x4.</jobString>
 		<products>
-			<HemogenPack>4</HemogenPack>
+			<HemogenPack>8</HemogenPack>
 		</products>
 		<ingredients>
 			<li>
@@ -69,7 +69,7 @@
 						<li>AE_BloodLiquid</li>
 					</thingDefs>
 				</filter>
-				<count>48</count>
+				<count>80</count>
 			</li>
 			<li>
 				<filter>
@@ -91,7 +91,7 @@
 		<label>purify blood-like liquid x16</label>
 		<jobString>Purifying blood-like liquid x16.</jobString>
 		<products>
-			<HemogenPack>16</HemogenPack>
+			<HemogenPack>32</HemogenPack>
 		</products>
 		<ingredients>
 			<li>
@@ -100,7 +100,7 @@
 						<li>AE_BloodLiquid</li>
 					</thingDefs>
 				</filter>
-				<count>192</count>
+				<count>160</count>
 			</li>
 			<li>
 				<filter>

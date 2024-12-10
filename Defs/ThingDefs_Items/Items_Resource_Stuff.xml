@@ -15,7 +15,7 @@
 		<useHitPoints>false</useHitPoints>
 		<healthAffectsPrice>false</healthAffectsPrice>
 		<statBases>
-			<MarketValue>0.25</MarketValue>
+			<MarketValue>0.2</MarketValue>
 			<Mass>0.05</Mass>
 		</statBases>
 		<tradeability>Sellable</tradeability>

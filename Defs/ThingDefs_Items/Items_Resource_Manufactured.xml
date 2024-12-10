@@ -216,10 +216,10 @@
 			<texPath>Things/Item/Serum/AEBloodLiquidInjector</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<stackLimit>10</stackLimit>
+		<stackLimit>30</stackLimit>
 		<useHitPoints>true</useHitPoints>
 		<statBases>
-			<MarketValue>28</MarketValue>
+			<MarketValue>12</MarketValue>
 		</statBases>
 		<tradeability>Sellable</tradeability>
 		<ingestible>
@@ -281,11 +281,11 @@
 		<useHitPoints>false</useHitPoints>
 		<healthAffectsPrice>false</healthAffectsPrice>
 		<statBases>
-			<MarketValue>0.25</MarketValue>
-			<Mass>0.05</Mass>
+			<MarketValue>300</MarketValue>
+			<Mass>0.15</Mass>
 		</statBases>
 		<tradeability>Sellable</tradeability>
-		<stackLimit>10</stackLimit>
+		<stackLimit>15</stackLimit>
 		<thingCategories>
 			<li>ResourcesRaw</li>
 		</thingCategories>
@@ -306,11 +306,11 @@
 		<useHitPoints>false</useHitPoints>
 		<healthAffectsPrice>false</healthAffectsPrice>
 		<statBases>
-			<MarketValue>0.25</MarketValue>
-			<Mass>0.05</Mass>
+			<MarketValue>1200</MarketValue>
+			<Mass>0.5</Mass>
 		</statBases>
 		<tradeability>Sellable</tradeability>
-		<stackLimit>10</stackLimit>
+		<stackLimit>5</stackLimit>
 		<thingCategories>
 			<li>ResourcesRaw</li>
 		</thingCategories>

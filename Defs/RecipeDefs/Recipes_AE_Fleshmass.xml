@@ -54,7 +54,7 @@
 		</fixedIngredientFilter>
 		<workAmount>2500</workAmount>
 		<skillRequirements>
-			<Crafting>10</Crafting>
+			<Crafting>7</Crafting>
 		</skillRequirements>
 		<recipeUsers>
 			<li>SerumCentrifuge</li>
