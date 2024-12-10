@@ -78,12 +78,12 @@
 	<AEBloodInjector.description>Изучить создание инъекторов с кровиподобной жидкостью для полевого лечения и ритуал вызова нового Кровавого Озера.</AEBloodInjector.description>
 
 	<AEBloodLakeTerminalA.label>научные заметки #BL01</AEBloodLakeTerminalA.label>
-	<AEBloodLakeTerminalA.description>Изучить создание кист из биомассы и новые операции по мутации органов из биомассы из кист.</AEBloodLakeTerminalA.description>
+	<AEBloodLakeTerminalA.description>Изучить создание кист из биомассы и новые операции по мутации органов из биомассы из кист.\n\nОткрывает:\nРецепт по выращиванию кисты из биомассы;\nОперация по выращиванию желудка из биомассы;\nОперация по выращиванию лёгкого из биомассы;\nОперация по выращиванию печени из биомассы;\nОперация по выращиванию кислотной гланды из биомассы;\nОперация по выращиванию носа из биомассы.</AEBloodLakeTerminalA.description>
 
 	<AEBloodLakeTerminalB.label>научные заметки #BL02</AEBloodLakeTerminalB.label>
-	<AEBloodLakeTerminalB.description>Изучить операцию инкубации опухоли из биомассы и новые операции по мутации органов из биомассы из опухоли.</AEBloodLakeTerminalB.description>
+	<AEBloodLakeTerminalB.description>Изучить операцию инкубации опухоли из биомассы и новые операции по мутации органов из биомассы из опухоли.\n\nОткрывает:\nОперация по выращиванию опухоли из биомассы;\nОперация по выращиванию кислотной полости из биомассы;\nОперация по выращиванию уха из биомассы;\nОперация по выращиванию глаза из биомассы;\nОперация по выращиванию почки из биомассы;\nОперация по выращиванию сердца из биомассы;\nОперация по выращиванию опухоли головного мозга из биомассы.</AEBloodLakeTerminalB.description>
 
 	<AEBloodLakeTerminalC.label>научные заметки #BL03</AEBloodLakeTerminalC.label>
-	<AEBloodLakeTerminalC.description>Изучить новую операцию по мутации тела хозяина из биомассы из опухоли.</AEBloodLakeTerminalC.description>
+	<AEBloodLakeTerminalC.description>Изучить новую операцию по мутации тела хозяина из биомассы из опухоли.\n\nОткрывает:\nОперация по выращиванию мутации тела из биомассы;\nОперация по выращиванию ядра органогенеза из биомассы.</AEBloodLakeTerminalC.description>
 
 </LanguageData>

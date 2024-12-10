@@ -408,7 +408,7 @@
 	<RecipeDef ParentName="SurgeryAEFleshmassTumorBase">
 		<defName>IncubateAEFleshmassOrganogenesisCore</defName>
 		<label>incubate fleshmass organogenesis core</label>
-		<description>A fleshmass tumor will be implanted into the subject's body to seamlessly integrate with fleshmass organs, allowing them to regrow even after full destruction. It will take five days for fleshmass cells, left within the host's body, to regenerate into a new organ.</description>
+		<description>A fleshmass tumor will be implanted into the subject's body to seamlessly integrate with fleshmass organs, allowing them to regrow even after full destruction. It will take five days for fleshmass cells, left within the host's body, to regenerate into a new organ.\n\nAffects:\n- Fleshmass stomach;\n- Fleshmass lung;\n- Fleshmass liver;\n- Fleshmass nose;\n- Fleshmass eye;\n- Fleshmass ear;\n- Fleshmass kidney;\n- Fleshmass heart.</description>
 		<descriptionHyperlinks>
 			<HediffDef>Hediff_AEFleshmassTumorAssimilation</HediffDef>
 			<HediffDef>AE_FleshmassOrganogenesisCore</HediffDef>

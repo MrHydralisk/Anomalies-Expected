@@ -259,7 +259,7 @@
 	<ResearchProjectDef>
 		<defName>AEBloodLakeTerminalA</defName>
 		<label>study notes #BL01</label>
-		<description>Acquire knowledge of fleshmass cyst creation and new operations for mutating fleshmass organs from cyst.</description>
+		<description>Acquire knowledge of fleshmass cyst creation and new operations for mutating fleshmass organs from cyst.\n\nUnlocks:\n- Recipe to incubate fleshmass cyst;\n- Operation to incubate fleshmass stomach;\n- Operation to incubate fleshmass lung;\n- Operation to incubate fleshmass liver;\n- Operation to incubate fleshmass acid gland;\n- Operation to incubate fleshmass nose.</description>
 		<tab>AnomaliesExpected</tab>
 		<prerequisites>
 			<li>AEBloodInjector</li>
@@ -271,22 +271,12 @@
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>5</researchViewX>
 		<researchViewY>3</researchViewY>
-		<!-- <generalRules>
-			<rulesStrings>
-				<li>subject->binging food serum</li>
-
-				<li>subject_story->ate all food in the facility</li>
-				<li>subject_story->stomach rumbling could be heard for several kilometers</li>
-
-				<li>subject_gerund->synthesizing binging food serums</li>
-			</rulesStrings>
-		</generalRules> -->
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
 		<defName>AEBloodLakeTerminalB</defName>
 		<label>study notes #BL02</label>
-		<description>Acquire knowledge of fleshmass tumor incubation operation and new operations for mutating fleshmass organs from tumor.</description>
+		<description>Acquire knowledge of fleshmass tumor incubation operation and new operations for mutating fleshmass organs from tumor.\n\nUnlocks:\n- Operation to incubate fleshmass tumor;\n- Operation to incubate fleshmass acid cavity;\n- Operation to incubate fleshmass ear;\n- Operation to incubate fleshmass eye;\n- Operation to incubate fleshmass kidney;\n- Operation to incubate fleshmass heart;\n- Operation to incubate fleshmass brain tumor.</description>
 		<tab>AnomaliesExpected</tab>
 		<prerequisites>
 			<li>AEBloodLakeTerminalA</li>
@@ -298,22 +288,12 @@
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>6</researchViewX>
 		<researchViewY>3</researchViewY>
-		<!-- <generalRules>
-			<rulesStrings>
-				<li>subject->binging food serum</li>
-
-				<li>subject_story->ate all food in the facility</li>
-				<li>subject_story->stomach rumbling could be heard for several kilometers</li>
-
-				<li>subject_gerund->synthesizing binging food serums</li>
-			</rulesStrings>
-		</generalRules> -->
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
 		<defName>AEBloodLakeTerminalC</defName>
 		<label>study notes #BL03</label>
-		<description>Acquire knowledge of new operation for fleshmass mutation of host's body from tumor.</description>
+		<description>Acquire knowledge of new operation for fleshmass mutation of host's body from tumor.\n\nUnlocks:\n- Operation to incubate fleshmass body mutation;\n- Operation to incubate fleshmass organogenesis core.</description>
 		<tab>AnomaliesExpected</tab>
 		<prerequisites>
 			<li>AEBloodLakeTerminalB</li>
@@ -325,16 +305,6 @@
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>7</researchViewX>
 		<researchViewY>3</researchViewY>
-		<!-- <generalRules>
-			<rulesStrings>
-				<li>subject->binging food serum</li>
-
-				<li>subject_story->ate all food in the facility</li>
-				<li>subject_story->stomach rumbling could be heard for several kilometers</li>
-
-				<li>subject_gerund->synthesizing binging food serums</li>
-			</rulesStrings>
-		</generalRules> -->
 	</ResearchProjectDef>
 
 </Defs>

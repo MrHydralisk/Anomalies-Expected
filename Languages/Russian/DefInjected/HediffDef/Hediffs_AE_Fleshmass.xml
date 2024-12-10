@@ -92,7 +92,7 @@
 	<Hediff_AEFleshmassPartRestoration.description>Клетки из биомассы, оставленные внутри тела носителя, активно регенерируют в новый орган. Клетки зависит от выживания хозяина.</Hediff_AEFleshmassPartRestoration.description>
 
 	<AE_FleshmassOrganogenesisCore.label>ядро органогенеза из биомассы</AE_FleshmassOrganogenesisCore.label>
-	<AE_FleshmassOrganogenesisCore.description>Злокачественная биомасса с зачатками разума. Бесшовно интегрируется с органами из биомассы, позволяя им регенерировать даже после практически полного разрушения.\n\nОрган обладает собственной нейронной сетью и может представлять угрозу в случае удаления.</AE_FleshmassOrganogenesisCore.description>
+	<AE_FleshmassOrganogenesisCore.description>Злокачественная биомасса с зачатками разума. Бесшовно интегрируется с органами из биомассы, позволяя им регенерировать даже после практически полного разрушения.\n\nОрган обладает собственной нейронной сетью и может представлять угрозу в случае удаления.\n\nЗатрагивает:\n- Желудок из биомассы;\n- Лёгкое из биомассы;\n- Печень из биомассы;\n- Нос из биомассы;\n- Глаз из биомассы;\n- Ухо из биомассы;\n- Почка из биомассы;\n- Сердце из биомассы.</AE_FleshmassOrganogenesisCore.description>
 	<AE_FleshmassOrganogenesisCore.comps.HediffComp_FleshbeastEmerge.letterLabel>Операция на биомассе</AE_FleshmassOrganogenesisCore.comps.HediffComp_FleshbeastEmerge.letterLabel>
 	<AE_FleshmassOrganogenesisCore.comps.HediffComp_FleshbeastEmerge.letterText>{PAWN_nameDef} плохо {PAWN_gender ? перенёс : перенесла} операцию. Попытка удалить ядро органогенеза из биомассы обернулась нападением. Извивающийся комок плоти отделился от носителя и превратился в биошмата!</AE_FleshmassOrganogenesisCore.comps.HediffComp_FleshbeastEmerge.letterText>
   

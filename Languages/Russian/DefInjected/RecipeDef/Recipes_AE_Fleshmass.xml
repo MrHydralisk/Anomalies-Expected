@@ -66,7 +66,7 @@
 	<IncubateAEFleshmassBodyMutation.jobString>Имплантирует опухоль из биомассы.</IncubateAEFleshmassBodyMutation.jobString>
 
 	<IncubateAEFleshmassOrganogenesisCore.label>выращивать ядро органогенеза из биомассы</IncubateAEFleshmassOrganogenesisCore.label>
-	<IncubateAEFleshmassOrganogenesisCore.description>Опухоль из биомассы будет имплантирована в тело субъекта и бесшовно интегрируется с органами из биомассы, позволяя им регенерировать даже после практически полного разрушения. Это болезненный процесс, который займет два дня для ассимиляции опухоли внутри тела хозяина.</IncubateAEFleshmassOrganogenesisCore.description>
+	<IncubateAEFleshmassOrganogenesisCore.description>Опухоль из биомассы будет имплантирована в тело субъекта и бесшовно интегрируется с органами из биомассы, позволяя им регенерировать даже после практически полного разрушения. Это болезненный процесс, который займет два дня для ассимиляции опухоли внутри тела хозяина.\n\nЗатрагивает:\n- Желудок из биомассы;\n- Лёгкое из биомассы;\n- Печень из биомассы;\n- Нос из биомассы;\n- Глаз из биомассы;\n- Ухо из биомассы;\n- Почка из биомассы;\n- Сердце из биомассы.</IncubateAEFleshmassOrganogenesisCore.description>
 	<IncubateAEFleshmassOrganogenesisCore.jobString>Имплантирует опухоль из биомассы.</IncubateAEFleshmassOrganogenesisCore.jobString>
   
 </LanguageData>

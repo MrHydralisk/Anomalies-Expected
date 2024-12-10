@@ -949,7 +949,7 @@
 		<defName>AE_FleshmassOrganogenesisCore</defName>
 		<label>fleshmass organogenesis core</label>
 		<labelNoun>a fleshmass organogenesis core</labelNoun>
-		<description>A cancerous mass of semi-sentient flesh. Seamlessly integrate with fleshmass organs, allowing them to regrow even after full destruction.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<description>A cancerous mass of semi-sentient flesh. Seamlessly integrate with fleshmass organs, allowing them to regrow even after full destruction.\n\nThe organ has its own neural structures and may become dangerous if removed.\n\nAffects:\n- Fleshmass stomach;\n- Fleshmass lung;\n- Fleshmass liver;\n- Fleshmass nose;\n- Fleshmass eye;\n- Fleshmass ear;\n- Fleshmass kidney;\n- Fleshmass heart.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
 		<isBad>false</isBad>
