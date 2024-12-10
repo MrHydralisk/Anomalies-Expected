@@ -84,6 +84,18 @@ namespace AnomaliesExpected
                     CameraJumper.TryJumpAndSelect(entranceBuilding);
                 }
             };
+            if (DebugSettings.ShowDevGizmos)
+            {
+                yield return new Command_Action
+                {
+                    action = delegate
+                    {
+                        mapComponent.TrySpawnWaveFromUndergroundNest(Map.mapPawns.FreeColonistsAndPrisonersSpawned);
+                    },
+                    defaultLabel = "Dev: Force spawn fleshbeasts",
+                    defaultDesc = "Force spawn wave from Underground Nest"
+                };
+            }
         }
 
         public override Map GetOtherMap()

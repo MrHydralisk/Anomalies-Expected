@@ -140,7 +140,7 @@ namespace AnomaliesExpected
             }
             if (TicksToNextSpit <= 0 && parent.IsHashIntervalTick(180))
             {
-                Thing thing = (Thing)AttackTargetFinder.BestShootTargetFromCurrentPosition(this, TargetScanFlags.NeedThreat, (Thing t) => Props.isAbleToFireThroughRoof || !t.Position.Roofed(t.Map));
+                Thing thing = (Thing)AttackTargetFinder.BestShootTargetFromCurrentPosition(this, TargetScanFlags.NeedThreat, (Thing t) => (Props.isAbleToFireThroughRoof || !t.Position.Roofed(t.Map)) && (!(t is Pawn p) || !p.DeadOrDowned));
                 if (thing != null)
                 {
                     AttackVerb.TryStartCastOn(thing);

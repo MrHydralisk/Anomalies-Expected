@@ -32,7 +32,7 @@
 		</verbs>
 		<comps Inherit="False">
 			<li Class="AnomaliesExpected.CompProperties_AEFleshmassSpitter">
-				<SpitIntervalInitRangeTicks>20000~50000</SpitIntervalInitRangeTicks>
+				<SpitIntervalInitRangeTicks>40000~80000</SpitIntervalInitRangeTicks>
 				<SpitIntervalRangeTicks>15000~45000</SpitIntervalRangeTicks>
 				<isAbleToFireThroughRoof>true</isAbleToFireThroughRoof>
 			</li>
@@ -82,7 +82,7 @@
 		</verbs>
 		<comps Inherit="False">
 			<li Class="AnomaliesExpected.CompProperties_AEFleshmassSpitter">
-				<SpitIntervalInitRangeTicks>5500~11000</SpitIntervalInitRangeTicks>
+				<SpitIntervalInitRangeTicks>20000~40000</SpitIntervalInitRangeTicks>
 				<SpitIntervalRangeTicks>6250~13750</SpitIntervalRangeTicks>
 			</li>
 			<li Class="CompProperties_FleshmassBase">
@@ -128,7 +128,7 @@
 		</verbs>
 		<comps Inherit="False">
 			<li Class="AnomaliesExpected.CompProperties_AEFleshmassSpitter">
-				<SpitIntervalInitRangeTicks>2500~5500</SpitIntervalInitRangeTicks>
+				<SpitIntervalInitRangeTicks>10000~20000</SpitIntervalInitRangeTicks>
 				<SpitIntervalRangeTicks>2500~7500</SpitIntervalRangeTicks>
 			</li>
 			<li Class="CompProperties_FleshmassBase">

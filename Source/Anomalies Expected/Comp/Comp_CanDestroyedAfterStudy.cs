@@ -50,6 +50,18 @@ namespace AnomaliesExpected
                 }
                 yield return gizmo;
             }
+            if (DebugSettings.ShowDevGizmos)
+            {
+                yield return new Command_Action
+                {
+                    action = delegate
+                    {
+                        OnInteracted(null);
+                    },
+                    defaultLabel = "Dev: Force activate",
+                    defaultDesc = "Force activate destroy after study component"
+                };
+            }
         }
 
         protected override void OnInteracted(Pawn caster)
