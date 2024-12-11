@@ -251,6 +251,7 @@
 				<jobString>press button</jobString>
 				<activatingStringPending>pressing button {0}</activatingStringPending>
 				<activatingString>pressing button {0}: {1}s</activatingString>
+				<onCooldownString>reactivating</onCooldownString>
 
 				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
 				<fleckOnUsedScale>4</fleckOnUsedScale>
@@ -452,6 +453,7 @@
 				<jobString>press button</jobString>
 				<activatingStringPending>pressing button {0}</activatingStringPending>
 				<activatingString>pressing button {0}: {1}s</activatingString>
+				<onCooldownString>recharging</onCooldownString>
 
 				<soundActivate>FlickSwitch</soundActivate>
 

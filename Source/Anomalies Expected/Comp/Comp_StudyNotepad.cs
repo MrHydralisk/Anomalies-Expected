@@ -13,11 +13,22 @@ namespace AnomaliesExpected
 
         public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? 1) == 0;
 
+        public static readonly CachedTexture selectSkillIcon = new CachedTexture("UI/Icons/SwitchFaction");
+
+        private SkillDef selectedSkillDef => selectedSkillDefCached ?? (selectedSkillDefCached = DefDatabase<SkillDef>.AllDefs.OrderByDescending((SkillDef sd) => sd.listOrder).FirstOrDefault());
+        private SkillDef selectedSkillDefCached;
+
         private void GiveKnowledge(Pawn pawn)
         {
-            if (pawn.skills != null && pawn.skills.skills.Where((SkillRecord x) => !x.TotallyDisabled).TryRandomElement(out var result))
+            SkillRecord skillRecord;
+            if (pawn.skills != null && (skillRecord = pawn.skills.skills.FirstOrDefault((SkillRecord sr) => sr.def == selectedSkillDef)) != null)
             {
-                result.Learn(Props.learnXPPerProgressPoint * Props.RequiredResearchDef?.ProgressReal ?? 20, direct: true);
+                skillRecord.Learn(Props.learnXPPerProgressPoint * Props.RequiredResearchDef?.ProgressReal ?? 20, direct: true);
+                if (Props.RequiredResearchDef != null)
+                {
+                    Find.ResearchManager.ApplyKnowledge(Props.RequiredResearchDef, -Find.ResearchManager.GetKnowledge(Props.RequiredResearchDef), out _);
+                    Find.ResearchManager.AddProgress(Props.RequiredResearchDef, -Find.ResearchManager.GetProgress(Props.RequiredResearchDef));
+                }
             }
         }
 
@@ -30,6 +41,27 @@ namespace AnomaliesExpected
                     command_Action.hotKey = KeyBindingDefOf.Misc6;
                 }
                 yield return gizmo;
+            }
+            if (!HideInteraction)
+            {
+                yield return new Command_Action
+                {
+                    action = delegate
+                    {
+                        List<FloatMenuOption> floatMenuOptions = new List<FloatMenuOption>();
+                        foreach (SkillDef skillDef in DefDatabase<SkillDef>.AllDefs.OrderByDescending((SkillDef sd) => sd.listOrder))
+                        {
+                            floatMenuOptions.Add(new FloatMenuOption(skillDef.LabelCap, delegate
+                            {
+                                selectedSkillDefCached = skillDef;
+                            }));
+                        }
+                        Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
+                    },
+                    defaultLabel = "AnomaliesExpected.StudyNotepad.selectSkill.Label".Translate(selectedSkillDef?.LabelCap ?? "---"),
+                    defaultDesc = "AnomaliesExpected.StudyNotepad.selectSkill.Desc".Translate(),
+                    icon = selectSkillIcon.Texture
+                };
             }
         }
 
@@ -47,9 +79,26 @@ namespace AnomaliesExpected
             }
             if (Props.RequiredResearchDef != null && Props.RequiredResearchDef.ProgressReal < 1)
             {
-                return "AlreadyHasHediff".Translate(Props.RequiredResearchDef.LabelCap);
+                return "AnomaliesExpected.StudyNotepad.NoResearchProgress".Translate(Props.RequiredResearchDef.LabelCap);
+            }
+            if (activateBy != null)
+            {
+                if (selectedSkillDef == null)
+                {
+                    Log.Warning("selectedSkillDef is null for Comp_StudyNotepad");
+                }
+                else if (activateBy.skills?.skills.FirstOrDefault((SkillRecord sr) => sr.def == selectedSkillDef)?.TotallyDisabled ?? true)
+                {
+                    return "AbilityDisabledNoCapacity".Translate(activateBy, selectedSkillDef.LabelCap);
+                }
             }
             return true;
+        }
+
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+            Scribe_Defs.Look(ref selectedSkillDefCached, "selectedSkillDefCached");
         }
     }
 }

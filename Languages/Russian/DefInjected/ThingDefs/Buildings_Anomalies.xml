@@ -61,6 +61,7 @@
 	<AE_MeatGrinder.comps.Comp_MeatGrinder.activatingStringPending>нажимает кнопку {0}</AE_MeatGrinder.comps.Comp_MeatGrinder.activatingStringPending>
 	<AE_MeatGrinder.comps.Comp_MeatGrinder.guiLabelString>Выберите кто активирует машину</AE_MeatGrinder.comps.Comp_MeatGrinder.guiLabelString>
 	<AE_MeatGrinder.comps.Comp_MeatGrinder.jobString>нажать кнопку</AE_MeatGrinder.comps.Comp_MeatGrinder.jobString>
+	<AE_MeatGrinder.comps.Comp_MeatGrinder.onCooldownString>перезаряжается</AE_MeatGrinder.comps.Comp_MeatGrinder.onCooldownString>
 
 	<AE_MeatGrinder.comps.CompAEStudyUnlocks.studyNotes.0.AnomalyLabel>Мясорубка</AE_MeatGrinder.comps.CompAEStudyUnlocks.studyNotes.0.AnomalyLabel>
 	<AE_MeatGrinder.comps.CompAEStudyUnlocks.studyNotes.0.AnomalyDesc>Индустриальный металлический ящик высотой со стол. Маленькие дверцы прерывают гладкую поверхность по бокам, а сверху находится большое отверстие со скрытыми внутри лезвиями. Рядом с отверстием находится одинокая кнопка, активирующая разделку окружающих трупов. Он пожирает весь труп своими вращающимися, как бритва, лезвиями, превращая его в куски размером с кулак для эффективной разделки.\n\nКлассифицируется как аномалия класса 0 (Безопасность).</AE_MeatGrinder.comps.CompAEStudyUnlocks.studyNotes.0.AnomalyDesc>
@@ -106,6 +107,7 @@
 	<AE_BeamTarget.comps.Comp_BeamTarget.activatingStringPending>нажимает кнопку {0}</AE_BeamTarget.comps.Comp_BeamTarget.activatingStringPending>
 	<AE_BeamTarget.comps.Comp_BeamTarget.guiLabelString>Выберите кто активирует машину</AE_BeamTarget.comps.Comp_BeamTarget.guiLabelString>
 	<AE_BeamTarget.comps.Comp_BeamTarget.jobString>нажать кнопку</AE_BeamTarget.comps.Comp_BeamTarget.jobString>
+	<AE_BeamTarget.comps.Comp_BeamTarget.onCooldownString>перезаряжается</AE_BeamTarget.comps.Comp_BeamTarget.onCooldownString>
 
 	<AE_BeamTarget.comps.CompAEStudyUnlocks.studyNotes.0.AnomalyLabel>передатчик</AE_BeamTarget.comps.CompAEStudyUnlocks.studyNotes.0.AnomalyLabel>
 	<AE_BeamTarget.comps.CompAEStudyUnlocks.studyNotes.0.AnomalyDesc>Компактное устройство военного класса для передачи данных. Имеет пневматические выдвижные опоры для устойчивости на земле. На корпусе расположены светодиодные индикаторы, антенна и маленькая кнопка. Компактная антенна постоянно передает и получает данные из неизвестного источника.\n\nКлассифицируется как аномалия класса 0 (Безопасность).</AE_BeamTarget.comps.CompAEStudyUnlocks.studyNotes.0.AnomalyDesc>

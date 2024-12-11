@@ -92,5 +92,10 @@
 
 	<AEBloodLakeTerminalC.label>научные заметки #BL03</AEBloodLakeTerminalC.label>
 	<AEBloodLakeTerminalC.description>Изучить новую операцию по мутации тела хозяина из биомассы из опухоли.\n\nОткрывает:\nОперация по выращиванию мутации тела из биомассы;\nОперация по выращиванию ядра органогенеза из биомассы.</AEBloodLakeTerminalC.description>
+	
+	
+	
+	<AEStudyNotepad.label>изучение блокнота</AEStudyNotepad.label>
+	<AEStudyNotepad.description>Изучение исследовательских записей в желтом блокноте.</AEStudyNotepad.description>
 
 </LanguageData>

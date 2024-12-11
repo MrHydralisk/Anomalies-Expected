@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<AnomaliesExpected.StudyNotepad.NoResearchProgress>No progress on {0} research project</AnomaliesExpected.StudyNotepad.NoResearchProgress>
+	<AnomaliesExpected.StudyNotepad.selectSkill.Label>Select skill [{0}]</AnomaliesExpected.StudyNotepad.selectSkill.Label>
+	<AnomaliesExpected.StudyNotepad.selectSkill.Desc>Write skill on a notepad page.</AnomaliesExpected.StudyNotepad.selectSkill.Desc>
+	
+</LanguageData>

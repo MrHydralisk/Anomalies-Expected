@@ -47,6 +47,7 @@
 				<jobString>bite</jobString>
 				<activatingStringPending>biting {0}</activatingStringPending>
 				<activatingString>biting {0}: {1}s</activatingString>
+				<onCooldownString>regenereating</onCooldownString>
 
 				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
 				<fleckOnUsedScale>3</fleckOnUsedScale>
@@ -194,6 +195,7 @@
 		<graphicData>
 			<graphicClass>Graphic_Single</graphicClass>
 			<texPath>Things/Item/Special/AE_StudyNotepad</texPath>
+			<drawSize>(0.75,0.75)</drawSize>
 		</graphicData>
 		<statBases>
 			<Mass>0.18</Mass>
@@ -219,6 +221,7 @@
 				<jobString>examine</jobString>
 				<activatingStringPending>examining {0}</activatingStringPending>
 				<activatingString>examining {0}: {1}s</activatingString>
+				<onCooldownString>restoring</onCooldownString>
 
 				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
 				<fleckOnUsedScale>3</fleckOnUsedScale>
@@ -248,14 +251,14 @@
 						<AnomalyLabel>study notepad</AnomalyLabel>
 						<AnomalyDesc>A normal looking notepad, its yellow pages filled with handwritten notes.\n\nSeems like you can examine it.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
 						<threshold>0.01</threshold>
-						<label>#1/2 Notepad study report</label>
+						<label>#1/2 Yellow notepad study report</label>
 						<text>Regenerative Properties of a Giant Apple\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nA giant apple exhibited remarkable resilience, resisting damage from blades, fire, and blunt force. Consumption triggered rapid regeneration of bitten pieces and a positive subjective experience in the subject. Further research is needed to explore potential applications and long-term effects of the apple's anomalous properties.\n\nObservations:\nSubject was presented with a standard steel knife. {PAWN_nameDef} attempted to cut apple, but to no avail.\nSubject attempted to smash apple onto solid ground. It remained completely undamaged.\n{PAWN_nameDef} exposed apple to a controlled fire for 30 minutes. Upon extinguishing the fire, the apple exhibited no signs of charring or melting.\nSubject was instructed to bite the apple without swallowing the piece. {PAWN_nameDef} was able to effortlessly bit off a portion of apple and put it next to apple itself. The bitten portion displayed rapid decomposition, while the remaining apple regenerated the missing piece within a short period.\n\nOutcome:\nNo hostile response was observed during interaction.\nAfter experiment {PAWN_nameDef} reported a sensation of "holiness" upon biting the apple.\n\nDiscussion:\nThe giant apple appears indestructible by conventional means.\nThe apple can be bitten and consumed by humans. \nThe apple possesses a regenerative property that activates upon consumption of a portion.\nThe anomalous properties of giant apple have potential applications and risks that need to be explored.\nTemporary giant apple has been classified as Class-0 (Safe) anomaly.\n\nRecommendations:\nFurther experimentation of biting and eating of apple is required to explore effects it have on human body.</text>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
 						<AnomalyLabel>study notepad</AnomalyLabel>
 						<AnomalyDesc>A normal looking notepad, its yellow pages filled with handwritten notes.\n\nSeems like you can examine it.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
 						<threshold>2</threshold>
-						<label>#2/2 Notepad study report</label>
+						<label>#2/2 Yellow notepad study report</label>
 						<text>Enhanced Learning and Divine Inspiration\n\nSubject: [REDACTED]\n\nAbstract:\nConsumption of a giant anomalous apple led to a drastic increase in learning speed and knowledge retention in the Subject. The Subject reported experiencing divine inspiration and a heightened understanding of a divine entity. Further research is needed to understand the source of the knowledge and potential long-term effects.\n\nObservations:\nSubject was instructed to bite the apple and swallow the piece. After consumption, [REDACTED] reported experiencing a surge of divine inspiration, accompanied by a newfound sense of wisdom. Notably, the Subject achieved a breakthrough on a previously encountered task that had posed an initial challenge.\nSubject was then instructed to consume another bite of the apple. [REDACTED] reported a further increase in their understanding of the divine will.\n\nOutcome:\nSubject demonstrated a significant improvement in knowledge retention and learning speed compared to pre-experiment baseline.\n[REDACTED] described gaining access to previously unconsidered perspectives and experiencing a heightened sense of connection to a divine entity.\n\nDiscussion:\nThese findings suggest that consumption of the anomalous apple facilitates accelerated learning and knowledge acquisition in the subject. The rate of learning appears to correlate with the amount of apple consumed. \nFurther investigation is required to determine the source of this knowledge and the potential long-term effects of repeated exposure.\n\nRecommendations:\nContinued experimentation with controlled apple consumption is necessary to fully understand the cognitive effects on the subject. Monitoring of the subject's health and mental state is crucial throughout the research process.</text>
 					</li>
 				</studyNotes>
