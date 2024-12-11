@@ -44,7 +44,11 @@ Currently available:
 
 Should have no compatibility issues with other mods.
 
-Supported languages: English, Russian.
+Supported languages:
+English,
+Russian,
+Japanese (available on JP mod database site),
+Chinese (available on workshop by Kagami)
 
 ## Add/Remove
 
