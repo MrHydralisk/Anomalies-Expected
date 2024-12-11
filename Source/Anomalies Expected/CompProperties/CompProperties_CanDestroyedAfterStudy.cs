@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using System.Collections.Generic;
 using Verse;
 
 namespace AnomaliesExpected
@@ -13,6 +14,10 @@ namespace AnomaliesExpected
         public float fleckOnAnomalyScale = 1;
 
         public string interactionProgressString;
+
+        public List<ThingDefCountClass> requiredThings = new List<ThingDefCountClass>();
+
+        public int DestroyMode;
 
         public CompProperties_CanDestroyedAfterStudy()
         {

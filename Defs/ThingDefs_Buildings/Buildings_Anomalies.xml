@@ -205,9 +205,9 @@
 		<size>(1,1)</size>
 		<uiIconScale>0.75</uiIconScale>
 		<canOverlapZones>false</canOverlapZones>
-		<minifiedDef>MinifiedThing</minifiedDef>
+		<minifiedDef>MinifiedThingAE</minifiedDef>
 		<thingCategories>
-			<li>BuildingsFurniture</li>
+			<li>BuildingsMisc</li>
 		</thingCategories>
 		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
 		<altitudeLayer>Building</altitudeLayer>
@@ -217,22 +217,25 @@
 			<Bioferrite>45</Bioferrite>
 		</costList>
 		<fillPercent>0.5</fillPercent>
-		<useHitPoints>True</useHitPoints>
+		<useHitPoints>false</useHitPoints>
+		<rotatable>false</rotatable>
 		<statBases>
 			<Mass>20</Mass>
 			<WorkToBuild>2000</WorkToBuild>
-			<MaxHitPoints>180</MaxHitPoints>
 			<Flammability>0</Flammability>
 			<Cleanliness>-30</Cleanliness>
 		</statBases>
+		<building>
+			<deconstructible>false</deconstructible>
+			<uninstallWork>2500</uninstallWork>
+		</building>
 		<passability>PassThroughOnly</passability>
 		<pathCost>50</pathCost>
 		<surfaceType>Item</surfaceType>
 		<tickerType>Normal</tickerType>
 		<designationCategory/>
 		<killedLeavings>
-			<AEGrinderJaw>1</AEGrinderJaw>
-			<AEGrinderStomach>1</AEGrinderStomach>
+			<Bioferrite>75</Bioferrite>
 			<Meat_Twisted>150</Meat_Twisted>
 		</killedLeavings>
 		<comps>
@@ -355,8 +358,41 @@
 						<threshold>18</threshold>
 						<label>#5/5 Industrial metal box study report</label>
 						<text>Theory Regarding Meat Grinder\n\nSubject: [REDACTED]\n\nAbstract:\nDrilling into the anomalous Symphony of Eternal Slaughter revealed human organs and a brain sustained by an organic-metallic life support system. Scans matched the internal sounds with humming reported during a prior unauthorized access lethal incident. A hypothesis proposes a dissected person inside psychically attracts and consumes others for self-preservation, with stress levels impacting processing efficiency. Distraction may disrupt control. Destruction is recommended due to safety concerns, though controlled use offers potential benefits if risks are mitigated.\n\nObservations:\n[REDACTED] utilized drilling equipment to create an opening in one of the meat grinder's access doors. Following the initial drilling, blood was observed leaking from the interior of the machine. [REDACTED] reported hearing a heartbeat and witnessing muscle contractions within the meat grinder.\nScans were conducted through the newly created opening, revealing the presence of human organs and a brain inside.\n\nOutcome:\nThe scans revealed human organs, including a brain, located within the organic metal core of the meat grinder. These organs appear to be maintained by a life support system constructed from a network of twisted flesh.\nAdditional sound analysis revealed similarities between the detected sounds and the humming reported by [REDACTED] during the unauthorized access incident.\n\nHypothesis:\nBased on the report by [REDACTED], the following theory regarding the Symphony of Eternal Slaughter is proposed by one of observers. A dissected human is contained within the organic metal core of the machine, with their organs and brain kept functional through a life support system. This potentially reflects an unorthodox method, employed by archotech scientists, to automate the butchering process without rellying on artificial intelligence. To maintain itself, this person might utilize a form of singing on psychic level to attract living humans. Consumed alive humans or their body parts may be used to sustain the person by providing bodily fluids and cells, allowing for self-sustenance. Increased stress levels within the person could potentially correlate with higher processing efficiency, possibly as a means of attracting attention and ensure flow of corpses and bodies.\n\nDiscussion:\nIt is theorized that effective distraction of a subject affected by the singing could potentially disrupt control of the meat grinder and prevent a lethal incident.\n\nRecommendations:\nRemoval: Given the potential for accidental death, it destruction maybe the best coarse of action. This approach could also potentially provide access to samples of meat grinder person's body parts from it.\nControlled Use: Alternatively, if hypothesis is right, then continued use of meat grinder, under controlled and monitored conditions, could offer substantial benefits in terms of corpse butchering. This approach, however, necessitates thorough risk assessment and the development of safety protocols to safeguard colonists' well-being.</text>
+						<ThingDefSpawn>AE_ResearchNotesMGA</ThingDefSpawn>
 					</li>
 				</studyNotes>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_CanDestroyedAfterStudy">
+				<ticksToActivate>60000</ticksToActivate>
+				<maintainProgress>true</maintainProgress>
+				<activateTexPath>UI/Designators/Deconstruct</activateTexPath>
+ 
+				<activateLabelString>Deconstruct</activateLabelString>
+				<activateDescString>Deconstruct and fully disassemble. [Will destroy it]</activateDescString>
+				<guiLabelString>Choose who should deconstruct this.</guiLabelString>
+				<jobString>deconstruct</jobString>
+				<activatingStringPending>deconstructing {0}</activatingStringPending>
+				<activatingString>deconstructing {0}: {1}s</activatingString>
+				<interactionProgressString>Deconstructing</interactionProgressString>
+
+				<soundActivate>Building_Deconstructed</soundActivate>
+				<interactionEffecter>ConstructMetal</interactionEffecter>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<jobDef>AE_RemoveAnomaly</jobDef>
+				<minStudy>5</minStudy>
+				
+				<requiredThings>
+					<Shard>1</Shard>
+				</requiredThings>
+				
+				<DestroyMode>2</DestroyMode>
 			</li>
 		</comps>
 		<inspectorTabs>
@@ -511,6 +547,8 @@
 				</targetingParameters>
 				
 				<jobDef>AE_RemoveAnomaly</jobDef>
+				
+				<DestroyMode>2</DestroyMode>
 			</li>
 		</comps>
 		<inspectorTabs>

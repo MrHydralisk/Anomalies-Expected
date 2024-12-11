@@ -460,8 +460,7 @@
 					<xpath>Defs/ThingDef[defName="AE_MeatGrinder"]/killedLeavings</xpath>
 					<value>
 						<killedLeavings>
-							<AEGrinderJaw>1</AEGrinderJaw>
-							<AEGrinderStomach>1</AEGrinderStomach>
+							<Steel>75</Steel>
 							<Meat_Human>150</Meat_Human>
 						</killedLeavings>
 					</value>

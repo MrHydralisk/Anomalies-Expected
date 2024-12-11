@@ -140,6 +140,9 @@
 		<prerequisites>
 			<li>AEGrinderStomach</li>
 		</prerequisites>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesMGA</li>
+		</requiredAnalyzed>
 		<knowledgeCost>15</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>5</researchViewX>

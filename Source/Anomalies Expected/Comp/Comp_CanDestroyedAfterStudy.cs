@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -17,6 +18,8 @@ namespace AnomaliesExpected
         protected bool isCanDestroyEarly;
         public bool isCanDestroyForced;
 
+        public ThingDefCountClass requiredThing => Props.requiredThings.FirstOrDefault();
+
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
@@ -28,15 +31,33 @@ namespace AnomaliesExpected
 
         public virtual void DestroyAnomaly(Pawn caster = null)
         {
-            parent.Destroy();
+            parent.Destroy((DestroyMode)Props.DestroyMode);
         }
 
         public override void OrderForceTarget(LocalTargetInfo target)
         {
             if (ValidateTarget(target, showMessages: false))
             {
-                Job job = JobMaker.MakeJob(Props.jobDef, parent);
-                target.Pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                Job job;
+                if (requiredThing == null)
+                {
+                    job = JobMaker.MakeJob(Props.jobDef, parent);
+                    job.playerForced = true;
+                    target.Pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                }
+                else
+                {
+                    List<Thing> list = HaulAIUtility.FindFixedIngredientCount(target.Pawn, requiredThing.thingDef, requiredThing.count);
+                    if (!list.NullOrEmpty())
+                    {
+                        job = JobMaker.MakeJob(Props.jobDef, parent, list[0]);
+                        job.targetQueueB = (from i in list.Skip(1)
+                                            select new LocalTargetInfo(i)).ToList();
+                        job.count = requiredThing.count;
+                        job.playerForced = true;
+                        target.Pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                    }
+                }
             }
         }
 
@@ -71,6 +92,29 @@ namespace AnomaliesExpected
                 FleckMaker.Static(parent.Position, parent.Map, Props.fleckOnAnomaly, Props.fleckOnAnomalyScale);
             }
             DestroyAnomaly(caster);
+        }
+
+        public override AcceptanceReport CanInteract(Pawn activateBy = null, bool checkOptionalItems = true)
+        {
+            if (HideInteraction)
+            {
+                return false;
+            }
+            if (requiredThing != null)
+            {
+                if (activateBy != null)
+                {
+                    if (checkOptionalItems && !activateBy.HasReserved(requiredThing.thingDef) && !ReservationUtility.ExistsUnreservedAmountOfDef_NewTemp(parent.MapHeld, requiredThing.thingDef, Faction.OfPlayer, requiredThing.count, (Thing t) => activateBy.CanReserveAndReach(t, PathEndMode.Touch, Danger.None)))
+                    {
+                        return "ObeliskDeactivateMissingShards".Translate(requiredThing.Label);
+                    }
+                }
+                else if (checkOptionalItems && !ReservationUtility.ExistsUnreservedAmountOfDef(parent.MapHeld, requiredThing.thingDef, Faction.OfPlayer, requiredThing.count))
+                {
+                    return "ObeliskDeactivateMissingShards".Translate(requiredThing.Label);
+                }
+            }
+            return base.CanInteract(activateBy, checkOptionalItems);
         }
 
         public void ExposeData()
