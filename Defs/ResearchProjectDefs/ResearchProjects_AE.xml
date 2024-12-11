@@ -340,4 +340,15 @@
 		<researchViewY>3</researchViewY>
 	</ResearchProjectDef>
 
+	<ResearchProjectDef>
+		<defName>AEStudyNotepad</defName>
+		<label>examine notepad</label>
+		<description>Examining research notes in a yellow notepad.</description>
+		<tab>AnomaliesExpected</tab>
+		<knowledgeCost>90</knowledgeCost>
+		<knowledgeCategory>Basic</knowledgeCategory>
+		<researchViewX>0</researchViewX>
+		<researchViewY>4</researchViewY>
+	</ResearchProjectDef>
+
 </Defs>
