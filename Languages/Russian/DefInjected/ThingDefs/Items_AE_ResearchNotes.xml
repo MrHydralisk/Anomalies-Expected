@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
+	<AE_ResearchNotesFFA.label>исследовательские заметки #FF01</AE_ResearchNotesFFA.label>
+	<AE_ResearchNotesFFA.description>Исследовательские заметки, связанные с аномалией. Их изучение может помочь разблокировать новые исследования аномалий.</AE_ResearchNotesFFA.description>
+	<AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.activateDescString>Анализировать исследовательские заметки.</AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.activateDescString>
+	<AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.activateLabelString>Анализировать...</AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.activateLabelString>
+	<AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.completedLetter>Изучив исследовательские заметки, {PAWN_labelShort} приобрел необходимые знания для исследовательского проекта(ов) {RESEARCH}.\n\nТеперь ваши исследователи могут использовать исследовательские столы, чтобы начать изучение практического применения этой технологии.</AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.completedLetter>
+	<AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Изучены исследовательские заметки о запретном плоде: разблокировано исследование {RESEARCH}</AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+	<AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.guiLabelString>Выберите кто должен анализировать это</AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.guiLabelString>
+	<AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.inspectString>Может быть проанализирован колонистом.</AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.inspectString>
+	<AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.jobString>Анализирует исследовательскую заметку</AE_ResearchNotesFFA.comps.CompAnalyzableUnlockResearch.jobString>
+	
+	
+
 	<AE_ResearchNotesBLA.label>исследовательские заметки #BL01</AE_ResearchNotesBLA.label>
 	<AE_ResearchNotesBLA.description>Исследовательские заметки, связанные с аномалией. Их изучение может помочь разблокировать новые исследования аномалий.</AE_ResearchNotesBLA.description>
 	<AE_ResearchNotesBLA.comps.CompAnalyzableUnlockResearch.activateDescString>Анализировать исследовательские заметки.</AE_ResearchNotesBLA.comps.CompAnalyzableUnlockResearch.activateDescString>

@@ -36,6 +36,8 @@
 		</generalRules>
 	</ResearchProjectDef>
 	
+	
+	
 	<ResearchProjectDef>
 		<defName>AERegenSerum</defName>
 		<label>regen serum</label>
@@ -62,6 +64,8 @@
 		</generalRules>
 	</ResearchProjectDef>
 	
+	
+	
 	<ResearchProjectDef>
 		<defName>AEFruitInhibitorSerum</defName>
 		<label>giant apple inhibitor serum</label>
@@ -84,6 +88,25 @@
 			</rulesStrings>
 		</generalRules>
 	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>AEForbiddenFruitImplant</defName>
+		<label>implant of forbidden knowledge</label>
+		<description>Learn how to extract seeds from the Giant Apple to create a new implant.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>AEFruitInhibitorSerum</li>
+		</prerequisites>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesFFA</li>
+		</requiredAnalyzed>
+		<knowledgeCost>35</knowledgeCost>
+		<knowledgeCategory>Basic</knowledgeCategory>
+		<researchViewX>1</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
+	
+	
 	
 	<ResearchProjectDef>
 		<defName>AEGrinderStomach</defName>
@@ -133,6 +156,8 @@
 			</rulesStrings>
 		</generalRules>
 	</ResearchProjectDef>
+	
+	
 
 	<ResearchProjectDef>
 		<defName>AEBingingFoodSerum</defName>
@@ -182,6 +207,8 @@
 		</generalRules>
 	</ResearchProjectDef>
 	
+	
+	
 	<ResearchProjectDef>
 		<defName>AEOrbitalBeamTargeter</defName>
 		<label>precise orbital beam targeter</label>
@@ -207,6 +234,8 @@
 			</rulesStrings>
 		</generalRules>
 	</ResearchProjectDef>
+	
+	
 
 	<ResearchProjectDef>
 		<defName>AEBloodPump</defName>
@@ -231,6 +260,7 @@
 			</rulesStrings>
 		</generalRules> -->
 	</ResearchProjectDef>
+	
 
 	<ResearchProjectDef>
 		<defName>AEBloodInjector</defName>

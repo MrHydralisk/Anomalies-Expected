@@ -38,6 +38,30 @@
 		</recipeMaker>
 	</ThingDef>
 	
+	
+	
+	<ThingDef ParentName="BodyPartAnomalyAEBase">
+		<defName>AEForbiddenFruitImplant</defName>
+		<label>implant of forbidden knowledge</label>
+		<description>An anomalous brain implant, which maintains connection between the host's consciousness and the entity, facilitating the exchange of knowledge and thoughts, without disturbing the entity.\n\nCreated using seeds from the forbidden fruit of knowledge, utilizing advanced technology derived from the entity's vast wisdom. After seeds extraction, the fruit exhibited a loss of regenerative property.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallAEForbiddenFruitImplant</RecipeDef>
+		</descriptionHyperlinks>
+		<costList>
+			<AE_ForbiddenFruit>1</AE_ForbiddenFruit>
+			<Bioferrite>15</Bioferrite>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<Mass>2</Mass>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>AEForbiddenFruitImplant</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	
+	
 	<ThingDef ParentName="BodyPartAnomalyAEBase">
 		<defName>AEGrinderStomach</defName>
 		<label>grinder stomach</label>

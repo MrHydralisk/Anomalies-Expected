@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
+	<InstallAEForbiddenFruitImplant.label>установить имплант запретного знания</InstallAEForbiddenFruitImplant.label>
+	<InstallAEForbiddenFruitImplant.description>Установит имплант запретного знания</InstallAEForbiddenFruitImplant.description>
+	<InstallAEForbiddenFruitImplant.jobString>Устанавливает имплант запретного знания</InstallAEForbiddenFruitImplant.jobString>
+	
+	
+  
 	<InstallAEGrinderStomach.label>установить желудок-измельчитель</InstallAEGrinderStomach.label>
 	<InstallAEGrinderStomach.description>Установит желудок-измельчитель</InstallAEGrinderStomach.description>
 	<InstallAEGrinderStomach.jobString>Устанавливает желудок-измельчитель</InstallAEGrinderStomach.jobString>

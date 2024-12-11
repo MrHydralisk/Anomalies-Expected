@@ -1,6 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>AEForbiddenFruitImplant</defName>
+		<label>implant of forbidden knowledge</label>
+		<labelNoun>an implant of forbidden knowledge</labelNoun>
+		<description>An installed an anomalous brain implant, which maintains connection between the host's consciousness and the entity, facilitating the exchange of knowledge and thoughts, without disturbing the entity.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AEForbiddenFruitImplant</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>AEForbiddenFruitImplant</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<GlobalLearningFactor>0.35</GlobalLearningFactor>
+					<ReadingSpeed>0.15</ReadingSpeed>
+				</statOffsets>
+				<statFactors>
+					<StudyEfficiency>1.35</StudyEfficiency>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	
+
 	<HediffDef ParentName="AddedBodyPartBase">
 		<defName>AEGrinderStomach</defName>
 		<label>grinder stomach</label>

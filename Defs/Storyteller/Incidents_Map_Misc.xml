@@ -41,7 +41,7 @@
 		<baseChance>0.1</baseChance>
 		<requireColonistsPresent>True</requireColonistsPresent>
 		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
-		<minRefireDays>120</minRefireDays>
+		<minRefireDays>90</minRefireDays>
 		<modExtensions>
 			<li Class="AnomaliesExpected.IncidentDefExtension">
 				<DeployableObjectDef>AE_AnomalyHospitalBed</DeployableObjectDef>
@@ -66,7 +66,7 @@
 		<baseChance>0.2</baseChance>
 		<requireColonistsPresent>True</requireColonistsPresent>
 		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
-		<minRefireDays>120</minRefireDays>
+		<minRefireDays>60</minRefireDays>
 		<modExtensions>
 			<li Class="AnomaliesExpected.IncidentDefExtension">
 				<DeployableThingDefs>
@@ -74,7 +74,7 @@
 				</DeployableThingDefs>
 				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
 				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
-				<ChanceFactorPowPerBuilding>0.7</ChanceFactorPowPerBuilding>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
 			</li>
 		</modExtensions>
 	</IncidentDef>
@@ -99,7 +99,7 @@
 			<li Class="AnomaliesExpected.IncidentDefExtension">
 				<DeployableObjectDef>AE_MeatGrinder</DeployableObjectDef>
 				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
-				<ChanceFactorPowPerBuilding>0.3</ChanceFactorPowPerBuilding>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
 			</li>
 		</modExtensions>
 	</IncidentDef>
@@ -152,7 +152,7 @@
 			<li Class="AnomaliesExpected.IncidentDefExtension">
 				<DeployableObjectDef>AE_BeamTarget</DeployableObjectDef>
 				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
-				<ChanceFactorPowPerBuilding>0.1</ChanceFactorPowPerBuilding>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
 			</li>
 		</modExtensions>
 	</IncidentDef>
@@ -203,7 +203,7 @@
 		<baseChance>0.1</baseChance>
 		<requireColonistsPresent>True</requireColonistsPresent>
 		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
-		<minRefireDays>120</minRefireDays>
+		<minRefireDays>180</minRefireDays>
 		<modExtensions>
 			<li Class="AnomaliesExpected.IncidentDefExtension">
 				<DeployableObjectDef>AE_BloodLake</DeployableObjectDef>

@@ -2,6 +2,39 @@
 <Defs>
 
 	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallAEForbiddenFruitImplant</defName>
+		<label>install implant of forbidden knowledge</label>
+		<description>Install an implant of forbidden knowledge.</description>
+		<workerClass>Recipe_InstallImplant</workerClass>
+		<descriptionHyperlinks>
+			<ThingDef>AEForbiddenFruitImplant</ThingDef>
+			<HediffDef>AEForbiddenFruitImplant</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing implant of forbidden knowledge.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AEForbiddenFruitImplant</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AEForbiddenFruitImplant</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AEForbiddenFruitImplant</addsHediff>
+	</RecipeDef>
+	
+	
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
 		<defName>InstallAEGrinderStomach</defName>
 		<label>install grinder stomach</label>
 		<description>Install a grinder stomach.</description>

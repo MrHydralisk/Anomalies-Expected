@@ -9,6 +9,8 @@
 	<AESleepEnhancerSerum.generalRules.rulesStrings.3>subject_story->больше не мог оправдываться тем, что проспал</AESleepEnhancerSerum.generalRules.rulesStrings.3>
 	<AESleepEnhancerSerum.generalRules.rulesStrings.4>subject_story->стал жить на 10% больше</AESleepEnhancerSerum.generalRules.rulesStrings.4>
 	<AESleepEnhancerSerum.generalRules.rulesStrings.5>subject_gerund->синтезируется сыворотка для улучшения сна</AESleepEnhancerSerum.generalRules.rulesStrings.5>
+	
+	
 
 	<AERegenSerum.label>сыворотка регенерации</AERegenSerum.label>
 	<AERegenSerum.description>Синтезировать сыворотку, повышающую лечебный фактор организма.</AERegenSerum.description>
@@ -18,12 +20,17 @@
 	<AERegenSerum.generalRules.rulesStrings.3>subject_story->раньше использовался для тренировок мехов</AERegenSerum.generalRules.rulesStrings.3>
 	<AERegenSerum.generalRules.rulesStrings.4>subject_story->смог восстановить мышцы, нервы и кожу всего лишь из оставшейся кости руки</AERegenSerum.generalRules.rulesStrings.4>
 	<AERegenSerum.generalRules.rulesStrings.5>subject_gerund->синтезируется сыворотка регенерации</AERegenSerum.generalRules.rulesStrings.5>
+	
+	
 
 	<AEFruitInhibitorSerum.label>сыворотка-ингибитор огромного яблока</AEFruitInhibitorSerum.label>
 	<AEFruitInhibitorSerum.description>Синтезировать сыворотку, снижающую эффект огромного яблока.</AEFruitInhibitorSerum.description>
 	<AEFruitInhibitorSerum.generalRules.rulesStrings.0>subject->сыворотка-ингибитор огромного яблока</AEFruitInhibitorSerum.generalRules.rulesStrings.0>
 	<AEFruitInhibitorSerum.generalRules.rulesStrings.1>subject_story->больше не боится огромного яблока</AEFruitInhibitorSerum.generalRules.rulesStrings.1>
 	<AEFruitInhibitorSerum.generalRules.rulesStrings.2>subject_gerund->синтезируется сыворотка-ингибитор огромного яблока</AEFruitInhibitorSerum.generalRules.rulesStrings.2>
+	
+	<AEForbiddenFruitImplant.label>имплант запретного знания</AEForbiddenFruitImplant.label>
+	<AEForbiddenFruitImplant.description>Изучить способо извлечения семян из огромного яблока для создания нового импланта.</AEForbiddenFruitImplant.description>
 	
 	
 	
