@@ -823,6 +823,39 @@
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/ThoughtDef[defName="Thought_AEFleshmassLung"]</xpath>
 				</li>
+				
+				
+				
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/EntityCodexEntryDef[defName="AE_EntityCodexEntry_StudyNotepad"]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="AEStudyNotepad"]/comps/li[2]/knowledgeCategory</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="AEStudyNotepad"]/comps/li[3]</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ResearchProjectDef[defName="AEStudyNotepad"]/prerequisites</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ResearchProjectDef[defName="AEStudyNotepad"]</xpath>
+					<value>
+						<techLevel>Industrial</techLevel>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ResearchProjectDef[defName="AEStudyNotepad"]</xpath>
+					<value>
+						<baseCost>2250</baseCost>
+					</value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ResearchProjectDef[defName="AEStudyNotepad"]/knowledgeCost</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ResearchProjectDef[defName="AEStudyNotepad"]/knowledgeCategory</xpath>
+				</li>
 			</operations>
 		</nomatch>
 		<match Class="PatchOperationSequence">
