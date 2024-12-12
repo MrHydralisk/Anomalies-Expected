@@ -765,6 +765,9 @@
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/ResearchProjectDef[defName="AEBingingFoodSerum" or defName="AEHungerSuppressorSerum"]/knowledgeCategory</xpath>
 				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ResearchProjectDef[defName="AEHungerSuppressorSerum"]/requiredAnalyzed</xpath>
+				</li>
 				
 				
 				

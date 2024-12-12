@@ -194,6 +194,9 @@
 		<prerequisites>
 			<li>AEBingingFoodSerum</li>
 		</prerequisites>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesBPA</li>
+		</requiredAnalyzed>
 		<knowledgeCost>35</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>4</researchViewX>
