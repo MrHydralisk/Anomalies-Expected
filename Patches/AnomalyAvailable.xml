@@ -164,7 +164,7 @@
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/ResearchProjectDef[defName="AESleepEnhancerSerum"]</xpath>
 					<value>
-						<baseCost>750</baseCost>
+						<baseCost>875</baseCost>
 					</value>
 				</li>
 				<li Class="PatchOperationRemove">
@@ -295,13 +295,13 @@
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/ResearchProjectDef[defName="AERegenSerum"]</xpath>
 					<value>
-						<techLevel>Industrial</techLevel>
+						<techLevel>Spacer</techLevel>
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/ResearchProjectDef[defName="AERegenSerum"]</xpath>
 					<value>
-						<baseCost>1000</baseCost>
+						<baseCost>1575</baseCost>
 					</value>
 				</li>
 				<li Class="PatchOperationRemove">
@@ -432,21 +432,27 @@
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
-					<xpath>Defs/ResearchProjectDef[defName="AEFruitInhibitorSerum" or defName="AEForbiddenFruitImplant"]</xpath>
+					<xpath>Defs/ResearchProjectDef[defName="AEFruitInhibitorSerum"]</xpath>
 					<value>
 						<techLevel>Industrial</techLevel>
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
+					<xpath>Defs/ResearchProjectDef[defName="AEForbiddenFruitImplant"]</xpath>
+					<value>
+						<techLevel>Spacer</techLevel>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
 					<xpath>Defs/ResearchProjectDef[defName="AEFruitInhibitorSerum"]</xpath>
 					<value>
-						<baseCost>1200</baseCost>
+						<baseCost>750</baseCost>
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/ResearchProjectDef[defName="AEForbiddenFruitImplant"]</xpath>
 					<value>
-						<baseCost>1680</baseCost>
+						<baseCost>1225</baseCost>
 					</value>
 				</li>
 				<li Class="PatchOperationRemove">
@@ -522,9 +528,15 @@
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
-					<xpath>Defs/ResearchProjectDef[defName="AEGrinderStomach" or defName="AEGrinderJaw"]</xpath>
+					<xpath>Defs/ResearchProjectDef[defName="AEGrinderStomach"]</xpath>
 					<value>
-						<baseCost>750</baseCost>
+						<baseCost>250</baseCost>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ResearchProjectDef[defName="AEGrinderJaw"]</xpath>
+					<value>
+						<baseCost>375</baseCost>
 					</value>
 				</li>
 				<li Class="PatchOperationRemove">
@@ -792,7 +804,7 @@
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/ResearchProjectDef[defName="AEOrbitalBeamTargeter"]</xpath>
 					<value>
-						<baseCost>3200</baseCost>
+						<baseCost>3500</baseCost>
 					</value>
 				</li>
 				<li Class="PatchOperationRemove">
