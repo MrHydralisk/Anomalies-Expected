@@ -51,7 +51,7 @@
 					<ReadingSpeed>0.05</ReadingSpeed>
 				</statOffsets>
 				<statFactors>
-					<StudyEfficiency>1.05</StudyEfficiency>
+					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.05</StudyEfficiency>
 				</statFactors>
 			</li>
 			<li>
@@ -62,7 +62,7 @@
 					<ReadingSpeed>0.1</ReadingSpeed>
 				</statOffsets>
 				<statFactors>
-					<StudyEfficiency>1.15</StudyEfficiency>
+					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.15</StudyEfficiency>
 				</statFactors>
 			</li>
 			<li>
@@ -73,7 +73,7 @@
 					<ReadingSpeed>0.15</ReadingSpeed>
 				</statOffsets>
 				<statFactors>
-					<StudyEfficiency>1.3</StudyEfficiency>
+					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.3</StudyEfficiency>
 				</statFactors>
 			</li>
 			<li>
@@ -84,7 +84,7 @@
 					<ReadingSpeed>0.2</ReadingSpeed>
 				</statOffsets>
 				<statFactors>
-					<StudyEfficiency>1.5</StudyEfficiency>
+					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.5</StudyEfficiency>
 				</statFactors>
 				<capMods>
 					<li>
@@ -101,7 +101,7 @@
 					<ReadingSpeed>0.2</ReadingSpeed>
 				</statOffsets>
 				<statFactors>
-					<StudyEfficiency>1.5</StudyEfficiency>
+					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.5</StudyEfficiency>
 				</statFactors>
 				<capMods>
 					<li>
@@ -120,7 +120,7 @@
 					<ReadingSpeed>0.2</ReadingSpeed>
 				</statOffsets>
 				<statFactors>
-					<StudyEfficiency>1.5</StudyEfficiency>
+					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.5</StudyEfficiency>
 				</statFactors>
 				<capMods>
 					<li>

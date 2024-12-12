@@ -412,8 +412,15 @@
 						</ThingDef>
 					</value>
 				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/HediffDef[defName="Hediff_AEForbiddenFruit"]/stages/li[0 or 1 or 2 or 3 or 4 or 5]/statFactors</xpath>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="AEForbiddenFruitImplant"]/costList</xpath>
+					<value>
+						<costList>
+							<AE_ForbiddenFruit>1</AE_ForbiddenFruit>
+							<Steel>15</Steel>
+							<ComponentIndustrial>1</ComponentIndustrial>
+						</costList>
+					</value>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ResearchProjectDef[defName="AEFruitInhibitorSerum"]/prerequisites</xpath>
@@ -425,7 +432,7 @@
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
-					<xpath>Defs/ResearchProjectDef[defName="AEFruitInhibitorSerum"]</xpath>
+					<xpath>Defs/ResearchProjectDef[defName="AEFruitInhibitorSerum" or defName="AEForbiddenFruitImplant"]</xpath>
 					<value>
 						<techLevel>Industrial</techLevel>
 					</value>
@@ -436,11 +443,20 @@
 						<baseCost>1200</baseCost>
 					</value>
 				</li>
-				<li Class="PatchOperationRemove">
-					<xpath>Defs/ResearchProjectDef[defName="AEFruitInhibitorSerum"]/knowledgeCost</xpath>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ResearchProjectDef[defName="AEForbiddenFruitImplant"]</xpath>
+					<value>
+						<baseCost>1680</baseCost>
+					</value>
 				</li>
 				<li Class="PatchOperationRemove">
-					<xpath>Defs/ResearchProjectDef[defName="AEFruitInhibitorSerum"]/knowledgeCategory</xpath>
+					<xpath>Defs/ResearchProjectDef[defName="AEFruitInhibitorSerum" or defName="AEForbiddenFruitImplant"]/knowledgeCost</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ResearchProjectDef[defName="AEFruitInhibitorSerum" or defName="AEForbiddenFruitImplant"]/knowledgeCategory</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ResearchProjectDef[defName="AEForbiddenFruitImplant"]/requiredAnalyzed</xpath>
 				</li>
 				
 				
@@ -470,6 +486,14 @@
 				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/ThingDef[defName="AE_MeatGrinder"]/comps/li[3]</xpath>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="AE_MeatGrinder"]/comps/li[@Class = "AnomaliesExpected.CompProperties_CanDestroyedAfterStudy"]/requiredThings</xpath>
+					<value>
+						<requiredThings>
+							<ComponentSpacer>5</ComponentSpacer>
+						</requiredThings>
+					</value>
 				</li>
 				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="AEGrinderStomach"]/costList</xpath>
@@ -508,6 +532,9 @@
 				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/ResearchProjectDef[defName="AEGrinderStomach" or defName="AEGrinderJaw"]/knowledgeCategory</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ResearchProjectDef[defName="AEGrinderJaw"]/requiredAnalyzed</xpath>
 				</li>
 				
 				
@@ -748,8 +775,13 @@
 						</costList>
 					</value>
 				</li>
-				<li Class="PatchOperationRemove">
+				<li Class="PatchOperationReplace">
 					<xpath>Defs/ThingDef[defName="AE_BeamTarget"]/killedLeavings</xpath>
+					<value>
+						<killedLeavings>
+							<ComponentSpacer>5</ComponentSpacer>
+						</killedLeavings>
+					</value>
 				</li>
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/ResearchProjectDef[defName="AEOrbitalBeamTargeter"]</xpath>

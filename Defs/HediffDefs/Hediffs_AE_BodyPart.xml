@@ -17,7 +17,7 @@
 					<ReadingSpeed>0.15</ReadingSpeed>
 				</statOffsets>
 				<statFactors>
-					<StudyEfficiency>1.35</StudyEfficiency>
+					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.35</StudyEfficiency>
 				</statFactors>
 			</li>
 		</stages>
