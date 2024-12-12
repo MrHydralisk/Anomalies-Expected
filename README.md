@@ -20,6 +20,7 @@ On some study notes label and description of anomaly might change to fit the cur
 ![Text](/Mod%20Page/Images/Content/AEDesc6.png)
 ![Text](/Mod%20Page/Images/Content/AEDesc7.png)
 ![Text](/Mod%20Page/Images/Content/AEDesc8.png)
+![Text](/Mod%20Page/Images/Content/AEDesc9.png)
 
 Anomalies Classification:
 * Class 0 anomaly "Safe".
@@ -29,7 +30,7 @@ Anomalies Classification:
 * Class 4 anomaly "Critical".
 
 Currently available:
-* 4 Anomaly of basic category
+* 5 Anomaly of basic category
 * 4 Anomaly of advanced category
 
 ## Links
@@ -45,10 +46,10 @@ Currently available:
 Should have no compatibility issues with other mods.
 
 Supported languages:
-English,
-Russian,
-Japanese (available on JP mod database site),
-Chinese (available on workshop by Kagami)
+* English,
+* Russian,
+* Japanese (available on JP mod database site),
+* Chinese (available on workshop by Kagami)
 
 ## Add/Remove
 
@@ -56,4 +57,4 @@ Anomalies Expected mod should be safe to add to existing save. But when you want
 
 ## To Do
 
-- More anomalies in development and will be added, when ready.
+* More anomalies in development and will be added, when ready.
