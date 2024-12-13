@@ -228,7 +228,7 @@
 		<defName>AEFleshmassStomach</defName>
 		<label>metabolic recycling</label>
 		<description>Break down and reabsorb nutrients from its own tissue.</description>
-		<iconPath>UI/Icons/ThingCategories/Foods</iconPath>
+		<iconPath>UI/Abilities/AEConsumeFlesh</iconPath>
 		<cooldownTicksRange>60000</cooldownTicksRange>
 		<displayOrder>1304</displayOrder>
 		<category>AEAnomaliesExpected</category>
