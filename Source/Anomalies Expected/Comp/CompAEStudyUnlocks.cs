@@ -22,6 +22,8 @@ namespace AnomaliesExpected
 
         public int NextIndex => nextIndex;
 
+        public List<Thing> spawnedRelatedAnalyzableThing = new List<Thing>();
+
         public override string TransformLabel(string label)
         {
             if (!currentAnomalyLabel.NullOrEmpty())
@@ -46,6 +48,12 @@ namespace AnomaliesExpected
                 return currentAnomalyDescPart;
             }
             return "";
+        }
+
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            base.PostSpawnSetup(respawningAfterLoad);
+            UpdateFromStudyNotes();
         }
 
         public void SetParentThing(ThingWithComps ParentThing)
@@ -133,9 +141,15 @@ namespace AnomaliesExpected
                 currentAnomalyLabel = aestudyNote.AnomalyLabel;
                 currentAnomalyDesc = aestudyNote.AnomalyDesc;
                 currentAnomalyDescPart = aestudyNote.AnomalyDescPart;
-                if (aestudyNote.ThingDefSpawn != null)
+                if (aestudyNote.ThingDefSpawn != null && !spawnedRelatedAnalyzableThing.Any((Thing t) => t.def == aestudyNote.ThingDefSpawn))
                 {
+                    //CompProperties_CompAnalyzableUnlockResearch comp = aestudyNote.ThingDefSpawn.GetCompProperties<CompProperties_CompAnalyzableUnlockResearch>();
+                    //int analysisID = comp?.analysisID ?? (-1);
+                    //Find.AnalysisManager.TryGetAnalysisProgress(analysisID, out var details);
+                    //if (!(details?.Satisfied ?? false) && parent.Map.listerThings.ThingsOfDef(aestudyNote.ThingDefSpawn).NullOrEmpty())
+                    //{
                     ThingWithComps thing = ThingMaker.MakeThing(aestudyNote.ThingDefSpawn) as ThingWithComps;
+                    spawnedRelatedAnalyzableThing.Add(thing);
                     Thing monolith = Find.Anomaly.monolith;
                     GenPlace.TryPlaceThing(thing, monolith.Position, monolith.Map, ThingPlaceMode.Near, null);
                     CompAnalyzableUnlockResearch compAnalyzable;
@@ -143,6 +157,7 @@ namespace AnomaliesExpected
                     {
                         Find.LetterStack.ReceiveLetter("AnomaliesExpected.Misc.ResearchNote.Letter.Label".Translate(thing.LabelShortCap).RawText, "AnomaliesExpected.Misc.ResearchNote.Letter.Desc".Translate(parent.LabelCap, thing.LabelCap), LetterDefOf.PositiveEvent, thing);
                     }
+                    //}
                 }
             }
         }
@@ -151,7 +166,7 @@ namespace AnomaliesExpected
         {
             base.PostExposeData();
             Scribe_References.Look(ref parentThing, "parentThing");
-            UpdateFromStudyNotes();
+            Scribe_Collections.Look(ref spawnedRelatedAnalyzableThing, "spawnedRelatedAnalyzableThing", LookMode.Reference);
         }
     }
 }
