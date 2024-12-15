@@ -33,4 +33,8 @@
 	<AE_IncidentDef_BloodLakeSpawn.letterLabel>Найдено странное озеро</AE_IncidentDef_BloodLakeSpawn.letterLabel>
 	<AE_IncidentDef_BloodLakeSpawn.letterText>Ваш колонист зафиксировал значительные сейсмические колебания. Похоже, что из-под земли просачивается озеро жидкости.</AE_IncidentDef_BloodLakeSpawn.letterText>
   
+	<AE_IncidentDef_StudyNotepadSpawn.label>жёлтый блокнот</AE_IncidentDef_StudyNotepadSpawn.label>
+	<AE_IncidentDef_StudyNotepadSpawn.letterLabel>Найден жёлтый блокнот</AE_IncidentDef_StudyNotepadSpawn.letterLabel>
+	<AE_IncidentDef_StudyNotepadSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это блокнот с желтыми страницами, заполненными рукописными заметками.</AE_IncidentDef_StudyNotepadSpawn.letterText>
+  
 </LanguageData>

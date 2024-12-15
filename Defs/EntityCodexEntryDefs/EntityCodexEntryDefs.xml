@@ -150,4 +150,22 @@
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>
 
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_StudyNotepad</defName>
+		<label>yellow notepad</label>
+		<category>Basic</category>
+		<uiIconPath>UI/CodexEntries/AE_StudyNotepad</uiIconPath>
+		<useDescriptionFrom>AE_StudyNotepad</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_StudyNotepad</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_StudyNotepadSpawn</li>
+		</provocationIncidents>
+		<discoveredResearchProjects>
+			<li>AEStudyNotepad</li>
+		</discoveredResearchProjects>
+		<orderInCategory>1300</orderInCategory>
+	</EntityCodexEntryDef>
+
 </Defs>

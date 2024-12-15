@@ -47,6 +47,7 @@
 				<jobString>bite</jobString>
 				<activatingStringPending>biting {0}</activatingStringPending>
 				<activatingString>biting {0}: {1}s</activatingString>
+				<onCooldownString>regenereating</onCooldownString>
 
 				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
 				<fleckOnUsedScale>3</fleckOnUsedScale>
@@ -106,6 +107,8 @@
 			<li>ITab_StudyNotes</li>
 		</inspectorTabs>
 	</ThingDef>
+	
+	
 	
 	<ThingDef>
 		<defName>AE_DogTag</defName>
@@ -168,6 +171,103 @@
 				<symbolsToCensor>/|\—</symbolsToCensor>
 			</li>
 		</comps>
+	</ThingDef>
+	
+	
+  
+	<ThingDef>
+		<defName>AE_StudyNotepad</defName>
+		<label>yellow notepad</label>
+		<description>A normal looking notepad, its yellow pages filled with handwritten notes.\n\nYou can examine it pages.</description>
+		<thingClass>ThingWithComps</thingClass>
+		<category>Item</category>
+		<genericMarketSellable>false</genericMarketSellable>
+		<drawerType>MapMeshOnly</drawerType>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<altitudeLayer>Item</altitudeLayer>
+		<selectable>true</selectable>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<alwaysHaulable>true</alwaysHaulable>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<pathCost>14</pathCost>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Item/Special/AE_StudyNotepad</texPath>
+			<drawSize>(0.75,0.75)</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>0.18</Mass>
+			<Beauty>3</Beauty>
+			<Flammability>0</Flammability>
+			<MarketValue>200</MarketValue>
+		</statBases>
+		<thingCategories>
+			<li>ItemsAnomalies</li>
+		</thingCategories>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+		<allowedArchonexusCount>1</allowedArchonexusCount>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_StudyNotepad">
+				<activeTicks>1</activeTicks>
+				<cooldownTicks>50000</cooldownTicks>
+				<ticksToActivate>2500</ticksToActivate>
+				<activateTexPath>Things/Item/Special/AE_StudyNotepad</activateTexPath>
+        
+				<activateLabelString>Examine</activateLabelString>
+				<activateDescString>Examining research notes in a study notepad.</activateDescString>
+				<guiLabelString>Choose who should examine this.</guiLabelString>
+				<jobString>examine</jobString>
+				<activatingStringPending>examining {0}</activatingStringPending>
+				<activatingString>examining {0}: {1}s</activatingString>
+				<onCooldownString>restoring</onCooldownString>
+
+				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
+				<fleckOnUsedScale>3</fleckOnUsedScale>
+				<soundActivate>PsychicAnimalPulserCast</soundActivate>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<learnXPPerProgressPoint>80</learnXPPerProgressPoint>
+				<RequiredResearchDef>AEStudyNotepad</RequiredResearchDef>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>60000</frequencyTicks>
+				<knowledgeCategory>Basic</knowledgeCategory>
+				<anomalyKnowledge>1</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<showToggleGizmo>true</showToggleGizmo>
+			</li>
+			<li Class="CompProperties_StudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotes>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>study notepad</AnomalyLabel>
+						<AnomalyDesc>A normal looking notepad, its yellow pages filled with handwritten notes.\n\nYou can examine it pages to learn about the requested skill.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>0.01</threshold>
+						<label>#1/2 Yellow notepad study report</label>
+						<text>Interactive Knowledge Conduit\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nThis report details the examination of yellow notepad. The notepad, upon inputting a specific skill, dynamically generates content related to that skill. The subject who interacted with the notepad experienced a significant increase in their medical knowledge after inputting "Medical". The notepad exhibited no hostile behavior and reverted to its original state post-examination. Given its passive nature and potential for knowledge acquisition, the notepad is provisionally classified as a Class-0 (Safe) anomaly. Further research is recommended to fully understand its capabilities and limitations.\n\nObservations:\nUpon initial examination, {PAWN_nameDef} observed a notepad containing numerous pages filled with research notes on diverse topics.\nSubject reported noticing a field on each page for inputting a specific "Skill".\n{PAWN_nameDef} was instructed to input the "Medical" into this field.\nSubsequently, the content on subsequent pages transformed to focus on medical topics.\nUpon examining this pages, Subject reported that text dissapeared from them.\n\nOutcome:\nThroughout the examination, the notepad displayed no hostile.\nFollowing the examination, all pages within the notepad reverted to a blank state. Additionally {PAWN_nameDef} experienced an improvement in their medical skills.\n\nDiscussion:\nIt appears that the quantity of experience gained by the Subject is correlated with the number of pages that manifested within the notepad. \nGiven the absence of hostile behavior, the notepad has been temporary classified as Class-0 (Safe) anomaly.\n\nRecommendations:\nContinued research and utilization of notepad is required to further investigate its anomalous properties and explore potential applications.</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>Alexandria's Legacy</AnomalyLabel>
+						<AnomalyDesc>A normal looking notepad, its yellow pages filled with handwritten notes.\n\nYou can examine it pages to learn about the requested skill. Aquired experience correlates with the progress of related research.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>3</threshold>
+						<label>#2/2 Yellow notepad study report</label>
+						<text>Theory Regarding Yellow Notepad\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nThis report details the anomalous properties of a yellow notepad. The notepad seems to be a tool for knowledge acquisition and organization. It responds to user input by generating relevant content, and its capabilities appear to expand as more knowledge is fed into it. The notepad's origins remain unknown, but it is hypothesized to be an ancient artifact that once belonged to a vast library. Continued usage is recommended to utilize its anomalous properties.\n\nOutcome:\nSome of colonists have demonstrated increased motivation to conduct anomaly research within the facility, with the aim of acquiring expertise in their respective fields through the utilization of the notepad.\n\nDiscussion:\nIt appears that the quantity of pages generated by the notepad is correlated with the amount of anomaly research conducted within the facility. \nGiven the consistent and non-hostile behavior of the notepad, its current classification as a Class-0 (Safe) anomaly remains unchanged.\n\nHypothesis:\n{PAWN_nameDef} has proposed a theory suggesting that the notepad may interact with various information carriers, including papers, blueprints, and digital storage devices. It is theorized that the notepad absorbs knowledge gained within the facility and, in exchange, provides requested information to its users. Driven by an insatiable curiosity, the notepad seeks human interaction to expand its knowledge. While its exact origin remains elusive, it is speculated that the notepad may have originated from an ancient library. It is speculated that the notepad was used to organize and access vast amounts of information within the library. Evidence of fire damage on certain pages suggests that the library may have been destroyed by fire, forcing the notepad to seek new owners.\n\nRecommendations:\nControlled Use: Continued anomaly research within the facility and usage of the notepad are recommended to utilize its anomalous properties.</text>
+					</li>
+				</studyNotes>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_StudyNotes</li>
+		</inspectorTabs>
 	</ThingDef>
   
 </Defs>
