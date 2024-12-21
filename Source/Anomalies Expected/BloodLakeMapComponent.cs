@@ -194,11 +194,9 @@ namespace AnomaliesExpected
                 Messages.Message("AnomaliesExpected.BloodLake.ReactorMeltdownExplosion".Translate().RawText, Entrance, MessageTypeDefOf.NegativeEvent);
                 Entrance.isDestroyedMap = true;
                 Comp_CanDestroyedAfterStudy canDestroyedAfterStudy = Entrance.GetComp<Comp_CanDestroyedAfterStudy>();
-                Log.Message($"canDestroyedAfterStudy == null {canDestroyedAfterStudy == null}");
                 if (canDestroyedAfterStudy != null)
                 {
                     canDestroyedAfterStudy.isCanDestroyForced = true;
-                    Log.Message($"canDestroyedAfterStudy.isCanDestroyForced {canDestroyedAfterStudy.isCanDestroyForced}");
                 }
                 Find.CameraDriver.shaker.DoShake(0.2f);
             }

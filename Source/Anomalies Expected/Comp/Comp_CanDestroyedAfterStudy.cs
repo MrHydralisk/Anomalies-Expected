@@ -117,8 +117,9 @@ namespace AnomaliesExpected
             return base.CanInteract(activateBy, checkOptionalItems);
         }
 
-        public void ExposeData()
+        public override void PostExposeData()
         {
+            base.PostExposeData();
             Scribe_Values.Look(ref isCanDestroyEarly, "isCanDestroyEarly", false);
             Scribe_Values.Look(ref isCanDestroyForced, "isCanDestroyForced", false);
         }
