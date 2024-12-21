@@ -30,6 +30,7 @@
 			<li>Brain</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>AEForbiddenFruitImplant</addsHediff>
+		<surgerySuccessChanceFactor>99999</surgerySuccessChanceFactor>
 	</RecipeDef>
 	
 	

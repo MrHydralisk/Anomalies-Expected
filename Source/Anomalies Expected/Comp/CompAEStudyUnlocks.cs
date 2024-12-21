@@ -15,6 +15,8 @@ namespace AnomaliesExpected
         public string currentAnomalyDesc;
         public string currentAnomalyDescPart;
 
+        public int manualOverrideIndex = -1;
+
         public ThingWithComps parentThing;
         public CompAEStudyUnlocks compAEStudyUnlocksParent => compAEStudyUnlocksParentCached ?? (compAEStudyUnlocksParentCached = parentThing.GetComp<CompAEStudyUnlocks>());
         public CompAEStudyUnlocks compAEStudyUnlocksParentCached;
@@ -53,6 +55,21 @@ namespace AnomaliesExpected
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
+            if (respawningAfterLoad)
+            {
+                if (Props is CompProperties_AEStudyUnlocks aeProps)
+                {
+                    for (int i = letters.Count() - 1; i >= 0; i--)
+                    {
+                        ChoiceLetter choiceLetter = letters[i];
+                        manualOverrideIndex = aeProps.studyNotesManualUnlockable.FirstIndexOf((StudyNote sn) => sn.label == choiceLetter.Label);
+                        if (manualOverrideIndex >= 0 || Props.studyNotes.Any((StudyNote sn) => sn.label == choiceLetter.Label))
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
             UpdateFromStudyNotes();
         }
 
@@ -96,6 +113,7 @@ namespace AnomaliesExpected
                     {
                         studier = "AnomaliesExpected.Misc.Redacted".Translate();
                     }
+                    manualOverrideIndex = index;
                     TaggedString label = studyNote.label.Formatted(studier.Named("PAWN"));
                     TaggedString text = studyNote.text.Formatted(studier.Named("PAWN"));
                     ChoiceLetter let = LetterMaker.MakeLetter(label, text, LetterDefOf.NeutralEvent, parent);
@@ -120,18 +138,26 @@ namespace AnomaliesExpected
                 if (!compAEStudyUnlocksParent.letters.Any((ChoiceLetter cl) => cl.Label == keptLetter.Label))
                 {
                     keptLetter.hyperlinkThingDefs.Add(parent.def);
-                    compAEStudyUnlocksParent.AddStudyNoteLetter(keptLetter);
+                    ChoiceLetter copyLetter = LetterMaker.MakeLetter(keptLetter.Label, keptLetter.Text, LetterDefOf.NeutralEvent, keptLetter.lookTargets);
+                    copyLetter.arrivalTick = keptLetter.arrivalTick;
+                    compAEStudyUnlocksParent.AddStudyNoteLetter(copyLetter);
                 }
             }
         }
 
         protected void UpdateFromStudyNotes()
         {
-            if (studyProgress > 0 && studyProgress <= Props.studyNotes.Count())
+            StudyNote studyNote = null;
+            if (Props is CompProperties_AEStudyUnlocks aeProps && manualOverrideIndex >= 0)
             {
-                StudyNote studyNote = Props.studyNotes[studyProgress - 1];
-                UpdateFromStudyNote(studyNote);
+                studyNote = aeProps.studyNotesManualUnlockable.ElementAtOrDefault(manualOverrideIndex);
             }
+            else if (studyProgress > 0 && studyProgress <= Props.studyNotes.Count())
+            {
+                studyNote = Props.studyNotes[studyProgress - 1];
+                manualOverrideIndex = -1;
+            }
+            UpdateFromStudyNote(studyNote);
         }
 
         protected void UpdateFromStudyNote(StudyNote studyNote)
