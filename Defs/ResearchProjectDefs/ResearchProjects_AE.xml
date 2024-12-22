@@ -354,4 +354,35 @@
 		<researchViewY>4</researchViewY>
 	</ResearchProjectDef>
 
+	<ResearchProjectDef>
+		<defName>AEProviderScripture</defName>
+		<label>examine notepad</label>
+		<description>Examining research notes in a yellow notepad.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>BasicPsychicRituals</li>
+		</prerequisites>
+		<knowledgeCost>60</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>4</researchViewX>
+		<researchViewY>4</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>AEAskingProvider</defName>
+		<label>examine notepad</label>
+		<description>Examining research notes in a yellow notepad.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>AEProviderScripture</li>
+		</prerequisites>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesPSA</li>
+		</requiredAnalyzed>
+		<knowledgeCost>270</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>5</researchViewX>
+		<researchViewY>4</researchViewY>
+	</ResearchProjectDef>
+
 </Defs>

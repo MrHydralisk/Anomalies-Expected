@@ -939,6 +939,13 @@
 					<attribute>Name</attribute>
 					<value>Bullet_Shell_AcidSpit</value>
 				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="PsychicRitualSpot"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+					<order>Append</order>
+					<value>
+						<li>AE_ProviderBox</li>
+					</value>
+				</li>
 			</operations>
 		</match>
 	</Operation>

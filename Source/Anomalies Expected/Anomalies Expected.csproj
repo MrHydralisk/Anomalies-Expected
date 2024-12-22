@@ -94,9 +94,10 @@
     <Compile Include="JobDriver\JobDriver_ApplyUsableTo.cs" />
     <Compile Include="GameCondition_AEBloodFog.cs" />
     <Compile Include="Hediff_GroupedLevel.cs" />
+    <Compile Include="PsychicRitual\PsychicRitualDef_AEAskingProvider.cs" />
     <Compile Include="Recipe_AEInitiateFleshmassMutation.cs" />
-    <Compile Include="PsychicRitualToil_AESummonBloodLake.cs" />
-    <Compile Include="PsychicRitualDef_AESummonBloodLake.cs" />
+    <Compile Include="PsychicRitual\PsychicRitualToil_AESummonBloodLake.cs" />
+    <Compile Include="PsychicRitual\PsychicRitualDef_AESummonBloodLake.cs" />
     <Compile Include="Structures\AEStudyNote.cs" />
     <Compile Include="CompProperties\CompProperties_CanDestroyedAfterStudy.cs" />
     <Compile Include="CompProperties\CompProperties_UseEffecRemoveHediff.cs" />

@@ -243,5 +243,33 @@
 			</li>
 		</modExtensions>
 	</IncidentDef>
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_ProviderScriptureSpawn</defName>
+		<label>ancient scripture</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingFromOrbit</workerClass>
+		<letterLabel>Found ancient scripture</letterLabel>
+		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a notepad, its yellow pages filled with handwritten notes.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>60</earliestDay>
+		<baseChance>0.2</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minRefireDays>120</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableThingDefs>
+					<li>AE_ProviderScripture</li>
+				</DeployableThingDefs>
+				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
+				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+			</li>
+		</modExtensions>
+	</IncidentDef>
 
 </Defs>

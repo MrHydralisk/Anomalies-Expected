@@ -168,4 +168,23 @@
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>
 
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_ProviderScripture</defName>
+		<label>ancient scripture</label>
+		<category>Advanced</category>
+		<uiIconPath>UI/CodexEntries/AE_ProviderScripture</uiIconPath>
+		<useDescriptionFrom>AE_ProviderScripture</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_ProviderScripture</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_ProviderScriptureSpawn</li>
+		</provocationIncidents>
+		<discoveredResearchProjects>
+			<li>AEProviderScripture</li>
+			<li>AEAskingProvider</li>
+		</discoveredResearchProjects>
+		<orderInCategory>1300</orderInCategory>
+	</EntityCodexEntryDef>
+
 </Defs>

@@ -22,4 +22,27 @@
 		<chanterRole>ChanterAdvanced</chanterRole>
 	</AnomaliesExpected.PsychicRitualDef_AESummonBloodLake>
 
+
+
+	<AnomaliesExpected.PsychicRitualDef_AEAskingProvider>
+		<defName>AskingProvider</defName>
+		<label>ask provider</label>
+		<description>Use a psychic pulse to distort the fabric of reality, resulting in the formation of a crimson lake in the ground somewhere in the local area.</description>
+		<iconPath>UI/PsychicRituals/PsychicRitual_AEAskingProvider</iconPath>
+		<researchPrerequisite>AEProviderScripture</researchPrerequisite>
+		<outcomeDescription>Use a psychic pulse to distort the fabric of reality, resulting in the formation of a crimson lake in the ground somewhere in the local area.</outcomeDescription>
+		<hoursUntilOutcome>4</hoursUntilOutcome>
+		<castableOnPocketMaps>false</castableOnPocketMaps>
+		<requiredOffering>
+			<filter>
+				<thingDefs>
+					<li>Bioferrite</li>
+				</thingDefs>
+			</filter>
+			<count>25</count>
+		</requiredOffering>
+		<cooldownHours>120</cooldownHours>
+		<chanterRole>ChanterAdvanced</chanterRole>
+	</AnomaliesExpected.PsychicRitualDef_AEAskingProvider>
+
 </Defs>
