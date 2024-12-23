@@ -43,6 +43,7 @@
 		</requiredOffering>
 		<cooldownHours>120</cooldownHours>
 		<chanterRole>ChanterAdvanced</chanterRole>
+		<ProviderBoxDef>AE_ProviderBox</ProviderBoxDef>
 	</AnomaliesExpected.PsychicRitualDef_AEAskingProvider>
 
 </Defs>

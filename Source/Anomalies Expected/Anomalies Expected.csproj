@@ -95,6 +95,7 @@
     <Compile Include="GameCondition_AEBloodFog.cs" />
     <Compile Include="Hediff_GroupedLevel.cs" />
     <Compile Include="PsychicRitual\PsychicRitualDef_AEAskingProvider.cs" />
+    <Compile Include="PsychicRitual\PsychicRitualToil_AEAskingProvider.cs" />
     <Compile Include="Recipe_AEInitiateFleshmassMutation.cs" />
     <Compile Include="PsychicRitual\PsychicRitualToil_AESummonBloodLake.cs" />
     <Compile Include="PsychicRitual\PsychicRitualDef_AESummonBloodLake.cs" />

@@ -8,23 +8,32 @@ namespace AnomaliesExpected
 {
     public class PsychicRitualDef_AEAskingProvider : PsychicRitualDef_InvocationCircle
     {
-        //public override List<PsychicRitualToil> CreateToils(PsychicRitual psychicRitual, PsychicRitualGraph graph)
-        //{
-        //    List<PsychicRitualToil> list = base.CreateToils(psychicRitual, graph);
-        //    list.Add(new PsychicRitualToil_AESummonBloodLake(InvokerRole));
-        //    return list;
-        //}
+        public ThingDef ProviderBoxDef;
+        private Building_Storage ProviderBox;
 
-        //public override IEnumerable<string> BlockingIssues(PsychicRitualRoleAssignments assignments, Map map)
-        //{
-        //    foreach (string item in base.BlockingIssues(assignments, map))
-        //    {
-        //        yield return item;
-        //    }
-        //    if (map.listerThings.AllThings.Any((Thing t) => t.def == ThingDefOfLocal.AE_BloodLake || t.def == ThingDefOfLocal.AE_BloodLakeSpawner))
-        //    {
-        //        yield return "AnomaliesExpected.BloodLake.AlreadyExists".Translate();
-        //    }
-        //}
+        public override List<PsychicRitualToil> CreateToils(PsychicRitual psychicRitual, PsychicRitualGraph graph)
+        {
+            List<PsychicRitualToil> list = base.CreateToils(psychicRitual, graph);
+            list.Add(new PsychicRitualToil_AEAskingProvider(InvokerRole) { ProviderBox = ProviderBox});
+            return list;
+        }
+
+        public override IEnumerable<string> BlockingIssues(PsychicRitualRoleAssignments assignments, Map map)
+        {
+            foreach (string item in base.BlockingIssues(assignments, map))
+            {
+                yield return item;
+            }
+            CompAffectedByFacilities compAffectedByFacilities = (assignments.Target.Thing as ThingWithComps).GetComp<CompAffectedByFacilities>();
+            ProviderBox = compAffectedByFacilities.LinkedFacilitiesListForReading.FirstOrDefault((Thing t) => t.def == ProviderBoxDef) as Building_Storage;
+            if (ProviderBox == null)
+            {
+                yield return "AnomaliesExpected.ProviderScripture.Ritual.MissingTheBox".Translate();
+            }
+            if (ProviderBox.slotGroup.HeldThings.EnumerableNullOrEmpty())
+            {
+                yield return "AnomaliesExpected.ProviderScripture.Ritual.BoxEmpty".Translate();
+            }
+        }
     }
 }
