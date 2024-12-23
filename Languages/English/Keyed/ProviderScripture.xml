@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<AnomaliesExpected.ProviderScripture.Ritual.MissingTheBox>Missing Provider Box for ritual</AnomaliesExpected.ProviderScripture.Ritual.MissingTheBox>
+	<AnomaliesExpected.ProviderScripture.Ritual.BoxEmpty>Provider Box is empty</AnomaliesExpected.ProviderScripture.Ritual.BoxEmpty>
+	<AnomaliesExpected.ProviderScripture.Ritual.OutputDesc>\nWill consume {0}\n\n   Qulity multiplier {1}\n   Research multiplier {2}\n   Total multiplier {3}\n\nWill acquire {4}</AnomaliesExpected.ProviderScripture.Ritual.OutputDesc>
+</LanguageData>

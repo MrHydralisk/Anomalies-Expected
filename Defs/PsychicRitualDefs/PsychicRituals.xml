@@ -44,6 +44,16 @@
 		<cooldownHours>120</cooldownHours>
 		<chanterRole>ChanterAdvanced</chanterRole>
 		<ProviderBoxDef>AE_ProviderBox</ProviderBoxDef>
+		<MaxWealth>500</MaxWealth>
+		<researchProjectDef>AEAskingProvider</researchProjectDef>
+		<maxResearchMult>4</maxResearchMult>
+		<multFromQuality>
+			<li>(0.2, 0)</li>
+			<li>(0.4, 0.25)</li>
+			<li>(0.6, 0.5)</li>
+			<li>(0.8, 0.75)</li>
+			<li>(1, 1)</li>
+		</multFromQuality>
 	</AnomaliesExpected.PsychicRitualDef_AEAskingProvider>
 
 </Defs>

@@ -379,7 +379,7 @@
 		<requiredAnalyzed>
 			<li>AE_ResearchNotesPSA</li>
 		</requiredAnalyzed>
-		<knowledgeCost>270</knowledgeCost>
+		<knowledgeCost>300</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>5</researchViewX>
 		<researchViewY>4</researchViewY>
