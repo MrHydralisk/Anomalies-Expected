@@ -356,8 +356,8 @@
 
 	<ResearchProjectDef>
 		<defName>AEProviderScripture</defName>
-		<label>examine notepad</label>
-		<description>Examining research notes in a yellow notepad.</description>
+		<label>provider box</label>
+		<description>Examining blueprint for provider box and learn asking Provider ritual.</description>
 		<tab>AnomaliesExpected</tab>
 		<prerequisites>
 			<li>BasicPsychicRituals</li>
@@ -370,8 +370,8 @@
 
 	<ResearchProjectDef>
 		<defName>AEAskingProvider</defName>
-		<label>examine notepad</label>
-		<description>Examining research notes in a yellow notepad.</description>
+		<label>asking provider</label>
+		<description>Collected research progress will be used as additional sacrifice in Asking Provider ritual.</description>
 		<tab>AnomaliesExpected</tab>
 		<prerequisites>
 			<li>AEProviderScripture</li>

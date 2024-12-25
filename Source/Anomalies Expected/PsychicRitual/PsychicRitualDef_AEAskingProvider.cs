@@ -82,7 +82,7 @@ namespace AnomaliesExpected
 
         public int InputAmount(Thing inputThing)
         {
-            return Mathf.Min(Mathf.FloorToInt(MaxWealth / inputThing.def.BaseMarketValue), inputThing.stackCount); ;
+            return Mathf.Min(Mathf.FloorToInt(MaxWealth / inputThing.def.BaseMarketValue), inputThing.stackCount);
         }
 
         private IReadOnlyDictionary<PsychicRitualRoleDef, List<IntVec3>> GenerateRolePositions(PsychicRitualRoleAssignments assignments)

@@ -73,7 +73,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>AE_ProviderBox</defName>
 		<label>provider box</label>
-		<description>Collect blood-like liquid from nearby anomalous source.</description>
+		<description>The ritual box, designed to hold sacrificial offerings for asking Provider ritual. Its surface corroded, aged prematurely, and became marred with scratches upon creation.</description>
 		<thingClass>Building_Storage</thingClass>
 		<graphicData>
 			<texPath>Things/Building/AE_ProviderBox</texPath>

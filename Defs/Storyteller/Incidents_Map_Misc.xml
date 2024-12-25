@@ -253,7 +253,7 @@
 		</targetTags>
 		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingFromOrbit</workerClass>
 		<letterLabel>Found ancient scripture</letterLabel>
-		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a notepad, its yellow pages filled with handwritten notes.</letterText>
+		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a dark-covered book bearing the marks of time, featuring a prominent symbol.</letterText>
 		<letterDef>NeutralEvent</letterDef>
 		<earliestDay>60</earliestDay>
 		<baseChance>0.2</baseChance>

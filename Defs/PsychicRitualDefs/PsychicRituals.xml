@@ -26,11 +26,11 @@
 
 	<AnomaliesExpected.PsychicRitualDef_AEAskingProvider>
 		<defName>AskingProvider</defName>
-		<label>ask provider</label>
-		<description>Use a psychic pulse to distort the fabric of reality, resulting in the formation of a crimson lake in the ground somewhere in the local area.</description>
+		<label>asking Provider</label>
+		<description>Utilize prayer and the offering of items for asking Provider deity for resources.</description>
 		<iconPath>UI/PsychicRituals/PsychicRitual_AEAskingProvider</iconPath>
 		<researchPrerequisite>AEProviderScripture</researchPrerequisite>
-		<outcomeDescription>Use a psychic pulse to distort the fabric of reality, resulting in the formation of a crimson lake in the ground somewhere in the local area.</outcomeDescription>
+		<outcomeDescription>The ritual summons items of the same type as those sacrificed and placed within the Provider Box. The yield is influenced by the quantity of the sacrifice, the quality of the ritual performance, and the level of research progress.</outcomeDescription>
 		<hoursUntilOutcome>4</hoursUntilOutcome>
 		<castableOnPocketMaps>false</castableOnPocketMaps>
 		<requiredOffering>
