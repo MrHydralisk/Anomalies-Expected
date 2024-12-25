@@ -25,7 +25,7 @@
 
 
 	<AnomaliesExpected.PsychicRitualDef_AEAskingProvider>
-		<defName>AskingProvider</defName>
+		<defName>AE_AskingProvider</defName>
 		<label>asking Provider</label>
 		<description>Utilize prayer and the offering of items for asking Provider deity for resources.</description>
 		<iconPath>UI/PsychicRituals/PsychicRitual_AEAskingProvider</iconPath>

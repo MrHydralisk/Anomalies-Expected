@@ -62,7 +62,7 @@ namespace AnomaliesExpected
         {
             base.ExposeData();
             Scribe_References.Look(ref ProviderBox, "ProviderBox");
-            Scribe_Values.Look(ref inputThingDef, "inputThingDef");
+            Scribe_Defs.Look(ref inputThingDef, "inputThingDef");
             Scribe_Values.Look(ref inputAmount, "inputValue", 0);
         }
     }
