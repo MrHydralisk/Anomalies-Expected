@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<AE_AskingProvider.label>просить Предоставителя</AE_AskingProvider.label>
+	<AE_AskingProvider.description>Использовать молитвы и подношение предметов для обращения к божеству Предоставителю с мольбой о ресурсах.</AE_AskingProvider.description>
+	<AE_AskingProvider.outcomeDescription>Ритуал призывает предметы того же типа, что и принесённые в жертву и помещенные в ящик Предоставителя. Количество полученных предметов зависит от количества принесенных подношений, качества проведения ритуала и уровня достигнутого прогресса в исследованиях.</AE_AskingProvider.outcomeDescription>
+  
+</LanguageData>

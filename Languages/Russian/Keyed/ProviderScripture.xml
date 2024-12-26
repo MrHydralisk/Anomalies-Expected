@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<AnomaliesExpected.ProviderScripture.Ritual.MissingTheBox>Отсутствует ящик Предоставителя для ритуала</AnomaliesExpected.ProviderScripture.Ritual.MissingTheBox>
+	<AnomaliesExpected.ProviderScripture.Ritual.BoxEmpty>ящик Предоставителя пуст</AnomaliesExpected.ProviderScripture.Ritual.BoxEmpty>
+	<AnomaliesExpected.ProviderScripture.Ritual.OutputDesc>\nПотребит {0}\n\n   Множитель качества {1}\n   Множитель исследования {2}\n   Множитель общий {3}\n\nПроизведёт {4}</AnomaliesExpected.ProviderScripture.Ritual.OutputDesc>
+</LanguageData>

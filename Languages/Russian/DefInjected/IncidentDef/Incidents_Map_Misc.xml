@@ -36,5 +36,9 @@
 	<AE_IncidentDef_StudyNotepadSpawn.label>жёлтый блокнот</AE_IncidentDef_StudyNotepadSpawn.label>
 	<AE_IncidentDef_StudyNotepadSpawn.letterLabel>Найден жёлтый блокнот</AE_IncidentDef_StudyNotepadSpawn.letterLabel>
 	<AE_IncidentDef_StudyNotepadSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это блокнот с желтыми страницами, заполненными рукописными заметками.</AE_IncidentDef_StudyNotepadSpawn.letterText>
+	
+	<AE_IncidentDef_ProviderScriptureSpawn.label>древнее писание</AE_IncidentDef_ProviderScriptureSpawn.label>
+	<AE_IncidentDef_ProviderScriptureSpawn.letterLabel>Найдено древнее писание</AE_IncidentDef_ProviderScriptureSpawn.letterLabel>
+	<AE_IncidentDef_ProviderScriptureSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это старинная книга с темной обложкой, украшенная заметным символом.</AE_IncidentDef_ProviderScriptureSpawn.letterText>
   
 </LanguageData>
