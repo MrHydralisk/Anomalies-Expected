@@ -38,8 +38,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompProperties\CompProperties_AbilityFleshmassStomach.cs" />
+    <Compile Include="CompProperties\CompProperties_ChristmasStockings.cs" />
     <Compile Include="CompProperties\CompProperties_StudyNotepad.cs" />
     <Compile Include="Comp\CompAbilityEffect_FleshmassStomach.cs" />
+    <Compile Include="Comp\Comp_ChristmasStockings.cs" />
     <Compile Include="Comp\Comp_StudyNotepad.cs" />
     <Compile Include="Comp\HediffComp_FleshmassRestoration.cs" />
     <Compile Include="DefOfLocal\BodyPartDefOfLocal.cs" />

@@ -35,6 +35,8 @@
 		</stages>
 	</ThoughtDef>
 	
+	
+	
 	<ThoughtDef>
 		<defName>Thought_AEFleshmassLung</defName>
 		<workerClass>ThoughtWorker_Hediff</workerClass>
@@ -48,6 +50,38 @@
 				<baseMoodEffect>4</baseMoodEffect>
 			</li>
 		</stages>
+	</ThoughtDef>
+	
+	
+	
+	<ThoughtDef>
+		<defName>Thought_AEChristmasCandyCane</defName>
+		<durationDays>5</durationDays>
+		<stages>
+			<li>
+				<label>got candy cane</label>
+				<description>That lavish meal was amazing. It nourished my body and my soul.</description>
+				<baseMoodEffect>8</baseMoodEffect>
+			</li>
+		</stages>
+		<replaceThoughts>
+			<li>Thought_AEChristmasCoal</li>
+		</replaceThoughts>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>Thought_AEChristmasCoal</defName>
+		<durationDays>5</durationDays>
+		<stages>
+			<li>
+				<label>got coal</label>
+				<description>That lavish meal was amazing. It nourished my body and my soul.</description>
+				<baseMoodEffect>-8</baseMoodEffect>
+			</li>
+		</stages>
+		<replaceThoughts>
+			<li>Thought_AEChristmasCandyCane</li>
+		</replaceThoughts>
 	</ThoughtDef>
   
 </Defs>

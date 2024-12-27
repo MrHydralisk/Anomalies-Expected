@@ -382,6 +382,34 @@
 		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
 		<allowedArchonexusCount>1</allowedArchonexusCount>
 		<comps>
+			<li Class="AnomaliesExpected.CompProperties_ChristmasStockings">
+				<activeTicks>1</activeTicks>
+				<!-- <cooldownTicks>50000</cooldownTicks> -->
+				<ticksToActivate>1200</ticksToActivate>
+				<activateTexPath>Things/Item/Special/AE_ChristmasStockings</activateTexPath>
+        
+				<activateLabelString>Take gift</activateLabelString>
+				<activateDescString>Take gift from inside.</activateDescString>
+				<guiLabelString>Choose who should take from this.</guiLabelString>
+				<jobString>taking gift</jobString>
+				<activatingStringPending>taking gift {0}</activatingStringPending>
+				<activatingString>taking gift {0}: {1}s</activatingString>
+				<!-- <onCooldownString>restoring</onCooldownString> -->
+
+				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
+				<fleckOnUsedScale>3</fleckOnUsedScale>
+				<soundActivate>PsychicAnimalPulserCast</soundActivate>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<thoughtDefPositive>Thought_AEChristmasCandyCane</thoughtDefPositive>
+				<thoughtDefNegative>Thought_AEChristmasCoal</thoughtDefNegative>
+			</li>
 			<li Class="CompProperties_Studiable">
 				<frequencyTicks>60000</frequencyTicks>
 				<knowledgeCategory>Basic</knowledgeCategory>
