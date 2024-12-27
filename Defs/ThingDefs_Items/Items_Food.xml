@@ -5,7 +5,7 @@
 		<defName>AE_BakingPies</defName>
 		<label>big pie</label>
 		<description>A round big pie on a plate. It is a baked dish with a pastry crust surrounding the filling.\n\nIt looks appetizing.</description>
-		<thingClass>ThingWithComps</thingClass>
+		<thingClass>AnomaliesExpected.ThingWithComps_AE</thingClass>
 		<category>Item</category>
 		<genericMarketSellable>false</genericMarketSellable>
 		<drawerType>MapMeshOnly</drawerType>

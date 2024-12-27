@@ -5,7 +5,7 @@
 		<defName>AE_ForbiddenFruit</defName>
 		<label>giant apple</label>
 		<description>A normal looking apple, if not for it giant size. Despite its immense size, the apple seems perfectly ripe, its skin giving slightly with the promise of juicy sweetness.\n\nSeems like you can take a bite of it.</description>
-		<thingClass>ThingWithComps</thingClass>
+		<thingClass>AnomaliesExpected.ThingWithComps_AE</thingClass>
 		<category>Item</category>
 		<genericMarketSellable>false</genericMarketSellable>
 		<drawerType>MapMeshOnly</drawerType>
@@ -179,7 +179,7 @@
 		<defName>AE_StudyNotepad</defName>
 		<label>yellow notepad</label>
 		<description>A normal looking notepad, its yellow pages filled with handwritten notes.\n\nYou can examine it pages.</description>
-		<thingClass>ThingWithComps</thingClass>
+		<thingClass>AnomaliesExpected.ThingWithComps_AE</thingClass>
 		<category>Item</category>
 		<genericMarketSellable>false</genericMarketSellable>
 		<drawerType>MapMeshOnly</drawerType>
@@ -276,7 +276,7 @@
 		<defName>AE_ProviderScripture</defName>
 		<label>ancient scripture</label>
 		<description>A dark-covered book bearing the marks of time, featuring a prominent symbol.</description>
-		<thingClass>ThingWithComps</thingClass>
+		<thingClass>AnomaliesExpected.ThingWithComps_AE</thingClass>
 		<category>Item</category>
 		<genericMarketSellable>false</genericMarketSellable>
 		<drawerType>MapMeshOnly</drawerType>
@@ -353,7 +353,7 @@
 		<defName>AE_ChristmasStockings</defName>
 		<label>christmas stockings</label>
 		<description>A dark-covered book bearing the marks of time, featuring a prominent symbol.</description>
-		<thingClass>ThingWithComps</thingClass>
+		<thingClass>AnomaliesExpected.ThingWithComps_AE</thingClass>
 		<category>Item</category>
 		<genericMarketSellable>false</genericMarketSellable>
 		<drawerType>MapMeshOnly</drawerType>
@@ -409,6 +409,7 @@
 				
 				<thoughtDefPositive>Thought_AEChristmasCandyCane</thoughtDefPositive>
 				<thoughtDefNegative>Thought_AEChristmasCoal</thoughtDefNegative>
+				<lastGift>AE_ChristmasTree</lastGift>
 			</li>
 			<li Class="CompProperties_Studiable">
 				<frequencyTicks>60000</frequencyTicks>
@@ -444,7 +445,35 @@
 					<!-- </li> -->
 				</studyNotes>
 			</li>
-			<li Class="CompProperties_Forbiddable"/>
+			<li Class="AnomaliesExpected.CompProperties_CanDestroyedAfterStudy">
+				<ticksToActivate>10000</ticksToActivate>
+				<maintainProgress>true</maintainProgress>
+				<activateTexPath>Designations/FillInPitBurrow</activateTexPath>
+ 
+				<activateLabelString>Fill with soil</activateLabelString>
+				<activateDescString>Add chemicals to dissolve and fill it with soil. [Will destroy it]</activateDescString>
+				<guiLabelString>Choose who should destroy this.</guiLabelString>
+				<jobString>dissolve and fill in</jobString>
+				<activatingStringPending>dissolving and filling for {0}</activatingStringPending>
+				<activatingString>dissolving and filling for {0}: {1}s</activatingString>
+
+				<fleckOnAnomaly>PitGateCollapseDust</fleckOnAnomaly>
+				<fleckOnAnomalyScale>5</fleckOnAnomalyScale>
+				<soundActivate>PitBurrow_Collapse</soundActivate>
+				<interactionEffecter>FillIn</interactionEffecter>
+				
+				<cooldownFleck>DirtBitsArching</cooldownFleck>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<jobDef>AE_RemoveAnomaly</jobDef>
+				<minStudy>1</minStudy>
+			</li>
 		</comps>
 		<inspectorTabs>
 			<li>ITab_StudyNotes</li>

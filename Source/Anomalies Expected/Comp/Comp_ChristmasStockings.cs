@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 using Verse;
 
 namespace AnomaliesExpected
@@ -30,6 +31,14 @@ namespace AnomaliesExpected
             }
         }
 
+        public override void PostDeSpawn(Map map)
+        {
+            Thing gift = ThingMaker.MakeThing(Props.lastGift);
+            gift.SetFactionDirect(Faction.OfPlayer);
+            GenPlace.TryPlaceThing(gift, parent.Position, map, ThingPlaceMode.Near);
+            base.PostDeSpawn(map);
+        }
+
         private void TakeGift(Pawn pawn)
         {
             Thought_Memory thought = null;
@@ -43,6 +52,14 @@ namespace AnomaliesExpected
             }
             pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(thought);
             giftAmount--;
+            if (giftAmount < 1)
+            {
+                Comp_CanDestroyedAfterStudy canDestroyedAfterStudy = parent.GetComp<Comp_CanDestroyedAfterStudy>();
+                if (canDestroyedAfterStudy != null)
+                {
+                    canDestroyedAfterStudy.isCanDestroyForced = true;
+                }
+            }
         }
 
         private float GoodDeeds(Pawn pawn)

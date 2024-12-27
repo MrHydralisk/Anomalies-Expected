@@ -7,6 +7,7 @@ namespace AnomaliesExpected
     {
         public ThoughtDef thoughtDefPositive;
         public ThoughtDef thoughtDefNegative;
+        public ThingDef lastGift;
 
         public int giftAmount = 15;
 

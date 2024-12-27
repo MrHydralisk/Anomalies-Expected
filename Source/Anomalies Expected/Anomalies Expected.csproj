@@ -37,6 +37,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ThingWithComps_AE.cs" />
     <Compile Include="CompProperties\CompProperties_AbilityFleshmassStomach.cs" />
     <Compile Include="CompProperties\CompProperties_ChristmasStockings.cs" />
     <Compile Include="CompProperties\CompProperties_StudyNotepad.cs" />

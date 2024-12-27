@@ -284,7 +284,7 @@
 		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a notepad, its yellow pages filled with handwritten notes.</letterText>
 		<letterDef>NeutralEvent</letterDef>
 		<earliestDay>5</earliestDay> <!-- 30 -->
-		<baseChance>0.2</baseChance> <!-- 0.2 -->
+		<baseChance>1</baseChance> <!-- 0.2 -->
 		<requireColonistsPresent>True</requireColonistsPresent>
 		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
 		<minRefireDays>10</minRefireDays> <!-- 60 -->
@@ -296,6 +296,11 @@
 				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
 				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
 				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+				<!--<ChanceFactorPowPerOtherBuildings>
+					<AE_ChristmasTree>
+						<chance>0</chance>
+					</AE_ChristmasTree>
+				</ChanceFactorPowPerOtherBuildings>-->
 			</li>
 		</modExtensions>
 	</IncidentDef>
