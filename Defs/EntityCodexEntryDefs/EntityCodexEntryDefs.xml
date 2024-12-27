@@ -187,4 +187,22 @@
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>
 
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_ChristmasStockings</defName>
+		<label>christmas stockings</label>
+		<category>Basic</category>
+		<uiIconPath>UI/CodexEntries/AE_ChristmasStockings</uiIconPath>
+		<useDescriptionFrom>AE_ChristmasStockings</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_ChristmasStockings</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_ChristmasStockingsSpawn</li>
+		</provocationIncidents>
+		<!-- <discoveredResearchProjects> -->
+			<!-- <li>AEChristmasStockings</li> -->
+		<!-- </discoveredResearchProjects> -->
+		<orderInCategory>1300</orderInCategory>
+	</EntityCodexEntryDef>
+
 </Defs>
