@@ -472,7 +472,6 @@
 				</targetingParameters>
 				
 				<jobDef>AE_RemoveAnomaly</jobDef>
-				<minStudy>1</minStudy>
 			</li>
 		</comps>
 		<inspectorTabs>

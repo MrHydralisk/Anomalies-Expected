@@ -1,8 +1,6 @@
 ﻿using RimWorld;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
 using Verse;
 
 namespace AnomaliesExpected
@@ -17,11 +15,6 @@ namespace AnomaliesExpected
 
         public int giftAmount;
 
-        //public static readonly CachedTexture selectSkillIcon = new CachedTexture("UI/Icons/SwitchFaction");
-
-        //private SkillDef selectedSkillDef => selectedSkillDefCached ?? (selectedSkillDefCached = DefDatabase<SkillDef>.AllDefs.OrderByDescending((SkillDef sd) => sd.listOrder).FirstOrDefault());
-        //private SkillDef selectedSkillDefCached;
-
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
@@ -33,8 +26,16 @@ namespace AnomaliesExpected
 
         public override void PostDeSpawn(Map map)
         {
-            Thing gift = ThingMaker.MakeThing(Props.lastGift);
+            ThingWithComps gift = ThingMaker.MakeThing(Props.lastGift) as ThingWithComps;
             gift.SetFactionDirect(Faction.OfPlayer);
+            CompAEStudyUnlocks compAEStudyUnlocks = gift.GetComp<CompAEStudyUnlocks>();
+            if (compAEStudyUnlocks != null)
+            {
+                foreach (ChoiceLetter letter in StudyUnlocks.Letters)
+                {
+                    compAEStudyUnlocks.AddStudyNoteLetter(letter);
+                }
+            }
             GenPlace.TryPlaceThing(gift, parent.Position, map, ThingPlaceMode.Near);
             base.PostDeSpawn(map);
         }
@@ -84,38 +85,54 @@ namespace AnomaliesExpected
             return goodDeeds;
         }
 
-        //public override IEnumerable<Gizmo> CompGetGizmosExtra()
-        //{
-        //    foreach (Gizmo gizmo in base.CompGetGizmosExtra())
-        //    {
-        //        if (gizmo is Command_Action command_Action)
-        //        {
-        //            command_Action.hotKey = KeyBindingDefOf.Misc6;
-        //        }
-        //        yield return gizmo;
-        //    }
-        //    if (!HideInteraction)
-        //    {
-        //        yield return new Command_Action
-        //        {
-        //            action = delegate
-        //            {
-        //                List<FloatMenuOption> floatMenuOptions = new List<FloatMenuOption>();
-        //                foreach (SkillDef skillDef in DefDatabase<SkillDef>.AllDefs.OrderByDescending((SkillDef sd) => sd.listOrder))
-        //                {
-        //                    floatMenuOptions.Add(new FloatMenuOption(skillDef.LabelCap, delegate
-        //                    {
-        //                        selectedSkillDefCached = skillDef;
-        //                    }));
-        //                }
-        //                Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
-        //            },
-        //            defaultLabel = "AnomaliesExpected.StudyNotepad.selectSkill.Label".Translate(selectedSkillDef?.LabelCap ?? "---"),
-        //            defaultDesc = "AnomaliesExpected.StudyNotepad.selectSkill.Desc".Translate(),
-        //            icon = selectSkillIcon.Texture
-        //        };
-        //    }
-        //}
+        public override IEnumerable<Gizmo> CompGetGizmosExtra()
+        {
+            foreach (Gizmo gizmo in base.CompGetGizmosExtra())
+            {
+                if (gizmo is Command_Action command_Action)
+                {
+                    command_Action.hotKey = KeyBindingDefOf.Misc6;
+                }
+                yield return gizmo;
+            }
+            if (DebugSettings.ShowDevGizmos)
+            {
+                yield return new Command_Action
+                {
+                    action = delegate
+                    {
+                        List<FloatMenuOption> floatMenuOptions = new List<FloatMenuOption>();
+                        floatMenuOptions.Add(new FloatMenuOption("Increase by 15", delegate
+                        {
+                            giftAmount += 15;
+                        }));
+                        floatMenuOptions.Add(new FloatMenuOption("Increase by 5", delegate
+                        {
+                            giftAmount += 5;
+                        }));
+                        floatMenuOptions.Add(new FloatMenuOption("Increase by 1", delegate
+                        {
+                            giftAmount += 1;
+                        }));
+                        floatMenuOptions.Add(new FloatMenuOption("Decrease by 1", delegate
+                        {
+                            giftAmount -= 1;
+                        }));
+                        floatMenuOptions.Add(new FloatMenuOption("Decrease by 5", delegate
+                        {
+                            giftAmount -= 5;
+                        }));
+                        floatMenuOptions.Add(new FloatMenuOption("Decrease by 15", delegate
+                        {
+                            giftAmount -= 15;
+                        }));
+                        Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
+                    },
+                    defaultLabel = "Dev: Change Gift Amount",
+                    defaultDesc = $"Change amount of gits: {giftAmount}/{Props.giftAmount}"
+                };
+            }
+        }
 
         protected override void OnInteracted(Pawn caster)
         {
