@@ -43,4 +43,41 @@
 		</building>
 	</ThingDef>
 	
+	
+
+	<ThingDef ParentName="CrateBase">
+		<defName>AE_ChristmasGiftBox</defName>
+		<label>christmas gift box</label>
+		<description>A strange gray container. It is featureless and the surfaces are smooth. The material is not metal, concrete, or any other identifiable material.</description>
+		<thingClass>AnomaliesExpected.Building_AEChristmasGiftBox</thingClass>
+		<graphicData>
+			<texPath>Things/Building/AE_ChristmasGiftBox</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<!-- <graphicClass>Graphic_Multi</graphicClass> -->
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(1, 1)</drawSize>
+			<drawRotated>false</drawRotated>
+			<shadowData>
+				<volume>(0.55, 0.45, 0.55)</volume>
+			</shadowData>
+		</graphicData>
+		<size>(1, 1)</size>
+		<useHitPoints>false</useHitPoints>
+		<hasInteractionCell>false</hasInteractionCell>
+		<building>
+			<openingEffect>GrayBoxOpened</openingEffect>
+			<uninstallWork>2500</uninstallWork>
+			<paintable>false</paintable>
+			<deconstructible>false</deconstructible>
+			<claimable>false</claimable>
+			<neverBuildable>true</neverBuildable>
+		</building>
+		<comps>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<tickerType>Normal</tickerType>
+	</ThingDef>
+	
 </Defs>

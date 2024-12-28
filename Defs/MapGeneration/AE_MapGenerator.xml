@@ -37,5 +37,25 @@
 			<li>AE_BloodLakeFleshbeasts</li>
 		</genSteps>
 	</MapGeneratorDef>
+
+	<MapGeneratorDef>
+		<defName>AE_ChristmasTreeMapGenerator</defName>
+		<label>christmas tree</label>
+		<forceCaves>true</forceCaves>
+		<ignoreAreaRevealedLetter>true</ignoreAreaRevealedLetter>
+		<disableCallAid>true</disableCallAid>
+		<customMapComponents>
+			<li>AnomaliesExpected.ChristmasTreeMapComponent</li>
+		</customMapComponents>
+		<pocketMapProperties>
+			<biome>AE_ChristmasTreeBiome</biome>
+			<temperature>-20</temperature>
+		</pocketMapProperties>
+		<genSteps>
+			<li>AE_ChristmasTreeTerrain</li>
+			<li>AE_ChristmasTreeFindExit</li>
+			<li>AE_ChristmasTreeGiftBoxes</li>
+		</genSteps>
+	</MapGeneratorDef>
   
 </Defs>

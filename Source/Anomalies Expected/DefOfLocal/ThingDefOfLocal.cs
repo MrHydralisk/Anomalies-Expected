@@ -20,5 +20,9 @@ namespace AnomaliesExpected
         public static ThingDef AE_BloodLakeUndergroundNest;
         [MayRequireAnomaly]
         public static ThingDef AE_DogTag;
+        [MayRequireAnomaly]
+        public static ThingDef AE_ChristmasTree;
+        [MayRequireAnomaly]
+        public static ThingDef AE_ChristmasTreeExit;
     }
 }

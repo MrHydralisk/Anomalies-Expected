@@ -586,36 +586,7 @@
 			<isInert>true</isInert>
 			<claimable>false</claimable>
 			<expandHomeArea>false</expandHomeArea>
-		</building>
-		
-		<!--<uiIconScale>0.75</uiIconScale>
-		<canOverlapZones>false</canOverlapZones>
-		<minifiedDef>MinifiedThing</minifiedDef>
-		<thingCategories>
-			<li>BuildingsFurniture</li>
-		</thingCategories>
-		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-		<altitudeLayer>Building</altitudeLayer>
-		<castEdgeShadows>true</castEdgeShadows>
-		<staticSunShadowHeight>0.20</staticSunShadowHeight>
-		<costList>
-			<Bioferrite>45</Bioferrite>
-		</costList>
-		<fillPercent>0.5</fillPercent>
-		<useHitPoints>True</useHitPoints>
-		<statBases>
-			<Mass>20</Mass>
-			<WorkToBuild>2000</WorkToBuild>
-			<MaxHitPoints>180</MaxHitPoints>
-			<Flammability>0</Flammability>
-			<Cleanliness>-30</Cleanliness>
-		</statBases>
-		<passability>PassThroughOnly</passability>
-		<pathCost>50</pathCost>
-		<surfaceType>Item</surfaceType>
-		<tickerType>Normal</tickerType>
-		<designationCategory/>-->
-		
+		</building>		
 		<comps>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -1232,21 +1203,14 @@
 	
 	
 	
-	<ThingDef ParentName="BuildingBase">
-		<defName>AE_ChristmasTree</defName>
-		<label>christmas tree</label>
-		<description>A dark, viscous giant crimson pool, oozing and spreading, a stark contrast to the surrounding environment. This is an exit on the other side from Blood Lake on a territory of our facility. Can be entered to return to our facility.</description>
-		<thingClass>AnomaliesExpected.Building_AE</thingClass>
+	<ThingDef Name="BuildingAE_ChristmasTreeBase" ParentName="BuildingBase" Abstract="True">
 		<graphicData>
 			<texPath>Things/Building/AE_ChristmasTree</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(5,5)</drawSize>
+			<drawOffset>(0, 0, 1.5)</drawOffset>
 		</graphicData>
 		<size>(2,2)</size>
-		<minifiedDef>MinifiedThingAE</minifiedDef>
-		<thingCategories>
-			<li>BuildingsMisc</li>
-		</thingCategories>
 		<drawerType>MapMeshOnly</drawerType>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<altitudeLayer>Building</altitudeLayer>
@@ -1261,6 +1225,17 @@
 			<Beauty>85</Beauty>
 			<Mass>35</Mass>
 		</statBases>
+	</ThingDef>
+	
+	<ThingDef ParentName="BuildingAE_ChristmasTreeBase">
+		<defName>AE_ChristmasTree</defName>
+		<label>christmas tree</label>
+		<description>A dark, viscous giant crimson pool, oozing and spreading, a stark contrast to the surrounding environment. This is an exit on the other side from Blood Lake on a territory of our facility. Can be entered to return to our facility.</description>
+		<thingClass>AnomaliesExpected.Building_AEChristmasTree</thingClass>
+		<minifiedDef>MinifiedThingAE</minifiedDef>
+		<thingCategories>
+			<li>BuildingsMisc</li>
+		</thingCategories>
 		<tickerType>Normal</tickerType>
 		<comps>
 			<li Class="CompProperties_Studiable">
@@ -1289,9 +1264,27 @@
 				<glowColor>(255,255,108,0)</glowColor>
 			</li>
 		</comps>
+		<modExtensions>
+			<li Class="AnomaliesExpected.AE_BloodLakeExtension">
+				<mapGeneratorDef>AE_ChristmasTreeMapGenerator</mapGeneratorDef>
+			</li>
+		</modExtensions>
 		<inspectorTabs>
 			<li>ITab_StudyNotes</li>
 		</inspectorTabs>
+	</ThingDef>
+	
+	<ThingDef ParentName="BuildingAE_ChristmasTreeBase">
+		<defName>AE_ChristmasTreeExit</defName>
+		<label>christmas tree exit</label>
+		<description>A dark, viscous giant crimson pool, oozing and spreading, a stark contrast to the surrounding environment. This is an exit on the other side from Blood Lake on a territory of our facility. Can be entered to return to our facility.</description>
+		<thingClass>AnomaliesExpected.Building_AEChristmasTreeExit</thingClass>
+		<comps>
+			<li Class="CompProperties_Glower">
+				<glowRadius>14</glowRadius>
+				<glowColor>(255,255,108,0)</glowColor>
+			</li>
+		</comps>
 	</ThingDef>
 	
 </Defs>

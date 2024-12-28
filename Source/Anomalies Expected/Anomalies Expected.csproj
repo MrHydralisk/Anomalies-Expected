@@ -37,6 +37,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Building\Building_AEChristmasGiftBox.cs" />
+    <Compile Include="Building\Building_AEChristmasTreeExit.cs" />
+    <Compile Include="ChristmasTreeMapComponent.cs" />
+    <Compile Include="Building\Building_AEBloodLake.cs" />
+    <Compile Include="GenStep\GenStep_ChristmasTreeGiftBoxes.cs" />
+    <Compile Include="GenStep\GenStep_ChristmasTreeTerrain.cs" />
+    <Compile Include="GenStep\GenStep_ChristmasTreeFindExit.cs" />
     <Compile Include="ThingWithComps_AE.cs" />
     <Compile Include="CompProperties\CompProperties_AbilityFleshmassStomach.cs" />
     <Compile Include="CompProperties\CompProperties_ChristmasStockings.cs" />
@@ -65,7 +72,7 @@
     <Compile Include="Building\AE_BloodLakeExtension.cs" />
     <Compile Include="Building\Building_AEBloodPuddle.cs" />
     <Compile Include="Building\Building_AEBloodLakeExit.cs" />
-    <Compile Include="Building\Building_AEBloodLake.cs" />
+    <Compile Include="Building\Building_AEChristmasTree.cs" />
     <Compile Include="Building\Building_AEMapPortal.cs" />
     <Compile Include="CompProperties\CompProperties_AEStudyUnlocks.cs" />
     <Compile Include="CompProperties\CompProperties_BloodSource.cs" />

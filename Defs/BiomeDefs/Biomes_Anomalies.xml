@@ -40,4 +40,39 @@
 		</terrainsByFertility>
 	</BiomeDef>
 
+	<BiomeDef>
+		<defName>AE_ChristmasTreeBiome</defName>
+		<label>christmas tree</label>
+		<description>Flashmass infected area on the other side of Blood Lake.</description>
+		<generatesNaturally>false</generatesNaturally>
+		<animalDensity>0</animalDensity>
+		<plantDensity>0</plantDensity>
+		<wildAnimalsCanWanderInto>false</wildAnimalsCanWanderInto>
+		<baseWeatherCommonalities>
+			<SnowHard>1</SnowHard>
+		</baseWeatherCommonalities>
+		<diseaseMtbDays>120</diseaseMtbDays>
+		<diseases>
+			<li>
+				<diseaseInc>Disease_FibrousMechanites</diseaseInc>
+				<commonality>40</commonality>
+			</li>
+			<li>
+				<diseaseInc>Disease_SensoryMechanites</diseaseInc>
+				<commonality>40</commonality>
+			</li>
+			<li>
+				<diseaseInc>Disease_MuscleParasites</diseaseInc>
+				<commonality>30</commonality>
+			</li>
+		</diseases>
+		<terrainsByFertility>
+			<li>
+				<terrain>Ice</terrain>
+				<min>-999</min>
+				<max>999</max>
+			</li>
+		</terrainsByFertility>
+	</BiomeDef>
+
 </Defs>

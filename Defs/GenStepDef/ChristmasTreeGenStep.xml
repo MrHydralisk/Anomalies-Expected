@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<GenStepDef>
+		<defName>AE_ChristmasTreeTerrain</defName>
+		<order>210</order>
+		<genStep Class="AnomaliesExpected.GenStep_ChristmasTreeTerrain">
+			<terrainDefDefault>Ice</terrainDefDefault>
+		</genStep>
+	</GenStepDef>
+
+	<GenStepDef>
+		<defName>AE_ChristmasTreeFindExit</defName>
+		<order>302</order>
+		<genStep Class="AnomaliesExpected.GenStep_ChristmasTreeFindExit">
+			<ChristmasTreeExit>AE_ChristmasTreeExit</ChristmasTreeExit>
+		</genStep>
+	</GenStepDef>
+
+	<GenStepDef>
+		<defName>AE_ChristmasTreeGiftBoxes</defName>
+		<order>351</order>
+		<genStep Class="AnomaliesExpected.GenStep_ChristmasTreeGiftBoxes">
+			<amountOfGiftBoxes>25</amountOfGiftBoxes>
+			<giftBoxDef>AE_ChristmasGiftBox</giftBoxDef>
+		</genStep>
+	</GenStepDef>
+  
+</Defs>
