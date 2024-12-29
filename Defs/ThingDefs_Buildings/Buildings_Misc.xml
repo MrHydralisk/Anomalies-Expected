@@ -44,6 +44,124 @@
 	</ThingDef>
 	
 	
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>AE_ProviderBox</defName>
+		<label>provider box</label>
+		<description>The ritual box, designed to hold sacrificial offerings for asking Provider ritual. Its surface corroded, aged prematurely, and became marred with scratches upon creation.</description>
+		<thingClass>Building_Storage</thingClass>
+		<graphicData>
+			<texPath>Things/Building/AE_ProviderBox</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shadowData>
+				<volume>(0.78, 0.4, 0.53)</volume>
+				<offset>(0,0,0.005)</offset>
+			</shadowData>
+			<damageData>
+				<rect>(0.11,0.24,0.78,0.53)</rect>
+			</damageData>
+			<!-- <drawSize>(1.28,1.28)</drawSize> -->
+		</graphicData>
+		<genericMarketSellable>false</genericMarketSellable>
+		<tickerType>Never</tickerType>
+		<altitudeLayer>Building</altitudeLayer>
+		<statBases>
+			<MaxHitPoints>300</MaxHitPoints>
+			<WorkToMake>45000</WorkToMake>
+			<Flammability>0</Flammability>
+			<Beauty>90</Beauty>
+			<Mass>18</Mass>
+		</statBases>
+		<fillPercent>0.4</fillPercent>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<ai_neverTrashThis>true</ai_neverTrashThis>
+			<destroySound>BuildingDestroyed_Metal_Small</destroySound>
+			<uninstallWork>2500</uninstallWork>
+			<preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+			<ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+			<maxItemsInCell>1</maxItemsInCell>
+			<blueprintClass>Blueprint_Storage</blueprintClass>
+			<storageGroupTag>ProviderBox</storageGroupTag>
+			<fixedStorageSettings>
+				<filter>
+					<disallowNotEverStorable>true</disallowNotEverStorable>
+					<categories>
+						<li>FoodRaw</li>
+						<li>Textiles</li>
+						<li>ResourcesRaw</li>
+					</categories>
+					<disallowedCategories>
+						<li>EggsFertilized</li>
+						<li>PlantMatter</li>
+						<li>StoneBlocks</li>
+					</disallowedCategories>
+				</filter>
+			</fixedStorageSettings>
+			<defaultStorageSettings>
+				<priority>Preferred</priority>
+				<filter>
+					<disallowNotEverStorable>true</disallowNotEverStorable>
+					<categories>
+						<li>FoodRaw</li>
+						<li>Textiles</li>
+						<li>ResourcesRaw</li>
+					</categories>
+					<disallowedCategories>
+						<li>EggsFertilized</li>
+						<li>PlantMatter</li>
+						<li>StoneBlocks</li>
+					</disallowedCategories>
+				</filter>
+			</defaultStorageSettings>
+		</building>
+		<costList>
+			<Bioferrite>100</Bioferrite>
+			<Shard>1</Shard>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>AEProviderScripture</researchPrerequisite>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Artistic</workSkill>
+			<unfinishedThingDef>UnfinishedSculpture</unfinishedThingDef>
+			<effectWorking>Sculpt</effectWorking>
+			<soundWorking>Recipe_Sculpt</soundWorking>
+			<recipeUsers>
+				<li>TableSculpting</li>
+			</recipeUsers>
+		</recipeMaker>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsMisc</li>
+		</thingCategories>
+		<pathCost>45</pathCost>
+		<canOverlapZones>false</canOverlapZones>
+		<passability>PassThroughOnly</passability>
+		<surfaceType>Item</surfaceType>
+		<rotatable>false</rotatable>
+		<comps>
+			<li Class="CompProperties_Art">
+				<nameMaker>NamerArtVoidSculpture</nameMaker>
+				<descriptionMaker>ArtDescription_VoidSculpture</descriptionMaker>
+				<canBeEnjoyedAsArt>true</canBeEnjoyedAsArt>
+			</li>
+			<li Class="CompProperties_Facility">
+				<maxSimultaneous>1</maxSimultaneous>
+				<maxDistance>10</maxDistance>
+				<statOffsets>
+					<PsychicRitualQuality>0.05</PsychicRitualQuality>
+				</statOffsets>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+		<inspectorTabs>
+			<li>ITab_Storage</li>
+		</inspectorTabs>
+	</ThingDef>
+	
+	
 
 	<ThingDef ParentName="CrateBase">
 		<defName>AE_ChristmasGiftBox</defName>
@@ -53,7 +171,6 @@
 		<graphicData>
 			<texPath>Things/Building/AE_ChristmasGiftBox</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<!-- <graphicClass>Graphic_Multi</graphicClass> -->
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(1, 1)</drawSize>
 			<drawRotated>false</drawRotated>
