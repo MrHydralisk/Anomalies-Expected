@@ -37,6 +37,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alert_ChristmasTreeUnstable.cs" />
     <Compile Include="Building\Building_AEChristmasGiftBox.cs" />
     <Compile Include="Building\Building_AEChristmasTreeExit.cs" />
     <Compile Include="ChristmasTreeMapComponent.cs" />

@@ -19,7 +19,7 @@ namespace AnomaliesExpected
         private AE_BloodLakeExtension extBloodLakeCached;
 
         public Map subMap;
-        private ChristmasTreeMapComponent mapComponent => mapComponentCached ?? (mapComponentCached = subMap?.GetComponent<ChristmasTreeMapComponent>() ?? null);
+        public ChristmasTreeMapComponent mapComponent => mapComponentCached ?? (mapComponentCached = subMap?.GetComponent<ChristmasTreeMapComponent>() ?? null);
         private ChristmasTreeMapComponent mapComponentCached;
         public Building_AEChristmasTreeExit exitBuilding => mapComponent?.Exit;
 
@@ -34,6 +34,10 @@ namespace AnomaliesExpected
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
+            if (subMap != null)
+            {
+                Alert_ChristmasTreeUnstable.AddTarget(this);
+            }
         }
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
@@ -53,6 +57,7 @@ namespace AnomaliesExpected
                 pocketMapParent.sourceMap = Map;
                 subMap = MapGenerator.GenerateMap(new IntVec3(50, 1, 50), pocketMapParent, ExtBloodLake.mapGeneratorDef, isPocketMap: true);
                 Find.World.pocketMaps.Add(pocketMapParent);
+                Alert_ChristmasTreeUnstable.AddTarget(this);
                 //StudyUnlocks.UnlockStudyNoteManual(0);
             }
         }
