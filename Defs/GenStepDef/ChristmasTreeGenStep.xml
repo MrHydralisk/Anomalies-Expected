@@ -23,6 +23,7 @@
 		<genStep Class="AnomaliesExpected.GenStep_ChristmasTreeGiftBoxes">
 			<amountOfGiftBoxes>25</amountOfGiftBoxes>
 			<giftBoxDef>AE_ChristmasGiftBox</giftBoxDef>
+			<thingSetMakerDef>MapGen_AEChristmasTreeGiftBoxLoot</thingSetMakerDef>
 		</genStep>
 	</GenStepDef>
   

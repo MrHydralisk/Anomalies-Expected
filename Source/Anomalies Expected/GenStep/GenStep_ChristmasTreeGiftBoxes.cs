@@ -10,6 +10,7 @@ namespace AnomaliesExpected
     {
         private int amountOfGiftBoxes = 50;
         private ThingDef giftBoxDef;
+        private ThingSetMakerDef thingSetMakerDef;
 
         public override int SeedPart => 1234731256;
 
@@ -25,7 +26,8 @@ namespace AnomaliesExpected
                 ThingSetMakerParams parms1 = default(ThingSetMakerParams);
                 parms1.qualityGenerator = QualityGenerator.Reward;
                 parms1.makingFaction = Faction.OfEntities;
-                list = ThingSetMakerDefOf.MapGen_FleshSackLoot.root.Generate(parms1);
+                parms1.totalMarketValueRange = thingSetMakerDef.debugParams.totalMarketValueRange;
+                list = thingSetMakerDef.root.Generate(parms1);
                 Building_Casket building_Casket = ThingMaker.MakeThing(giftBoxDef) as Building_Casket;
                 GenSpawn.Spawn(building_Casket, result, map);
                 for (int num2 = list.Count - 1; num2 >= 0; num2--)
