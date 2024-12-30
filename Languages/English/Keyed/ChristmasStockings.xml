@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<AnomaliesExpected.ChristmasStockings.NoGifts>No gifts left</AnomaliesExpected.ChristmasStockings.NoGifts>
+	<AnomaliesExpected.ChristmasStockings.AlreadyGotGift>Already have a gift</AnomaliesExpected.ChristmasStockings.AlreadyGotGift>
+	<AnomaliesExpected.ChristmasStockings.GiftsLeft>Available gifts {0}/{1}</AnomaliesExpected.ChristmasStockings.GiftsLeft>
+
+	<AnomaliesExpected.ChristmasStockings.Enter>Go under the tree</AnomaliesExpected.ChristmasStockings.Enter>
+	<AnomaliesExpected.ChristmasStockings.NewYear>New Year is here. {0} can be interacted again.</AnomaliesExpected.ChristmasStockings.NewYear>
+	<AnomaliesExpected.ChristmasStockings.Reason.CantEnterA>Require some cleaning from snow</AnomaliesExpected.ChristmasStockings.Reason.CantEnterA>
+	<AnomaliesExpected.ChristmasStockings.Reason.CantEnterB>Passage is not available till next New Year</AnomaliesExpected.ChristmasStockings.Reason.CantEnterB>
+	
+	<AnomaliesExpected.ChristmasStockings.Tree.TimeTillNewYear>Time till next New Year: {0}</AnomaliesExpected.ChristmasStockings.Tree.TimeTillNewYear>
+	
+	<AnomaliesExpected.ChristmasStockings.AlertSubMap.Label>Christmas Tree passage is freezing up</AnomaliesExpected.ChristmasStockings.AlertSubMap.Label>
+	<AnomaliesExpected.ChristmasStockings.AlertSubMap.Desc>Passage through the Christmas Tree is slowly freezing up. After few days it will prevent us from accessing the other side of the tree.\n[Will destroy the map]</AnomaliesExpected.ChristmasStockings.AlertSubMap.Desc>
+	
+	<AnomaliesExpected.ChristmasStockings.LetterEnter.Label></AnomaliesExpected.ChristmasStockings.LetterEnter.Label>
+	<AnomaliesExpected.ChristmasStockings.LetterEnter.Text></AnomaliesExpected.ChristmasStockings.LetterEnter.Text>
+</LanguageData>

@@ -61,7 +61,6 @@ namespace AnomaliesExpected
                     pawn.Kill(damageInfo);
                 }
             }
-            Log.Message($"DestroySubMap");
             Alert_ChristmasTreeUnstable.RemoveTarget(Exit);
             PocketMapUtility.DestroyPocketMap(map);
         }

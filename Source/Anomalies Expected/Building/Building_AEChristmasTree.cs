@@ -57,7 +57,7 @@ namespace AnomaliesExpected
             if (Find.TickManager.TicksGame > NewYearTick && isCreatedMap)
             {
                 isCreatedMap = false;
-                Messages.Message("AnomaliesExpected.ChristmasStockings.NewYear".Translate(), this, MessageTypeDefOf.PositiveEvent);
+                Messages.Message("AnomaliesExpected.ChristmasStockings.NewYear".Translate(Label), this, MessageTypeDefOf.PositiveEvent);
             }
         }
 
@@ -187,7 +187,7 @@ namespace AnomaliesExpected
             if (isCreatedMap && !isSubMapExist)
             {
                 int diff = NewYearTick - Find.TickManager.TicksGame;
-                inspectStrings.Add("AnomaliesExpected.ChristmasStockings.Tree.TimeTillNewYear".Translate(diff));
+                inspectStrings.Add("AnomaliesExpected.ChristmasStockings.Tree.TimeTillNewYear".Translate(diff.ToStringTicksToPeriod()));
             }
             inspectStrings.Add(base.GetInspectString());
             return String.Join("\n", inspectStrings);
