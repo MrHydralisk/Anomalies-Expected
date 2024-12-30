@@ -14,16 +14,23 @@ namespace AnomaliesExpected
 
         private static readonly CachedTexture ViewSurfaceTex = new CachedTexture("UI/Commands/ViewUndercave");
 
-        private ChristmasTreeMapComponent mapComponent => mapComponentCached ?? (mapComponentCached = Map?.GetComponent<ChristmasTreeMapComponent>() ?? null);
+        public ChristmasTreeMapComponent mapComponent => mapComponentCached ?? (mapComponentCached = Map?.GetComponent<ChristmasTreeMapComponent>() ?? null);
         private ChristmasTreeMapComponent mapComponentCached;
         public Building_AEChristmasTree entranceBuilding => mapComponent?.Entrance;
 
-        public override string EnterCommandString => "AnomaliesExpected.BloodLake.Enter".Translate();
+        public override string EnterCommandString => "AnomaliesExpected.ChristmasStockings.Enter".Translate();
 
-        public override bool AutoDraftOnEnter => true;
+        public override bool AutoDraftOnEnter => false;
+
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            Alert_ChristmasTreeUnstable.AddTarget(this);
+        }
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
+            Alert_ChristmasTreeUnstable.RemoveTarget(this);
             base.Destroy(mode);
         }
 

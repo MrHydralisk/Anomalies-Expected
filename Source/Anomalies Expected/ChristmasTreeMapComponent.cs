@@ -34,7 +34,10 @@ namespace AnomaliesExpected
                 Log.Error("ChristmasTreeExit not found");
                 return;
             }
-            tickOnDestroy = Find.TickManager.TicksGame + 600000;
+            tickOnDestroy = Find.TickManager.TicksGame + 300000;
+
+            //GameCondition cond = GameConditionMaker.MakeCondition(GameConditionDefOfLocal.AE_TemperatureDrop, 120000);
+            //map.gameConditionManager.RegisterCondition(cond);
         }
 
         public override void MapComponentTick()
@@ -58,8 +61,9 @@ namespace AnomaliesExpected
                     pawn.Kill(damageInfo);
                 }
             }
+            Log.Message($"DestroySubMap");
+            Alert_ChristmasTreeUnstable.RemoveTarget(Exit);
             PocketMapUtility.DestroyPocketMap(map);
-            Alert_ChristmasTreeUnstable.RemoveTarget(Entrance);
         }
 
         public override void ExposeData()

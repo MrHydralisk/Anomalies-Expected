@@ -16,5 +16,16 @@
 		<allowUnderground>false</allowUnderground>
 		<pennedAnimalsSeekShelter>true</pennedAnimalsSeekShelter>
 	</GameConditionDef>
+
+	<GameConditionDef>
+		<defName>AE_TemperatureDrop</defName>
+		<conditionClass>AnomaliesExpected.GameCondition_AETemperatureDrop</conditionClass>
+		<label>temperature shifting</label>
+		<description>Temperature is rapidly shifting.</description>
+		<letterText>Temperature is rapidly shifting.</letterText>
+		<letterDef>NegativeEvent</letterDef>
+		<canBePermanent>false</canBePermanent>
+		<natural>false</natural>
+	</GameConditionDef>
   
 </Defs>

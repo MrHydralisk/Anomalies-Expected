@@ -1,9 +1,11 @@
-﻿using RimWorld;
+﻿using Mono.Unix.Native;
+using RimWorld;
 using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
+using Verse.Noise;
 using Verse.Sound;
 
 namespace AnomaliesExpected
@@ -25,28 +27,38 @@ namespace AnomaliesExpected
 
         private bool isBeenEntered;
         private bool isReadyToEnter => (StudyUnlocks?.NextIndex ?? 1) >= 1;
+        public bool isSubMapExist => subMap != null && Find.Maps.IndexOf(subMap) >= 0;
 
-        public override string EnterCommandString => "AnomaliesExpected.BloodLake.Enter".Translate();
+        public override string EnterCommandString => "AnomaliesExpected.ChristmasStockings.Enter".Translate();
 
         public override bool AutoDraftOnEnter => true;
-        public bool isDestroyedMap;
+        public bool isCreatedMap;
+
+        public int NewYearTick;
+        public int NextNewYearTick => Mathf.CeilToInt(Find.TickManager.TicksGame / 3600000f) * 3600000;
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
-            if (subMap != null)
-            {
-                Alert_ChristmasTreeUnstable.AddTarget(this);
-            }
         }
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
-            if (subMap != null && !isDestroyedMap)
+            if (isSubMapExist)
             {
                 mapComponent.DestroySubMap();
             }
             base.Destroy(mode);
+        }
+
+        public override void Tick()
+        {
+            base.Tick();
+            if (Find.TickManager.TicksGame > NewYearTick && isCreatedMap)
+            {
+                isCreatedMap = false;
+                Messages.Message("AnomaliesExpected.ChristmasStockings.NewYear".Translate(), this, MessageTypeDefOf.PositiveEvent);
+            }
         }
 
         public void GenerateSubMap()
@@ -57,7 +69,8 @@ namespace AnomaliesExpected
                 pocketMapParent.sourceMap = Map;
                 subMap = MapGenerator.GenerateMap(new IntVec3(50, 1, 50), pocketMapParent, ExtBloodLake.mapGeneratorDef, isPocketMap: true);
                 Find.World.pocketMaps.Add(pocketMapParent);
-                Alert_ChristmasTreeUnstable.AddTarget(this);
+                isCreatedMap = true;
+                NewYearTick = NextNewYearTick;
                 //StudyUnlocks.UnlockStudyNoteManual(0);
             }
         }
@@ -65,21 +78,16 @@ namespace AnomaliesExpected
         public override bool IsEnterable(out string reason)
         {
             reason = "";
-            //if ((StudyUnlocks?.NextIndex ?? 3) < 3)
-            //{
-            //    reason = "AnomaliesExpected.BloodLake.Reason.CantEnterA".Translate();
-            //    return false;
-            //}
-            //if (!isReadyToEnter)
-            //{
-            //    reason = "AnomaliesExpected.BloodLake.Reason.CantEnterB".Translate();
-            //    return false;
-            //}
-            //else if (isDestroyedMap)
-            //{
-            //    reason = "AnomaliesExpected.BloodLake.Reason.CantEnterC".Translate();
-            //    return false;
-            //}
+            if (!isReadyToEnter)
+            {
+                reason = "AnomaliesExpected.ChristmasStockings.Reason.CantEnterA".Translate();
+                return false;
+            }
+            if (isCreatedMap && !isSubMapExist)
+            {
+                reason = "AnomaliesExpected.ChristmasStockings.Reason.CantEnterB".Translate();
+                return false;
+            }
             return true;
         }
 
@@ -89,7 +97,7 @@ namespace AnomaliesExpected
             if (!isBeenEntered)
             {
                 isBeenEntered = true;
-                Find.LetterStack.ReceiveLetter("AnomaliesExpected.BloodLake.LetterEnter.Label".Translate(), "AnomaliesExpected.BloodLake.LetterEnter.Text".Translate(), LetterDefOf.ThreatBig, new TargetInfo(exitBuilding));
+                Find.LetterStack.ReceiveLetter("AnomaliesExpected.ChristmasStockings.LetterEnter.Label".Translate(), "AnomaliesExpected.ChristmasStockings.LetterEnter.Text".Translate(), LetterDefOf.ThreatSmall, new TargetInfo(exitBuilding));
             }
             if (Find.CurrentMap == base.Map)
             {
@@ -105,13 +113,13 @@ namespace AnomaliesExpected
         {
             foreach (Gizmo gizmo in base.GetGizmos())
             {
-                if (gizmo is Command_Action command_Action && command_Action.icon == EnterTex && (!isReadyToEnter || isDestroyedMap))
+                if (gizmo is Command_Action command_Action && command_Action.icon == EnterTex && (!isReadyToEnter || !isSubMapExist))
                 {
                     continue;
                 }
                 yield return gizmo;
             }
-            if (subMap != null && !isDestroyedMap)
+            if (isSubMapExist)
             {
                 yield return new Command_Action
                 {
@@ -135,7 +143,7 @@ namespace AnomaliesExpected
                     defaultLabel = "Dev: Generate Sub Map",
                     defaultDesc = "Generate sub map for Blood Lake"
                 };
-                if (subMap != null && !isDestroyedMap)
+                if (isSubMapExist)
                 {
                     yield return new Command_Action
                     {
@@ -152,7 +160,7 @@ namespace AnomaliesExpected
 
         public override Map GetOtherMap()
         {
-            if (subMap == null)
+            if (!isSubMapExist)
             {
                 GenerateSubMap();
             }
@@ -169,12 +177,18 @@ namespace AnomaliesExpected
             base.ExposeData();
             Scribe_References.Look(ref subMap, "subMap");
             Scribe_Values.Look(ref isBeenEntered, "beenEntered", defaultValue: false);
-            Scribe_Values.Look(ref isDestroyedMap, "isDestroyedMap");
+            Scribe_Values.Look(ref isCreatedMap, "isCreatedMap");
+            Scribe_Values.Look(ref NewYearTick, "NewYearTick");
         }
 
         public override string GetInspectString()
         {
             List<string> inspectStrings = new List<string>();
+            if (isCreatedMap && !isSubMapExist)
+            {
+                int diff = NewYearTick - Find.TickManager.TicksGame;
+                inspectStrings.Add("AnomaliesExpected.ChristmasStockings.Tree.TimeTillNewYear".Translate(diff));
+            }
             inspectStrings.Add(base.GetInspectString());
             return String.Join("\n", inspectStrings);
         }

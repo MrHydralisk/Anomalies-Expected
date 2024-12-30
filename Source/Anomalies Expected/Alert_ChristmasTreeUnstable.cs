@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using RimWorld.Planet;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Verse;
 
@@ -11,13 +12,13 @@ namespace AnomaliesExpected
     {
         private static List<GlobalTargetInfo> targets = new List<GlobalTargetInfo>();
 
-        private Building_AEChristmasTree ChristmasTree => targets[0].Thing as Building_AEChristmasTree;
+        private Building_AEChristmasTreeExit ChristmasTree => targets.FirstOrDefault().Thing as Building_AEChristmasTreeExit;
 
         protected override Color BGColor
         {
             get
             {
-                ChristmasTreeMapComponent christmasTreeMapComponent = ChristmasTree.mapComponent;
+                ChristmasTreeMapComponent christmasTreeMapComponent = ChristmasTree?.mapComponent;
                 if (christmasTreeMapComponent != null && christmasTreeMapComponent.TickTillDestroy > 60000)
                 {
                     return Color.clear;
@@ -28,12 +29,12 @@ namespace AnomaliesExpected
 
         public Alert_ChristmasTreeUnstable()
         {
-            defaultLabel = "AnomaliesExpected.ChristmasStockings.Tree.Alert.Label".Translate();
-            defaultExplanation = "AnomaliesExpected.ChristmasStockings.Tree.Alert.Desc".Translate();
+            defaultLabel = "AnomaliesExpected.ChristmasStockings.AlertSubMap.Label".Translate();
+            defaultExplanation = "AnomaliesExpected.ChristmasStockings.AlertSubMap.Desc".Translate();
             requireAnomaly = true;
         }
 
-        public static void AddTarget(Building_AEChristmasTree christmasTree)
+        public static void AddTarget(Building_AEChristmasTreeExit christmasTree)
         {
             if (targets.IndexOf(christmasTree) == -1)
             {
@@ -41,7 +42,7 @@ namespace AnomaliesExpected
             }
         }
 
-        public static void RemoveTarget(Building_AEChristmasTree christmasTree)
+        public static void RemoveTarget(Building_AEChristmasTreeExit christmasTree)
         {
             int index = targets.IndexOf(christmasTree);
             if (index >= 0)
@@ -52,7 +53,7 @@ namespace AnomaliesExpected
 
         public override string GetLabel()
         {
-            return defaultLabel + ": " + ChristmasTree.mapComponent?.TickTillDestroy.ToStringTicksToPeriodVerbose();
+            return defaultLabel + ": " + ChristmasTree?.mapComponent?.TickTillDestroy.ToStringTicksToPeriodVerbose();
         }
 
         public override AlertReport GetReport()
