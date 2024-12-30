@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="FilthBlood">
+		<defName>Filth_AEIceBlood</defName>
+		<label>ice blood</label>
+		<graphicData>
+			<texPath>Things/Filth/Spatter</texPath>
+			<color>(171, 209, 243, 180)</color>
+		</graphicData>
+	</ThingDef>
+
+</Defs>

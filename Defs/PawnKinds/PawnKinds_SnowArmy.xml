@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- <PawnKindDef Name="BaseFleshbeastKind" Abstract="True"> -->
+		<!-- <defaultFactionType>Entities</defaultFactionType> -->
+		<!-- <overrideDebugActionCategory>Entity</overrideDebugActionCategory> -->
+		<!-- <meleeAttackInfectionPathways> -->
+			<!-- <li>EntityAttacked</li> -->
+		<!-- </meleeAttackInfectionPathways> -->
+	<!-- </PawnKindDef> -->
+
+	<PawnKindDef ParentName="BaseFleshbeastKind">
+		<defName>AE_SnowManPKD</defName>
+		<label>snowman</label>
+		<overrideDeathOnDownedChance>0.8</overrideDeathOnDownedChance>
+		<race>AE_SnowMan</race>
+		<combatPower>70</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/SnowArmy/SnowMan/AE_SnowMan</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.5</drawSize>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+
+</Defs>

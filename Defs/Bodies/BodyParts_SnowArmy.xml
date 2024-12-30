@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<BodyPartDef Name="BodyPart_BaseSnowBall">
+		<defName>AE_SnowBall</defName>
+		<label>snowball</label>
+		<hitPoints>50</hitPoints>
+		<skinCovered>true</skinCovered>
+		<canScarify>true</canScarify>
+		<canSuggestAmputation>false</canSuggestAmputation>
+		<executionPartPriority>400</executionPartPriority>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_BaseSnowBall">
+		<defName>AE_SnowBallTop</defName>
+		<hitPoints>25</hitPoints>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_BaseSnowBall">
+		<defName>AE_SnowBallBottom</defName>
+		<hitPoints>80</hitPoints>
+	</BodyPartDef>
+
+	<BodyPartDef>
+		<defName>AE_SnowCoreHeart</defName>
+		<label>snow core</label>
+		<hitPoints>18</hitPoints>
+		<skinCovered>false</skinCovered>
+		<tags>
+			<li>BloodPumpingSource</li>
+		</tags>
+		<canSuggestAmputation>false</canSuggestAmputation>
+	</BodyPartDef>
+
+	<BodyPartDef>
+		<defName>AE_SnowEye</defName>
+		<label>eye stone</label>
+		<hitPoints>12</hitPoints>
+		<bleedRate>0</bleedRate>
+		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+		<delicate>true</delicate>
+		<skinCovered>false</skinCovered>
+		<canScarify>true</canScarify>
+		<socketed>true</socketed>
+		<beautyRelated>true</beautyRelated>
+		<tags>
+			<li>SightSource</li>
+		</tags>
+		<hitChanceFactors>
+			<li>
+				<key>Blunt</key>
+				<value>0</value>
+			</li>
+		</hitChanceFactors>
+	</BodyPartDef>
+
+	<BodyPartDef>
+		<defName>AE_SnowNose</defName>
+		<label>carrot nose</label>
+		<hitPoints>16</hitPoints>
+		<bleedRate>0</bleedRate>
+		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+		<frostbiteVulnerability>0.5</frostbiteVulnerability>
+		<skinCovered>true</skinCovered>
+		<canScarify>true</canScarify>
+		<beautyRelated>true</beautyRelated>
+		<solid>true</solid>
+	</BodyPartDef>
+
+	<BodyPartDef>
+		<defName>AE_SnowArm</defName>
+		<label>stick arm</label>
+		<hitPoints>4</hitPoints>
+		<skinCovered>true</skinCovered>
+		<canScarify>true</canScarify>
+		<tags>
+			<li>ManipulationLimbCore</li>
+			<li>Mirrored</li>
+		</tags>
+		<hitChanceFactors>
+			<li>
+				<key>Blunt</key>
+				<value>0.3</value>
+			</li>
+		</hitChanceFactors>
+	</BodyPartDef>
+
+	<BodyPartDef>
+		<defName>AE_SnowLeg</defName>
+		<label>snowball leg</label>
+		<hitPoints>10</hitPoints>
+		<skinCovered>true</skinCovered>
+		<canScarify>true</canScarify>
+		<tags>
+			<li>MovingLimbCore</li>
+		</tags>
+	</BodyPartDef>
+  
+</Defs>

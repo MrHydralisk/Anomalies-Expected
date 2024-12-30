@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="BasePawn" Name="BaseAESnowMan" Abstract="True">
+		<statBases>
+			<ComfyTemperatureMin>-100</ComfyTemperatureMin>
+			<ComfyTemperatureMax>20</ComfyTemperatureMax>
+			<Flammability>2</Flammability>
+			<MeatAmount>0</MeatAmount>
+			<ToxicResistance>1</ToxicResistance>
+			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
+			<ArmorRating_Sharp>1.3</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.65</ArmorRating_Blunt>
+			<ArmorRating_Heat>0</ArmorRating_Heat>
+			<PainShockThreshold>0.99</PainShockThreshold>
+			<PsychicSensitivity>0</PsychicSensitivity>
+		</statBases>
+		<tradeability>None</tradeability>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+		<race>
+			<thinkTreeMain>Fleshbeast</thinkTreeMain>
+			<thinkTreeConstant>FleshbeastConstant</thinkTreeConstant>
+			<intelligence>ToolUser</intelligence>
+			<!-- <specificMeatDef>Meat_Twisted</specificMeatDef> -->
+			<overrideShouldHaveAbilityTracker>true</overrideShouldHaveAbilityTracker>
+			<disableIgniteVerb>true</disableIgniteVerb>
+			<canOpenFactionlessDoors>false</canOpenFactionlessDoors>
+			<needsRest>false</needsRest>
+			<hasGenders>false</hasGenders>
+			<foodType>None</foodType>
+			<bloodDef>Filth_AEIceBlood</bloodDef>
+			<bloodSmearDef>Filth_BloodSmear</bloodSmearDef>
+			<soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
+			<trainability>None</trainability>
+			<fleshType>Fleshbeast</fleshType>
+			<isImmuneToInfections>true</isImmuneToInfections>
+			<bleedRateFactor>0</bleedRateFactor>
+			<hediffGiverSets>
+				<li>Fleshbeast</li>
+			</hediffGiverSets>
+			<corpseHiddenWhileUndiscovered>true</corpseHiddenWhileUndiscovered>
+		</race>
+		<comps>
+			<li Class="CompProperties_HoldingPlatformTarget">
+				<baseEscapeIntervalMtbDays>60</baseEscapeIntervalMtbDays>
+				<getsColdContainmentBonus>true</getsColdContainmentBonus>
+			</li>
+			<li Class="CompProperties_InspectString">
+				<compClass>CompInspectStringEmergence</compClass>
+				<inspectString>Emerged from {SOURCEPAWN_labelShort}.</inspectString>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseAESnowMan">
+		<defName>AE_SnowMan</defName>
+		<label>snowman</label>
+		<description>A horrid oozing amalgamation of many smaller fleshbeasts, all controlled by a linked nervous system. It has two large claws which it uses to tear through its victims. Bulbfreaks are often smelled before they are seen, givingoff an overwhelming odor of rancid meat. They are relatively slow and easy to kill, but once they die, they explode into a horde of smaller fleshbeasts.</description>
+		<statBases>
+			<MoveSpeed>3.8</MoveSpeed>
+			<MinimumContainmentStrength>75</MinimumContainmentStrength>
+		</statBases>
+		<uiIconPath>Things/Pawn/SnowArmy/SnowMan/AE_SnowMan_south</uiIconPath>
+		<race>
+			<body>AE_SnowManBD</body>
+			<baseBodySize>1.5</baseBodySize>
+			<baseHealthScale>1</baseHealthScale>
+			<lifeExpectancy>15</lifeExpectancy>
+			<soundMoving>Pawn_Fleshbeast_Bulbfreak_Moving</soundMoving>
+			<!-- <deathAction Class="DeathActionProperties_Divide"> -->
+			<!-- <divideBloodFilthCountRange>3~4</divideBloodFilthCountRange> -->
+			<!-- <dividePawnCount>4</dividePawnCount> -->
+			<!-- <dividePawnKindOptions> -->
+			<!-- <li>Toughspike</li> -->
+			<!-- <li>Trispike</li> -->
+			<!-- </dividePawnKindOptions> -->
+			<!-- </deathAction> -->
+			<renderTree>AE_SnowManPRTD</renderTree>
+			<lifeStageAges>
+				<li>
+					<def>EntityFullyFormed</def>
+					<soundWounded>Pawn_Fleshbeast_Bulbfreak_Wounded</soundWounded>
+					<soundDeath>Pawn_Fleshbeast_Bulbfreak_Death</soundDeath>
+					<soundCall>Pawn_Fleshbeast_Bulbfreak_Call</soundCall>
+				</li>
+			</lifeStageAges>
+		</race>
+		<comps>
+			<li Class="CompProperties_AttachPoints">
+				<points>
+					<li>
+						<offset>(-.14, 0, .4)</offset>
+						<type>PlatformRestraint0</type>
+					</li>
+					<li>
+						<offset>(.19, 0, .13)</offset>
+						<type>PlatformRestraint1</type>
+					</li>
+					<li>
+						<offset>(.27, 0, -.57)</offset>
+						<type>PlatformRestraint2</type>
+					</li>
+					<li>
+						<offset>(-.27, 0, -.57)</offset>
+						<type>PlatformRestraint3</type>
+					</li>
+				</points>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>120000</frequencyTicks>
+				<knowledgeCategory>Advanced</knowledgeCategory>
+				<anomalyKnowledge>2.5</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<requiresHoldingPlatform>true</requiresHoldingPlatform>
+			</li>
+			<li Class="CompProperties_ProducesBioferrite">
+				<bioferriteDensity>2</bioferriteDensity>
+			</li>
+		</comps>
+		<tools>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>3</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+				<soundMeleeHit>Pawn_Fleshbeast_Attack_Blunt</soundMeleeHit>
+			</li>
+		</tools>
+	</ThingDef>
+
+</Defs>
