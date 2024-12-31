@@ -19,4 +19,17 @@
 		<scaleDamageToBuildingsBasedOnFlammability>false</scaleDamageToBuildingsBasedOnFlammability>
 	</DamageDef>
   
+	<DamageDef>
+		<defName>AEFreezing</defName>
+		<label>freezing</label>
+		<workerClass>DamageWorker_Frostbite</workerClass>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has succumbed to freezing.</deathMessage>
+		<hediff>AEFreezing</hediff>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+		<isRanged>true</isRanged>
+		<makesAnimalsFlee>true</makesAnimalsFlee>
+	</DamageDef>
+  
 </Defs>

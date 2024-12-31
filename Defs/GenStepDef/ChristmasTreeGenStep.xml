@@ -34,7 +34,7 @@
 			<decoSnowManCount>15</decoSnowManCount>
 			<pawnKindCount>
 				<kindDef>AE_SnowMan</kindDef>
-				<count>12</count>
+				<count>15</count>
 			</pawnKindCount>
 		</genStep>
 	</GenStepDef>

@@ -100,7 +100,7 @@
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<projectile>
-			<damageDef>RangedStab</damageDef>
+			<damageDef>AEFreezing</damageDef>
 			<damageAmountBase>4.5</damageAmountBase>
 			<stoppingPower>1.2</stoppingPower>
 			<speed>27</speed>
