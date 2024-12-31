@@ -586,7 +586,7 @@
 			<isInert>true</isInert>
 			<claimable>false</claimable>
 			<expandHomeArea>false</expandHomeArea>
-		</building>		
+		</building>
 		<comps>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -1225,12 +1225,18 @@
 			<Beauty>85</Beauty>
 			<Mass>35</Mass>
 		</statBases>
+		<building>
+			<deconstructible>false</deconstructible>
+			<isTargetable>false</isTargetable>
+			<claimable>false</claimable>
+			<expandHomeArea>false</expandHomeArea>
+		</building>
 	</ThingDef>
 	
 	<ThingDef ParentName="BuildingAE_ChristmasTreeBase">
 		<defName>AE_ChristmasTree</defName>
 		<label>christmas tree</label>
-		<description>A dark, viscous giant crimson pool, oozing and spreading, a stark contrast to the surrounding environment. This is an exit on the other side from Blood Lake on a territory of our facility. Can be entered to return to our facility.</description>
+		<description>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nClassified as Class-0 (Safe) anomaly.</description>
 		<thingClass>AnomaliesExpected.Building_AEChristmasTree</thingClass>
 		<minifiedDef>MinifiedThingAE</minifiedDef>
 		<thingCategories>
@@ -1251,13 +1257,37 @@
 				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
 				<studyNotes>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<AnomalyLabel>blood lake exit on the other side</AnomalyLabel>
-						<AnomalyDesc>A dark, viscous giant crimson pool, oozing and spreading, a stark contrast to the surrounding environment. This is an exit on the other side from Blood Lake on a territory of our facility. Can be entered to return to our facility.</AnomalyDesc>
+						<AnomalyLabel>christmas tree</AnomalyLabel>
+						<AnomalyDesc>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nIts needles emit frigid air, causing the surrounding temperature to plummet to -20 degrees. A hidden passage located behind the tree branches.\n\nClassified as Class-1 (Caution) anomaly.</AnomalyDesc>
 						<threshold>0.01</threshold>
-						<label>#6/8 Blood Lake study report</label>
-						<text>Fleshmass response\n\nAbstract:\nAn exploration team encountered a hostile, flesh-infested environment on the other side of the blood lake. The team faced coordinated attacks from fleshbeasts and experienced a sense of déjà vu. Evidence of human infrastructure and a mysterious signal suggest a complex history and potential threat. Further exploration and research are necessary to understand the nature of this world.\n\nObservations:\nThe exploration team encountered a hostile environment dominated by flesh mass.\nThe soil beneath their feet was covered in the fleshmass, and they were subjected to continuous attacks from various directions.\nThe emergence of new fleshbeasts from underground nests suggests a coordinated assault.\nAdditionally, the team experienced long ranged acid spit attacks, further complicating the situation.\nSome team members reported a sense of familiarity with the location, and others discovered dog tags with names resembling their own.\n\nDiscussion:\nThe underground nests, likely of human origin, suggest a pre-existing infrastructure in this location.\nThe coordinated attacks by the fleshbeasts, including the acid spitters, imply a level of intelligence and organization that may be controlled by a hive mind.\nThe detected signal, matching our facility's frequency, but it require more time to find the exact location of transmitter.\n\nRecommendations:\nStudy: We should continue study blood lake exit to learn more about this location and pinpoint the source of detected signal.\nSecurity: The exploration team must maintain a strong defensive perimeter and be prepared for further attacks from fleshbeasts.</text>
+						<label>#2/4 Christmas tree study report</label>
+						<text>Emiting Frigid Air\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nThis report documents an anomalous tree emitting frigid air, causing a significant temperature drop within the containment room. The discovery of a hidden passage emanating from the tree necessitates a reclassification to Class-1 (Caution). Further research, including a manned expedition through the passage, is recommended.\n\nObservations:\nSensors within the containment room detected a rapid decrease in temperature.\n{PAWN_nameDef} was instructed to analyze the snow present on the tree and to install sensors to select branches.\nA hidden passage was subsequently discovered behind the tree's branches.\n\nOutcome:\nSensor readings confirmed that the tree's needles were emitting frigid air, registering temperatures as low as -20 degrees Celsius.\n\nDiscussion:\nThe emission of frigid air from the tree's needles likely accounts for the persistent presence of snow on the tree, even under high temperatures outside.\nThe presence of a hidden passage emanating from the tree suggests the existence of an unexplored location beyond it.\nThe potential size of this location may exceed the tree's physical dimensions, exhibiting spatial anomalies similar to those previously observed in the stockings.\nGiven the potential risk of hypothermia, the tree has been reclassified as Class-1 (Caution) anomaly.\n\nRecommendations:\nStudy: Continued research on the tree's anomalous properties is crucial.\nExpedition: A manned expedition should be organized to investigate the location accessible through the hidden passage.\nControlled Use: The tree's capacity to generate frigid air should be explored for potential applications as a controlled cooling source.</text>
 					</li>
 				</studyNotes>
+				<studyNotesManualUnlockable>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>christmas tree</AnomalyLabel>
+						<AnomalyDesc>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<label>#1/4 Christmas tree study report</label>
+						<text>Giant Tree\n\nSubject: [REDACTED]\n\nAbstract:\nThis report documents the anomalous extraction of a large tree from within a seemingly conventional Christmas stockings. The extraction process resulted in the destruction of the stockings. The retrieved tree exhibited rapid and anomalous root growth despite relocation attempts. Given the absence of hostile behavior, the tree has been classified as Class-0 (Safe) and is now the primary focus of ongoing anomalous research.\n\nObservations:\nTo retrieve the final gift, a winch was employed to pull it from within the stockings.\nThe extraction process was time-consuming, but a portion of the gift eventually became visible.\nThe visible portion revealed a whole tree, significantly larger, than the containing it stockings.\nSubject was instructed to continue the extraction operation.\nWith the application of additional force, the tree was successfully extracted, resulting in the complete destruction of the stockings.\n\nOutcome:\nThe stockings were torn apart, losing all observed anomalous properties.\nThe retrieved tree exceeded both the dimensions of the stockings and the size of most trees within the facility territory.\nThroughout the extraction and subsequent examination, the tree displayed no hostile behavior.\n\nDiscussion:\nThe stockings appear to have lacked sufficient elasticity to accommodate the size of the contained object. As a result, the fabric ruptured, expelling the object within. Analysis of the remaining fabric fragments revealed no anomalous properties.\nSurface analysis indicated a design resembling a Christmas tree decorated with toys and snow. Despite relocation attempts, the tree consistently demonstrates rapid and anomalous root growth into the ground.\nThe retrieved tree has become the primary focus of this anomalous research.\nGiven the absence of hostile behavior, the tree has been temporary classified as Class-0 (Safe) anomaly.\n\nRecommendations:\nContinued research on the retrieved tree is necessary to further investigate its anomalous properties and explore potential applications.</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>christmas tree</AnomalyLabel>
+						<AnomalyDesc>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nIts needles emit frigid air, causing the surrounding temperature to plummet to -20 degrees. A hidden passage located behind the tree branches leading to the gifts.\n\nClassified as Class-1 (Caution) anomaly.</AnomalyDesc>
+						<label>#3/4 Christmas tree study report</label>
+						<text>Celebration on the Other Side\n\nAbstract:\nThis report documents the successful exploration of a passage located under the tree. The passage led to an expansive ice plain, where multiple boxes and animated snowmen were observed. The low ambient temperature presents a significant risk of the passage becoming impassable. Recommendations include the examination of the boxes, retrieval of valuable items, and the establishment of a defensive perimeter due to the potential for hostile encounters.\n\nObservations:\nAn exploration team, consisting of [REDACTED], entered a passage located under the tree.\nFollowing a brief period of travel through a dark, wooden-walled tunnel, the team reached an ice field.\nThe exit tree closely resembled the entry tree.\nMultiple boxes of varying colors were observed in the vicinity of the tree exit, along with the presence of numerous snowmen.\nSome team members reported observing movement among the snowmen.\n\nOutcome:\nThe exploration team successfully traversed the passage under the tree and reached the destination.\nSensor data indicates that the ice plain is largely devoid of significant features, with the exception of a small area surrounding the tree exit.\n\nDiscussion:\nThe desolate nature of the ice plain suggests limited exploration potential beyond the immediate vicinity of the tree exit.\nThe low ambient temperature presents a significant concern, with a high probability of the passage becoming impassable due to freezing within few days. All operations within this area should therefore be conducted with urgency.\n\nRecommendations:\nCollection: The contents of the boxes should be examined, and any valuable items should be retrieved.\nSecurity: The establishment of a defensive perimeter around the tree exit is crucial, with preparations for potential hostile encounters.</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>The Cold Invitation to a Celebration</AnomalyLabel>
+						<AnomalyDesc>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nIts needles emit frigid air, causing the surrounding temperature to plummet to -20 degrees. Concealed within the tree's branches lies a passage leading to gifts protected by a snowman. The passage can be reopened again after arrival of the new year.\n\nClassified as Class-1 (Caution) anomaly.</AnomalyDesc>
+						<label>#4/4 Christmas tree study report</label>
+						<text>Theory Regarding Christmas Tree\n\nSubject: [REDACTED]\n\nAbstract:\nThis report documents the temporary obstruction of a passage beneath tree due to ice and encroaching branches. Analysis suggests the passage may become accessible around the next new year date. The tree's classification remains Class-1 (Caution). A hypothesis suggests the tree facilitates annual access to a celebration, with participants undergoing a trial before receiving gifts. Continued visits to this location during future celebration period is recommended.\n\n\nObservations:\nSensor data indicated that the passage under the tree had become obstructed by ice and encroaching branches.\nAttempts to remove the ice and branches were unsuccessful.\n\nOutcome:\nAnalysis of the ice formation suggests a potential melting around the next new year date.\n\nDiscussion:\nThe passage under the tree currently appears impassable. However, based on ice analysis, a reopening of the passage may be feasible around the next new year date.\nGiven the collected data on this tree, its current classification as a Class-1 (Caution) anomaly remains unchanged.\n\nHypothesis:\n[REDACTED] has proposed a theory suggesting that the stockings served as an invitation to a celebration. While the tree itself may function as a means of transportation to this celebration. Participants of this celebration may undergo a trial administered by the surrounding snowman guards. Successful completion of this trial grants access to gifts left for the participants. The purpose and motivations behind this generosity remain unknown. Since the celebration occurs annually, the means of transportation likely remains with the participants in deactivated state between celebration.\n\nRecommendations:\nControlled Use: Continued visits to this location during future celebration periods are recommended to utilize the provided gifts for the benefit of this facility.</text>
+					</li>
+				</studyNotesManualUnlockable>
+			</li>
+			<li Class="CompProperties_HeatPusher">
+				<heatPerSecond>-100</heatPerSecond>
+				<heatPushMinTemperature>-20</heatPushMinTemperature>
 			</li>
 			<li Class="CompProperties_Glower">
 				<glowRadius>14</glowRadius>
@@ -1277,7 +1307,7 @@
 	<ThingDef ParentName="BuildingAE_ChristmasTreeBase">
 		<defName>AE_ChristmasTreeExit</defName>
 		<label>christmas tree exit</label>
-		<description>A dark, viscous giant crimson pool, oozing and spreading, a stark contrast to the surrounding environment. This is an exit on the other side from Blood Lake on a territory of our facility. Can be entered to return to our facility.</description>
+		<description>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nThis is an exit on the other side from Christmas tree on a territory of our facility. Can be entered to return to our facility.</description>
 		<thingClass>AnomaliesExpected.Building_AEChristmasTreeExit</thingClass>
 		<comps>
 			<li Class="CompProperties_Glower">

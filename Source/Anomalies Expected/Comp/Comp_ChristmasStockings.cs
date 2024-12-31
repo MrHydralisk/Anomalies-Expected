@@ -37,6 +37,7 @@ namespace AnomaliesExpected
                 }
             }
             GenPlace.TryPlaceThing(gift, parent.Position, map, ThingPlaceMode.Near);
+            compAEStudyUnlocks.UnlockStudyNoteManual(0);
             base.PostDeSpawn(map);
         }
 
@@ -59,6 +60,7 @@ namespace AnomaliesExpected
                 if (canDestroyedAfterStudy != null)
                 {
                     canDestroyedAfterStudy.isCanDestroyForced = true;
+                    StudyUnlocks.UnlockStudyNoteManual(0);
                 }
             }
         }

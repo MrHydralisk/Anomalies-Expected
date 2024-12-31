@@ -62,6 +62,11 @@ namespace AnomaliesExpected
                 }
             }
             Alert_ChristmasTreeUnstable.RemoveTarget(Exit);
+            if (!Entrance.isBeenExited)
+            {
+                Entrance.isBeenExited = true;
+                Entrance.StudyUnlocks.UnlockStudyNoteManual(2);
+            }
             PocketMapUtility.DestroyPocketMap(map);
         }
 

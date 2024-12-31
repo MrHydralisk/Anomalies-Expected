@@ -14,6 +14,6 @@
 	<AnomaliesExpected.ChristmasStockings.AlertSubMap.Label>Christmas Tree passage is freezing up</AnomaliesExpected.ChristmasStockings.AlertSubMap.Label>
 	<AnomaliesExpected.ChristmasStockings.AlertSubMap.Desc>Passage through the Christmas Tree is slowly freezing up. After few days it will prevent us from accessing the other side of the tree.\n[Will destroy the map]</AnomaliesExpected.ChristmasStockings.AlertSubMap.Desc>
 	
-	<AnomaliesExpected.ChristmasStockings.LetterEnter.Label></AnomaliesExpected.ChristmasStockings.LetterEnter.Label>
-	<AnomaliesExpected.ChristmasStockings.LetterEnter.Text></AnomaliesExpected.ChristmasStockings.LetterEnter.Text>
+	<AnomaliesExpected.ChristmasStockings.LetterEnter.Label>Celebration Started</AnomaliesExpected.ChristmasStockings.LetterEnter.Label>
+	<AnomaliesExpected.ChristmasStockings.LetterEnter.Text>Your colonists reached the celebration spot. Survive the cold and trial to acquire gifts.\n\nYou have 5 days to finish celebrating till the temperature drop and freeze the passage back.</AnomaliesExpected.ChristmasStockings.LetterEnter.Text>
 </LanguageData>

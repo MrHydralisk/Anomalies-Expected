@@ -1,11 +1,9 @@
-﻿using Mono.Unix.Native;
-using RimWorld;
+﻿using RimWorld;
 using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
-using Verse.Noise;
 using Verse.Sound;
 
 namespace AnomaliesExpected
@@ -26,6 +24,7 @@ namespace AnomaliesExpected
         public Building_AEChristmasTreeExit exitBuilding => mapComponent?.Exit;
 
         private bool isBeenEntered;
+        public bool isBeenExited;
         private bool isReadyToEnter => (StudyUnlocks?.NextIndex ?? 1) >= 1;
         public bool isSubMapExist => subMap != null && Find.Maps.IndexOf(subMap) >= 0;
 
@@ -71,7 +70,7 @@ namespace AnomaliesExpected
                 Find.World.pocketMaps.Add(pocketMapParent);
                 isCreatedMap = true;
                 NewYearTick = NextNewYearTick;
-                //StudyUnlocks.UnlockStudyNoteManual(0);
+                Find.LetterStack.ReceiveLetter("AnomaliesExpected.ChristmasStockings.LetterEnter.Label".Translate(), "AnomaliesExpected.ChristmasStockings.LetterEnter.Text".Translate(), LetterDefOf.ThreatSmall, new TargetInfo(exitBuilding));
             }
         }
 
@@ -97,7 +96,7 @@ namespace AnomaliesExpected
             if (!isBeenEntered)
             {
                 isBeenEntered = true;
-                Find.LetterStack.ReceiveLetter("AnomaliesExpected.ChristmasStockings.LetterEnter.Label".Translate(), "AnomaliesExpected.ChristmasStockings.LetterEnter.Text".Translate(), LetterDefOf.ThreatSmall, new TargetInfo(exitBuilding));
+                StudyUnlocks.UnlockStudyNoteManual(1);
             }
             if (Find.CurrentMap == base.Map)
             {
@@ -176,7 +175,8 @@ namespace AnomaliesExpected
         {
             base.ExposeData();
             Scribe_References.Look(ref subMap, "subMap");
-            Scribe_Values.Look(ref isBeenEntered, "beenEntered", defaultValue: false);
+            Scribe_Values.Look(ref isBeenEntered, "isBeenEntered", defaultValue: false);
+            Scribe_Values.Look(ref isBeenExited, "isBeenExited", defaultValue: false);
             Scribe_Values.Look(ref isCreatedMap, "isCreatedMap");
             Scribe_Values.Look(ref NewYearTick, "NewYearTick");
         }

@@ -74,7 +74,7 @@
 		<durationDays>5</durationDays>
 		<stages>
 			<li>
-				<label>got coal</label>
+				<label>got lump of coal</label>
 				<description>That lavish meal was amazing. It nourished my body and my soul.</description>
 				<baseMoodEffect>-8</baseMoodEffect>
 			</li>
