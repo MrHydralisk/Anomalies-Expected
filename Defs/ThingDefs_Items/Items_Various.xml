@@ -384,7 +384,7 @@
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_ChristmasStockings">
 				<activeTicks>1</activeTicks>
-				<!-- <cooldownTicks>50000</cooldownTicks> -->
+				<cooldownTicks>12000</cooldownTicks>
 				<ticksToActivate>1200</ticksToActivate>
 				<activateTexPath>Things/Item/Special/AE_ChristmasStockings</activateTexPath>
         
@@ -394,7 +394,7 @@
 				<jobString>taking gift</jobString>
 				<activatingStringPending>taking gift {0}</activatingStringPending>
 				<activatingString>taking gift {0}: {1}s</activatingString>
-				<!-- <onCooldownString>restoring</onCooldownString> -->
+				<onCooldownString>preparing</onCooldownString>
 
 				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
 				<fleckOnUsedScale>3</fleckOnUsedScale>
