@@ -22,6 +22,7 @@ On some study notes label and description of anomaly might change to fit the cur
 ![Text](/Mod%20Page/Images/Content/AEDesc8.png)
 ![Text](/Mod%20Page/Images/Content/AEDesc9.png)
 ![Text](/Mod%20Page/Images/Content/AEDesc10.png)
+![Text](/Mod%20Page/Images/Content/AEDesc11.png)
 
 Anomalies Classification:
 * Class 0 anomaly "Safe".
@@ -31,7 +32,7 @@ Anomalies Classification:
 * Class 4 anomaly "Critical".
 
 Currently available:
-* 5 Anomaly of basic category
+* 6 Anomaly of basic category
 * 5 Anomaly of advanced category
 
 ## Links
