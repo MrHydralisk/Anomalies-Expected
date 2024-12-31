@@ -10,4 +10,15 @@
 		</graphicData>
 	</ThingDef>
 
+	<ThingDef ParentName="FilthBlood">
+		<defName>Filth_AEIceBloodSmear</defName>
+		<label>ice blood smear</label>
+		<graphicData>
+			<texPath>Things/Filth/CrawlSmear</texPath>
+			<color>(171, 209, 243, 165)</color>
+			<graphicClass>Graphic_ClusterTight</graphicClass>
+			<drawSize>0.9</drawSize>
+		</graphicData>
+	</ThingDef>
+
 </Defs>

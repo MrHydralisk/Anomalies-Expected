@@ -2,7 +2,7 @@
 <Defs>
 
 	<PawnRenderTreeDef>
-		<defName>AE_SnowManPRTD</defName>
+		<defName>AE_SnowMan</defName>
 		<root Class="PawnRenderNodeProperties_Parent">
 			<debugLabel>Root</debugLabel>
 			<tagDef>Root</tagDef>

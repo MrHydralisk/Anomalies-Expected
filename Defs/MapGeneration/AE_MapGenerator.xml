@@ -55,6 +55,7 @@
 			<li>AE_ChristmasTreeTerrain</li>
 			<li>AE_ChristmasTreeFindExit</li>
 			<li>AE_ChristmasTreeGiftBoxes</li>
+			<li>AE_ChristmasTreeSnowMan</li>
 		</genSteps>
 	</MapGeneratorDef>
   

@@ -181,6 +181,7 @@
 		<size>(1, 1)</size>
 		<useHitPoints>false</useHitPoints>
 		<hasInteractionCell>false</hasInteractionCell>
+		<fillPercent>0.6</fillPercent>
 		<building>
 			<openingEffect>GrayBoxOpened</openingEffect>
 			<uninstallWork>2500</uninstallWork>

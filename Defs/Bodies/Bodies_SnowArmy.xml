@@ -2,10 +2,11 @@
 <Defs>
   
 	<BodyDef>
-		<defName>AE_SnowManBD</defName>
+		<defName>AE_SnowMan</defName>
 		<label>snowman</label>
 		<corePart>
 			<def>AE_SnowBall</def>
+			<customLabel>middle snowball</customLabel>
 			<height>Middle</height>
 			<depth>Outside</depth>
 			<groups>
@@ -14,6 +15,7 @@
 			<parts>
 				<li>
 					<def>AE_SnowBallTop</def>
+					<customLabel>top snowball</customLabel>
 					<coverage>0.18</coverage>
 					<height>Top</height>
 					<depth>Outside</depth>
@@ -21,12 +23,11 @@
 						<li>Neck</li>
 						<li>UpperHead</li>
 						<li>FullHead</li>
-						<li>HeadAttackTool</li>
 					</groups>
 					<parts>
 						<li>
 							<def>AE_SnowEye</def>
-							<customLabel>left eye</customLabel>
+							<customLabel>left eye stone</customLabel>
 							<coverage>0.025</coverage>
 							<groups>
 								<li>FullHead</li>
@@ -41,7 +42,7 @@
 						</li>
 						<li>
 							<def>AE_SnowEye</def>
-							<customLabel>right eye</customLabel>
+							<customLabel>right eye stone</customLabel>
 							<coverage>0.025</coverage>
 							<groups>
 								<li>FullHead</li>
@@ -57,13 +58,14 @@
 							<def>AE_SnowNose</def>
 							<coverage>0.7</coverage>
 							<groups>
-								<li>FullHead</li>
+								<li>HeadAttackTool</li>
 							</groups>
 						</li>
 					</parts>
 				</li>
 				<li>
 					<def>AE_SnowBallBottom</def>
+					<customLabel>bottom snowball</customLabel>
 					<coverage>0.5</coverage>
 					<height>Bottom</height>
 					<depth>Outside</depth>
@@ -74,7 +76,7 @@
 					<parts>
 						<li>
 							<def>AE_SnowLeg</def>
-							<customLabel>left leg</customLabel>
+							<customLabel>left snowball leg</customLabel>
 							<coverage>0.09</coverage>
 							<height>Bottom</height>
 							<groups>
@@ -85,7 +87,7 @@
 						</li>
 						<li>
 							<def>AE_SnowLeg</def>
-							<customLabel>right leg</customLabel>
+							<customLabel>right snowball leg</customLabel>
 							<coverage>0.09</coverage>
 							<height>Bottom</height>
 							<groups>
@@ -98,20 +100,22 @@
 				</li>
 				<li>
 					<def>AE_SnowArm</def>
-					<customLabel>left arm</customLabel>
+					<customLabel>left stick arm</customLabel>
 					<coverage>0.06</coverage>
 					<flipGraphic>true</flipGraphic>
 					<groups>
 						<li>Arms</li>
+						<li>LeftHand</li>
 					</groups>
 				</li>
 				<li>
 					<def>AE_SnowArm</def>
-					<customLabel>right arm</customLabel>
+					<customLabel>right stick arm</customLabel>
 					<coverage>0.06</coverage>
 					<flipGraphic>true</flipGraphic>
 					<groups>
 						<li>Arms</li>
+						<li>RightHand</li>
 					</groups>
 				</li>
 				<li>

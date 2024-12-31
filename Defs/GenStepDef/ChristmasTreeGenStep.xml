@@ -26,5 +26,17 @@
 			<thingSetMakerDef>MapGen_AEChristmasTreeGiftBoxLoot</thingSetMakerDef>
 		</genStep>
 	</GenStepDef>
+
+	<GenStepDef>
+		<defName>AE_ChristmasTreeSnowMan</defName>
+		<order>352</order>
+		<genStep Class="AnomaliesExpected.GenStep_ChristmasTreeSnowMan">
+			<decoSnowManCount>15</decoSnowManCount>
+			<pawnKindCount>
+				<kindDef>AE_SnowMan</kindDef>
+				<count>12</count>
+			</pawnKindCount>
+		</genStep>
+	</GenStepDef>
   
 </Defs>

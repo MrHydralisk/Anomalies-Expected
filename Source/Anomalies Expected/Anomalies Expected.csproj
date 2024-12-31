@@ -42,7 +42,9 @@
     <Compile Include="Building\Building_AEChristmasTreeExit.cs" />
     <Compile Include="ChristmasTreeMapComponent.cs" />
     <Compile Include="Building\Building_AEBloodLake.cs" />
+    <Compile Include="Comp\Comp_EntityWithWeapon.cs" />
     <Compile Include="GameCondition_AETemperatureDrop.cs" />
+    <Compile Include="GenStep\GenStep_ChristmasTreeSnowMan.cs" />
     <Compile Include="GenStep\GenStep_ChristmasTreeGiftBoxes.cs" />
     <Compile Include="GenStep\GenStep_ChristmasTreeTerrain.cs" />
     <Compile Include="GenStep\GenStep_ChristmasTreeFindExit.cs" />

@@ -2,19 +2,26 @@
 <Defs>
 
 	<!-- <PawnKindDef Name="BaseFleshbeastKind" Abstract="True"> -->
-		<!-- <defaultFactionType>Entities</defaultFactionType> -->
-		<!-- <overrideDebugActionCategory>Entity</overrideDebugActionCategory> -->
-		<!-- <meleeAttackInfectionPathways> -->
-			<!-- <li>EntityAttacked</li> -->
-		<!-- </meleeAttackInfectionPathways> -->
+	<!-- <defaultFactionType>Entities</defaultFactionType> -->
+	<!-- <overrideDebugActionCategory>Entity</overrideDebugActionCategory> -->
+	<!-- <meleeAttackInfectionPathways> -->
+	<!-- <li>EntityAttacked</li> -->
+	<!-- </meleeAttackInfectionPathways> -->
 	<!-- </PawnKindDef> -->
 
 	<PawnKindDef ParentName="BaseFleshbeastKind">
-		<defName>AE_SnowManPKD</defName>
+		<defName>AE_SnowMan</defName>
 		<label>snowman</label>
+		<weaponTags>
+			<li>Gun_AESnowBall</li>
+		</weaponTags>
 		<overrideDeathOnDownedChance>0.8</overrideDeathOnDownedChance>
+		<preventIdeo>true</preventIdeo>
+		<aiAvoidCover>true</aiAvoidCover>
+		<destroyGearOnDrop>true</destroyGearOnDrop>
 		<race>AE_SnowMan</race>
 		<combatPower>70</combatPower>
+		<weaponMoney>9999~9999</weaponMoney>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
