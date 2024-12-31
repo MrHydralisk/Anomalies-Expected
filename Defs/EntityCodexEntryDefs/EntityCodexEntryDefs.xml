@@ -189,7 +189,7 @@
 
 	<EntityCodexEntryDef>
 		<defName>AE_EntityCodexEntry_ChristmasStockings</defName>
-		<label>christmas stockings</label>
+		<label>red stockings</label>
 		<category>Basic</category>
 		<uiIconPath>UI/CodexEntries/AE_ChristmasStockings</uiIconPath>
 		<useDescriptionFrom>AE_ChristmasStockings</useDescriptionFrom>

@@ -43,7 +43,7 @@
 	<BiomeDef>
 		<defName>AE_ChristmasTreeBiome</defName>
 		<label>christmas tree</label>
-		<description>Flashmass infected area on the other side of Blood Lake.</description>
+		<description>Ice fields area on the other side of Christmas Tree.</description>
 		<generatesNaturally>false</generatesNaturally>
 		<animalDensity>0</animalDensity>
 		<plantDensity>0</plantDensity>

@@ -60,7 +60,7 @@
 		<stages>
 			<li>
 				<label>got candy cane</label>
-				<description>That lavish meal was amazing. It nourished my body and my soul.</description>
+				<description>A surge of sweet anticipation washed over them, a smile spreading across their face as they unwrapped the bright red and white candy cane.</description>
 				<baseMoodEffect>8</baseMoodEffect>
 			</li>
 		</stages>
@@ -75,7 +75,7 @@
 		<stages>
 			<li>
 				<label>got lump of coal</label>
-				<description>That lavish meal was amazing. It nourished my body and my soul.</description>
+				<description>Disappointment washed over them as they pulled out the lump of coal, a sense of shame momentarily clouding their mood.</description>
 				<baseMoodEffect>-8</baseMoodEffect>
 			</li>
 		</stages>

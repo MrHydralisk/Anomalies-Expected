@@ -166,7 +166,7 @@
 	<ThingDef ParentName="CrateBase">
 		<defName>AE_ChristmasGiftBox</defName>
 		<label>christmas gift box</label>
-		<description>A strange gray container. It is featureless and the surfaces are smooth. The material is not metal, concrete, or any other identifiable material.</description>
+		<description>This elegant Christmas gift box is adorned with festive ribbons. It's the perfect container that holds a special surprise.</description>
 		<thingClass>AnomaliesExpected.Building_AEChristmasGiftBox</thingClass>
 		<graphicData>
 			<texPath>Things/Building/AE_ChristmasGiftBox</texPath>

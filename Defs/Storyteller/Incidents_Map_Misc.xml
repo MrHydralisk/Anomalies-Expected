@@ -274,14 +274,14 @@
   
 	<IncidentDef>
 		<defName>AE_IncidentDef_ChristmasStockingsSpawn</defName>
-		<label>christmas stockings</label>
+		<label>red stockings</label>
 		<category>Misc</category>
 		<targetTags>
 			<li>Map_PlayerHome</li>
 		</targetTags>
 		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingFromOrbit</workerClass>
-		<letterLabel>Found christmas stockings</letterLabel>
-		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a notepad, its yellow pages filled with handwritten notes.</letterText>
+		<letterLabel>Found red stockings</letterLabel>
+		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a red stockings, featuring white details and a snowflake symbol. It appear to be filled with something.</letterText>
 		<letterDef>NeutralEvent</letterDef>
 		<earliestDay>5</earliestDay> <!-- 30 -->
 		<baseChance>1</baseChance> <!-- 0.2 -->
@@ -296,11 +296,11 @@
 				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
 				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
 				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
-				<!--<ChanceFactorPowPerOtherBuildings>
+				<ChanceFactorPowPerOtherBuildings>
 					<AE_ChristmasTree>
 						<chance>0</chance>
 					</AE_ChristmasTree>
-				</ChanceFactorPowPerOtherBuildings>-->
+				</ChanceFactorPowPerOtherBuildings>
 			</li>
 		</modExtensions>
 	</IncidentDef>

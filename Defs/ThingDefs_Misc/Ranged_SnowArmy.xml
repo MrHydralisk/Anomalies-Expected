@@ -49,7 +49,7 @@
 	<ThingDef ParentName="BaseWeaponSnowArmy">
 		<defName>Gun_AESnowBall</defName>
 		<label>snowball</label>
-		<description>Pila are spears for throwing. They take a long time to throw, but one hit can do heavy damage. This weapon represents a bundle of pila and can be thrown over and over. The singular of pila is pilum.</description>
+		<description>The Snowball is a simple yet effective projectile weapon. Formed from compacted snow, it can be thrown with surprising force, delivering a chilling impact upon impact. While seemingly harmless, a well-aimed snowball can cause significant frozen through injuries.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/WeaponRanged/Gun_AESnowBall</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
