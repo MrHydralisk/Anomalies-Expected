@@ -5,5 +5,9 @@
 	<AE_BloodFog.description>Густой, зловещий кроваво-красный туман окутывает окрестности. Этот туман - прямое следствие повышенной концентрации кровиподобной жидкости в воздухе. Несмотря на кажущуюся безвредность, возникает едва уловимое чувство страха. Это явление, несомненно, повлияет на всех существ, находящихся вне закрытых помещений.</AE_BloodFog.description>
 	<AE_BloodFog.endMessage>Концентрация кровиподобной жидкости в воздухе возвращается в норму.</AE_BloodFog.endMessage>''
 	<AE_BloodFog.startMessage>Концентрация кровиподобной жидкости в воздухе резко возвышается.</AE_BloodFog.startMessage>''
+	
+	<AE_TemperatureDrop.label>температура меняется</AE_TemperatureDrop.label>
+	<AE_TemperatureDrop.description>Температура резко меняется.</AE_TemperatureDrop.description>
+	<AE_TemperatureDrop.letterText>Температура резко меняется.</AE_TemperatureDrop.letterText>
 
 </LanguageData>

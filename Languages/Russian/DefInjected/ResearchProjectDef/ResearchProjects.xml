@@ -97,5 +97,13 @@
 	
 	<AEStudyNotepad.label>изучение блокнота</AEStudyNotepad.label>
 	<AEStudyNotepad.description>Изучение исследовательских записей в желтом блокноте.</AEStudyNotepad.description>
+	
+	
+	
+	<AEProviderScripture.label>ящик Предоставителя</AEProviderScripture.label>
+	<AEProviderScripture.description>Изучение чертежа ящика Предоставителя и проведения ритуала просьбы Предоставителя</AEProviderScripture.description>
+
+	<AEAskingProvider.label>просьба Предоставителя</AEAskingProvider.label>
+	<AEAskingProvider.description>Собранные исследования будут использованы в качестве жертвы для ритуала просьбы Предоставителя</AEAskingProvider.description>
 
 </LanguageData>

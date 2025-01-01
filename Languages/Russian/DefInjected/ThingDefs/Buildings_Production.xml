@@ -3,8 +3,5 @@
 
 	<AE_BloodPump.label>насос кровиподобной жидкости</AE_BloodPump.label>
 	<AE_BloodPump.description>Собирает кровиподобную жидкость из ближайшего аномального источника.</AE_BloodPump.description>
-	
-	<AE_ProviderBox.label>ящик Предоставителя</AE_ProviderBox.label>
-	<AE_ProviderBox.description>Ритуальный ящик, предназначенный для хранения жертвенных подношений, используемых в ритуале просьбы Предоставителя. Сразу после создания его поверхность покрылась коррозией и царапинами, а также преждевременно состарилась.</AE_ProviderBox.description>
 
 </LanguageData>

@@ -6,5 +6,15 @@
 
 	<AE_BloodLakeSpawner.label>появление из недр земли</AE_BloodLakeSpawner.label>
 	<AE_BloodLakeSpawner.description>Что-то воявляется из недр земли здесь.</AE_BloodLakeSpawner.description>
+	
+	
+	
+	<AE_ProviderBox.label>ящик Предоставителя</AE_ProviderBox.label>
+	<AE_ProviderBox.description>Ритуальный ящик, предназначенный для хранения жертвенных подношений, используемых в ритуале просьбы Предоставителя. Сразу после создания его поверхность покрылась коррозией и царапинами, а также преждевременно состарилась.</AE_ProviderBox.description>
+	
+	
+	
+	<AE_ChristmasGiftBox.label>новогодний подарок</AE_ChristmasGiftBox.label>
+	<AE_ChristmasGiftBox.description>Эта элегантная подарочная коробка украшена праздничными лентами. Она является идеальным контейнером для хранения особого сюрприза.</AE_ChristmasGiftBox.description>
 
 </LanguageData>

@@ -5,5 +5,8 @@
 	<AcidBurnFleshmass.deathMessage>{0} сгорел до смерти.</AcidBurnFleshmass.deathMessage>
 	<AEPsychicFlash.label>психическая вспышка</AEPsychicFlash.label>
 	<AEPsychicFlash.deathMessage>{0} сгорел до смерти.</AEPsychicFlash.deathMessage>
+	
+	<AEFreezing.label>промерзание</AEFreezing.label>
+	<AEFreezing.deathMessage>{0} промёрз до смерти</AEFreezing.deathMessage>
 
 </LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<Gun_AESnowBall.label>снежок</Gun_AESnowBall.label>
+	<Gun_AESnowBall.description>Снежок - простое, но эффективное метательное оружие. Сформированный из спрессованного снега, он может быть брошен с удивительной силой, нанося при попадании охлаждающий удар. Несмотря на кажущуюся безвредность, хорошо прицельный снежок может нанести значительные травмы от промерзания.</Gun_AESnowBall.description>
+	<Gun_AESnowBall.verbs.Verb_Shoot.label>снежок</Gun_AESnowBall.verbs.Verb_Shoot.label>
+	<Gun_AESnowBall_Thrown.label>снежок</Gun_AESnowBall_Thrown.label>
+
+</LanguageData>

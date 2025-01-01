@@ -40,5 +40,10 @@
 	<AE_IncidentDef_ProviderScriptureSpawn.label>древнее писание</AE_IncidentDef_ProviderScriptureSpawn.label>
 	<AE_IncidentDef_ProviderScriptureSpawn.letterLabel>Найдено древнее писание</AE_IncidentDef_ProviderScriptureSpawn.letterLabel>
 	<AE_IncidentDef_ProviderScriptureSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это старинная книга с темной обложкой, украшенная заметным символом.</AE_IncidentDef_ProviderScriptureSpawn.letterText>
+	
+	<AE_IncidentDef_ChristmasStockingsSpawn.label>красный носок</AE_IncidentDef_ChristmasStockingsSpawn.label>
+	<AE_IncidentDef_ChristmasStockingsSpawn.letterLabel>Найден красный носок</AE_IncidentDef_ChristmasStockingsSpawn.letterLabel>
+	<AE_IncidentDef_ChristmasStockingsSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это красный носок с белыми частями и символом снежинки. Похоже, он наполнен чем-то.</AE_IncidentDef_ChristmasStockingsSpawn.letterText>
+
   
 </LanguageData>

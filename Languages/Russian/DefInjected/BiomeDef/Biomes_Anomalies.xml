@@ -3,5 +3,8 @@
 
 	<AE_BloodLakeBiome.label>кровавое озеро</AE_BloodLakeBiome.label>
 	<AE_BloodLakeBiome.description>Зона заражённая биомассой по другую сторону кровавого озера.</AE_BloodLakeBiome.description>
+	
+	<AE_ChristmasTreeBiome.label>Рождественская елка</AE_ChristmasTreeBiome.label>
+	<AE_ChristmasTreeBiome.description>Ледяные поля по другую сторону Рождественской елки.</AE_ChristmasTreeBiome.description>
 
 </LanguageData>

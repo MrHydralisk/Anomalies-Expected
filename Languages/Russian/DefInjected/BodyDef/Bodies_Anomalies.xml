@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<AE_SnowMan.label>снеговик</AE_SnowMan.label>
+	<AE_SnowMan.corePart.customLabel>средний снежный ком</AE_SnowMan.corePart.customLabel>
+	<AE_SnowMan.corePart.parts.top_snowball.customLabel>верхний снежный ком</AE_SnowMan.corePart.parts.top_snowball.customLabel>
+	<AE_SnowMan.corePart.parts.top_snowball.parts.left_eye_stone.customLabel>левый глаз камень</AE_SnowMan.corePart.parts.top_snowball.parts.left_eye_stone.customLabel>
+	<AE_SnowMan.corePart.parts.top_snowball.parts.right_eye_stone.customLabel>правый глах камень</AE_SnowMan.corePart.parts.top_snowball.parts.right_eye_stone.customLabel>
+	<AE_SnowMan.corePart.parts.bottom_snowball.customLabel>нижний снежный ком</AE_SnowMan.corePart.parts.bottom_snowball.customLabel>
+	<AE_SnowMan.corePart.parts.bottom_snowball.parts.left_snowball_leg.customLabel>левая нога снежный ком</AE_SnowMan.corePart.parts.bottom_snowball.parts.left_snowball_leg.customLabel>
+	<AE_SnowMan.corePart.parts.bottom_snowball.parts.right_snowball_leg.customLabel>правая нога снежный ком</AE_SnowMan.corePart.parts.bottom_snowball.parts.right_snowball_leg.customLabel>
+	<AE_SnowMan.corePart.parts.left_stick_arm.customLabel>левая рука ветка</AE_SnowMan.corePart.parts.left_stick_arm.customLabel>
+	<AE_SnowMan.corePart.parts.right_stick_arm.customLabel>правая рука ветка</AE_SnowMan.corePart.parts.right_stick_arm.customLabel>
+
+</LanguageData>

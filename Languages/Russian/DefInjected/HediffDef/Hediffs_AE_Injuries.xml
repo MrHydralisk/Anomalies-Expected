@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<AEFreezing.label>промерзание</AEFreezing.label>
+	<AEFreezing.description>Промерзание тканей и плоти, вызванное воздействием сильного холода. Из-за замерзания нервов ощущение боли притупляется. После полного промерзания части тела часто теряются.</AEFreezing.description>
+	<AEFreezing.comps.HediffComp_GetsPermanent.permanentLabel>промерзли насквозь</AEFreezing.comps.HediffComp_GetsPermanent.permanentLabel>
+	<AEFreezing.injuryProps.destroyedLabel>Потеряна из-за промерзания насквозь</AEFreezing.injuryProps.destroyedLabel>
+	<AEFreezing.labelNounPretty>{0} в {1}</AEFreezing.labelNounPretty>
+  
+</LanguageData>

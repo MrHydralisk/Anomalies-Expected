@@ -448,21 +448,21 @@
 			<li Class="AnomaliesExpected.CompProperties_CanDestroyedAfterStudy">
 				<ticksToActivate>10000</ticksToActivate>
 				<maintainProgress>true</maintainProgress>
-				<activateTexPath>Designations/FillInPitBurrow</activateTexPath>
+				<activateTexPath>UI/CodexEntries/AE_ChristmasStockings_Silhouette</activateTexPath>
  
-				<activateLabelString>Fill with soil</activateLabelString>
-				<activateDescString>Add chemicals to dissolve and fill it with soil. [Will destroy it]</activateDescString>
-				<guiLabelString>Choose who should destroy this.</guiLabelString>
-				<jobString>dissolve and fill in</jobString>
-				<activatingStringPending>dissolving and filling for {0}</activatingStringPending>
-				<activatingString>dissolving and filling for {0}: {1}s</activatingString>
+				<activateLabelString>Retrieve last gift</activateLabelString>
+				<activateDescString>Employ winch to pull last gift from within the stockings.</activateDescString>
+				<guiLabelString>Choose who should retrieve from this.</guiLabelString>
+				<jobString>retrieve last gift</jobString>
+				<activatingStringPending>retrieving last gift from {0}</activatingStringPending>
+				<activatingString>retrieving last gift from {0}: {1}s</activatingString>
 
-				<fleckOnAnomaly>PitGateCollapseDust</fleckOnAnomaly>
-				<fleckOnAnomalyScale>5</fleckOnAnomalyScale>
-				<soundActivate>PitBurrow_Collapse</soundActivate>
-				<interactionEffecter>FillIn</interactionEffecter>
+				<fleckOnAnomaly>Fleck_Vaporize</fleckOnAnomaly>
+				<fleckOnAnomalyScale>2</fleckOnAnomalyScale>
+				<soundActivate>Recipe_Tailor</soundActivate>
+				<interactionEffecter>Tailor</interactionEffecter>
 				
-				<cooldownFleck>DirtBitsArching</cooldownFleck>
+				<cooldownFleck>SnowBits</cooldownFleck>
 
 				<targetingParameters>
 					<canTargetBuildings>false</canTargetBuildings>

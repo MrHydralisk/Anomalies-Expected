@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<AE_SnowMan.label>снеговик</AE_SnowMan.label>
+	<AE_SnowMan.description>Снеговик кажется безобидным и сделанным из нескольких больших снежных комков. Однако его ледяное снежное тело оказывается удивительно выносливым, быстро развеивая любые иллюзии невинности. Он может атаковать, бросая в противников снежки или царапая их своими руками ветками. Он может выжить даже при значительных повреждениях тела.</AE_SnowMan.description>
+
+	<AE_SnowMan.comps.CompInspectStringEmergence.inspectString>Появился из {SOURCEPAWN_labelShort}</AE_SnowMan.comps.CompInspectStringEmergence.inspectString>
+	<AE_SnowMan.tools.head.label>голова</AE_SnowMan.tools.head.label>
+	<AE_SnowMan.tools.left_stick_arm.label>левая рука ветка</AE_SnowMan.tools.left_stick_arm.label>
+	<AE_SnowMan.tools.left_stick_arm.labelNoLocation>рука ветка</AE_SnowMan.tools.left_stick_arm.labelNoLocation>
+	<AE_SnowMan.tools.right_stick_arm.label>правая рука ветка</AE_SnowMan.tools.right_stick_arm.label>
+	<AE_SnowMan.tools.right_stick_arm.labelNoLocation>рука ветка</AE_SnowMan.tools.right_stick_arm.labelNoLocation>
+	<AE_SnowMan.tools.carrot_nose.label>нос морковка</AE_SnowMan.tools.carrot_nose.label>
+
+</LanguageData>
