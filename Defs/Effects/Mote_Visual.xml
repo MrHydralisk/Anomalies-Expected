@@ -30,5 +30,47 @@
 			</shaderParameters>
 		</graphicData>
 	</ThingDef>
+
+
+
+	<ThingDef ParentName="MoteBase">
+		<defName>AE_AtmosphericHeaterGlowingVentsInv</defName>
+		<thingClass>MoteAttached</thingClass>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<fadeInTime>0</fadeInTime>
+			<solidTime>77777</solidTime>
+			<fadeOutTime>1</fadeOutTime>
+			<needsMaintenance>true</needsMaintenance>
+		</mote>
+		<graphicData>
+			<texPath>Things/Mote/AE_AtmosphericHeaterVentsInv</texPath>
+			<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+			<renderInstanced>true</renderInstanced>
+			<shaderType>MoteGlowPulse</shaderType>
+			<shaderParameters>
+				<_Interval>.5</_Interval>
+				<_PulseMin>.8</_PulseMin>
+				<_PulseMax>1</_PulseMax>
+			</shaderParameters>
+		</graphicData>
+	</ThingDef>
+	
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>AE_HeatDistortionInv</defName>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <texPath>Things/Mote/AE_HeatDistortionInv</texPath>
+      <shaderType>MoteHeatDistortion</shaderType>
+      <shaderParameters>
+        <_distortionIntensity>.01</_distortionIntensity>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>2</fadeInTime>
+    <solidTime>5</solidTime>
+    <fadeOutTime>2</fadeOutTime>
+    <growthRate>0</growthRate>
+  </FleckDef>
   
 </Defs>

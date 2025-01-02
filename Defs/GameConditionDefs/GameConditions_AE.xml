@@ -27,5 +27,21 @@
 		<canBePermanent>false</canBePermanent>
 		<natural>false</natural>
 	</GameConditionDef>
+
+	<GameConditionDef>
+		<defName>AE_UnnaturalCold</defName>
+		<conditionClass>AnomaliesExpected.GameCondition_UnnaturalCold</conditionClass>
+		<label>unnatural cold</label>
+		<description>A thermal projection device is agitating gas molecules in the atmosphere, decreasing outdoor temperatures.</description>
+		<displayOnUI>false</displayOnUI>
+	</GameConditionDef>
+
+	<GameConditionDef>
+		<defName>AE_UnnaturalTemperature</defName>
+		<conditionClass>AnomaliesExpected.GameCondition_UnnaturalTemperature</conditionClass>
+		<label>unnatural temperature</label>
+		<description>A thermal projection device is agitating gas molecules in the atmosphere, changing outdoor temperatures.</description>
+		<displayOnUI>false</displayOnUI>
+	</GameConditionDef>
   
 </Defs>

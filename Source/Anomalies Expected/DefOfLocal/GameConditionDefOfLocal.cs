@@ -9,5 +9,9 @@ namespace AnomaliesExpected
         [MayRequireAnomaly]
         public static GameConditionDef AE_BloodFog;
         public static GameConditionDef AE_TemperatureDrop;
+        [MayRequireAnomaly]
+        public static GameConditionDef AE_UnnaturalCold;
+        [MayRequireAnomaly]
+        public static GameConditionDef AE_UnnaturalTemperature;
     }
 }

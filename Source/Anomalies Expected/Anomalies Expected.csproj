@@ -42,9 +42,14 @@
     <Compile Include="Building\Building_AEChristmasTreeExit.cs" />
     <Compile Include="MapComponent\ChristmasTreeMapComponent.cs" />
     <Compile Include="Building\Building_AEBloodLake.cs" />
+    <Compile Include="Comp\Comp_AtmosphericController.cs" />
+    <Compile Include="Comp\Comp_HeatPusher.cs" />
+    <Compile Include="Comp\Comp_AtmosphericCooler.cs" />
     <Compile Include="Comp\Comp_EntityWithWeapon.cs" />
     <Compile Include="DamageWorker\DamageWorker_Freezing.cs" />
     <Compile Include="DefModExtension\AE_DamageDefExtension.cs" />
+    <Compile Include="GameCondition\GameCondition_UnnaturalTemperature.cs" />
+    <Compile Include="GameCondition\GameCondition_UnnaturalCold.cs" />
     <Compile Include="GameCondition\GameCondition_AETemperatureDrop.cs" />
     <Compile Include="GenStep\GenStep_ChristmasTreeSnowMan.cs" />
     <Compile Include="GenStep\GenStep_ChristmasTreeGiftBoxes.cs" />
@@ -164,7 +169,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>1.5.4069</Version>
+      <Version>1.5.4297</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

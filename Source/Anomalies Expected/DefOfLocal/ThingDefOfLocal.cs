@@ -24,5 +24,9 @@ namespace AnomaliesExpected
         public static ThingDef AE_ChristmasTree;
         [MayRequireAnomaly]
         public static ThingDef AE_ChristmasTreeExit;
+        [MayRequireAnomaly]
+        public static ThingDef AE_AtmosphericCooler;
+        [MayRequireAnomaly]
+        public static ThingDef AE_AtmosphericController;
     }
 }
