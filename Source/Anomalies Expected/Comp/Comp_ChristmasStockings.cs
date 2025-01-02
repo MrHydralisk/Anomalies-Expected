@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using Verse;
+using Verse.Noise;
 
 namespace AnomaliesExpected
 {
@@ -24,7 +25,7 @@ namespace AnomaliesExpected
             }
         }
 
-        public override void PostDeSpawn(Map map)
+        public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
             ThingWithComps gift = ThingMaker.MakeThing(Props.lastGift) as ThingWithComps;
             gift.SetFactionDirect(Faction.OfPlayer);
@@ -36,9 +37,9 @@ namespace AnomaliesExpected
                     compAEStudyUnlocks.AddStudyNoteLetter(letter);
                 }
             }
-            GenPlace.TryPlaceThing(gift, parent.Position, map, ThingPlaceMode.Near);
+            GenPlace.TryPlaceThing(gift, parent.Position, previousMap, ThingPlaceMode.Near);
             compAEStudyUnlocks.UnlockStudyNoteManual(0);
-            base.PostDeSpawn(map);
+            base.PostDestroy(mode, previousMap);
         }
 
         private void TakeGift(Pawn pawn)
