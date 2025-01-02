@@ -660,6 +660,7 @@
 				<interactionEffecter>FillIn</interactionEffecter>
 				
 				<cooldownFleck>DirtBitsArching</cooldownFleck>
+				<cooldownFleckSpawnIntervalTicks>60</cooldownFleckSpawnIntervalTicks>
 
 				<targetingParameters>
 					<canTargetBuildings>false</canTargetBuildings>
@@ -850,6 +851,7 @@
 				<interactionEffecter>FillIn</interactionEffecter>
 				
 				<cooldownFleck>DirtBitsArching</cooldownFleck>
+				<cooldownFleckSpawnIntervalTicks>60</cooldownFleckSpawnIntervalTicks>
 
 				<targetingParameters>
 					<canTargetBuildings>false</canTargetBuildings>

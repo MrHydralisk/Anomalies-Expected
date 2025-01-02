@@ -463,6 +463,7 @@
 				<interactionEffecter>Tailor</interactionEffecter>
 				
 				<cooldownFleck>SnowBits</cooldownFleck>
+				<cooldownFleckSpawnIntervalTicks>60</cooldownFleckSpawnIntervalTicks>
 
 				<targetingParameters>
 					<canTargetBuildings>false</canTargetBuildings>
