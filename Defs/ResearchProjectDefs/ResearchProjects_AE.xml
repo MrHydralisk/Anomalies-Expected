@@ -396,7 +396,7 @@
 		<defName>AEAtmosphericCooler</defName>
 		<label>atmospheric cooler</label>
 		<description>Build ice crystal-powered coolers that can effectively cool an entire region.</description>
-		<tab>Anomaly</tab>
+		<tab>AnomaliesExpected</tab>
 		<prerequisites>
 			<li>BioferriteGenerator</li>
 		</prerequisites>
@@ -410,7 +410,7 @@
 		<defName>AEAtmosphericController</defName>
 		<label>atmospheric controller</label>
 		<description>Build destabilized ice crystal-powered controller consisting of both bioferrite-powered heaters and ice crystal-powered coolers with higher effeciency to control temperature of an entire region.</description>
-		<tab>Anomaly</tab>
+		<tab>AnomaliesExpected</tab>
 		<prerequisites>
 			<li>AtmosphericHeater</li>
 			<li>AEAtmosphericCooler</li>
