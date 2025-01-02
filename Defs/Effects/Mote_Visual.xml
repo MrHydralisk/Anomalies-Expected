@@ -55,22 +55,5 @@
 			</shaderParameters>
 		</graphicData>
 	</ThingDef>
-	
-  <FleckDef ParentName="FleckBase_Thrown">
-    <defName>AE_HeatDistortionInv</defName>
-    <graphicData>
-      <graphicClass>Graphic_FleckPulse</graphicClass>
-      <texPath>Things/Mote/AE_HeatDistortionInv</texPath>
-      <shaderType>MoteHeatDistortion</shaderType>
-      <shaderParameters>
-        <_distortionIntensity>.01</_distortionIntensity>
-      </shaderParameters>
-    </graphicData>
-    <altitudeLayer>MoteOverhead</altitudeLayer>
-    <fadeInTime>2</fadeInTime>
-    <solidTime>5</solidTime>
-    <fadeOutTime>2</fadeOutTime>
-    <growthRate>0</growthRate>
-  </FleckDef>
   
 </Defs>

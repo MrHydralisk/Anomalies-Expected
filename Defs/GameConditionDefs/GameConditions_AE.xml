@@ -16,6 +16,8 @@
 		<allowUnderground>false</allowUnderground>
 		<pennedAnimalsSeekShelter>true</pennedAnimalsSeekShelter>
 	</GameConditionDef>
+	
+	
 
 	<GameConditionDef>
 		<defName>AE_TemperatureDrop</defName>
