@@ -342,6 +342,8 @@
 		<researchViewX>7</researchViewX>
 		<researchViewY>3</researchViewY>
 	</ResearchProjectDef>
+	
+	
 
 	<ResearchProjectDef>
 		<defName>AEStudyNotepad</defName>
@@ -353,6 +355,8 @@
 		<researchViewX>0</researchViewX>
 		<researchViewY>4</researchViewY>
 	</ResearchProjectDef>
+	
+	
 
 	<ResearchProjectDef>
 		<defName>AEProviderScripture</defName>
@@ -383,6 +387,38 @@
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>5</researchViewX>
 		<researchViewY>4</researchViewY>
+	</ResearchProjectDef>
+	
+	
+	
+
+	<ResearchProjectDef>
+		<defName>AEAtmosphericCooler</defName>
+		<label>atmospheric cooler</label>
+		<description>Build ice crystal-powered coolers that can effectively cool an entire region.</description>
+		<tab>Anomaly</tab>
+		<prerequisites>
+			<li>BioferriteGenerator</li>
+		</prerequisites>
+		<knowledgeCost>60</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>4</researchViewX>
+		<researchViewY>5</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>AEAtmosphericController</defName>
+		<label>atmospheric controller</label>
+		<description>Build destabilized ice crystal-powered controller consisting of both bioferrite-powered heaters and ice crystal-powered coolers with higher effeciency to control temperature of an entire region.</description>
+		<tab>Anomaly</tab>
+		<prerequisites>
+			<li>AtmosphericHeater</li>
+			<li>AEAtmosphericCooler</li>
+		</prerequisites>
+		<knowledgeCost>150</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>5</researchViewX>
+		<researchViewY>5</researchViewY>
 	</ResearchProjectDef>
 
 </Defs>

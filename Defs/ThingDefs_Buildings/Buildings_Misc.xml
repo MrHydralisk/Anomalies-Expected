@@ -201,7 +201,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>AE_AtmosphericCooler</defName>
 		<label>atmospheric cooler</label>
-		<description>A thermal projection device powered by scavenged shards of dark archotechnology. The device burns bioferrite to agitate gas molecules in the atmosphere, decreasing the local outdoor temperature. The building itself also produces huge amounts of waste heat.</description>
+		<description>A thermal absorption device powered by scavenged shards of dark archotechnology. The device spread dust of ice crystal to calm gas molecules in the atmosphere, decreasing the local outdoor temperature. The building itself also produces huge amounts of cold air.</description>
 		<graphicData>
 			<texPath>Things/Building/AE_AtmosphericCooler</texPath>
 			<graphicClass>Graphic_Indexed</graphicClass>
@@ -216,7 +216,7 @@
 		<passability>PassThroughOnly</passability>
 		<pathCost>50</pathCost>
 		<researchPrerequisites>
-			<li>AtmosphericHeater</li>
+			<li>AEAtmosphericCooler</li>
 		</researchPrerequisites>
 		<building>
 			<claimable>false</claimable>
@@ -252,11 +252,11 @@
 				<inspectString>Target outdoor temperature</inspectString>
 			</li>
 			<li Class="CompProperties_Refuelable">
-				<fuelConsumptionRate>8</fuelConsumptionRate>
-				<fuelCapacity>80.0</fuelCapacity>
+				<fuelConsumptionRate>4</fuelConsumptionRate>
+				<fuelCapacity>40.0</fuelCapacity>
 				<fuelFilter>
 					<thingDefs>
-						<li>Bioferrite</li>
+						<li>AE_IceCrystal</li>
 					</thingDefs>
 				</fuelFilter>
 				<externalTicking>true</externalTicking>
@@ -288,7 +288,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>AE_AtmosphericController</defName>
 		<label>atmospheric controller</label>
-		<description>A thermal projection device powered by scavenged shards of dark archotechnology. The device burns bioferrite to agitate gas molecules in the atmosphere, changing the local outdoor temperature. The building itself also produces huge amounts of waste heat.</description>
+		<description>A hybrid thermal control device powered by scavenged shards of dark archotechnology, that combines features of atmospheric heater and atmospheric cooler.\nIn heater mode device burns distabilized ice crystal to agitate gas molecules in the atmosphere, raising the local outdoor temperature.\nIn cooler mode device spread dust of distabilized ice crystal to calm gas molecules in the atmosphere, decreasing the local outdoor temperature.\nDistabilized ice crystal have higher efficiency, than bioferrite or ice crystal alone. Depending on a current mode building itself also produces enormous amounts of waste heat or cold air.</description>
 		<graphicData>
 			<texPath>Things/Building/AE_AtmosphericController</texPath>
 			<graphicClass>Graphic_Indexed</graphicClass>
@@ -303,7 +303,7 @@
 		<passability>PassThroughOnly</passability>
 		<pathCost>50</pathCost>
 		<researchPrerequisites>
-			<li>AtmosphericHeater</li>
+			<li>AEAtmosphericController</li>
 		</researchPrerequisites>
 		<building>
 			<claimable>false</claimable>
@@ -316,7 +316,8 @@
 			<Shard>5</Shard>
 			<Bioferrite>300</Bioferrite>
 			<Steel>300</Steel>
-			<ComponentIndustrial>16</ComponentIndustrial>
+			<ComponentIndustrial>10</ComponentIndustrial>
+			<ComponentSpacer>4</ComponentSpacer>
 		</costList>
 		<statBases>
 			<Beauty>-60</Beauty>
@@ -339,11 +340,11 @@
 				<inspectString>Target outdoor temperature</inspectString>
 			</li>
 			<li Class="CompProperties_Refuelable">
-				<fuelConsumptionRate>8</fuelConsumptionRate>
-				<fuelCapacity>160.0</fuelCapacity>
+				<fuelConsumptionRate>4</fuelConsumptionRate>
+				<fuelCapacity>80.0</fuelCapacity>
 				<fuelFilter>
 					<thingDefs>
-						<li>Bioferrite</li>
+						<li>AE_IceCrystalDistabilized</li>
 					</thingDefs>
 				</fuelFilter>
 				<externalTicking>true</externalTicking>

@@ -320,5 +320,59 @@
 			<li>Manufactured</li>
 		</thingCategories>
 	</ThingDef>
+	
+	
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>AE_IceCrystal</defName>
+		<label>ice crystal</label>
+		<description>An exotic crystal, visually indistinguishable from ice, remains cold and solid regardless of external temperature. Can be extracted from related anomalies. Its dust can drastically lower temperature of surrounding air.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/AE_IceCrystal</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(0.75, 0.75)</drawSize>
+		</graphicData>
+		<genericMarketSellable>false</genericMarketSellable>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+			<MarketValue>1.5</MarketValue>
+			<Flammability>0</Flammability>
+			<Mass>0.5</Mass>
+		</statBases>
+		<tradeability>Sellable</tradeability>
+		<stackLimit>75</stackLimit>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>AE_IceCrystalDistabilized</defName>
+		<label>distabilized ice crystal</label>
+		<description>A fusion of exotic ice crystal with bioferrite destabilizes the crystal's molecular structure, resulting in contradictory properties. Burning of this mixture releases a significant amount of energy. Its dust can drastically lower temperature of surrounding air.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/AE_IceCrystalDistabilized</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(0.75, 0.75)</drawSize>
+		</graphicData>
+		<genericMarketSellable>false</genericMarketSellable>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+			<MarketValue>3</MarketValue>
+			<Flammability>0</Flammability>
+			<Mass>1</Mass>
+		</statBases>
+		<tradeability>Sellable</tradeability>
+		<stackLimit>75</stackLimit>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+	</ThingDef>
 
 </Defs>
