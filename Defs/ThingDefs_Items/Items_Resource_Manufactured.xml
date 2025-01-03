@@ -16,6 +16,7 @@
 		<statBases>
 			<MarketValue>35</MarketValue>
 		</statBases>
+		<genericMarketSellable>false</genericMarketSellable>
 		<tradeability>Sellable</tradeability>
 		<comps>
 			<li Class="CompProperties_UseEffectAddHediff">
@@ -56,6 +57,7 @@
 		<statBases>
 			<MarketValue>70</MarketValue>
 		</statBases>
+		<genericMarketSellable>false</genericMarketSellable>
 		<tradeability>Sellable</tradeability>
 		<comps>
 			<li Class="CompProperties_UseEffectAddHediff">
@@ -137,6 +139,7 @@
 		<statBases>
 			<MarketValue>30</MarketValue>
 		</statBases>
+		<tradeability>Sellable</tradeability>
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_UseEffectAddMentalState">
 				<mentalStateDef>Binging_Food</mentalStateDef>
@@ -183,6 +186,7 @@
 			<MarketValue>65</MarketValue>
 			<Nutrition>1</Nutrition>
 		</statBases>
+		<genericMarketSellable>false</genericMarketSellable>
 		<tradeability>Sellable</tradeability>
 		<comps>
 			<li Class="CompProperties_UseEffectAddHediff">
@@ -221,6 +225,7 @@
 		<statBases>
 			<MarketValue>12</MarketValue>
 		</statBases>
+		<genericMarketSellable>false</genericMarketSellable>
 		<tradeability>Sellable</tradeability>
 		<ingestible>
 			<ingestCommandString>Inject self with {0}</ingestCommandString>
