@@ -36,11 +36,6 @@ namespace AnomaliesExpected
         public int NewYearTick;
         public int NextNewYearTick => Mathf.CeilToInt(Find.TickManager.TicksGame / 3600000f) * 3600000;
 
-        public override void SpawnSetup(Map map, bool respawningAfterLoad)
-        {
-            base.SpawnSetup(map, respawningAfterLoad);
-        }
-
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
             if (isSubMapExist)

@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using Verse;
-using Verse.Noise;
 
 namespace AnomaliesExpected
 {
@@ -16,13 +15,10 @@ namespace AnomaliesExpected
 
         public int giftAmount;
 
-        public override void PostSpawnSetup(bool respawningAfterLoad)
+        public override void PostPostMake()
         {
-            base.PostSpawnSetup(respawningAfterLoad);
-            if (!respawningAfterLoad)
-            {
-                giftAmount = Props.giftAmount;
-            }
+            base.PostPostMake();
+            giftAmount = Props.giftAmount;
         }
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)

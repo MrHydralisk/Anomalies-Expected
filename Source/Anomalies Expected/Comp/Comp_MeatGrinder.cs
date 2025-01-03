@@ -50,14 +50,11 @@ namespace AnomaliesExpected
         protected CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = parent.TryGetComp<CompAEStudyUnlocks>());
         private CompAEStudyUnlocks studyUnlocksCached;
 
-        public override void PostSpawnSetup(bool respawningAfterLoad)
+        public override void PostPostMake()
         {
-            base.PostSpawnSetup(respawningAfterLoad);
-            if (!respawningAfterLoad)
-            {
-                TickFrom = Find.TickManager.TicksGame;
-                TickForced = Find.TickManager.TicksGame + 180000;
-            }
+            base.PostPostMake();
+            TickFrom = Find.TickManager.TicksGame;
+            TickForced = Find.TickManager.TicksGame + 180000;
         }
 
         public override void CompTick()

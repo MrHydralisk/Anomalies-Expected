@@ -474,6 +474,7 @@
 				
 				<jobDef>AE_RemoveAnomaly</jobDef>
 			</li>
+			<li Class="CompProperties_Forbiddable"/>
 		</comps>
 		<inspectorTabs>
 			<li>ITab_StudyNotes</li>

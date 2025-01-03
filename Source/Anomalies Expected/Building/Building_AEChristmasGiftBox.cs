@@ -8,13 +8,10 @@ namespace AnomaliesExpected
     {
         public override int OpenTicks => (int)def.building.uninstallWork;
 
-        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        public override void PostMake()
         {
-            base.SpawnSetup(map, respawningAfterLoad);
-            if (!respawningAfterLoad)
-            {
-                DrawColor = new Color(Rand.Range(0, 1f), Rand.Range(0, 1f), Rand.Range(0, 1f));
-            }
+            base.PostMake();
+            DrawColor = new Color(Rand.Range(0, 1f), Rand.Range(0, 1f), Rand.Range(0, 1f));
         }
 
         public override void EjectContents()

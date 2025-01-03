@@ -15,8 +15,6 @@ namespace AnomaliesExpected
         private int beamMaxCount = 1;
         private int TickNextState = 20000;
 
-        private bool isActive;
-
         private BeamTargetState beamTargetState = BeamTargetState.Searching;
 
         protected CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = parent.TryGetComp<CompAEStudyUnlocks>());
@@ -24,22 +22,20 @@ namespace AnomaliesExpected
 
         public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? 4) < 4;
 
+        public override void PostPostMake()
+        {
+            base.PostPostMake();
+            TickNextState = Find.TickManager.TicksGame + Props.beamIntervalRange.max;
+        }
+
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
             if (!respawningAfterLoad)
             {
-                if (isActive)
+                if (beamTargetState == BeamTargetState.Activating)
                 {
-                    if (beamTargetState == BeamTargetState.Activating)
-                    {
-                        TickNextState = Find.TickManager.TicksGame + Math.Max(TickNextState - Find.TickManager.TicksGame + Props.ticksWhenCarried, Props.ticksWhenCarried);
-                    }
-                }
-                else
-                {
-                    TickNextState = Find.TickManager.TicksGame + Props.beamIntervalRange.max;
-                    isActive = true;
+                    TickNextState = Find.TickManager.TicksGame + Math.Max(TickNextState - Find.TickManager.TicksGame + Props.ticksWhenCarried, Props.ticksWhenCarried);
                 }
             }
         }
@@ -216,7 +212,6 @@ namespace AnomaliesExpected
             Scribe_Values.Look(ref beamNextCount, "beamNextCount", 1);
             Scribe_Values.Look(ref beamMaxCount, "beamMaxCount", 1);
             Scribe_Values.Look(ref TickNextState, "TickNextState", Find.TickManager.TicksGame + Props.beamIntervalRange.min);
-            Scribe_Values.Look(ref isActive, "isActive", true);
             Scribe_Values.Look(ref beamTargetState, "beamTargetState", BeamTargetState.Searching);
         }
 

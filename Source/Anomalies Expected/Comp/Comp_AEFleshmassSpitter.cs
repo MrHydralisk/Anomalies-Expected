@@ -62,14 +62,11 @@ namespace AnomaliesExpected
             return false;
         }
 
-        public override void PostSpawnSetup(bool respawningAfterLoad)
+        public override void PostPostMake()
         {
-            SetupVerbs();
-            if (!respawningAfterLoad)
-            {
-                lastSpitTick = Find.TickManager.TicksGame;
-                nextSpitDelay = Props.SpitIntervalInitRangeTicks.RandomInRange;
-            }
+            base.PostPostMake();
+            lastSpitTick = Find.TickManager.TicksGame;
+            nextSpitDelay = Props.SpitIntervalInitRangeTicks.RandomInRange;
         }
 
         public override void PostExposeData()

@@ -24,13 +24,15 @@ namespace AnomaliesExpected
 
         public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? 4) < 4;
 
+        public override void PostPostMake()
+        {
+            base.PostPostMake();
+            TickSpawn = Find.TickManager.TicksGame + Props.tickPerSpawn;
+        }
+
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            if (!respawningAfterLoad)
-            {
-                TickSpawn = Find.TickManager.TicksGame + Props.tickPerSpawn;
-            }
             CalculatePiePieces();
         }
 
