@@ -24,7 +24,25 @@ namespace AnomaliesExpected
 
         public int NextIndex => nextIndex;
 
-        public List<Thing> spawnedRelatedAnalyzableThing = new List<Thing>();
+        public List<Thing> SpawnedRelatedAnalyzableThing
+        {
+            get
+            {
+                if (spawnedRelatedAnalyzableThing == null)
+                {
+                    spawnedRelatedAnalyzableThing = new List<Thing>();
+                }
+                for (int i = spawnedRelatedAnalyzableThing.Count() - 1; i >= 0; i--)
+                {
+                    if (spawnedRelatedAnalyzableThing[i] == null)
+                    {
+                        spawnedRelatedAnalyzableThing.RemoveAt(i);
+                    }
+                }
+                return spawnedRelatedAnalyzableThing;
+            }
+        }
+        private List<Thing> spawnedRelatedAnalyzableThing = new List<Thing>();
 
         public override string TransformLabel(string label)
         {
@@ -167,17 +185,21 @@ namespace AnomaliesExpected
                 currentAnomalyLabel = aestudyNote.AnomalyLabel;
                 currentAnomalyDesc = aestudyNote.AnomalyDesc;
                 currentAnomalyDescPart = aestudyNote.AnomalyDescPart;
-                if (aestudyNote.ThingDefSpawn != null && !spawnedRelatedAnalyzableThing.Any((Thing t) => t.def == aestudyNote.ThingDefSpawn))
+                if (aestudyNote.ThingDefSpawn != null && !SpawnedRelatedAnalyzableThing.Any((Thing t) => t.def == aestudyNote.ThingDefSpawn))
                 {
                     //CompProperties_CompAnalyzableUnlockResearch comp = aestudyNote.ThingDefSpawn.GetCompProperties<CompProperties_CompAnalyzableUnlockResearch>();
                     //int analysisID = comp?.analysisID ?? (-1);
                     //Find.AnalysisManager.TryGetAnalysisProgress(analysisID, out var details);
                     //if (!(details?.Satisfied ?? false) && parent.Map.listerThings.ThingsOfDef(aestudyNote.ThingDefSpawn).NullOrEmpty())
                     //{
-                    ThingWithComps thing = ThingMaker.MakeThing(aestudyNote.ThingDefSpawn) as ThingWithComps;
-                    spawnedRelatedAnalyzableThing.Add(thing);
                     Thing monolith = Find.Anomaly.monolith;
-                    GenPlace.TryPlaceThing(thing, monolith.Position, monolith.Map, ThingPlaceMode.Near, null);
+                    if (monolith == null || monolith.Map == null)
+                    {
+                        monolith = parent;
+                    }
+                    ThingWithComps thing = ThingMaker.MakeThing(aestudyNote.ThingDefSpawn) as ThingWithComps;
+                    SpawnedRelatedAnalyzableThing.Add(thing);
+                    GenPlace.TryPlaceThing(thing, monolith.Position, monolith.Map, ThingPlaceMode.Near);
                     CompAnalyzableUnlockResearch compAnalyzable;
                     if ((compAnalyzable = thing.GetComp<CompAnalyzableUnlockResearch>()) == null || compAnalyzable.ResearchUnlocked.Any(r => !r.AnalyzedThingsRequirementsMet))
                     {
@@ -192,7 +214,7 @@ namespace AnomaliesExpected
         {
             base.PostExposeData();
             Scribe_References.Look(ref parentThing, "parentThing");
-            Scribe_Collections.Look(ref spawnedRelatedAnalyzableThing, "spawnedRelatedAnalyzableThing", LookMode.Reference);
+            Scribe_Collections.Look(ref spawnedRelatedAnalyzableThing, "spawnedRelatedAnalyzableThing", LookMode.Deep);
         }
     }
 }
