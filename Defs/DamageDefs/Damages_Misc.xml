@@ -28,6 +28,8 @@
 		<hediff>AEFreezing</hediff>
 		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
 		<canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+		<armorCategory>Blunt</armorCategory>
+		<makesBlood>false</makesBlood>
 		<isRanged>true</isRanged>
 		<makesAnimalsFlee>true</makesAnimalsFlee>
 	</DamageDef>

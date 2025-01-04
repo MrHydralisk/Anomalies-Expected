@@ -21,7 +21,7 @@
 		<defName>AE_ChristmasTreeGiftBoxes</defName>
 		<order>351</order>
 		<genStep Class="AnomaliesExpected.GenStep_ChristmasTreeGiftBoxes">
-			<amountOfGiftBoxes>25</amountOfGiftBoxes>
+			<amountOfGiftBoxes>20</amountOfGiftBoxes>
 			<giftBoxDef>AE_ChristmasGiftBox</giftBoxDef>
 			<thingSetMakerDef>MapGen_AEChristmasTreeGiftBoxLoot</thingSetMakerDef>
 		</genStep>
@@ -31,10 +31,10 @@
 		<defName>AE_ChristmasTreeSnowMan</defName>
 		<order>352</order>
 		<genStep Class="AnomaliesExpected.GenStep_ChristmasTreeSnowMan">
-			<decoSnowManCount>15</decoSnowManCount>
+			<decoSnowManCount>30</decoSnowManCount>
 			<pawnKindCount>
 				<kindDef>AE_SnowMan</kindDef>
-				<count>15</count>
+				<count>18</count>
 			</pawnKindCount>
 		</genStep>
 	</GenStepDef>

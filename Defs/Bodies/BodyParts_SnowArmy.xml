@@ -19,6 +19,9 @@
 	<BodyPartDef ParentName="BodyPart_BaseSnowBall">
 		<defName>AE_SnowBallBottom</defName>
 		<hitPoints>80</hitPoints>
+		<tags>
+			<li>MovingLimbCore</li>
+		</tags>
 	</BodyPartDef>
 
 	<BodyPartDef>
@@ -28,6 +31,7 @@
 		<skinCovered>false</skinCovered>
 		<tags>
 			<li>BloodPumpingSource</li>
+			<li>ConsciousnessSource</li>
 		</tags>
 		<canSuggestAmputation>false</canSuggestAmputation>
 	</BodyPartDef>
@@ -45,6 +49,7 @@
 		<beautyRelated>true</beautyRelated>
 		<tags>
 			<li>SightSource</li>
+			<li>Mirrored</li>
 		</tags>
 		<hitChanceFactors>
 			<li>
@@ -92,7 +97,8 @@
 		<skinCovered>true</skinCovered>
 		<canScarify>true</canScarify>
 		<tags>
-			<li>MovingLimbCore</li>
+			<li>MovingLimbSegment</li>
+			<li>Mirrored</li>
 		</tags>
 	</BodyPartDef>
   

@@ -283,11 +283,11 @@
 		<letterLabel>Found red stockings</letterLabel>
 		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a red stockings, featuring white details and a snowflake symbol. It appear to be filled with something.</letterText>
 		<letterDef>NeutralEvent</letterDef>
-		<earliestDay>5</earliestDay> <!-- 30 -->
-		<baseChance>1</baseChance> <!-- 0.2 -->
+		<earliestDay>60</earliestDay> <!-- 60 -->
+		<baseChance>0.2</baseChance> <!-- 0.2 -->
 		<requireColonistsPresent>True</requireColonistsPresent>
 		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
-		<minRefireDays>10</minRefireDays> <!-- 60 -->
+		<minRefireDays>60</minRefireDays> <!-- 60 -->
 		<modExtensions>
 			<li Class="AnomaliesExpected.IncidentDefExtension">
 				<DeployableThingDefs>

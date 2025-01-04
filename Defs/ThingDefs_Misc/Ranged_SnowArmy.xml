@@ -65,7 +65,7 @@
 			<AccuracyShort>0.50</AccuracyShort>
 			<AccuracyMedium>0.26</AccuracyMedium>
 			<AccuracyLong>0.1</AccuracyLong>
-			<RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
 		</statBases>
 		<weaponTags>
 			<li>Gun_AESnowBall</li>
@@ -84,8 +84,8 @@
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Gun_AESnowBall_Thrown</defaultProjectile>
-				<warmupTime>0.5</warmupTime>
-				<range>22.9</range>
+				<warmupTime>0.4</warmupTime>
+				<range>18.9</range>
 				<soundCast>Interact_BeatFire</soundCast>
 				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
 			</li>
