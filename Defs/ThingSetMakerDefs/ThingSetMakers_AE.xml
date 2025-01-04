@@ -4,7 +4,7 @@
 	<ThingSetMakerDef>
 		<defName>MapGen_AEChristmasTreeGiftBoxLoot</defName>
 		<debugParams>
-		<totalMarketValueRange>500~1500</totalMarketValueRange>
+		<totalMarketValueRange>400~800</totalMarketValueRange>
 		</debugParams>
 		<root Class="ThingSetMaker_RandomOption">
 			<options>

@@ -3,13 +3,13 @@
 
 	<ThingDef ParentName="BasePawn" Name="BaseAESnowMan" Abstract="True">
 		<statBases>
-			<ComfyTemperatureMin>-100</ComfyTemperatureMin>
+			<ComfyTemperatureMin>-2000</ComfyTemperatureMin>
 			<ComfyTemperatureMax>20</ComfyTemperatureMax>
 			<Flammability>2</Flammability>
 			<ToxicResistance>1</ToxicResistance>
 			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
-			<ArmorRating_Sharp>1.3</ArmorRating_Sharp>
-			<ArmorRating_Blunt>0.65</ArmorRating_Blunt>
+			<ArmorRating_Sharp>1.1</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.55</ArmorRating_Blunt>
 			<ArmorRating_Heat>0</ArmorRating_Heat>
 			<PainShockThreshold>0.99</PainShockThreshold>
 			<PsychicSensitivity>0</PsychicSensitivity>
@@ -56,7 +56,7 @@
 		<label>snowman</label>
 		<description>The Snowman appears harmless and made out of few big snowballs. However, its icy snow body proves surprisingly resilient, quickly dispelling any illusions of innocence. They can attack by throwing snowballs at enemies or scratching them with their stick arms. They can survive even with substantial part of their body being missing.</description>
 		<statBases>
-			<MoveSpeed>3.8</MoveSpeed>
+			<MoveSpeed>3.2</MoveSpeed>
 			<MinimumContainmentStrength>75</MinimumContainmentStrength>
 		</statBases>
 		<uiIconPath>Things/Pawn/SnowArmy/SnowMan/AE_SnowMan_south</uiIconPath>
