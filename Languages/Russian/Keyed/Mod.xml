@@ -10,6 +10,8 @@
 	<AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter>Письмо вместо уведомления, когда Передатчик покидает зону содержания</AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter>
 	
 	<AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestMult>Установить множитель на количество очков опасности для вычисления количества генерируемых биошматов в гнёздах {0}</AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestMult>
+	<AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestFrequencyMult>Установить множитель на количество времени между генерируемыми биошматами в гнёздах {0}</AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestFrequencyMult>
+	<AnomaliesExpected.Settings.BloodLake.BloodLakeSubMapMaxSize>Установить ограничитель на максимальный размер гененрируемой Озером карты на {0}x{0} (по умолчанию использует тот же размер что и карта колонии)\n(Размер влияет на количество лута, врагов и на требуемые ресурся компьютера)</AnomaliesExpected.Settings.BloodLake.BloodLakeSubMapMaxSize>
 	
 	<AnomaliesExpected.Settings.ResearchTab.Unlock>Попытаться разблокировать Anomalies Expected исследовательские проекты</AnomaliesExpected.Settings.ResearchTab.Unlock>
 </LanguageData>

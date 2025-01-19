@@ -158,7 +158,7 @@ namespace AnomaliesExpected
                         emergingFleshbeasts.Clear();
                     }
                     Messages.Message("AnomaliesExpected.BloodLake.UndergroundNestSpawn".Translate().RawText, UndergroundNest, MessageTypeDefOf.NegativeEvent);
-                    TickNextSummon = Find.TickManager.TicksGame + ticksPerSummonRange.RandomInRange;
+                    TickNextSummon = Find.TickManager.TicksGame + Mathf.RoundToInt(ticksPerSummonRange.RandomInRange * AEMod.Settings.UndergroundFleshmassNestFrequencyMult);
                 }
             }
         }
