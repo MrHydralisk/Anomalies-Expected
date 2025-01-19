@@ -31,7 +31,7 @@ namespace AnomaliesExpected
             options.Label("AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestFrequencyMult".Translate(Settings.UndergroundFleshmassNestFrequencyMult.ToString()));
             Settings.UndergroundFleshmassNestFrequencyMult = Mathf.Round(options.Slider(Settings.UndergroundFleshmassNestFrequencyMult, 0.1f, 2f) * 10f) / 10f;
             options.Label("AnomaliesExpected.Settings.BloodLake.BloodLakeSubMapMaxSize".Translate(Settings.BloodLakeSubMapMaxSize.ToString()));
-            Settings.BloodLakeSubMapMaxSize = Mathf.RoundToInt(options.Slider(Settings.BloodLakeSubMapMaxSize, 50, 325));
+            Settings.BloodLakeSubMapMaxSize = Mathf.RoundToInt(options.Slider(Settings.BloodLakeSubMapMaxSize, 75, 325));
             options.GapLine();
             if (Current.Game != null && options.ButtonText("AnomaliesExpected.Settings.ResearchTab.Unlock".Translate().RawText))
             {
