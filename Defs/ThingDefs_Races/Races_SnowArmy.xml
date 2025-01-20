@@ -69,6 +69,7 @@
 			<lifeExpectancy>15</lifeExpectancy>
 			<soundMoving>Pawn_Fleshbeast_Bulbfreak_Moving</soundMoving>
 			<renderTree>AE_SnowMan</renderTree>
+			<corpseHiddenWhileUndiscovered>true</corpseHiddenWhileUndiscovered>
 			<lifeStageAges>
 				<li>
 					<def>EntityFullyFormed</def>

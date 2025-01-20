@@ -29,6 +29,11 @@
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>1.5</drawSize>
 				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/SnowArmy/SnowMan/AE_SnowMan_Dessicated</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>0.75</drawSize>
+				</dessicatedBodyGraphicData>
 			</li>
 		</lifeStages>
 		<alternateGraphicChance>0.66</alternateGraphicChance>
