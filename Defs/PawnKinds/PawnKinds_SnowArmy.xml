@@ -25,12 +25,22 @@
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/SnowArmy/SnowMan/AE_SnowMan</texPath>
+					<texPath>Things/Pawn/SnowArmy/SnowMan/AE_SnowMan_A</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>1.5</drawSize>
 				</bodyGraphicData>
 			</li>
 		</lifeStages>
+		<alternateGraphicChance>0.66</alternateGraphicChance>
+		<alternateGraphics>
+			<li>
+				<texPath>Things/Pawn/SnowArmy/SnowMan/AE_SnowMan_B</texPath>
+			</li>
+
+			<li>
+				<texPath>Things/Pawn/SnowArmy/SnowMan/AE_SnowMan_C</texPath>
+			</li>
+		</alternateGraphics>
 	</PawnKindDef>
 
 </Defs>
