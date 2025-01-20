@@ -20,7 +20,7 @@
 		<aiAvoidCover>true</aiAvoidCover>
 		<destroyGearOnDrop>true</destroyGearOnDrop>
 		<race>AE_SnowMan</race>
-		<combatPower>70</combatPower>
+		<combatPower>60</combatPower>
 		<weaponMoney>9999~9999</weaponMoney>
 		<lifeStages>
 			<li>

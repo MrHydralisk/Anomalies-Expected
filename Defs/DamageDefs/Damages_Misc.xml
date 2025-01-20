@@ -22,7 +22,7 @@
 	<DamageDef>
 		<defName>AEFreezing</defName>
 		<label>freezing</label>
-		<workerClass>DamageWorker_Frostbite</workerClass>
+		<workerClass>AnomaliesExpected.DamageWorker_Freezing</workerClass>
 		<externalViolence>true</externalViolence>
 		<deathMessage>{0} has succumbed to freezing.</deathMessage>
 		<hediff>AEFreezing</hediff>
@@ -32,6 +32,21 @@
 		<makesBlood>false</makesBlood>
 		<isRanged>true</isRanged>
 		<makesAnimalsFlee>true</makesAnimalsFlee>
+		<modExtensions>
+			<li Class="AnomaliesExpected.AE_DamageDefExtension">
+				<DamageMultiplierCurve>
+					<points>
+						<li>-200, 0</li>
+						<li>-100, 0.2</li>
+						<li>-50, 0.5</li>
+						<li>-20, 1</li>
+						<li>0, 1</li>
+						<li>20, 1.2</li>
+						<li>60, 2</li>
+					</points>
+				</DamageMultiplierCurve>
+			</li>
+		</modExtensions>
 	</DamageDef>
   
 </Defs>
