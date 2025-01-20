@@ -52,7 +52,7 @@
 		<description>The Snowball is a simple yet effective projectile weapon. Formed from compacted snow, it can be thrown with surprising force, delivering a chilling impact upon impact. While seemingly harmless, a well-aimed snowball can cause significant frozen through injuries.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/WeaponRanged/Gun_AESnowBall</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+			<graphicClass>Graphic_Random</graphicClass>
 		</graphicData>
 		<soundInteract>Interact_BeatFire</soundInteract>
 		<!-- <costList> -->
@@ -97,7 +97,7 @@
 		<label>snowball</label>
 		<graphicData>
 			<texPath>Things/Projectile/AE_SnowBall</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+			<graphicClass>Graphic_Random</graphicClass>
 		</graphicData>
 		<projectile>
 			<damageDef>AEFreezing</damageDef>
