@@ -329,7 +329,7 @@
 		<description>An exotic crystal, visually indistinguishable from ice, remains cold and solid regardless of external temperature. Can be extracted from related anomalies. Its dust can drastically lower temperature of surrounding air.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/AE_IceCrystal</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<genericMarketSellable>false</genericMarketSellable>
 		<soundInteract>Metal_Drop</soundInteract>
@@ -354,7 +354,7 @@
 		<description>A fusion of exotic ice crystal with bioferrite destabilizes the crystal's molecular structure, resulting in contradictory properties. Burning of this mixture releases a significant amount of energy. Its dust can drastically lower temperature of surrounding air.</description>
 		<graphicData>
 			<texPath>Things/Item/Resource/AE_IceCrystalDistabilized</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<genericMarketSellable>false</genericMarketSellable>
 		<soundInteract>Metal_Drop</soundInteract>
