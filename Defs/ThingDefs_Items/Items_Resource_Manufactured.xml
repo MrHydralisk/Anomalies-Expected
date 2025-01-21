@@ -330,7 +330,6 @@
 		<graphicData>
 			<texPath>Things/Item/Resource/AE_IceCrystal</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(0.75, 0.75)</drawSize>
 		</graphicData>
 		<genericMarketSellable>false</genericMarketSellable>
 		<soundInteract>Metal_Drop</soundInteract>
@@ -356,7 +355,6 @@
 		<graphicData>
 			<texPath>Things/Item/Resource/AE_IceCrystalDistabilized</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(0.75, 0.75)</drawSize>
 		</graphicData>
 		<genericMarketSellable>false</genericMarketSellable>
 		<soundInteract>Metal_Drop</soundInteract>
