@@ -21,7 +21,7 @@ namespace AnomaliesExpected
         {
             if (!__instance.IsFinished && ModsConfig.AnomalyActive)
             {
-                __result = Find.EntityCodex.Hidden(__instance) || !__instance.AnalyzedThingsRequirementsMet;
+                __result = Find.EntityCodex.Hidden(__instance) || (__instance.knowledgeCategory != null && !__instance.AnalyzedThingsRequirementsMet);
                 return false;
             }
             return true;
