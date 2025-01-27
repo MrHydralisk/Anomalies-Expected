@@ -26,7 +26,7 @@ namespace AnomaliesExpected
             if (!Speedometer.DestroyedOrNull())
             {
                 GenPlace.TryPlaceThing(Speedometer, pawn.Position, pawn.Map, ThingPlaceMode.Near, null);
-                SpeedometerComp.CooldownStart();
+                SpeedometerComp.CooldownsStart();
             }
             base.PostRemoved();
         }

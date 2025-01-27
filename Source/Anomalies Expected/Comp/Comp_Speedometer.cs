@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
+using System.Linq;
 using Verse;
 
 namespace AnomaliesExpected
@@ -12,12 +13,48 @@ namespace AnomaliesExpected
 
         public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? 1) == 0;
 
+        public List<Pawn> deceleratedPawns = new List<Pawn>();
         public int TickNextAction = 0;
+        public int TickNextDeceleration = 0;
         public int UnlockedLevel = 1;
 
         public override void PostPostMake()
         {
             base.PostPostMake();
+            TickNextDeceleration = Find.TickManager.TicksGame + (int)Props.DecelerationIntervalRange.Average;
+        }
+
+        public override void CompTick()
+        {
+            base.CompTick();
+            if (Find.TickManager.TicksGame % 250 == 0 && Find.TickManager.TicksGame >= TickNextDeceleration)
+            {
+                DeceleratePawns();
+            }
+        }
+
+        private void DeceleratePawns()
+        {
+            for (int i = deceleratedPawns.Count() - 1; i >= 0; i--)
+            {
+                Pawn DeceleratedPawn = deceleratedPawns[i];
+                if (DeceleratedPawn.DestroyedOrNull())
+                {
+                    deceleratedPawns.RemoveAt(i);
+                }
+            }
+            Pawn[] AvailablePawns = parent.Map.mapPawns.AllHumanlikeSpawned.Where((Pawn p1) => !deceleratedPawns.Any((Pawn p2) => p1 == p2) && !p1.health.hediffSet.HasHediff(Props.DecelerationHediffDef)).ToArray();
+            if (AvailablePawns.Count() > 0)
+            {
+                Pawn DeceleratedPawn = Rand.Element(AvailablePawns.ToArray());
+                GiveHediff(DeceleratedPawn, Props.DecelerationHediffDef);
+                deceleratedPawns.Add(DeceleratedPawn);
+                TickNextDeceleration = Find.TickManager.TicksGame + Props.DecelerationIntervalRange.RandomInRange;
+            }
+            else
+            {
+                TickNextDeceleration = 2500;
+            }
         }
 
         private Hediff GiveHediff(Pawn pawn, HediffDef hediffDef)
@@ -37,6 +74,17 @@ namespace AnomaliesExpected
                 }
                 yield return gizmo;
             }
+            if (DebugSettings.ShowDevGizmos)
+            {
+                yield return new Command_Action
+                {
+                    defaultLabel = "Dev: Decelerate pawns",
+                    action = delegate
+                    {
+                        DeceleratePawns();
+                    }
+                };
+            }
         }
 
         protected override void OnInteracted(Pawn caster)
@@ -45,6 +93,11 @@ namespace AnomaliesExpected
             hediff_SpeedometerLevel.Speedometer = parent;
             hediff_SpeedometerLevel.SetLevelTo(1);
             TickNextAction = Find.TickManager.TicksGame + Props.tickPerAction;
+            for (int i = deceleratedPawns.Count() - 1; i >= 0; i--)
+            {
+                deceleratedPawns[i]?.health?.hediffSet?.hediffs?.RemoveAll((Hediff h) => h.def == Props.DecelerationHediffDef);
+            }
+            deceleratedPawns.Clear();
             parent.DeSpawn();
         }
 
@@ -65,9 +118,10 @@ namespace AnomaliesExpected
             return true;
         }
 
-        public void CooldownStart()
+        public void CooldownsStart()
         {
             StartCooldown();
+            TickNextDeceleration = Find.TickManager.TicksGame + Props.DecelerationIntervalRange.RandomInRange;
         }
 
         public override void PostExposeData()

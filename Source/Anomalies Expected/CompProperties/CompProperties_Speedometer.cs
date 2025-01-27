@@ -6,6 +6,7 @@ namespace AnomaliesExpected
     public class CompProperties_Speedometer : CompProperties_Interactable
     {
         public int tickPerAction = 60000;
+        public IntRange DecelerationIntervalRange = new IntRange(45000, 75000);
         public HediffDef AccelerationHediffDef;
         public HediffDef DecelerationHediffDef;
 
