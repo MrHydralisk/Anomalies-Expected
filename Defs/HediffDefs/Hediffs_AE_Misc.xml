@@ -509,4 +509,331 @@
 		</comps>
 	</HediffDef>
 	
+	
+	
+	<HediffDef>
+		<defName>Hediff_AEAcceleration</defName>
+		<hediffClass>AnomaliesExpected.Hediff_SpeedometerLevel</hediffClass>
+		<label>speedometer acceleration</label>
+		<description>The effects the fruit had on the body.\nIt appears to have made the host's thoughts sharper, making it more wise.</description>
+		<initialSeverity>1</initialSeverity>
+		<minSeverity>0</minSeverity>
+		<maxSeverity>6</maxSeverity>
+		<isBad>false</isBad>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<levelIsQuantity>true</levelIsQuantity>
+		<duplicationAllowed>false</duplicationAllowed>
+		<defaultInstallPart>Torso</defaultInstallPart>
+		<stages>
+			<li>
+				<minSeverity>1</minSeverity>
+				<statFactors>
+					<MoveSpeed>2</MoveSpeed>
+					<CrawlSpeed>2</CrawlSpeed>
+					<GlobalLearningFactor>2</GlobalLearningFactor>
+					<!-- <RestRateMultiplier>2</RestRateMultiplier> -->
+					<EatingSpeed>2</EatingSpeed>
+					<ImmunityGainSpeed>2</ImmunityGainSpeed>
+					<InjuryHealingFactor>2</InjuryHealingFactor>
+					<ForagedNutritionPerDay>2</ForagedNutritionPerDay>
+					<AnimalsLearningFactor>2</AnimalsLearningFactor>
+					<!-- <RestFallRateFactor>2</RestFallRateFactor> -->
+					<!-- <JoyFallRateFactor>2</JoyFallRateFactor> -->
+					
+					<MeleeCooldownFactor>0.5</MeleeCooldownFactor>
+					<MeleeDodgeChance>2</MeleeDodgeChance>
+					<RangedCooldownFactor>0.5</RangedCooldownFactor>
+					<AimingDelayFactor>0.5</AimingDelayFactor>
+					<StaggerDurationFactor>0.5</StaggerDurationFactor>
+					
+					<WorkSpeedGlobal>2</WorkSpeedGlobal>
+					<CleaningSpeed>2</CleaningSpeed>
+					<ReadingSpeed>2</ReadingSpeed>
+					
+					<BiosculpterOccupantSpeed MayRequire="Ludeon.RimWorld.Ideology">2</BiosculpterOccupantSpeed>
+					
+					<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">2</PsychicEntropyGain>
+					
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Biotech">2</MeditationFocusGain>
+					<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Biotech">2</PsychicEntropyRecoveryRate>
+					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">2</MechFormingSpeed>
+					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">2</MechRepairSpeed>
+					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">2</SubcoreEncodingSpeed>
+					<ControlTakingTime MayRequire="Ludeon.RimWorld.Biotech">0.5</ControlTakingTime>
+					<LearningRateFactor MayRequire="Ludeon.RimWorld.Biotech">2</LearningRateFactor>
+					<GrowthVatOccupantSpeed MayRequire="Ludeon.RimWorld.Biotech">2</GrowthVatOccupantSpeed>
+					
+					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">2</ActivitySuppressionRate>
+				</statFactors>
+				<!-- <hungerRateFactor>2</hungerRateFactor> -->
+			</li>
+			<li>
+				<minSeverity>2</minSeverity>
+				<statFactors>
+					<MoveSpeed>4</MoveSpeed>
+					<CrawlSpeed>4</CrawlSpeed>
+					<GlobalLearningFactor>4</GlobalLearningFactor>
+					<!-- <RestRateMultiplier>4</RestRateMultiplier> -->
+					<EatingSpeed>4</EatingSpeed>
+					<ImmunityGainSpeed>4</ImmunityGainSpeed>
+					<InjuryHealingFactor>4</InjuryHealingFactor>
+					<ForagedNutritionPerDay>4</ForagedNutritionPerDay>
+					<AnimalsLearningFactor>4</AnimalsLearningFactor>
+					<!-- <RestFallRateFactor>4</RestFallRateFactor> -->
+					<!-- <JoyFallRateFactor>4</JoyFallRateFactor> -->
+					
+					<MeleeCooldownFactor>0.25</MeleeCooldownFactor>
+					<MeleeDodgeChance>4</MeleeDodgeChance>
+					<RangedCooldownFactor>0.25</RangedCooldownFactor>
+					<AimingDelayFactor>0.25</AimingDelayFactor>
+					<StaggerDurationFactor>0.25</StaggerDurationFactor>
+					
+					<WorkSpeedGlobal>4</WorkSpeedGlobal>
+					<CleaningSpeed>4</CleaningSpeed>
+					<ReadingSpeed>4</ReadingSpeed>
+					
+					<BiosculpterOccupantSpeed MayRequire="Ludeon.RimWorld.Ideology">4</BiosculpterOccupantSpeed>
+					
+					<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">4</PsychicEntropyGain>
+					
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Biotech">4</MeditationFocusGain>
+					<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Biotech">4</PsychicEntropyRecoveryRate>
+					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">4</MechFormingSpeed>
+					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">4</MechRepairSpeed>
+					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">4</SubcoreEncodingSpeed>
+					<ControlTakingTime MayRequire="Ludeon.RimWorld.Biotech">0.25</ControlTakingTime>
+					<LearningRateFactor MayRequire="Ludeon.RimWorld.Biotech">4</LearningRateFactor>
+					<GrowthVatOccupantSpeed MayRequire="Ludeon.RimWorld.Biotech">4</GrowthVatOccupantSpeed>
+					
+					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">4</ActivitySuppressionRate>
+				</statFactors>
+				<!-- <hungerRateFactor>4</hungerRateFactor> -->
+			</li>
+			<li>
+				<minSeverity>3</minSeverity>
+				<statFactors>
+					<MoveSpeed>8</MoveSpeed>
+					<CrawlSpeed>8</CrawlSpeed>
+					<GlobalLearningFactor>8</GlobalLearningFactor>
+					<!-- <RestRateMultiplier>8</RestRateMultiplier> -->
+					<EatingSpeed>8</EatingSpeed>
+					<ImmunityGainSpeed>8</ImmunityGainSpeed>
+					<InjuryHealingFactor>8</InjuryHealingFactor>
+					<ForagedNutritionPerDay>8</ForagedNutritionPerDay>
+					<AnimalsLearningFactor>8</AnimalsLearningFactor>
+					<!-- <RestFallRateFactor>8</RestFallRateFactor> -->
+					<!-- <JoyFallRateFactor>8</JoyFallRateFactor> -->
+					
+					<MeleeCooldownFactor>0.125</MeleeCooldownFactor>
+					<MeleeDodgeChance>8</MeleeDodgeChance>
+					<RangedCooldownFactor>0.125</RangedCooldownFactor>
+					<AimingDelayFactor>0.125</AimingDelayFactor>
+					<StaggerDurationFactor>0.125</StaggerDurationFactor>
+					
+					<WorkSpeedGlobal>8</WorkSpeedGlobal>
+					<CleaningSpeed>8</CleaningSpeed>
+					<ReadingSpeed>8</ReadingSpeed>
+					
+					<BiosculpterOccupantSpeed MayRequire="Ludeon.RimWorld.Ideology">8</BiosculpterOccupantSpeed>
+					
+					<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">8</PsychicEntropyGain>
+					
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Biotech">8</MeditationFocusGain>
+					<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Biotech">8</PsychicEntropyRecoveryRate>
+					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">8</MechFormingSpeed>
+					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">8</MechRepairSpeed>
+					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">8</SubcoreEncodingSpeed>
+					<ControlTakingTime MayRequire="Ludeon.RimWorld.Biotech">0.125</ControlTakingTime>
+					<LearningRateFactor MayRequire="Ludeon.RimWorld.Biotech">8</LearningRateFactor>
+					<GrowthVatOccupantSpeed MayRequire="Ludeon.RimWorld.Biotech">8</GrowthVatOccupantSpeed>
+					
+					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">8</ActivitySuppressionRate>
+				</statFactors>
+				<!-- <hungerRateFactor>8</hungerRateFactor> -->
+			</li>
+			<li>
+				<minSeverity>4</minSeverity>
+				<statFactors>
+					<MoveSpeed>16</MoveSpeed>
+					<CrawlSpeed>16</CrawlSpeed>
+					<GlobalLearningFactor>16</GlobalLearningFactor>
+					<!-- <RestRateMultiplier>16</RestRateMultiplier> -->
+					<EatingSpeed>16</EatingSpeed>
+					<ImmunityGainSpeed>16</ImmunityGainSpeed>
+					<InjuryHealingFactor>16</InjuryHealingFactor>
+					<ForagedNutritionPerDay>16</ForagedNutritionPerDay>
+					<AnimalsLearningFactor>16</AnimalsLearningFactor>
+					<!-- <RestFallRateFactor>16</RestFallRateFactor> -->
+					<!-- <JoyFallRateFactor>16</JoyFallRateFactor> -->
+					
+					<MeleeCooldownFactor>0.0625</MeleeCooldownFactor>
+					<MeleeDodgeChance>16</MeleeDodgeChance>
+					<RangedCooldownFactor>0.0625</RangedCooldownFactor>
+					<AimingDelayFactor>0.0625</AimingDelayFactor>
+					<StaggerDurationFactor>0.0625</StaggerDurationFactor>
+					
+					<WorkSpeedGlobal>16</WorkSpeedGlobal>
+					<CleaningSpeed>16</CleaningSpeed>
+					<ReadingSpeed>16</ReadingSpeed>
+					
+					<BiosculpterOccupantSpeed MayRequire="Ludeon.RimWorld.Ideology">16</BiosculpterOccupantSpeed>
+					
+					<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">16</PsychicEntropyGain>
+					
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Biotech">16</MeditationFocusGain>
+					<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Biotech">16</PsychicEntropyRecoveryRate>
+					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">16</MechFormingSpeed>
+					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">16</MechRepairSpeed>
+					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">16</SubcoreEncodingSpeed>
+					<ControlTakingTime MayRequire="Ludeon.RimWorld.Biotech">0.0625</ControlTakingTime>
+					<LearningRateFactor MayRequire="Ludeon.RimWorld.Biotech">16</LearningRateFactor>
+					<GrowthVatOccupantSpeed MayRequire="Ludeon.RimWorld.Biotech">16</GrowthVatOccupantSpeed>
+					
+					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">16</ActivitySuppressionRate>
+				</statFactors>
+				<!-- <hungerRateFactor>16</hungerRateFactor> -->
+			</li>
+			<li>
+				<minSeverity>5</minSeverity>
+				<statFactors>
+					<MoveSpeed>32</MoveSpeed>
+					<CrawlSpeed>32</CrawlSpeed>
+					<GlobalLearningFactor>32</GlobalLearningFactor>
+					<!-- <RestRateMultiplier>32</RestRateMultiplier> -->
+					<EatingSpeed>32</EatingSpeed>
+					<ImmunityGainSpeed>32</ImmunityGainSpeed>
+					<InjuryHealingFactor>32</InjuryHealingFactor>
+					<ForagedNutritionPerDay>32</ForagedNutritionPerDay>
+					<AnimalsLearningFactor>32</AnimalsLearningFactor>
+					<!-- <RestFallRateFactor>32</RestFallRateFactor> -->
+					<!-- <JoyFallRateFactor>32</JoyFallRateFactor> -->
+					
+					<MeleeCooldownFactor>0.03125</MeleeCooldownFactor>
+					<MeleeDodgeChance>32</MeleeDodgeChance>
+					<RangedCooldownFactor>0.03125</RangedCooldownFactor>
+					<AimingDelayFactor>0.03125</AimingDelayFactor>
+					<StaggerDurationFactor>0.03125</StaggerDurationFactor>
+					
+					<WorkSpeedGlobal>32</WorkSpeedGlobal>
+					<CleaningSpeed>32</CleaningSpeed>
+					<ReadingSpeed>32</ReadingSpeed>
+					
+					<BiosculpterOccupantSpeed MayRequire="Ludeon.RimWorld.Ideology">32</BiosculpterOccupantSpeed>
+					
+					<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">32</PsychicEntropyGain>
+					
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Biotech">32</MeditationFocusGain>
+					<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Biotech">32</PsychicEntropyRecoveryRate>
+					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">32</MechFormingSpeed>
+					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">32</MechRepairSpeed>
+					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">32</SubcoreEncodingSpeed>
+					<ControlTakingTime MayRequire="Ludeon.RimWorld.Biotech">0.03125</ControlTakingTime>
+					<LearningRateFactor MayRequire="Ludeon.RimWorld.Biotech">32</LearningRateFactor>
+					<GrowthVatOccupantSpeed MayRequire="Ludeon.RimWorld.Biotech">32</GrowthVatOccupantSpeed>
+					
+					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">32</ActivitySuppressionRate>
+				</statFactors>
+				<!-- <hungerRateFactor>32</hungerRateFactor> -->
+			</li>
+			<li>
+				<minSeverity>6</minSeverity>
+				<statFactors>
+					<MoveSpeed>64</MoveSpeed>
+					<CrawlSpeed>64</CrawlSpeed>
+					<GlobalLearningFactor>64</GlobalLearningFactor>
+					<!-- <RestRateMultiplier>64</RestRateMultiplier> -->
+					<EatingSpeed>64</EatingSpeed>
+					<ImmunityGainSpeed>64</ImmunityGainSpeed>
+					<InjuryHealingFactor>64</InjuryHealingFactor>
+					<ForagedNutritionPerDay>64</ForagedNutritionPerDay>
+					<AnimalsLearningFactor>64</AnimalsLearningFactor>
+					<!-- <RestFallRateFactor>64</RestFallRateFactor> -->
+					<!-- <JoyFallRateFactor>64</JoyFallRateFactor> -->
+					
+					<MeleeCooldownFactor>0.015625</MeleeCooldownFactor>
+					<MeleeDodgeChance>64</MeleeDodgeChance>
+					<RangedCooldownFactor>0.015625</RangedCooldownFactor>
+					<AimingDelayFactor>0.015625</AimingDelayFactor>
+					<StaggerDurationFactor>0.015625</StaggerDurationFactor>
+					
+					<WorkSpeedGlobal>64</WorkSpeedGlobal>
+					<CleaningSpeed>64</CleaningSpeed>
+					<ReadingSpeed>64</ReadingSpeed>
+					
+					<BiosculpterOccupantSpeed MayRequire="Ludeon.RimWorld.Ideology">64</BiosculpterOccupantSpeed>
+					
+					<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">64</PsychicEntropyGain>
+					
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Biotech">64</MeditationFocusGain>
+					<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Biotech">64</PsychicEntropyRecoveryRate>
+					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">64</MechFormingSpeed>
+					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">64</MechRepairSpeed>
+					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">64</SubcoreEncodingSpeed>
+					<ControlTakingTime MayRequire="Ludeon.RimWorld.Biotech">0.015625</ControlTakingTime>
+					<LearningRateFactor MayRequire="Ludeon.RimWorld.Biotech">64</LearningRateFactor>
+					<GrowthVatOccupantSpeed MayRequire="Ludeon.RimWorld.Biotech">64</GrowthVatOccupantSpeed>
+					
+					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">64</ActivitySuppressionRate>
+					<!-- <MaxNutrition>8</MaxNutrition> -->
+				</statFactors>
+				<!-- <hungerRateFactor>64</hungerRateFactor> -->
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>Hediff_AEDeceleration</defName>
+		<label>speedometer deceleration</label>
+		<description>The effects the fruit had on the body.\nIt appears to have made the host's thoughts sharper, making it more wise.</description>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<isBad>false</isBad>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<duplicationAllowed>false</duplicationAllowed>
+		<defaultInstallPart>Torso</defaultInstallPart>
+		<stages>
+			<li>
+				<statFactors>
+					<MoveSpeed>0.01</MoveSpeed>
+					<CrawlSpeed>0.01</CrawlSpeed>
+					<GlobalLearningFactor>0.01</GlobalLearningFactor>
+					<!-- <RestRateMultiplier>0.01</RestRateMultiplier> -->
+					<EatingSpeed>0.01</EatingSpeed>
+					<ImmunityGainSpeed>0.01</ImmunityGainSpeed>
+					<InjuryHealingFactor>0.01</InjuryHealingFactor>
+					<ForagedNutritionPerDay>0.01</ForagedNutritionPerDay>
+					<AnimalsLearningFactor>0.01</AnimalsLearningFactor>
+					<!-- <RestFallRateFactor>0.01</RestFallRateFactor> -->
+					<!-- <JoyFallRateFactor>0.01</JoyFallRateFactor> -->
+					
+					<MeleeCooldownFactor>100</MeleeCooldownFactor>
+					<MeleeDodgeChance>0.01</MeleeDodgeChance>
+					<RangedCooldownFactor>100</RangedCooldownFactor>
+					<AimingDelayFactor>100</AimingDelayFactor>
+					<StaggerDurationFactor>100</StaggerDurationFactor>
+					
+					<WorkSpeedGlobal>0.01</WorkSpeedGlobal>
+					<CleaningSpeed>0.01</CleaningSpeed>
+					<ReadingSpeed>0.01</ReadingSpeed>
+					
+					<BiosculpterOccupantSpeed MayRequire="Ludeon.RimWorld.Ideology">0.01</BiosculpterOccupantSpeed>
+					
+					<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">0.01</PsychicEntropyGain>
+					
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Biotech">0.01</MeditationFocusGain>
+					<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Biotech">0.01</PsychicEntropyRecoveryRate>
+					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">0.01</MechFormingSpeed>
+					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">0.01</MechRepairSpeed>
+					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">0.01</SubcoreEncodingSpeed>
+					<ControlTakingTime MayRequire="Ludeon.RimWorld.Biotech">100</ControlTakingTime>
+					<LearningRateFactor MayRequire="Ludeon.RimWorld.Biotech">0.01</LearningRateFactor>
+					<GrowthVatOccupantSpeed MayRequire="Ludeon.RimWorld.Biotech">0.01</GrowthVatOccupantSpeed>
+					
+					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">0.01</ActivitySuppressionRate>
+				</statFactors>
+				<!-- <hungerRateFactor>0.01</hungerRateFactor> -->
+			</li>
+		</stages>
+	</HediffDef>
+	
 </Defs>

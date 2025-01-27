@@ -74,6 +74,7 @@
     <Compile Include="GenStep\GenStep_ChristmasTreeGiftBoxes.cs" />
     <Compile Include="GenStep\GenStep_ChristmasTreeTerrain.cs" />
     <Compile Include="GenStep\GenStep_ChristmasTreeFindExit.cs" />
+    <Compile Include="Hediff_SpeedometerLevel.cs" />
     <Compile Include="PsychicRitual\PsychicRitualDef_AESummonSnowArmy.cs" />
     <Compile Include="PsychicRitual\PsychicRitualToil_AESummonSnowArmy.cs" />
     <Compile Include="Structures\AssaultSummonPattern.cs" />
