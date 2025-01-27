@@ -1,7 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using Verse;
-using static AnomaliesExpected.Comp_BeamTarget;
 
 namespace AnomaliesExpected
 {
@@ -13,7 +12,13 @@ namespace AnomaliesExpected
 
         public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? 1) == 0;
 
+        public int TickNextAction = 0;
         public int UnlockedLevel = 1;
+
+        public override void PostPostMake()
+        {
+            base.PostPostMake();
+        }
 
         private Hediff GiveHediff(Pawn pawn, HediffDef hediffDef)
         {
@@ -39,6 +44,7 @@ namespace AnomaliesExpected
             Hediff_SpeedometerLevel hediff_SpeedometerLevel = GiveHediff(caster, Props.AccelerationHediffDef) as Hediff_SpeedometerLevel;
             hediff_SpeedometerLevel.Speedometer = parent;
             hediff_SpeedometerLevel.SetLevelTo(1);
+            TickNextAction = Find.TickManager.TicksGame + Props.tickPerAction;
             parent.DeSpawn();
         }
 
@@ -59,10 +65,16 @@ namespace AnomaliesExpected
             return true;
         }
 
+        public void CooldownStart()
+        {
+            StartCooldown();
+        }
+
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Values.Look(ref UnlockedLevel, "beamNextCount", 1);
+            Scribe_Values.Look(ref UnlockedLevel, "UnlockedLevel", 1);
+            Scribe_Values.Look(ref TickNextAction, "TickNextAction", 0);
         }
     }
 }

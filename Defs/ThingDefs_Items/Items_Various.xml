@@ -651,7 +651,7 @@
 				<jobString>wear</jobString>
 				<activatingStringPending>wears {0}</activatingStringPending>
 				<activatingString>wears {0}: {1}s</activatingString>
-				<onCooldownString>restoring</onCooldownString>
+				<onCooldownString>recharging</onCooldownString>
 
 				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
 				<fleckOnUsedScale>5</fleckOnUsedScale>

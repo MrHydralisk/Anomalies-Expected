@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using RimWorld;
+using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 
@@ -30,6 +31,7 @@ namespace AnomaliesExpected
             if (!Speedometer.DestroyedOrNull())
             {
                 GenPlace.TryPlaceThing(Speedometer, pawn.Position, pawn.Map, ThingPlaceMode.Near, null);
+                SpeedometerComp.CooldownStart();
             }
             base.PostRemoved();
         }
@@ -60,7 +62,12 @@ namespace AnomaliesExpected
                             floatMenuOptions.Add(new FloatMenuOption($"Turn pointer to {levelNext}", delegate
                             {
                                 SetLevelTo(levelNext);
+                                SpeedometerComp.TickNextAction = Find.TickManager.TicksGame + SpeedometerComp.Props.tickPerAction;
                             }));
+                        }
+                        else if (levelNext == level)
+                        {
+                            floatMenuOptions.Add(new FloatMenuOption($"Turn pointer to {levelNext} [Current]", null));
                         }
                         else
                         {
@@ -70,7 +77,9 @@ namespace AnomaliesExpected
                     Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
                 },
                 defaultLabel = "Turn pointer".Translate(),
-                defaultDesc = "Rotate screw to turn pointer to a different value".Translate()
+                defaultDesc = "Rotate screw to turn pointer to a different value".Translate(),
+                Disabled = SpeedometerComp.TickNextAction > Find.TickManager.TicksGame,
+                disabledReason = SpeedometerComp.Props.onCooldownString + " (" + "DurationLeft".Translate((SpeedometerComp.TickNextAction - Find.TickManager.TicksGame).ToStringTicksToPeriod()) + ")"
             };
             yield return new Command_Action
             {
@@ -82,17 +91,18 @@ namespace AnomaliesExpected
                     }));
                 },
                 defaultLabel = "Take off".Translate(),
-                defaultDesc = "Take off {0} from yourself".Translate(Speedometer?.Label ?? "---")
+                defaultDesc = "Take off {0} from yourself".Translate(Speedometer?.Label ?? "---"),
+                Disabled = SpeedometerComp.TickNextAction > Find.TickManager.TicksGame,
+                disabledReason = SpeedometerComp.Props.onCooldownString + " (" + "DurationLeft".Translate((SpeedometerComp.TickNextAction - Find.TickManager.TicksGame).ToStringTicksToPeriod()) + ")"
             };
-            if (DebugSettings.ShowDevGizmos/* && inCooldown && CanCooldown*/)
+            if (DebugSettings.ShowDevGizmos && SpeedometerComp.TickNextAction > Find.TickManager.TicksGame)
             {
                 yield return new Command_Action
                 {
                     defaultLabel = "Dev: Reset cooldown",
                     action = delegate
                     {
-                        //inCooldown = false;
-                        //charges = maxCharges;
+                        SpeedometerComp.TickNextAction = 0;
                     }
                 };
             }
