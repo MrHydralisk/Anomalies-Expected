@@ -664,6 +664,7 @@
 					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
 				</targetingParameters>
 				
+				<tickPerAction>60000</tickPerAction>
 				<AccelerationHediffDef>Hediff_AEAcceleration</AccelerationHediffDef>
 				<DecelerationHediffDef>Hediff_AEDeceleration</DecelerationHediffDef>
 			</li>

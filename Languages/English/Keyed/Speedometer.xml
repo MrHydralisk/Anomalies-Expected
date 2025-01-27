@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<AnomaliesExpected.Speedometer.TurnPointer>Turn pointer to {0}</AnomaliesExpected.Speedometer.TurnPointer>
+	<AnomaliesExpected.Speedometer.TurnPointerCurrent>Turn pointer to {0} [Current]</AnomaliesExpected.Speedometer.TurnPointerCurrent>
+	<AnomaliesExpected.Speedometer.TurnPointerDisabled>Turn pointer to {0} [Disabled]</AnomaliesExpected.Speedometer.TurnPointerDisabled>
+	<AnomaliesExpected.Speedometer.TurnPointer.Label>Rotate screw</AnomaliesExpected.Speedometer.TurnPointer.Label>
+	<AnomaliesExpected.Speedometer.TurnPointer.Desc>Rotate screw to turn pointer to a different value</AnomaliesExpected.Speedometer.TurnPointer.Desc>
+	
+	<AnomaliesExpected.Speedometer.TakeOff>Take off {0}?</AnomaliesExpected.Speedometer.TakeOff>
+	<AnomaliesExpected.Speedometer.TakeOff.Label>Take off</AnomaliesExpected.Speedometer.TakeOff.Label>
+	<AnomaliesExpected.Speedometer.TakeOff.Desc>Take off {0} from yourself</AnomaliesExpected.Speedometer.TakeOff.Desc>
+</LanguageData>

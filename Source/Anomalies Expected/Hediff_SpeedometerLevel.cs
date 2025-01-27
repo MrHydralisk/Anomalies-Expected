@@ -21,11 +21,6 @@ namespace AnomaliesExpected
             }
         }
 
-        public override void PostAdd(DamageInfo? dinfo)
-        {
-            base.PostAdd(dinfo);
-        }
-
         public override void PostRemoved()
         {
             if (!Speedometer.DestroyedOrNull())
@@ -59,7 +54,7 @@ namespace AnomaliesExpected
                         levelNext = i;
                         if (levelNext <= SpeedometerComp.UnlockedLevel)
                         {
-                            floatMenuOptions.Add(new FloatMenuOption($"Turn pointer to {levelNext}", delegate
+                            floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.Speedometer.TurnPointer".Translate(levelNext), delegate
                             {
                                 SetLevelTo(levelNext);
                                 SpeedometerComp.TickNextAction = Find.TickManager.TicksGame + SpeedometerComp.Props.tickPerAction;
@@ -67,17 +62,17 @@ namespace AnomaliesExpected
                         }
                         else if (levelNext == level)
                         {
-                            floatMenuOptions.Add(new FloatMenuOption($"Turn pointer to {levelNext} [Current]", null));
+                            floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.Speedometer.TurnPointerCurrent".Translate(levelNext), null));
                         }
                         else
                         {
-                            floatMenuOptions.Add(new FloatMenuOption($"Turn pointer to {levelNext} [Disabled]", null));
+                            floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.Speedometer.TurnPointerDisabled".Translate(levelNext), null));
                         }
                     }
                     Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
                 },
-                defaultLabel = "Turn pointer".Translate(),
-                defaultDesc = "Rotate screw to turn pointer to a different value".Translate(),
+                defaultLabel = "AnomaliesExpected.Speedometer.TurnPointer.Label".Translate(),
+                defaultDesc = "AnomaliesExpected.Speedometer.TurnPointer.Desc".Translate(),
                 Disabled = SpeedometerComp.TickNextAction > Find.TickManager.TicksGame,
                 disabledReason = SpeedometerComp.Props.onCooldownString + " (" + "DurationLeft".Translate((SpeedometerComp.TickNextAction - Find.TickManager.TicksGame).ToStringTicksToPeriod()) + ")"
             };
@@ -85,13 +80,13 @@ namespace AnomaliesExpected
             {
                 action = delegate
                 {
-                    Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("Take off".Translate(), delegate
+                    Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("AnomaliesExpected.Speedometer.TakeOff".Translate(Speedometer?.Label ?? "---"), delegate
                     {
                         pawn.health.RemoveHediff(this);
                     }));
                 },
-                defaultLabel = "Take off".Translate(),
-                defaultDesc = "Take off {0} from yourself".Translate(Speedometer?.Label ?? "---"),
+                defaultLabel = "AnomaliesExpected.Speedometer.TakeOff.Label".Translate(),
+                defaultDesc = "AnomaliesExpected.Speedometer.TakeOff.Desc".Translate(Speedometer?.Label ?? "---"),
                 Disabled = SpeedometerComp.TickNextAction > Find.TickManager.TicksGame,
                 disabledReason = SpeedometerComp.Props.onCooldownString + " (" + "DurationLeft".Translate((SpeedometerComp.TickNextAction - Find.TickManager.TicksGame).ToStringTicksToPeriod()) + ")"
             };
