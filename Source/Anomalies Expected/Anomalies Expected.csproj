@@ -64,7 +64,9 @@
     <Compile Include="Comp\Comp_AtmosphericController.cs" />
     <Compile Include="Comp\Comp_HeatPusher.cs" />
     <Compile Include="Comp\Comp_AtmosphericCooler.cs" />
+    <Compile Include="CompProperties\CompProperties_Speedometer.cs" />
     <Compile Include="Comp\Comp_EntityWithWeapon.cs" />
+    <Compile Include="Comp\Comp_Speedometer.cs" />
     <Compile Include="DamageWorker\DamageWorker_Freezing.cs" />
     <Compile Include="DefModExtension\AE_DamageDefExtension.cs" />
     <Compile Include="GameCondition\GameCondition_UnnaturalTemperature.cs" />

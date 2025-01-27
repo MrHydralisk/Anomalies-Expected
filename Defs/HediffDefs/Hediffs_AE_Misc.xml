@@ -565,7 +565,7 @@
 					
 					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">2</ActivitySuppressionRate>
 				</statFactors>
-				<!-- <hungerRateFactor>2</hungerRateFactor> -->
+				<hungerRateFactor>1.5</hungerRateFactor>
 			</li>
 			<li>
 				<minSeverity>2</minSeverity>
@@ -607,7 +607,7 @@
 					
 					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">4</ActivitySuppressionRate>
 				</statFactors>
-				<!-- <hungerRateFactor>4</hungerRateFactor> -->
+				<hungerRateFactor>2</hungerRateFactor>
 			</li>
 			<li>
 				<minSeverity>3</minSeverity>
@@ -649,7 +649,7 @@
 					
 					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">8</ActivitySuppressionRate>
 				</statFactors>
-				<!-- <hungerRateFactor>8</hungerRateFactor> -->
+				<hungerRateFactor>2.5</hungerRateFactor>
 			</li>
 			<li>
 				<minSeverity>4</minSeverity>
@@ -691,7 +691,7 @@
 					
 					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">16</ActivitySuppressionRate>
 				</statFactors>
-				<!-- <hungerRateFactor>16</hungerRateFactor> -->
+				<hungerRateFactor>3</hungerRateFactor>
 			</li>
 			<li>
 				<minSeverity>5</minSeverity>
@@ -733,7 +733,7 @@
 					
 					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">32</ActivitySuppressionRate>
 				</statFactors>
-				<!-- <hungerRateFactor>32</hungerRateFactor> -->
+				<hungerRateFactor>3.5</hungerRateFactor>
 			</li>
 			<li>
 				<minSeverity>6</minSeverity>
@@ -776,7 +776,7 @@
 					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">64</ActivitySuppressionRate>
 					<!-- <MaxNutrition>8</MaxNutrition> -->
 				</statFactors>
-				<!-- <hungerRateFactor>64</hungerRateFactor> -->
+				<hungerRateFactor>4</hungerRateFactor>
 			</li>
 		</stages>
 	</HediffDef>
@@ -831,7 +831,7 @@
 					
 					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">0.01</ActivitySuppressionRate>
 				</statFactors>
-				<!-- <hungerRateFactor>0.01</hungerRateFactor> -->
+				<hungerRateFactor>0.16</hungerRateFactor>
 			</li>
 		</stages>
 	</HediffDef>

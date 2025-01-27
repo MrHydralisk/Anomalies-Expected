@@ -6,8 +6,9 @@ namespace AnomaliesExpected
 {
     public class Hediff_SpeedometerLevel : Hediff_Level
     {
-        public int UnlockedLevel = 1;
         public Thing Speedometer;
+        public Comp_Speedometer SpeedometerComp => speedometerCompCached ?? (speedometerCompCached = Speedometer.TryGetComp<Comp_Speedometer>());
+        private Comp_Speedometer speedometerCompCached;
 
         public override void Tick()
         {
@@ -22,7 +23,6 @@ namespace AnomaliesExpected
         public override void PostAdd(DamageInfo? dinfo)
         {
             base.PostAdd(dinfo);
-            SetLevelTo(1);
         }
 
         public override void PostRemoved()
@@ -37,7 +37,7 @@ namespace AnomaliesExpected
         public override void SetLevelTo(int targetLevel)
         {
             base.SetLevelTo(targetLevel);
-            UnlockedLevel = Mathf.Max(UnlockedLevel, targetLevel + 1);
+            SpeedometerComp.UnlockedLevel = Mathf.Max(SpeedometerComp.UnlockedLevel, targetLevel + 1);
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
@@ -55,7 +55,7 @@ namespace AnomaliesExpected
                     {
                         int levelNext = 0;
                         levelNext = i;
-                        if (levelNext <= UnlockedLevel)
+                        if (levelNext <= SpeedometerComp.UnlockedLevel)
                         {
                             floatMenuOptions.Add(new FloatMenuOption($"Turn pointer to {levelNext}", delegate
                             {
