@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<!-- <PawnKindDef Name="BaseFleshbeastKind" Abstract="True"> -->
-	<!-- <defaultFactionType>Entities</defaultFactionType> -->
-	<!-- <overrideDebugActionCategory>Entity</overrideDebugActionCategory> -->
-	<!-- <meleeAttackInfectionPathways> -->
-	<!-- <li>EntityAttacked</li> -->
-	<!-- </meleeAttackInfectionPathways> -->
-	<!-- </PawnKindDef> -->
+	<PawnKindDef Name="BaseAESnowArmyKind" Abstract="True">
+		<defaultFactionType>Entities</defaultFactionType>
+		<overrideDebugActionCategory>Entity</overrideDebugActionCategory>
+		<meleeAttackInfectionPathways>
+			<li>EntityAttacked</li>
+		</meleeAttackInfectionPathways>
+	</PawnKindDef>
 
-	<PawnKindDef ParentName="BaseFleshbeastKind">
+	<PawnKindDef ParentName="BaseAESnowArmyKind">
 		<defName>AE_SnowMan</defName>
 		<label>snowman</label>
 		<weaponTags>
@@ -45,6 +45,30 @@
 				<texPath>Things/Pawn/SnowArmy/SnowMan/AE_SnowMan_C</texPath>
 			</li>
 		</alternateGraphics>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="BaseAESnowArmyKind">
+		<defName>AE_SnowGolem</defName>
+		<label>snow golem</label>
+		<weaponTags>
+			<li>Gun_AESnowBlock</li>
+		</weaponTags>
+		<overrideDeathOnDownedChance>0.8</overrideDeathOnDownedChance>
+		<preventIdeo>true</preventIdeo>
+		<aiAvoidCover>true</aiAvoidCover>
+		<destroyGearOnDrop>true</destroyGearOnDrop>
+		<race>AE_SnowGolem</race>
+		<combatPower>280</combatPower>
+		<weaponMoney>9999~9999</weaponMoney>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/SnowArmy/SnowGolem/AE_SnowGolem</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.5</drawSize>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
 	</PawnKindDef>
 
 </Defs>
