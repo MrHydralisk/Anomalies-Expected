@@ -37,7 +37,7 @@ namespace AnomaliesExpected
         public override void SetLevelTo(int targetLevel)
         {
             base.SetLevelTo(targetLevel);
-            SpeedometerComp.UnlockedLevel = Mathf.Max(SpeedometerComp.UnlockedLevel, targetLevel + 1);
+            SpeedometerComp.TryUpdateUnlockedLevel(targetLevel);
         }
 
         public override IEnumerable<Gizmo> GetGizmos()

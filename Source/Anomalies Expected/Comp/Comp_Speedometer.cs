@@ -13,7 +13,7 @@ namespace AnomaliesExpected
         protected CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = parent.TryGetComp<CompAEStudyUnlocks>());
         private CompAEStudyUnlocks studyUnlocksCached;
 
-        public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? 1) == 0;
+        public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? 2) <= 1;
 
         public List<Pawn> deceleratedPawns = new List<Pawn>();
         public int TickNextAction = 0;
@@ -33,6 +33,15 @@ namespace AnomaliesExpected
             {
                 DeceleratePawns();
             }
+        }
+
+        public void TryUpdateUnlockedLevel(int targetLevel)
+        {
+            if (UnlockedLevel == targetLevel && targetLevel > 0 && targetLevel < 7)
+            {
+                StudyUnlocks.UnlockStudyNoteManual(targetLevel - 1);
+            }
+            UnlockedLevel = Mathf.Max(UnlockedLevel, targetLevel + 1);
         }
 
         private void DeceleratePawns()
@@ -139,6 +148,8 @@ namespace AnomaliesExpected
             base.PostExposeData();
             Scribe_Values.Look(ref UnlockedLevel, "UnlockedLevel", 1);
             Scribe_Values.Look(ref TickNextAction, "TickNextAction", 0);
+            Scribe_Values.Look(ref TickNextDeceleration, "TickNextDeceleration", 0);
+            Scribe_Collections.Look(ref deceleratedPawns, "deceleratedPawns", LookMode.Reference);
         }
     }
 }
