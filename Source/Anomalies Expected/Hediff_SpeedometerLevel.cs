@@ -1,7 +1,10 @@
-﻿using RimWorld;
+﻿using Mono.Unix.Native;
+using RimWorld;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
+using static HarmonyLib.Code;
+using Verse.Sound;
 
 namespace AnomaliesExpected
 {
@@ -58,6 +61,14 @@ namespace AnomaliesExpected
                             {
                                 SetLevelTo(levelNext);
                                 SpeedometerComp.TickNextAction = Find.TickManager.TicksGame + SpeedometerComp.Props.tickPerAction;
+                                if (!SpeedometerComp.Props.soundActivate.NullOrUndefined())
+                                {
+                                    SpeedometerComp.Props.soundActivate.PlayOneShot(SoundInfo.InMap(pawn));
+                                }
+                                if (SpeedometerComp.Props.fleckOnUsed != null)
+                                {
+                                    FleckMaker.AttachedOverlay(pawn, SpeedometerComp.Props.fleckOnUsed, Vector3.zero, SpeedometerComp.Props.fleckOnUsedScale);
+                                }
                             }));
                         }
                         else if (levelNext == level)

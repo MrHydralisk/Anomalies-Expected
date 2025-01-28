@@ -1,7 +1,9 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace AnomaliesExpected
 {
@@ -48,6 +50,14 @@ namespace AnomaliesExpected
             {
                 Pawn DeceleratedPawn = Rand.Element(AvailablePawns.ToArray());
                 GiveHediff(DeceleratedPawn, Props.DecelerationHediffDef);
+                if (!Props.soundActivate.NullOrUndefined())
+                {
+                    Props.soundActivate.PlayOneShot(SoundInfo.InMap(parent));
+                }
+                if (Props.fleckOnUsed != null)
+                {
+                    FleckMaker.AttachedOverlay(DeceleratedPawn, Props.fleckOnUsed, Vector3.zero, Props.fleckOnUsedScale / 2);
+                }
                 deceleratedPawns.Add(DeceleratedPawn);
                 TickNextDeceleration = Find.TickManager.TicksGame + Props.DecelerationIntervalRange.RandomInRange;
             }
