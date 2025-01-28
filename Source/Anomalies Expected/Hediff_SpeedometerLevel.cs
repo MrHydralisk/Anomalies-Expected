@@ -55,7 +55,11 @@ namespace AnomaliesExpected
                     {
                         int levelNext = 0;
                         levelNext = i;
-                        if (levelNext <= SpeedometerComp.UnlockedLevel)
+                        if (levelNext == level)
+                        {
+                            floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.Speedometer.TurnPointerCurrent".Translate(levelNext), null));
+                        }
+                        else if(levelNext <= SpeedometerComp.UnlockedLevel)
                         {
                             floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.Speedometer.TurnPointer".Translate(levelNext), delegate
                             {
@@ -70,11 +74,7 @@ namespace AnomaliesExpected
                                     FleckMaker.AttachedOverlay(pawn, SpeedometerComp.Props.fleckOnUsed, Vector3.zero, SpeedometerComp.Props.fleckOnUsedScale);
                                 }
                             }));
-                        }
-                        else if (levelNext == level)
-                        {
-                            floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.Speedometer.TurnPointerCurrent".Translate(levelNext), null));
-                        }
+                        } 
                         else
                         {
                             floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.Speedometer.TurnPointerDisabled".Translate(levelNext), null));
