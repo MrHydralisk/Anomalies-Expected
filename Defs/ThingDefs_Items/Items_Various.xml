@@ -107,6 +107,112 @@
 	</ThingDef>
 	
 	
+
+	<ThingDef>
+		<defName>AE_BakingPies</defName>
+		<label>big pie</label>
+		<description>A round big pie on a plate. It is a baked dish with a pastry crust surrounding the filling.\n\nIt looks appetizing.</description>
+		<thingClass>AnomaliesExpected.ThingWithComps_AE</thingClass>
+		<category>Item</category>
+		<genericMarketSellable>false</genericMarketSellable>
+		<drawerType>MapMeshOnly</drawerType>
+		<tickerType>Long</tickerType>
+		<rotatable>false</rotatable>
+		<altitudeLayer>Item</altitudeLayer>
+		<selectable>true</selectable>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<alwaysHaulable>true</alwaysHaulable>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<pathCost>14</pathCost>
+		<graphicData>
+			<texPath>Things/Item/Consumable/AE_BakingPies</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(0.75,0.75)</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>2</Mass>
+			<Beauty>20</Beauty>
+			<Flammability>0</Flammability>
+			<MarketValue>260</MarketValue>
+		</statBases>
+		<thingCategories>
+			<li>ItemsAnomalies</li>
+		</thingCategories>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+		<allowedArchonexusCount>1</allowedArchonexusCount>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_BakingPies">
+				<ticksToActivate>5000</ticksToActivate>
+				<activateTexPath>Things/Item/Consumable/AE_BakingPies</activateTexPath>
+        
+				<activateLabelString>Consume</activateLabelString>
+				<activateDescString>Make someone pour out concentrated stomach acid and fully consume it. [Will destroy it]</activateDescString>
+				<guiLabelString>Choose who should consume this.</guiLabelString>
+				<jobString>consume</jobString>
+				<activatingStringPending>consuming {0}</activatingStringPending>
+				<activatingString>consuming {0}: {1}s</activatingString>
+
+				<soundActivate>AE_RawVegetableEat</soundActivate>
+				<interactionEffecter>EatVegetarian</interactionEffecter>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<piePiece>AE_BakingPiesPiece</piePiece>
+				<tickPerSpawn>60000</tickPerSpawn>
+				<ConsumptionHediffDef>Hediff_AEDigestingPie</ConsumptionHediffDef>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>60000</frequencyTicks>
+				<knowledgeCategory>Basic</knowledgeCategory>
+				<anomalyKnowledge>0.5</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<showToggleGizmo>true</showToggleGizmo>
+			</li>
+			<li Class="CompProperties_StudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotes>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>vatrushka</AnomalyLabel>
+						<AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>0.01</threshold>
+						<label>#1/4 Big pie study report</label>
+						<text>The Indestructible Vatrushka\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nA seemingly ordinary vatrushka exhibited remarkable resilience. Standard tools and fire failed to damage the pastry or its plate, which displayed self-repair capabilities. Consumption attempts proved impossible due to its impregnability. Classified as Class-0 (Safe) with further investigation recommended.\n\nObservations:\nSubject was presented with a standard steel knife. {PAWN_nameDef} attempted to cut a piece of big pie, but to no avail.\nSubject attempted to smash big pie on a plate onto solid ground. While the plate holding the big pie cracked upon impact, the crack spontaneously repaired itself within moments.\n{PAWN_nameDef} exposed big pie to a controlled fire for 30 minutes. Upon extinguishing the fire, the pie exhibited no signs of charring or melting.\nSubject was instructed to attempt biting a portion of the vatrushka without swallowing. Biting through the outer dough proved impossible.\n\nOutcome:\nThroughout the testing procedures, big pie displayed no hostile reaction\n\nDiscussion:\nThe big pie appears to possess anomalous properties rendering it indestructible by conventional means.\nThe big pie's physical properties prevent human consumption due to its resistance to biting and overall size.\nA possible connection exists between the big pie and its plate, as evidenced by the shared regenerative property displayed upon damage.\nAnalysis of the composition of the big pie showed similarities with vatrushka.\nTemporary big pie has been classified as Class-0 (Safe) anomaly.\n\nRecommendations:\nContinued surveillance of the big pie is recommended to explore the possibility of further anomalous properties.</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged. It can replicate a piece of itself, which can be consumed.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>1</threshold>
+						<label>#2/4 Big pie study report</label>
+						<text>Vatrushka Replication and its Implications\n\nSubject: [REDACTED]\n\nAbstract:\nAnomalous vatrushka displayed self-replication, generating a consumable piece of pie on it own plate. The consumed piece exhibited normal digestion, but slowed Subject's movement. This suggests that vatrushka might provide sustenance while requiring further study of its risks. Controlled consumption warrants exploration as a solution to food shortages.\n\nObservations:\nSecurity footage revealed the spontaneous appearance of a smaller piece of pie within the containment area.\nThis smaller piece underwent testing identical to the original, exhibiting the same anomalous properties as big pie.\nDue to its smaller size, [REDACTED] was able to fully consume the replicated piece.\nThe subject reported a feeling of heaviness in their stomach but no other abnormalities.\nNotably, the plate previously holding the replicated piece vaporized upon piece consumption\n\nOutcome:\nSubsequent scans revealed the consumed pie piece undergoing a slow digestion process within [REDACTED]'s stomach. Interestingly, this digestion coincided with a decrease in the subject's movement speed.\n\nDiscussion:\nThe big pie appears capable of self-replication, generating smaller pieces that retain the original's anomalous properties. Further investigation is required to understand the mechanism behind this replication\nInterestingly, the consumed piece displayed normal nutritional value during digestion. This suggests the possibility of the vatrushka serving as a potential solution to food shortages within the facility.\n\nRecommendations:\nControlled consumption of replicated pie pieces should be considered as a means to address potential food shortages.\nStrict monitoring of the number of replicated pieces within containment is crucial to prevent overabundance.</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged. Each day will replicate a piece of itself based on the amount of existing pieces, which can be consumed.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>2</threshold>
+						<label>#3/4 Big pie study report</label>
+						<text>Possible Containment Overflow\n\nAbstract:\nThe anomalous big pie replicates proportionally to its existing pieces. Consumed pieces don't affect replication rate. Controlled consumption is necessary to prevent overwhelming facility with pie pieces.\n\nObservations:\nAn extensive review of security footage was conducted, focusing on the frequency and quantity of replicated pie pieces appearing within the containment area.\n\nOutcome:\nA clear correlation was identified between the number of existing pie pieces and the number of newly replicated pieces:\n- Big pie = new 1 piece\n- Big pie + 1 piece = new 2 piece\n- Big pie + 3 piece = new 4 piece\n- Big pie + 1 piece + 2 consumed piece = new 2 piece\nThe time interval between the appearance of new pieces was approximately 24 hours.\n\nDiscussion:\nThe number of newly replicated pie pieces appears directly proportional to the total number of existing pieces within the containment area. Notably, the consumption of previously replicated pieces does not seem to impact the rate of new piece generation\nThis uncontrolled replication poses a significant risk of overwhelming the containment area with pie pieces. Careful monitoring and controlled consumption of newly replicated pieces are crucial to maintain a manageable quantity.\n\nRecommendations:\nThe implementation of a controlled consumption program for newly replicated vatrushka pieces is recommended to regulate the total number of pieces within the facility.</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>Self-Baking Pies</AnomalyLabel>
+						<AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack. A remarkable colony of sentient yeast that have made cake their primary habitat.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged. Each day will replicate a piece of itself based on the amount of existing pieces, which can be consumed.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>5</threshold>
+						<label>#4/4 Big pie study report</label>
+						<text>Theory Regarding Big Pie\n\nAbstract:\nSelf-Baking Pies (SBP) exhibits potential for interdimensional travel and exponential growth. Hypothesis suggests offspring drain resources of the planet and mature into similar entities. Humans possess a possible defense mechanism in their genes through digestion. Destruction or controlled use with robust safety protocols are recommended.\n\nHypothesis:\nBased on observations from all experiments, a theory regarding the Self-Baking Pies (SBP) origin and behavior was proposed.\nA remarkable colony of sentient yeast that have made cake their primary habitat.\nIt suggested that it possesses a potential for interdimensional travel. Upon arriving in a world with suitable conditions (oxygen-rich atmosphere and abundant organic/mineral content), it transporting offspring to current dimension\nEach offspring facilitates the SBP's interdimensional travel by gathering energy from the surrounding environment.\nOnce all offspring are transferred, they consume resources of the planet to grow and mature into entities similar to the original SBP, allowing continued exponential propagation across realities.\nThe SBP exhibits exceptional resilience to external damage, but may be susceptible to degradation by concentrated stomach acid within a human digestive system.\nWhile this poses an existential threat due to potential uncontrolled spread, our digestive systems appear to contain unique genes that enable the destruction of SBP regenrative capabilities. This implies a potential past encounter between humanity and SBP entities, resulting in an evolutionary defense mechanism against their colonization efforts.\n\nDiscussion:\nFurther research should explore the possibility of utilizing highly concentrated stomach acid to weaken the main SBP, potentially enabling full consumption. It's important to note that this approach could have a more significant impact on the consumer compared to consuming individual SBP pieces.\nThe current classification of the SBP remains Class-0 (Safe) as it does not pose an immediate threat to personnel within the facility.\n\n[High Level Access Required]:\nThe potential for rapid, uncontrolled SBP replication poses a significant risk. We must closely monitor the number of existing SBP pieces. Loss of control could elevate the threat level to higher than even Class-4, potentially causing our reality to succumb to SBP and end up being consumed. Drawing from simulated reality theory, an uncontrolled spread of SBP pieces could potentially lead to a system crash, if their numbers reach critical levels.\n\nRecommendations:\nDestruction: Given the potential for exponential growth, destruction of the vatrushka using concentrated stomach acid may be the most prudent course of action\nControlled Use: If the hypothesis holds true, continued utilization of the vatrushka under controlled and monitored conditions could offer a sustainable food source for the facility. This approach, however, requires thorough risk assessment and robust safety protocols to prevent uncontrolled replication.</text>
+						<ThingDefSpawn>AE_ResearchNotesBPA</ThingDefSpawn>
+					</li>
+				</studyNotes>
+			</li>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_StudyNotes</li>
+		</inspectorTabs>
+	</ThingDef>
+	
+	
 	
 	<ThingDef>
 		<defName>AE_DogTag</defName>
@@ -232,7 +338,7 @@
 					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
 				</targetingParameters>
 				
-				<learnXPPerProgressPoint>80</learnXPPerProgressPoint>
+				<learnXPPerProgressPoint>120</learnXPPerProgressPoint>
 				<RequiredResearchDef>AEStudyNotepad</RequiredResearchDef>
 			</li>
 			<li Class="CompProperties_Studiable">
