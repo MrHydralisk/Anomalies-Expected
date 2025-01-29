@@ -31,12 +31,9 @@
 			<bloodSmearDef>Filth_AEIceBloodSmear</bloodSmearDef>
 			<soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
 			<trainability>None</trainability>
-			<fleshType>EntityFlesh</fleshType>
+			<fleshType>AE_EntitySnowArmy</fleshType>
 			<isImmuneToInfections>true</isImmuneToInfections>
 			<bleedRateFactor>0</bleedRateFactor>
-			<hediffGiverSets>
-				<li>Fleshbeast</li>
-			</hediffGiverSets>
 			<corpseHiddenWhileUndiscovered>true</corpseHiddenWhileUndiscovered>
 		</race>
 		<comps>

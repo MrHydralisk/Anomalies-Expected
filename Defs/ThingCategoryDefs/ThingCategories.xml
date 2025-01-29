@@ -19,4 +19,10 @@
 		<parent>ItemsAnomalies</parent>
 	</ThingCategoryDef>
   
+	<ThingCategoryDef>
+		<defName>CorpsesEntitySnowArmy</defName>
+		<label>snow army corpses</label>
+		<parent>CorpsesEntity</parent>
+	</ThingCategoryDef>
+  
 </Defs>
