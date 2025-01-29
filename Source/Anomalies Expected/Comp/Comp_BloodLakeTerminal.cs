@@ -8,9 +8,9 @@ namespace AnomaliesExpected
         private BloodLakeMapComponent mapComponentCached;
 
 
-        public override void DestroyAnomaly(Pawn caster)
+        public override void DestroyAnomaly(Pawn caster = null)
         {
-            mapComponent.Entrance.StudyUnlocks.UnlockStudyNoteManual(1, caster.LabelShortCap);
+            mapComponent.Entrance.StudyUnlocks.UnlockStudyNoteManual(1, caster?.LabelShortCap ?? "");
             mapComponent.DestroySubMap();
         }
     }
