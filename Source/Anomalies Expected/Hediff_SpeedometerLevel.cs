@@ -1,9 +1,7 @@
-﻿using Mono.Unix.Native;
-using RimWorld;
+﻿using RimWorld;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
-using static HarmonyLib.Code;
 using Verse.Sound;
 
 namespace AnomaliesExpected
@@ -13,6 +11,18 @@ namespace AnomaliesExpected
         public Thing Speedometer;
         public Comp_Speedometer SpeedometerComp => speedometerCompCached ?? (speedometerCompCached = Speedometer.TryGetComp<Comp_Speedometer>());
         private Comp_Speedometer speedometerCompCached;
+
+        public Texture ActiveTex => activeTexCached ?? (UpdateActiveTexture());
+        private Texture activeTexCached;
+
+        public Texture2D DropTex => dropTexCached ?? (dropTexCached = ContentFinder<Texture2D>.Get(SpeedometerComp.Props.dropTexPath));
+        private Texture2D dropTexCached;
+
+        public Texture UpdateActiveTexture()
+        {
+            activeTexCached = Speedometer.Graphic.MatSingleFor(Speedometer).mainTexture;
+            return activeTexCached;
+        }
 
         public override void Tick()
         {
@@ -38,6 +48,7 @@ namespace AnomaliesExpected
         {
             base.SetLevelTo(targetLevel);
             SpeedometerComp.TryUpdateUnlockedLevel(targetLevel);
+            UpdateActiveTexture();
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
@@ -59,7 +70,7 @@ namespace AnomaliesExpected
                         {
                             floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.Speedometer.TurnPointerCurrent".Translate(levelNext), null));
                         }
-                        else if(levelNext <= SpeedometerComp.UnlockedLevel)
+                        else if (levelNext <= SpeedometerComp.UnlockedLevel)
                         {
                             floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.Speedometer.TurnPointer".Translate(levelNext), delegate
                             {
@@ -74,7 +85,7 @@ namespace AnomaliesExpected
                                     FleckMaker.AttachedOverlay(pawn, SpeedometerComp.Props.fleckOnUsed, Vector3.zero, SpeedometerComp.Props.fleckOnUsedScale);
                                 }
                             }));
-                        } 
+                        }
                         else
                         {
                             floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.Speedometer.TurnPointerDisabled".Translate(levelNext), null));
@@ -84,6 +95,7 @@ namespace AnomaliesExpected
                 },
                 defaultLabel = "AnomaliesExpected.Speedometer.TurnPointer.Label".Translate(),
                 defaultDesc = "AnomaliesExpected.Speedometer.TurnPointer.Desc".Translate(),
+                icon = ActiveTex,
                 Disabled = SpeedometerComp.TickNextAction > Find.TickManager.TicksGame,
                 disabledReason = SpeedometerComp.Props.onCooldownString + " (" + "DurationLeft".Translate((SpeedometerComp.TickNextAction - Find.TickManager.TicksGame).ToStringTicksToPeriod()) + ")"
             };
@@ -98,6 +110,7 @@ namespace AnomaliesExpected
                 },
                 defaultLabel = "AnomaliesExpected.Speedometer.TakeOff.Label".Translate(),
                 defaultDesc = "AnomaliesExpected.Speedometer.TakeOff.Desc".Translate(Speedometer?.Label ?? "---"),
+                icon = DropTex,
                 Disabled = SpeedometerComp.TickNextAction > Find.TickManager.TicksGame,
                 disabledReason = SpeedometerComp.Props.onCooldownString + " (" + "DurationLeft".Translate((SpeedometerComp.TickNextAction - Find.TickManager.TicksGame).ToStringTicksToPeriod()) + ")"
             };
@@ -117,7 +130,7 @@ namespace AnomaliesExpected
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_References.Look(ref Speedometer, "Speedometer");
+            Scribe_Deep.Look(ref Speedometer, "Speedometer");
         }
     }
 }

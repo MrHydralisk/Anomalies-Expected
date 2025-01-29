@@ -7,8 +7,12 @@ namespace AnomaliesExpected
     {
         public int tickPerAction = 60000;
         public IntRange DecelerationIntervalRange = new IntRange(45000, 75000);
+
         public HediffDef AccelerationHediffDef;
         public HediffDef DecelerationHediffDef;
+
+        [NoTranslate]
+        public string dropTexPath;
 
         public CompProperties_Speedometer()
         {

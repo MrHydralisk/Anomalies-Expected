@@ -24,6 +24,7 @@ namespace AnomaliesExpected
         {
             base.PostPostMake();
             TickNextDeceleration = Find.TickManager.TicksGame + (int)Props.DecelerationIntervalRange.Average;
+            parent.overrideGraphicIndex = 0;
         }
 
         public override void CompTick()
@@ -42,6 +43,7 @@ namespace AnomaliesExpected
                 StudyUnlocks.UnlockStudyNoteManual(targetLevel - 1);
             }
             UnlockedLevel = Mathf.Max(UnlockedLevel, targetLevel + 1);
+            parent.overrideGraphicIndex = targetLevel;
         }
 
         private void DeceleratePawns()
@@ -69,6 +71,7 @@ namespace AnomaliesExpected
                 }
                 deceleratedPawns.Add(DeceleratedPawn);
                 TickNextDeceleration = Find.TickManager.TicksGame + Props.DecelerationIntervalRange.RandomInRange;
+                parent.overrideGraphicIndex = 7;
             }
             else
             {
@@ -141,6 +144,7 @@ namespace AnomaliesExpected
         {
             StartCooldown();
             TickNextDeceleration = Find.TickManager.TicksGame + Props.DecelerationIntervalRange.RandomInRange;
+            parent.overrideGraphicIndex = 0;
         }
 
         public override void PostExposeData()

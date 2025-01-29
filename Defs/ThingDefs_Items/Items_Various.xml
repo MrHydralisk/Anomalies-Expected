@@ -612,7 +612,7 @@
 		<thingClass>AnomaliesExpected.ThingWithComps_AE</thingClass>
 		<category>Item</category>
 		<genericMarketSellable>false</genericMarketSellable>
-		<drawerType>MapMeshOnly</drawerType>
+		<drawerType>MapMeshAndRealTime</drawerType>
 		<tickerType>Normal</tickerType>
 		<rotatable>false</rotatable>
 		<altitudeLayer>Item</altitudeLayer>
@@ -623,8 +623,8 @@
 		<drawGUIOverlay>true</drawGUIOverlay>
 		<pathCost>14</pathCost>
 		<graphicData>
-			<graphicClass>Graphic_Single</graphicClass>
-			<texPath>Things/Item/Special/AE_StudyNotepad</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+			<texPath>Things/Item/Special/AE_Speedometer</texPath>
 			<drawSize>(0.75,0.75)</drawSize>
 		</graphicData>
 		<statBases>
@@ -643,7 +643,7 @@
 				<activeTicks>1</activeTicks>
 				<cooldownTicks>60000</cooldownTicks>
 				<ticksToActivate>500</ticksToActivate>
-				<activateTexPath>Things/Item/Special/AE_StudyNotepad</activateTexPath>
+				<activateTexPath>Things/Item/Special/AE_Speedometer/AE_Speedometer_b</activateTexPath>
         
 				<activateLabelString>Wear</activateLabelString>
 				<activateDescString>Wears speedometer.</activateDescString>
@@ -671,6 +671,7 @@
 				</DecelerationIntervalRange>
 				<AccelerationHediffDef>Hediff_AEAcceleration</AccelerationHediffDef>
 				<DecelerationHediffDef>Hediff_AEDeceleration</DecelerationHediffDef>
+				<dropTexPath>UI/Icons/AE_SpeedometerDrop_Icon</dropTexPath>
 			</li>
 			<li Class="CompProperties_Studiable">
 				<frequencyTicks>120000</frequencyTicks>
