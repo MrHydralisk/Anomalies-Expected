@@ -27,7 +27,7 @@
 				<bodyGraphicData>
 					<texPath>Things/Pawn/SnowArmy/SnowMan/AE_SnowMan_A</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
-					<drawSize>1.5</drawSize>
+					<drawSize>2</drawSize>
 				</bodyGraphicData>
 				<!-- <butcherBodyPart> -->
 					<!-- <bodyPartGroup>AEIceCore</bodyPartGroup> -->
@@ -65,7 +65,31 @@
 				<bodyGraphicData>
 					<texPath>Things/Pawn/SnowArmy/SnowGolem/AE_SnowGolem</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
-					<drawSize>1.5</drawSize>
+					<drawSize>4.5</drawSize>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="BaseAESnowArmyKind">
+		<defName>AE_SnowSpider</defName>
+		<label>snow spider</label>
+		<weaponTags>
+			<li>Gun_AESnowBall</li>
+		</weaponTags>
+		<overrideDeathOnDownedChance>0.8</overrideDeathOnDownedChance>
+		<preventIdeo>true</preventIdeo>
+		<aiAvoidCover>true</aiAvoidCover>
+		<destroyGearOnDrop>true</destroyGearOnDrop>
+		<race>AE_SnowGolem</race>
+		<combatPower>40</combatPower>
+		<weaponMoney>9999~9999</weaponMoney>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/SnowArmy/SnowSpider/AE_SnowSpider</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.34</drawSize>
 				</bodyGraphicData>
 			</li>
 		</lifeStages>
