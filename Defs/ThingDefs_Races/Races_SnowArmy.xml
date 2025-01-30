@@ -278,7 +278,7 @@
 			<MoveSpeed>5.5</MoveSpeed>
 			<MinimumContainmentStrength>20</MinimumContainmentStrength>
 		</statBases>
-		<uiIconPath>Things/Pawn/SnowArmy/SnowGolem/AE_SnowGolem_south</uiIconPath>
+		<uiIconPath>Things/Pawn/SnowArmy/SnowSpider/AE_SnowSpider_south</uiIconPath>
 		<race>
 			<!-- <body>AE_SnowGolem</body> -->
 			<body>AE_SnowMan</body>

@@ -147,6 +147,15 @@
 				<li Class="ThinkNode_Subtree">
 					<treeDef>Despawned</treeDef>
 				</li>
+
+				<li Class="ThinkNode_ConditionalCanDoLordJobNow">
+					<subNodes>
+						<!-- Lord directives -->
+						<li Class="ThinkNode_Subtree">
+							<treeDef>LordDutyConstant</treeDef>
+						</li>
+					</subNodes>
+				</li>
 			</subNodes>
 		</thinkRoot>
 	</ThinkTreeDef>
