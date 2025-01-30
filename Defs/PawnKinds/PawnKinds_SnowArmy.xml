@@ -74,16 +74,11 @@
 	<PawnKindDef ParentName="BaseAESnowArmyKind">
 		<defName>AE_SnowSpider</defName>
 		<label>snow spider</label>
-		<weaponTags>
-			<li>Gun_AESnowBall</li>
-		</weaponTags>
 		<overrideDeathOnDownedChance>0.8</overrideDeathOnDownedChance>
 		<preventIdeo>true</preventIdeo>
 		<aiAvoidCover>true</aiAvoidCover>
-		<destroyGearOnDrop>true</destroyGearOnDrop>
-		<race>AE_SnowGolem</race>
+		<race>AE_SnowSpider</race>
 		<combatPower>40</combatPower>
-		<weaponMoney>9999~9999</weaponMoney>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>

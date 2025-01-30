@@ -272,4 +272,118 @@
 		</killedLeavingsRanges>
 	</ThingDef>
 
+	<ThingDef ParentName="BaseAESnowArmy">
+		<defName>AE_SnowSpider</defName>
+		<label>snow spider</label>
+		<description>The Snowman appears harmless and made out of few big snowballs. However, its icy snow body proves surprisingly resilient, quickly dispelling any illusions of innocence. They can attack by throwing snowballs at enemies or scratching them with their stick arms. They can survive even with substantial part of their body being missing.</description>
+		<statBases>
+			<MoveSpeed>5.5</MoveSpeed>
+			<MinimumContainmentStrength>20</MinimumContainmentStrength>
+		</statBases>
+		<uiIconPath>Things/Pawn/SnowArmy/SnowGolem/AE_SnowGolem_south</uiIconPath>
+		<race>
+			<!-- <body>AE_SnowGolem</body> -->
+			<body>AE_SnowMan</body>
+			<thinkTreeMain>Fleshbeast</thinkTreeMain>
+			<thinkTreeConstant>FleshbeastConstant</thinkTreeConstant>
+			<!-- <thinkTreeMain>AE_SnowGolem</thinkTreeMain> -->
+			<!-- <thinkTreeConstant>AE_SnowManConstant</thinkTreeConstant> -->
+			<baseBodySize>3</baseBodySize>
+			<baseHealthScale>3</baseHealthScale>
+			<lifeExpectancy>25</lifeExpectancy>
+			<soundMoving>Pawn_Fleshbeast_Bulbfreak_Moving</soundMoving>
+			<renderTree>AE_SnowMan</renderTree>
+			<lifeStageAges>
+				<li>
+					<def>EntityFullyFormed</def>
+					<soundWounded>Pawn_Shambler_Wounded</soundWounded>
+					<soundDeath>Pawn_Shambler_Killed</soundDeath>
+					<soundCall>Pawn_Shambler_Call</soundCall>
+				</li>
+			</lifeStageAges>
+		</race>
+		<comps>
+			<li Class="CompProperties_AttachPoints">
+				<points>
+					<li>
+						<offset>(-.14, 0, .4)</offset>
+						<type>PlatformRestraint0</type>
+					</li>
+					<li>
+						<offset>(.19, 0, .13)</offset>
+						<type>PlatformRestraint1</type>
+					</li>
+					<li>
+						<offset>(.27, 0, -.57)</offset>
+						<type>PlatformRestraint2</type>
+					</li>
+					<li>
+						<offset>(-.27, 0, -.57)</offset>
+						<type>PlatformRestraint3</type>
+					</li>
+				</points>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>120000</frequencyTicks>
+				<knowledgeCategory>Advanced</knowledgeCategory>
+				<anomalyKnowledge>2.5</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<requiresHoldingPlatform>true</requiresHoldingPlatform>
+			</li>
+			<li Class="CompProperties_ProducesBioferrite">
+				<bioferriteDensity>3.5</bioferriteDensity>
+			</li>
+			<!-- <li> -->
+				<!-- <compClass>AnomaliesExpected.Comp_EntityWithWeapon</compClass> -->
+			<!-- </li> -->
+		</comps>
+		<tools>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>4</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>UpperHead</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+				<soundMeleeHit>Pawn_Fleshbeast_Attack_Blunt</soundMeleeHit>
+			</li>
+			<li>
+				<label>left stick arm</label>
+				<labelNoLocation>stick arm</labelNoLocation>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>right stick arm</label>
+				<labelNoLocation>stick arm</labelNoLocation>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>carrot nose</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<killedLeavingsRanges>
+			<Bioferrite>7~10</Bioferrite>
+		</killedLeavingsRanges>
+	</ThingDef>
+
 </Defs>
