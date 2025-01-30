@@ -80,19 +80,19 @@
 			<li Class="CompProperties_AttachPoints">
 				<points>
 					<li>
-						<offset>(-.14, 0, .4)</offset>
+						<offset>(-0.21, 0, 0.62)</offset>
 						<type>PlatformRestraint0</type>
 					</li>
 					<li>
-						<offset>(.19, 0, .13)</offset>
+						<offset>(0.28, 0, 0.28)</offset>
 						<type>PlatformRestraint1</type>
 					</li>
 					<li>
-						<offset>(.27, 0, -.57)</offset>
+						<offset>(0.38, 0, -0.58)</offset>
 						<type>PlatformRestraint2</type>
 					</li>
 					<li>
-						<offset>(-.27, 0, -.57)</offset>
+						<offset>(-0.38, 0, -0.58)</offset>
 						<type>PlatformRestraint3</type>
 					</li>
 				</points>
@@ -192,19 +192,19 @@
 			<li Class="CompProperties_AttachPoints">
 				<points>
 					<li>
-						<offset>(-.14, 0, .4)</offset>
+						<offset>(-1.13, 0, 2.1)</offset>
 						<type>PlatformRestraint0</type>
 					</li>
 					<li>
-						<offset>(.19, 0, .13)</offset>
+						<offset>(1.13, 0, 1.13)</offset>
 						<type>PlatformRestraint1</type>
 					</li>
 					<li>
-						<offset>(.27, 0, -.57)</offset>
+						<offset>(0.85, 0, -0.85)</offset>
 						<type>PlatformRestraint2</type>
 					</li>
 					<li>
-						<offset>(-.27, 0, -.57)</offset>
+						<offset>(-0.94, 0, -1.28)</offset>
 						<type>PlatformRestraint3</type>
 					</li>
 				</points>
@@ -306,19 +306,19 @@
 			<li Class="CompProperties_AttachPoints">
 				<points>
 					<li>
-						<offset>(-.14, 0, .4)</offset>
+						<offset>(-0.08, 0, 0.27)</offset>
 						<type>PlatformRestraint0</type>
 					</li>
 					<li>
-						<offset>(.19, 0, .13)</offset>
+						<offset>(0.14, 0, 0.21)</offset>
 						<type>PlatformRestraint1</type>
 					</li>
 					<li>
-						<offset>(.27, 0, -.57)</offset>
+						<offset>(0.32, 0, -0.17)</offset>
 						<type>PlatformRestraint2</type>
 					</li>
 					<li>
-						<offset>(-.27, 0, -.57)</offset>
+						<offset>(-0.22, 0, -0.27)</offset>
 						<type>PlatformRestraint3</type>
 					</li>
 				</points>
