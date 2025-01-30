@@ -17,8 +17,8 @@
 		<tradeability>None</tradeability>
 		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
 		<race>
-			<thinkTreeMain>Fleshbeast</thinkTreeMain>
-			<thinkTreeConstant>FleshbeastConstant</thinkTreeConstant>
+			<thinkTreeMain>AE_SnowMan</thinkTreeMain>
+			<thinkTreeConstant>AE_SnowManConstant</thinkTreeConstant>
 			<intelligence>ToolUser</intelligence>
 			<overrideShouldHaveAbilityTracker>true</overrideShouldHaveAbilityTracker>
 			<disableIgniteVerb>true</disableIgniteVerb>
@@ -54,7 +54,7 @@
 		<description>The Snowman appears harmless and made out of few big snowballs. However, its icy snow body proves surprisingly resilient, quickly dispelling any illusions of innocence. They can attack by throwing snowballs at enemies or scratching them with their stick arms. They can survive even with substantial part of their body being missing.</description>
 		<statBases>
 			<MoveSpeed>3.2</MoveSpeed>
-			<MinimumContainmentStrength>75</MinimumContainmentStrength>
+			<MinimumContainmentStrength>60</MinimumContainmentStrength>
 		</statBases>
 		<uiIconPath>Things/Pawn/SnowArmy/SnowMan/AE_SnowMan_A_south</uiIconPath>
 		<race>
@@ -64,7 +64,7 @@
 			<baseBodySize>1.75</baseBodySize>
 			<baseHealthScale>1</baseHealthScale>
 			<lifeExpectancy>15</lifeExpectancy>
-			<soundMoving>Pawn_Fleshbeast_Bulbfreak_Moving</soundMoving>
+			<!-- <soundMoving>Pawn_Fleshbeast_Bulbfreak_Moving</soundMoving> -->
 			<renderTree>AE_SnowMan</renderTree>
 			<corpseHiddenWhileUndiscovered>true</corpseHiddenWhileUndiscovered>
 			<lifeStageAges>

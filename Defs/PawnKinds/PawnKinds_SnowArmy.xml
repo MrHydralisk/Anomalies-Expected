@@ -29,6 +29,10 @@
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>1.5</drawSize>
 				</bodyGraphicData>
+				<!-- <butcherBodyPart> -->
+					<!-- <bodyPartGroup>AEIceCore</bodyPartGroup> -->
+					<!-- <thing>AE_IceCrystal</thing> -->
+				<!-- </butcherBodyPart> -->
 			</li>
 		</lifeStages>
 		<alternateGraphicChance>0.66</alternateGraphicChance>
