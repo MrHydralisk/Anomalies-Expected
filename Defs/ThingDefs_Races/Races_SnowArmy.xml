@@ -30,6 +30,7 @@
 			<bloodDef>Filth_AEIceBlood</bloodDef>
 			<bloodSmearDef>Filth_AEIceBloodSmear</bloodSmearDef>
 			<soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
+			<!-- <soundMoving>Pawn_Fleshbeast_Bulbfreak_Moving</soundMoving> -->
 			<trainability>None</trainability>
 			<fleshType>AE_EntitySnowArmy</fleshType>
 			<isImmuneToInfections>true</isImmuneToInfections>
@@ -61,12 +62,10 @@
 			<body>AE_SnowMan</body>
 			<thinkTreeMain>AE_SnowMan</thinkTreeMain>
 			<thinkTreeConstant>AE_SnowManConstant</thinkTreeConstant>
-			<baseBodySize>1.75</baseBodySize>
+			<baseBodySize>1</baseBodySize>
 			<baseHealthScale>1</baseHealthScale>
-			<lifeExpectancy>15</lifeExpectancy>
-			<!-- <soundMoving>Pawn_Fleshbeast_Bulbfreak_Moving</soundMoving> -->
+			<lifeExpectancy>35</lifeExpectancy>
 			<renderTree>AE_SnowMan</renderTree>
-			<corpseHiddenWhileUndiscovered>true</corpseHiddenWhileUndiscovered>
 			<lifeStageAges>
 				<li>
 					<def>EntityFullyFormed</def>
@@ -105,7 +104,7 @@
 				<requiresHoldingPlatform>true</requiresHoldingPlatform>
 			</li>
 			<li Class="CompProperties_ProducesBioferrite">
-				<bioferriteDensity>1.5</bioferriteDensity>
+				<bioferriteDensity>0.75</bioferriteDensity>
 			</li>
 			<li>
 				<compClass>AnomaliesExpected.Comp_EntityWithWeapon</compClass>
@@ -166,7 +165,7 @@
 		<description>The Snowman appears harmless and made out of few big snowballs. However, its icy snow body proves surprisingly resilient, quickly dispelling any illusions of innocence. They can attack by throwing snowballs at enemies or scratching them with their stick arms. They can survive even with substantial part of their body being missing.</description>
 		<statBases>
 			<MoveSpeed>1.6</MoveSpeed>
-			<MinimumContainmentStrength>140</MinimumContainmentStrength>
+			<MinimumContainmentStrength>110</MinimumContainmentStrength>
 		</statBases>
 		<uiIconPath>Things/Pawn/SnowArmy/SnowGolem/AE_SnowGolem_south</uiIconPath>
 		<race>
@@ -174,10 +173,9 @@
 			<body>AE_SnowMan</body>
 			<thinkTreeMain>AE_SnowGolem</thinkTreeMain>
 			<thinkTreeConstant>AE_SnowManConstant</thinkTreeConstant>
-			<baseBodySize>3</baseBodySize>
-			<baseHealthScale>3</baseHealthScale>
-			<lifeExpectancy>25</lifeExpectancy>
-			<soundMoving>Pawn_Fleshbeast_Bulbfreak_Moving</soundMoving>
+			<baseBodySize>6</baseBodySize>
+			<baseHealthScale>9.8</baseHealthScale>
+			<lifeExpectancy>225</lifeExpectancy>
 			<renderTree>AE_SnowMan</renderTree>
 			<lifeStageAges>
 				<li>
@@ -217,7 +215,7 @@
 				<requiresHoldingPlatform>true</requiresHoldingPlatform>
 			</li>
 			<li Class="CompProperties_ProducesBioferrite">
-				<bioferriteDensity>3.5</bioferriteDensity>
+				<bioferriteDensity>0.75</bioferriteDensity>
 			</li>
 			<li>
 				<compClass>AnomaliesExpected.Comp_EntityWithWeapon</compClass>
@@ -288,10 +286,9 @@
 			<thinkTreeConstant>FleshbeastConstant</thinkTreeConstant>
 			<!-- <thinkTreeMain>AE_SnowGolem</thinkTreeMain> -->
 			<!-- <thinkTreeConstant>AE_SnowManConstant</thinkTreeConstant> -->
-			<baseBodySize>3</baseBodySize>
-			<baseHealthScale>3</baseHealthScale>
-			<lifeExpectancy>25</lifeExpectancy>
-			<soundMoving>Pawn_Fleshbeast_Bulbfreak_Moving</soundMoving>
+			<baseBodySize>0.6</baseBodySize>
+			<baseHealthScale>0.6</baseHealthScale>
+			<lifeExpectancy>15</lifeExpectancy>
 			<renderTree>AE_SnowMan</renderTree>
 			<lifeStageAges>
 				<li>
@@ -326,12 +323,12 @@
 			<li Class="CompProperties_Studiable">
 				<frequencyTicks>120000</frequencyTicks>
 				<knowledgeCategory>Advanced</knowledgeCategory>
-				<anomalyKnowledge>2.5</anomalyKnowledge>
+				<anomalyKnowledge>1</anomalyKnowledge>
 				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
 				<requiresHoldingPlatform>true</requiresHoldingPlatform>
 			</li>
 			<li Class="CompProperties_ProducesBioferrite">
-				<bioferriteDensity>3.5</bioferriteDensity>
+				<bioferriteDensity>1</bioferriteDensity>
 			</li>
 			<!-- <li> -->
 				<!-- <compClass>AnomaliesExpected.Comp_EntityWithWeapon</compClass> -->
@@ -382,7 +379,7 @@
 			</li>
 		</tools>
 		<killedLeavingsRanges>
-			<Bioferrite>7~10</Bioferrite>
+			<Bioferrite>5~9</Bioferrite>
 		</killedLeavingsRanges>
 	</ThingDef>
 
