@@ -36,10 +36,11 @@
 			<isImmuneToInfections>true</isImmuneToInfections>
 			<bleedRateFactor>0</bleedRateFactor>
 			<corpseHiddenWhileUndiscovered>true</corpseHiddenWhileUndiscovered>
+			<hideTrainingTab>true</hideTrainingTab>
+			<renderTree>AE_SnowMan</renderTree>
 			<hediffGiverSets>
 				<li>AnomalyEntity</li>
 			</hediffGiverSets>
-			<hideTrainingTab>true</hideTrainingTab>
 		</race>
 		<comps>
 			<li Class="CompProperties_HoldingPlatformTarget">
@@ -64,12 +65,9 @@
 		<uiIconPath>Things/Pawn/SnowArmy/SnowMan/AE_SnowMan_A_south</uiIconPath>
 		<race>
 			<body>AE_SnowMan</body>
-			<thinkTreeMain>AE_SnowMan</thinkTreeMain>
-			<thinkTreeConstant>AE_SnowManConstant</thinkTreeConstant>
 			<baseBodySize>1</baseBodySize>
 			<baseHealthScale>1</baseHealthScale>
 			<lifeExpectancy>35</lifeExpectancy>
-			<renderTree>AE_SnowMan</renderTree>
 			<lifeStageAges>
 				<li>
 					<def>EntityFullyFormed</def>
@@ -179,11 +177,9 @@
 		<race>
 			<body>AE_SnowGolem</body>
 			<thinkTreeMain>AE_SnowGolem</thinkTreeMain>
-			<thinkTreeConstant>AE_SnowManConstant</thinkTreeConstant>
 			<baseBodySize>6</baseBodySize>
 			<baseHealthScale>9.8</baseHealthScale>
 			<lifeExpectancy>225</lifeExpectancy>
-			<renderTree>AE_SnowMan</renderTree>
 			<lifeStageAges>
 				<li>
 					<def>EntityFullyFormed</def>
@@ -301,14 +297,10 @@
 		<uiIconPath>Things/Pawn/SnowArmy/SnowSpider/AE_SnowSpider_south</uiIconPath>
 		<race>
 			<body>AE_SnowSpider</body>
-			<thinkTreeMain>Fleshbeast</thinkTreeMain>
-			<thinkTreeConstant>FleshbeastConstant</thinkTreeConstant>
-			<!-- <thinkTreeMain>AE_SnowGolem</thinkTreeMain> -->
-			<!-- <thinkTreeConstant>AE_SnowManConstant</thinkTreeConstant> -->
+			<thinkTreeMain>AE_SnowSpider</thinkTreeMain>
 			<baseBodySize>0.6</baseBodySize>
 			<baseHealthScale>0.6</baseHealthScale>
 			<lifeExpectancy>15</lifeExpectancy>
-			<renderTree>AE_SnowMan</renderTree>
 			<lifeStageAges>
 				<li>
 					<def>EntityFullyFormed</def>

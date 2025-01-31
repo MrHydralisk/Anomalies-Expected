@@ -41,6 +41,7 @@
     <Compile Include="Building\Building_AEChristmasGiftBox.cs" />
     <Compile Include="Building\Building_AEChristmasTreeExit.cs" />
     <Compile Include="Comp\HediffComp_SnowArmy.cs" />
+    <Compile Include="DefOfLocal\FactionDefOfLocal.cs" />
     <Compile Include="DefOfLocal\FleshTypeDefOfLocal.cs" />
     <Compile Include="MapComponent\ChristmasTreeMapComponent.cs" />
     <Compile Include="Building\Building_AEBloodLake.cs" />

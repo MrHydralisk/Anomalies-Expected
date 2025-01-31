@@ -2,7 +2,7 @@
 <Defs>
 
 	<PawnKindDef Name="BaseAESnowArmyKind" Abstract="True">
-		<defaultFactionType>Entities</defaultFactionType>
+		<defaultFactionType>AE_SnowArmy</defaultFactionType>
 		<overrideDebugActionCategory>Entity</overrideDebugActionCategory>
 		<meleeAttackInfectionPathways>
 			<li>EntityAttacked</li>
