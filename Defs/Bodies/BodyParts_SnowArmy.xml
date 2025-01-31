@@ -1,26 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<BodyPartDef Name="BodyPart_BaseSnowBall">
-		<defName>AE_SnowBall</defName>
+	<BodyPartDef Name="BodyPart_AEBaseSnowBall" Abstract="True">
 		<label>snowball</label>
-		<hitPoints>50</hitPoints>
 		<skinCovered>true</skinCovered>
 		<canScarify>true</canScarify>
 		<canSuggestAmputation>false</canSuggestAmputation>
 		<executionPartPriority>400</executionPartPriority>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall">
+		<defName>AE_SnowBallA</defName>
+		<hitPoints>50</hitPoints>
 		<tags>
 			<li>ManipulationLimbCore</li>
 		</tags>
 	</BodyPartDef>
 
-	<BodyPartDef ParentName="BodyPart_BaseSnowBall">
-		<defName>AE_SnowBallTop</defName>
+	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall">
+		<defName>AE_SnowBallB</defName>
 		<hitPoints>25</hitPoints>
 	</BodyPartDef>
 
-	<BodyPartDef ParentName="BodyPart_BaseSnowBall">
-		<defName>AE_SnowBallBottom</defName>
+	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall">
+		<defName>AE_SnowBallC</defName>
 		<hitPoints>80</hitPoints>
 		<tags>
 			<li>MovingLimbCore</li>
@@ -95,8 +98,8 @@
 		</hitChanceFactors>
 	</BodyPartDef>
 
-	<BodyPartDef>
-		<defName>AE_SnowLeg</defName>
+	<BodyPartDef Name="BodyPart_BaseSnowLeg">
+		<defName>AE_SnowLegA</defName>
 		<label>snowball leg</label>
 		<hitPoints>10</hitPoints>
 		<skinCovered>true</skinCovered>
@@ -106,15 +109,12 @@
 			<li>Mirrored</li>
 		</tags>
 	</BodyPartDef>
+	
 
-	<BodyPartDef Name="BodyPart_BaseSnowBlock">
+	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall" Name="BodyPart_AEBaseSnowBlock">
 		<defName>AE_SnowBlock</defName>
 		<label>snow block</label>
 		<hitPoints>80</hitPoints>
-		<skinCovered>true</skinCovered>
-		<canScarify>true</canScarify>
-		<canSuggestAmputation>false</canSuggestAmputation>
-		<executionPartPriority>400</executionPartPriority>
 		<tags>
 			<li>MovingLimbCore</li>
 			<li>ManipulationLimbCore</li>
@@ -151,12 +151,57 @@
 		</hitChanceFactors>
 	</BodyPartDef>
 
-	<BodyPartDef ParentName="BodyPart_BaseSnowBlock">
+	<BodyPartDef ParentName="BodyPart_AEBaseSnowBlock">
 		<defName>AE_SnowBlockCompressor</defName>
 		<label>snow block compressor</label>
 		<hitPoints>25</hitPoints>
 		<skinCovered>false</skinCovered>
 		<canSuggestAmputation>false</canSuggestAmputation>
+	</BodyPartDef>
+	
+
+	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall">
+		<defName>AE_SnowBallD</defName>
+		<hitPoints>16</hitPoints>
+		<tags>
+			<li>MovingLimbCore</li>
+		</tags>
+	</BodyPartDef>
+	
+	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall">
+		<defName>AE_SnowBallE</defName>
+		<hitPoints>22</hitPoints>
+		<tags>
+			<li>MovingLimbCore</li>
+		</tags>
+	</BodyPartDef>
+	
+	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall">
+		<defName>AE_SnowBallF</defName>
+		<hitPoints>45</hitPoints>
+		<tags>
+			<li>MovingLimbCore</li>
+		</tags>
+	</BodyPartDef>	
+
+	<BodyPartDef>
+		<defName>AE_IceCrystalDistabilized</defName>
+		<label>distabilized ice crystal</label>
+		<hitPoints>80</hitPoints>
+		<skinCovered>true</skinCovered>
+		<canScarify>true</canScarify>
+		<canSuggestAmputation>false</canSuggestAmputation>
+		<executionPartPriority>400</executionPartPriority>
+		<tags>
+			<li>MovingLimbCore</li>
+			<li>ManipulationLimbCore</li>
+		</tags>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_BaseSnowLeg">
+		<defName>AE_SnowLegB</defName>
+		<label>snow leg</label>
+		<hitPoints>20</hitPoints>
 	</BodyPartDef>
   
 </Defs>

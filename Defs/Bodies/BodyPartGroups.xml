@@ -5,28 +5,24 @@
 		<defName>AE_LeftFHand</defName>
 		<label>left front hand</label>
 		<labelShort>hand</labelShort>
-		<listOrder>80</listOrder>
 	</BodyPartGroupDef>
 
 	<BodyPartGroupDef>
 		<defName>AE_LeftBHand</defName>
-		<label>left back hand</label>
+		<label>left rear hand</label>
 		<labelShort>hand</labelShort>
-		<listOrder>80</listOrder>
 	</BodyPartGroupDef>
 
 	<BodyPartGroupDef>
 		<defName>AE_RightFHand</defName>
 		<label>right front hand</label>
 		<labelShort>hand</labelShort>
-		<listOrder>80</listOrder>
 	</BodyPartGroupDef>
 
 	<BodyPartGroupDef>
 		<defName>AE_RightBHand</defName>
-		<label>right back hand</label>
+		<label>right rear hand</label>
 		<labelShort>hand</labelShort>
-		<listOrder>80</listOrder>
 	</BodyPartGroupDef>
 
 </Defs>

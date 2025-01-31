@@ -172,6 +172,7 @@
 		<description>The Snowman appears harmless and made out of few big snowballs. However, its icy snow body proves surprisingly resilient, quickly dispelling any illusions of innocence. They can attack by throwing snowballs at enemies or scratching them with their stick arms. They can survive even with substantial part of their body being missing.</description>
 		<statBases>
 			<MoveSpeed>1.6</MoveSpeed>
+			<ArmorRating_Blunt>0.7</ArmorRating_Blunt>
 			<MinimumContainmentStrength>110</MinimumContainmentStrength>
 		</statBases>
 		<uiIconPath>Things/Pawn/SnowArmy/SnowGolem/AE_SnowGolem_south</uiIconPath>
@@ -251,7 +252,7 @@
 				<linkedBodyPartsGroup>AE_LeftFHand</linkedBodyPartsGroup>
 			</li>
 			<li>
-				<label>left back snow block arm</label>
+				<label>left rear snow block arm</label>
 				<labelNoLocation>snow block arm</labelNoLocation>
 				<capacities>
 					<li>Blunt</li>
@@ -271,7 +272,7 @@
 				<linkedBodyPartsGroup>AE_LeftFHand</linkedBodyPartsGroup>
 			</li>
 			<li>
-				<label>right back snow block arm</label>
+				<label>right rear snow block arm</label>
 				<labelNoLocation>snow block arm</labelNoLocation>
 				<capacities>
 					<li>Blunt</li>
@@ -299,8 +300,7 @@
 		</statBases>
 		<uiIconPath>Things/Pawn/SnowArmy/SnowSpider/AE_SnowSpider_south</uiIconPath>
 		<race>
-			<!-- <body>AE_SnowGolem</body> -->
-			<body>AE_SnowMan</body>
+			<body>AE_SnowSpider</body>
 			<thinkTreeMain>Fleshbeast</thinkTreeMain>
 			<thinkTreeConstant>FleshbeastConstant</thinkTreeConstant>
 			<!-- <thinkTreeMain>AE_SnowGolem</thinkTreeMain> -->
@@ -359,7 +359,7 @@
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>4</power>
+				<power>2</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>UpperHead</linkedBodyPartsGroup>
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
@@ -367,34 +367,34 @@
 				<soundMeleeHit>Pawn_Fleshbeast_Attack_Blunt</soundMeleeHit>
 			</li>
 			<li>
-				<label>left stick arm</label>
-				<labelNoLocation>stick arm</labelNoLocation>
-				<capacities>
-					<li>Scratch</li>
-				</capacities>
-				<power>8</power>
-				<cooldownTime>2</cooldownTime>
-				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
-			</li>
-			<li>
-				<label>right stick arm</label>
-				<labelNoLocation>stick arm</labelNoLocation>
-				<capacities>
-					<li>Scratch</li>
-				</capacities>
-				<power>8</power>
-				<cooldownTime>2</cooldownTime>
-				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
-			</li>
-			<li>
-				<label>carrot nose</label>
+				<label>left front snow leg</label>
+				<labelNoLocation>snow leg</labelNoLocation>
 				<capacities>
 					<li>Stab</li>
 				</capacities>
-				<power>12</power>
+				<power>5</power>
+				<cooldownTime>1</cooldownTime>
+				<linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>right front snow leg</label>
+				<labelNoLocation>snow leg</labelNoLocation>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>5</power>
+				<cooldownTime>1</cooldownTime>
+				<linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>fangs</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>4</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-				<chanceFactor>0.2</chanceFactor>
+				<chanceFactor>0.8</chanceFactor>
 			</li>
 		</tools>
 		<butcherProducts>

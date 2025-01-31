@@ -5,7 +5,7 @@
 		<defName>AE_SnowMan</defName>
 		<label>snowman</label>
 		<corePart>
-			<def>AE_SnowBall</def>
+			<def>AE_SnowBallA</def>
 			<customLabel>middle snowball</customLabel>
 			<height>Middle</height>
 			<depth>Outside</depth>
@@ -14,7 +14,7 @@
 			</groups>
 			<parts>
 				<li>
-					<def>AE_SnowBallTop</def>
+					<def>AE_SnowBallB</def>
 					<customLabel>top snowball</customLabel>
 					<coverage>0.18</coverage>
 					<height>Top</height>
@@ -64,7 +64,7 @@
 					</parts>
 				</li>
 				<li>
-					<def>AE_SnowBallBottom</def>
+					<def>AE_SnowBallC</def>
 					<customLabel>bottom snowball</customLabel>
 					<coverage>0.5</coverage>
 					<height>Bottom</height>
@@ -75,7 +75,7 @@
 					</groups>
 					<parts>
 						<li>
-							<def>AE_SnowLeg</def>
+							<def>AE_SnowLegA</def>
 							<customLabel>left snowball leg</customLabel>
 							<coverage>0.09</coverage>
 							<height>Bottom</height>
@@ -86,7 +86,7 @@
 							<flipGraphic>true</flipGraphic>
 						</li>
 						<li>
-							<def>AE_SnowLeg</def>
+							<def>AE_SnowLegA</def>
 							<customLabel>right snowball leg</customLabel>
 							<coverage>0.09</coverage>
 							<height>Bottom</height>
@@ -225,7 +225,7 @@
 				</li>
 				<li>
 					<def>AE_SnowBlockLeg</def>
-					<customLabel>left back snow block leg</customLabel>
+					<customLabel>left rear snow block leg</customLabel>
 					<coverage>0.1</coverage>
 					<height>Bottom</height>
 					<groups>
@@ -247,7 +247,7 @@
 				</li>
 				<li>
 					<def>AE_SnowBlockLeg</def>
-					<customLabel>right back snow block leg</customLabel>
+					<customLabel>right rear snow block leg</customLabel>
 					<coverage>0.1</coverage>
 					<height>Bottom</height>
 					<groups>
@@ -268,7 +268,7 @@
 				</li>
 				<li>
 					<def>AE_SnowBlockArm</def>
-					<customLabel>left back snow block arm</customLabel>
+					<customLabel>left rear snow block arm</customLabel>
 					<coverage>0.1</coverage>
 					<flipGraphic>true</flipGraphic>
 					<groups>
@@ -288,7 +288,7 @@
 				</li>
 				<li>
 					<def>AE_SnowBlockArm</def>
-					<customLabel>right back snow block arm</customLabel>
+					<customLabel>right rear snow block arm</customLabel>
 					<coverage>0.1</coverage>
 					<flipGraphic>true</flipGraphic>
 					<groups>
@@ -325,6 +325,217 @@
 				<li>
 					<def>AE_SnowCoreHeart</def>
 					<customLabel>left snow core</customLabel>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+					<groups>
+						<li>Torso</li>
+					</groups>
+				</li>
+			</parts>
+		</corePart>
+	</BodyDef>
+  
+	<BodyDef>
+		<defName>AE_SnowSpider</defName>
+		<label>snow spider</label>
+		<corePart>
+			<def>AE_SnowBallD</def>
+			<customLabel>middle snowball</customLabel>
+			<height>Middle</height>
+			<depth>Outside</depth>
+			<groups>
+				<li>Torso</li>
+			</groups>
+			<parts>
+				<li>
+					<def>AE_SnowBallE</def>
+					<customLabel>front snowball</customLabel>
+					<coverage>0.18</coverage>
+					<depth>Outside</depth>
+					<groups>
+						<li>Neck</li>
+						<li>UpperHead</li>
+						<li>FullHead</li>
+						<li>HeadAttackTool</li>
+					</groups>
+					<parts>
+						<li>
+							<def>AE_SnowEye</def>
+							<customLabel>left eye stone</customLabel>
+							<coverage>0.025</coverage>
+							<groups>
+								<li>FullHead</li>
+								<li>Eyes</li>
+							</groups>
+							<woundAnchorTag>LeftEye</woundAnchorTag>
+							<flipGraphic>true</flipGraphic>
+							<visibleHediffRots>
+								<li>South</li>
+								<li>West</li>
+							</visibleHediffRots>
+						</li>
+						<li>
+							<def>AE_SnowEye</def>
+							<customLabel>left eye stone</customLabel>
+							<coverage>0.025</coverage>
+							<groups>
+								<li>FullHead</li>
+								<li>Eyes</li>
+							</groups>
+							<woundAnchorTag>LeftEye</woundAnchorTag>
+							<flipGraphic>true</flipGraphic>
+							<visibleHediffRots>
+								<li>South</li>
+								<li>West</li>
+							</visibleHediffRots>
+						</li>
+						<li>
+							<def>AE_SnowEye</def>
+							<customLabel>left eye stone</customLabel>
+							<coverage>0.025</coverage>
+							<groups>
+								<li>FullHead</li>
+								<li>Eyes</li>
+							</groups>
+							<woundAnchorTag>LeftEye</woundAnchorTag>
+							<flipGraphic>true</flipGraphic>
+							<visibleHediffRots>
+								<li>South</li>
+								<li>West</li>
+							</visibleHediffRots>
+						</li>
+						<li>
+							<def>AE_SnowEye</def>
+							<customLabel>right eye stone</customLabel>
+							<coverage>0.025</coverage>
+							<groups>
+								<li>FullHead</li>
+								<li>Eyes</li>
+							</groups>
+							<woundAnchorTag>RightEye</woundAnchorTag>
+							<visibleHediffRots>
+								<li>South</li>
+								<li>East</li>
+							</visibleHediffRots>
+						</li>
+						<li>
+							<def>AE_SnowEye</def>
+							<customLabel>right eye stone</customLabel>
+							<coverage>0.025</coverage>
+							<groups>
+								<li>FullHead</li>
+								<li>Eyes</li>
+							</groups>
+							<woundAnchorTag>RightEye</woundAnchorTag>
+							<visibleHediffRots>
+								<li>South</li>
+								<li>East</li>
+							</visibleHediffRots>
+						</li>
+						<li>
+							<def>AE_SnowEye</def>
+							<customLabel>right eye stone</customLabel>
+							<coverage>0.025</coverage>
+							<groups>
+								<li>FullHead</li>
+								<li>Eyes</li>
+							</groups>
+							<woundAnchorTag>RightEye</woundAnchorTag>
+							<visibleHediffRots>
+								<li>South</li>
+								<li>East</li>
+							</visibleHediffRots>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>AE_SnowBallF</def>
+					<customLabel>rear snowball</customLabel>
+					<coverage>0.5</coverage>
+					<depth>Outside</depth>
+					<groups>
+						<li>Waist</li>
+					</groups>
+					<parts>
+						<li>
+							<def>AE_IceCrystalDistabilized</def>
+							<coverage>0.35</coverage>
+							<customLabel>big distabilized ice crystal</customLabel>
+							<height>Top</height>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>AE_SnowLegB</def>
+					<customLabel>left front snow leg</customLabel>
+					<coverage>0.09</coverage>
+					<height>Bottom</height>
+					<groups>
+						<li>Legs</li>
+						<li>FrontLeftLeg</li>
+					</groups>
+					<woundAnchorTag>LeftLeg</woundAnchorTag>
+					<flipGraphic>true</flipGraphic>
+				</li>
+				<li>
+					<def>AE_SnowLegB</def>
+					<customLabel>left snow leg</customLabel>
+					<coverage>0.09</coverage>
+					<height>Bottom</height>
+					<groups>
+						<li>Legs</li>
+					</groups>
+					<woundAnchorTag>LeftLeg</woundAnchorTag>
+					<flipGraphic>true</flipGraphic>
+				</li>
+				<li>
+					<def>AE_SnowLegB</def>
+					<customLabel>left rear snow leg</customLabel>
+					<coverage>0.09</coverage>
+					<height>Bottom</height>
+					<groups>
+						<li>Legs</li>
+					</groups>
+					<woundAnchorTag>LeftLeg</woundAnchorTag>
+					<flipGraphic>true</flipGraphic>
+				</li>
+				<li>
+					<def>AE_SnowLegB</def>
+					<customLabel>right front snow leg</customLabel>
+					<coverage>0.09</coverage>
+					<height>Bottom</height>
+					<groups>
+						<li>Legs</li>
+						<li>FrontRightLeg</li>
+					</groups>
+					<woundAnchorTag>RightLeg</woundAnchorTag>
+					<flipGraphic>true</flipGraphic>
+				</li>
+				<li>
+					<def>AE_SnowLegB</def>
+					<customLabel>right snow leg</customLabel>
+					<coverage>0.09</coverage>
+					<height>Bottom</height>
+					<groups>
+						<li>Legs</li>
+					</groups>
+					<woundAnchorTag>RightLeg</woundAnchorTag>
+					<flipGraphic>true</flipGraphic>
+				</li>
+				<li>
+					<def>AE_SnowLegB</def>
+					<customLabel>right rear snow leg</customLabel>
+					<coverage>0.09</coverage>
+					<height>Bottom</height>
+					<groups>
+						<li>Legs</li>
+					</groups>
+					<woundAnchorTag>RightLeg</woundAnchorTag>
+					<flipGraphic>true</flipGraphic>
+				</li>
+				<li>
+					<def>AE_SnowCoreHeart</def>
+					<customLabel>snow core</customLabel>
 					<coverage>0.03</coverage>
 					<depth>Inside</depth>
 					<groups>
