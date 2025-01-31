@@ -40,6 +40,7 @@
     <Compile Include="Alert_ChristmasTreeUnstable.cs" />
     <Compile Include="Building\Building_AEChristmasGiftBox.cs" />
     <Compile Include="Building\Building_AEChristmasTreeExit.cs" />
+    <Compile Include="DefOfLocal\FleshTypeDefOfLocal.cs" />
     <Compile Include="MapComponent\ChristmasTreeMapComponent.cs" />
     <Compile Include="Building\Building_AEBloodLake.cs" />
     <Compile Include="Comp\Comp_AtmosphericController.cs" />

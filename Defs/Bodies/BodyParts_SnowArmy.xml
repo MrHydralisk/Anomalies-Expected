@@ -9,6 +9,9 @@
 		<canScarify>true</canScarify>
 		<canSuggestAmputation>false</canSuggestAmputation>
 		<executionPartPriority>400</executionPartPriority>
+		<tags>
+			<li>ManipulationLimbCore</li>
+		</tags>
 	</BodyPartDef>
 
 	<BodyPartDef ParentName="BodyPart_BaseSnowBall">
@@ -31,6 +34,7 @@
 		<skinCovered>false</skinCovered>
 		<tags>
 			<li>BloodPumpingSource</li>
+			<li>BloodFiltrationSource</li>
 			<li>ConsciousnessSource</li>
 		</tags>
 		<canSuggestAmputation>false</canSuggestAmputation>
@@ -42,6 +46,7 @@
 		<hitPoints>12</hitPoints>
 		<bleedRate>0</bleedRate>
 		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+		<frostbiteVulnerability>0.5</frostbiteVulnerability>
 		<delicate>true</delicate>
 		<skinCovered>false</skinCovered>
 		<canScarify>true</canScarify>
@@ -79,7 +84,7 @@
 		<skinCovered>true</skinCovered>
 		<canScarify>true</canScarify>
 		<tags>
-			<li>ManipulationLimbCore</li>
+			<li>ManipulationLimbSegment</li>
 			<li>Mirrored</li>
 		</tags>
 		<hitChanceFactors>
@@ -100,6 +105,58 @@
 			<li>MovingLimbSegment</li>
 			<li>Mirrored</li>
 		</tags>
+	</BodyPartDef>
+
+	<BodyPartDef Name="BodyPart_BaseSnowBlock">
+		<defName>AE_SnowBlock</defName>
+		<label>snow block</label>
+		<hitPoints>80</hitPoints>
+		<skinCovered>true</skinCovered>
+		<canScarify>true</canScarify>
+		<canSuggestAmputation>false</canSuggestAmputation>
+		<executionPartPriority>400</executionPartPriority>
+		<tags>
+			<li>MovingLimbCore</li>
+			<li>ManipulationLimbCore</li>
+		</tags>
+	</BodyPartDef>
+
+	<BodyPartDef>
+		<defName>AE_SnowBlockLeg</defName>
+		<label>snow block leg</label>
+		<hitPoints>15</hitPoints>
+		<skinCovered>true</skinCovered>
+		<canScarify>true</canScarify>
+		<tags>
+			<li>MovingLimbSegment</li>
+			<li>Mirrored</li>
+		</tags>
+	</BodyPartDef>
+
+	<BodyPartDef>
+		<defName>AE_SnowBlockArm</defName>
+		<label>snow block arm</label>
+		<hitPoints>25</hitPoints>
+		<skinCovered>true</skinCovered>
+		<canScarify>true</canScarify>
+		<tags>
+			<li>ManipulationLimbSegment</li>
+			<li>Mirrored</li>
+		</tags>
+		<hitChanceFactors>
+			<li>
+				<key>Blunt</key>
+				<value>0.3</value>
+			</li>
+		</hitChanceFactors>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_BaseSnowBlock">
+		<defName>AE_SnowBlockCompressor</defName>
+		<label>snow block compressor</label>
+		<hitPoints>25</hitPoints>
+		<skinCovered>false</skinCovered>
+		<canSuggestAmputation>false</canSuggestAmputation>
 	</BodyPartDef>
   
 </Defs>

@@ -36,6 +36,10 @@
 			<isImmuneToInfections>true</isImmuneToInfections>
 			<bleedRateFactor>0</bleedRateFactor>
 			<corpseHiddenWhileUndiscovered>true</corpseHiddenWhileUndiscovered>
+			<hediffGiverSets>
+				<li>AnomalyEntity</li>
+			</hediffGiverSets>
+	  <hideTrainingTab>true</hideTrainingTab>
 		</race>
 		<comps>
 			<li Class="CompProperties_HoldingPlatformTarget">
@@ -169,8 +173,7 @@
 		</statBases>
 		<uiIconPath>Things/Pawn/SnowArmy/SnowGolem/AE_SnowGolem_south</uiIconPath>
 		<race>
-			<!-- <body>AE_SnowGolem</body> -->
-			<body>AE_SnowMan</body>
+			<body>AE_SnowGolem</body>
 			<thinkTreeMain>AE_SnowGolem</thinkTreeMain>
 			<thinkTreeConstant>AE_SnowManConstant</thinkTreeConstant>
 			<baseBodySize>6</baseBodySize>
@@ -227,42 +230,52 @@
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>4</power>
-				<cooldownTime>2</cooldownTime>
-				<linkedBodyPartsGroup>UpperHead</linkedBodyPartsGroup>
+				<power>22</power>
+				<cooldownTime>5</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
 				<chanceFactor>0.2</chanceFactor>
 				<soundMeleeHit>Pawn_Fleshbeast_Attack_Blunt</soundMeleeHit>
 			</li>
 			<li>
-				<label>left stick arm</label>
-				<labelNoLocation>stick arm</labelNoLocation>
+				<label>left front snow block arm</label>
+				<labelNoLocation>snow block arm</labelNoLocation>
 				<capacities>
-					<li>Scratch</li>
-				</capacities>
-				<power>8</power>
-				<cooldownTime>2</cooldownTime>
-				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
-			</li>
-			<li>
-				<label>right stick arm</label>
-				<labelNoLocation>stick arm</labelNoLocation>
-				<capacities>
-					<li>Scratch</li>
-				</capacities>
-				<power>8</power>
-				<cooldownTime>2</cooldownTime>
-				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
-			</li>
-			<li>
-				<label>carrot nose</label>
-				<capacities>
-					<li>Stab</li>
+					<li>Blunt</li>
 				</capacities>
 				<power>12</power>
 				<cooldownTime>2</cooldownTime>
-				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-				<chanceFactor>0.2</chanceFactor>
+				<linkedBodyPartsGroup>AE_LeftFHand</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>left back snow block arm</label>
+				<labelNoLocation>snow block arm</labelNoLocation>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>AE_LeftBHand</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>right front snow block arm</label>
+				<labelNoLocation>snow block arm</labelNoLocation>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>AE_LeftFHand</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>right back snow block arm</label>
+				<labelNoLocation>snow block arm</labelNoLocation>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>AE_LeftBHand</linkedBodyPartsGroup>
 			</li>
 		</tools>
 		<killedLeavingsRanges>
