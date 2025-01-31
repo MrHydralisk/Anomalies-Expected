@@ -13,6 +13,8 @@
 			<ArmorRating_Heat>0</ArmorRating_Heat>
 			<PainShockThreshold>0.99</PainShockThreshold>
 			<PsychicSensitivity>0</PsychicSensitivity>
+			<LeatherAmount>0</LeatherAmount>
+			<MeatAmount>0</MeatAmount>
 		</statBases>
 		<tradeability>None</tradeability>
 		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
@@ -25,12 +27,10 @@
 			<canOpenFactionlessDoors>false</canOpenFactionlessDoors>
 			<needsRest>false</needsRest>
 			<hasGenders>false</hasGenders>
-			<hasMeat>false</hasMeat>
 			<foodType>None</foodType>
 			<bloodDef>Filth_AEIceBlood</bloodDef>
 			<bloodSmearDef>Filth_AEIceBloodSmear</bloodSmearDef>
 			<soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
-			<!-- <soundMoving>Pawn_Fleshbeast_Bulbfreak_Moving</soundMoving> -->
 			<trainability>None</trainability>
 			<fleshType>AE_EntitySnowArmy</fleshType>
 			<isImmuneToInfections>true</isImmuneToInfections>
@@ -39,7 +39,7 @@
 			<hediffGiverSets>
 				<li>AnomalyEntity</li>
 			</hediffGiverSets>
-	  <hideTrainingTab>true</hideTrainingTab>
+			<hideTrainingTab>true</hideTrainingTab>
 		</race>
 		<comps>
 			<li Class="CompProperties_HoldingPlatformTarget">
@@ -158,6 +158,9 @@
 				<chanceFactor>0.2</chanceFactor>
 			</li>
 		</tools>
+		<butcherProducts>
+			<AE_IceCrystal>1</AE_IceCrystal>
+		</butcherProducts>
 		<killedLeavingsRanges>
 			<Bioferrite>2~5</Bioferrite>
 		</killedLeavingsRanges>
@@ -278,6 +281,9 @@
 				<linkedBodyPartsGroup>AE_LeftBHand</linkedBodyPartsGroup>
 			</li>
 		</tools>
+		<butcherProducts>
+			<AE_IceCrystal>5</AE_IceCrystal>
+		</butcherProducts>
 		<killedLeavingsRanges>
 			<Bioferrite>7~10</Bioferrite>
 		</killedLeavingsRanges>
@@ -344,7 +350,7 @@
 				<bioferriteDensity>1</bioferriteDensity>
 			</li>
 			<!-- <li> -->
-				<!-- <compClass>AnomaliesExpected.Comp_EntityWithWeapon</compClass> -->
+			<!-- <compClass>AnomaliesExpected.Comp_EntityWithWeapon</compClass> -->
 			<!-- </li> -->
 		</comps>
 		<tools>
@@ -391,6 +397,9 @@
 				<chanceFactor>0.2</chanceFactor>
 			</li>
 		</tools>
+		<butcherProducts>
+			<AE_IceCrystal>1</AE_IceCrystal>
+		</butcherProducts>
 		<killedLeavingsRanges>
 			<Bioferrite>5~9</Bioferrite>
 		</killedLeavingsRanges>

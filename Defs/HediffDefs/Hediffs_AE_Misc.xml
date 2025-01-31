@@ -289,8 +289,109 @@
 					<ArmorRating_Heat>0.5</ArmorRating_Heat>
 				</statOffsets>
 				<statFactors>
-				  <IncomingDamageFactor>0.75</IncomingDamageFactor>
+					<IncomingDamageFactor>0.75</IncomingDamageFactor>
 				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	
+	
+	<HediffDef>
+		<defName>Hediff_AESnowArmy</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>freezing core</label>
+		<description>Depending on how low is surrounding temperature it will regenrate faster. When is burning surface resistance to damage decreased.</description>
+		<initialSeverity>0</initialSeverity>
+		<maxSeverity>2000</maxSeverity>
+		<minSeverity>-2000</minSeverity>
+		<isBad>false</isBad>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<comps>
+			<li>
+				<compClass>AnomaliesExpected.HediffComp_SnowArmy</compClass>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<regeneration>0</regeneration>
+				<minSeverity>1</minSeverity>
+			</li>
+			<li>
+				<regeneration>1</regeneration>
+				<minSeverity>2</minSeverity>
+			</li>
+			<li>
+				<regeneration>5</regeneration>
+				<minSeverity>5</minSeverity>
+			</li>
+			<li>
+				<regeneration>10</regeneration>
+				<minSeverity>10</minSeverity>
+			</li>
+			<li>
+				<regeneration>15</regeneration>
+				<minSeverity>15</minSeverity>
+			</li>
+			<li>
+				<regeneration>20</regeneration>
+				<minSeverity>20</minSeverity>
+			</li>
+			<li>
+				<regeneration>25</regeneration>
+				<minSeverity>25</minSeverity>
+			</li>
+			<li>
+				<regeneration>30</regeneration>
+				<minSeverity>30</minSeverity>
+			</li>
+			<li>
+				<regeneration>35</regeneration>
+				<minSeverity>35</minSeverity>
+			</li>
+			<li>
+				<regeneration>40</regeneration>
+				<minSeverity>40</minSeverity>
+			</li>
+			<li>
+				<regeneration>45</regeneration>
+				<minSeverity>45</minSeverity>
+			</li>
+			<li>
+				<regeneration>50</regeneration>
+				<minSeverity>50</minSeverity>
+			</li>
+			<li>
+				<regeneration>75</regeneration>
+				<minSeverity>75</minSeverity>
+			</li>
+			<li>
+				<regeneration>100</regeneration>
+				<minSeverity>100</minSeverity>
+			</li>
+			<li>
+				<regeneration>150</regeneration>
+				<minSeverity>150</minSeverity>
+			</li>
+			<li>
+				<regeneration>200</regeneration>
+				<minSeverity>200</minSeverity>
+			</li>
+			<li>
+				<regeneration>250</regeneration>
+				<minSeverity>250</minSeverity>
+			</li>
+			<li>
+				<regeneration>300</regeneration>
+				<minSeverity>300</minSeverity>
+			</li>
+			<li>
+				<regeneration>400</regeneration>
+				<minSeverity>400</minSeverity>
+			</li>
+			<li>
+				<regeneration>500</regeneration>
+				<minSeverity>500</minSeverity>
 			</li>
 		</stages>
 	</HediffDef>

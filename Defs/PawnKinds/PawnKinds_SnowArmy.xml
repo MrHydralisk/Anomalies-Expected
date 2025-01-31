@@ -7,6 +7,16 @@
 		<meleeAttackInfectionPathways>
 			<li>EntityAttacked</li>
 		</meleeAttackInfectionPathways>
+		<overrideDeathOnDownedChance>0.8</overrideDeathOnDownedChance>
+		<preventIdeo>true</preventIdeo>
+		<aiAvoidCover>true</aiAvoidCover>
+		<destroyGearOnDrop>true</destroyGearOnDrop>
+		<startingHediffs>
+			<li>
+				<def>Hediff_AESnowArmy</def>
+				<severity>1</severity>
+			</li>
+		</startingHediffs>
 	</PawnKindDef>
 
 	<PawnKindDef ParentName="BaseAESnowArmyKind">
@@ -15,10 +25,6 @@
 		<weaponTags>
 			<li>Gun_AESnowBall</li>
 		</weaponTags>
-		<overrideDeathOnDownedChance>0.8</overrideDeathOnDownedChance>
-		<preventIdeo>true</preventIdeo>
-		<aiAvoidCover>true</aiAvoidCover>
-		<destroyGearOnDrop>true</destroyGearOnDrop>
 		<race>AE_SnowMan</race>
 		<combatPower>60</combatPower>
 		<weaponMoney>9999~9999</weaponMoney>
@@ -29,10 +35,6 @@
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>2</drawSize>
 				</bodyGraphicData>
-				<!-- <butcherBodyPart> -->
-					<!-- <bodyPartGroup>AEIceCore</bodyPartGroup> -->
-					<!-- <thing>AE_IceCrystal</thing> -->
-				<!-- </butcherBodyPart> -->
 			</li>
 		</lifeStages>
 		<alternateGraphicChance>0.66</alternateGraphicChance>
@@ -53,10 +55,6 @@
 		<weaponTags>
 			<li>Gun_AESnowBlock</li>
 		</weaponTags>
-		<overrideDeathOnDownedChance>0.8</overrideDeathOnDownedChance>
-		<preventIdeo>true</preventIdeo>
-		<aiAvoidCover>true</aiAvoidCover>
-		<destroyGearOnDrop>true</destroyGearOnDrop>
 		<race>AE_SnowGolem</race>
 		<combatPower>280</combatPower>
 		<weaponMoney>9999~9999</weaponMoney>
@@ -74,9 +72,6 @@
 	<PawnKindDef ParentName="BaseAESnowArmyKind">
 		<defName>AE_SnowSpider</defName>
 		<label>snow spider</label>
-		<overrideDeathOnDownedChance>0.8</overrideDeathOnDownedChance>
-		<preventIdeo>true</preventIdeo>
-		<aiAvoidCover>true</aiAvoidCover>
 		<race>AE_SnowSpider</race>
 		<combatPower>40</combatPower>
 		<lifeStages>
