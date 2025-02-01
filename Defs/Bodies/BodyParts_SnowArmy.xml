@@ -122,6 +122,19 @@
 	</BodyPartDef>
 
 	<BodyPartDef>
+		<defName>AE_SnowFacePlate</defName>
+		<label>face plate</label>
+		<hitPoints>16</hitPoints>
+		<bleedRate>0</bleedRate>
+		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+		<frostbiteVulnerability>0.5</frostbiteVulnerability>
+		<skinCovered>true</skinCovered>
+		<canScarify>true</canScarify>
+		<canSuggestAmputation>false</canSuggestAmputation>
+		<beautyRelated>true</beautyRelated>
+	</BodyPartDef>
+
+	<BodyPartDef>
 		<defName>AE_SnowBlockLeg</defName>
 		<label>snow block leg</label>
 		<hitPoints>15</hitPoints>
