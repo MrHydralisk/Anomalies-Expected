@@ -83,6 +83,12 @@
 				</bodyGraphicData>
 			</li>
 		</lifeStages>
+		<startingHediffs>
+			<li>
+				<def>AE_IceCrystalDistabilized</def>
+				<severity>1</severity>
+			</li>
+		</startingHediffs>
 	</PawnKindDef>
 
 </Defs>

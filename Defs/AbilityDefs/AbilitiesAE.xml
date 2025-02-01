@@ -257,5 +257,37 @@
 			</li>
 		</comps>
 	</AbilityDef>
+	
+	
+	
+	<AbilityDef>
+		<defName>AEIceCrystalDistabilization</defName>
+		<label>ice crystal distabilization</label>
+		<description>Increase ice crystal distabilization process to critical level, which will cause an explosion.</description>
+		<cooldownTicksRange>60000</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayOrder>1300</displayOrder>
+		<category>AEAnomaliesExpected</category>
+		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>2.9</range>
+			<warmupTime>0</warmupTime>
+			<targetable>false</targetable>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilityIceCrystalDistabilization">
+				<damageDef>AEFreezing</damageDef>
+				<damAmount>16</damAmount>
+				<armorPenetration>1</armorPenetration>
+				<minTargets>1</minTargets>
+				<minTargetsWEffect>3</minTargetsWEffect>
+			</li>
+		</comps>
+	</AbilityDef>
 
 </Defs>

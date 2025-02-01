@@ -158,10 +158,8 @@
 		</tools>
 		<butcherProducts>
 			<AE_IceCrystal>1</AE_IceCrystal>
+			<Bioferrite>3</Bioferrite>
 		</butcherProducts>
-		<killedLeavingsRanges>
-			<Bioferrite>2~5</Bioferrite>
-		</killedLeavingsRanges>
 	</ThingDef>
 
 	<ThingDef ParentName="BaseAESnowArmy">
@@ -280,10 +278,8 @@
 		</tools>
 		<butcherProducts>
 			<AE_IceCrystal>5</AE_IceCrystal>
+			<Bioferrite>9</Bioferrite>
 		</butcherProducts>
-		<killedLeavingsRanges>
-			<Bioferrite>7~10</Bioferrite>
-		</killedLeavingsRanges>
 	</ThingDef>
 
 	<ThingDef ParentName="BaseAESnowArmy">
@@ -292,6 +288,9 @@
 		<description>The Snowman appears harmless and made out of few big snowballs. However, its icy snow body proves surprisingly resilient, quickly dispelling any illusions of innocence. They can attack by throwing snowballs at enemies or scratching them with their stick arms. They can survive even with substantial part of their body being missing.</description>
 		<statBases>
 			<MoveSpeed>5.5</MoveSpeed>
+			<ArmorRating_Sharp>0.9</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+			<PsychicSensitivity>0.25</PsychicSensitivity>
 			<MinimumContainmentStrength>20</MinimumContainmentStrength>
 		</statBases>
 		<uiIconPath>Things/Pawn/SnowArmy/SnowSpider/AE_SnowSpider_south</uiIconPath>
@@ -391,10 +390,8 @@
 		</tools>
 		<butcherProducts>
 			<AE_IceCrystal>1</AE_IceCrystal>
+			<Bioferrite>2</Bioferrite>
 		</butcherProducts>
-		<killedLeavingsRanges>
-			<Bioferrite>5~9</Bioferrite>
-		</killedLeavingsRanges>
 	</ThingDef>
 
 </Defs>

@@ -306,7 +306,8 @@
 		<maxSeverity>2000</maxSeverity>
 		<minSeverity>-2000</minSeverity>
 		<isBad>false</isBad>
-    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<defaultLabelColor>(0.31, 0.69, 0.835)</defaultLabelColor>
 		<comps>
 			<li>
 				<compClass>AnomaliesExpected.HediffComp_SnowArmy</compClass>

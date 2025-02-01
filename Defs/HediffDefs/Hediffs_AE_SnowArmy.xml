@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<HediffDef Name="AESnowArmyBodyPart" ParentName="AddedBodyPartBase" Abstract="True">
+		<organicAddedBodypart>true</organicAddedBodypart>
+		<defaultLabelColor>(0.31, 0.69, 0.835)</defaultLabelColor>
+	</HediffDef>
+  
+	<HediffDef ParentName="AESnowArmyBodyPart">
+		<defName>AE_IceCrystalDistabilized</defName>
+		<label>distabilized ice crystal</label>
+		<labelNoun>a distabilized ice crystal</labelNoun>
+		<description>A cancerous mass of semi-sentient flesh. The harsh acid it produces is painful, but strong enough to prevent most food poisoning. It can break down and reabsorb nutrients from its own tissue, allowing it to sustain itself for extended periods without external sustenance.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<defaultInstallPart>AE_IceCrystalDistabilized</defaultInstallPart>
+		<abilities>
+			<li>AEIceCrystalDistabilization</li>
+		</abilities>
+		<stages>
+			<li>
+				<label>charged</label>
+			</li>
+		</stages>
+		<addedPartProps>
+			<solid>true</solid>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<comps>
+			<li>
+				<compClass>AnomaliesExpected.HediffComp_ActivateAbilityOnRemoved</compClass>
+			</li>
+		</comps>
+	</HediffDef>
+	
+</Defs>

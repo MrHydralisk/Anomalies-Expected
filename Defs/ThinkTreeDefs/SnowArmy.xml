@@ -37,21 +37,25 @@
 					</subNodes>
 				</li>
 
+				<!-- Forced goto -->
+				<li Class="ThinkNode_ConditionalForcedGoto">
+					<subNodes>
+						<li Class="ThinkNode_Tagger">
+							<tagToGive>Misc</tagToGive>
+							<subNodes>
+								<li Class="JobGiver_ForcedGoto"/>
+							</subNodes>
+						</li>
+					</subNodes>
+				</li>
+
 				<!-- Lord -->
 				<li Class="ThinkNode_Subtree">
 					<treeDef>LordDuty</treeDef>
 				</li>
-				<li Class="ThinkNode_ConditionalOfPlayerFaction">
-					<subNodes>
-						<li Class="JobGiver_AIFightEnemies">
-							<targetAcquireRadius>65</targetAcquireRadius>
-							<targetKeepRadius>72</targetKeepRadius>
-						</li>
-						<li Class="JobGiver_SeekAllowedArea"/>
-						<li Class="JobGiver_ShamblerWander">
-							<wanderRadius>3</wanderRadius>
-						</li>
-					</subNodes>
+				<li Class="JobGiver_AIFightEnemies">
+					<targetAcquireRadius>65</targetAcquireRadius>
+					<targetKeepRadius>72</targetKeepRadius>
 				</li>
 
 				<!-- Idle -->
@@ -60,6 +64,7 @@
 					<subNodes>
 						<li Class="JobGiver_WanderAnywhere">
 							<maxDanger>Deadly</maxDanger>
+							<ticksBetweenWandersRange>120~240</ticksBetweenWandersRange>
 						</li>
 					</subNodes>
 				</li>
@@ -103,21 +108,25 @@
 					</subNodes>
 				</li>
 
+				<!-- Forced goto -->
+				<li Class="ThinkNode_ConditionalForcedGoto">
+					<subNodes>
+						<li Class="ThinkNode_Tagger">
+							<tagToGive>Misc</tagToGive>
+							<subNodes>
+								<li Class="JobGiver_ForcedGoto"/>
+							</subNodes>
+						</li>
+					</subNodes>
+				</li>
+
 				<!-- Lord -->
 				<li Class="ThinkNode_Subtree">
 					<treeDef>LordDuty</treeDef>
 				</li>
-				<li Class="ThinkNode_ConditionalOfPlayerFaction">
-					<subNodes>
-						<li Class="JobGiver_AIFightEnemies">
-							<targetAcquireRadius>200</targetAcquireRadius>
-							<targetKeepRadius>220</targetKeepRadius>
-						</li>
-						<li Class="JobGiver_SeekAllowedArea"/>
-						<li Class="JobGiver_ShamblerWander">
-							<wanderRadius>2</wanderRadius>
-						</li>
-					</subNodes>
+				<li Class="JobGiver_AIFightEnemies">
+					<targetAcquireRadius>200</targetAcquireRadius>
+					<targetKeepRadius>220</targetKeepRadius>
 				</li>
 
 				<!-- Idle -->
@@ -126,6 +135,7 @@
 					<subNodes>
 						<li Class="JobGiver_WanderAnywhere">
 							<maxDanger>Deadly</maxDanger>
+							<ticksBetweenWandersRange>120~240</ticksBetweenWandersRange>
 						</li>
 					</subNodes>
 				</li>
@@ -172,21 +182,25 @@
 					</subNodes>
 				</li>
 
+				<!-- Forced goto -->
+				<li Class="ThinkNode_ConditionalForcedGoto">
+					<subNodes>
+						<li Class="ThinkNode_Tagger">
+							<tagToGive>Misc</tagToGive>
+							<subNodes>
+								<li Class="JobGiver_ForcedGoto"/>
+							</subNodes>
+						</li>
+					</subNodes>
+				</li>
+
 				<!-- Lord -->
 				<li Class="ThinkNode_Subtree">
 					<treeDef>LordDuty</treeDef>
 				</li>
-				<li Class="ThinkNode_ConditionalOfPlayerFaction">
-					<subNodes>
-						<li Class="JobGiver_AIFightEnemies">
-							<targetAcquireRadius>65</targetAcquireRadius>
-							<targetKeepRadius>72</targetKeepRadius>
-						</li>
-						<li Class="JobGiver_SeekAllowedArea"/>
-						<li Class="JobGiver_ShamblerWander">
-							<wanderRadius>5</wanderRadius>
-						</li>
-					</subNodes>
+				<li Class="JobGiver_AIFightEnemies">
+					<targetAcquireRadius>30</targetAcquireRadius>
+					<targetKeepRadius>35</targetKeepRadius>
 				</li>
 
 				<!-- Idle -->
@@ -195,6 +209,7 @@
 					<subNodes>
 						<li Class="JobGiver_WanderAnywhere">
 							<maxDanger>Deadly</maxDanger>
+							<ticksBetweenWandersRange>120~240</ticksBetweenWandersRange>
 						</li>
 					</subNodes>
 				</li>
