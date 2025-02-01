@@ -33,7 +33,6 @@ namespace AnomaliesExpected
 
         public override void DrawEffectPreview(LocalTargetInfo target)
         {
-            Log.Message($"DrawEffectPreview");
             GenDraw.DrawRadiusRing(target.Cell, parent.def.verbProperties.range);
         }
 

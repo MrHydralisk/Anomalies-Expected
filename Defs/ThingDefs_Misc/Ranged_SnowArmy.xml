@@ -171,7 +171,7 @@
 		<projectile>
 			<useGraphicClass>True</useGraphicClass>
 			<shadowSize>2</shadowSize>
-			<damageDef>AEFreezing</damageDef>
+			<damageDef>AENitrogen</damageDef>
 			<damageAmountBase>25</damageAmountBase>
 			<speed>14</speed>
 			<stoppingPower>2.5</stoppingPower>

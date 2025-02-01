@@ -193,6 +193,9 @@
 						</li>
 					</subNodes>
 				</li>
+        
+				<!-- React to close melee threat -->
+				<li Class="JobGiver_ReactToCloseMeleeThreat"/>
 
 				<!-- Lord -->
 				<li Class="ThinkNode_Subtree">

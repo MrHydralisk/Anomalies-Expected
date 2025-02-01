@@ -268,7 +268,6 @@
 		<aiCanUse>true</aiCanUse>
 		<displayOrder>1300</displayOrder>
 		<category>AEAnomaliesExpected</category>
-		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
 		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
@@ -281,7 +280,7 @@
 		</verbProperties>
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_AbilityIceCrystalDistabilization">
-				<damageDef>AEFreezing</damageDef>
+				<damageDef>AENitrogen</damageDef>
 				<damAmount>16</damAmount>
 				<armorPenetration>1</armorPenetration>
 				<minTargets>1</minTargets>
