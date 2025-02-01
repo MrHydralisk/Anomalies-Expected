@@ -106,7 +106,7 @@
 	</EffecterDef>
 	
 	<EffecterDef>
-		<defName>Shell_SnowBlockStream</defName>
+		<defName>Shell_AESnowBlockStream</defName>
 		<children>
 			<li>
 				<subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
@@ -135,7 +135,7 @@
 	</EffecterDef>
 
 	<EffecterDef>
-		<defName>Shell_SnowBlockLaunched</defName>
+		<defName>Shell_AESnowBlockLaunched</defName>
 		<children>
 			<li>
 				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
@@ -170,7 +170,7 @@
 	</EffecterDef>
   
 	<EffecterDef>
-		<defName>Shell_SnowBlockImpact</defName>
+		<defName>Shell_AESnowBlockImpact</defName>
 		<children>
 			<li>
 				<subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>

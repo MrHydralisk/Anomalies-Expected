@@ -179,18 +179,18 @@
 			<explosionRadius>5.9</explosionRadius>
 			<flyOverhead>true</flyOverhead>
 			<soundExplode>SpitterSpitLands</soundExplode>
-			<filth>Filth_AEIceBlood</filth>
+			<filth>Filth_AESpentNitrogen</filth>
 			<filthCount>1</filthCount>
-			<explosionEffect>Shell_SnowBlockImpact</explosionEffect>
+			<explosionEffect>Shell_AESnowBlockImpact</explosionEffect>
 			<explosionEffectLifetimeTicks>60</explosionEffectLifetimeTicks>
 			<doExplosionVFX>false</doExplosionVFX>
 		</projectile>
 		<comps>
 			<li Class="CompProperties_ProjectileEffecter">
-				<effecterDef>Shell_SnowBlockStream</effecterDef>
+				<effecterDef>Shell_AESnowBlockStream</effecterDef>
 			</li>
 			<li Class="CompProperties_ProjectileEffecter">
-				<effecterDef>Shell_SnowBlockLaunched</effecterDef>
+				<effecterDef>Shell_AESnowBlockLaunched</effecterDef>
 			</li>
 		</comps>
 	</ThingDef>

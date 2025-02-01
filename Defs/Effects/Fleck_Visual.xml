@@ -29,7 +29,7 @@
 			<texPath>Things/Mote/Smoke</texPath>
 			<shaderType>Transparent</shaderType>
 			<drawSize>1</drawSize>
-			<color>(0.31, 0.69, 0.835, 1)</color>
+			<color>(0.67, 0.819, 0.953, 0.7)</color>
 			<renderQueue>3200</renderQueue>
 		</graphicData>
 	</FleckDef>
@@ -45,72 +45,38 @@
 			<texPath>Things/Mote/Smoke</texPath>
 			<shaderType>Transparent</shaderType>
 			<drawSize>1</drawSize>
-			<color>(0.31, 0.69, 0.835, 1)</color>
+			<color>(0.67, 0.819, 0.953, 0.7)</color>
 		</graphicData>
 	</FleckDef>
 
-	<FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+	<FleckDef ParentName="FleckBase_Thrown">
 		<defName>Fleck_SnowBlockLaunchedGlob</defName>
 		<fadeInTime>0</fadeInTime>
 		<solidTime>1</solidTime>
 		<fadeOutTime>0</fadeOutTime>
 		<altitudeLayer>MoteOverhead</altitudeLayer>
 		<growthRate>-.3</growthRate>
-		<randomGraphics>
-			<li>
-				<graphicClass>Graphic_Fleck</graphicClass>
-				<texPath>Things/Mote/AcidSpitGobs/AcidSpitGobA</texPath>
-				<shaderType>Transparent</shaderType>
-				<drawSize>1</drawSize>
-				<color>(0.31, 0.69, 0.835, 1)</color>
-			</li>
-			<li>
-				<graphicClass>Graphic_Fleck</graphicClass>
-				<texPath>Things/Mote/AcidSpitGobs/AcidSpitGobB</texPath>
-				<shaderType>Transparent</shaderType>
-				<drawSize>1</drawSize>
-				<color>(0.31, 0.69, 0.835, 1)</color>
-			</li>
-			<li>
-				<graphicClass>Graphic_Fleck</graphicClass>
-				<texPath>Things/Mote/AcidSpitGobs/AcidSpitGobC</texPath>
-				<shaderType>Transparent</shaderType>
-				<drawSize>1</drawSize>
-				<color>(0.31, 0.69, 0.835, 1)</color>
-			</li>
-		</randomGraphics>
+		<graphicData>
+			<texPath>Things/Mote/Smoke</texPath>
+			<shaderType>Transparent</shaderType>
+			<drawSize>3</drawSize>
+			<color>(0.67, 0.819, 0.953, 0.7)</color>
+		</graphicData>
 	</FleckDef>
 
-	<FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+	<FleckDef ParentName="FleckBase_Thrown">
 		<defName>Fleck_SnowBlockLaunchedGlobFast</defName>
 		<fadeInTime>0</fadeInTime>
 		<solidTime>.6</solidTime>
 		<fadeOutTime>0</fadeOutTime>
 		<altitudeLayer>MoteOverhead</altitudeLayer>
 		<growthRate>-2</growthRate>
-		<randomGraphics>
-			<li>
-				<graphicClass>Graphic_Fleck</graphicClass>
-				<texPath>Things/Mote/AcidSpitGobs/AcidSpitGobA</texPath>
-				<shaderType>Transparent</shaderType>
-				<drawSize>1</drawSize>
-				<color>(0.31, 0.69, 0.835, 1)</color>
-			</li>
-			<li>
-				<graphicClass>Graphic_Fleck</graphicClass>
-				<texPath>Things/Mote/AcidSpitGobs/AcidSpitGobB</texPath>
-				<shaderType>Transparent</shaderType>
-				<drawSize>1</drawSize>
-				<color>(0.31, 0.69, 0.835, 1)</color>
-			</li>
-			<li>
-				<graphicClass>Graphic_Fleck</graphicClass>
-				<texPath>Things/Mote/AcidSpitGobs/AcidSpitGobC</texPath>
-				<shaderType>Transparent</shaderType>
-				<drawSize>1</drawSize>
-				<color>(0.31, 0.69, 0.835, 1)</color>
-			</li>
-		</randomGraphics>
+		<graphicData>
+			<texPath>Things/Mote/Smoke</texPath>
+			<shaderType>Transparent</shaderType>
+			<drawSize>3</drawSize>
+			<color>(0.67, 0.819, 0.953, 0.7)</color>
+		</graphicData>
 	</FleckDef>
 
 	<FleckDef ParentName="FleckBase_Thrown">
@@ -132,7 +98,7 @@
 				<_Duration>.2</_Duration>
 			</shaderParameters>
 			<drawSize>(5, 5)</drawSize>
-			<color>(0.31, 0.69, 0.835, 1)</color>
+			<color>(0.67, 0.819, 0.953, 0.7)</color>
 		</graphicData>
 	</FleckDef>
   
