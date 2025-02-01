@@ -1,7 +1,6 @@
 ﻿using RimWorld;
 using RimWorld.Planet;
 using System.Collections.Generic;
-using UnityEngine;
 using Verse;
 
 namespace AnomaliesExpected
@@ -11,6 +10,8 @@ namespace AnomaliesExpected
         public new CompProperties_AbilityIceCrystalDistabilization Props => (CompProperties_AbilityIceCrystalDistabilization)props;
 
         private Pawn Pawn => parent.pawn;
+
+        public override bool CanCast => base.CanCast && !Pawn.IsBurning();
 
         public override void Apply(GlobalTargetInfo target)
         {

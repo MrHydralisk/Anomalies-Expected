@@ -35,7 +35,7 @@ namespace AnomaliesExpected
 
         public void CheckIfCombatReady()
         {
-            if (!parentPawn.DeadOrDowned && parent.Spawned && parent.Faction != Faction.OfPlayer)
+            if (!parentPawn.DeadOrDowned && parentPawn.Spawned && parentPawn.Faction != Faction.OfPlayer)
             {
                 TryFindWeaponDef();
                 TryGiveWeapon();
@@ -53,6 +53,10 @@ namespace AnomaliesExpected
 
         public void TryGiveWeapon()
         {
+            if (!parentPawn.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation))
+            {
+                return;
+            }
             List<string> weaponTags = parentPawn.kindDef.weaponTags;
             if (weaponTags.NullOrEmpty())
             {
@@ -74,7 +78,7 @@ namespace AnomaliesExpected
         {
             if (parentPawn.GetLord() == null)
             {
-                LordMaker.MakeNewLord(parent.Faction, new LordJob_AssaultColony(), parent.MapHeld, new List<Pawn> { parentPawn });
+                LordMaker.MakeNewLord(parentPawn.Faction, new LordJob_AssaultColony(), parentPawn.MapHeld, new List<Pawn> { parentPawn });
             }
         }
 

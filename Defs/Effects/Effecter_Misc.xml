@@ -104,5 +104,111 @@
 			</li>
 		</children>
 	</EffecterDef>
+	
+	<EffecterDef>
+		<defName>Shell_SnowBlockStream</defName>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+				<fleckDef>Fleck_SnowBlockLaunchedDenseMist</fleckDef>
+				<scale>.5</scale>
+				<chancePerTick>.2</chancePerTick>
+				<spawnLocType>OnSource</spawnLocType>
+				<absoluteAngle>false</absoluteAngle>
+				<angle>-30~30</angle>
+				<speed>-2~2</speed>
+				<rotation>0</rotation>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+				<fleckDef>Fleck_SnowBlockLaunchedGlob</fleckDef>
+				<scale>.3~.6</scale>
+				<chancePerTick>.6</chancePerTick>
+				<spawnLocType>OnSource</spawnLocType>
+				<absoluteAngle>true</absoluteAngle>
+				<angle>-30~30</angle>
+				<speed>-4~0</speed>
+				<positionOffset>(0, 0, .75)</positionOffset>
+				<rotation>0</rotation>
+			</li>
+		</children>
+	</EffecterDef>
+
+	<EffecterDef>
+		<defName>Shell_SnowBlockLaunched</defName>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<fleckDef>Fleck_SnowBlockLaunchedMist</fleckDef>
+				<scale>1</scale>
+				<burstCount>10~15</burstCount>
+				<spawnLocType>OnSource</spawnLocType>
+				<absoluteAngle>false</absoluteAngle>
+				<positionRadius>2</positionRadius>
+				<positionRadiusMin>0</positionRadiusMin>
+				<angle>-40~40</angle>
+				<speed>1~3</speed>
+				<rotation>0~360</rotation>
+				<fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+			</li>
+      
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<fleckDef>Fleck_SnowBlockLaunchedGlob</fleckDef>
+				<burstCount>10~15</burstCount>
+				<spawnLocType>OnSource</spawnLocType>
+				<absoluteAngle>false</absoluteAngle>
+				<positionRadius>.4</positionRadius>
+				<positionRadiusMin>.4</positionRadiusMin>
+				<fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+				<angle>-20~20</angle>
+				<scale>.2~.5</scale>
+				<speed>2~5</speed>
+				<rotation>0~360</rotation>
+			</li>
+		</children>
+	</EffecterDef>
+  
+	<EffecterDef>
+		<defName>Shell_SnowBlockImpact</defName>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+				<fleckDef>Fleck_SnowBlockImpact</fleckDef>
+				<burstCount>1</burstCount>
+				<chancePerTick>1</chancePerTick>
+				<chancePeriodTicks>2</chancePeriodTicks>
+				<lifespanMaxTicks>8</lifespanMaxTicks>
+				<spawnLocType>OnSource</spawnLocType>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<fleckDef>Fleck_SnowBlockLaunchedMist</fleckDef>
+				<scale>4~5</scale>
+				<burstCount>3~6</burstCount>
+				<spawnLocType>OnSource</spawnLocType>
+				<absoluteAngle>false</absoluteAngle>
+				<angle>0~100</angle>
+				<positionRadius>1</positionRadius>
+				<speed>-1~1</speed>
+				<rotation>0</rotation>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<fleckDef>Fleck_SnowBlockLaunchedGlobFast</fleckDef>
+				<burstCount>6~10</burstCount>
+				<spawnLocType>OnSource</spawnLocType>
+				<absoluteAngle>false</absoluteAngle>
+				<positionRadius>.7</positionRadius>
+				<positionRadiusMin>.7</positionRadiusMin>
+				<fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+				<rotateTowardsTargetCenter>true</rotateTowardsTargetCenter>
+				<angle>0~100</angle>
+				<scale>.3~.5</scale>
+				<speed>20~45</speed>
+				<rotation>0~360</rotation>
+			</li>
+		</children>
+	</EffecterDef>
   
 </Defs>

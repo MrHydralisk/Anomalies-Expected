@@ -26,7 +26,7 @@
 					</groups>
 					<parts>
 						<li>
-							<def>AE_SnowEye</def>
+							<def>AE_SnowEyeA</def>
 							<customLabel>left eye stone</customLabel>
 							<coverage>0.025</coverage>
 							<groups>
@@ -41,7 +41,7 @@
 							</visibleHediffRots>
 						</li>
 						<li>
-							<def>AE_SnowEye</def>
+							<def>AE_SnowEyeA</def>
 							<customLabel>right eye stone</customLabel>
 							<coverage>0.025</coverage>
 							<groups>
@@ -155,7 +155,7 @@
 					</groups>
 					<parts>
 						<li>
-							<def>AE_SnowEye</def>
+							<def>AE_SnowEyeB</def>
 							<customLabel>left bottom eye stone</customLabel>
 							<coverage>0.02</coverage>
 							<groups>
@@ -169,7 +169,7 @@
 							</visibleHediffRots>
 						</li>
 						<li>
-							<def>AE_SnowEye</def>
+							<def>AE_SnowEyeB</def>
 							<customLabel>left top eye stone</customLabel>
 							<coverage>0.02</coverage>
 							<groups>
@@ -183,7 +183,7 @@
 							</visibleHediffRots>
 						</li>
 						<li>
-							<def>AE_SnowEye</def>
+							<def>AE_SnowEyeB</def>
 							<customLabel>top eye stone</customLabel>
 							<coverage>0.02</coverage>
 							<groups>
@@ -196,7 +196,7 @@
 							</visibleHediffRots>
 						</li>
 						<li>
-							<def>AE_SnowEye</def>
+							<def>AE_SnowEyeB</def>
 							<customLabel>right bottom eye stone</customLabel>
 							<coverage>0.02</coverage>
 							<groups>
@@ -209,7 +209,7 @@
 							</visibleHediffRots>
 						</li>
 						<li>
-							<def>AE_SnowEye</def>
+							<def>AE_SnowEyeB</def>
 							<customLabel>right top eye stone</customLabel>
 							<coverage>0.02</coverage>
 							<groups>
@@ -371,7 +371,7 @@
 					</groups>
 					<parts>
 						<li>
-							<def>AE_SnowEye</def>
+							<def>AE_SnowEyeC</def>
 							<customLabel>left eye stone</customLabel>
 							<coverage>0.015</coverage>
 							<groups>
@@ -386,7 +386,7 @@
 							</visibleHediffRots>
 						</li>
 						<li>
-							<def>AE_SnowEye</def>
+							<def>AE_SnowEyeC</def>
 							<customLabel>left eye stone</customLabel>
 							<coverage>0.015</coverage>
 							<groups>
@@ -401,7 +401,7 @@
 							</visibleHediffRots>
 						</li>
 						<li>
-							<def>AE_SnowEye</def>
+							<def>AE_SnowEyeC</def>
 							<customLabel>left eye stone</customLabel>
 							<coverage>0.015</coverage>
 							<groups>
@@ -416,7 +416,7 @@
 							</visibleHediffRots>
 						</li>
 						<li>
-							<def>AE_SnowEye</def>
+							<def>AE_SnowEyeC</def>
 							<customLabel>right eye stone</customLabel>
 							<coverage>0.015</coverage>
 							<groups>
@@ -430,7 +430,7 @@
 							</visibleHediffRots>
 						</li>
 						<li>
-							<def>AE_SnowEye</def>
+							<def>AE_SnowEyeC</def>
 							<customLabel>right eye stone</customLabel>
 							<coverage>0.015</coverage>
 							<groups>
@@ -444,7 +444,7 @@
 							</visibleHediffRots>
 						</li>
 						<li>
-							<def>AE_SnowEye</def>
+							<def>AE_SnowEyeC</def>
 							<customLabel>right eye stone</customLabel>
 							<coverage>0.015</coverage>
 							<groups>

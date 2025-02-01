@@ -128,7 +128,7 @@
 			<AccuracyShort>0.50</AccuracyShort>
 			<AccuracyMedium>0.26</AccuracyMedium>
 			<AccuracyLong>0.1</AccuracyLong>
-			<RangedWeapon_Cooldown>10.0</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>16.0</RangedWeapon_Cooldown>
 		</statBases>
 		<weaponTags>
 			<li>Gun_AESnowBlock</li>
@@ -150,7 +150,7 @@
 				<forcedMissRadius>7</forcedMissRadius>
 				<isMortar>true</isMortar>
 				<requireLineOfSight>false</requireLineOfSight>
-				<warmupTime>10.0</warmupTime>
+				<warmupTime>4.0</warmupTime>
 				<minRange>7</minRange>
 				<range>150</range>
 				<soundCast>Interact_BeatFire</soundCast>
@@ -179,18 +179,18 @@
 			<explosionRadius>5.9</explosionRadius>
 			<flyOverhead>true</flyOverhead>
 			<soundExplode>SpitterSpitLands</soundExplode>
-			<filth>Filth_SpentAcid</filth>
+			<filth>Filth_AEIceBlood</filth>
 			<filthCount>1</filthCount>
-			<explosionEffect>Shell_AcidSpitImpact</explosionEffect>
+			<explosionEffect>Shell_SnowBlockImpact</explosionEffect>
 			<explosionEffectLifetimeTicks>60</explosionEffectLifetimeTicks>
 			<doExplosionVFX>false</doExplosionVFX>
 		</projectile>
 		<comps>
 			<li Class="CompProperties_ProjectileEffecter">
-				<effecterDef>Shell_AcidSpitStream</effecterDef>
+				<effecterDef>Shell_SnowBlockStream</effecterDef>
 			</li>
 			<li Class="CompProperties_ProjectileEffecter">
-				<effecterDef>Shell_AcidSpitLaunched</effecterDef>
+				<effecterDef>Shell_SnowBlockLaunched</effecterDef>
 			</li>
 		</comps>
 	</ThingDef>
