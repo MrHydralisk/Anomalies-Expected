@@ -396,5 +396,28 @@
 			</li>
 		</stages>
 	</HediffDef>
+
+	<HediffDef>
+		<defName>AENitrogenFreezing</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>nitrogen freezing</label>
+		<description>Frozen tissue and flesh caused by exposure to extreme cold. Due to freezing to the nerves, the feeling of pain is dulled. After completely freezing through body parts are often lost.</description>
+		<maxSeverity>1</maxSeverity>
+		<displayWound>false</displayWound>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-2</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<statFactors>
+					<MoveSpeed>0.5</MoveSpeed>
+				</statFactors>
+				<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+			</li>
+		</stages>
+	</HediffDef>
 	
 </Defs>

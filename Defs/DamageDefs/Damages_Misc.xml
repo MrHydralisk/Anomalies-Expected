@@ -67,6 +67,8 @@
 		<explosionCellFleck>BlastExtinguisher</explosionCellFleck>
 		<explosionColorEdge>(0.67, 0.819, 0.953, 0.7)</explosionColorEdge>
 		<soundExplosion>Explosion_Smoke</soundExplosion>
+		<causeStun>true</causeStun>
+		<constantStunDurationTicks>2500</constantStunDurationTicks>
 		<modExtensions>
 			<li Class="AnomaliesExpected.AE_DamageDefExtension">
 				<DamageMultiplierCurve>
@@ -80,6 +82,9 @@
 						<li>60, 2</li>
 					</points>
 				</DamageMultiplierCurve>
+				<DamageMultiplierForNonPoweredBuildings>0.1</DamageMultiplierForNonPoweredBuildings>
+				<DamageMultiplierForPoweredBuildings>3</DamageMultiplierForPoweredBuildings>
+				<AdditionalHediff>AENitrogenFreezing</AdditionalHediff>
 			</li>
 		</modExtensions>
 	</DamageDef>

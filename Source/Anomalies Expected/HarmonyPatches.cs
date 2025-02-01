@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using System;
+using System.Collections.Generic;
 using Verse;
 
 namespace AnomaliesExpected
@@ -14,6 +15,16 @@ namespace AnomaliesExpected
         {
             patchType = typeof(HarmonyPatches);
             Harmony val = new Harmony("rimworld.mrhydralisk.AnomaliesExpectedPatch");
+
+            List<ThingDef> allDefsListForReading = DefDatabase<ThingDef>.AllDefsListForReading;
+            foreach (ThingDef item in allDefsListForReading)
+            {
+                if (item.building != null && item.HasComp<CompStunnable>())
+                {
+                    CompProperties_Stunnable compProperties_Stunnable = item.GetCompProperties<CompProperties_Stunnable>();
+                    compProperties_Stunnable.affectedDamageDefs.Add(DamageDefOfLocal.AENitrogen);
+                }
+            }
 
             val.Patch(AccessTools.Property(typeof(ResearchProjectDef), "IsHidden").GetGetMethod(), prefix: new HarmonyMethod(patchType, "RPD_IsHidden_Prefix"));
             val.Patch(AccessTools.Property(typeof(RaceProperties), "IsAnomalyEntity").GetGetMethod(), postfix: new HarmonyMethod(patchType, "RP_IsAnomalyEntity_Postfix"));

@@ -28,7 +28,10 @@ namespace AnomaliesExpected
         public void Activate(GlobalTargetInfo target)
         {
             GenExplosion.DoExplosion(target.Cell, target.Map, parent.def.verbProperties.range, Props.damageDef, Pawn, damAmount: Props.damAmount, armorPenetration: Props.armorPenetration);
-            Pawn.Kill(null);
+            if (!Pawn.Dead)
+            {
+                Pawn.Kill(null);
+            }
         }
 
         public override void DrawEffectPreview(LocalTargetInfo target)
@@ -61,7 +64,11 @@ namespace AnomaliesExpected
                                 }
                                 else if (thingList[i] is Building tBuilding && tBuilding.def.building.ai_combatDangerous)
                                 {
-                                    targetsCount++;
+                                    CompStunnable compStunnable = tBuilding.GetComp<CompStunnable>();
+                                    if (compStunnable != null && compStunnable.CanBeStunnedByDamage(Props.damageDef) && !compStunnable.StunHandler.Stunned)
+                                    {
+                                        targetsCount++;
+                                    }
                                     targetsWEffectCount++;
                                 }
                             }

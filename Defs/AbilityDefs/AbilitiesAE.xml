@@ -283,6 +283,7 @@
 				<damageDef>AENitrogen</damageDef>
 				<damAmount>16</damAmount>
 				<armorPenetration>1</armorPenetration>
+				<ignoreWithHediffDef>AENitrogenFreezing</ignoreWithHediffDef>
 				<minTargets>1</minTargets>
 				<minTargetsWEffect>3</minTargetsWEffect>
 			</li>

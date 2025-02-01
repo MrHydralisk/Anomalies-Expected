@@ -45,6 +45,7 @@
     <Compile Include="Comp\HediffComp\HediffComp_ActivateAbilityOnRemoved.cs" />
     <Compile Include="Comp\HediffComp\HediffComp_SnowArmy.cs" />
     <Compile Include="DefOfLocal\FactionDefOfLocal.cs" />
+    <Compile Include="DefOfLocal\DamageDefOfLocal.cs" />
     <Compile Include="DefOfLocal\FleshTypeDefOfLocal.cs" />
     <Compile Include="MapComponent\ChristmasTreeMapComponent.cs" />
     <Compile Include="Building\Building_AEBloodLake.cs" />
