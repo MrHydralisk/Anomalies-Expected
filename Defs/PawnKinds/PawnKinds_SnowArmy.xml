@@ -67,6 +67,12 @@
 				</bodyGraphicData>
 			</li>
 		</lifeStages>
+		<startingHediffs>
+			<li>
+				<def>AE_SnowBlockCompressor</def>
+				<severity>1</severity>
+			</li>
+		</startingHediffs>
 	</PawnKindDef>
 
 	<PawnKindDef ParentName="BaseAESnowArmyKind">

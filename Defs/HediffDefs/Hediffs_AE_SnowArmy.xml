@@ -3,6 +3,7 @@
 	
 	<HediffDef Name="AESnowArmyBodyPart" ParentName="AddedBodyPartBase" Abstract="True">
 		<organicAddedBodypart>true</organicAddedBodypart>
+		<keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
 		<defaultLabelColor>(0.31, 0.69, 0.835)</defaultLabelColor>
 	</HediffDef>
   
@@ -15,11 +16,6 @@
 		<abilities>
 			<li>AEIceCrystalDistabilization</li>
 		</abilities>
-		<stages>
-			<li>
-				<label>charged</label>
-			</li>
-		</stages>
 		<addedPartProps>
 			<solid>true</solid>
 			<betterThanNatural>true</betterThanNatural>
@@ -27,6 +23,23 @@
 		<comps>
 			<li>
 				<compClass>AnomaliesExpected.HediffComp_ActivateAbilityOnRemoved</compClass>
+			</li>
+		</comps>
+	</HediffDef>
+  
+	<HediffDef ParentName="AESnowArmyBodyPart">
+		<defName>AE_SnowBlockCompressor</defName>
+		<label>snow block compressor</label>
+		<labelNoun>a snow block compressor</labelNoun>
+		<description>A cancerous mass of semi-sentient flesh. The harsh acid it produces is painful, but strong enough to prevent most food poisoning. It can break down and reabsorb nutrients from its own tissue, allowing it to sustain itself for extended periods without external sustenance.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<defaultInstallPart>AE_SnowBlockCompressor</defaultInstallPart>
+		<addedPartProps>
+			<solid>true</solid>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<comps>
+			<li>
+				<compClass>AnomaliesExpected.HediffComp_SnowBlockCompressor</compClass>
 			</li>
 		</comps>
 	</HediffDef>
