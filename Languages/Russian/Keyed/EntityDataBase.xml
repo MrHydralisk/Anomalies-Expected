@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	
+	<AnomaliesExpected.EntityDataBase.Label>База данных тёмных феноменов</AnomaliesExpected.EntityDataBase.Label>
+	<AnomaliesExpected.EntityDataBase.Desc>Это список всех известных тварей, имеющих отношение к пустоте. Позволяет просмотреть все полученные исследовательские заметки. Открывайте новых тварей с помощью псионического ритуала воззвания к пустоте.</AnomaliesExpected.EntityDataBase.Desc>
+	<AnomaliesExpected.EntityDataBase.Tip>Посмотрите список всех обнаруженных тёмных феноменов и их исследовательские заметки.</AnomaliesExpected.EntityDataBase.Tip>
+	
+	<AnomaliesExpected.EntityDataBase.ThreatClass.-1>Неизвестно</AnomaliesExpected.EntityDataBase.ThreatClass.-1>
+	<AnomaliesExpected.EntityDataBase.ThreatClass.0>Безопасность</AnomaliesExpected.EntityDataBase.ThreatClass.0>
+	<AnomaliesExpected.EntityDataBase.ThreatClass.1>Осторожность</AnomaliesExpected.EntityDataBase.ThreatClass.1>
+	<AnomaliesExpected.EntityDataBase.ThreatClass.2>Внимательность</AnomaliesExpected.EntityDataBase.ThreatClass.2>
+	<AnomaliesExpected.EntityDataBase.ThreatClass.3>Опасность</AnomaliesExpected.EntityDataBase.ThreatClass.3>
+	<AnomaliesExpected.EntityDataBase.ThreatClass.4>Критическая</AnomaliesExpected.EntityDataBase.ThreatClass.4>
+	<AnomaliesExpected.EntityDataBase.ThreatClass.5>Апокалипсис</AnomaliesExpected.EntityDataBase.ThreatClass.5>
+	
+</LanguageData>

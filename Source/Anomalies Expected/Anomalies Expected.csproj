@@ -37,6 +37,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialog_AEEntityCodex.cs" />
     <Compile Include="GameComponent_AnomaliesExpected.cs" />
     <Compile Include="Alert_ChristmasTreeUnstable.cs" />
     <Compile Include="Building\Building_AEChristmasGiftBox.cs" />
@@ -65,7 +66,6 @@
     <Compile Include="GenStep\GenStep_ChristmasTreeGiftBoxes.cs" />
     <Compile Include="GenStep\GenStep_ChristmasTreeTerrain.cs" />
     <Compile Include="GenStep\GenStep_ChristmasTreeFindExit.cs" />
-    <Compile Include="Structures\Enum\AEEntityClass.cs" />
     <Compile Include="Structures\Enum\BeamTargetState.cs" />
     <Compile Include="Structures\AEEntityEntry.cs" />
     <Compile Include="Thing\ThingWithComps_AE.cs" />

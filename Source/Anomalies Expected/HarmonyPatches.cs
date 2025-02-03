@@ -2,6 +2,7 @@
 using RimWorld;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 using Verse;
 
 namespace AnomaliesExpected
@@ -29,6 +30,7 @@ namespace AnomaliesExpected
             val.Patch(AccessTools.Property(typeof(ResearchProjectDef), "IsHidden").GetGetMethod(), prefix: new HarmonyMethod(patchType, "RPD_IsHidden_Prefix"));
             val.Patch(AccessTools.Property(typeof(RaceProperties), "IsAnomalyEntity").GetGetMethod(), postfix: new HarmonyMethod(patchType, "RP_IsAnomalyEntity_Postfix"));
             val.Patch(AccessTools.Method(typeof(BackCompatibility), "FactionManagerPostLoadInit"), postfix: new HarmonyMethod(patchType, "BC_FactionManagerPostLoadInit_Postfix"));
+            val.Patch(AccessTools.Method(typeof(PlaySettings), "DoPlaySettingsGlobalControls"), postfix: new HarmonyMethod(patchType, "PC_DoPlaySettingsGlobalControls_Postfix"));
         }
 
         public static bool RPD_IsHidden_Prefix(ref bool __result, ResearchProjectDef __instance)
@@ -60,6 +62,17 @@ namespace AnomaliesExpected
             FactionRelation factionRelationBA = Find.FactionManager.OfMechanoids.RelationWith(SnowArmy);
             factionRelationBA.baseGoodwill = 0;
             factionRelationBA.kind = FactionRelationKind.Neutral;
+        }
+
+        public static void PC_DoPlaySettingsGlobalControls_Postfix(WidgetRow row, bool worldView)
+        {
+            if (!worldView && ModsConfig.AnomalyActive && Find.Anomaly.AnomalyStudyEnabled)
+            {
+                if (row.ButtonIcon(ContentFinder<Texture2D>.Get("UI/Buttons/AEEntityCodex"), "AnomaliesExpected.EntityDataBase.Tip".Translate()))
+                {
+                    Find.WindowStack.Add(new Dialog_AEEntityDB());
+                }
+            }
         }
     }
 }

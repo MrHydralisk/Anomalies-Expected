@@ -9,7 +9,7 @@ namespace AnomaliesExpected
     {
         public static GameComponent_AnomaliesExpected instance;
 
-        protected List<AEEntityEntry> EntityEntries = new List<AEEntityEntry>();
+        public List<AEEntityEntry> EntityEntries = new List<AEEntityEntry>();
         //protected bool isCollectedLetters;
 
         public GameComponent_AnomaliesExpected(Game game)

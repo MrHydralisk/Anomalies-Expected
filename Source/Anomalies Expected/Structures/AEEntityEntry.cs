@@ -12,10 +12,11 @@ namespace AnomaliesExpected
 
         public ThingDef ThingDef;
         public EntityCodexEntryDef EntityCodexEntryDef;
+        public string categoryLabelCap => EntityCodexEntryDef?.category?.LabelCap ?? "AnomaliesExpected.EntityDataBase.ThreatClass.-1".Translate();
+        public string threatClassString => $"AnomaliesExpected.EntityDataBase.ThreatClass.{ThreatClass}".Translate();
+        public string groupTag;
 
-        public AEEntityClass EntityClass;
-        public bool isEntityClassUnknown = true;
-        public bool isEntityClassApocalypse;
+        public int ThreatClass = -1;
 
         protected List<ChoiceLetter> letters = new List<ChoiceLetter>();
 
@@ -25,9 +26,8 @@ namespace AnomaliesExpected
             Scribe_Values.Look(ref AnomalyLabel, "AnomalyLabel");
             Scribe_Values.Look(ref AnomalyDesc, "AnomalyDesc");
             Scribe_Values.Look(ref EntityEntryGroupTag, "EntityEntryGroupTag");
-            Scribe_Values.Look(ref EntityClass, "EntityClass");
-            Scribe_Values.Look(ref isEntityClassUnknown, "isEntityClassUnknown", true);
-            Scribe_Values.Look(ref isEntityClassApocalypse, "isEntityClassApocalypse");
+            Scribe_Values.Look(ref ThreatClass, "ThreatClass", -1);
+            Scribe_Values.Look(ref groupTag, "groupTag");
             Scribe_Defs.Look(ref EntityCodexEntryDef, "EntityCodexEntryDef");
             Scribe_Defs.Look(ref ThingDef, "ThingDef");
             Scribe_Collections.Look(ref letters, "letters", LookMode.Deep);
