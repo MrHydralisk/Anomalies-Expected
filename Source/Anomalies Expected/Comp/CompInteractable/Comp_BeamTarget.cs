@@ -242,11 +242,5 @@ namespace AnomaliesExpected
             inspectStrings.Add(base.CompInspectStringExtra());
             return String.Join("\n", inspectStrings);
         }
-
-        public enum BeamTargetState
-        {
-            Searching,
-            Activating
-        }
     }
 }

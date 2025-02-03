@@ -37,6 +37,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameComponent_AnomaliesExpected.cs" />
     <Compile Include="Alert_ChristmasTreeUnstable.cs" />
     <Compile Include="Building\Building_AEChristmasGiftBox.cs" />
     <Compile Include="Building\Building_AEChristmasTreeExit.cs" />
@@ -64,6 +65,9 @@
     <Compile Include="GenStep\GenStep_ChristmasTreeGiftBoxes.cs" />
     <Compile Include="GenStep\GenStep_ChristmasTreeTerrain.cs" />
     <Compile Include="GenStep\GenStep_ChristmasTreeFindExit.cs" />
+    <Compile Include="Structures\Enum\AEEntityClass.cs" />
+    <Compile Include="Structures\Enum\BeamTargetState.cs" />
+    <Compile Include="Structures\AEEntityEntry.cs" />
     <Compile Include="Thing\ThingWithComps_AE.cs" />
     <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilityFleshmassStomach.cs" />
     <Compile Include="CompProperties\CompProperties_Interactable\CompProperties_ChristmasStockings.cs" />
@@ -181,5 +185,6 @@
       <Version>1.5.4297</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
