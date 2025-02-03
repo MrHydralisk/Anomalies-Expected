@@ -13,4 +13,9 @@
 	<AnomaliesExpected.EntityDataBase.ThreatClass.4>Critical</AnomaliesExpected.EntityDataBase.ThreatClass.4>
 	<AnomaliesExpected.EntityDataBase.ThreatClass.5>Apocalypse</AnomaliesExpected.EntityDataBase.ThreatClass.5>
 	
+	<AnomaliesExpected.EntityDataBase.SortType>Sort by: {0}</AnomaliesExpected.EntityDataBase.SortType>
+	<AnomaliesExpected.EntityDataBase.SortType.0>Knowledge Category</AnomaliesExpected.EntityDataBase.SortType.0>
+	<AnomaliesExpected.EntityDataBase.SortType.1>Threat Class</AnomaliesExpected.EntityDataBase.SortType.1>
+	<AnomaliesExpected.EntityDataBase.SortType.2>Connected Group</AnomaliesExpected.EntityDataBase.SortType.2>
+	
 </LanguageData>

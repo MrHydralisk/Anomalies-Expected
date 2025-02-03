@@ -31,6 +31,7 @@ namespace AnomaliesExpected
             val.Patch(AccessTools.Property(typeof(RaceProperties), "IsAnomalyEntity").GetGetMethod(), postfix: new HarmonyMethod(patchType, "RP_IsAnomalyEntity_Postfix"));
             val.Patch(AccessTools.Method(typeof(BackCompatibility), "FactionManagerPostLoadInit"), postfix: new HarmonyMethod(patchType, "BC_FactionManagerPostLoadInit_Postfix"));
             val.Patch(AccessTools.Method(typeof(PlaySettings), "DoPlaySettingsGlobalControls"), postfix: new HarmonyMethod(patchType, "PC_DoPlaySettingsGlobalControls_Postfix"));
+            val.Patch(AccessTools.Method(typeof(Dialog_EntityCodex), "DoWindowContents"), postfix: new HarmonyMethod(patchType, "DEC_DoWindowContents_Postfix"));
         }
 
         public static bool RPD_IsHidden_Prefix(ref bool __result, ResearchProjectDef __instance)
@@ -72,6 +73,16 @@ namespace AnomaliesExpected
                 {
                     Find.WindowStack.Add(new Dialog_AEEntityDB());
                 }
+            }
+        }
+
+        public static void DEC_DoWindowContents_Postfix(Dialog_EntityCodex __instance, Rect inRect)
+        {
+            Rect rect2 = new Rect(inRect.width - 39, 7, 32, 32);
+            if (Widgets.ButtonImage(rect2, ContentFinder<Texture2D>.Get("UI/Buttons/AEEntityCodex"), tooltip: "AnomaliesExpected.EntityDataBase.Tip".Translate()))
+            {
+                Find.WindowStack.Add(new Dialog_AEEntityDB());
+                __instance.Close();
             }
         }
     }

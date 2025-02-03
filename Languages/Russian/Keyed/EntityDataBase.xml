@@ -13,4 +13,9 @@
 	<AnomaliesExpected.EntityDataBase.ThreatClass.4>Критическая</AnomaliesExpected.EntityDataBase.ThreatClass.4>
 	<AnomaliesExpected.EntityDataBase.ThreatClass.5>Апокалипсис</AnomaliesExpected.EntityDataBase.ThreatClass.5>
 	
+	<AnomaliesExpected.EntityDataBase.SortType>Сортировать по: {0}</AnomaliesExpected.EntityDataBase.SortType>
+	<AnomaliesExpected.EntityDataBase.SortType.0>Категория знаний</AnomaliesExpected.EntityDataBase.SortType.0>
+	<AnomaliesExpected.EntityDataBase.SortType.1>Класс опасности</AnomaliesExpected.EntityDataBase.SortType.1>
+	<AnomaliesExpected.EntityDataBase.SortType.2>Связанности</AnomaliesExpected.EntityDataBase.SortType.2>
+	
 </LanguageData>

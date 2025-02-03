@@ -18,11 +18,7 @@ namespace AnomaliesExpected
         private float rightScrollHeight;
 
         private AEEntityEntry selectedEntry;
-
-        //private List<EntityCategoryDef> categoriesInOrder;
-
-        //private Dictionary<EntityCategoryDef, List<EntityCodexEntryDef>> entriesByCategory = new Dictionary<EntityCategoryDef, List<EntityCodexEntryDef>>();
-
+        
         private List<(string, List<AEEntityEntry>)> EntriesByType = new List<(string, List<AEEntityEntry>)>();
 
         private Dictionary<string, float> categoryRectSizes = new Dictionary<string, float>();
@@ -41,10 +37,11 @@ namespace AnomaliesExpected
 
         public override Vector2 InitialSize => new Vector2(UI.screenWidth * 0.9f, UI.screenHeight * 0.9f);
 
+        private int state = 0;
+
         public Dialog_AEEntityDB(EntityCodexEntryDef selectedEntry = null)
         {
             doCloseX = true;
-            doCloseButton = true;
             forcePause = true;
             DoEntityCategory();
         }
@@ -53,6 +50,7 @@ namespace AnomaliesExpected
         {
             List<EntityCategoryDef> categoriesInOrder = DefDatabase<EntityCategoryDef>.AllDefsListForReading.OrderBy((EntityCategoryDef ecd) => ecd.listOrder).ToList();
             EntriesByType = new List<(string, List<AEEntityEntry>)>();
+            categoryRectSizes.Clear();
             foreach (AEEntityEntry aeee in GameComponent_AnomaliesExpected.instance.EntityEntries)
             {
                 List<AEEntityEntry> aeeeList;
@@ -74,28 +72,60 @@ namespace AnomaliesExpected
                 value.SortBy((AEEntityEntry aeee) => aeee.EntityCodexEntryDef.orderInCategory, (AEEntityEntry aeee) => aeee.EntityCodexEntryDef.label);
             }
             EntriesByType.SortBy(x => categoriesInOrder.FindIndex((EntityCategoryDef ecd) => ecd.defName == x.Item1));
+        }
 
+        public void DoEntityClass()
+        {
+            EntriesByType = new List<(string, List<AEEntityEntry>)>();
+            categoryRectSizes.Clear();
+            foreach (AEEntityEntry aeee in GameComponent_AnomaliesExpected.instance.EntityEntries)
+            {
+                List<AEEntityEntry> aeeeList;
+                (string, List<AEEntityEntry>) aeeePair = EntriesByType.FirstOrDefault(x => x.Item1 == aeee.threatClassString);
+                if (aeeePair.Item2 == null)
+                {
+                    aeeeList = new List<AEEntityEntry>();
+                    EntriesByType.Add((aeee.threatClassString, aeeeList));
+                    categoryRectSizes.Add(aeee.threatClassString, 0f);
+                }
+                else
+                {
+                    aeeeList = aeeePair.Item2;
+                }
+                aeeeList.Add(aeee);
+            }
+            foreach ((string key, List<AEEntityEntry> value) in EntriesByType)
+            {
+                value.SortBy((AEEntityEntry aeee) => aeee.EntityCodexEntryDef.orderInCategory, (AEEntityEntry aeee) => aeee.EntityCodexEntryDef.label);
+            }
+            EntriesByType.SortBy(x => x.Item2.FirstOrDefault()?.ThreatClass ?? -1);
+        }
 
-            //categoriesInOrder = GameComponent_AnomaliesExpected.instance.EntityEntries.Select((AEEntityEntry aeee) => aeee.EntityCodexEntryDef.category).Distinct().OrderBy((EntityCategoryDef ecd) => DefDatabase<EntityCategoryDef>.AllDefsListForReading.IndexOf(ecd)).ToList();
-            //foreach (EntityCategoryDef ecd in categoriesInOrder)
-            //{
-            //    entriesByCategory.Add(ecd, new List<EntityCodexEntryDef>());
-            //    categoryRectSizes.Add(ecd, 0f);
-            //}
-            //foreach (EntityCodexEntryDef eced in GameComponent_AnomaliesExpected.instance.EntityEntries.Select((AEEntityEntry aeee) => aeee.EntityCodexEntryDef))
-            //{
-            //    if (eced.Visible)
-            //    {
-            //        entriesByCategory[eced.category].Add(eced);
-            //    }
-            //}
-
-            //foreach (KeyValuePair<EntityCategoryDef, List<EntityCodexEntryDef>> ecdP in entriesByCategory)
-            //{
-            //    GenCollection.Deconstruct(ecdP, out var _, out var value);
-            //    value.SortBy((EntityCodexEntryDef eced) => eced.orderInCategory, (EntityCodexEntryDef eced) => eced.label);
-            //}
-            //this.selectedEntry = selectedEntry ?? DefDatabase<EntityCodexEntryDef>.AllDefs.OrderBy((EntityCodexEntryDef x) => x.label).FirstOrDefault((EntityCodexEntryDef x) => x.Discovered);
+        public void DoEntityGroup()
+        {
+            EntriesByType = new List<(string, List<AEEntityEntry>)>();
+            categoryRectSizes.Clear();
+            foreach (AEEntityEntry aeee in GameComponent_AnomaliesExpected.instance.EntityEntries)
+            {
+                List<AEEntityEntry> aeeeList;
+                (string, List<AEEntityEntry>) aeeePair = EntriesByType.FirstOrDefault(x => x.Item1 == aeee.groupTag);
+                if (aeeePair.Item2 == null)
+                {
+                    aeeeList = new List<AEEntityEntry>();
+                    EntriesByType.Add((aeee.groupTag, aeeeList));
+                    categoryRectSizes.Add(aeee.groupTag, 0f);
+                }
+                else
+                {
+                    aeeeList = aeeePair.Item2;
+                }
+                aeeeList.Add(aeee);
+            }
+            foreach ((string key, List<AEEntityEntry> value) in EntriesByType)
+            {
+                value.SortBy((AEEntityEntry aeee) => aeee.EntityCodexEntryDef.orderInCategory, (AEEntityEntry aeee) => aeee.EntityCodexEntryDef.label);
+            }
+            EntriesByType.SortBy(x => x.Item2.FirstOrDefault()?.groupTag ?? "");
         }
 
         public override void DoWindowContents(Rect inRect)
@@ -103,6 +133,34 @@ namespace AnomaliesExpected
             Text.Font = GameFont.Small;
             Rect rect = inRect;
             rect.height -= ButSize.y + 10f;
+            TaggedString taggedString = "AnomaliesExpected.EntityDataBase.Desc".Translate();
+            Rect rect1 = new Rect(inRect.width / 2f - 132, 4, 264, 25);
+            if (Widgets.ButtonText(rect1, "AnomaliesExpected.EntityDataBase.SortType".Translate($"AnomaliesExpected.EntityDataBase.SortType.{state}".Translate())))
+            {
+                List<FloatMenuOption> floatMenuOptions = new List<FloatMenuOption>();
+                floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.EntityDataBase.SortType.0".Translate(), delegate
+                {
+                    DoEntityCategory();
+                    state = 0;
+                }));
+                floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.EntityDataBase.SortType.1".Translate(), delegate
+                {
+                    DoEntityClass();
+                    state = 1;
+                }));
+                floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.EntityDataBase.SortType.2".Translate(), delegate
+                {
+                    DoEntityGroup();
+                    state = 2;
+                }));
+                Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
+            }
+            Rect rect2 = new Rect(inRect.width - 39, 7, 32, 32);
+            if (Widgets.ButtonImage(rect2, TexButton.CodexButton, tooltip: "EntityCodexGizmoTip".Translate()))
+            {
+                Find.WindowStack.Add(new Dialog_EntityCodex());
+                Close();
+            }
             using (new TextBlock(GameFont.Medium))
             {
                 Widgets.Label(new Rect(0f, 0f, rect.width, HeaderHeight), "AnomaliesExpected.EntityDataBase.Label".Translate());
@@ -112,13 +170,10 @@ namespace AnomaliesExpected
                 Widgets.CheckboxLabeled(new Rect(rect.xMax - 150f, 0f, 150f, HeaderHeight), "DEV: Show all", ref devShowAll, disabled: false, null, null, placeCheckboxNearText: true);
             }
             rect.yMin += 40f;
-            TaggedString taggedString = "AnomaliesExpected.EntityDataBase.Desc".Translate();
-            float num = Text.CalcHeight(taggedString, rect.width);
+            TaggedString taggedString1 = "AnomaliesExpected.EntityDataBase.Desc".Translate();
+            float num = Text.CalcHeight(taggedString1, rect.width);
             Widgets.Label(new Rect(0f, rect.y, rect.width, num), taggedString);
             rect.yMin += num + 10f;
-            //Rect inRect2 = rect.LeftPart(0.35f);
-            //Rect rect2 = rect.RightPart(0.65f);
-            //LeftRect(inRect2);
             AllEntities(rect);
         }
 
@@ -210,6 +265,7 @@ namespace AnomaliesExpected
             Rect viewRect = new Rect(0f, 0f, rect.width - 16f, rightScrollHeight);
             Widgets.BeginScrollView(rect, ref rightScrollPos, viewRect);
             float num = 0f;
+            Text.Anchor = TextAnchor.MiddleCenter;
             foreach ((string key, List<AEEntityEntry> value) in EntriesByType)
             {
                 float num2 = num;
@@ -217,7 +273,7 @@ namespace AnomaliesExpected
                 GUI.color = new Color(1f, 1f, 1f, 0.5f);
                 Widgets.DrawHighlight(new Rect(0f, num, rect.width, height));
                 GUI.color = Color.white;
-                Widgets.Label(new Rect(EntryGap, num, rect.width, Text.LineHeight), key);
+                Widgets.Label(new Rect(0, num, rect.width, Text.LineHeight), key);
                 num += Text.LineHeight + 4f;
                 int MaxEntriesPerRow = Mathf.FloorToInt((viewRect.width - EntryGap) / (EntrySize + EntryGap));
                 int EntryRows = Mathf.CeilToInt((float)value.Count / (float)MaxEntriesPerRow);
@@ -249,6 +305,7 @@ namespace AnomaliesExpected
                 num += EntryGap;
             }
             rightScrollHeight = num;
+            Text.Anchor = TextAnchor.UpperLeft;
             Widgets.EndScrollView();
         }
 
