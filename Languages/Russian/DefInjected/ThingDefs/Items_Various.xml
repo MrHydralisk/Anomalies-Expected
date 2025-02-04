@@ -9,7 +9,7 @@
 	<AE_ForbiddenFruit.comps.Comp_ForbiddenFruit.activatingString>кусает {0}: {1}s</AE_ForbiddenFruit.comps.Comp_ForbiddenFruit.activatingString>
 	<AE_ForbiddenFruit.comps.Comp_ForbiddenFruit.activatingStringPending>кусает {0}</AE_ForbiddenFruit.comps.Comp_ForbiddenFruit.activatingStringPending>
 	<AE_ForbiddenFruit.comps.Comp_ForbiddenFruit.guiLabelString>Выберите кто будет кусать это.</AE_ForbiddenFruit.comps.Comp_ForbiddenFruit.guiLabelString>
-	<AE_ForbiddenFruit.comps.Comp_ForbiddenFruit.jobString>кусает</AE_ForbiddenFruit.comps.Comp_ForbiddenFruit.jobString>
+	<AE_ForbiddenFruit.comps.Comp_ForbiddenFruit.jobString>откусить</AE_ForbiddenFruit.comps.Comp_ForbiddenFruit.jobString>
 	<AE_ForbiddenFruit.comps.Comp_ForbiddenFruit.onCooldownString>регенерирует</AE_ForbiddenFruit.comps.Comp_ForbiddenFruit.onCooldownString>
 	
 	<AE_ForbiddenFruit.comps.CompAEStudyUnlocks.studyNotes.0.AnomalyLabel>святое яблоко</AE_ForbiddenFruit.comps.CompAEStudyUnlocks.studyNotes.0.AnomalyLabel>
@@ -40,7 +40,7 @@
 	<AE_BakingPies.comps.Comp_BakingPies.activatingString>съедает {0}: {1}с</AE_BakingPies.comps.Comp_BakingPies.activatingString>
 	<AE_BakingPies.comps.Comp_BakingPies.activatingStringPending>съедает {0}</AE_BakingPies.comps.Comp_BakingPies.activatingStringPending>
 	<AE_BakingPies.comps.Comp_BakingPies.guiLabelString>Выберите кто съест это.</AE_BakingPies.comps.Comp_BakingPies.guiLabelString>
-	<AE_BakingPies.comps.Comp_BakingPies.jobString>съедает</AE_BakingPies.comps.Comp_BakingPies.jobString>
+	<AE_BakingPies.comps.Comp_BakingPies.jobString>съесть</AE_BakingPies.comps.Comp_BakingPies.jobString>
 
 	<AE_BakingPies.comps.CompAEStudyUnlocks.studyNotes.0.AnomalyLabel>ватрушка</AE_BakingPies.comps.CompAEStudyUnlocks.studyNotes.0.AnomalyLabel>
 	<AE_BakingPies.comps.CompAEStudyUnlocks.studyNotes.0.AnomalyDesc>Сладкий круглый рулет из теста с глубоким углублением в центре составляет основу этого блюда на тарелке. Центр украшает восхитительная начинка из мягкого творога. Запеченное до золотистого цвета, это лакомство идеально подходит для сытного завтрака или восхитительного перекуса.\n\nЭто блюдо, несмотря на свой заманчиво-мягкий вид, обладает неожиданной стойкостью к повреждениям. Его нельзя порезать, укусить или иным образом повредить.\n\nКлассифицируется как аномалия класса 0 (Безопасность).</AE_BakingPies.comps.CompAEStudyUnlocks.studyNotes.0.AnomalyDesc>
@@ -73,7 +73,7 @@
 	<AE_DogTag.comps.Comp_DogTag.activatingString>дотрагивается до {0}: {1}с</AE_DogTag.comps.Comp_DogTag.activatingString>
 	<AE_DogTag.comps.Comp_DogTag.activatingStringPending>дотрагивается до {0}</AE_DogTag.comps.Comp_DogTag.activatingStringPending>
 	<AE_DogTag.comps.Comp_DogTag.guiLabelString>Выберите кто должен дотронуться до этого.</AE_DogTag.comps.Comp_DogTag.guiLabelString>
-	<AE_DogTag.comps.Comp_DogTag.jobString>дотронуться</AE_DogTag.comps.Comp_DogTag.jobString>
+	<AE_DogTag.comps.Comp_DogTag.jobString>дотронуться до</AE_DogTag.comps.Comp_DogTag.jobString>
 	
 	
 	
@@ -85,7 +85,7 @@
 	<AE_StudyNotepad.comps.Comp_StudyNotepad.activatingString>просматривает {0}: {1}с</AE_StudyNotepad.comps.Comp_StudyNotepad.activatingString>
 	<AE_StudyNotepad.comps.Comp_StudyNotepad.activatingStringPending>просматривает {0}</AE_StudyNotepad.comps.Comp_StudyNotepad.activatingStringPending>
 	<AE_StudyNotepad.comps.Comp_StudyNotepad.guiLabelString>Выберите кто просмотрит это.</AE_StudyNotepad.comps.Comp_StudyNotepad.guiLabelString>
-	<AE_StudyNotepad.comps.Comp_StudyNotepad.jobString>просматривает</AE_StudyNotepad.comps.Comp_StudyNotepad.jobString>
+	<AE_StudyNotepad.comps.Comp_StudyNotepad.jobString>просмотреть</AE_StudyNotepad.comps.Comp_StudyNotepad.jobString>
 	<AE_StudyNotepad.comps.Comp_StudyNotepad.onCooldownString>восстанавливается</AE_StudyNotepad.comps.Comp_StudyNotepad.onCooldownString>
 
 	<AE_StudyNotepad.comps.CompAEStudyUnlocks.studyNotes.0.label>#1/2 Отчет об исследовании жёлтого блокнота</AE_StudyNotepad.comps.CompAEStudyUnlocks.studyNotes.0.label>
@@ -124,10 +124,10 @@
 
 	<AE_ChristmasStockings.comps.Comp_ChristmasStockings.activateDescString>Вытащить подарок изнутри</AE_ChristmasStockings.comps.Comp_ChristmasStockings.activateDescString>
 	<AE_ChristmasStockings.comps.Comp_ChristmasStockings.activateLabelString>Вытащить подарок</AE_ChristmasStockings.comps.Comp_ChristmasStockings.activateLabelString>
-	<AE_ChristmasStockings.comps.Comp_ChristmasStockings.activatingString>вытаскивает подарок {0}: {1}с</AE_ChristmasStockings.comps.Comp_ChristmasStockings.activatingString>
-	<AE_ChristmasStockings.comps.Comp_ChristmasStockings.activatingStringPending>вытаскивает подарок {0}</AE_ChristmasStockings.comps.Comp_ChristmasStockings.activatingStringPending>
+	<AE_ChristmasStockings.comps.Comp_ChristmasStockings.activatingString>вытаскивает подарок из {0}: {1}с</AE_ChristmasStockings.comps.Comp_ChristmasStockings.activatingString>
+	<AE_ChristmasStockings.comps.Comp_ChristmasStockings.activatingStringPending>вытаскивает подарок из {0}</AE_ChristmasStockings.comps.Comp_ChristmasStockings.activatingStringPending>
 	<AE_ChristmasStockings.comps.Comp_ChristmasStockings.guiLabelString>Выберите кто вытащит из этого</AE_ChristmasStockings.comps.Comp_ChristmasStockings.guiLabelString>
-	<AE_ChristmasStockings.comps.Comp_ChristmasStockings.jobString>вытаскивает подарок</AE_ChristmasStockings.comps.Comp_ChristmasStockings.jobString>
+	<AE_ChristmasStockings.comps.Comp_ChristmasStockings.jobString>вытащить подарок изнутри</AE_ChristmasStockings.comps.Comp_ChristmasStockings.jobString>
 	<AE_ChristmasStockings.comps.Comp_ChristmasStockings.onCooldownString>подготавливается</AE_ChristmasStockings.comps.Comp_ChristmasStockings.onCooldownString>
 
 	<AE_ChristmasStockings.comps.CompAEStudyUnlocks.studyNotes.0.label>#1/3 Отчет об исследовании красного носка</AE_ChristmasStockings.comps.CompAEStudyUnlocks.studyNotes.0.label>
@@ -147,6 +147,6 @@
 	<AE_ChristmasStockings.comps.Comp_CanDestroyedAfterStudy.activatingString>извлекает последний подарок из {0}: {1}с</AE_ChristmasStockings.comps.Comp_CanDestroyedAfterStudy.activatingString>
 	<AE_ChristmasStockings.comps.Comp_CanDestroyedAfterStudy.activatingStringPending>извлекает последний подарок из {0}</AE_ChristmasStockings.comps.Comp_CanDestroyedAfterStudy.activatingStringPending>
 	<AE_ChristmasStockings.comps.Comp_CanDestroyedAfterStudy.guiLabelString>Выберите кто будет извлекать из этого</AE_ChristmasStockings.comps.Comp_CanDestroyedAfterStudy.guiLabelString>
-	<AE_ChristmasStockings.comps.Comp_CanDestroyedAfterStudy.jobString>извлекает последний подарок</AE_ChristmasStockings.comps.Comp_CanDestroyedAfterStudy.jobString>
+	<AE_ChristmasStockings.comps.Comp_CanDestroyedAfterStudy.jobString>извлечь последний подарок</AE_ChristmasStockings.comps.Comp_CanDestroyedAfterStudy.jobString>
 
 </LanguageData>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<AnomaliesExpected.ChristmasStockings.NoGifts>Не осталось подарков</AnomaliesExpected.ChristmasStockings.NoGifts>
+	<AnomaliesExpected.ChristmasStockings.AlreadyGotGift>Уже получил подарок</AnomaliesExpected.ChristmasStockings.AlreadyGotGift>
+	<AnomaliesExpected.ChristmasStockings.GiftsLeft>Доступные подарки {0}/{1}</AnomaliesExpected.ChristmasStockings.GiftsLeft>
+
+	<AnomaliesExpected.ChristmasStockings.Enter>Пройти под деревом</AnomaliesExpected.ChristmasStockings.Enter>
+	<AnomaliesExpected.ChristmasStockings.NewYear>Новый Год пришёл. Взаимодействие с {0} снова доступно.</AnomaliesExpected.ChristmasStockings.NewYear>
+	<AnomaliesExpected.ChristmasStockings.Reason.CantEnterA>Требует некоторой чистки от снега</AnomaliesExpected.ChristmasStockings.Reason.CantEnterA>
+	<AnomaliesExpected.ChristmasStockings.Reason.CantEnterB>Проход не доступен до следующего Нового Года</AnomaliesExpected.ChristmasStockings.Reason.CantEnterB>
+	
+	<AnomaliesExpected.ChristmasStockings.Tree.TimeTillNewYear>Время до следующего Нового Года: {0}</AnomaliesExpected.ChristmasStockings.Tree.TimeTillNewYear>
+	
+	<AnomaliesExpected.ChristmasStockings.AlertSubMap.Label>Проход в Новогодней Ёлке замерзает</AnomaliesExpected.ChristmasStockings.AlertSubMap.Label>
+	<AnomaliesExpected.ChristmasStockings.AlertSubMap.Desc>Проход в Новогодней Ёлке медленно покрывается льдом. Через несколько дней территория по ту сторону ёлки больше не будет доступна из-за этого.\n[Уничтожит эту карту]</AnomaliesExpected.ChristmasStockings.AlertSubMap.Desc>
+	
+	<AnomaliesExpected.ChristmasStockings.LetterEnter.Label>Празднование началось</AnomaliesExpected.ChristmasStockings.LetterEnter.Label>
+	<AnomaliesExpected.ChristmasStockings.LetterEnter.Text>Ваши колонисты достигли место проведения праздника. Переживите мороз и испытанию, чтобы получить подарки.\n\nУ вас есть 5 дней на участие в праздновании до того как температура упадёт и проход покроется льдом.</AnomaliesExpected.ChristmasStockings.LetterEnter.Text>
+</LanguageData>

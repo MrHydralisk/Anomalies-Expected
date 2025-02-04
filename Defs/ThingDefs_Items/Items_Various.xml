@@ -494,7 +494,7 @@
 				<activateLabelString>Take gift</activateLabelString>
 				<activateDescString>Take gift from inside.</activateDescString>
 				<guiLabelString>Choose who should take from this.</guiLabelString>
-				<jobString>taking gift</jobString>
+				<jobString>take gift</jobString>
 				<activatingStringPending>taking gift {0}</activatingStringPending>
 				<activatingString>taking gift {0}: {1}s</activatingString>
 				<onCooldownString>preparing</onCooldownString>
