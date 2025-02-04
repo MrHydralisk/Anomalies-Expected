@@ -30,8 +30,12 @@ namespace AnomaliesExpected
             val.Patch(AccessTools.Property(typeof(ResearchProjectDef), "IsHidden").GetGetMethod(), prefix: new HarmonyMethod(patchType, "RPD_IsHidden_Prefix"));
             val.Patch(AccessTools.Property(typeof(RaceProperties), "IsAnomalyEntity").GetGetMethod(), postfix: new HarmonyMethod(patchType, "RP_IsAnomalyEntity_Postfix"));
             val.Patch(AccessTools.Method(typeof(BackCompatibility), "FactionManagerPostLoadInit"), postfix: new HarmonyMethod(patchType, "BC_FactionManagerPostLoadInit_Postfix"));
+            
             val.Patch(AccessTools.Method(typeof(PlaySettings), "DoPlaySettingsGlobalControls"), postfix: new HarmonyMethod(patchType, "PC_DoPlaySettingsGlobalControls_Postfix"));
             val.Patch(AccessTools.Method(typeof(Dialog_EntityCodex), "DoWindowContents"), postfix: new HarmonyMethod(patchType, "DEC_DoWindowContents_Postfix"));
+            val.Patch(AccessTools.Method(typeof(CompStudyUnlocks), "Notify_StudyLevelChanged"), postfix: new HarmonyMethod(patchType, "CSU_Notify_StudyLevelChanged_Postfix"));
+            val.Patch(AccessTools.Method(typeof(CompStudyUnlocksMonolith), "Notify_StudyLevelChanged"), postfix: new HarmonyMethod(patchType, "CSU_Notify_StudyLevelChanged_Postfix"));
+            val.Patch(AccessTools.Method(typeof(CompStudyUnlocks), "PostPostMake"), postfix: new HarmonyMethod(patchType, "CSU_PostPostMake_Postfix"));
         }
 
         public static bool RPD_IsHidden_Prefix(ref bool __result, ResearchProjectDef __instance)
@@ -84,6 +88,19 @@ namespace AnomaliesExpected
                 Find.WindowStack.Add(new Dialog_AEEntityDB());
                 __instance.Close();
             }
+        }
+
+        //Only for Vanilla
+        public static void CSU_Notify_StudyLevelChanged_Postfix(CompStudyUnlocks __instance, ChoiceLetter keptLetter)
+        {
+            Log.Message($"CSU_Notify_StudyLevelChanged_Postfix {__instance.parent.Label} {__instance is CompAEStudyUnlocks} {__instance.GetType()}\n{keptLetter.Label}\n{keptLetter.Text}");
+            GameComponent_AnomaliesExpected.instance.UpdateEntityEntryFromVanilla(__instance, keptLetter);
+        }
+
+        public static void CSU_PostPostMake_Postfix(CompStudyUnlocks __instance)
+        {
+            Log.Message($"CSU_Notify_StudyLevelChanged_Postfix {__instance.parent.Label} {__instance is CompAEStudyUnlocks}");
+            GameComponent_AnomaliesExpected.instance.TryAddEntityEntryFromVanilla(__instance);
         }
     }
 }

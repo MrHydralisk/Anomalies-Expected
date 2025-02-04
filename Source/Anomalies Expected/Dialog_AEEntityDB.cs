@@ -165,10 +165,10 @@ namespace AnomaliesExpected
             {
                 Widgets.Label(new Rect(0f, 0f, rect.width, HeaderHeight), "AnomaliesExpected.EntityDataBase.Label".Translate());
             }
-            if (Prefs.DevMode && DebugSettings.godMode)
-            {
-                Widgets.CheckboxLabeled(new Rect(rect.xMax - 150f, 0f, 150f, HeaderHeight), "DEV: Show all", ref devShowAll, disabled: false, null, null, placeCheckboxNearText: true);
-            }
+            //if (Prefs.DevMode && DebugSettings.godMode)
+            //{
+            //    Widgets.CheckboxLabeled(new Rect(rect.xMax - 150f, 0f, 150f, HeaderHeight), "DEV: Show all", ref devShowAll, disabled: false, null, null, placeCheckboxNearText: true);
+            //}
             rect.yMin += 40f;
             TaggedString taggedString1 = "AnomaliesExpected.EntityDataBase.Desc".Translate();
             float num = Text.CalcHeight(taggedString1, rect.width);

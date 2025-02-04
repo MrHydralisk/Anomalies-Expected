@@ -14,13 +14,13 @@ namespace AnomaliesExpected
 
         public GameComponent_AnomaliesExpected(Game game)
         {
+            instance = this;
             Log.Message($"AE: GameComponent_AnomaliesExpected");
         }
 
         public override void FinalizeInit()
         {
             base.FinalizeInit();
-            instance = this;
             Log.Message($"AE: FinalizeInit");
         }
 
@@ -57,6 +57,34 @@ namespace AnomaliesExpected
                 entityEntry = new AEEntityEntry() {
                     ThingDef = compAEStudyUnlocks.parent.def,
                     EntityCodexEntryDef = DefDatabase<EntityCodexEntryDef>.AllDefs.FirstOrDefault((EntityCodexEntryDef eced) => eced.linkedThings.Contains(compAEStudyUnlocks.parent.def))
+                };
+                EntityEntries.Add(entityEntry);
+            }
+        }
+
+        public void TryAddEntityEntryFromVanilla(CompStudyUnlocks compStudyUnlocks)
+        {
+            AEEntityEntry entityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => aeee.ThingDef == compStudyUnlocks.parent.def);
+            if (entityEntry == null)
+            {
+                entityEntry = new AEEntityEntry()
+                {
+                    ThingDef = compStudyUnlocks.parent.def,
+                    EntityCodexEntryDef = DefDatabase<EntityCodexEntryDef>.AllDefs.FirstOrDefault((EntityCodexEntryDef eced) => eced.linkedThings.Contains(compStudyUnlocks.parent.def))
+                };
+                EntityEntries.Add(entityEntry);
+            }
+        }
+
+        public void UpdateEntityEntryFromVanilla(CompStudyUnlocks compStudyUnlocks, ChoiceLetter keptLetter)
+        {
+            AEEntityEntry entityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => aeee.ThingDef == compStudyUnlocks.parent.def);
+            if (entityEntry == null)
+            {
+                entityEntry = new AEEntityEntry()
+                {
+                    ThingDef = compStudyUnlocks.parent.def,
+                    EntityCodexEntryDef = DefDatabase<EntityCodexEntryDef>.AllDefs.FirstOrDefault((EntityCodexEntryDef eced) => eced.linkedThings.Contains(compStudyUnlocks.parent.def))
                 };
                 EntityEntries.Add(entityEntry);
             }
