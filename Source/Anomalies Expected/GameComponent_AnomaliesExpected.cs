@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
+using Verse.Noise;
 
 namespace AnomaliesExpected
 {
@@ -33,26 +34,39 @@ namespace AnomaliesExpected
         public override void LoadedGame()
         {
             base.LoadedGame();
-            Log.Message($"AE: LoadedGame 1\n\n{string.Join("\n", EntityEntries.Select(x => $"{x.ThingDef.label}"))}");
             //if (!isCollectedLetters)
             //{
 
+            SyncWithEntityCodex();
+
+            foreach(Map map in Find.Maps)
+            {
+                foreach (Thing thing in map.listerThings.AllThings)
+                {
+                    CompAEStudyUnlocks compAEStudyUnlocks = thing.TryGetComp<CompAEStudyUnlocks>();
+                    if (compAEStudyUnlocks != null)
+                    {
+                        SyncEntityEntry(compAEStudyUnlocks);
+                    }
+                }
+            }
+            //    isCollectedLetters = true;
+            //}
+        }
+
+        public override void StartedNewGame()
+        {
+            base.StartedNewGame();
+            SyncWithEntityCodex();
+            Log.Message($"AE: StartedNewGame");
+        }
+
+        public void SyncWithEntityCodex()
+        {
             foreach (EntityCodexEntryDef eced in DefDatabase<EntityCodexEntryDef>.AllDefs)
             {
                 AddFromEntityCodex(eced);
             }
-
-            foreach (Thing thing in Find.CurrentMap.listerThings.AllThings)
-            {
-                CompAEStudyUnlocks compAEStudyUnlocks = thing.TryGetComp<CompAEStudyUnlocks>();
-                if (compAEStudyUnlocks != null)
-                {
-                    SyncEntityEntry(compAEStudyUnlocks);
-                }
-            }
-            Log.Message($"AE: LoadedGame 2\n\n{string.Join("\n", EntityEntries.Select(x => $"{x.ThingDef.label}"))}");
-            //    isCollectedLetters = true;
-            //}
         }
 
         public void AddFromEntityCodex(EntityCodexEntryDef entityCodexEntryDef)
@@ -73,7 +87,7 @@ namespace AnomaliesExpected
         public void SyncEntityEntry(CompAEStudyUnlocks compAEStudyUnlocks)
         {
             EntityCodexEntryDef entityCodexEntryDef = DefDatabase<EntityCodexEntryDef>.AllDefs.FirstOrDefault((EntityCodexEntryDef eced) => eced.linkedThings.Contains(compAEStudyUnlocks.parent.def));
-            AEEntityEntry entityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => (aeee.EntityCodexEntryDef == entityCodexEntryDef) || (aeee.ThingDef == compAEStudyUnlocks.parent.def));
+            AEEntityEntry entityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => aeee.EntityCodexEntryDef == entityCodexEntryDef && (aeee.ThingDef == null || aeee.ThingDef == compAEStudyUnlocks.parent.def));
             if (entityEntry == null)
             {
                 entityEntry = new AEEntityEntry() {
@@ -81,6 +95,10 @@ namespace AnomaliesExpected
                     EntityCodexEntryDef = entityCodexEntryDef
                 };
                 EntityEntries.Add(entityEntry);
+            }
+            if (entityEntry.ThingDef == null)
+            {
+                entityEntry.ThingDef = compAEStudyUnlocks.parent.def;
             }
             if (EntityAddLetters(ref entityEntry, compAEStudyUnlocks.Letters))
             {
@@ -92,7 +110,7 @@ namespace AnomaliesExpected
         public void TryAddEntityEntryFromVanilla(CompStudyUnlocks compStudyUnlocks)
         {
             EntityCodexEntryDef entityCodexEntryDef = DefDatabase<EntityCodexEntryDef>.AllDefs.FirstOrDefault((EntityCodexEntryDef eced) => eced.linkedThings.Contains(compStudyUnlocks.parent.def));
-            AEEntityEntry entityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => (aeee.EntityCodexEntryDef == entityCodexEntryDef) || (aeee.ThingDef == compStudyUnlocks.parent.def));
+            AEEntityEntry entityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => aeee.EntityCodexEntryDef == entityCodexEntryDef && (aeee.ThingDef == null || aeee.ThingDef == compStudyUnlocks.parent.def));
             if (entityEntry == null)
             {
                 entityEntry = new AEEntityEntry()
@@ -102,13 +120,17 @@ namespace AnomaliesExpected
                 };
                 EntityEntries.Add(entityEntry);
             }
+            if (entityEntry.ThingDef == null)
+            {
+                entityEntry.ThingDef = compStudyUnlocks.parent.def;
+            }
             EntityAddLetters(ref entityEntry, compStudyUnlocks.Letters);
         }
 
         public void UpdateEntityEntryFromVanilla(CompStudyUnlocks compStudyUnlocks, ChoiceLetter keptLetter)
         {
             EntityCodexEntryDef entityCodexEntryDef = DefDatabase<EntityCodexEntryDef>.AllDefs.FirstOrDefault((EntityCodexEntryDef eced) => eced.linkedThings.Contains(compStudyUnlocks.parent.def));
-            AEEntityEntry entityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => (aeee.EntityCodexEntryDef == entityCodexEntryDef) || (aeee.ThingDef == compStudyUnlocks.parent.def));
+            AEEntityEntry entityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => aeee.EntityCodexEntryDef == entityCodexEntryDef && (aeee.ThingDef == null || aeee.ThingDef == compStudyUnlocks.parent.def));
             if (entityEntry == null)
             {
                 entityEntry = new AEEntityEntry()
@@ -117,6 +139,10 @@ namespace AnomaliesExpected
                     EntityCodexEntryDef = entityCodexEntryDef
                 };
                 EntityEntries.Add(entityEntry);
+            }
+            if (entityEntry.ThingDef == null)
+            {
+                entityEntry.ThingDef = compStudyUnlocks.parent.def;
             }
             EntityAddLetters(ref entityEntry, compStudyUnlocks.Letters);
         }
@@ -135,12 +161,6 @@ namespace AnomaliesExpected
             }
             return isAdded;
         } 
-
-        public override void StartedNewGame()
-        {
-            base.StartedNewGame();
-            Log.Message($"AE: StartedNewGame");
-        }
 
         //public override void GameComponentOnGUI()
         //{

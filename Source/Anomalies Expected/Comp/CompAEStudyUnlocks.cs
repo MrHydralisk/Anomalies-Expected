@@ -96,6 +96,7 @@ namespace AnomaliesExpected
                 StudyNotesAll.SortBy((StudyNote sn) => sn.threshold);
             }
             UpdateFromStudyNotes();
+
         }
 
         public void SetParentThing(ThingWithComps ParentThing)
@@ -152,6 +153,7 @@ namespace AnomaliesExpected
                     if (studyNote.threshold > CurrThreshold)
                     {
                         UpdateFromStudyNote(studyNote);
+                        GameComponent_AnomaliesExpected.instance.SyncEntityEntry(this);
                     }
                 }
             }
@@ -178,15 +180,20 @@ namespace AnomaliesExpected
 
         protected void UpdateFromStudyNotes()
         {
+            bool isUpdated = false;
             for (int i = 0; i < StudyNotesAll.Count(); i++)
             {
                 StudyNote studyNote = StudyNotesAll[i];
                 if (studyNote.threshold > CurrThreshold && letters.Any((ChoiceLetter cl) => cl.Label == studyNote.label))
                 {
                     UpdateFromStudyNote(studyNote);
+                    isUpdated = true;
                 }
             }
-            //GameComponent_AnomaliesExpected.instance;
+            if (isUpdated)
+            {
+                GameComponent_AnomaliesExpected.instance.SyncEntityEntry(this);
+            }
         }
 
         protected void UpdateFromStudyNote(StudyNote studyNote)
