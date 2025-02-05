@@ -36,6 +36,12 @@ namespace AnomaliesExpected
             Log.Message($"AE: LoadedGame 1\n\n{string.Join("\n", EntityEntries.Select(x => $"{x.ThingDef.label}"))}");
             //if (!isCollectedLetters)
             //{
+
+            foreach (EntityCodexEntryDef eced in DefDatabase<EntityCodexEntryDef>.AllDefs)
+            {
+                AddFromEntityCodex(eced);
+            }
+
             foreach (Thing thing in Find.CurrentMap.listerThings.AllThings)
             {
                 CompAEStudyUnlocks compAEStudyUnlocks = thing.TryGetComp<CompAEStudyUnlocks>();
@@ -49,46 +55,86 @@ namespace AnomaliesExpected
             //}
         }
 
+        public void AddFromEntityCodex(EntityCodexEntryDef entityCodexEntryDef)
+        {
+            AEEntityEntry entityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => aeee.EntityCodexEntryDef == entityCodexEntryDef);
+            if (entityEntry == null)
+            {
+                entityEntry = new AEEntityEntry()
+                {
+                    AnomalyLabel = entityCodexEntryDef.LabelCap,
+                    AnomalyDesc = entityCodexEntryDef.Description,
+                    EntityCodexEntryDef = entityCodexEntryDef
+                };
+                EntityEntries.Add(entityEntry);
+            }
+        }
+
         public void SyncEntityEntry(CompAEStudyUnlocks compAEStudyUnlocks)
         {
-            AEEntityEntry entityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => aeee.ThingDef == compAEStudyUnlocks.parent.def);
+            EntityCodexEntryDef entityCodexEntryDef = DefDatabase<EntityCodexEntryDef>.AllDefs.FirstOrDefault((EntityCodexEntryDef eced) => eced.linkedThings.Contains(compAEStudyUnlocks.parent.def));
+            AEEntityEntry entityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => (aeee.EntityCodexEntryDef == entityCodexEntryDef) || (aeee.ThingDef == compAEStudyUnlocks.parent.def));
             if (entityEntry == null)
             {
                 entityEntry = new AEEntityEntry() {
                     ThingDef = compAEStudyUnlocks.parent.def,
-                    EntityCodexEntryDef = DefDatabase<EntityCodexEntryDef>.AllDefs.FirstOrDefault((EntityCodexEntryDef eced) => eced.linkedThings.Contains(compAEStudyUnlocks.parent.def))
+                    EntityCodexEntryDef = entityCodexEntryDef
                 };
                 EntityEntries.Add(entityEntry);
+            }
+            if (EntityAddLetters(ref entityEntry, compAEStudyUnlocks.Letters))
+            {
+                entityEntry.AnomalyLabel = compAEStudyUnlocks.currentAnomalyLabel;
+                entityEntry.AnomalyDesc = compAEStudyUnlocks.currentAnomalyDesc;
             }
         }
 
         public void TryAddEntityEntryFromVanilla(CompStudyUnlocks compStudyUnlocks)
         {
-            AEEntityEntry entityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => aeee.ThingDef == compStudyUnlocks.parent.def);
+            EntityCodexEntryDef entityCodexEntryDef = DefDatabase<EntityCodexEntryDef>.AllDefs.FirstOrDefault((EntityCodexEntryDef eced) => eced.linkedThings.Contains(compStudyUnlocks.parent.def));
+            AEEntityEntry entityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => (aeee.EntityCodexEntryDef == entityCodexEntryDef) || (aeee.ThingDef == compStudyUnlocks.parent.def));
             if (entityEntry == null)
             {
                 entityEntry = new AEEntityEntry()
                 {
                     ThingDef = compStudyUnlocks.parent.def,
-                    EntityCodexEntryDef = DefDatabase<EntityCodexEntryDef>.AllDefs.FirstOrDefault((EntityCodexEntryDef eced) => eced.linkedThings.Contains(compStudyUnlocks.parent.def))
+                    EntityCodexEntryDef = entityCodexEntryDef
                 };
                 EntityEntries.Add(entityEntry);
             }
+            EntityAddLetters(ref entityEntry, compStudyUnlocks.Letters);
         }
 
         public void UpdateEntityEntryFromVanilla(CompStudyUnlocks compStudyUnlocks, ChoiceLetter keptLetter)
         {
-            AEEntityEntry entityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => aeee.ThingDef == compStudyUnlocks.parent.def);
+            EntityCodexEntryDef entityCodexEntryDef = DefDatabase<EntityCodexEntryDef>.AllDefs.FirstOrDefault((EntityCodexEntryDef eced) => eced.linkedThings.Contains(compStudyUnlocks.parent.def));
+            AEEntityEntry entityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => (aeee.EntityCodexEntryDef == entityCodexEntryDef) || (aeee.ThingDef == compStudyUnlocks.parent.def));
             if (entityEntry == null)
             {
                 entityEntry = new AEEntityEntry()
                 {
                     ThingDef = compStudyUnlocks.parent.def,
-                    EntityCodexEntryDef = DefDatabase<EntityCodexEntryDef>.AllDefs.FirstOrDefault((EntityCodexEntryDef eced) => eced.linkedThings.Contains(compStudyUnlocks.parent.def))
+                    EntityCodexEntryDef = entityCodexEntryDef
                 };
                 EntityEntries.Add(entityEntry);
             }
+            EntityAddLetters(ref entityEntry, compStudyUnlocks.Letters);
         }
+
+        public static bool EntityAddLetters(ref AEEntityEntry entityEntry, IReadOnlyList<ChoiceLetter> letters)
+        {
+            bool isAdded = false;
+            foreach(ChoiceLetter choiceLetter in letters)
+            {
+                if (!entityEntry.letters.Any((ChoiceLetter cl) => cl.Label == choiceLetter.Label))
+                {
+                    ChoiceLetter copyLetter = LetterMaker.MakeLetter(choiceLetter.Label, choiceLetter.Text, choiceLetter.def, choiceLetter.lookTargets);
+                    copyLetter.arrivalTick = choiceLetter.arrivalTick;
+                    entityEntry.letters.Add(copyLetter);
+                }
+            }
+            return isAdded;
+        } 
 
         public override void StartedNewGame()
         {

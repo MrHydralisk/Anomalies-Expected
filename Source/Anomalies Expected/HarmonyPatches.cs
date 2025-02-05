@@ -99,7 +99,7 @@ namespace AnomaliesExpected
 
         public static void CSU_PostPostMake_Postfix(CompStudyUnlocks __instance)
         {
-            Log.Message($"CSU_Notify_StudyLevelChanged_Postfix {__instance.parent.Label} {__instance is CompAEStudyUnlocks}");
+            Log.Message($"CSU_PostPostMake_Postfix {__instance.parent.Label} {__instance is CompAEStudyUnlocks}");
             GameComponent_AnomaliesExpected.instance.TryAddEntityEntryFromVanilla(__instance);
         }
     }

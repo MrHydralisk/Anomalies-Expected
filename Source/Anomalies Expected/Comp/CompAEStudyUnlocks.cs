@@ -186,6 +186,7 @@ namespace AnomaliesExpected
                     UpdateFromStudyNote(studyNote);
                 }
             }
+            //GameComponent_AnomaliesExpected.instance;
         }
 
         protected void UpdateFromStudyNote(StudyNote studyNote)
