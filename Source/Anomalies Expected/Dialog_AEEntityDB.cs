@@ -354,11 +354,22 @@ namespace AnomaliesExpected
                         foreach (ResearchProjectDef discoveredResearchProject in entityCodexEntryDef.discoveredResearchProjects)
                         {
                             Rect rect2 = new Rect(0f, num, viewRect.width, Text.LineHeight);
-                            if (Widgets.ButtonText(rect2, "ViewHyperlink".Translate(discoveredResearchProject.LabelCap), drawBackground: false))
+                            if (discoveredResearchProject.IsHidden)
                             {
-                                Close();
-                                Find.MainTabsRoot.SetCurrentTab(MainButtonDefOf.Research);
-                                ((MainTabWindow_Research)MainButtonDefOf.Research.TabWindow).Select(discoveredResearchProject);
+                                rect2.xMin += rect2.height;
+                                using (new TextBlock(ColoredText.SubtleGrayColor))
+                                {
+                                    Widgets.Label(rect2, "Undiscovered".Translate());
+                                }
+                            }
+                            else
+                            {
+                                if (Widgets.ButtonText(rect2, "ViewHyperlink".Translate(discoveredResearchProject.LabelCap), drawBackground: false))
+                                {
+                                    Close();
+                                    Find.MainTabsRoot.SetCurrentTab(MainButtonDefOf.Research);
+                                    ((MainTabWindow_Research)MainButtonDefOf.Research.TabWindow).Select(discoveredResearchProject);
+                                }
                             }
                             num += rect2.height;
                         }
