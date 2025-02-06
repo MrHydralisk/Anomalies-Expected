@@ -5,6 +5,7 @@
 	<AnomaliesExpected.EntityDataBase.Desc>This page lists all known entities which are related to the dark void. You can review all unlocked study notes. Discover new entities using the “void provocation” psychic ritual.</AnomaliesExpected.EntityDataBase.Desc>
 	<AnomaliesExpected.EntityDataBase.Tip>View all discovered entities and their study notes.</AnomaliesExpected.EntityDataBase.Tip>
 	
+	<AnomaliesExpected.EntityDataBase.ThreatClass>{0}: Class {1}</AnomaliesExpected.EntityDataBase.ThreatClass>
 	<AnomaliesExpected.EntityDataBase.ThreatClass.-1>Unknown</AnomaliesExpected.EntityDataBase.ThreatClass.-1>
 	<AnomaliesExpected.EntityDataBase.ThreatClass.0>Safe</AnomaliesExpected.EntityDataBase.ThreatClass.0>
 	<AnomaliesExpected.EntityDataBase.ThreatClass.1>Caution</AnomaliesExpected.EntityDataBase.ThreatClass.1>
@@ -12,6 +13,7 @@
 	<AnomaliesExpected.EntityDataBase.ThreatClass.3>Danger</AnomaliesExpected.EntityDataBase.ThreatClass.3>
 	<AnomaliesExpected.EntityDataBase.ThreatClass.4>Critical</AnomaliesExpected.EntityDataBase.ThreatClass.4>
 	<AnomaliesExpected.EntityDataBase.ThreatClass.5>Apocalypse</AnomaliesExpected.EntityDataBase.ThreatClass.5>
+	<AnomaliesExpected.EntityDataBase.ThreatClassIncreased>Threat level of "{0}" anomaly increased.</AnomaliesExpected.EntityDataBase.ThreatClassIncreased>
 	
 	<AnomaliesExpected.EntityDataBase.SortType>Sort by: {0}</AnomaliesExpected.EntityDataBase.SortType>
 	<AnomaliesExpected.EntityDataBase.SortType.0>Knowledge Category</AnomaliesExpected.EntityDataBase.SortType.0>

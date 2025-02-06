@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 using Verse;
 using Verse.Noise;
 
@@ -19,11 +20,11 @@ namespace AnomaliesExpected
             Log.Message($"AE: GameComponent_AnomaliesExpected");
         }
 
-        public override void FinalizeInit()
-        {
-            base.FinalizeInit();
-            Log.Message($"AE: FinalizeInit");
-        }
+        //public override void FinalizeInit()
+        //{
+        //    base.FinalizeInit();
+        //    Log.Message($"AE: FinalizeInit");
+        //}
 
         //public override void GameComponentTick()
         //{
@@ -58,7 +59,7 @@ namespace AnomaliesExpected
         {
             base.StartedNewGame();
             SyncWithEntityCodex();
-            Log.Message($"AE: StartedNewGame");
+            //Log.Message($"AE: StartedNewGame");
         }
 
         public void SyncWithEntityCodex()
@@ -87,7 +88,7 @@ namespace AnomaliesExpected
         public void SyncEntityEntry(CompAEStudyUnlocks compAEStudyUnlocks)
         {
             EntityCodexEntryDef entityCodexEntryDef = DefDatabase<EntityCodexEntryDef>.AllDefs.FirstOrDefault((EntityCodexEntryDef eced) => eced.linkedThings.Contains(compAEStudyUnlocks.parent.def));
-            Log.Message($"compAEStudyUnlocks {compAEStudyUnlocks.parent.LabelCap}: {entityCodexEntryDef == null} | {compAEStudyUnlocks.Props is CompProperties_AEStudyUnlocks} | {compAEStudyUnlocks.Props is CompProperties_AEStudyUnlocks AEStudyUnlockss && !AEStudyUnlockss.isCreateEntityEntryWithoutCodexEntry}");
+            //Log.Message($"compAEStudyUnlocks {compAEStudyUnlocks.parent.LabelCap}: {entityCodexEntryDef == null} | {compAEStudyUnlocks.Props is CompProperties_AEStudyUnlocks} | {compAEStudyUnlocks.Props is CompProperties_AEStudyUnlocks AEStudyUnlockss && !AEStudyUnlockss.isCreateEntityEntryWithoutCodexEntry}");
             if (entityCodexEntryDef == null && (compAEStudyUnlocks.Props is CompProperties_AEStudyUnlocks AEStudyUnlocks) && !AEStudyUnlocks.isCreateEntityEntryWithoutCodexEntry)
             {
                 return;
@@ -105,10 +106,10 @@ namespace AnomaliesExpected
             {
                 entityEntry.ThingDef = compAEStudyUnlocks.parent.def;
             }
-            Log.Message($"SyncEntityEntry A {entityEntry.AnomalyLabel} | {compAEStudyUnlocks.currentAnomalyLabel} | {compAEStudyUnlocks.parent.LabelCap}");
+            //Log.Message($"SyncEntityEntry A {entityEntry.AnomalyLabel} | {compAEStudyUnlocks.currentAnomalyLabel} | {compAEStudyUnlocks.parent.LabelCap}");
             if (EntityAddLetters(ref entityEntry, compAEStudyUnlocks.Letters))
             {
-                Log.Message($"SyncEntityEntry B {compAEStudyUnlocks.parent.LabelCap}={entityEntry.AnomalyLabel}\n{compAEStudyUnlocks.parent.DescriptionFlavor}={entityEntry.AnomalyDesc}");
+                //Log.Message($"SyncEntityEntry B {compAEStudyUnlocks.parent.LabelCap}={entityEntry.AnomalyLabel}\n{compAEStudyUnlocks.parent.DescriptionFlavor}={entityEntry.AnomalyDesc}");
                 if (!compAEStudyUnlocks.parent.LabelCap.NullOrEmpty())
                 {
                     entityEntry.AnomalyLabel = compAEStudyUnlocks.parent.LabelCap;
@@ -117,7 +118,8 @@ namespace AnomaliesExpected
                 {
                     entityEntry.AnomalyDesc = compAEStudyUnlocks.parent.DescriptionFlavor;
                 }
-                Log.Message($"SyncEntityEntry C {compAEStudyUnlocks.parent.LabelCap}={entityEntry.AnomalyLabel}\n{compAEStudyUnlocks.parent.DescriptionFlavor}={entityEntry.AnomalyDesc}");
+                entityEntry.ThreatClass = Mathf.Max(compAEStudyUnlocks.ThreatClass, entityEntry.ThreatClass);
+                //Log.Message($"SyncEntityEntry C {compAEStudyUnlocks.parent.LabelCap}={entityEntry.AnomalyLabel}\n{compAEStudyUnlocks.parent.DescriptionFlavor}={entityEntry.AnomalyDesc}");
             }
         }
 
@@ -129,7 +131,7 @@ namespace AnomaliesExpected
                 return;
             }
             EntityCodexEntryDef entityCodexEntryDef = DefDatabase<EntityCodexEntryDef>.AllDefs.FirstOrDefault((EntityCodexEntryDef eced) => eced.linkedThings.Contains(compStudyUnlocks.parent.def));
-            Log.Message($"TryAddEntityEntryFromVanilla {compStudyUnlocks.parent.LabelCap}");
+            //Log.Message($"TryAddEntityEntryFromVanilla {compStudyUnlocks.parent.LabelCap}");
             AEEntityEntry entityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => aeee.EntityCodexEntryDef == entityCodexEntryDef && (aeee.ThingDef == null || aeee.ThingDef == compStudyUnlocks.parent.def));
             if (entityEntry == null)
             {
@@ -150,7 +152,7 @@ namespace AnomaliesExpected
         public static bool EntityAddLetters(ref AEEntityEntry entityEntry, IReadOnlyList<ChoiceLetter> letters)
         {
             bool isAdded = false;
-            Log.Message($"EntityAddLetters {letters.Count()}");
+            //Log.Message($"EntityAddLetters {letters.Count()}");
             foreach(ChoiceLetter choiceLetter in letters)
             {
                 if (!entityEntry.letters.Any((ChoiceLetter cl) => cl.Label == choiceLetter.Label))
@@ -187,7 +189,7 @@ namespace AnomaliesExpected
                     EntityEntries = new List<AEEntityEntry>();
                 }
             }
-            Log.Message($"AE: ExposeData");
+            //Log.Message($"AE: ExposeData");
         }
     }
 }

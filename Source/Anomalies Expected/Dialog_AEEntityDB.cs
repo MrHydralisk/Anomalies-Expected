@@ -97,7 +97,7 @@ namespace AnomaliesExpected
             }
             foreach ((string key, List<AEEntityEntry> value) in EntriesByType)
             {
-                value.SortBy((AEEntityEntry aeee) => aeee.EntityCodexEntryDef.orderInCategory, (AEEntityEntry aeee) => aeee.EntityCodexEntryDef.label);
+                value.SortBy((AEEntityEntry aeee) => aeee.EntityCodexEntryDef?.orderInCategory ?? int.MaxValue, (AEEntityEntry aeee) => aeee.EntityCodexEntryDef?.label ?? string.Empty);
             }
             EntriesByType.SortBy(x => x.Item2.FirstOrDefault()?.ThreatClass ?? -1);
         }
@@ -124,7 +124,7 @@ namespace AnomaliesExpected
             }
             foreach ((string key, List<AEEntityEntry> value) in EntriesByType)
             {
-                value.SortBy((AEEntityEntry aeee) => aeee.EntityCodexEntryDef.orderInCategory, (AEEntityEntry aeee) => aeee.EntityCodexEntryDef.label);
+                value.SortBy((AEEntityEntry aeee) => aeee.EntityCodexEntryDef?.orderInCategory ?? int.MaxValue, (AEEntityEntry aeee) => aeee.EntityCodexEntryDef?.label ?? string.Empty);
             }
             EntriesByType.SortBy(x => x.Item2.FirstOrDefault()?.groupTag ?? "");
         }

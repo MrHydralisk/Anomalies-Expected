@@ -25,6 +25,8 @@ namespace AnomaliesExpected
 
         public int NextIndex => nextIndex;
         public float CurrThreshold;
+        public int ThreatClass = -1;
+        public int lastNotificationTick; 
 
         public List<Thing> SpawnedRelatedAnalyzableThing
         {
@@ -202,6 +204,15 @@ namespace AnomaliesExpected
             {
                 if (studyNote is AEStudyNote aestudyNote)
                 {
+                    if (aestudyNote.ThreatClass > ThreatClass)
+                    {
+                        if (Find.TickManager.TicksGame > lastNotificationTick)
+                        {
+                            Messages.Message("AnomaliesExpected.EntityDataBase.ThreatClassIncreased".Translate(parent.LabelCap), parent, MessageTypeDefOf.CautionInput);
+                            lastNotificationTick = Find.TickManager.TicksGame + 250;
+                        }
+                        ThreatClass = aestudyNote.ThreatClass;
+                    }
                     if (!aestudyNote.AnomalyLabel.NullOrEmpty())
                     {
                         currentAnomalyLabel = aestudyNote.AnomalyLabel;
