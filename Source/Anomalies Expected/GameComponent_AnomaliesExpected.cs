@@ -1,5 +1,4 @@
-﻿using Mono.Unix.Native;
-using RimWorld;
+﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -16,7 +15,6 @@ namespace AnomaliesExpected
         public GameComponent_AnomaliesExpected(Game game)
         {
             instance = this;
-            Log.Message($"AE: GameComponent_AnomaliesExpected");
         }
 
         public override void LoadedGame()

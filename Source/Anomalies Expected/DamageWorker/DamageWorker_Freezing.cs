@@ -1,7 +1,5 @@
 ﻿using RimWorld;
-using System.Linq;
 using Verse;
-using static HarmonyLib.Code;
 
 namespace AnomaliesExpected
 {
