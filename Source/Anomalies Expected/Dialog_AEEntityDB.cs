@@ -27,8 +27,6 @@ namespace AnomaliesExpected
 
         private const float HeaderHeight = 30f;
 
-        //private const float LeftRectWidthPct = 0.35f;
-
         private const float EntrySize = 128f;
 
         private const float EntryGap = 8f;
@@ -266,10 +264,6 @@ namespace AnomaliesExpected
             {
                 Widgets.Label(new Rect(0f, 0f, rect.width, HeaderHeight), "AnomaliesExpected.EntityDataBase.Label".Translate());
             }
-            //if (Prefs.DevMode && DebugSettings.godMode)
-            //{
-            //    Widgets.CheckboxLabeled(new Rect(rect.xMax - 150f, 0f, 150f, HeaderHeight), "DEV: Show all", ref devShowAll, disabled: false, null, null, placeCheckboxNearText: true);
-            //}
             rect.yMin += 40f;
             TaggedString taggedString1 = "AnomaliesExpected.EntityDataBase.Desc".Translate();
             float num = Text.CalcHeight(taggedString1, rect.width);
@@ -426,6 +420,10 @@ namespace AnomaliesExpected
         {
             Widgets.DrawOptionBackground(rect, entry == selectedEntry);
             GUI.DrawTexture(rect.ContractedBy(2f), discovered ? (entry.EntityCodexEntryDef?.icon ?? entry.ThingDef.uiIcon) : entry.EntityCodexEntryDef.silhouette);
+            if (entry.letters.Count() > 0)
+            {
+                GUI.DrawTexture(new Rect(rect.x + rect.width - 20, rect.y - 1, 18, 18), TexButton.CategorizedResourceReadout);
+            }
             if (Widgets.ButtonInvisible(rect))
             {
                 selectedEntry = entry;
