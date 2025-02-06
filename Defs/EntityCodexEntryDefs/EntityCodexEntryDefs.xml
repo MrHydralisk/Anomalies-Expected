@@ -148,6 +148,17 @@
 			<li>AEBloodLakeTerminalC</li>
 		</discoveredResearchProjects>
 		<orderInCategory>1300</orderInCategory>
+		<modExtensions>
+			<li Class="AnomaliesExpected.EntityCodexEntryDefExtension">
+				<groupName>Blood-like liquid</groupName>
+				<groupMembersEntityCodexDefs>
+					<li>AE_EntityCodexEntry_BloodPuddle</li>
+				</groupMembersEntityCodexDefs>
+				<groupMembersThingDefs>
+					<li>AE_BloodLakeTerminal</li>
+				</groupMembersThingDefs>
+			</li>
+		</modExtensions>
 	</EntityCodexEntryDef>
 
 	<EntityCodexEntryDef>
@@ -203,6 +214,14 @@
 			<!-- <li>AEChristmasStockings</li> -->
 		<!-- </discoveredResearchProjects> -->
 		<orderInCategory>1300</orderInCategory>
+		<modExtensions>
+			<li Class="AnomaliesExpected.EntityCodexEntryDefExtension">
+				<groupName>Christmas</groupName>
+				<groupMembersThingDefs>
+					<li>AE_ChristmasTree</li>
+				</groupMembersThingDefs>
+			</li>
+		</modExtensions>
 	</EntityCodexEntryDef>
 
 </Defs>

@@ -106,27 +106,111 @@ namespace AnomaliesExpected
         {
             EntriesByType = new List<(string, List<AEEntityEntry>)>();
             categoryRectSizes.Clear();
-            foreach (AEEntityEntry aeee in GameComponent_AnomaliesExpected.instance.EntityEntries)
+            List<AEEntityEntry> entityEntries = GameComponent_AnomaliesExpected.instance.EntityEntries.ToList();
+            while (!entityEntries.NullOrEmpty())
             {
-                List<AEEntityEntry> aeeeList;
-                (string, List<AEEntityEntry>) aeeePair = EntriesByType.FirstOrDefault(x => x.Item1 == aeee.groupTag);
-                if (aeeePair.Item2 == null)
+                AEEntityEntry aeee = entityEntries.FirstOrDefault();
+                List<AEEntityEntry> aeeeList = new List<AEEntityEntry>();
+                if (aeee.EntityCodexEntryDef?.Discovered ?? false)
                 {
-                    aeeeList = new List<AEEntityEntry>();
-                    EntriesByType.Add((aeee.groupTag, aeeeList));
-                    categoryRectSizes.Add(aeee.groupTag, 0f);
+                    aeeeList = FindEntityGroupMembers(aeee, ref entityEntries);
                 }
                 else
                 {
-                    aeeeList = aeeePair.Item2;
+                    aeeeList.Add(aeee);
+                    entityEntries.Remove(aeee);
                 }
-                aeeeList.Add(aeee);
+                string groupTag = aeee.EntityCodexEntryDef?.GetModExtension<EntityCodexEntryDefExtension>()?.groupName ?? "AnomaliesExpected.EntityDataBase.ThreatClass.-1".Translate();
+                if (aeeeList.Count() > 1)
+                {
+                    EntriesByType.Add((groupTag, aeeeList));
+                    categoryRectSizes.Add(groupTag, 0f);
+                }
+                else
+                {
+                    groupTag = "AnomaliesExpected.EntityDataBase.ThreatClass.-1".Translate();
+                    (string, List<AEEntityEntry>) aeeePair = EntriesByType.FirstOrDefault(x => x.Item1 == groupTag);
+                    if (aeeePair.Item2 == null)
+                    {
+                        EntriesByType.Add((groupTag, aeeeList));
+                        categoryRectSizes.Add(groupTag, 0f);
+                    }
+                    else
+                    {
+                        aeeePair.Item2.AddRange(aeeeList);
+                    }
+                }
             }
+            //foreach (AEEntityEntry aeee in GameComponent_AnomaliesExpected.instance.EntityEntries)
+            //{
+            //    EntityCodexEntryDefExtension modExt = aeee.EntityCodexEntryDef?.GetModExtension<EntityCodexEntryDefExtension>();
+            //    if (modExt != null)
+            //    {
+            //        List<AEEntityEntry> aeeeList;
+            //    }
+            //}
+            //foreach (AEEntityEntry aeee in GameComponent_AnomaliesExpected.instance.EntityEntries)
+            //{
+            //    List<AEEntityEntry> aeeeList;
+            //    (string, List<AEEntityEntry>) aeeePair = EntriesByType.FirstOrDefault(x => x.Item1 == aeee.groupTag);
+            //    if (aeeePair.Item2 == null)
+            //    {
+            //        aeeeList = new List<AEEntityEntry>();
+            //        EntriesByType.Add((aeee.groupTag, aeeeList));
+            //        categoryRectSizes.Add(aeee.groupTag, 0f);
+            //    }
+            //    else
+            //    {
+            //        aeeeList = aeeePair.Item2;
+            //    }
+            //    aeeeList.Add(aeee);
+            //}
             foreach ((string key, List<AEEntityEntry> value) in EntriesByType)
             {
                 value.SortBy((AEEntityEntry aeee) => aeee.EntityCodexEntryDef?.orderInCategory ?? int.MaxValue, (AEEntityEntry aeee) => aeee.EntityCodexEntryDef?.label ?? string.Empty);
             }
-            EntriesByType.SortBy(x => x.Item2.FirstOrDefault()?.groupTag ?? "");
+            EntriesByType.SortBy(x => x.Item1 ?? "");
+        }
+
+        public List<AEEntityEntry> FindEntityGroupMembers(AEEntityEntry aEEntityEntry, ref List<AEEntityEntry> entityEntries)
+        {
+            List<AEEntityEntry> aeeeList = new List<AEEntityEntry>() { aEEntityEntry };
+            EntityCodexEntryDefExtension modExt = aEEntityEntry.EntityCodexEntryDef?.GetModExtension<EntityCodexEntryDefExtension>();
+            if (modExt != null)
+            {
+                foreach (string entityCodexEntryDef in modExt.groupMembersEntityCodexDefs)
+                {
+                    AEEntityEntry aeeeC = GameComponent_AnomaliesExpected.instance.EntityEntries.FirstOrDefault((AEEntityEntry aeee) => (aeee.EntityCodexEntryDef?.defName ?? "") == entityCodexEntryDef && (aeee.EntityCodexEntryDef?.Discovered ?? false));
+                    if (aeeeC != null)
+                    {
+                        aeeeList.AddRange(FindEntityGroupMembers(aeeeC, ref entityEntries));
+                    }
+                }
+                foreach (string thingDefs in modExt.groupMembersThingDefs)
+                {
+                    AEEntityEntry aeeeT = GameComponent_AnomaliesExpected.instance.EntityEntries.FirstOrDefault((AEEntityEntry aeee) => (aeee.ThingDef?.defName ?? "") == thingDefs);
+                    if (aeeeT != null)
+                    {
+                        aeeeList.AddRange(FindEntityGroupMembers(aeeeT, ref entityEntries));
+                    }
+                }
+            }
+            if (entityEntries.Contains(aEEntityEntry))
+            {
+                entityEntries.Remove(aEEntityEntry);
+            }
+            else
+            {
+                for (int i = EntriesByType.Count() - 1; i >= 0; i--)
+                {
+                    EntriesByType[i].Item2.RemoveAll((AEEntityEntry ee) => ee == aEEntityEntry);
+                    if (EntriesByType[i].Item2.NullOrEmpty())
+                    {
+                        EntriesByType.RemoveAt(i);
+                    }
+                }
+            }
+            return aeeeList;
         }
 
         public override void DoWindowContents(Rect inRect)

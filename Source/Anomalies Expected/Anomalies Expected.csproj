@@ -37,6 +37,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DefModExtension\EntityCodexEntryDefExtension.cs" />
     <Compile Include="Dialog_AEEntityDB.cs" />
     <Compile Include="GameComponent_AnomaliesExpected.cs" />
     <Compile Include="Alert_ChristmasTreeUnstable.cs" />

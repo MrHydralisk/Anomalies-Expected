@@ -16,11 +16,13 @@
 	<AE_EntityCodexEntry_BloodPuddle.label>странная лужа</AE_EntityCodexEntry_BloodPuddle.label>
 	
 	<AE_EntityCodexEntry_BloodLake.label>странное озеро</AE_EntityCodexEntry_BloodLake.label>
+	<AE_EntityCodexEntry_ChristmasStockings.modExtensions.0.groupName>кровиподобная жидкость</AE_EntityCodexEntry_ChristmasStockings.modExtensions.0.groupName>
 	
 	<AE_EntityCodexEntry_StudyNotepad.label>жёлтый блокнот</AE_EntityCodexEntry_StudyNotepad.label>
 	
 	<AE_EntityCodexEntry_ProviderScripture.label>древнее писание</AE_EntityCodexEntry_ProviderScripture.label>
 	
 	<AE_EntityCodexEntry_ChristmasStockings.label>красный носок</AE_EntityCodexEntry_ChristmasStockings.label>
+	<AE_EntityCodexEntry_ChristmasStockings.modExtensions.0.groupName>новогодние</AE_EntityCodexEntry_ChristmasStockings.modExtensions.0.groupName>
 
 </LanguageData>

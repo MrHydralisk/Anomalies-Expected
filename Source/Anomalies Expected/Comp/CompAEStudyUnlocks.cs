@@ -26,7 +26,7 @@ namespace AnomaliesExpected
         public int NextIndex => nextIndex;
         public float CurrThreshold;
         public int ThreatClass = -1;
-        public int lastNotificationTick; 
+        public int lastNotificationTick;
 
         public List<Thing> SpawnedRelatedAnalyzableThing
         {
