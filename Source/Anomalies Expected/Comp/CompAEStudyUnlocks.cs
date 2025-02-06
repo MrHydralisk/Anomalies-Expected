@@ -156,9 +156,13 @@ namespace AnomaliesExpected
             }
         }
 
-        public void AddStudyNoteLetter(ChoiceLetter keptLetter)
+        public void AddStudyNoteLetter(ChoiceLetter keptLetter, bool isSyncDB = false)
         {
             letters.Add(keptLetter);
+            if (isSyncDB)
+            {
+                GameComponent_AnomaliesExpected.instance.SyncEntityEntry(this);
+            }
         }
 
         public void UnlockStudyNoteManual(int index, string studier = "")
@@ -202,7 +206,7 @@ namespace AnomaliesExpected
                     keptLetter.hyperlinkThingDefs.Add(parent.def);
                     ChoiceLetter copyLetter = LetterMaker.MakeLetter(keptLetter.Label, keptLetter.Text, LetterDefOf.NeutralEvent, keptLetter.lookTargets);
                     copyLetter.arrivalTick = keptLetter.arrivalTick;
-                    compAEStudyUnlocksParent.AddStudyNoteLetter(copyLetter);
+                    compAEStudyUnlocksParent.AddStudyNoteLetter(copyLetter, (Props is CompProperties_AEStudyUnlocks aeProps) ? aeProps.isSyncParentDB : false);
                 }
             }
         }

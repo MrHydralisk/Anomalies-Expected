@@ -1121,6 +1121,7 @@
 					</li>
 				</studyNotes>
 				<isSyncWithParent>true</isSyncWithParent>
+				<isSyncParentDB>true</isSyncParentDB>
 			</li>
 		</comps>
 	</ThingDef>

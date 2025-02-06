@@ -6,6 +6,7 @@ namespace AnomaliesExpected
     public class CompProperties_AEStudyUnlocks : CompProperties_StudyUnlocks
     {
         public bool isSyncWithParent;
+        public bool isSyncParentDB;
         public bool isCreateEntityEntryWithoutCodexEntry;
         public List<StudyNote> studyNotesManualUnlockable = new List<StudyNote>();
 

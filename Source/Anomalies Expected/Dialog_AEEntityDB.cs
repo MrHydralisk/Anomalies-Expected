@@ -303,9 +303,16 @@ namespace AnomaliesExpected
                     ChoiceLetter choiceLetter = selectedEntry.letters[i];
                     using (new TextBlock(GameFont.Medium))
                     {
-                        if (Widgets.ButtonText(new Rect(0f, num, viewRect.width, 25), choiceLetter.Label))
+                        Rect rect1 = new Rect(0f, num, viewRect.width, 25);
+                        Widgets.DrawBoxSolid(rect1, new Color(0f, 0f, 0f, 0.3f));
+                        using (new TextBlock(TextAnchor.MiddleCenter))
+                        {
+                            Widgets.Label(rect1, choiceLetter.Label);
+                        }
+                        if (Widgets.ButtonInvisible(rect1))
                         {
                             lettersOpened[i] = !lettersOpened[i];
+                            SoundDefOf.Tick_High.PlayOneShotOnCamera();
                         }
                         num += 30f;
                     }
