@@ -35,7 +35,7 @@ namespace AnomaliesExpected
             val.Patch(AccessTools.Method(typeof(Dialog_EntityCodex), "DoWindowContents"), postfix: new HarmonyMethod(patchType, "DEC_DoWindowContents_Postfix"));
             val.Patch(AccessTools.Method(typeof(CompStudyUnlocks), "Notify_StudyLevelChanged"), postfix: new HarmonyMethod(patchType, "CSU_Notify_StudyLevelChanged_Postfix"));
             val.Patch(AccessTools.Method(typeof(CompStudyUnlocksMonolith), "Notify_StudyLevelChanged"), postfix: new HarmonyMethod(patchType, "CSU_Notify_StudyLevelChanged_Postfix"));
-            val.Patch(AccessTools.Method(typeof(CompStudyUnlocks), "PostPostMake"), postfix: new HarmonyMethod(patchType, "CSU_PostPostMake_Postfix"));
+            val.Patch(AccessTools.Method(typeof(CompStudyUnlocks), "PostPostMake"), postfix: new HarmonyMethod(patchType, "CSU_Notify_StudyLevelChanged_Postfix"));
         }
 
         public static bool RPD_IsHidden_Prefix(ref bool __result, ResearchProjectDef __instance)
@@ -90,17 +90,9 @@ namespace AnomaliesExpected
             }
         }
 
-        //Only for Vanilla
-        public static void CSU_Notify_StudyLevelChanged_Postfix(CompStudyUnlocks __instance, ChoiceLetter keptLetter)
+        public static void CSU_Notify_StudyLevelChanged_Postfix(CompStudyUnlocks __instance)
         {
-            Log.Message($"CSU_Notify_StudyLevelChanged_Postfix {__instance.parent.Label} {__instance is CompAEStudyUnlocks} {__instance.GetType()}\n{keptLetter.Label}\n{keptLetter.Text}");
-            GameComponent_AnomaliesExpected.instance.UpdateEntityEntryFromVanilla(__instance, keptLetter);
-        }
-
-        public static void CSU_PostPostMake_Postfix(CompStudyUnlocks __instance)
-        {
-            Log.Message($"CSU_PostPostMake_Postfix {__instance.parent.Label} {__instance is CompAEStudyUnlocks}");
-            GameComponent_AnomaliesExpected.instance.TryAddEntityEntryFromVanilla(__instance);
+            GameComponent_AnomaliesExpected.instance.SyncEntityEntryFromVanilla(__instance);
         }
     }
 }

@@ -1149,6 +1149,7 @@
 					</li>
 				</studyNotes>
 				<isSyncWithParent>true</isSyncWithParent>
+				<isCreateEntityEntryWithoutCodexEntry>true</isCreateEntityEntryWithoutCodexEntry>
 			</li>
 			<li Class="AnomaliesExpected.CompProperties_CanDestroyedAfterStudy">
 				<compClass>AnomaliesExpected.Comp_BloodLakeTerminal</compClass>
@@ -1270,6 +1271,7 @@
 						<text>Theory Regarding Christmas Tree\n\nSubject: [REDACTED]\n\nAbstract:\nThis report documents the temporary obstruction of a passage beneath tree due to ice and encroaching branches. Analysis suggests the passage may become accessible around the next new year date. The tree's classification remains Class-1 (Caution). A hypothesis suggests the tree facilitates annual access to a celebration, with participants undergoing a trial before receiving gifts. Continued visits to this location during future celebration period is recommended.\n\n\nObservations:\nSensor data indicated that the passage under the tree had become obstructed by ice and encroaching branches.\nAttempts to remove the ice and branches were unsuccessful.\n\nOutcome:\nAnalysis of the ice formation suggests a potential melting around the next new year date.\n\nDiscussion:\nThe passage under the tree currently appears impassable. However, based on ice analysis, a reopening of the passage may be feasible around the next new year date.\nGiven the collected data on this tree, its current classification as a Class-1 (Caution) anomaly remains unchanged.\n\nHypothesis:\n[REDACTED] has proposed a theory suggesting that the stockings served as an invitation to a celebration. While the tree itself may function as a means of transportation to this celebration. Participants of this celebration may undergo a trial administered by the surrounding snowman guards. Successful completion of this trial grants access to gifts left for the participants. The purpose and motivations behind this generosity remain unknown. Since the celebration occurs annually, the means of transportation likely remains with the participants in deactivated state between celebration.\n\nRecommendations:\nControlled Use: Continued visits to this location during future celebration periods are recommended to utilize the provided gifts for the benefit of this facility.</text>
 					</li>
 				</studyNotesManualUnlockable>
+				<isCreateEntityEntryWithoutCodexEntry>true</isCreateEntityEntryWithoutCodexEntry>
 			</li>
 			<li Class="CompProperties_HeatPusher">
 				<heatPerSecond>-100</heatPerSecond>
