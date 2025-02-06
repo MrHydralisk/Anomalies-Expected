@@ -78,6 +78,32 @@ namespace AnomaliesExpected
         {
             base.PostPostMake();
             LoadStudyNotes();
+            AEEntityEntry entityEntry = GameComponent_AnomaliesExpected.instance.GetEntityEntryFromThingDef(parent.def);
+            if (entityEntry != null && entityEntry.letters.Count() > 0)
+            {
+                for (int i = 0; i < StudyNotesAll.Count(); i++)
+                {
+                    StudyNote studyNote = StudyNotesAll[i];
+                    ChoiceLetter choiceLetterSource = entityEntry.letters.FirstOrDefault((ChoiceLetter cl) => cl.Label == studyNote.label);
+                    if (choiceLetterSource != null)
+                    {
+                        TaggedString label = studyNote.label.Replace("{PAWN_nameDef}", "AnomaliesExpected.Misc.Redacted".Translate());
+                        TaggedString text = studyNote.text.Replace("{PAWN_nameDef}", "AnomaliesExpected.Misc.Redacted".Translate());
+                        ChoiceLetter choiceLetter = LetterMaker.MakeLetter(label, text, choiceLetterSource.def, parent);
+                        choiceLetter.arrivalTick = Find.TickManager.TicksGame;
+                        letters.Add(choiceLetter);
+                        int j = 0;
+                        if ((j = StudyNotesStudy.IndexOf(studyNote)) >= 0)
+                        {
+                            nextIndex = i + 1;
+                            studyProgress = nextIndex;
+                            StudyComp.anomalyKnowledgeGained = Mathf.Max(StudyComp.anomalyKnowledgeGained, studyNote.threshold);
+                        }
+                        UpdateFromStudyNote(studyNote);
+                    }
+                }
+                UpdateFromStudyNotes();
+            }
         }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -109,11 +135,12 @@ namespace AnomaliesExpected
                 for (int i = 0; i < StudyNotesAll.Count(); i++)
                 {
                     StudyNote studyNote = StudyNotesAll[i];
-                    if (compAEStudyUnlocksParent.Letters.Any((ChoiceLetter cl) => cl.Label == studyNote.label))
+                    ChoiceLetter choiceLetterSource = compAEStudyUnlocksParent.Letters.FirstOrDefault((ChoiceLetter cl) => cl.Label == studyNote.label);
+                    if ((studyNote is AEStudyNote aeStudyNote) && aeStudyNote.isSyncWithDB && choiceLetterSource != null)
                     {
-                        TaggedString label = studyNote.label.Formatted("AnomaliesExpected.Misc.Redacted".Translate().Named("PAWN"));
-                        TaggedString text = studyNote.text.Formatted("AnomaliesExpected.Misc.Redacted".Translate().Named("PAWN"));
-                        ChoiceLetter choiceLetter = LetterMaker.MakeLetter(label, text, LetterDefOf.NeutralEvent, parent);
+                        TaggedString label = studyNote.label.Replace("{PAWN_nameDef}", "AnomaliesExpected.Misc.Redacted".Translate());
+                        TaggedString text = studyNote.text.Replace("{PAWN_nameDef}", "AnomaliesExpected.Misc.Redacted".Translate());
+                        ChoiceLetter choiceLetter = LetterMaker.MakeLetter(label, text, choiceLetterSource.def, parent);
                         choiceLetter.arrivalTick = Find.TickManager.TicksGame;
                         letters.Add(choiceLetter);
                         int j = 0;

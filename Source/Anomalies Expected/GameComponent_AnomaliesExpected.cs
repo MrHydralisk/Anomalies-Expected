@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using Mono.Unix.Native;
+using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -138,6 +139,11 @@ namespace AnomaliesExpected
                 }
             }
             return isAdded;
+        }
+
+        public AEEntityEntry GetEntityEntryFromThingDef(ThingDef thingDef)
+        {
+            return EntityEntries.FirstOrDefault((AEEntityEntry aeee) => aeee.ThingDef == thingDef);
         }
 
         public override void ExposeData()
