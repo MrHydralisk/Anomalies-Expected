@@ -14,6 +14,7 @@ namespace AnomaliesExpected
         public EntityCodexEntryDef EntityCodexEntryDef;
         public string categoryLabelCap => EntityCodexEntryDef?.category?.LabelCap ?? "AnomaliesExpected.EntityDataBase.ThreatClass.-1".Translate();
         public string threatClassString => $"AnomaliesExpected.EntityDataBase.ThreatClass".Translate(ThreatClass, $"AnomaliesExpected.EntityDataBase.ThreatClass.{ThreatClass}".Translate());
+        public string modName => EntityCodexEntryDef?.modContentPack?.Name ?? ThingDef?.modContentPack?.Name ?? "AnomaliesExpected.EntityDataBase.ThreatClass.-1".Translate();
 
         public int ThreatClass = -1;
         public float CurrThreshold = -1;

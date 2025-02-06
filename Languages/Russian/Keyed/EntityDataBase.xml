@@ -15,9 +15,10 @@
 	<AnomaliesExpected.EntityDataBase.ThreatClass.5>Апокалипсис</AnomaliesExpected.EntityDataBase.ThreatClass.5>
 	<AnomaliesExpected.EntityDataBase.ThreatClassIncreased>Уровень опасности "{0}" аномалии повышена.</AnomaliesExpected.EntityDataBase.ThreatClassIncreased>
 	
-	<AnomaliesExpected.EntityDataBase.SortType>Сортировать по: {0}</AnomaliesExpected.EntityDataBase.SortType>
-	<AnomaliesExpected.EntityDataBase.SortType.0>Категория знаний</AnomaliesExpected.EntityDataBase.SortType.0>
-	<AnomaliesExpected.EntityDataBase.SortType.1>Класс опасности</AnomaliesExpected.EntityDataBase.SortType.1>
-	<AnomaliesExpected.EntityDataBase.SortType.2>Связанности</AnomaliesExpected.EntityDataBase.SortType.2>
+	<AnomaliesExpected.EntityDataBase.GroupType>Группировать по: {0}</AnomaliesExpected.EntityDataBase.GroupType>
+	<AnomaliesExpected.EntityDataBase.GroupType.0>Категория знаний</AnomaliesExpected.EntityDataBase.GroupType.0>
+	<AnomaliesExpected.EntityDataBase.GroupType.1>Класс опасности</AnomaliesExpected.EntityDataBase.GroupType.1>
+	<AnomaliesExpected.EntityDataBase.GroupType.2>Связанности</AnomaliesExpected.EntityDataBase.GroupType.2>
+	<AnomaliesExpected.EntityDataBase.GroupType.3>Мод</AnomaliesExpected.EntityDataBase.GroupType.3>
 	
 </LanguageData>

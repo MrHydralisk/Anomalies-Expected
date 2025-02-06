@@ -141,35 +141,38 @@ namespace AnomaliesExpected
                     }
                 }
             }
-            //foreach (AEEntityEntry aeee in GameComponent_AnomaliesExpected.instance.EntityEntries)
-            //{
-            //    EntityCodexEntryDefExtension modExt = aeee.EntityCodexEntryDef?.GetModExtension<EntityCodexEntryDefExtension>();
-            //    if (modExt != null)
-            //    {
-            //        List<AEEntityEntry> aeeeList;
-            //    }
-            //}
-            //foreach (AEEntityEntry aeee in GameComponent_AnomaliesExpected.instance.EntityEntries)
-            //{
-            //    List<AEEntityEntry> aeeeList;
-            //    (string, List<AEEntityEntry>) aeeePair = EntriesByType.FirstOrDefault(x => x.Item1 == aeee.groupTag);
-            //    if (aeeePair.Item2 == null)
-            //    {
-            //        aeeeList = new List<AEEntityEntry>();
-            //        EntriesByType.Add((aeee.groupTag, aeeeList));
-            //        categoryRectSizes.Add(aeee.groupTag, 0f);
-            //    }
-            //    else
-            //    {
-            //        aeeeList = aeeePair.Item2;
-            //    }
-            //    aeeeList.Add(aeee);
-            //}
             foreach ((string key, List<AEEntityEntry> value) in EntriesByType)
             {
                 value.SortBy((AEEntityEntry aeee) => aeee.EntityCodexEntryDef?.orderInCategory ?? int.MaxValue, (AEEntityEntry aeee) => aeee.EntityCodexEntryDef?.label ?? string.Empty);
             }
             EntriesByType.SortBy(x => x.Item1 ?? "");
+        }
+
+        public void DoModGroup()
+        {
+            EntriesByType = new List<(string, List<AEEntityEntry>)>();
+            categoryRectSizes.Clear();
+            foreach (AEEntityEntry aeee in GameComponent_AnomaliesExpected.instance.EntityEntries)
+            {
+                List<AEEntityEntry> aeeeList;
+                (string, List<AEEntityEntry>) aeeePair = EntriesByType.FirstOrDefault(x => x.Item1 == aeee.modName);
+                if (aeeePair.Item2 == null)
+                {
+                    aeeeList = new List<AEEntityEntry>();
+                    EntriesByType.Add((aeee.modName, aeeeList));
+                    categoryRectSizes.Add(aeee.modName, 0f);
+                }
+                else
+                {
+                    aeeeList = aeeePair.Item2;
+                }
+                aeeeList.Add(aeee);
+            }
+            foreach ((string key, List<AEEntityEntry> value) in EntriesByType)
+            {
+                value.SortBy((AEEntityEntry aeee) => aeee.EntityCodexEntryDef?.orderInCategory ?? int.MaxValue, (AEEntityEntry aeee) => aeee.EntityCodexEntryDef?.label ?? string.Empty);
+            }
+            EntriesByType.SortBy(x => x.Item1);
         }
 
         public List<AEEntityEntry> FindEntityGroupMembers(AEEntityEntry aEEntityEntry, ref List<AEEntityEntry> entityEntries)
@@ -220,23 +223,28 @@ namespace AnomaliesExpected
             rect.height -= ButSize.y + 10f;
             TaggedString taggedString = "AnomaliesExpected.EntityDataBase.Desc".Translate();
             Rect rect1 = new Rect(inRect.width / 2f - 132, 4, 264, 25);
-            if (Widgets.ButtonText(rect1, "AnomaliesExpected.EntityDataBase.SortType".Translate($"AnomaliesExpected.EntityDataBase.SortType.{state}".Translate())))
+            if (Widgets.ButtonText(rect1, "AnomaliesExpected.EntityDataBase.GroupType".Translate($"AnomaliesExpected.EntityDataBase.GroupType.{state}".Translate())))
             {
                 List<FloatMenuOption> floatMenuOptions = new List<FloatMenuOption>();
-                floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.EntityDataBase.SortType.0".Translate(), delegate
+                floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.EntityDataBase.GroupType.0".Translate(), delegate
                 {
                     DoEntityCategory();
                     state = 0;
                 }));
-                floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.EntityDataBase.SortType.1".Translate(), delegate
+                floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.EntityDataBase.GroupType.1".Translate(), delegate
                 {
                     DoEntityClass();
                     state = 1;
                 }));
-                floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.EntityDataBase.SortType.2".Translate(), delegate
+                floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.EntityDataBase.GroupType.2".Translate(), delegate
                 {
                     DoEntityGroup();
                     state = 2;
+                }));
+                floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.EntityDataBase.GroupType.3".Translate(), delegate
+                {
+                    DoModGroup();
+                    state = 3;
                 }));
                 Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
             }
