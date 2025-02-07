@@ -10,6 +10,7 @@ namespace AnomaliesExpected
         public bool isCreateEntityEntryWithoutCodexEntry;
         public bool isCreateSeparateEntityEntry;
         public List<StudyNote> studyNotesManualUnlockable = new List<StudyNote>();
+        public List<StudyNote> studyNotesPawnUnlockable = new List<StudyNote>();
 
         public CompProperties_AEStudyUnlocks()
         {

@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using UnityEngine;
 using Verse;
 
@@ -11,6 +12,8 @@ namespace AnomaliesExpected
         public new CompProperties_StudyUnlocks Props => (CompProperties_StudyUnlocks)props;
         public bool isSyncWithParent => (Props is CompProperties_AEStudyUnlocks aeProps) ? aeProps.isSyncWithParent : false;
         public bool isCreateSeparateEntityEntry => (Props is CompProperties_AEStudyUnlocks aeProps) ? aeProps.isCreateSeparateEntityEntry : false;
+        public bool isHavePawnStudyNotes => (Props is CompProperties_AEStudyUnlocks aeProps) ? !aeProps.studyNotesPawnUnlockable.NullOrEmpty() : false;
+        public CompStudiable StudyCompPub => StudyComp;
 
         List<StudyNote> StudyNotesStudy => Props.studyNotes;
         List<StudyNote> StudyNotesAll = new List<StudyNote>();
@@ -28,6 +31,8 @@ namespace AnomaliesExpected
         public float CurrThreshold;
         public int ThreatClass = -1;
         public int lastNotificationTick;
+
+        public int NextPawnSNIndex;
 
         public List<Thing> SpawnedRelatedAnalyzableThing
         {
@@ -177,8 +182,8 @@ namespace AnomaliesExpected
                     {
                         studier = "AnomaliesExpected.Misc.Redacted".Translate();
                     }
-                    TaggedString label = studyNote.label.Formatted(studier.Named("PAWN"));
-                    TaggedString text = studyNote.text.Formatted(studier.Named("PAWN"));
+                    TaggedString label = studyNote.label.Replace("{PAWN_nameDef}", studier);
+                    TaggedString text = studyNote.text.Replace("{PAWN_nameDef}", studier);
                     ChoiceLetter let = LetterMaker.MakeLetter(label, text, LetterDefOf.NeutralEvent, parent);
                     Find.LetterStack.ReceiveLetter(let);
                     ChoiceLetter choiceLetter = LetterMaker.MakeLetter(label, text, LetterDefOf.NeutralEvent, parent);
@@ -187,6 +192,35 @@ namespace AnomaliesExpected
                     if (studyNote.threshold > CurrThreshold)
                     {
                         UpdateFromStudyNote(studyNote);
+                        GameComponent_AnomaliesExpected.instance.SyncEntityEntry(this);
+                    }
+                }
+            }
+        }
+
+        public void RegisterPawnStudyLevel(Pawn studier, int i, AEStudyNote aEStudyNote)
+        {
+            Log.Message($"RegisterPawnStudyLevel A {NextPawnSNIndex} <= {i} | {parent.Label}");
+            if (NextPawnSNIndex <= i)
+            {
+                AEEntityEntry entityEntry = GameComponent_AnomaliesExpected.instance.GetEntityEntryFromThingDef(parent.def);
+                Log.Message($"RegisterPawnStudyLevel B {entityEntry != null}");
+                if (entityEntry != null)
+                {
+                    int timesStudied = entityEntry.IncreasePawnStudy(i);
+                    Log.Message($"RegisterPawnStudyLevel C {timesStudied} == {aEStudyNote.AmountStudiedRequirment}");
+                    if (aEStudyNote.AmountStudiedRequirment == timesStudied)
+                    {
+                        NextPawnSNIndex = i + 1;
+                        TaggedString studierName = studier?.Name?.ToStringShort ?? "AnomaliesExpected.Misc.Redacted".Translate();
+                        TaggedString label = aEStudyNote.label.Replace("{PAWN_nameDef}", studierName);
+                        TaggedString text = aEStudyNote.text.Replace("{PAWN_nameDef}", studierName);
+                        ChoiceLetter let = LetterMaker.MakeLetter(label, text, LetterDefOf.NeutralEvent, parent);
+                        Find.LetterStack.ReceiveLetter(let);
+                        ChoiceLetter choiceLetter = LetterMaker.MakeLetter(label, text, LetterDefOf.NeutralEvent, parent);
+                        choiceLetter.arrivalTick = Find.TickManager.TicksGame;
+                        letters.Add(choiceLetter);
+                        UpdateFromStudyNote(aEStudyNote);
                         GameComponent_AnomaliesExpected.instance.SyncEntityEntry(this);
                     }
                 }
@@ -287,6 +321,7 @@ namespace AnomaliesExpected
         public override void PostExposeData()
         {
             base.PostExposeData();
+            Scribe_Values.Look(ref NextPawnSNIndex, "NextPawnSNIndex", 0);
             Scribe_References.Look(ref parentThing, "parentThing");
             Scribe_Collections.Look(ref spawnedRelatedAnalyzableThing, "spawnedRelatedAnalyzableThing", LookMode.Deep);
         }

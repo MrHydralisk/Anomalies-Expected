@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
+using static HarmonyLib.Code;
 
 namespace AnomaliesExpected
 {
@@ -36,6 +37,7 @@ namespace AnomaliesExpected
             val.Patch(AccessTools.Method(typeof(CompStudyUnlocks), "Notify_StudyLevelChanged"), postfix: new HarmonyMethod(patchType, "CSU_Notify_StudyLevelChanged_Postfix"));
             val.Patch(AccessTools.Method(typeof(CompStudyUnlocksMonolith), "Notify_StudyLevelChanged"), postfix: new HarmonyMethod(patchType, "CSU_Notify_StudyLevelChanged_Postfix"));
             val.Patch(AccessTools.Method(typeof(CompStudyUnlocks), "PostPostMake"), postfix: new HarmonyMethod(patchType, "CSU_Notify_StudyLevelChanged_Postfix"));
+            val.Patch(AccessTools.Method(typeof(CompStudyUnlocks), "OnStudied"), postfix: new HarmonyMethod(patchType, "CSU_OnStudied_Postfix"));
         }
 
         public static bool RPD_IsHidden_Prefix(ref bool __result, ResearchProjectDef __instance)
@@ -93,6 +95,24 @@ namespace AnomaliesExpected
         public static void CSU_Notify_StudyLevelChanged_Postfix(CompStudyUnlocks __instance)
         {
             GameComponent_AnomaliesExpected.instance.SyncEntityEntryFromVanilla(__instance);
+        }
+
+        public static void CSU_OnStudied_Postfix(CompStudyUnlocks __instance, Pawn studier, float amount, KnowledgeCategoryDef category = null)
+        {
+            if ((__instance is CompAEStudyUnlocks aEStudyUnlocks) && (aEStudyUnlocks.Props is CompProperties_AEStudyUnlocks aeProps) && !aeProps.studyNotesPawnUnlockable.NullOrEmpty())
+            {
+                float anomalyKnowledgeGained = aEStudyUnlocks.StudyCompPub.anomalyKnowledgeGained;
+                Log.Message($"anomalyKnowledgeGained {anomalyKnowledgeGained} = {aEStudyUnlocks.NextPawnSNIndex} = {aeProps.studyNotesPawnUnlockable.Count}");
+                for (int i = aEStudyUnlocks.NextPawnSNIndex; i < aeProps.studyNotesPawnUnlockable.Count; i++)
+                {
+                    AEStudyNote studyNote = aeProps.studyNotesPawnUnlockable[i] as AEStudyNote;
+                    Log.Message($"aEStudyUnlocks.NextPawnSNIndex {aEStudyUnlocks.NextPawnSNIndex} | {anomalyKnowledgeGained} >= {studyNote.threshold}");
+                    if (anomalyKnowledgeGained >= studyNote.threshold)
+                    {
+                        aEStudyUnlocks.RegisterPawnStudyLevel(studier, i, studyNote);
+                    }
+                }
+            }
         }
     }
 }

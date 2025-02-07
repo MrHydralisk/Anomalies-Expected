@@ -19,9 +19,24 @@ namespace AnomaliesExpected
         public string modName => EntityCodexEntryDef?.modContentPack?.Name ?? ThingDef?.modContentPack?.Name ?? "AnomaliesExpected.EntityDataBase.ThreatClass.-1".Translate();
 
         public int ThreatClass = -1;
-        public float CurrThreshold = -1;
+        public List<int> CurrPawnAmountStudied = new List<int>();
 
         public List<ChoiceLetter> letters = new List<ChoiceLetter>();
+
+        public int IncreasePawnStudy(int index)
+        {
+            int missingElements = index + 1 - CurrPawnAmountStudied.Count;
+            Log.Message($"IncreasePawnStudy A {index} / {CurrPawnAmountStudied.Count} = {missingElements}");
+            if (missingElements > 0)
+            {
+                for (int i = 0; i < missingElements; i++)
+                {
+                    CurrPawnAmountStudied.Add(0);
+                }
+            }
+            Log.Message($"IncreasePawnStudy B {CurrPawnAmountStudied[index] + 1} / {CurrPawnAmountStudied.Count}");
+            return CurrPawnAmountStudied[index]++;
+        }
 
         public void AddLetter(ChoiceLetter choiceLetter)
         {
@@ -42,15 +57,19 @@ namespace AnomaliesExpected
             Scribe_Values.Look(ref AnomalyLabel, "AnomalyLabel");
             Scribe_Values.Look(ref AnomalyDesc, "AnomalyDesc");
             Scribe_Values.Look(ref ThreatClass, "ThreatClass", -1);
-            Scribe_Values.Look(ref CurrThreshold, "CurrThreshold", -1);
             Scribe_Defs.Look(ref EntityCodexEntryDef, "EntityCodexEntryDef");
             Scribe_Defs.Look(ref ThingDef, "ThingDef");
             Scribe_Collections.Look(ref letters, "letters", LookMode.Deep);
+            Scribe_Collections.Look(ref CurrPawnAmountStudied, "CurrPawnAmountStudied", LookMode.Value);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 if (letters == null)
                 {
                     letters = new List<ChoiceLetter>();
+                }
+                if (CurrPawnAmountStudied == null)
+                {
+                    CurrPawnAmountStudied = new List<int>();
                 }
             }
         }
