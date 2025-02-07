@@ -70,7 +70,7 @@ namespace AnomaliesExpected
             {
                 return;
             }
-            AEEntityEntry entityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => aeee.EntityCodexEntryDef == entityCodexEntryDef && ((aeee.ThingDef == null && !compAEStudyUnlocks.isCreateSeparateEntityEntry) || aeee.ThingDef == compAEStudyUnlocks.parent.def));
+            AEEntityEntry entityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => ((aeee.EntityCodexEntryDef == entityCodexEntryDef && !compAEStudyUnlocks.isCreateSeparateEntityEntry) || (aeee.parentEntityEntry != null && aeee.parentEntityEntry.EntityCodexEntryDef == entityCodexEntryDef)) && (aeee.ThingDef == null || aeee.ThingDef == compAEStudyUnlocks.parent.def));
             if (entityEntry == null)
             {
                 if (compAEStudyUnlocks.isCreateSeparateEntityEntry)
