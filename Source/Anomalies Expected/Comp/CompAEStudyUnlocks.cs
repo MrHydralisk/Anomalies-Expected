@@ -208,10 +208,10 @@ namespace AnomaliesExpected
                 if (entityEntry != null)
                 {
                     int timesStudied = entityEntry.IncreasePawnStudy(i);
+                    NextPawnSNIndex = i + 1;
                     Log.Message($"RegisterPawnStudyLevel C {timesStudied} == {aEStudyNote.AmountStudiedRequirment}");
                     if (aEStudyNote.AmountStudiedRequirment == timesStudied)
                     {
-                        NextPawnSNIndex = i + 1;
                         TaggedString studierName = studier?.Name?.ToStringShort ?? "AnomaliesExpected.Misc.Redacted".Translate();
                         TaggedString label = aEStudyNote.label.Replace("{PAWN_nameDef}", studierName);
                         TaggedString text = aEStudyNote.text.Replace("{PAWN_nameDef}", studierName);

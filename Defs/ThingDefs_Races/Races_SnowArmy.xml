@@ -109,10 +109,23 @@
 				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
 				<studyNotesPawnUnlockable>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<AnomalyDesc>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nIts needles emit frigid air, causing the surrounding temperature to plummet to -20 degrees. A hidden passage located behind the tree branches.\n\nClassified as Class-1 (Caution) anomaly.</AnomalyDesc>
 						<threshold>0.01</threshold>
+						<AmountStudiedRequirment>1</AmountStudiedRequirment>
+						<label>#1/4 Snowman study report</label>
+						<text>Emiting Frigid Air</text>
+						<ThreatClass>1</ThreatClass>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>0.5</threshold>
 						<AmountStudiedRequirment>3</AmountStudiedRequirment>
-						<label>#2/4 Christmas tree study report</label>
+						<label>#2/4 Snowman study report</label>
+						<text>Emiting Frigid Air</text>
+						<ThreatClass>1</ThreatClass>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>1</threshold>
+						<AmountStudiedRequirment>5</AmountStudiedRequirment>
+						<label>#3/4 Snowman study report</label>
 						<text>Emiting Frigid Air</text>
 						<ThreatClass>1</ThreatClass>
 					</li>
@@ -233,10 +246,23 @@
 				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
 				<studyNotesPawnUnlockable>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<AnomalyDesc>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nIts needles emit frigid air, causing the surrounding temperature to plummet to -20 degrees. A hidden passage located behind the tree branches.\n\nClassified as Class-1 (Caution) anomaly.</AnomalyDesc>
-						<threshold>0.01</threshold>
+						<threshold>0.9</threshold>
+						<AmountStudiedRequirment>1</AmountStudiedRequirment>
+						<label>#1/4 Snow golem study report</label>
+						<text>Emiting Frigid Air</text>
+						<ThreatClass>1</ThreatClass>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>1</threshold>
 						<AmountStudiedRequirment>3</AmountStudiedRequirment>
-						<label>#2/4 Christmas tree study report</label>
+						<label>#2/4 Snow golem study report</label>
+						<text>Emiting Frigid Air</text>
+						<ThreatClass>1</ThreatClass>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>1.1</threshold>
+						<AmountStudiedRequirment>5</AmountStudiedRequirment>
+						<label>#3/4 Snow golem study report</label>
 						<text>Emiting Frigid Air</text>
 						<ThreatClass>1</ThreatClass>
 					</li>
@@ -369,10 +395,23 @@
 				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
 				<studyNotesPawnUnlockable>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<AnomalyDesc>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nIts needles emit frigid air, causing the surrounding temperature to plummet to -20 degrees. A hidden passage located behind the tree branches.\n\nClassified as Class-1 (Caution) anomaly.</AnomalyDesc>
 						<threshold>0.01</threshold>
+						<AmountStudiedRequirment>1</AmountStudiedRequirment>
+						<label>#1/4 Snow spider study report</label>
+						<text>Emiting Frigid Air</text>
+						<ThreatClass>1</ThreatClass>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>0.03</threshold>
 						<AmountStudiedRequirment>3</AmountStudiedRequirment>
-						<label>#2/4 Christmas tree study report</label>
+						<label>#2/4 Snow spider study report</label>
+						<text>Emiting Frigid Air</text>
+						<ThreatClass>1</ThreatClass>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>0.05</threshold>
+						<AmountStudiedRequirment>5</AmountStudiedRequirment>
+						<label>#3/4 Snow spider study report</label>
 						<text>Emiting Frigid Air</text>
 						<ThreatClass>1</ThreatClass>
 					</li>

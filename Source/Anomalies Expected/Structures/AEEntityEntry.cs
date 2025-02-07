@@ -35,7 +35,8 @@ namespace AnomaliesExpected
                 }
             }
             Log.Message($"IncreasePawnStudy B {CurrPawnAmountStudied[index] + 1} / {CurrPawnAmountStudied.Count}");
-            return CurrPawnAmountStudied[index]++;
+            CurrPawnAmountStudied[index]++;
+            return CurrPawnAmountStudied[index];
         }
 
         public void AddLetter(ChoiceLetter choiceLetter)
