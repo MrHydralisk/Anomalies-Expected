@@ -8,6 +8,7 @@ namespace AnomaliesExpected
         public bool isSyncWithParent;
         public bool isSyncParentDB;
         public bool isCreateEntityEntryWithoutCodexEntry;
+        public bool isCreateSeparateEntityEntry;
         public List<StudyNote> studyNotesManualUnlockable = new List<StudyNote>();
 
         public CompProperties_AEStudyUnlocks()

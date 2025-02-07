@@ -224,4 +224,37 @@
 		</modExtensions>
 	</EntityCodexEntryDef>
 
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_SnowArmy</defName>
+		<label>snow army</label>
+		<category>Advanced</category>
+		<uiIconPath>UI/CodexEntries/AE_ChristmasStockings</uiIconPath>
+		<useDescriptionFrom>AE_ChristmasStockings</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_SnowMan</li>
+			<li>AE_SnowGolem</li>
+			<li>AE_SnowSpider</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_ChristmasStockingsSpawn</li>
+		</provocationIncidents>
+		<!-- <discoveredResearchProjects> -->
+			<!-- <li>AEChristmasStockings</li> -->
+		<!-- </discoveredResearchProjects> -->
+		<orderInCategory>1300</orderInCategory>
+		<modExtensions>
+			<li Class="AnomaliesExpected.EntityCodexEntryDefExtension">
+				<groupName>Snow army</groupName>
+				<groupMembersEntityCodexDefs>
+					<li>AE_EntityCodexEntry_ChristmasStockings</li>
+				</groupMembersEntityCodexDefs>
+				<groupMembersThingDefs>
+					<li>AE_SnowMan</li>
+					<li>AE_SnowGolem</li>
+					<li>AE_SnowSpider</li>
+				</groupMembersThingDefs>
+			</li>
+		</modExtensions>
+	</EntityCodexEntryDef>
+
 </Defs>

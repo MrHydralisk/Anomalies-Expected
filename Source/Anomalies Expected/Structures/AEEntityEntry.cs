@@ -10,10 +10,12 @@ namespace AnomaliesExpected
         public string AnomalyDesc;
 
         public ThingDef ThingDef;
+        public AEEntityEntry parentEntityEntry;
         public bool isVanilla => EntityCodexEntryDef.modContentPack.IsCoreMod;
         public EntityCodexEntryDef EntityCodexEntryDef;
         public string categoryLabelCap => EntityCodexEntryDef?.category?.LabelCap ?? "AnomaliesExpected.EntityDataBase.ThreatClass.-1".Translate();
         public string threatClassString => $"AnomaliesExpected.EntityDataBase.ThreatClass".Translate(ThreatClass, $"AnomaliesExpected.EntityDataBase.ThreatClass.{ThreatClass}".Translate());
+        public string groupName => EntityCodexEntryDef?.GetModExtension<EntityCodexEntryDefExtension>()?.groupName ?? parentEntityEntry?.groupName ?? "AnomaliesExpected.EntityDataBase.ThreatClass.-1".Translate();
         public string modName => EntityCodexEntryDef?.modContentPack?.Name ?? ThingDef?.modContentPack?.Name ?? "AnomaliesExpected.EntityDataBase.ThreatClass.-1".Translate();
 
         public int ThreatClass = -1;
@@ -21,6 +23,19 @@ namespace AnomaliesExpected
 
         public List<ChoiceLetter> letters = new List<ChoiceLetter>();
 
+        public void AddLetter(ChoiceLetter choiceLetter)
+        {
+            letters.Add(choiceLetter);
+            if (parentEntityEntry != null)
+            {
+                if (!parentEntityEntry.letters.Any((ChoiceLetter cl) => cl.Label == choiceLetter.Label))
+                {
+                    ChoiceLetter copyLetter = LetterMaker.MakeLetter(choiceLetter.Label, choiceLetter.Text, choiceLetter.def, choiceLetter.lookTargets);
+                    copyLetter.arrivalTick = choiceLetter.arrivalTick;
+                    parentEntityEntry.AddLetter(copyLetter);
+                }
+            }
+        }
 
         public void ExposeData()
         {

@@ -10,6 +10,7 @@ namespace AnomaliesExpected
     {
         public new CompProperties_StudyUnlocks Props => (CompProperties_StudyUnlocks)props;
         public bool isSyncWithParent => (Props is CompProperties_AEStudyUnlocks aeProps) ? aeProps.isSyncWithParent : false;
+        public bool isCreateSeparateEntityEntry => (Props is CompProperties_AEStudyUnlocks aeProps) ? aeProps.isCreateSeparateEntityEntry : false;
 
         List<StudyNote> StudyNotesStudy => Props.studyNotes;
         List<StudyNote> StudyNotesAll = new List<StudyNote>();

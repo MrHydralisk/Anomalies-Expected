@@ -102,14 +102,20 @@ namespace AnomaliesExpected
 
         public void DoEntityGroup()
         {
+            Log.Message($"DoEntityGroup 0");
             EntriesByType = new List<(string, List<AEEntityEntry>)>();
             categoryRectSizes.Clear();
+            Log.Message($"DoEntityGroup 1");
             List<AEEntityEntry> entityEntries = GameComponent_AnomaliesExpected.instance.EntityEntries.ToList();
-            while (!entityEntries.NullOrEmpty())
+            Log.Message($"DoEntityGroup 2");
+            int exitIndex = 0;
+            while (!entityEntries.NullOrEmpty() && exitIndex < 9999)
             {
+                Log.Message($"DoEntityGroup 3");
                 AEEntityEntry aeee = entityEntries.FirstOrDefault();
                 List<AEEntityEntry> aeeeList = new List<AEEntityEntry>();
-                if (aeee.EntityCodexEntryDef?.Discovered ?? false)
+                Log.Message($"DoEntityGroup 4");
+                if (aeee.EntityCodexEntryDef?.Discovered ?? aeee.parentEntityEntry?.EntityCodexEntryDef?.Discovered ?? false)
                 {
                     aeeeList = FindEntityGroupMembers(aeee, ref entityEntries);
                 }
@@ -118,7 +124,8 @@ namespace AnomaliesExpected
                     aeeeList.Add(aeee);
                     entityEntries.Remove(aeee);
                 }
-                string groupTag = aeee.EntityCodexEntryDef?.GetModExtension<EntityCodexEntryDefExtension>()?.groupName ?? "AnomaliesExpected.EntityDataBase.ThreatClass.-1".Translate();
+                Log.Message($"DoEntityGroup 5");
+                string groupTag = aeee.groupName;
                 if (aeeeList.Count() > 1)
                 {
                     EntriesByType.Add((groupTag, aeeeList));
@@ -138,43 +145,27 @@ namespace AnomaliesExpected
                         aeeePair.Item2.AddRange(aeeeList);
                     }
                 }
+                Log.Message($"DoEntityGroup 6");
+                exitIndex++;
             }
+            Log.Message($"DoEntityGroup 7");
+            if (exitIndex>= 9999)
+            {
+                Log.Warning("Reached infinite loop, report to dev");
+            }
+            Log.Message($"DoEntityGroup 8");
             foreach ((string key, List<AEEntityEntry> value) in EntriesByType)
             {
                 value.SortBy((AEEntityEntry aeee) => aeee.EntityCodexEntryDef?.orderInCategory ?? int.MaxValue, (AEEntityEntry aeee) => aeee.EntityCodexEntryDef?.label ?? string.Empty);
             }
+            Log.Message($"DoEntityGroup 9");
             EntriesByType.SortBy(x => x.Item1 ?? "");
-        }
-
-        public void DoModGroup()
-        {
-            EntriesByType = new List<(string, List<AEEntityEntry>)>();
-            categoryRectSizes.Clear();
-            foreach (AEEntityEntry aeee in GameComponent_AnomaliesExpected.instance.EntityEntries)
-            {
-                List<AEEntityEntry> aeeeList;
-                (string, List<AEEntityEntry>) aeeePair = EntriesByType.FirstOrDefault(x => x.Item1 == aeee.modName);
-                if (aeeePair.Item2 == null)
-                {
-                    aeeeList = new List<AEEntityEntry>();
-                    EntriesByType.Add((aeee.modName, aeeeList));
-                    categoryRectSizes.Add(aeee.modName, 0f);
-                }
-                else
-                {
-                    aeeeList = aeeePair.Item2;
-                }
-                aeeeList.Add(aeee);
-            }
-            foreach ((string key, List<AEEntityEntry> value) in EntriesByType)
-            {
-                value.SortBy((AEEntityEntry aeee) => aeee.EntityCodexEntryDef?.orderInCategory ?? int.MaxValue, (AEEntityEntry aeee) => aeee.EntityCodexEntryDef?.label ?? string.Empty);
-            }
-            EntriesByType.SortBy(x => x.Item1);
+            Log.Message($"DoEntityGroup 10");
         }
 
         public List<AEEntityEntry> FindEntityGroupMembers(AEEntityEntry aEEntityEntry, ref List<AEEntityEntry> entityEntries)
         {
+            Log.Message($"FindEntityGroupMembers 0");
             List<AEEntityEntry> aeeeList = new List<AEEntityEntry>() { aEEntityEntry };
             EntityCodexEntryDefExtension modExt = aEEntityEntry.EntityCodexEntryDef?.GetModExtension<EntityCodexEntryDefExtension>();
             if (modExt != null)
@@ -211,11 +202,40 @@ namespace AnomaliesExpected
                     }
                 }
             }
+            Log.Message($"FindEntityGroupMembers 1");
             return aeeeList;
+        }
+
+        public void DoModGroup()
+        {
+            EntriesByType = new List<(string, List<AEEntityEntry>)>();
+            categoryRectSizes.Clear();
+            foreach (AEEntityEntry aeee in GameComponent_AnomaliesExpected.instance.EntityEntries)
+            {
+                List<AEEntityEntry> aeeeList;
+                (string, List<AEEntityEntry>) aeeePair = EntriesByType.FirstOrDefault(x => x.Item1 == aeee.modName);
+                if (aeeePair.Item2 == null)
+                {
+                    aeeeList = new List<AEEntityEntry>();
+                    EntriesByType.Add((aeee.modName, aeeeList));
+                    categoryRectSizes.Add(aeee.modName, 0f);
+                }
+                else
+                {
+                    aeeeList = aeeePair.Item2;
+                }
+                aeeeList.Add(aeee);
+            }
+            foreach ((string key, List<AEEntityEntry> value) in EntriesByType)
+            {
+                value.SortBy((AEEntityEntry aeee) => aeee.EntityCodexEntryDef?.orderInCategory ?? int.MaxValue, (AEEntityEntry aeee) => aeee.EntityCodexEntryDef?.label ?? string.Empty);
+            }
+            EntriesByType.SortBy(x => x.Item1);
         }
 
         public override void DoWindowContents(Rect inRect)
         {
+            Log.Message($"DoWindowContents 0");
             Text.Font = GameFont.Small;
             Rect rect = inRect;
             rect.height -= ButSize.y + 10f;
@@ -274,7 +294,10 @@ namespace AnomaliesExpected
                 EntityRecord(rect);
             }
             else
+            {
                 AllEntities(rect);
+            }
+            Log.Message($"DoWindowContents 1");
         }
 
         private void EntityRecord(Rect inRect)
@@ -374,6 +397,24 @@ namespace AnomaliesExpected
                             num += rect2.height;
                         }
                     }
+                    if (Prefs.DevMode && DebugSettings.godMode)
+                    {
+                        using (new TextBlock(newWordWrap: true))
+                        {
+                            string text = $"Dev Mod\n" +
+                                $"ThingDef {selectedEntry.ThingDef?.LabelCap ?? "---"}\n" +
+                                $"EntityCodexEntryDef {selectedEntry.EntityCodexEntryDef?.LabelCap ?? "---"}\n" +
+                                $"parentEntityEntry {selectedEntry.parentEntityEntry?.AnomalyLabel ?? "---"}\n" +
+                                $"groupName {selectedEntry.groupName}\n" +
+                                $"categoryLabelCap {selectedEntry.categoryLabelCap}\n" +
+                                $"threatClassString {selectedEntry.threatClassString}\n" +
+                                $"modName {selectedEntry.modName}";
+                            float num2 = Text.CalcHeight(text, viewRect.width);
+                            Widgets.Label(new Rect(0f, num, viewRect.width, num2), text);
+                            num += num2 + EntryGap;
+                        }
+                        num += ButSize.y;
+                    }
                 }
                 recordScrollHeight = num;
             }
@@ -386,6 +427,7 @@ namespace AnomaliesExpected
 
         private void AllEntities(Rect rect)
         {
+            Log.Message($"AllEntities 0");
             Rect viewRect = new Rect(0f, 0f, rect.width - 16f, dbScrollHeight);
             Widgets.BeginScrollView(rect, ref dbScrollPos, viewRect);
             float num = 0f;
@@ -432,6 +474,7 @@ namespace AnomaliesExpected
             dbScrollHeight = num;
             Text.Anchor = TextAnchor.UpperLeft;
             Widgets.EndScrollView();
+            Log.Message($"AllEntities 1");
         }
 
         private void DrawEntry(Rect rect, AEEntityEntry entry, bool discovered)

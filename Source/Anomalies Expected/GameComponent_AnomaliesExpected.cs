@@ -70,14 +70,27 @@ namespace AnomaliesExpected
             {
                 return;
             }
-            AEEntityEntry entityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => aeee.EntityCodexEntryDef == entityCodexEntryDef && (aeee.ThingDef == null || aeee.ThingDef == compAEStudyUnlocks.parent.def));
+            AEEntityEntry entityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => aeee.EntityCodexEntryDef == entityCodexEntryDef && ((aeee.ThingDef == null && !compAEStudyUnlocks.isCreateSeparateEntityEntry) || aeee.ThingDef == compAEStudyUnlocks.parent.def));
             if (entityEntry == null)
             {
-                entityEntry = new AEEntityEntry()
+                if (compAEStudyUnlocks.isCreateSeparateEntityEntry)
                 {
-                    ThingDef = compAEStudyUnlocks.parent.def,
-                    EntityCodexEntryDef = entityCodexEntryDef
-                };
+                    entityEntry = new AEEntityEntry()
+                    {
+                        ThingDef = compAEStudyUnlocks.parent.def,
+                        parentEntityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => aeee.EntityCodexEntryDef == entityCodexEntryDef && ((aeee.ThingDef == null) || aeee.ThingDef == compAEStudyUnlocks.parent.def)),
+                        AnomalyLabel = compAEStudyUnlocks.parent.def.LabelCap,
+                        AnomalyDesc = compAEStudyUnlocks.parent.def.DescriptionDetailed
+                    };
+                }
+                else
+                {
+                    entityEntry = new AEEntityEntry()
+                    {
+                        ThingDef = compAEStudyUnlocks.parent.def,
+                        EntityCodexEntryDef = entityCodexEntryDef
+                    };
+                }
                 EntityEntries.Add(entityEntry);
             }
             if (entityEntry.ThingDef == null)
@@ -132,7 +145,7 @@ namespace AnomaliesExpected
                 {
                     ChoiceLetter copyLetter = LetterMaker.MakeLetter(choiceLetter.Label, choiceLetter.Text, choiceLetter.def, choiceLetter.lookTargets);
                     copyLetter.arrivalTick = choiceLetter.arrivalTick;
-                    entityEntry.letters.Add(copyLetter);
+                    entityEntry.AddLetter(copyLetter);
                     isAdded = true;
                 }
             }

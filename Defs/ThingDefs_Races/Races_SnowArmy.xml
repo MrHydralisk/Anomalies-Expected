@@ -105,6 +105,20 @@
 				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
 				<requiresHoldingPlatform>true</requiresHoldingPlatform>
 			</li>
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotes>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyDesc>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nIts needles emit frigid air, causing the surrounding temperature to plummet to -20 degrees. A hidden passage located behind the tree branches.\n\nClassified as Class-1 (Caution) anomaly.</AnomalyDesc>
+						<threshold>2</threshold>
+						<label>#1/4 Christmas tree study report</label>
+						<text>Emiting Frigid Air</text>
+						<ThreatClass>1</ThreatClass>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+				</studyNotes>
+				<isCreateSeparateEntityEntry>true</isCreateSeparateEntityEntry>
+			</li>
 			<li Class="CompProperties_ProducesBioferrite">
 				<bioferriteDensity>0.75</bioferriteDensity>
 			</li>
@@ -214,6 +228,20 @@
 				<anomalyKnowledge>2.5</anomalyKnowledge>
 				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
 				<requiresHoldingPlatform>true</requiresHoldingPlatform>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotes>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyDesc>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nIts needles emit frigid air, causing the surrounding temperature to plummet to -20 degrees. A hidden passage located behind the tree branches.\n\nClassified as Class-1 (Caution) anomaly.</AnomalyDesc>
+						<threshold>2</threshold>
+						<label>#3/4 Christmas tree study report</label>
+						<text>Emiting Frigid Air</text>
+						<ThreatClass>1</ThreatClass>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+				</studyNotes>
+				<isCreateSeparateEntityEntry>true</isCreateSeparateEntityEntry>
 			</li>
 			<li Class="CompProperties_ProducesBioferrite">
 				<bioferriteDensity>0.75</bioferriteDensity>
@@ -336,6 +364,20 @@
 				<anomalyKnowledge>1</anomalyKnowledge>
 				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
 				<requiresHoldingPlatform>true</requiresHoldingPlatform>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotes>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyDesc>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nIts needles emit frigid air, causing the surrounding temperature to plummet to -20 degrees. A hidden passage located behind the tree branches.\n\nClassified as Class-1 (Caution) anomaly.</AnomalyDesc>
+						<threshold>2</threshold>
+						<label>#2/4 Christmas tree study report</label>
+						<text>Emiting Frigid Air</text>
+						<ThreatClass>1</ThreatClass>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+				</studyNotes>
+				<isCreateSeparateEntityEntry>true</isCreateSeparateEntityEntry>
 			</li>
 			<li Class="CompProperties_ProducesBioferrite">
 				<bioferriteDensity>1</bioferriteDensity>
