@@ -27,7 +27,6 @@ namespace AnomaliesExpected
         public int IncreasePawnStudy(int index)
         {
             int missingElements = index + 1 - CurrPawnAmountStudied.Count;
-            Log.Message($"IncreasePawnStudy A {index} / {CurrPawnAmountStudied.Count} = {missingElements}");
             if (missingElements > 0)
             {
                 for (int i = 0; i < missingElements; i++)
@@ -35,7 +34,6 @@ namespace AnomaliesExpected
                     CurrPawnAmountStudied.Add(0);
                 }
             }
-            Log.Message($"IncreasePawnStudy B {CurrPawnAmountStudied[index] + 1} / {CurrPawnAmountStudied.Count}");
             CurrPawnAmountStudied[index]++;
             return CurrPawnAmountStudied[index];
         }

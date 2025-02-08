@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
-using static HarmonyLib.Code;
 
 namespace AnomaliesExpected
 {
@@ -102,11 +101,9 @@ namespace AnomaliesExpected
             if ((__instance is CompAEStudyUnlocks aEStudyUnlocks) && (aEStudyUnlocks.Props is CompProperties_AEStudyUnlocks aeProps) && !aeProps.studyNotesPawnUnlockable.NullOrEmpty())
             {
                 float anomalyKnowledgeGained = aEStudyUnlocks.StudyCompPub.anomalyKnowledgeGained;
-                Log.Message($"anomalyKnowledgeGained {anomalyKnowledgeGained} = {aEStudyUnlocks.NextPawnSNIndex} = {aeProps.studyNotesPawnUnlockable.Count}");
                 for (int i = aEStudyUnlocks.NextPawnSNIndex; i < aeProps.studyNotesPawnUnlockable.Count; i++)
                 {
                     AEStudyNote studyNote = aeProps.studyNotesPawnUnlockable[i] as AEStudyNote;
-                    Log.Message($"aEStudyUnlocks.NextPawnSNIndex {aEStudyUnlocks.NextPawnSNIndex} | {anomalyKnowledgeGained} >= {studyNote.threshold}");
                     if (anomalyKnowledgeGained >= studyNote.threshold)
                     {
                         aEStudyUnlocks.RegisterPawnStudyLevel(studier, i, studyNote);

@@ -25,7 +25,7 @@ namespace AnomaliesExpected
                 }
             }));
         }
-        
+
         public static bool VoidProvocation(ref List<IncidentDef> calledIncidentDefs)
         {
             Map map = Find.CurrentMap;
@@ -75,7 +75,7 @@ namespace AnomaliesExpected
                 }
             }
             bool flag2;
-            for(int i = list.Count() - 1; i >= 0 ; i--)
+            for (int i = list.Count() - 1; i >= 0; i--)
             {
                 if (calledIncidentDefs.Contains(list[i]))
                 {

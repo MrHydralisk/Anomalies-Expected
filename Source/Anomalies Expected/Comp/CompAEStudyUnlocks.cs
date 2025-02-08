@@ -1,7 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using UnityEngine;
 using Verse;
 
@@ -200,16 +199,13 @@ namespace AnomaliesExpected
 
         public void RegisterPawnStudyLevel(Pawn studier, int i, AEStudyNote aEStudyNote)
         {
-            Log.Message($"RegisterPawnStudyLevel A {NextPawnSNIndex} <= {i} | {parent.Label}");
             if (NextPawnSNIndex <= i)
             {
                 AEEntityEntry entityEntry = GameComponent_AnomaliesExpected.instance.GetEntityEntryFromThingDef(parent.def);
-                Log.Message($"RegisterPawnStudyLevel B {entityEntry != null}");
                 if (entityEntry != null)
                 {
                     int timesStudied = entityEntry.IncreasePawnStudy(i);
                     NextPawnSNIndex = i + 1;
-                    Log.Message($"RegisterPawnStudyLevel C {timesStudied} == {aEStudyNote.AmountStudiedRequirment}");
                     if (aEStudyNote.AmountStudiedRequirment == timesStudied)
                     {
                         TaggedString studierName = studier?.Name?.ToStringShort ?? "AnomaliesExpected.Misc.Redacted".Translate();

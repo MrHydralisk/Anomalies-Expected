@@ -1094,6 +1094,7 @@
 			<drawSize>(6,4)</drawSize>
 		</graphicData>
 		<size>(5,3)</size>
+		<uiIconColor>(100,30,30)</uiIconColor>
 		<comps>
 			<li Class="CompProperties_Studiable">
 				<compClass>AnomaliesExpected.CompStudiableAE</compClass>

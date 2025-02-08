@@ -141,7 +141,7 @@ namespace AnomaliesExpected
                 }
                 exitIndex++;
             }
-            if (exitIndex>= 9999)
+            if (exitIndex >= 9999)
             {
                 Log.Warning("Reached infinite loop");
             }
@@ -303,6 +303,32 @@ namespace AnomaliesExpected
                 EntityCodexEntryDef entityCodexEntryDef = selectedEntry.EntityCodexEntryDef;
                 float num = 0f;
                 bool flag = entityCodexEntryDef?.Discovered ?? true;
+                Rect rect3 = new Rect(inRect.width / 2f - 128, num + 2, 256, 256);
+                if (selectedEntry.EntityCodexEntryDef == null)
+                {
+                    Texture2D uiIcon = selectedEntry.ThingDef.uiIcon;
+                    float heightMult = (float)uiIcon.height / uiIcon.width;
+                    if (heightMult > 1.05f)
+                    {
+                        rect3.width = rect3.width / heightMult;
+                    }
+                    else if (heightMult < 0.95f)
+                    {
+                        rect3.height = rect3.width * heightMult;
+                    }
+                    Widgets.DrawBoxSolid(rect3.ExpandedBy(2f), new Color(0f, 0f, 0f, 0.3f));
+                    Color colorTMP = GUI.color;
+                    GUI.color = selectedEntry.ThingDef.uiIconColor;
+                    GUI.DrawTexture(rect3, uiIcon);
+                    GUI.color = colorTMP;
+                    num += Mathf.CeilToInt(256 * heightMult + 4);
+                }
+                else
+                {
+                    Widgets.DrawBoxSolid(rect3.ExpandedBy(2f), new Color(0f, 0f, 0f, 0.3f));
+                    GUI.DrawTexture(rect3, flag ? (selectedEntry.EntityCodexEntryDef.icon) : selectedEntry.EntityCodexEntryDef.silhouette);
+                    num += 260f;
+                }
                 using (new TextBlock(GameFont.Medium))
                 {
                     Widgets.Label(new Rect(0f, num, viewRect.width, HeaderHeight), flag ? selectedEntry.AnomalyLabel : "UndiscoveredEntity".Translate());
@@ -404,7 +430,7 @@ namespace AnomaliesExpected
                             $"categoryLabelCap {selectedEntry.categoryLabelCap}\n" +
                             $"threatClassString {selectedEntry.threatClassString}\n" +
                             $"modName {selectedEntry.modName}\n" +
-                            $"CurrPawnAmountStudied {string.Join(" | ", selectedEntry.CurrPawnAmountStudied)}\n"+
+                            $"CurrPawnAmountStudied {string.Join(" | ", selectedEntry.CurrPawnAmountStudied)}\n" +
                             $"parentEntityEntryRef {selectedEntry.parentEntityEntryRef}";
                         float num2 = Text.CalcHeight(text, viewRect.width);
                         Widgets.Label(new Rect(0f, num, viewRect.width, num2), text);
@@ -474,7 +500,38 @@ namespace AnomaliesExpected
         private void DrawEntry(Rect rect, AEEntityEntry entry, bool discovered)
         {
             Widgets.DrawOptionBackground(rect, entry == selectedEntry);
-            GUI.DrawTexture(rect.ContractedBy(2f), discovered ? (entry.EntityCodexEntryDef?.icon ?? entry.ThingDef.uiIcon) : entry.EntityCodexEntryDef.silhouette);
+            Rect rect1 = new Rect(rect);
+            Texture2D uiIcon;
+            Color colorTMP = GUI.color;
+            if (discovered)
+            {
+                if (entry.EntityCodexEntryDef == null)
+                {
+                    uiIcon = entry.ThingDef.uiIcon;
+                    GUI.color = entry.ThingDef.uiIconColor;
+                    float heightMult = (float)uiIcon.height / uiIcon.width;
+                    if (heightMult > 1.05f)
+                    {
+                        rect1.width = rect1.width / heightMult;
+                        rect1.x = rect1.x + (rect.width - rect1.width) / 2;
+                    }
+                    else if (heightMult < 0.95f)
+                    {
+                        rect1.height = rect1.width * heightMult;
+                        rect1.y = rect1.y + (rect.height - rect1.height) / 2;
+                    }
+                }
+                else
+                {
+                    uiIcon = entry.EntityCodexEntryDef.icon;
+                }
+            }
+            else
+            {
+                uiIcon = entry.EntityCodexEntryDef.silhouette;
+            }
+            GUI.DrawTexture(rect1.ContractedBy(2f), uiIcon);
+            GUI.color = colorTMP;
             if (entry.letters.Count() > 0)
             {
                 GUI.DrawTexture(new Rect(rect.x + rect.width - 20, rect.y - 1, 18, 18), TexButton.CategorizedResourceReadout);
