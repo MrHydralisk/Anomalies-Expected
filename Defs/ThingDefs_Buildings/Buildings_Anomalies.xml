@@ -1124,6 +1124,9 @@
 				<isSyncWithParent>true</isSyncWithParent>
 				<isSyncParentDB>true</isSyncParentDB>
 			</li>
+			<li>
+				<compClass>AnomaliesExpected.Comp_EntityDataBaseAccess</compClass>
+			</li>
 		</comps>
 	</ThingDef>
 	
@@ -1224,6 +1227,9 @@
 				<jobDef>AE_RemoveAnomaly</jobDef>
 				<minStudy>3</minStudy>
 			</li>
+			<li>
+				<compClass>AnomaliesExpected.Comp_EntityDataBaseAccess</compClass>
+			</li>
 			<li Class="CompProperties_Glower">
 				<glowRadius>11</glowRadius>
 				<glowColor>(74, 37, 2, 0)</glowColor>
@@ -1321,6 +1327,9 @@
 					</li>
 				</studyNotesManualUnlockable>
 				<isCreateEntityEntryWithoutCodexEntry>true</isCreateEntityEntryWithoutCodexEntry>
+			</li>
+			<li>
+				<compClass>AnomaliesExpected.Comp_EntityDataBaseAccess</compClass>
 			</li>
 			<li Class="CompProperties_HeatPusher">
 				<heatPerSecond>-100</heatPerSecond>

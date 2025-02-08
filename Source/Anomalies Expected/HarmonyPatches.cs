@@ -38,8 +38,13 @@ namespace AnomaliesExpected
             val.Patch(AccessTools.Method(typeof(CompStudyUnlocksMonolith), "Notify_StudyLevelChanged"), postfix: new HarmonyMethod(patchType, "CSU_Notify_StudyLevelChanged_Postfix"));
             val.Patch(AccessTools.Method(typeof(CompStudyUnlocks), "PostPostMake"), postfix: new HarmonyMethod(patchType, "CSU_Notify_StudyLevelChanged_Postfix"));
             val.Patch(AccessTools.Method(typeof(CompStudyUnlocks), "OnStudied"), postfix: new HarmonyMethod(patchType, "CSU_OnStudied_Postfix"));
-            val.Patch(AccessTools.Method(typeof(Building_VoidMonolith), "GetGizmos"), postfix: new HarmonyMethod(patchType, "BVM_GetGizmos_Postfix"));
             val.Patch(AccessTools.Method(typeof(ITab_StudyNotes), "DrawTitle"), postfix: new HarmonyMethod(patchType, "ITSN_DrawTitle_Postfix"));
+
+            val.Patch(AccessTools.Method(typeof(Thing), "GetGizmos"), postfix: new HarmonyMethod(patchType, "T_GetGizmos_Postfix"));
+            val.Patch(AccessTools.Method(typeof(UnnaturalCorpse), "GetGizmos"), postfix: new HarmonyMethod(patchType, "T_GetGizmos_Postfix"));
+            val.Patch(AccessTools.Method(typeof(Pawn_MutantTracker), "GetGizmos"), postfix: new HarmonyMethod(patchType, "T_GetGizmos_Postfix"));
+            
+            val.Patch(AccessTools.Property(typeof(ChoiceLetter_EntityDiscovered), "Choices").GetGetMethod(), prefix: new HarmonyMethod(patchType, "CLED_Choices_Prefix"));
         }
 
         public static bool RPD_IsHidden_Prefix(ref bool __result, ResearchProjectDef __instance)
@@ -115,24 +120,6 @@ namespace AnomaliesExpected
             }
         }
 
-        public static void BVM_GetGizmos_Postfix(ref IEnumerable<Gizmo> __result, Building_VoidMonolith __instance)
-        {
-            List<Gizmo> NGizmos = __result.ToList();
-            Gizmo gizmo = new Command_Action
-            {
-                defaultLabel = "AnomaliesExpected.EntityDataBase.Label".Translate(),
-                defaultDesc = "AnomaliesExpected.EntityDataBase.Tip".Translate(),
-                icon = ContentFinder<Texture2D>.Get("UI/Buttons/AEEntityDB"),
-                action = delegate
-                {
-                    Find.WindowStack.Add(new Dialog_AEEntityDB());
-                }
-            };
-            int index = NGizmos.FirstIndexOf((Gizmo g) => g is Command_Action ca && ca.defaultLabel == "EntityCodex".Translate() + "...") + 1;
-            NGizmos.Insert(Mathf.Clamp(0, index, NGizmos.Count()), gizmo);
-            __result = NGizmos;
-        }
-
         public static void ITSN_DrawTitle_Postfix(ITab_StudyNotes __instance, Rect rect)
         {
             Rect rect1 = new Rect(rect.width - 34, 0, 26, 26);
@@ -151,6 +138,112 @@ namespace AnomaliesExpected
                 Find.WindowStack.Add(dialog);
                 (MainButtonDefOf.Inspect.TabWindow as MainTabWindow_Inspect).CloseOpenTab();
             }
+        }
+
+        public static void T_GetGizmos_Postfix(ref IEnumerable<Gizmo> __result, Thing __instance)
+        {
+            List<Gizmo> NGizmos = __result.ToList();
+            int index = NGizmos.FirstIndexOf((Gizmo g) => g is Command_Action ca && ca.defaultLabel == "EntityCodex".Translate() + "...") + 1;
+            if (index > 0)
+            {
+                Gizmo gizmo = new Command_Action
+                {
+                    defaultLabel = "AnomaliesExpected.EntityDataBase.Label".Translate(),
+                    defaultDesc = "AnomaliesExpected.EntityDataBase.Tip".Translate(),
+                    icon = ContentFinder<Texture2D>.Get("UI/Buttons/AEEntityDB"),
+                    action = delegate
+                    {
+                        AEEntityEntry selectedEntityEntry = GameComponent_AnomaliesExpected.instance.GetEntityEntryFromThingDef((__instance as Building_HoldingPlatform)?.HeldPawn.def ?? __instance.def);
+                        Dialog_AEEntityDB dialog = new Dialog_AEEntityDB();
+                        if (selectedEntityEntry != null)
+                        {
+                            dialog.SelectEntry(selectedEntityEntry);
+                        }
+                        Find.WindowStack.Add(dialog);
+                    }
+                };
+                NGizmos.Insert(Mathf.Clamp(0, index, NGizmos.Count()), gizmo);
+            }
+            __result = NGizmos;
+        }
+
+        public static bool CLED_Choices_Prefix(ref IEnumerable<DiaOption> __result, ChoiceLetter_EntityDiscovered __instance)
+        {
+            List<DiaOption> NDiaOptions = new List<DiaOption>();
+            if (__instance.codexEntry != null)
+            {
+                foreach (ResearchProjectDef project in __instance.codexEntry.discoveredResearchProjects)
+                {
+                    if (project.IsHidden)
+                    {
+                        NDiaOptions.Add(new DiaOption("ViewHyperlink".Translate($"{project.label} [{"Undiscovered".Translate()}]"))
+                        {
+                            action = delegate
+                            {
+                                Find.MainTabsRoot.SetCurrentTab(MainButtonDefOf.Research);
+                                if (MainButtonDefOf.Research.TabWindow is MainTabWindow_Research mainTabWindow_Research)
+                                {
+                                    mainTabWindow_Research.CurTab = project.tab;
+                                }
+                            },
+                            resolveTree = true
+                        });
+                    }
+                    else
+                    {
+                        NDiaOptions.Add(new DiaOption("ViewHyperlink".Translate(project.label))
+                        {
+                            action = delegate
+                            {
+                                Find.MainTabsRoot.SetCurrentTab(MainButtonDefOf.Research);
+                                if (MainButtonDefOf.Research.TabWindow is MainTabWindow_Research mainTabWindow_Research)
+                                {
+                                    mainTabWindow_Research.Select(project);
+                                }
+                            },
+                            resolveTree = true
+                        });
+                    }
+                }
+                NDiaOptions.Add(new DiaOption("ViewEntityCodex".Translate())
+                {
+                    action = delegate
+                    {
+                        if (__instance.codexEntry != null)
+                        {
+                            Find.WindowStack.Add(new Dialog_EntityCodex(__instance.codexEntry));
+                        }
+                    },
+                    resolveTree = true
+                });
+                NDiaOptions.Add(new DiaOption("AnomaliesExpected.EntityDataBase.View".Translate())
+                {
+                    action = delegate
+                    {
+                        if (__instance.codexEntry != null)
+                        {
+                            AEEntityEntry selectedEntityEntry = GameComponent_AnomaliesExpected.instance.GetEntityEntryFromEntityCodexEntryDef(__instance.codexEntry);
+                            Dialog_AEEntityDB dialog = new Dialog_AEEntityDB();
+                            if (selectedEntityEntry != null)
+                            {
+                                dialog.SelectEntry(selectedEntityEntry);
+                            }
+                            Find.WindowStack.Add(dialog);
+                        }
+                    },
+                    resolveTree = true
+                });
+            }
+            NDiaOptions.Add(new DiaOption("Close".Translate())
+            {
+                action = delegate
+                {
+                    Find.LetterStack.RemoveLetter(__instance);
+                },
+                resolveTree = true
+            });
+            __result = NDiaOptions;
+            return false;
         }
     }
 }

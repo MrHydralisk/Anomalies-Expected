@@ -165,6 +165,11 @@ namespace AnomaliesExpected
             return EntityEntries.FirstOrDefault((AEEntityEntry aeee) => aeee.ThingDef == thingDef);
         }
 
+        public AEEntityEntry GetEntityEntryFromEntityCodexEntryDef(EntityCodexEntryDef entityCodexEntryDef)
+        {
+            return EntityEntries.FirstOrDefault((AEEntityEntry aeee) => aeee.EntityCodexEntryDef == entityCodexEntryDef);
+        }
+
         public override void ExposeData()
         {
             base.ExposeData();

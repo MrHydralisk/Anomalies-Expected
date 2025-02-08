@@ -155,6 +155,7 @@
 					<li>AE_EntityCodexEntry_BloodPuddle</li>
 				</groupMembersEntityCodexDefs>
 				<groupMembersThingDefs>
+					<li>AE_BloodLakeExit</li>
 					<li>AE_BloodLakeTerminal</li>
 				</groupMembersThingDefs>
 			</li>
