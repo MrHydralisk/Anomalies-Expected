@@ -538,11 +538,16 @@ namespace AnomaliesExpected
             }
             if (Widgets.ButtonInvisible(rect))
             {
-                selectedEntry = entry;
-                isShowRecord = true;
-                lettersOpened = new bool[selectedEntry.letters.Count()];
-                SoundDefOf.Tick_High.PlayOneShotOnCamera();
+                SelectEntry(entry);
             }
+        }
+
+        public void SelectEntry(AEEntityEntry entry)
+        {
+            selectedEntry = entry;
+            isShowRecord = true;
+            lettersOpened = new bool[selectedEntry.letters.Count()];
+            SoundDefOf.Tick_High.PlayOneShotOnCamera();
         }
     }
 }

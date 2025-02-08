@@ -39,6 +39,7 @@ namespace AnomaliesExpected
             val.Patch(AccessTools.Method(typeof(CompStudyUnlocks), "PostPostMake"), postfix: new HarmonyMethod(patchType, "CSU_Notify_StudyLevelChanged_Postfix"));
             val.Patch(AccessTools.Method(typeof(CompStudyUnlocks), "OnStudied"), postfix: new HarmonyMethod(patchType, "CSU_OnStudied_Postfix"));
             val.Patch(AccessTools.Method(typeof(Building_VoidMonolith), "GetGizmos"), postfix: new HarmonyMethod(patchType, "BVM_GetGizmos_Postfix"));
+            val.Patch(AccessTools.Method(typeof(ITab_StudyNotes), "DrawTitle"), postfix: new HarmonyMethod(patchType, "ITSN_DrawTitle_Postfix"));
         }
 
         public static bool RPD_IsHidden_Prefix(ref bool __result, ResearchProjectDef __instance)
@@ -130,6 +131,26 @@ namespace AnomaliesExpected
             int index = NGizmos.FirstIndexOf((Gizmo g) => g is Command_Action ca && ca.defaultLabel == "EntityCodex".Translate() + "...") + 1;
             NGizmos.Insert(Mathf.Clamp(0, index, NGizmos.Count()), gizmo);
             __result = NGizmos;
+        }
+
+        public static void ITSN_DrawTitle_Postfix(ITab_StudyNotes __instance, Rect rect)
+        {
+            Rect rect1 = new Rect(rect.width - 34, 0, 26, 26);
+            if (Widgets.ButtonImage(rect1, ContentFinder<Texture2D>.Get("UI/Buttons/AEEntityCodex"), tooltip: "AnomaliesExpected.EntityDataBase.Tip".Translate()))
+            {
+                Dialog_AEEntityDB dialog = new Dialog_AEEntityDB();
+                Thing selectedThing = Find.Selector.SingleSelectedThing;
+                if (selectedThing != null)
+                {
+                    AEEntityEntry selectedEntityEntry = GameComponent_AnomaliesExpected.instance.GetEntityEntryFromThingDef((selectedThing as Building_HoldingPlatform)?.HeldPawn.def ?? selectedThing.def);
+                    if (selectedEntityEntry != null)
+                    {
+                        dialog.SelectEntry(selectedEntityEntry);
+                    }
+                }
+                Find.WindowStack.Add(dialog);
+                (MainButtonDefOf.Inspect.TabWindow as MainTabWindow_Inspect).CloseOpenTab();
+            }
         }
     }
 }
