@@ -2,6 +2,7 @@
 using RimWorld;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Verse;
 
@@ -37,6 +38,7 @@ namespace AnomaliesExpected
             val.Patch(AccessTools.Method(typeof(CompStudyUnlocksMonolith), "Notify_StudyLevelChanged"), postfix: new HarmonyMethod(patchType, "CSU_Notify_StudyLevelChanged_Postfix"));
             val.Patch(AccessTools.Method(typeof(CompStudyUnlocks), "PostPostMake"), postfix: new HarmonyMethod(patchType, "CSU_Notify_StudyLevelChanged_Postfix"));
             val.Patch(AccessTools.Method(typeof(CompStudyUnlocks), "OnStudied"), postfix: new HarmonyMethod(patchType, "CSU_OnStudied_Postfix"));
+            val.Patch(AccessTools.Method(typeof(Building_VoidMonolith), "GetGizmos"), postfix: new HarmonyMethod(patchType, "BVM_GetGizmos_Postfix"));
         }
 
         public static bool RPD_IsHidden_Prefix(ref bool __result, ResearchProjectDef __instance)
@@ -110,6 +112,24 @@ namespace AnomaliesExpected
                     }
                 }
             }
+        }
+
+        public static void BVM_GetGizmos_Postfix(ref IEnumerable<Gizmo> __result, Building_VoidMonolith __instance)
+        {
+            List<Gizmo> NGizmos = __result.ToList();
+            Gizmo gizmo = new Command_Action
+            {
+                defaultLabel = "AnomaliesExpected.EntityDataBase.Label".Translate(),
+                defaultDesc = "AnomaliesExpected.EntityDataBase.Tip".Translate(),
+                icon = ContentFinder<Texture2D>.Get("UI/Buttons/AEEntityDB"),
+                action = delegate
+                {
+                    Find.WindowStack.Add(new Dialog_AEEntityDB());
+                }
+            };
+            int index = NGizmos.FirstIndexOf((Gizmo g) => g is Command_Action ca && ca.defaultLabel == "EntityCodex".Translate() + "...") + 1;
+            NGizmos.Insert(Mathf.Clamp(0, index, NGizmos.Count()), gizmo);
+            __result = NGizmos;
         }
     }
 }
