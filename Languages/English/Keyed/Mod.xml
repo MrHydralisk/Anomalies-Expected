@@ -14,4 +14,6 @@
 	<AnomaliesExpected.Settings.BloodLake.BloodLakeSubMapMaxSize>Set maximum size for Lake sub map generation to {0}x{0} (by default will copy size of colony map)\n(Size affect amount of loot, enemies and required resources from PC)</AnomaliesExpected.Settings.BloodLake.BloodLakeSubMapMaxSize>
 	
 	<AnomaliesExpected.Settings.ResearchTab.Unlock>Try Unlock Anomalies Expected Research Tab</AnomaliesExpected.Settings.ResearchTab.Unlock>
+	
+	<AnomaliesExpected.Settings.DevMode.Info>Show additional information for debug</AnomaliesExpected.Settings.DevMode.Info>
 </LanguageData>

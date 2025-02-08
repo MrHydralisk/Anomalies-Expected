@@ -14,4 +14,6 @@
 	<AnomaliesExpected.Settings.BloodLake.BloodLakeSubMapMaxSize>Установить ограничитель на максимальный размер гененрируемой Озером карты на {0}x{0} (по умолчанию использует тот же размер что и карта колонии)\n(Размер влияет на количество лута, врагов и на требуемые ресурся компьютера)</AnomaliesExpected.Settings.BloodLake.BloodLakeSubMapMaxSize>
 	
 	<AnomaliesExpected.Settings.ResearchTab.Unlock>Попытаться разблокировать Anomalies Expected исследовательские проекты</AnomaliesExpected.Settings.ResearchTab.Unlock>
+	
+	<AnomaliesExpected.Settings.DevMode.Info>Показывать дополнительную информации для отладки</AnomaliesExpected.Settings.DevMode.Info>
 </LanguageData>

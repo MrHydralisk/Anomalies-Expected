@@ -37,6 +37,11 @@ namespace AnomaliesExpected
             {
                 Find.ResearchManager.Notify_MonolithLevelChanged(Find.Anomaly.Level);
             }
+            if (Prefs.DevMode)
+            {
+                options.GapLine();
+                options.CheckboxLabeled("AnomaliesExpected.Settings.DevMode.Info".Translate().RawText, ref Settings.DevModeInfo);
+            }
             options.End();
         }
 

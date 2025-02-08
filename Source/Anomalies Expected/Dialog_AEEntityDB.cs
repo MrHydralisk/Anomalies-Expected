@@ -291,6 +291,15 @@ namespace AnomaliesExpected
             Widgets.BeginScrollView(inRect, ref recordScrollPos, viewRect);
             if (selectedEntry != null)
             {
+                if (Prefs.DevMode && AEMod.Settings.DevModeInfo)
+                {
+                    Rect rect1 = new Rect(inRect.width - 8, 0, 8, 8);
+                    if (Widgets.ButtonImage(rect1, TexButton.CloseXSmall, tooltip: "Remove EntityEntry"))
+                    {
+                        isShowRecord = false;
+                        GameComponent_AnomaliesExpected.instance.EntityEntries.Remove(selectedEntry);
+                    }
+                }
                 EntityCodexEntryDef entityCodexEntryDef = selectedEntry.EntityCodexEntryDef;
                 float num = 0f;
                 bool flag = entityCodexEntryDef?.Discovered ?? true;
@@ -311,7 +320,7 @@ namespace AnomaliesExpected
                     ChoiceLetter choiceLetter = selectedEntry.letters[i];
                     using (new TextBlock(GameFont.Medium))
                     {
-                        Rect rect1 = new Rect(0f, num, viewRect.width, 25);
+                        Rect rect1 = new Rect(0f, num, viewRect.width, 30);
                         Widgets.DrawBoxSolid(rect1, new Color(0f, 0f, 0f, 0.3f));
                         using (new TextBlock(TextAnchor.MiddleCenter))
                         {
@@ -322,7 +331,7 @@ namespace AnomaliesExpected
                             lettersOpened[i] = !lettersOpened[i];
                             SoundDefOf.Tick_High.PlayOneShotOnCamera();
                         }
-                        num += 30f;
+                        num += 35f;
                     }
                     if (lettersOpened[i])
                     {
@@ -383,7 +392,7 @@ namespace AnomaliesExpected
                         }
                     }
                 }
-                if (Prefs.DevMode && DebugSettings.godMode)
+                if (Prefs.DevMode && AEMod.Settings.DevModeInfo)
                 {
                     using (new TextBlock(newWordWrap: true))
                     {
@@ -395,7 +404,8 @@ namespace AnomaliesExpected
                             $"categoryLabelCap {selectedEntry.categoryLabelCap}\n" +
                             $"threatClassString {selectedEntry.threatClassString}\n" +
                             $"modName {selectedEntry.modName}\n" +
-                            $"CurrPawnAmountStudied {string.Join(" | ", selectedEntry.CurrPawnAmountStudied)}";
+                            $"CurrPawnAmountStudied {string.Join(" | ", selectedEntry.CurrPawnAmountStudied)}\n"+
+                            $"parentEntityEntryRef {selectedEntry.parentEntityEntryRef}";
                         float num2 = Text.CalcHeight(text, viewRect.width);
                         Widgets.Label(new Rect(0f, num, viewRect.width, num2), text);
                         num += num2 + EntryGap;

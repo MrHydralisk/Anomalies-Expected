@@ -46,6 +46,13 @@ namespace AnomaliesExpected
             {
                 AddFromEntityCodex(eced);
             }
+            foreach (AEEntityEntry aeee in EntityEntries)
+            {
+                if (!aeee.parentEntityEntryRef.NullOrEmpty())
+                {
+                    aeee.parentEntityEntry = EntityEntries.FirstOrDefault((AEEntityEntry ee) => ee.ToString() == aeee.parentEntityEntryRef);
+                }
+            }
         }
 
         public void AddFromEntityCodex(EntityCodexEntryDef entityCodexEntryDef)
@@ -70,7 +77,6 @@ namespace AnomaliesExpected
             {
                 return;
             }
-            Log.Message($"compAEStudyUnlocks {compAEStudyUnlocks.parent.def.label}:\n{string.Join("\n", EntityEntries.Select((AEEntityEntry aeee) => $"(({aeee.EntityCodexEntryDef == entityCodexEntryDef} && {!compAEStudyUnlocks.isCreateSeparateEntityEntry}) || ({aeee.parentEntityEntry != null} && {aeee.parentEntityEntry?.EntityCodexEntryDef == entityCodexEntryDef})) && ({aeee.ThingDef == null} || {aeee.ThingDef == compAEStudyUnlocks.parent.def})"))}");
             AEEntityEntry entityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => ((aeee.EntityCodexEntryDef == entityCodexEntryDef && !compAEStudyUnlocks.isCreateSeparateEntityEntry) || (aeee.parentEntityEntry != null && aeee.parentEntityEntry.EntityCodexEntryDef == entityCodexEntryDef)) && (aeee.ThingDef == null || aeee.ThingDef == compAEStudyUnlocks.parent.def));
             if (entityEntry == null)
             {
@@ -83,6 +89,7 @@ namespace AnomaliesExpected
                         AnomalyLabel = compAEStudyUnlocks.parent.def.LabelCap,
                         AnomalyDesc = compAEStudyUnlocks.parent.def.DescriptionDetailed
                     };
+                    entityEntry.parentEntityEntryRef = entityEntry.parentEntityEntry?.ToString();
                 }
                 else
                 {

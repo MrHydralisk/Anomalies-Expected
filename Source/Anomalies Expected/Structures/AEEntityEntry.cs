@@ -11,6 +11,7 @@ namespace AnomaliesExpected
 
         public ThingDef ThingDef;
         public AEEntityEntry parentEntityEntry;
+        public string parentEntityEntryRef;
         public bool isVanilla => EntityCodexEntryDef.modContentPack.IsCoreMod;
         public EntityCodexEntryDef EntityCodexEntryDef;
         public string categoryLabelCap => EntityCodexEntryDef?.category?.LabelCap ?? "AnomaliesExpected.EntityDataBase.ThreatClass.-1".Translate();
@@ -53,11 +54,17 @@ namespace AnomaliesExpected
             }
         }
 
+        public override string ToString()
+        {
+            return $"{ThingDef?.defName ?? "-"}|{EntityCodexEntryDef?.defName ?? "-"}";
+        }
+
         public void ExposeData()
         {
             Scribe_Values.Look(ref AnomalyLabel, "AnomalyLabel");
             Scribe_Values.Look(ref AnomalyDesc, "AnomalyDesc");
             Scribe_Values.Look(ref ThreatClass, "ThreatClass", -1);
+            Scribe_Values.Look(ref parentEntityEntryRef, "parentEntityEntryRef");
             Scribe_Defs.Look(ref EntityCodexEntryDef, "EntityCodexEntryDef");
             Scribe_Defs.Look(ref ThingDef, "ThingDef");
             Scribe_Collections.Look(ref letters, "letters", LookMode.Deep);
