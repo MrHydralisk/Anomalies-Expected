@@ -394,6 +394,54 @@
 				<regeneration>500</regeneration>
 				<minSeverity>500</minSeverity>
 			</li>
+			<li>
+				<regeneration>600</regeneration>
+				<minSeverity>600</minSeverity>
+			</li>
+			<li>
+				<regeneration>700</regeneration>
+				<minSeverity>700</minSeverity>
+			</li>
+			<li>
+				<regeneration>800</regeneration>
+				<minSeverity>800</minSeverity>
+			</li>
+			<li>
+				<regeneration>900</regeneration>
+				<minSeverity>900</minSeverity>
+			</li>
+			<li>
+				<regeneration>1000</regeneration>
+				<minSeverity>1000</minSeverity>
+			</li>
+			<li>
+				<regeneration>1100</regeneration>
+				<minSeverity>1100</minSeverity>
+			</li>
+			<li>
+				<regeneration>1200</regeneration>
+				<minSeverity>1200</minSeverity>
+			</li>
+			<li>
+				<regeneration>1300</regeneration>
+				<minSeverity>1300</minSeverity>
+			</li>
+			<li>
+				<regeneration>1400</regeneration>
+				<minSeverity>1400</minSeverity>
+			</li>
+			<li>
+				<regeneration>1500</regeneration>
+				<minSeverity>1500</minSeverity>
+			</li>
+			<li>
+				<regeneration>1600</regeneration>
+				<minSeverity>1600</minSeverity>
+			</li>
+			<li>
+				<regeneration>2000</regeneration>
+				<minSeverity>1638</minSeverity>
+			</li>
 		</stages>
 	</HediffDef>
 

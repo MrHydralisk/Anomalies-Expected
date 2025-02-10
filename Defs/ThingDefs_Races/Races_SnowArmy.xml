@@ -351,6 +351,7 @@
 		<race>
 			<body>AE_SnowSpider</body>
 			<thinkTreeMain>AE_SnowSpider</thinkTreeMain>
+			<intelligence>Animal</intelligence>
 			<baseBodySize>0.6</baseBodySize>
 			<baseHealthScale>0.6</baseHealthScale>
 			<lifeExpectancy>15</lifeExpectancy>

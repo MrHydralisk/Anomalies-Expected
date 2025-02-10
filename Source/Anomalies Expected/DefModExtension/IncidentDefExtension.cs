@@ -14,5 +14,8 @@ namespace AnomaliesExpected
         public List<ThingDefCountClass> ChanceFactorPowPerOtherBuildings;
         public bool isHaveArrow = true;
         public List<EntityCodexEntryDef> entityCodexEntryDefsRequired;
+        public FactionDef factionDef;
+        public PawnsArrivalModeDef pawnsArrivalModeDef;
+        public PawnGroupKindDef pawnGroupKindDef;
     }
 }

@@ -54,6 +54,7 @@
     <Compile Include="DefOfLocal\FactionDefOfLocal.cs" />
     <Compile Include="DefOfLocal\DamageDefOfLocal.cs" />
     <Compile Include="DefOfLocal\FleshTypeDefOfLocal.cs" />
+    <Compile Include="IncidentWorker\IncidentWorker_EntityAssault.cs" />
     <Compile Include="MapComponent\ChristmasTreeMapComponent.cs" />
     <Compile Include="Building\Building_AEBloodLake.cs" />
     <Compile Include="Comp\Comp_AtmosphericController.cs" />

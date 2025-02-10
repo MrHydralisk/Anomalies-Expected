@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- <IncidentDef Abstract="True" Name="EntitySwarmBase" ParentName="AnomalyIncidentBase"> -->
+		<!-- <targetTags> -->
+			<!-- <li>Map_PlayerHome</li> -->
+		<!-- </targetTags> -->
+		<!-- <category>ThreatBig</category> -->
+		<!-- <pointsScaleable>true</pointsScaleable> -->
+		<!-- <letterDef>ThreatBig</letterDef> -->
+		<!-- <tale>Raid</tale> -->
+	<!-- </IncidentDef> -->
+  
+	<!-- <IncidentDef ParentName="AnomalyIncidentBase"> -->
+		<!-- <defName>ShamblerAssault</defName> -->
+		<!-- <label>shambler assault</label> -->
+		<!-- <targetTags> -->
+			<!-- <li>Map_PlayerHome</li> -->
+		<!-- </targetTags> -->
+		<!-- <workerClass>IncidentWorker_ShamblerAssault</workerClass> -->
+		<!-- <baseChance>2</baseChance> -->
+		<!-- <minAnomalyThreatLevel>0</minAnomalyThreatLevel> -->
+		<!-- <earliestDay>20</earliestDay> -->
+		<!-- <minRefireDays>10</minRefireDays> -->
+		<!-- <category>ThreatBig</category> -->
+		<!-- <minThreatPoints>250</minThreatPoints> -->
+		<!-- <pointsScaleable>true</pointsScaleable> -->
+		<!-- <tale>Raid</tale> -->
+	<!-- </IncidentDef> -->
+
+	<IncidentDef ParentName="EntityAttackBase" Name="SnowArmyAssault">
+		<defName>AE_IncidentDef_SnowArmyAssault</defName>
+		<label>snow army assault</label>
+		<workerClass>AnomaliesExpected.IncidentWorker_EntityAssault</workerClass>
+		<baseChance>1.5</baseChance>
+		<minThreatPoints>350</minThreatPoints>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<letterLabel>Snow army attack</letterLabel>
+		<letterText>A swarm of huge gape-mawed monsters are attacking!\n\nThese creatures' jaws are massive enough to swallow a human whole. Keep your distance!</letterText>
+		<letterDef>ThreatBig</letterDef>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<entityCodexEntryDefsRequired>
+					<li>AE_EntityCodexEntry_SnowArmy</li>
+				</entityCodexEntryDefsRequired>
+				<factionDef>AE_SnowArmy</factionDef>
+				<pawnsArrivalModeDef>EdgeWalkIn</pawnsArrivalModeDef>
+				<pawnGroupKindDef>Combat</pawnGroupKindDef>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+	
+</Defs>
