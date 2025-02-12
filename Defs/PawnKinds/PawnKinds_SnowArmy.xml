@@ -7,7 +7,7 @@
 		<meleeAttackInfectionPathways>
 			<li>EntityAttacked</li>
 		</meleeAttackInfectionPathways>
-		<overrideDeathOnDownedChance>0.8</overrideDeathOnDownedChance>
+		<!-- <overrideDeathOnDownedChance>0.8</overrideDeathOnDownedChance> -->
 		<preventIdeo>true</preventIdeo>
 		<aiAvoidCover>true</aiAvoidCover>
 		<destroyGearOnDrop>true</destroyGearOnDrop>
@@ -56,6 +56,7 @@
 			<li>Gun_AESnowBlock</li>
 		</weaponTags>
 		<race>AE_SnowGolem</race>
+		<maxPerGroup>3</maxPerGroup>
 		<combatPower>280</combatPower>
 		<weaponMoney>9999~9999</weaponMoney>
 		<lifeStages>
@@ -80,6 +81,7 @@
 		<label>snow spider</label>
 		<race>AE_SnowSpider</race>
 		<combatPower>40</combatPower>
+		<destroyGearOnDrop>false</destroyGearOnDrop>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>

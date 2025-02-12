@@ -49,5 +49,19 @@
 			</li>
 		</modExtensions>
 	</IncidentDef>
+
+	<!-- <IncidentDef ParentName="SnowArmyAssault"> -->
+		<!-- <defName>AE_IncidentDef_SnowArmyAssaultA</defName> -->
+		<!-- <modExtensions Inherit="False"> -->
+			<!-- <li Class="AnomaliesExpected.IncidentDefExtension"> -->
+				<!-- <entityCodexEntryDefsRequired> -->
+					<!-- <li>AE_EntityCodexEntry_SnowArmy</li> -->
+				<!-- </entityCodexEntryDefsRequired> -->
+				<!-- <factionDef>AE_SnowArmy</factionDef> -->
+				<!-- <pawnsArrivalModeDef>EdgeWalkIn</pawnsArrivalModeDef> -->
+				<!-- <pawnGroupKindDef>Fleshbeasts</pawnGroupKindDef> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	<!-- </IncidentDef> -->
 	
 </Defs>

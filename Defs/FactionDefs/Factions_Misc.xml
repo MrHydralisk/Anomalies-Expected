@@ -48,8 +48,8 @@
 				<commonality>100</commonality>
 				<options>
 					<AE_SnowMan>10</AE_SnowMan>
-					<AE_SnowGolem>1</AE_SnowGolem>
-					<AE_SnowSpider>20</AE_SnowSpider>
+					<AE_SnowGolem>0.05</AE_SnowGolem>
+					<AE_SnowSpider>100</AE_SnowSpider>
 				</options>
 			</li>
 			<li>
@@ -66,7 +66,16 @@
 				<commonality>85</commonality>
 				<options>
 					<AE_SnowMan>10</AE_SnowMan>
-					<AE_SnowGolem>2</AE_SnowGolem>
+					<AE_SnowGolem>0.075</AE_SnowGolem>
+				</options>
+			</li>
+			<li>
+				<!-- Spider distraction -->
+				<kindDef>Combat</kindDef>
+				<commonality>85</commonality>
+				<options>
+					<AE_SnowMan>10</AE_SnowMan>
+					<AE_SnowSpider>25</AE_SnowSpider>
 				</options>
 			</li>
 			<!-- <li> -->
