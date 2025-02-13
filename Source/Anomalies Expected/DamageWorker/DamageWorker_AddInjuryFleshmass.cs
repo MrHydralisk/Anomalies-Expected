@@ -7,7 +7,8 @@ namespace AnomaliesExpected
     {
         public override DamageResult Apply(DamageInfo dinfo, Thing thing)
         {
-            if (thing.Faction == Faction.OfEntities)
+            AE_DamageDefExtension damageDefExtension = dinfo.Def.GetModExtension<AE_DamageDefExtension>();
+            if ((!damageDefExtension.isDealDamageToFriendly && (thing.Faction != null && dinfo.Instigator.Faction != null && !thing.Faction.HostileTo(dinfo.Instigator.Faction))) || ((thing is Pawn pawn) && !damageDefExtension.isDealDamageToDowned && pawn.DeadOrDowned))
             {
                 return new DamageResult();
             }

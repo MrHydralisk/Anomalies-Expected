@@ -8,5 +8,7 @@ namespace AnomaliesExpected
         public float DamageMultiplierForNonPoweredBuildings = 1;
         public float DamageMultiplierForPoweredBuildings = 1;
         public HediffDef AdditionalHediff;
+        public bool isDealDamageToFriendly = true;
+        public bool isDealDamageToDowned = true;
     }
 }

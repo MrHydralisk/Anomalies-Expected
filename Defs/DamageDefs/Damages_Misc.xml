@@ -8,6 +8,12 @@
 		<armorCategory>Sharp</armorCategory>
 		<hediff>AcidBurn</hediff>
 		<scaleDamageToBuildingsBasedOnFlammability>false</scaleDamageToBuildingsBasedOnFlammability>
+		<modExtensions>
+			<li Class="AnomaliesExpected.AE_DamageDefExtension">
+				<isDealDamageToFriendly>false</isDealDamageToFriendly>
+				<isDealDamageToDowned>false</isDealDamageToDowned>
+			</li>
+		</modExtensions>
 	</DamageDef>
 
 	<DamageDef ParentName="Flame">
@@ -85,6 +91,8 @@
 				<DamageMultiplierForNonPoweredBuildings>0.1</DamageMultiplierForNonPoweredBuildings>
 				<DamageMultiplierForPoweredBuildings>3</DamageMultiplierForPoweredBuildings>
 				<AdditionalHediff>AENitrogenFreezing</AdditionalHediff>
+				<isDealDamageToFriendly>false</isDealDamageToFriendly>
+				<isDealDamageToDowned>false</isDealDamageToDowned>
 			</li>
 		</modExtensions>
 	</DamageDef>
