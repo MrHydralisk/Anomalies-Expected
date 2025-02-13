@@ -11,11 +11,12 @@ namespace AnomaliesExpected
         public ThingDef ActiveDropPodDef;
         public ThingDef SkyfallerDef;
         public float ChanceFactorPowPerBuilding;
-        public List<ThingDefCountClass> ChanceFactorPowPerOtherBuildings;
+        public List<ThingDefCountClass> ChanceFactorPowPerOtherBuildings = new List<ThingDefCountClass>();
         public bool isHaveArrow = true;
-        public List<EntityCodexEntryDef> entityCodexEntryDefsRequired;
+        public List<EntityCodexEntryDef> entityCodexEntryDefsRequired = new List<EntityCodexEntryDef>();
         public FactionDef factionDef;
-        public PawnsArrivalModeDef pawnsArrivalModeDef;
-        public PawnGroupKindDef pawnGroupKindDef;
+        public List< PawnsArrivalModeDef> pawnsArrivalModeDef = new List<PawnsArrivalModeDef>();
+        public List<PawnGroupKindDef> pawnGroupKindDef = new List<PawnGroupKindDef>();
+        public int maxAnomalyThreatLevel = int.MaxValue;
     }
 }

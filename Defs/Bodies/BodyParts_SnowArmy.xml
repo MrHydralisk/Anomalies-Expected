@@ -111,7 +111,7 @@
 	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall" Name="BodyPart_AEBaseSnowBlock">
 		<defName>AE_SnowBlock</defName>
 		<label>snow block</label>
-		<hitPoints>80</hitPoints>
+		<hitPoints>120</hitPoints>
 	</BodyPartDef>
 
 	<BodyPartDef>
@@ -147,7 +147,7 @@
 	<BodyPartDef>
 		<defName>AE_SnowBlockArm</defName>
 		<label>snow block arm</label>
-		<hitPoints>25</hitPoints>
+		<hitPoints>15</hitPoints>
 		<skinCovered>true</skinCovered>
 		<canScarify>true</canScarify>
 		<tags>
@@ -204,7 +204,7 @@
 	<BodyPartDef ParentName="BodyPart_BaseSnowLeg">
 		<defName>AE_SnowLegB</defName>
 		<label>snow leg</label>
-		<hitPoints>20</hitPoints>
+		<hitPoints>14</hitPoints>
 		<tags>
 			<li>MovingLimbCore</li>
 		</tags>

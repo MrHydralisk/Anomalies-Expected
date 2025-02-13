@@ -1286,7 +1286,7 @@
 			<li Class="CompProperties_Studiable">
 				<compClass>AnomaliesExpected.CompStudiableAE</compClass>
 				<frequencyTicks>60000</frequencyTicks>
-				<knowledgeCategory>Advanced</knowledgeCategory>
+				<knowledgeCategory>Basic</knowledgeCategory>
 				<knowledgeFactorOutdoors>1</knowledgeFactorOutdoors>
 				<anomalyKnowledge>1.5</anomalyKnowledge>
 				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>

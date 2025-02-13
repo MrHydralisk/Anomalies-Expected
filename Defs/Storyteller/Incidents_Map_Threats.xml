@@ -1,67 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<!-- <IncidentDef Abstract="True" Name="EntitySwarmBase" ParentName="AnomalyIncidentBase"> -->
-		<!-- <targetTags> -->
-			<!-- <li>Map_PlayerHome</li> -->
-		<!-- </targetTags> -->
-		<!-- <category>ThreatBig</category> -->
-		<!-- <pointsScaleable>true</pointsScaleable> -->
-		<!-- <letterDef>ThreatBig</letterDef> -->
-		<!-- <tale>Raid</tale> -->
-	<!-- </IncidentDef> -->
-  
-	<!-- <IncidentDef ParentName="AnomalyIncidentBase"> -->
-		<!-- <defName>ShamblerAssault</defName> -->
-		<!-- <label>shambler assault</label> -->
-		<!-- <targetTags> -->
-			<!-- <li>Map_PlayerHome</li> -->
-		<!-- </targetTags> -->
-		<!-- <workerClass>IncidentWorker_ShamblerAssault</workerClass> -->
-		<!-- <baseChance>2</baseChance> -->
-		<!-- <minAnomalyThreatLevel>0</minAnomalyThreatLevel> -->
-		<!-- <earliestDay>20</earliestDay> -->
-		<!-- <minRefireDays>10</minRefireDays> -->
-		<!-- <category>ThreatBig</category> -->
-		<!-- <minThreatPoints>250</minThreatPoints> -->
-		<!-- <pointsScaleable>true</pointsScaleable> -->
-		<!-- <tale>Raid</tale> -->
-	<!-- </IncidentDef> -->
-
 	<IncidentDef ParentName="EntityAttackBase" Name="SnowArmyAssault">
-		<defName>AE_IncidentDef_SnowArmyAssault</defName>
+		<defName>AE_IncidentDef_SnowArmyAssaultBasic</defName>
 		<label>snow army assault</label>
 		<workerClass>AnomaliesExpected.IncidentWorker_EntityAssault</workerClass>
 		<baseChance>1.5</baseChance>
 		<minThreatPoints>350</minThreatPoints>
-		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
 		<letterLabel>Snow army attack</letterLabel>
 		<letterText>A swarm of huge gape-mawed monsters are attacking!\n\nThese creatures' jaws are massive enough to swallow a human whole. Keep your distance!</letterText>
 		<letterDef>ThreatBig</letterDef>
+		<tags>
+			<li>AESnowArmy</li>
+		</tags>
+		<refireCheckTags>
+			<li>AESnowArmy</li>
+		</refireCheckTags>
 		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<maxAnomalyThreatLevel>1</maxAnomalyThreatLevel>
+				<entityCodexEntryDefsRequired>
+					<li>AE_EntityCodexEntry_SnowArmy</li>
+				</entityCodexEntryDefsRequired>
+				<factionDef>AE_SnowArmy</factionDef>
+				<pawnsArrivalModeDef>
+					<li>EdgeWalkIn</li>
+				</pawnsArrivalModeDef>
+				<pawnGroupKindDef>
+					<li>AE_BasicMonolith</li>
+				</pawnGroupKindDef>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+
+	<IncidentDef ParentName="SnowArmyAssault">
+		<defName>AE_IncidentDef_SnowArmyAssaultAdvanced</defName>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<tags>
+			<li>AESnowArmy</li>
+		</tags>
+		<refireCheckTags>
+			<li>AESnowArmy</li>
+		</refireCheckTags>
+		<modExtensions Inherit="False">
 			<li Class="AnomaliesExpected.IncidentDefExtension">
 				<entityCodexEntryDefsRequired>
 					<li>AE_EntityCodexEntry_SnowArmy</li>
 				</entityCodexEntryDefsRequired>
 				<factionDef>AE_SnowArmy</factionDef>
-				<pawnsArrivalModeDef>EdgeWalkIn</pawnsArrivalModeDef>
-				<pawnGroupKindDef>Combat</pawnGroupKindDef>
+				<pawnsArrivalModeDef>
+					<li>EdgeWalkIn</li>
+				</pawnsArrivalModeDef>
+				<pawnGroupKindDef>
+					<li>AE_BasicMonolith</li>
+					<li>AE_AdvancedMonolith</li>
+				</pawnGroupKindDef>
 			</li>
 		</modExtensions>
 	</IncidentDef>
-
-	<!-- <IncidentDef ParentName="SnowArmyAssault"> -->
-		<!-- <defName>AE_IncidentDef_SnowArmyAssaultA</defName> -->
-		<!-- <modExtensions Inherit="False"> -->
-			<!-- <li Class="AnomaliesExpected.IncidentDefExtension"> -->
-				<!-- <entityCodexEntryDefsRequired> -->
-					<!-- <li>AE_EntityCodexEntry_SnowArmy</li> -->
-				<!-- </entityCodexEntryDefsRequired> -->
-				<!-- <factionDef>AE_SnowArmy</factionDef> -->
-				<!-- <pawnsArrivalModeDef>EdgeWalkIn</pawnsArrivalModeDef> -->
-				<!-- <pawnGroupKindDef>Fleshbeasts</pawnGroupKindDef> -->
-			<!-- </li> -->
-		<!-- </modExtensions> -->
-	<!-- </IncidentDef> -->
 	
 </Defs>

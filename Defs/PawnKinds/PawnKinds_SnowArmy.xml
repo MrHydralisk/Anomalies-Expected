@@ -7,7 +7,7 @@
 		<meleeAttackInfectionPathways>
 			<li>EntityAttacked</li>
 		</meleeAttackInfectionPathways>
-		<!-- <overrideDeathOnDownedChance>0.8</overrideDeathOnDownedChance> -->
+		<overrideDeathOnDownedChance>0.5</overrideDeathOnDownedChance>
 		<preventIdeo>true</preventIdeo>
 		<aiAvoidCover>true</aiAvoidCover>
 		<destroyGearOnDrop>true</destroyGearOnDrop>
@@ -81,6 +81,7 @@
 		<label>snow spider</label>
 		<race>AE_SnowSpider</race>
 		<combatPower>40</combatPower>
+		<overrideDeathOnDownedChance>0</overrideDeathOnDownedChance>
 		<destroyGearOnDrop>false</destroyGearOnDrop>
 		<lifeStages>
 			<li>
