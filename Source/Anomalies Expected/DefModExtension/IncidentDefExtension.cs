@@ -15,7 +15,7 @@ namespace AnomaliesExpected
         public bool isHaveArrow = true;
         public List<EntityCodexEntryDef> entityCodexEntryDefsRequired = new List<EntityCodexEntryDef>();
         public FactionDef factionDef;
-        public List< PawnsArrivalModeDef> pawnsArrivalModeDef = new List<PawnsArrivalModeDef>();
+        public List<PawnsArrivalModeDef> pawnsArrivalModeDef = new List<PawnsArrivalModeDef>();
         public List<PawnGroupKindDef> pawnGroupKindDef = new List<PawnGroupKindDef>();
         public int maxAnomalyThreatLevel = int.MaxValue;
     }

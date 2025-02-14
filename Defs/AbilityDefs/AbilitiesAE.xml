@@ -295,7 +295,7 @@
 		<label>throw snow block</label>
 		<description>Spit a sticky acid substance from acid cavity in the sternum up through the mouth to strike a distant target. The acid will stick to targets and burn them.</description>
 		<iconPath>Things/Projectile/AE_SnowBlock</iconPath>
-		<cooldownTicksRange>1250~2500</cooldownTicksRange>
+		<cooldownTicksRange>10000~20000</cooldownTicksRange>
 		<displayOrder>1300</displayOrder>
 		<category>AEAnomaliesExpected</category>
 		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>

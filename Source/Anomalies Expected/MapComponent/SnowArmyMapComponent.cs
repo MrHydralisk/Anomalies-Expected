@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
+using System.Linq;
 using Verse;
 
 namespace AnomaliesExpected
@@ -20,6 +21,7 @@ namespace AnomaliesExpected
             }
         }
         private List<Thing> TargetsForSnowBlockCached;
+        public List<Thing> TargetsForSnowBlockAll;
         public Faction snowArmyFaction;
 
         public SnowArmyMapComponent(Map map) : base(map)
@@ -46,12 +48,10 @@ namespace AnomaliesExpected
         }
         public void RefreshTargetsForSnowBlock()
         {
-            Log.Message($"RefreshTargetsForSnowBlock A");
             if (!isReadyToWork())
             {
                 return;
             }
-            Log.Message($"RefreshTargetsForSnowBlock B");
             TargetsForSnowBlockCached = new List<Thing>();
             foreach (Thing thing in map.listerThings.AllThings)
             {
@@ -71,7 +71,7 @@ namespace AnomaliesExpected
                     }
                 }
             }
-            Log.Message($"RefreshTargetsForSnowBlock C");
+            TargetsForSnowBlockAll = TargetsForSnowBlockCached.ToList();
         }
     }
 }

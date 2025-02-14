@@ -1,8 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using Unity.Mathematics;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
@@ -72,8 +70,11 @@ namespace AnomaliesExpected
                     center = new IntVec3(Mathf.RoundToInt(center.x / amount), Mathf.RoundToInt(center.y / amount), Mathf.RoundToInt(center.z / amount));
                     MaxDistance = TargetsSelected.Max((t) => t.Item1.Position.DistanceTo(center));
                 }
-                while (TargetsSelected.Count > 0 && MaxDistance > Props.ProjectileDef.projectile.explosionRadius)
+                bool flag = TargetsSelected.NullOrEmpty() && !snowArmyMapComponent.TargetsForSnowBlockAll.NullOrEmpty();
+                int loopInd = 0;
+                while (TargetsSelected.Count > 0 && MaxDistance > Props.ProjectileDef.projectile.explosionRadius && loopInd < 5000)
                 {
+                    loopInd++;
                     int index = -1;
                     double distanceMax = double.MinValue;
                     for (int i = 0; i < TargetsSelected.Count; i++)
@@ -100,6 +101,20 @@ namespace AnomaliesExpected
                             center = new IntVec3(Mathf.RoundToInt(center.x / amount), Mathf.RoundToInt(center.y / amount), Mathf.RoundToInt(center.z / amount));
                             MaxDistance = TargetsSelected.Max((t) => t.Item1.Position.DistanceTo(center));
                         }
+                    }
+                }
+                if (loopInd >= 5000)
+                {
+                    Log.Warning($"Snow Golem TryCastAbility {loopInd}/5000 tries.");
+                    flag = true;
+                }
+                if (flag)
+                {
+                    //Log.Warning($"Snow Golem TryCastAbility trying to find random target.");
+                    center = snowArmyMapComponent.TargetsForSnowBlockAll?.Where((Thing t) => !(t is Pawn p) || !p.DeadOrDowned)?.RandomElement()?.Position ?? IntVec3.Invalid;
+                    if (center != IntVec3.Invalid)
+                    {
+                        MaxDistance = 0;
                     }
                 }
                 if (MaxDistance <= Props.ProjectileDef.projectile.explosionRadius)

@@ -28,6 +28,7 @@
 		<race>AE_SnowMan</race>
 		<combatPower>60</combatPower>
 		<weaponMoney>9999~9999</weaponMoney>
+		<overrideDeathOnDownedChance>0.8</overrideDeathOnDownedChance>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
