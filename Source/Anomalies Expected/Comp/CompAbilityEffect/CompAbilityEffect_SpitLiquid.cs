@@ -28,6 +28,10 @@ namespace AnomaliesExpected
 
         public override bool AICanTargetNow(LocalTargetInfo target)
         {
+            if (Props.isAICanTargetAlways)
+            {
+                return true;
+            }
             if (Pawn.Faction != null && !target.Cell.InBounds(Pawn.Map) && !parent.verb.TryFindShootLineFromTo(Pawn.Position, target, out var _, ignoreRange: true))
             {
                 List<Thing> thingList = target.Cell.GetThingList(Pawn.Map);

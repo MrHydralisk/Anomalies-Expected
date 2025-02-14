@@ -10,14 +10,12 @@ namespace AnomaliesExpected
             AE_DamageDefExtension damageDefExtension = dinfo.Def.GetModExtension<AE_DamageDefExtension>();
             if (damageDefExtension != null)
             {
-                Log.Message($"!{damageDefExtension.isDealDamageToFriendly} && ({thing.Faction != null} && {dinfo.Instigator.Faction != null} && !{thing.Faction.HostileTo(dinfo.Instigator.Faction)})");
                 if (!damageDefExtension.isDealDamageToFriendly && (thing.Faction != null && dinfo.Instigator.Faction != null && !thing.Faction.HostileTo(dinfo.Instigator.Faction)))
                 {
                     return new DamageResult();
                 }
                 if (thing is Pawn pawn)
                 {
-                    Log.Message($"!{damageDefExtension.isDealDamageToDowned} && {pawn.DeadOrDowned}");
                     if ((!damageDefExtension.isDealDamageToDowned && pawn.DeadOrDowned))
                     {
                         return new DamageResult();

@@ -33,6 +33,9 @@
 		<labelNoun>a snow block compressor</labelNoun>
 		<description>A cancerous mass of semi-sentient flesh. The harsh acid it produces is painful, but strong enough to prevent most food poisoning. It can break down and reabsorb nutrients from its own tissue, allowing it to sustain itself for extended periods without external sustenance.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
 		<defaultInstallPart>AE_SnowBlockCompressor</defaultInstallPart>
+		<abilities>
+			<li>AEThrowSnowBlock</li>
+		</abilities>
 		<addedPartProps>
 			<solid>true</solid>
 			<betterThanNatural>true</betterThanNatural>
@@ -45,6 +48,8 @@
 				<color>(0.31, 0.69, 0.835, 0.25)</color>
 				<fleckDef>AirPuff</fleckDef>
 				<soundDef>Explosion_Stun</soundDef>
+				<ProjectileDef>AE_Bullet_Shell_SnowBlockAbility</ProjectileDef>
+				<ignoreWithHediffDef>AENitrogenFreezing</ignoreWithHediffDef>
 			</li>
 		</comps>
 	</HediffDef>

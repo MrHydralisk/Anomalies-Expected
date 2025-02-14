@@ -113,9 +113,9 @@
 		<label>snow block</label>
 		<description>The Snowball is a simple yet effective projectile weapon. Formed from compacted snow, it can be thrown with surprising force, delivering a chilling impact upon impact. While seemingly harmless, a well-aimed snowball can cause significant frozen through injuries.</description>
 		<graphicData>
-			<texPath>Things/Item/Equipment/WeaponRanged/Gun_AESnowBall</texPath>
-			<graphicClass>Graphic_Random</graphicClass>
-			<drawSize>2</drawSize>
+			<texPath>Things/Item/Equipment/WeaponRanged/Gun_AESnowBlock</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.25</drawSize>
 		</graphicData>
 		<soundInteract>Interact_BeatFire</soundInteract>
 		<!-- <costList> -->
@@ -123,12 +123,12 @@
 		<!-- </costList> -->
 		<statBases>
 			<!-- <WorkToMake>7000</WorkToMake> -->
-			<Mass>0.75</Mass>
-			<AccuracyTouch>0.75</AccuracyTouch>
-			<AccuracyShort>0.50</AccuracyShort>
-			<AccuracyMedium>0.26</AccuracyMedium>
-			<AccuracyLong>0.1</AccuracyLong>
-			<RangedWeapon_Cooldown>16.0</RangedWeapon_Cooldown>
+			<Mass>12</Mass>
+			<AccuracyTouch>0.1</AccuracyTouch>
+			<AccuracyShort>0.25</AccuracyShort>
+			<AccuracyMedium>0.50</AccuracyMedium>
+			<AccuracyLong>0.75</AccuracyLong>
+			<RangedWeapon_Cooldown>6.0</RangedWeapon_Cooldown>
 		</statBases>
 		<weaponTags>
 			<li>Gun_AESnowBlock</li>
@@ -147,42 +147,42 @@
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Gun_AESnowBlock_Thrown</defaultProjectile>
-				<forcedMissRadius>7</forcedMissRadius>
+				<forcedMissRadius>4</forcedMissRadius>
 				<isMortar>true</isMortar>
 				<requireLineOfSight>false</requireLineOfSight>
 				<warmupTime>4.0</warmupTime>
 				<minRange>7</minRange>
-				<range>150</range>
+				<range>50</range>
 				<soundCast>Interact_BeatFire</soundCast>
 				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
 			</li>
 		</verbs>
 	</ThingDef>
   
-	<ThingDef ParentName="BaseProjectileSnowArmy">
+	<ThingDef ParentName="BaseProjectileSnowArmy" Name="BaseProjectileSnowArmySnowBlock">
 		<defName>Gun_AESnowBlock_Thrown</defName>
-		<label>snowball</label>
+		<label>snow block</label>
 		<graphicData>
 			<texPath>Things/Projectile/AE_SnowBlock</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>2.25</drawSize>
+			<drawSize>1.25</drawSize>
 		</graphicData>
 		<thingClass>Projectile_Explosive</thingClass>
 		<projectile>
 			<useGraphicClass>True</useGraphicClass>
-			<shadowSize>2</shadowSize>
+			<shadowSize>1</shadowSize>
 			<damageDef>AENitrogen</damageDef>
-			<damageAmountBase>25</damageAmountBase>
-			<speed>14</speed>
-			<stoppingPower>2.5</stoppingPower>
+			<damageAmountBase>6</damageAmountBase>
+			<speed>16</speed>
+			<stoppingPower>1</stoppingPower>
 			<arcHeightFactor>1</arcHeightFactor>
-			<explosionRadius>5.9</explosionRadius>
+			<explosionRadius>2.5</explosionRadius>
 			<flyOverhead>true</flyOverhead>
 			<soundExplode>SpitterSpitLands</soundExplode>
 			<filth>Filth_AESpentNitrogen</filth>
 			<filthCount>1</filthCount>
 			<explosionEffect>Shell_AESnowBlockImpact</explosionEffect>
-			<explosionEffectLifetimeTicks>60</explosionEffectLifetimeTicks>
+			<explosionEffectLifetimeTicks>15</explosionEffectLifetimeTicks>
 			<doExplosionVFX>false</doExplosionVFX>
 		</projectile>
 		<comps>

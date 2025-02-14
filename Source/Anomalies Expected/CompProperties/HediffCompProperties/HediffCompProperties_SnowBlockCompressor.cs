@@ -11,6 +11,8 @@ namespace AnomaliesExpected
         public Color color = new Color(0.31f, 0.69f, 0.835f, 0.5f);
         public FleckDef fleckDef;
         public SoundDef soundDef;
+        public ThingDef ProjectileDef;
+        public HediffDef ignoreWithHediffDef;
 
         public HediffCompProperties_SnowBlockCompressor()
         {

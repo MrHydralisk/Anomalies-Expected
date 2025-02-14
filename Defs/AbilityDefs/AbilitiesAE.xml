@@ -290,4 +290,58 @@
 		</comps>
 	</AbilityDef>
 
+	<AbilityDef>
+		<defName>AEThrowSnowBlock</defName>
+		<label>throw snow block</label>
+		<description>Spit a sticky acid substance from acid cavity in the sternum up through the mouth to strike a distant target. The acid will stick to targets and burn them.</description>
+		<iconPath>Things/Projectile/AE_SnowBlock</iconPath>
+		<cooldownTicksRange>1250~2500</cooldownTicksRange>
+		<displayOrder>1300</displayOrder>
+		<category>AEAnomaliesExpected</category>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>6</warmupTime>
+			<requireLineOfSight>false</requireLineOfSight>
+			<range>150</range>
+			<soundCast>AcidSpray_Resolve</soundCast>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilitySpitLiquid">
+				<projectileDef>AE_Bullet_Shell_SnowBlockAbility</projectileDef>
+				<isAICanTargetAlways>true</isAICanTargetAlways>
+			</li>
+		</comps>
+	</AbilityDef>
+  
+	<ThingDef ParentName="BaseProjectileSnowArmySnowBlock">
+		<defName>AE_Bullet_Shell_SnowBlockAbility</defName>
+		<label>giant snow block</label>
+		<graphicData>
+			<drawSize>2.25</drawSize>
+		</graphicData>
+		<projectile>
+			<shadowSize>2.25</shadowSize>
+			<damageAmountBase>25</damageAmountBase>
+			<speed>10</speed>
+			<stoppingPower>2.5</stoppingPower>
+			<arcHeightFactor>2</arcHeightFactor>
+			<explosionRadius>5.9</explosionRadius>
+			<filthCount>1</filthCount>
+			<explosionEffectLifetimeTicks>60</explosionEffectLifetimeTicks>
+		</projectile>
+		<comps Inherit="false">
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>Shell_AESnowBlockStream</effecterDef>
+			</li>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>Shell_AESnowBlockLaunched</effecterDef>
+			</li>
+		</comps>
+	</ThingDef>
+
 </Defs>
