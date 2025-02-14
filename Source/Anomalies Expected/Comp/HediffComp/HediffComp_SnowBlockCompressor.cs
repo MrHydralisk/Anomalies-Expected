@@ -41,7 +41,7 @@ namespace AnomaliesExpected
             if (ability?.CanCast ?? false)
             {
                 List<(Thing, int)> TargetsSelected = new List<(Thing, int)>();
-                for(int i = 0; i < snowArmyMapComponent.TargetsForSnowBlock.Count; i++)
+                for (int i = 0; i < snowArmyMapComponent.TargetsForSnowBlock.Count; i++)
                 {
                     Thing thing = snowArmyMapComponent.TargetsForSnowBlock[i];
                     if (!thing.Position.InBounds(Pawn.Map) || Pawn.Position.DistanceTo(thing.Position) > ability.verb.verbProps.range || thing.Position.Roofed(Pawn.Map))
