@@ -30,13 +30,12 @@ namespace AnomaliesExpected
             if (Pawn.IsHashIntervalTick(250))
             {
                 TryExtinguish();
-                TryPushCold();
             }
         }
 
         public void TryCastAbility()
         {
-            if (ability?.CanCast ?? false)
+            if (Pawn.Spawned && (ability?.CanCast ?? false))
             {
                 List<(Thing, int)> TargetsSelected = new List<(Thing, int)>();
                 for (int i = 0; i < snowArmyMapComponent.TargetsForSnowBlock.Count; i++)
@@ -134,19 +133,27 @@ namespace AnomaliesExpected
 
         public void TryExtinguish()
         {
-            if (Find.TickManager.TicksGame < TickNextExtinguish)
+            if (Find.TickManager.TicksGame < TickNextExtinguish || !Pawn.Spawned)
             {
                 return;
             }
             bool succeed = false;
             List<IntVec3> cells = GenRadial.RadialCellsAround(Pawn.Position, Props.radius, true).ToList();
-            List<Thing> things = cells.SelectMany((IntVec3 iv3) => Pawn.Map.thingGrid.ThingsListAtFast(iv3)).ToList();
-            foreach (Thing thing in things)
+            List<IntVec3> cellsAffected = new List<IntVec3>();
+            foreach (IntVec3 cell in cells)
             {
-                if (thing is Fire fire && !fire.DestroyedOrNull())
+                if (cell.InBounds(Pawn.Map) && GenSight.LineOfSight(Pawn.Position, cell, Pawn.Map, skipFirstCell: true))
                 {
-                    fire.Destroy();
-                    succeed = true;
+                    cellsAffected.Add(cell);
+                    List<Thing> things = Pawn.Map.thingGrid.ThingsListAtFast(cell);
+                    for (int i = things.Count - 1; i >= 0; i--)
+                    {
+                        if (things[i] is Fire fire && !fire.DestroyedOrNull())
+                        {
+                            fire.Destroy();
+                            succeed = true;
+                        }
+                    }
                 }
             }
             if (succeed)
@@ -156,18 +163,10 @@ namespace AnomaliesExpected
                 soundInfo.volumeFactor *= 0.2f;
                 soundInfo.pitchFactor *= 0.5f;
                 Props.soundDef.PlayOneShot(soundInfo);
-                foreach (IntVec3 cell in cells)
+                foreach (IntVec3 cell in cellsAffected)
                 {
                     FleckMaker.ThrowExplosionCell(cell, Pawn.Map, Props.fleckDef, Props.color);
                 }
-            }
-        }
-
-        public void TryPushCold()
-        {
-            if (Pawn.Spawned && Pawn.AmbientTemperature > -273f)
-            {
-                GenTemperature.PushHeat(Pawn, Pawn.BodySize * Props.heatPushedPerBodySize);
             }
         }
 

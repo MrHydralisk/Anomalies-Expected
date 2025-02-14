@@ -44,7 +44,6 @@
 			<li Class="AnomaliesExpected.HediffCompProperties_SnowBlockCompressor">
 				<radius>6.9</radius>
 				<ticksBetweenExtinguish>2500</ticksBetweenExtinguish>
-				<heatPushedPerBodySize>-10</heatPushedPerBodySize>
 				<color>(0.31, 0.69, 0.835, 0.25)</color>
 				<fleckDef>AirPuff</fleckDef>
 				<soundDef>Explosion_Stun</soundDef>

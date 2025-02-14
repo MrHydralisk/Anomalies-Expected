@@ -147,7 +147,7 @@
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Gun_AESnowBlock_Thrown</defaultProjectile>
-				<forcedMissRadius>4</forcedMissRadius>
+				<forcedMissRadius>3</forcedMissRadius>
 				<isMortar>true</isMortar>
 				<requireLineOfSight>false</requireLineOfSight>
 				<warmupTime>4.0</warmupTime>
