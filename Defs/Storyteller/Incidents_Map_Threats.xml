@@ -25,12 +25,18 @@
 					<li>AE_EntityCodexEntry_SnowArmy</li>
 				</entityCodexEntryDefsRequired>
 				<factionDef>AE_SnowArmy</factionDef>
-				<pawnsArrivalModeDef>
-					<li>EdgeWalkIn</li>
-				</pawnsArrivalModeDef>
-				<pawnGroupKindDef>
-					<li>AE_BasicMonolith</li>
-				</pawnGroupKindDef>
+				<AssaultSummonPattern>
+					<li>
+						<pawnsArrivalModeDef>
+							<li>EdgeWalkIn</li>
+							<li>EdgeWalkInGroups</li>
+							<li>EdgeWalkInDistributed</li>
+						</pawnsArrivalModeDef>
+						<pawnGroupKindDef>
+							<li>AE_BasicMonolith</li>
+						</pawnGroupKindDef>
+					</li>
+				</AssaultSummonPattern>
 			</li>
 		</modExtensions>
 	</IncidentDef>
@@ -50,13 +56,29 @@
 					<li>AE_EntityCodexEntry_SnowArmy</li>
 				</entityCodexEntryDefsRequired>
 				<factionDef>AE_SnowArmy</factionDef>
-				<pawnsArrivalModeDef>
-					<li>EdgeWalkIn</li>
-				</pawnsArrivalModeDef>
-				<pawnGroupKindDef>
-					<li>AE_BasicMonolith</li>
-					<li>AE_AdvancedMonolith</li>
-				</pawnGroupKindDef>
+				<AssaultSummonPattern>
+					<li>
+						<commonality>270</commonality>
+						<pawnsArrivalModeDef>
+							<li>EdgeWalkIn</li>
+						</pawnsArrivalModeDef>
+						<pawnGroupKindDef>
+							<li>AE_AdvancedMonolith</li>
+						</pawnGroupKindDef>
+					</li>
+					<li>
+						<commonality>140</commonality>
+						<pawnsArrivalModeDef>
+							<li>EdgeWalkIn</li>
+							<li>EdgeWalkInGroups</li>
+							<li>EdgeWalkInDistributed</li>
+						</pawnsArrivalModeDef>
+						<pawnGroupKindDef>
+							<li>AE_BasicMonolith</li>
+							<li>AE_AdvancedMonolithRush</li>
+						</pawnGroupKindDef>
+					</li>
+				</AssaultSummonPattern>
 			</li>
 		</modExtensions>
 	</IncidentDef>

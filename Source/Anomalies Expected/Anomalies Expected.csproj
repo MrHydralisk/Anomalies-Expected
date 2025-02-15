@@ -73,6 +73,7 @@
     <Compile Include="GenStep\GenStep_ChristmasTreeFindExit.cs" />
     <Compile Include="PsychicRitual\PsychicRitualDef_AESummonSnowArmy.cs" />
     <Compile Include="PsychicRitual\PsychicRitualToil_AESummonSnowArmy.cs" />
+    <Compile Include="Structures\AssaultSummonPattern.cs" />
     <Compile Include="Structures\Enum\BeamTargetState.cs" />
     <Compile Include="Structures\AEEntityEntry.cs" />
     <Compile Include="Thing\ThingWithComps_AE.cs" />

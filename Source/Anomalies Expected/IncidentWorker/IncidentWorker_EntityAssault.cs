@@ -29,10 +29,11 @@ namespace AnomaliesExpected
 
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
+            AssaultSummonPattern assaultSummonPattern = Ext.AssaultSummonPattern.RandomElementByWeight((AssaultSummonPattern asp) => asp.commonality);
             Faction faction = Find.FactionManager.FirstFactionOfDef(Ext.factionDef) ?? Faction.OfEntities;
             parms.faction = faction;
-            parms.raidArrivalMode = Ext.pawnsArrivalModeDef.RandomElement();
-            PawnGroupKindDef pawnGroupKindDef = Ext.pawnGroupKindDef.RandomElement();
+            parms.raidArrivalMode = assaultSummonPattern.pawnsArrivalModeDef.RandomElement();
+            PawnGroupKindDef pawnGroupKindDef = assaultSummonPattern.pawnGroupKindDef.RandomElement();
             PawnGroupMakerParms defaultPawnGroupMakerParms = IncidentParmsUtility.GetDefaultPawnGroupMakerParms(pawnGroupKindDef, parms);
             float num = Ext.factionDef.MinPointsToGeneratePawnGroup(pawnGroupKindDef);
             if (parms.points < num)
