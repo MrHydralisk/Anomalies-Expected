@@ -1,4 +1,6 @@
 ﻿using RimWorld;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 
@@ -9,7 +11,7 @@ namespace AnomaliesExpected
         private float tempOffset;
         public float MaxTempOffset = -100;
 
-        public const int exitTicks = 30000;
+        public const int exitTicks = 10000;
 
         private SnowArmyMapComponent snowArmyMapComponent => snowArmyMmapComponentCached ?? (snowArmyMmapComponentCached = SingleMap?.GetComponent<SnowArmyMapComponent>() ?? null);
         private SnowArmyMapComponent snowArmyMmapComponentCached;
@@ -18,7 +20,20 @@ namespace AnomaliesExpected
         {
             get
             {
-                return snowArmyMapComponent.TempOffset - 10;
+                return snowArmyMapComponent.TempOffset;
+            }
+        }
+        public override string Description
+        {
+            get
+            {
+                List<string> inspectStrings = new List<string>();
+                inspectStrings.Add(base.Description);
+                if (Prefs.DevMode && AEMod.Settings.DevModeInfo)
+                {
+                    inspectStrings.Add($"tempOffset ({tempOffset})\nTargetTempOffset ({TargetTempOffset})");
+                }
+                return String.Join("\n", inspectStrings);
             }
         }
 
@@ -26,7 +41,7 @@ namespace AnomaliesExpected
         {
             if (!base.Permanent)
             {
-                return Mathf.Lerp(0f, Mathf.Max(tempOffset, MaxTempOffset), Mathf.Min(1f, (float)base.TicksLeft / (float)TransitionTicks));
+                return Mathf.Lerp(0f, Mathf.Max(tempOffset - 10, MaxTempOffset), Mathf.Min(1f, (float)base.TicksLeft / (float)TransitionTicks));
             }
             return tempOffset;
         }
@@ -56,7 +71,7 @@ namespace AnomaliesExpected
             }
             if (Mathf.Abs(TargetTempOffset) < 1)
             {
-                if (base.Permanent)
+                if (Mathf.Abs(tempOffset) < 1 && base.Permanent)
                 {
                     base.Permanent = false;
                     Duration = (Find.TickManager.TicksGame - startTick) + exitTicks;
