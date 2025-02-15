@@ -73,10 +73,15 @@ namespace AnomaliesExpected
                                 }
                             }
                         }
+
+                    }
+                    if (targetsWEffectCount >= Props.minTargetsWEffect && targetsCount >= Props.minTargets)
+                    {
+                        return true;
                     }
                 }
             }
-            return targetsWEffectCount >= Props.minTargetsWEffect && targetsCount >= Props.minTargets;
+            return false;
         }
     }
 }
