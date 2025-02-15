@@ -9,10 +9,15 @@ namespace AnomaliesExpected
         public new CompProperties_AbilitySpitLiquid Props => (CompProperties_AbilitySpitLiquid)props;
 
         private Pawn Pawn => parent.pawn;
+        public override bool CanCast => base.CanCast && !(Pawn.Position.GetRoof(Pawn.Map)?.isThickRoof ?? false);
 
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
-
+            RoofDef roofDef = Pawn.Position.GetRoof(Pawn.Map);
+            if (!(Pawn.Position.GetRoof(Pawn.Map)?.isThickRoof ?? true))
+            {
+                RoofCollapserImmediate.DropRoofInCells(Pawn.Position, Pawn.Map);
+            }
             ((Projectile)GenSpawn.Spawn(Props.projectileDef, Pawn.Position, Pawn.Map)).Launch(Pawn, Pawn.DrawPos, target, target, ProjectileHitFlags.IntendedTarget);
             if (Props.sprayEffecter != null)
             {

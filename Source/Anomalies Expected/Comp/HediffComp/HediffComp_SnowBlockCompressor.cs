@@ -71,7 +71,7 @@ namespace AnomaliesExpected
                 }
                 bool flag = TargetsSelected.NullOrEmpty() && !snowArmyMapComponent.TargetsForSnowBlockAll.NullOrEmpty();
                 int loopInd = 0;
-                while (TargetsSelected.Count > 0 && MaxDistance > Props.ProjectileDef.projectile.explosionRadius && loopInd < 5000)
+                while (TargetsSelected.Count > 0 && (MaxDistance > Props.ProjectileDef.projectile.explosionRadius || (center.GetRoof(Pawn.Map)?.isThickRoof ?? false)) && loopInd < 5000)
                 {
                     loopInd++;
                     int index = -1;
@@ -110,7 +110,7 @@ namespace AnomaliesExpected
                 if (flag)
                 {
                     //Log.Warning($"Snow Golem TryCastAbility trying to find random target.");
-                    center = snowArmyMapComponent.TargetsForSnowBlockAll?.Where((Thing t) => !(t is Pawn p) || !p.DeadOrDowned)?.RandomElement()?.Position ?? IntVec3.Invalid;
+                    center = snowArmyMapComponent.TargetsForSnowBlockAll?.Where((Thing t) => (!(t is Pawn p) || !p.DeadOrDowned) && !(t.Position.GetRoof(Pawn.Map)?.isThickRoof ?? false))?.RandomElement()?.Position ?? IntVec3.Invalid;
                     if (center != IntVec3.Invalid)
                     {
                         MaxDistance = 0;
