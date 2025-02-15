@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<AnomaliesExpected.SnowArmy.Ritual.AlreadyExists>Снежная армия уже находится неподалёку.</AnomaliesExpected.SnowArmy.Ritual.AlreadyExists>
+	<AnomaliesExpected.SnowArmy.Ritual.OutputDesc>Множитель размера снежной армии: {0}.</AnomaliesExpected.SnowArmy.Ritual.OutputDesc>
+</LanguageData>
