@@ -26,7 +26,6 @@
 		<description>Temperature is rapidly shifting.</description>
 		<letterText>Temperature is rapidly shifting.</letterText>
 		<letterDef>NegativeEvent</letterDef>
-		<canBePermanent>false</canBePermanent>
 		<natural>false</natural>
 	</GameConditionDef>
 

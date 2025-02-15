@@ -49,7 +49,15 @@ namespace AnomaliesExpected
             {
                 AnomalyIncidentUtility.PawnShardOnDeath(list.RandomElement());
             }
-            LordMaker.MakeNewLord(faction, new LordJob_AssaultColony(), parms.target as Map, list);
+            Map map = parms.target as Map;
+            LordMaker.MakeNewLord(faction, new LordJob_AssaultColony(), map, list);
+
+            if (def.gameCondition != null && map.gameConditionManager.GetActiveCondition(def.gameCondition) == null)
+            {
+                GameCondition gameCondition = GameConditionMaker.MakeCondition(def.gameCondition);
+                map.GameConditionManager.RegisterCondition(gameCondition);
+                gameCondition.Permanent = true;
+            }
             SendStandardLetter(def.letterLabel, def.letterText, def.letterDef, parms, list);
             return true;
         }

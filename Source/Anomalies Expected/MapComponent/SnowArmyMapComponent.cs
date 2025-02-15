@@ -22,10 +22,35 @@ namespace AnomaliesExpected
         }
         private List<Thing> TargetsForSnowBlockCached;
         public List<Thing> TargetsForSnowBlockAll;
+        public int refreshTempOffsetTick;
+        public float TempOffset
+        {
+            get
+            {
+                if (Find.TickManager.TicksGame >= refreshTempOffsetTick + 2500)
+                {
+                    TempOffsetCached = 0;
+                    foreach (Pawn pawn in map.mapPawns.PawnsInFaction(snowArmyFaction))
+                    {
+                        if (pawn.Spawned && !pawn.DeadOrDowned)
+                        {
+                            TempOffsetCached -= pawn.BodySize;
+                        }
+                    }
+                    refreshTempOffsetTick = Find.TickManager.TicksGame;
+                }
+                return TempOffsetCached;
+            }
+        }
+        private float TempOffsetCached;
         public Faction snowArmyFaction;
 
         public SnowArmyMapComponent(Map map) : base(map)
         {
+            if (snowArmyFaction == null)
+            {
+                snowArmyFaction = Find.FactionManager.FirstFactionOfDef(FactionDefOfLocal.AE_SnowArmy);
+            }
         }
 
         public bool isReadyToWork()
@@ -40,11 +65,6 @@ namespace AnomaliesExpected
         public override void MapComponentTick()
         {
             base.MapComponentTick();
-            //if (Find.TickManager.TicksGame >= refreshTargetsForSnowBlockTick)
-            //{
-            //    RefreshTargetsForSnowBlock();
-            //    refreshTargetsForSnowBlockTick = Find.TickManager.TicksGame + 30000;
-            //}
         }
         public void RefreshTargetsForSnowBlock()
         {
