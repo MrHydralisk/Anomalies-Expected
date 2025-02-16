@@ -23,8 +23,10 @@ namespace AnomaliesExpected
 
         public ThingWithComps parentThing;
         public CompAEStudyUnlocks compAEStudyUnlocksParent => compAEStudyUnlocksParentCached ?? (compAEStudyUnlocksParentCached = parentThing.GetComp<CompAEStudyUnlocks>());
-        public CompAEStudyUnlocks compAEStudyUnlocksParentCached;
+        private CompAEStudyUnlocks compAEStudyUnlocksParentCached;
         public bool isHaveParentAnomaly => parentThing != null;
+        public AEEntityEntry entityEntry => entityEntryCached ?? (entityEntryCached = GameComponent_AnomaliesExpected.instance.GetEntityEntryFromThingDef(parent.def));
+        private AEEntityEntry entityEntryCached;
 
         public int NextIndex => nextIndex;
         public float CurrThreshold;
@@ -32,26 +34,6 @@ namespace AnomaliesExpected
         public int lastNotificationTick;
 
         public int NextPawnSNIndex;
-
-        public List<Thing> SpawnedRelatedAnalyzableThing
-        {
-            get
-            {
-                if (spawnedRelatedAnalyzableThing == null)
-                {
-                    spawnedRelatedAnalyzableThing = new List<Thing>();
-                }
-                for (int i = spawnedRelatedAnalyzableThing.Count() - 1; i >= 0; i--)
-                {
-                    if (spawnedRelatedAnalyzableThing[i] == null)
-                    {
-                        spawnedRelatedAnalyzableThing.RemoveAt(i);
-                    }
-                }
-                return spawnedRelatedAnalyzableThing;
-            }
-        }
-        private List<Thing> spawnedRelatedAnalyzableThing = new List<Thing>();
 
         public override string TransformLabel(string label)
         {
@@ -83,7 +65,6 @@ namespace AnomaliesExpected
         {
             base.PostPostMake();
             LoadStudyNotes();
-            AEEntityEntry entityEntry = GameComponent_AnomaliesExpected.instance.GetEntityEntryFromThingDef(parent.def);
             if (entityEntry != null && entityEntry.letters.Count() > 0)
             {
                 for (int i = 0; i < StudyNotesAll.Count(); i++)
@@ -201,7 +182,6 @@ namespace AnomaliesExpected
         {
             if (NextPawnSNIndex <= i)
             {
-                AEEntityEntry entityEntry = GameComponent_AnomaliesExpected.instance.GetEntityEntryFromThingDef(parent.def);
                 if (entityEntry != null)
                 {
                     int timesStudied = entityEntry.IncreasePawnStudy(i);
@@ -287,27 +267,9 @@ namespace AnomaliesExpected
                     {
                         currentAnomalyDescPart = aestudyNote.AnomalyDescPart;
                     }
-                    if (aestudyNote.ThingDefSpawn != null && !SpawnedRelatedAnalyzableThing.Any((Thing t) => t.def == aestudyNote.ThingDefSpawn))
+                    if (aestudyNote.ThingDefSpawn != null && !(entityEntry?.SpawnedRelatedAnalyzableThingDef.Any((ThingDef td) => td == aestudyNote.ThingDefSpawn) ?? true))
                     {
-                        //CompProperties_CompAnalyzableUnlockResearch comp = aestudyNote.ThingDefSpawn.GetCompProperties<CompProperties_CompAnalyzableUnlockResearch>();
-                        //int analysisID = comp?.analysisID ?? (-1);
-                        //Find.AnalysisManager.TryGetAnalysisProgress(analysisID, out var details);
-                        //if (!(details?.Satisfied ?? false) && parent.Map.listerThings.ThingsOfDef(aestudyNote.ThingDefSpawn).NullOrEmpty())
-                        //{
-                        Thing monolith = Find.Anomaly.monolith;
-                        if (monolith == null || monolith.Map == null)
-                        {
-                            monolith = parent;
-                        }
-                        ThingWithComps thing = ThingMaker.MakeThing(aestudyNote.ThingDefSpawn) as ThingWithComps;
-                        SpawnedRelatedAnalyzableThing.Add(thing);
-                        GenPlace.TryPlaceThing(thing, monolith.Position, monolith.Map, ThingPlaceMode.Near);
-                        CompAnalyzableUnlockResearch compAnalyzable;
-                        if ((compAnalyzable = thing.GetComp<CompAnalyzableUnlockResearch>()) == null || compAnalyzable.ResearchUnlocked.Any(r => !r.AnalyzedThingsRequirementsMet))
-                        {
-                            Find.LetterStack.ReceiveLetter("AnomaliesExpected.Misc.ResearchNote.Letter.Label".Translate(thing.LabelShortCap).RawText, "AnomaliesExpected.Misc.ResearchNote.Letter.Desc".Translate(parent.LabelCap, thing.LabelCap), LetterDefOf.PositiveEvent, thing);
-                        }
-                        //}
+                        entityEntry.SpawnThing(aestudyNote.ThingDefSpawn, parent);
                     }
                 }
                 CurrThreshold = studyNote.threshold;
@@ -319,7 +281,6 @@ namespace AnomaliesExpected
             base.PostExposeData();
             Scribe_Values.Look(ref NextPawnSNIndex, "NextPawnSNIndex", 0);
             Scribe_References.Look(ref parentThing, "parentThing");
-            Scribe_Collections.Look(ref spawnedRelatedAnalyzableThing, "spawnedRelatedAnalyzableThing", LookMode.Deep);
         }
     }
 }

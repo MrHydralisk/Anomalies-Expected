@@ -30,6 +30,7 @@ namespace AnomaliesExpected
         private const float EntrySize = 128f;
 
         private const float EntryGap = 8f;
+        private List<Thing> RelatedAnalyzableThingsCached = new List<Thing>();
 
         public override Vector2 InitialSize => new Vector2(UI.screenWidth * 0.9f, UI.screenHeight * 0.9f);
 
@@ -344,6 +345,7 @@ namespace AnomaliesExpected
                 using (new TextBlock(newWordWrap: true))
                 {
                     int amountStudied = selectedEntry.CurrPawnAmountStudied.LastOrDefault();
+                    Log.Message($"AmountStudied {amountStudied}:\n{string.Join("\n", selectedEntry.CurrPawnAmountStudied)}");
                     if (amountStudied > 0)
                     {
                         string text = "AnomaliesExpected.EntityDataBase.AmountStudied".Translate(amountStudied);
@@ -428,6 +430,60 @@ namespace AnomaliesExpected
                             num += rect2.height;
                         }
                     }
+                    int SpawnedRelatedAnalyzableThingDefCount = selectedEntry.SpawnedRelatedAnalyzableThingDef.Count;
+                    if (SpawnedRelatedAnalyzableThingDefCount > 0)
+                    {
+                        float ThingSize = 64;
+                        float ThingGap = 4;
+                        GUI.color = Color.white;
+                        Widgets.Label(new Rect(0, num, viewRect.width, Text.LineHeight), "AnomaliesExpected.EntityDataBase.AnalyzableThings".Translate());
+                        num += Text.LineHeight + 4f;
+                        int MaxEntriesPerRow = Mathf.FloorToInt((viewRect.width - ThingGap) / (ThingSize + ThingGap));
+                        int RowsAmount = Mathf.CeilToInt((float)SpawnedRelatedAnalyzableThingDefCount / MaxEntriesPerRow);
+                        for (int i = 0; i < SpawnedRelatedAnalyzableThingDefCount; i++)
+                        {
+                            ThingDef thingDef = selectedEntry.SpawnedRelatedAnalyzableThingDef[i];
+                            int num5 = i / MaxEntriesPerRow;
+                            int num6 = i % MaxEntriesPerRow;
+                            int num7 = ((i >= SpawnedRelatedAnalyzableThingDefCount - SpawnedRelatedAnalyzableThingDefCount % MaxEntriesPerRow) ? (SpawnedRelatedAnalyzableThingDefCount % MaxEntriesPerRow) : MaxEntriesPerRow);
+                            float num8 = (viewRect.width - (float)num7 * ThingSize - (float)(num7 - 1) * ThingGap) / 2f;
+                            Rect rect2 = new Rect(num8 + (float)num6 * ThingSize + (float)num6 * ThingGap, num + (float)num5 * ThingSize + (float)num5 * ThingGap, ThingSize, ThingSize);
+                            Rect rect4 = new Rect(rect2.x + rect2.width - 18, rect2.y - 1, 16, 16);
+                            Widgets.DrawBoxSolid(rect2, new Color(0f, 0f, 0f, 0.3f));
+                            GUI.DrawTexture(rect2.ContractedBy(2f), thingDef.uiIcon);
+                            int analysisID = thingDef.GetCompProperties<CompProperties_CompAnalyzableUnlockResearch>()?.analysisID ?? (-1);
+                            if (analysisID != -1)
+                            {
+                                Thing thingExist;
+                                if (Find.AnalysisManager.TryGetAnalysisProgress(analysisID, out var details) && details.Satisfied)
+                                {
+                                    GUI.DrawTexture(rect4, Widgets.CheckboxOnTex);
+                                    TooltipHandler.TipRegionByKey(rect2, "AnomaliesExpected.EntityDataBase.ResearchNote.Studied.Tip", thingDef.LabelCap);
+                                }
+                                else if ((thingExist = RelatedAnalyzableThingsCached.FirstOrDefault((Thing t) => t.def == thingDef)) != null)
+                                {
+                                    GUI.DrawTexture(rect4, Widgets.CheckboxPartialTex);
+                                    TooltipHandler.TipRegionByKey(rect2, "AnomaliesExpected.EntityDataBase.ResearchNote.Exist.Tip", thingDef.LabelCap);
+                                    if (Widgets.ButtonInvisible(rect2))
+                                    {
+                                        CameraJumper.TryJumpAndSelect(thingExist);
+                                        Close();
+                                    }
+                                }
+                                else
+                                {
+                                    GUI.DrawTexture(rect4, Widgets.CheckboxOffTex);
+                                    TooltipHandler.TipRegionByKey(rect2, "AnomaliesExpected.EntityDataBase.ResearchNote.Missing.Tip", thingDef.LabelCap);
+                                    if (Widgets.ButtonInvisible(rect2))
+                                    {
+                                        selectedEntry.SpawnThing(thingDef);
+                                        UpdateRelatedAnalyzableThing();
+                                    }
+                                }
+                            }
+                        }
+                        num += ThingGap + (float)RowsAmount * ThingSize + (float)(RowsAmount - 1) * ThingGap;
+                    }
                 }
                 if (Prefs.DevMode && AEMod.Settings.DevModeInfo)
                 {
@@ -456,6 +512,21 @@ namespace AnomaliesExpected
                 isShowRecord = false;
             }
             Widgets.EndScrollView();
+        }
+
+        private void UpdateRelatedAnalyzableThing()
+        {
+            RelatedAnalyzableThingsCached = new List<Thing>();
+            foreach (Map map in Find.Maps)
+            {
+                foreach (Thing thing in map.listerThings.AllThings)
+                {
+                    if (selectedEntry.SpawnedRelatedAnalyzableThingDef.Any((ThingDef td) => td == thing.def))
+                    {
+                        RelatedAnalyzableThingsCached.Add(thing);
+                    }
+                }
+            }
         }
 
         private void AllEntities(Rect rect)
@@ -559,6 +630,7 @@ namespace AnomaliesExpected
             isShowRecord = true;
             lettersOpened = new bool[selectedEntry.letters.Count()];
             SoundDefOf.Tick_High.PlayOneShotOnCamera();
+            UpdateRelatedAnalyzableThing();
         }
     }
 }

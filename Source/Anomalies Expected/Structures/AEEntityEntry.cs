@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
+using System.Linq;
 using Verse;
 
 namespace AnomaliesExpected
@@ -23,6 +24,26 @@ namespace AnomaliesExpected
         public List<int> CurrPawnAmountStudied = new List<int>();
 
         public List<ChoiceLetter> letters = new List<ChoiceLetter>();
+
+        public List<ThingDef> SpawnedRelatedAnalyzableThingDef
+        {
+            get
+            {
+                if (spawnedRelatedAnalyzableThingDef == null)
+                {
+                    spawnedRelatedAnalyzableThingDef = new List<ThingDef>();
+                }
+                for (int i = spawnedRelatedAnalyzableThingDef.Count() - 1; i >= 0; i--)
+                {
+                    if (spawnedRelatedAnalyzableThingDef[i] == null)
+                    {
+                        spawnedRelatedAnalyzableThingDef.RemoveAt(i);
+                    }
+                }
+                return spawnedRelatedAnalyzableThingDef;
+            }
+        }
+        private List<ThingDef> spawnedRelatedAnalyzableThingDef = new List<ThingDef>();
 
         public int IncreasePawnStudy(int index)
         {
@@ -52,6 +73,45 @@ namespace AnomaliesExpected
             }
         }
 
+        public void SpawnThing(ThingDef thingDef, Thing parent = null)
+        {
+            IntVec3 pos;
+            Map map;
+            Thing monolith = Find.Anomaly.monolith;
+            Log.Message($"{monolith != null} && {monolith.Spawned}");
+            if (monolith != null && monolith.Spawned)
+            {
+                pos = monolith.Position;
+                map = monolith.Map;
+            }
+            else if (parent?.Spawned ?? false)
+            {
+                pos = parent.Position;
+                map = parent.Map;
+            }
+            else if (parent?.SpawnedOrAnyParentSpawned ?? false)
+            {
+                pos = parent.PositionHeld;
+                map = parent.MapHeld;
+            }
+            else
+            {
+                map = Find.AnyPlayerHomeMap;
+                CellFinder.TryFindRandomCell(map, (IntVec3 c) => DropCellFinder.IsGoodDropSpot(c, map, false, false), out pos);
+            }
+            ThingWithComps thing = ThingMaker.MakeThing(thingDef) as ThingWithComps;
+            GenPlace.TryPlaceThing(thing, pos, map, ThingPlaceMode.Near);
+            CompAnalyzableUnlockResearch compAnalyzable;
+            if ((compAnalyzable = thing.GetComp<CompAnalyzableUnlockResearch>()) == null || compAnalyzable.ResearchUnlocked.Any(r => !r.AnalyzedThingsRequirementsMet))
+            {
+                Find.LetterStack.ReceiveLetter("AnomaliesExpected.Misc.ResearchNote.Letter.Label".Translate(thing.LabelShortCap).RawText, "AnomaliesExpected.Misc.ResearchNote.Letter.Desc".Translate(AnomalyLabel, thing.LabelCap), LetterDefOf.PositiveEvent, thing);
+            }
+            if (!SpawnedRelatedAnalyzableThingDef.Any((ThingDef td) => td == thingDef))
+            {
+                SpawnedRelatedAnalyzableThingDef.Add(thing.def);
+            }
+        }
+
         public override string ToString()
         {
             return $"{ThingDef?.defName ?? "-"}|{EntityCodexEntryDef?.defName ?? "-"}";
@@ -67,6 +127,7 @@ namespace AnomaliesExpected
             Scribe_Defs.Look(ref ThingDef, "ThingDef");
             Scribe_Collections.Look(ref letters, "letters", LookMode.Deep);
             Scribe_Collections.Look(ref CurrPawnAmountStudied, "CurrPawnAmountStudied", LookMode.Value);
+            Scribe_Collections.Look(ref spawnedRelatedAnalyzableThingDef, "spawnedRelatedAnalyzableThingDef");
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 if (letters == null)

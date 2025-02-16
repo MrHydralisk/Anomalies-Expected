@@ -5,6 +5,10 @@
 	<AnomaliesExpected.EntityDataBase.Desc>This page lists all known entities which are related to the dark void. You can review all unlocked study notes. Discover new entities using the “void provocation” psychic ritual.</AnomaliesExpected.EntityDataBase.Desc>
 	<AnomaliesExpected.EntityDataBase.Tip>View all discovered entities and their study notes.</AnomaliesExpected.EntityDataBase.Tip>
 	<AnomaliesExpected.EntityDataBase.AmountStudied>Amount studied: {0}</AnomaliesExpected.EntityDataBase.AmountStudied>
+	<AnomaliesExpected.EntityDataBase.AnalyzableThings>Unlocked research notes:</AnomaliesExpected.EntityDataBase.AnalyzableThings>
+	<AnomaliesExpected.EntityDataBase.ResearchNote.Missing.Tip>{0} was lost.\n[Click to create a copy of it.]</AnomaliesExpected.EntityDataBase.ResearchNote.Missing.Tip>
+	<AnomaliesExpected.EntityDataBase.ResearchNote.Exist.Tip>{0} already exist on a map.\n[Cleck to select it.]</AnomaliesExpected.EntityDataBase.ResearchNote.Exist.Tip>
+	<AnomaliesExpected.EntityDataBase.ResearchNote.Studied.Tip>{0} is fully studied.</AnomaliesExpected.EntityDataBase.ResearchNote.Studied.Tip>
 	<AnomaliesExpected.EntityDataBase.View>View entity database</AnomaliesExpected.EntityDataBase.View>
 	
 	<AnomaliesExpected.EntityDataBase.ThreatClass>{0}: Class {1}</AnomaliesExpected.EntityDataBase.ThreatClass>
