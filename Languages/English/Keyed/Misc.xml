@@ -4,4 +4,6 @@
 	
 	<AnomaliesExpected.Misc.ResearchNote.Letter.Label>{0} available for study</AnomaliesExpected.Misc.ResearchNote.Letter.Label>
 	<AnomaliesExpected.Misc.ResearchNote.Letter.Desc>After examining the {0}, the {1} is now accessible. Your researchers can now use research benches to begin researching how to utilize the technology.</AnomaliesExpected.Misc.ResearchNote.Letter.Desc>
+	<AnomaliesExpected.Misc.ResearchNote.HiddenTip.0>To unlock this you need research notes. Requires study of:\n</AnomaliesExpected.Misc.ResearchNote.HiddenTip.0>
+	<AnomaliesExpected.Misc.ResearchNote.HiddenTip.1>\nTo acquire them, study related anomalies and obtain new study reports.</AnomaliesExpected.Misc.ResearchNote.HiddenTip.1>
 </LanguageData>

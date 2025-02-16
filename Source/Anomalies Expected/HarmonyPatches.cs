@@ -3,6 +3,7 @@ using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using UnityEngine;
 using Verse;
 
@@ -29,6 +30,7 @@ namespace AnomaliesExpected
             }
 
             val.Patch(AccessTools.Property(typeof(ResearchProjectDef), "IsHidden").GetGetMethod(), prefix: new HarmonyMethod(patchType, "RPD_IsHidden_Prefix"));
+            val.Patch(AccessTools.Method(typeof(MainTabWindow_Research), "ListProjects"), transpiler: new HarmonyMethod(patchType, "MTWR_ListProjects_Transpiler"));
             val.Patch(AccessTools.Property(typeof(RaceProperties), "IsAnomalyEntity").GetGetMethod(), postfix: new HarmonyMethod(patchType, "RP_IsAnomalyEntity_Postfix"));
             val.Patch(AccessTools.Method(typeof(BackCompatibility), "FactionManagerPostLoadInit"), postfix: new HarmonyMethod(patchType, "BC_FactionManagerPostLoadInit_Postfix"));
 
@@ -55,6 +57,66 @@ namespace AnomaliesExpected
                 return false;
             }
             return true;
+        }
+
+        public static IEnumerable<CodeInstruction> MTWR_ListProjects_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator il)
+        {
+            List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+            for (int i = 0; i < codes.Count - 3; i++)
+            {
+                if (codes[i].Calls(AccessTools.Property(typeof(ResearchProjectDef), "IsHidden").GetGetMethod()) && codes[i + 3].opcode == OpCodes.Ldloc_S && codes[i + 3].operand.ToString().Contains("UnityEngine.Rect (15)"))
+                {
+                    List<CodeInstruction> instructionsToInsert = new List<CodeInstruction>();
+                    Label labelElse = il.DefineLabel();
+                    Label labelDone = (Label)codes[i + 1].operand;
+                    codes[i + 1].operand = labelElse;
+                    CodeInstruction ci = new CodeInstruction(OpCodes.Ldarg_0);
+                    ci.labels.Add(labelElse);
+                    instructionsToInsert.Add(ci);
+                    instructionsToInsert.Add(new CodeInstruction(OpCodes.Ldloc_S, 10));
+                    instructionsToInsert.Add(codes[i - 1]);
+                    instructionsToInsert.Add(new CodeInstruction(OpCodes.Ldloc_S, 12));
+                    instructionsToInsert.Add(new CodeInstruction(OpCodes.Ldloc_S, 15));
+                    instructionsToInsert.Add(new CodeInstruction(OpCodes.Ldloc_S, 25));
+                    instructionsToInsert.Add(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(HarmonyPatches), "ResearchDrawBottomRow")));
+                    instructionsToInsert.Add(new CodeInstruction(OpCodes.Br, labelDone));
+                    codes.InsertRange(i + 2, instructionsToInsert);
+                    break;
+                }
+            }
+            return codes.AsEnumerable();
+        }
+
+        public static void ResearchDrawBottomRow(MainTabWindow_Research mainTab, ResearchProjectDef researchProjectDef, Rect rectProj, Rect rectRow, Color studiedColor)
+        {
+            if (researchProjectDef.knowledgeCategory != null && researchProjectDef.RequiredAnalyzedThingCount > 0)
+            {
+                Color color = GUI.color;
+                string text = AccessTools.Method(typeof(MainTabWindow_Research), "GetTechprintsInfoCached").Invoke(mainTab, new object[] { researchProjectDef.AnalyzedThingsCompleted, researchProjectDef.RequiredAnalyzedThingCount }) as string;
+                Vector2 vector2 = Text.CalcSize(text);
+                Rect rect1 = rectRow;
+                rect1.xMin = rectRow.xMax - vector2.x - 10f;
+                Rect rect2 = rectRow;
+                rect2.width = rect2.height;
+                rect2.x = rect1.x - rect2.width;
+                GUI.color = studiedColor;
+                Widgets.Label(rect1, text);
+                GUI.color = Color.white;
+                GUI.DrawTexture(rect2.ContractedBy(4f), (AccessTools.Field(typeof(MainTabWindow_Research), "StudyRequirementTex").GetValue(mainTab) as CachedTexture).Texture);
+                GUI.color = color;
+                if (Mouse.IsOver(rectProj) && !((bool)AccessTools.Field(typeof(MainTabWindow_Research), "editMode").GetValue(mainTab)))
+                {
+                    Widgets.DrawLightHighlight(rectProj);
+                    List<string> inspectStrings = new List<string>();
+                    inspectStrings.Add("AnomaliesExpected.Misc.ResearchNote.HiddenTip.0".Translate());
+                    foreach (ThingDef thingDef in researchProjectDef.requiredAnalyzed)
+                    {
+                        inspectStrings.Add("- " + thingDef.LabelCap);
+                    }
+                    inspectStrings.Add("AnomaliesExpected.Misc.ResearchNote.HiddenTip.1".Translate());
+                    TooltipHandler.TipRegion(rectProj, () => String.Join("\n", inspectStrings), researchProjectDef.GetHashCode() ^ 0x1664F);
+                }
+            }
         }
 
         public static void RP_IsAnomalyEntity_Postfix(ref bool __result, RaceProperties __instance)
