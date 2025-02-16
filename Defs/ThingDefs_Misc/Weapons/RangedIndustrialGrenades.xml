@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="BaseMakeableGrenade">
+		<defName>Weapon_AEGrenadeNitrogen</defName>
+		<label>nitrogen grenades</label>
+		<description>Old-school fragmentation grenades. They can be thrown a short distance, where they'll explode, damaging anything and anyone nearby.</description>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/Grenades</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<color>(0.31, 0.69, 0.835)</color>
+		</graphicData>
+		<uiIconScale>1.3</uiIconScale>
+		<soundInteract>Interact_Grenade</soundInteract>
+		<techLevel>Industrial</techLevel>
+		<statBases>
+			<Mass>1</Mass>
+			<RangedWeapon_Cooldown>2.66</RangedWeapon_Cooldown>
+			<WorkToMake>12000</WorkToMake>
+		</statBases>
+		<costList>
+			<Steel>20</Steel>
+			<Chemfuel>80</Chemfuel>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>AEIceCrystalDistabilized</researchPrerequisite>
+		</recipeMaker>
+		<smeltable>true</smeltable>
+		<weaponTags>
+			<li>GrenadeDestructive</li>
+		</weaponTags>
+		<thingCategories>
+			<li>Grenades</li>
+		</thingCategories>
+		<verbs>
+			<li>
+				<label>throw nitrogen grenade</label>
+				<verbClass>Verb_LaunchProjectile</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<range>12.9</range>
+				<forcedMissRadius>1.9</forcedMissRadius>
+				<warmupTime>1.5</warmupTime>
+				<noiseRadius>4</noiseRadius>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<soundCast>ThrowGrenade</soundCast>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<defaultProjectile>Proj_AEGrenadeNitrogen</defaultProjectile>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>4.5</explosiveRadius>
+				<explosiveDamageType>AENitrogen</explosiveDamageType>
+				<damageAmountBase>22</damageAmountBase>
+				<requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseFragGrenadeProjectile">
+		<defName>Proj_AEGrenadeNitrogen</defName>
+		<label>nitrogen grenade</label>
+		<graphicData>
+			<!-- <texPath>Things/Projectile/Grenade</texPath> -->
+			<!-- <graphicClass>Graphic_Single</graphicClass> -->
+			<color>(0.31, 0.69, 0.835)</color>
+		</graphicData>
+		<projectile>
+			<explosionRadius>3.5</explosionRadius>
+			<damageDef>AENitrogen</damageDef>
+			<damageAmountBase>15</damageAmountBase>
+			<stoppingPower>1</stoppingPower>
+			<!-- <explosionDelay>100</explosionDelay> -->
+		</projectile>
+	</ThingDef>
+
+</Defs>
