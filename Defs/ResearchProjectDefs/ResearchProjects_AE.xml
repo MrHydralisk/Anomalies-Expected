@@ -373,13 +373,13 @@
 	
 	<ResearchProjectDef>
 		<defName>AESummonSnowArmy</defName>
-		<label>snow army</label>
-		<description>Examining blueprint for provider box and learn asking Provider ritual.</description>
+		<label>draw snow army</label>
+		<description>Learn draw Snow Army ritual.</description>
 		<tab>AnomaliesExpected</tab>
 		<prerequisites>
 			<li>BasicPsychicRituals</li>
 		</prerequisites>
-		<knowledgeCost>60</knowledgeCost>
+		<knowledgeCost>40</knowledgeCost>
 		<knowledgeCategory>Basic</knowledgeCategory>
 		<researchViewX>3</researchViewX>
 		<researchViewY>5</researchViewY>
@@ -394,6 +394,9 @@
 			<li>BioferriteGenerator</li>
 			<li>AESummonSnowArmy</li>
 		</prerequisites>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesSAA</li>
+		</requiredAnalyzed>
 		<knowledgeCost>60</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>4</researchViewX>
@@ -403,12 +406,15 @@
 	<ResearchProjectDef>
 		<defName>AEIceCrystalDistabilized</defName>
 		<label>distabilized ice crystal</label>
-		<description>Build destabilized ice crystal-powered controller consisting of both bioferrite-powered heaters and ice crystal-powered coolers with higher effeciency to control temperature of an entire region.</description>
+		<description>Learn how destabilize ice crystals.</description>
 		<tab>AnomaliesExpected</tab>
 		<prerequisites>
 			<li>AESummonSnowArmy</li>
 		</prerequisites>
-		<knowledgeCost>150</knowledgeCost>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesSAB</li>
+		</requiredAnalyzed>
+		<knowledgeCost>60</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>5</researchViewX>
 		<researchViewY>5.5</researchViewY>
@@ -424,7 +430,10 @@
 			<li>AEAtmosphericCooler</li>
 			<li>AEIceCrystalDistabilized</li>
 		</prerequisites>
-		<knowledgeCost>150</knowledgeCost>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesSAC</li>
+		</requiredAnalyzed>
+		<knowledgeCost>120</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>6</researchViewX>
 		<researchViewY>5</researchViewY>

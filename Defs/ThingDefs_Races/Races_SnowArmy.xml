@@ -128,6 +128,7 @@
 						<label>#3/4 Snowman study report</label>
 						<text>Emiting Frigid Air</text>
 						<ThreatClass>1</ThreatClass>
+						<ThingDefSpawn>AE_ResearchNotesSAA</ThingDefSpawn>
 					</li>
 				</studyNotesPawnUnlockable>
 				<isCreateSeparateEntityEntry>true</isCreateSeparateEntityEntry>
@@ -265,6 +266,7 @@
 						<label>#3/4 Snow golem study report</label>
 						<text>Emiting Frigid Air</text>
 						<ThreatClass>1</ThreatClass>
+						<ThingDefSpawn>AE_ResearchNotesSAC</ThingDefSpawn>
 					</li>
 				</studyNotesPawnUnlockable>
 				<isCreateSeparateEntityEntry>true</isCreateSeparateEntityEntry>
@@ -415,6 +417,7 @@
 						<label>#3/4 Snow spider study report</label>
 						<text>Emiting Frigid Air</text>
 						<ThreatClass>1</ThreatClass>
+						<ThingDefSpawn>AE_ResearchNotesSAB</ThingDefSpawn>
 					</li>
 				</studyNotesPawnUnlockable>
 				<isCreateSeparateEntityEntry>true</isCreateSeparateEntityEntry>
