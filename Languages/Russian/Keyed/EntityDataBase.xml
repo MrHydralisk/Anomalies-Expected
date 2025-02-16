@@ -4,6 +4,7 @@
 	<AnomaliesExpected.EntityDataBase.Label>База данных тёмных феноменов</AnomaliesExpected.EntityDataBase.Label>
 	<AnomaliesExpected.EntityDataBase.Desc>Это список всех известных тварей, имеющих отношение к пустоте. Позволяет просмотреть все полученные исследовательские заметки. Открывайте новых тварей с помощью псионического ритуала воззвания к пустоте.</AnomaliesExpected.EntityDataBase.Desc>
 	<AnomaliesExpected.EntityDataBase.Tip>Посмотрите список всех обнаруженных тёмных феноменов и их исследовательские заметки.</AnomaliesExpected.EntityDataBase.Tip>
+	<AnomaliesExpected.EntityDataBase.AmountStudied>Количество изучено: {0}</AnomaliesExpected.EntityDataBase.AmountStudied>
 	<AnomaliesExpected.EntityDataBase.View>Открыть базу данных тёмных феноменов</AnomaliesExpected.EntityDataBase.View>
 	
 	<AnomaliesExpected.EntityDataBase.ThreatClass>{0}: Класс "{1}"</AnomaliesExpected.EntityDataBase.ThreatClass>

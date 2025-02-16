@@ -341,6 +341,17 @@ namespace AnomaliesExpected
                     Widgets.Label(new Rect(0f, num, viewRect.width, num2), text);
                     num += num2 + EntryGap;
                 }
+                using (new TextBlock(newWordWrap: true))
+                {
+                    int amountStudied = selectedEntry.CurrPawnAmountStudied.LastOrDefault();
+                    if (amountStudied > 0)
+                    {
+                        string text = "AnomaliesExpected.EntityDataBase.AmountStudied".Translate(amountStudied);
+                        float num2 = Text.CalcHeight(text, viewRect.width);
+                        Widgets.Label(new Rect(0f, num, viewRect.width, num2), text);
+                        num += num2 + EntryGap;
+                    }
+                }
                 for (int i = 0; i < selectedEntry.letters.Count(); i++)
                 {
                     ChoiceLetter choiceLetter = selectedEntry.letters[i];
