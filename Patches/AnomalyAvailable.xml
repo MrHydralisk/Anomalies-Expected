@@ -850,7 +850,7 @@
 					<xpath>Defs/MapGeneratorDef[defName="AE_BloodLakeMapGenerator"]</xpath>
 				</li>
 				<li Class="PatchOperationRemove">
-					<xpath>Defs/AnomaliesExpected.PsychicRitualDef_AESummonBloodLake[defName="SummonBloodLake"]</xpath>
+					<xpath>Defs/AnomaliesExpected.PsychicRitualDef_AESummonBloodLake[defName="AE_SummonBloodLake"]</xpath>
 				</li>
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/RecipeDef[@Name="RecipeMakeAEBloodLiquidBioferrite" or @ParentName="RecipeMakeAEBloodLiquidBioferrite" or defName="MakeAEFleshmassCyst" or @Name="SurgeryAEFleshmassCystBase" or @ParentName="SurgeryAEFleshmassCystBase" or defName="RemoveAEFleshmassAcidCavity" or defName="RemoveAEFleshmassAcidGland" or @ParentName="SurgeryAEFleshmassTumorBase"]</xpath>

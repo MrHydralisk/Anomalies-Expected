@@ -2,7 +2,7 @@
 <Defs>
 
 	<AnomaliesExpected.PsychicRitualDef_AESummonBloodLake>
-		<defName>SummonBloodLake</defName>
+		<defName>AE_SummonBloodLake</defName>
 		<label>provoke strange lake</label>
 		<description>Use a psychic pulse to distort the fabric of reality, resulting in the formation of a crimson lake in the ground somewhere in the local area.</description>
 		<iconPath>UI/PsychicRituals/PsychicRitual_AESummonBloodLake</iconPath>
@@ -63,7 +63,7 @@
 		<label>draw snow army</label>
 		<description>Use a psychic pulse to distort the fabric of reality, resulting in the formation of a crimson lake in the ground somewhere in the local area.</description>
 		<iconPath>UI/PsychicRituals/PsychicRitual_AESummonSnowArmy</iconPath>
-		<!-- <researchPrerequisite>AEBloodInjector</researchPrerequisite> -->
+		<researchPrerequisite>AESummonSnowArmy</researchPrerequisite>
 		<outcomeDescription>Use a psychic pulse to distort the fabric of reality, resulting in the formation of a crimson lake in the ground somewhere in the local area.</outcomeDescription>
 		<hoursUntilOutcome>2</hoursUntilOutcome>
 		<castableOnPocketMaps>false</castableOnPocketMaps>

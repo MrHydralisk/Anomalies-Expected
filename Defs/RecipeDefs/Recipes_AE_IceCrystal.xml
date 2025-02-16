@@ -21,7 +21,7 @@
 		<recipeUsers>
 			<li>BioferriteShaper</li>
 		</recipeUsers>
-		<researchPrerequisite>AEAtmosphericController</researchPrerequisite>
+		<researchPrerequisite>AEIceCrystalDistabilized</researchPrerequisite>
 	</RecipeDef>
 
 	<RecipeDef ParentName="RecipeMakeAEIceCrystalDistabilized">
