@@ -31,6 +31,7 @@ namespace AnomaliesExpected
 
             val.Patch(AccessTools.Property(typeof(ResearchProjectDef), "IsHidden").GetGetMethod(), prefix: new HarmonyMethod(patchType, "RPD_IsHidden_Prefix"));
             val.Patch(AccessTools.Method(typeof(MainTabWindow_Research), "ListProjects"), transpiler: new HarmonyMethod(patchType, "MTWR_ListProjects_Transpiler"));
+            val.Patch(AccessTools.Method(typeof(MainTabWindow_Research), "Select"), prefix: new HarmonyMethod(patchType, "MTWR_Select_Prefix"));
             val.Patch(AccessTools.Property(typeof(RaceProperties), "IsAnomalyEntity").GetGetMethod(), postfix: new HarmonyMethod(patchType, "RP_IsAnomalyEntity_Postfix"));
             val.Patch(AccessTools.Method(typeof(BackCompatibility), "FactionManagerPostLoadInit"), postfix: new HarmonyMethod(patchType, "BC_FactionManagerPostLoadInit_Postfix"));
 
@@ -117,6 +118,16 @@ namespace AnomaliesExpected
                     TooltipHandler.TipRegion(rectProj, () => String.Join("\n", inspectStrings), researchProjectDef.GetHashCode() ^ 0x1664F);
                 }
             }
+        }
+
+        public static bool MTWR_Select_Prefix(MainTabWindow_Research __instance, ResearchProjectDef project)
+        {
+            if (project.IsHidden)
+            {
+                __instance.CurTab = project.tab;
+                return false;
+            }
+            return true;
         }
 
         public static void RP_IsAnomalyEntity_Postfix(ref bool __result, RaceProperties __instance)

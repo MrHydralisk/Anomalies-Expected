@@ -255,16 +255,6 @@
 		<knowledgeCategory>Basic</knowledgeCategory>
 		<researchViewX>3</researchViewX>
 		<researchViewY>3</researchViewY>
-		<!-- <generalRules>
-			<rulesStrings>
-				<li>subject->binging food serum</li>
-
-				<li>subject_story->ate all food in the facility</li>
-				<li>subject_story->stomach rumbling could be heard for several kilometers</li>
-
-				<li>subject_gerund->synthesizing binging food serums</li>
-			</rulesStrings>
-		</generalRules> -->
 	</ResearchProjectDef>
 	
 
@@ -280,16 +270,6 @@
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>4</researchViewX>
 		<researchViewY>3</researchViewY>
-		<!-- <generalRules>
-			<rulesStrings>
-				<li>subject->binging food serum</li>
-
-				<li>subject_story->ate all food in the facility</li>
-				<li>subject_story->stomach rumbling could be heard for several kilometers</li>
-
-				<li>subject_gerund->synthesizing binging food serums</li>
-			</rulesStrings>
-		</generalRules> -->
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
@@ -391,6 +371,19 @@
 	
 	
 	
+	<ResearchProjectDef>
+		<defName>AESummonSnowArmy</defName>
+		<label>snow army</label>
+		<description>Examining blueprint for provider box and learn asking Provider ritual.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>BasicPsychicRituals</li>
+		</prerequisites>
+		<knowledgeCost>60</knowledgeCost>
+		<knowledgeCategory>Basic</knowledgeCategory>
+		<researchViewX>3</researchViewX>
+		<researchViewY>5</researchViewY>
+	</ResearchProjectDef>
 
 	<ResearchProjectDef>
 		<defName>AEAtmosphericCooler</defName>
@@ -399,11 +392,26 @@
 		<tab>AnomaliesExpected</tab>
 		<prerequisites>
 			<li>BioferriteGenerator</li>
+			<li>AESummonSnowArmy</li>
 		</prerequisites>
 		<knowledgeCost>60</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>4</researchViewX>
 		<researchViewY>5</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>AEIceCrystalDistabilized</defName>
+		<label>distabilized ice crystal</label>
+		<description>Build destabilized ice crystal-powered controller consisting of both bioferrite-powered heaters and ice crystal-powered coolers with higher effeciency to control temperature of an entire region.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>AESummonSnowArmy</li>
+		</prerequisites>
+		<knowledgeCost>150</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>5</researchViewX>
+		<researchViewY>5.5</researchViewY>
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
@@ -414,10 +422,11 @@
 		<prerequisites>
 			<li>AtmosphericHeater</li>
 			<li>AEAtmosphericCooler</li>
+			<li>AEIceCrystalDistabilized</li>
 		</prerequisites>
 		<knowledgeCost>150</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
-		<researchViewX>5</researchViewX>
+		<researchViewX>6</researchViewX>
 		<researchViewY>5</researchViewY>
 	</ResearchProjectDef>
 

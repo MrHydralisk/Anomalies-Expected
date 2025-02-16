@@ -51,6 +51,7 @@
 		</provocationIncidents>
 		<discoveredResearchProjects>
 			<li>AEFruitInhibitorSerum</li>
+			<li>AEForbiddenFruitImplant</li>
 		</discoveredResearchProjects>
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>
@@ -211,9 +212,6 @@
 		<provocationIncidents>
 			<li>AE_IncidentDef_ChristmasStockingsSpawn</li>
 		</provocationIncidents>
-		<!-- <discoveredResearchProjects> -->
-			<!-- <li>AEChristmasStockings</li> -->
-		<!-- </discoveredResearchProjects> -->
 		<orderInCategory>1300</orderInCategory>
 		<modExtensions>
 			<li Class="AnomaliesExpected.EntityCodexEntryDefExtension">
@@ -239,9 +237,12 @@
 		<provocationIncidents>
 			<li>AE_IncidentDef_ChristmasStockingsSpawn</li>
 		</provocationIncidents>
-		<!-- <discoveredResearchProjects> -->
-			<!-- <li>AEChristmasStockings</li> -->
-		<!-- </discoveredResearchProjects> -->
+		<discoveredResearchProjects>
+			<li>AESummonSnowArmy</li>
+			<li>AEAtmosphericCooler</li>
+			<li>AEIceCrystalDistabilized</li>
+			<li>AEAtmosphericController</li>
+		</discoveredResearchProjects>
 		<orderInCategory>1300</orderInCategory>
 		<modExtensions>
 			<li Class="AnomaliesExpected.EntityCodexEntryDefExtension">
