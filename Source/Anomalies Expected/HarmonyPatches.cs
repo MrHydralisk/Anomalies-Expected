@@ -48,6 +48,7 @@ namespace AnomaliesExpected
             val.Patch(AccessTools.Method(typeof(Pawn_MutantTracker), "GetGizmos"), postfix: new HarmonyMethod(patchType, "T_GetGizmos_Postfix"));
 
             val.Patch(AccessTools.Property(typeof(ChoiceLetter_EntityDiscovered), "Choices").GetGetMethod(), prefix: new HarmonyMethod(patchType, "CLED_Choices_Prefix"));
+            val.Patch(AccessTools.Method(typeof(EntityCodex), "SetDiscovered", new Type[] { typeof(EntityCodexEntryDef), typeof(ThingDef), typeof(Thing) }), transpiler: new HarmonyMethod(patchType, "EC_SetDiscovered_Transpiler"));
         }
 
         public static bool RPD_IsHidden_Prefix(ref bool __result, ResearchProjectDef __instance)
@@ -249,7 +250,7 @@ namespace AnomaliesExpected
                 {
                     if (project.IsHidden)
                     {
-                        NDiaOptions.Add(new DiaOption("ViewHyperlink".Translate($"{project.label} [{"Undiscovered".Translate()}]"))
+                        NDiaOptions.Add(new DiaOption($"[{"Undiscovered".Translate()}]")
                         {
                             action = delegate
                             {
@@ -317,6 +318,35 @@ namespace AnomaliesExpected
             });
             __result = NDiaOptions;
             return false;
+        }
+
+        public static IEnumerable<CodeInstruction> EC_SetDiscovered_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+            for (int i = 80; i < 115; i++)
+            {
+                Log.Message($"{i} {codes[i].opcode == OpCodes.Ldstr} && {codes[i].operand?.ToString().Contains("ENTITY").ToString() ?? "---"}\n{codes[i]}");
+            }
+            for (int i = 0; i < codes.Count - 20; i++)
+            {
+                if (codes[i].opcode == OpCodes.Ldstr && codes[i].operand.ToString().Contains("ENTITY"))
+                {
+                    codes[i + 6] = new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(HarmonyPatches), "DiscoveredResearchProjects"));
+                    codes.RemoveRange(i + 7, 14);
+                    break;
+                }
+            }
+            for (int i = 80; i < 115; i++)
+            {
+                Log.Message($"{i} {codes[i].opcode == OpCodes.Ldstr} && {codes[i].operand?.ToString().Contains("ENTITY").ToString() ?? "---"}\n{codes[i]}");
+            }
+            return codes.AsEnumerable();
+        }
+
+        public static string DiscoveredResearchProjects(EntityCodexEntryDef entry)
+        {
+            Log.Message(entry.discoveredResearchProjects.Select((ResearchProjectDef rpd) => rpd.LabelCap.ToString()).ToLineList("  - "));
+            return entry.discoveredResearchProjects.Select((ResearchProjectDef rpd) => rpd.IsHidden ? $"[{"Undiscovered".Translate()}]" : rpd.LabelCap.ToString()).ToLineList("  - ");
         }
     }
 }
