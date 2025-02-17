@@ -39,6 +39,8 @@
   <ItemGroup>
     <Compile Include="AEDebugTools.cs" />
     <Compile Include="Comp\Comp_EntityDataBaseAccess.cs" />
+    <Compile Include="Comp\HediffComp\HediffComp_FreezingFragile.cs" />
+    <Compile Include="DamageWorker\DamageWorker_FreezingFragile.cs" />
     <Compile Include="DefModExtension\EntityCodexEntryDefExtension.cs" />
     <Compile Include="Dialog_AEEntityDB.cs" />
     <Compile Include="GameComponent_AnomaliesExpected.cs" />

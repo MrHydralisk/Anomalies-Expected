@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+		<defName>MeleeWeapon_AEIceSword</defName>
+		<label>ice sword</label>
+		<description>The ancient weapon of kings, the longsword can be used for slashing or stabbing.</description>
+		<possessionCount>1</possessionCount>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponMelee/LongSword</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<color>(0.31, 0.69, 0.835)</color>
+		</graphicData>
+		<equippedAngleOffset>-65</equippedAngleOffset>
+		<statBases>
+			<WorkToMake>18000</WorkToMake>
+			<Mass>2</Mass>
+		</statBases>
+		<relicChance>2</relicChance>
+		<tools>
+			<li>
+				<label>point</label>
+				<capacities>
+					<li>AEFreezingStab</li>
+				</capacities>
+				<power>25</power>
+				<cooldownTime>2.8</cooldownTime>
+			</li>
+			<li>
+				<label>edge</label>
+				<capacities>
+					<li>AEFreezingCut</li>
+				</capacities>
+				<power>19</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<costList>
+			<Steel>100</Steel>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>LongBlades</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+			<displayPriority>420</displayPriority>
+		</recipeMaker>
+		<techLevel>Medieval</techLevel>
+		<weaponTags>
+			<li>MedievalMeleeAdvanced</li>
+			<li>LongSword</li>
+		</weaponTags>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+		<defName>MeleeWeapon_AEIceSpear</defName>
+		<label>ice spear</label>
+		<description>A polearm tipped with a sharp point for stabbing opponents.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponMelee/Spear</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<color>(0.31, 0.69, 0.835)</color>
+		</graphicData>
+		<equippedAngleOffset>-25</equippedAngleOffset>
+		<statBases>
+			<WorkToMake>12000</WorkToMake>
+			<Mass>2</Mass>
+		</statBases>
+		<tools>
+			<li>
+				<label>shaft</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>3</cooldownTime>
+			</li>
+			<li>
+				<label>point</label>
+				<capacities>
+					<li>AEFreezingStab</li>
+				</capacities>
+				<power>20</power>
+				<armorPenetration>0.50</armorPenetration>
+				<cooldownTime>1.1</cooldownTime>
+			</li>
+		</tools>
+		<costList>
+			<Steel>75</Steel>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>LongBlades</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>4</Crafting>
+			</skillRequirements>
+			<displayPriority>330</displayPriority>
+		</recipeMaker>
+		<techLevel>Neolithic</techLevel>
+		<weaponTags>
+			<li>NeolithicMeleeAdvanced</li>
+			<li>MedievalMeleeAdvanced</li>
+			<li>Spear</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>Neolithic</li>
+		</weaponClasses>
+	</ThingDef>
+  
+</Defs>

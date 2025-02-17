@@ -207,7 +207,6 @@
 			<graphicClass>Graphic_Single</graphicClass>
 			<color>(0.31, 0.69, 0.835)</color>
 		</graphicData>
-		<soundInteract>Interact_Shotgun</soundInteract>
 		<statBases>
 			<WorkToMake>12000</WorkToMake>
 			<Mass>3.4</Mass>
@@ -217,24 +216,6 @@
 			<AccuracyLong>0.1</AccuracyLong>
 			<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
 		</statBases>
-		<costList>
-			<Steel>60</Steel>
-			<ComponentIndustrial>3</ComponentIndustrial>
-		</costList>
-		<recipeMaker>
-			<skillRequirements>
-				<Crafting>5</Crafting>
-			</skillRequirements>
-			<researchPrerequisite>AESummonSnowArmy</researchPrerequisite>
-			<displayPriority>430</displayPriority>
-		</recipeMaker>
-		<weaponClasses>
-			<li>ShortShots</li>
-		</weaponClasses>
-		<weaponTags>
-			<li>ShortShots</li>
-			<li>PumpShotgun</li>
-		</weaponTags>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -265,6 +246,25 @@
 				<cooldownTime>3</cooldownTime>
 			</li>
 		</tools>
+		<costList>
+			<Steel>60</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+		</costList>
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>AESummonSnowArmy</researchPrerequisite>
+			<displayPriority>430</displayPriority>
+		</recipeMaker>
+		<soundInteract>Interact_Shotgun</soundInteract>
+		<weaponClasses>
+			<li>ShortShots</li>
+		</weaponClasses>
+		<weaponTags>
+			<li>ShortShots</li>
+			<li>PumpShotgun</li>
+		</weaponTags>
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">

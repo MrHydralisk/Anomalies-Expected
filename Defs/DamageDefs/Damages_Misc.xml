@@ -96,5 +96,59 @@
 			</li>
 		</modExtensions>
 	</DamageDef>
+	
+	<DamageDef Name="AEFreezingFragileBase">
+		<defName>AEFreezingFragileCut</defName>
+		<label>freezing fragile</label>
+		<workerClass>AnomaliesExpected.DamageWorker_FreezingFragile</workerClass>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} become too fragile from freezing.</deathMessage>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<impactSoundType>Slice</impactSoundType>
+		<armorCategory>Sharp</armorCategory>
+		<makesAnimalsFlee>true</makesAnimalsFlee>
+		<makesBlood>false</makesBlood>
+		<modExtensions>
+			<li Class="AnomaliesExpected.AE_DamageDefExtension">
+				<DamageMultiplierCurve>
+					<points>
+						<li>-200, 0.1</li>
+						<li>-100, 0.25</li>
+						<li>-50, 0.5</li>
+						<li>-20, 0.75</li>
+						<li>0, 1</li>
+						<li>20, 1.5</li>
+						<li>60, 2</li>
+					</points>
+				</DamageMultiplierCurve>
+				<DamageMultiplierForPoweredBuildings>2</DamageMultiplierForPoweredBuildings>
+				<AdditionalHediff>AEFreezingFragile</AdditionalHediff>
+				<appliedDamageDef>Cut</appliedDamageDef>
+			</li>
+		</modExtensions>
+	</DamageDef>
+	
+	<DamageDef ParentName="AEFreezingFragileBase">
+		<defName>AEFreezingFragileStab</defName>
+		<harmAllLayersUntilOutside>false</harmAllLayersUntilOutside>
+		<modExtensions Inherit="false">
+			<li Class="AnomaliesExpected.AE_DamageDefExtension">
+				<DamageMultiplierCurve>
+					<points>
+						<li>-200, 0.1</li>
+						<li>-100, 0.25</li>
+						<li>-50, 0.5</li>
+						<li>-20, 0.75</li>
+						<li>0, 1</li>
+						<li>20, 1.5</li>
+						<li>60, 2</li>
+					</points>
+				</DamageMultiplierCurve>
+				<DamageMultiplierForPoweredBuildings>2</DamageMultiplierForPoweredBuildings>
+				<AdditionalHediff>AEFreezingFragile</AdditionalHediff>
+				<appliedDamageDef>Stab</appliedDamageDef>
+			</li>
+		</modExtensions>
+	</DamageDef>
   
 </Defs>

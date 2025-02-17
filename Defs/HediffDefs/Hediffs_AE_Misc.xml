@@ -452,6 +452,7 @@
 		<description>Frozen tissue and flesh caused by exposure to extreme cold. Due to freezing to the nerves, the feeling of pain is dulled. After completely freezing through body parts are often lost.</description>
 		<maxSeverity>1</maxSeverity>
 		<displayWound>false</displayWound>
+		<defaultLabelColor>(0.31, 0.69, 0.835)</defaultLabelColor>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>-2</severityPerDay>
@@ -466,6 +467,30 @@
 				<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
 			</li>
 		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="InjuryBase">
+		<defName>AEFreezingFragile</defName>
+		<label>freezing fragile</label>
+		<labelNoun>Freezing fragile</labelNoun>
+		<description>Exposure to extreme cold made this more vulnerable to damage.</description>
+		<maxSeverity>4</maxSeverity>
+		<displayWound>false</displayWound>
+		<defaultLabelColor>(0.31, 0.69, 0.835)</defaultLabelColor>
+		<comps>
+			<li Class="HediffCompProperties_TendDuration">
+				<labelTendedWell>bandaged</labelTendedWell>
+				<labelTendedWellInner>tended</labelTendedWellInner>
+				<labelSolidTendedWell>tended</labelSolidTendedWell>
+			</li>
+			<li>
+				<compClass>AnomaliesExpected.HediffComp_FreezingFragile</compClass>
+			</li>
+		</comps>
+		<injuryProps>
+			<painPerSeverity>0</painPerSeverity>
+			<averagePainPerSeverityPermanent>0</averagePainPerSeverityPermanent>
+		</injuryProps>
 	</HediffDef>
 	
 </Defs>
