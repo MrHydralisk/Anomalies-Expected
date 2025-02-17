@@ -281,5 +281,107 @@
 			<speed>25</speed>
 		</projectile>
 	</ThingDef>
+	
+	<ThingDef ParentName="BaseHumanMakeableGun">
+		<defName>Gun_AEIcicleRifle</defName>
+		<label>icicle rifle</label>
+		<description>An ancient design of precision sniper rifle. Bolt action. It has an exceptionally long range, great accuracy and good power. Because it's so unwieldy, other weapons outclass it at close range.</description>
+		<possessionCount>1</possessionCount>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/SniperRifle</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<color>(0.31, 0.69, 0.835)</color>
+		</graphicData>
+		<statBases>
+			<WorkToMake>45000</WorkToMake>
+			<Mass>4</Mass>
+			<AccuracyTouch>0.35</AccuracyTouch>
+			<AccuracyShort>0.60</AccuracyShort>
+			<AccuracyMedium>0.80</AccuracyMedium>
+			<AccuracyLong>0.92</AccuracyLong>
+			<RangedWeapon_Cooldown>3.3</RangedWeapon_Cooldown>
+		</statBases>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_AEIcicle</defaultProjectile>
+				<warmupTime>2.5</warmupTime>
+				<range>40</range>
+				<soundCast>Shot_SniperRifle</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>0</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<costList>
+			<Steel>60</Steel>
+			<ComponentIndustrial>8</ComponentIndustrial>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>PrecisionRifling</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+			<displayPriority>425</displayPriority>
+		</recipeMaker>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<weaponClasses>
+			<li>LongShots</li>
+			<li>RangedHeavy</li>
+		</weaponClasses>
+		<weaponTags Inherit="False">
+			<li>SniperRifle</li>
+		</weaponTags>
+	</ThingDef>
+  
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_AEIcicle</defName>
+		<label>icicle</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>EMP</damageDef>
+			<damageAmountBase>15</damageAmountBase>
+			<stoppingPower>2.5</stoppingPower>
+			<speed>90</speed>
+			<extraDamages>
+				<li>
+					<def>AEFreezing</def>
+					<amount>20</amount>
+				</li>
+				<li>
+					<def>RangedStab</def>
+					<amount>10</amount>
+					<chance>0.35</chance>
+				</li>
+				<li>
+					<def>Blunt</def>
+					<amount>10</amount>
+					<chance>0.35</chance>
+				</li>
+			</extraDamages>
+		</projectile>
+	</ThingDef>
   
 </Defs>

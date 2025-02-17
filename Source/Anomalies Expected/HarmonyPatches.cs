@@ -49,6 +49,8 @@ namespace AnomaliesExpected
 
             val.Patch(AccessTools.Property(typeof(ChoiceLetter_EntityDiscovered), "Choices").GetGetMethod(), prefix: new HarmonyMethod(patchType, "CLED_Choices_Prefix"));
             val.Patch(AccessTools.Method(typeof(EntityCodex), "SetDiscovered", new Type[] { typeof(EntityCodexEntryDef), typeof(ThingDef), typeof(Thing) }), transpiler: new HarmonyMethod(patchType, "EC_SetDiscovered_Transpiler"));
+
+            val.Patch(AccessTools.Method(typeof(VerbUtility), "IsEMP"), postfix: new HarmonyMethod(patchType, "VU_IsEMP_Postfix"));
         }
 
         public static bool RPD_IsHidden_Prefix(ref bool __result, ResearchProjectDef __instance)
@@ -338,6 +340,14 @@ namespace AnomaliesExpected
         public static string DiscoveredResearchProjects(EntityCodexEntryDef entry)
         {
             return entry.discoveredResearchProjects.Select((ResearchProjectDef rpd) => rpd.IsHidden ? $"[{"Undiscovered".Translate()}]" : rpd.LabelCap.ToString()).ToLineList("  - ");
+        }
+
+        public static void VU_IsEMP_Postfix(ref bool __result, Verb verb)
+        {
+            if (__result && verb.verbProps.LaunchesProjectile)
+            {
+                __result = !(verb.GetProjectile()?.projectile?.extraDamages?.Any((ExtraDamage ed) => ed.def != DamageDefOf.EMP) ?? false);
+            }
         }
     }
 }

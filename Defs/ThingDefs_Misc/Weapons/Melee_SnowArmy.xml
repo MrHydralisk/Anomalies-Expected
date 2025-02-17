@@ -80,9 +80,9 @@
 				<capacities>
 					<li>AEFreezingStab</li>
 				</capacities>
-				<power>20</power>
+				<power>15</power>
 				<armorPenetration>0.50</armorPenetration>
-				<cooldownTime>1.1</cooldownTime>
+				<cooldownTime>1.4</cooldownTime>
 			</li>
 		</tools>
 		<costList>
