@@ -39,7 +39,10 @@
 			<Steel>100</Steel>
 		</costList>
 		<recipeMaker>
-			<researchPrerequisite>LongBlades</researchPrerequisite>
+			<researchPrerequisites>
+				<li>AEFreezingFragile</li>
+				<li>LongBlades</li>
+			</researchPrerequisites>
 			<skillRequirements>
 				<Crafting>5</Crafting>
 			</skillRequirements>
@@ -89,7 +92,10 @@
 			<Steel>75</Steel>
 		</costList>
 		<recipeMaker>
-			<researchPrerequisite>LongBlades</researchPrerequisite>
+			<researchPrerequisites>
+				<li>AEFreezingFragile</li>
+				<li>LongBlades</li>
+			</researchPrerequisites>
 			<skillRequirements>
 				<Crafting>4</Crafting>
 			</skillRequirements>

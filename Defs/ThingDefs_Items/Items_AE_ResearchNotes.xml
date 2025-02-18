@@ -292,9 +292,9 @@
 
 				<!-- Analyzable -->
 
-				<analysisDurationHours>5</analysisDurationHours>
+				<analysisDurationHours>6</analysisDurationHours>
 				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
-				<completedLetterLabel>Snow Army research note studied: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetterLabel>Snow Army E-01 research note studied: {RESEARCH} unlocked</completedLetterLabel>
 				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
 				<completedLetterDef>PositiveEvent</completedLetterDef>
 
@@ -329,7 +329,7 @@
 
 				<analysisDurationHours>7</analysisDurationHours>
 				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
-				<completedLetterLabel>Snow Army research note studied: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetterLabel>Snow Army E-02 research note studied: {RESEARCH} unlocked</completedLetterLabel>
 				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
 				<completedLetterDef>PositiveEvent</completedLetterDef>
 
@@ -364,7 +364,77 @@
 
 				<analysisDurationHours>10</analysisDurationHours>
 				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
-				<completedLetterLabel>Snow Army research note studied: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetterLabel>Snow Army E-03 research note studied: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+				<completedLetterDef>PositiveEvent</completedLetterDef>
+
+				<!-- Interactable -->
+
+				<activateTexPath>UI/Icons/Study</activateTexPath>
+
+				<activateLabelString>Analyze...</activateLabelString>
+				<activateDescString>Analyze the research note.</activateDescString>
+				<jobString>Analyze research note</jobString>
+				<guiLabelString>Choose who should analyze this</guiLabelString>
+				<inspectString>Can be analyzed by a colonist.</inspectString>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="AEResearchNotesBase">
+		<defName>AE_ResearchNotesSAD</defName>
+		<label>research note #SA04</label>
+		<comps>
+			<li Class="CompProperties_CompAnalyzableUnlockResearch">
+				<analysisID>1301204</analysisID>
+
+				<!-- Analyzable -->
+
+				<analysisDurationHours>5</analysisDurationHours>
+				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
+				<completedLetterLabel>Snow Army E-04 research note studied: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+				<completedLetterDef>PositiveEvent</completedLetterDef>
+
+				<!-- Interactable -->
+
+				<activateTexPath>UI/Icons/Study</activateTexPath>
+
+				<activateLabelString>Analyze...</activateLabelString>
+				<activateDescString>Analyze the research note.</activateDescString>
+				<jobString>Analyze research note</jobString>
+				<guiLabelString>Choose who should analyze this</guiLabelString>
+				<inspectString>Can be analyzed by a colonist.</inspectString>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="AEResearchNotesBase">
+		<defName>AE_ResearchNotesSAE</defName>
+		<label>research note #SA05</label>
+		<comps>
+			<li Class="CompProperties_CompAnalyzableUnlockResearch">
+				<analysisID>1301205</analysisID>
+
+				<!-- Analyzable -->
+
+				<analysisDurationHours>8</analysisDurationHours>
+				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
+				<completedLetterLabel>Snow Army E-05 research note studied: {RESEARCH} unlocked</completedLetterLabel>
 				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
 				<completedLetterDef>PositiveEvent</completedLetterDef>
 

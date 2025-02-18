@@ -337,7 +337,7 @@
 			<ComponentIndustrial>8</ComponentIndustrial>
 		</costList>
 		<recipeMaker>
-			<researchPrerequisite>PrecisionRifling</researchPrerequisite>
+			<researchPrerequisite>AENanoInfusedIceCrystal</researchPrerequisite>
 			<skillRequirements>
 				<Crafting>7</Crafting>
 			</skillRequirements>

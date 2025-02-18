@@ -416,7 +416,7 @@
 		</requiredAnalyzed>
 		<knowledgeCost>60</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
-		<researchViewX>5</researchViewX>
+		<researchViewX>4</researchViewX>
 		<researchViewY>5.5</researchViewY>
 	</ResearchProjectDef>
 
@@ -435,8 +435,42 @@
 		</requiredAnalyzed>
 		<knowledgeCost>120</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
-		<researchViewX>6</researchViewX>
+		<researchViewX>5</researchViewX>
 		<researchViewY>5</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>AEFreezingFragile</defName>
+		<label>cryo-fragility</label>
+		<description>Explore the effects of deep freezing on material fragility.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>AESummonSnowArmy</li>
+		</prerequisites>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesSAD</li>
+		</requiredAnalyzed>
+		<knowledgeCost>40</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>4</researchViewX>
+		<researchViewY>6</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>AENanoInfusedIceCrystal</defName>
+		<label>archite-infused ice crystal</label>
+		<description>Analyze the mechanisms of ice crystal control over nano-scale archites.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>AESummonSnowArmy</li>
+		</prerequisites>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesSAE</li>
+		</requiredAnalyzed>
+		<knowledgeCost>90</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>5</researchViewX>
+		<researchViewY>5.8</researchViewY>
 	</ResearchProjectDef>
 
 </Defs>
