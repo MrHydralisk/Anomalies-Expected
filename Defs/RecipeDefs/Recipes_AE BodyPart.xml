@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
 		<defName>InstallAEForbiddenFruitImplant</defName>
 		<label>install implant of forbidden knowledge</label>
 		<description>Install an implant of forbidden knowledge.</description>
-		<workerClass>Recipe_InstallImplant</workerClass>
 		<descriptionHyperlinks>
 			<ThingDef>AEForbiddenFruitImplant</ThingDef>
 			<HediffDef>AEForbiddenFruitImplant</HediffDef>
@@ -93,6 +92,38 @@
 			<li>Jaw</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>AEGrinderJaw</addsHediff>
+	</RecipeDef>
+	
+	
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallAESnowCoreImplant</defName>
+		<label>install snow core implant</label>
+		<description>Install a snow core implant.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AESnowCoreImplant</ThingDef>
+			<HediffDef>AESnowCoreImplant</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing snow core implant.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AESnowCoreImplant</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AESnowCoreImplant</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AESnowCoreImplant</addsHediff>
 	</RecipeDef>
 
 </Defs>

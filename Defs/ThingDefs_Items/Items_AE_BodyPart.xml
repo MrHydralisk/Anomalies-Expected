@@ -102,4 +102,26 @@
 		</recipeMaker>
 	</ThingDef>
 	
+	
+	
+	<ThingDef ParentName="BodyPartAnomalyAEBase">
+		<defName>AESnowCoreImplant</defName>
+		<label>snow core implant</label>
+		<description>An anomalous implant, replicating the Snow Army's snow core, enabling the host to survive in lower temperatures. Nano-scale archites induce cellular crystallization upon injury, accelerating regeneration in lower temperatures. However, this crystallization makes the cells vulnerable to high temperatures, destabilizing their structure. The host body also lowers the temperature of the surrounding air.\n\nThis replicated snow core represents an attempt to reverse-engineer the advanced cryo-technology found within the remains of the Ice Man. However, our current understanding of this technology is incomplete, resulting in a less potent replica. This necessitates the expenditure of multiple cores per replication to achieve a functional, albeit diminished, effect.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallAESnowCoreImplant</RecipeDef>
+		</descriptionHyperlinks>
+		<costList>
+			<AE_IceCrystal>4</AE_IceCrystal>
+			<Bioferrite>10</Bioferrite>
+			<ComponentSpacer>2</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>3.4</Mass>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>AEForbiddenFruitImplant</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
 </Defs>
