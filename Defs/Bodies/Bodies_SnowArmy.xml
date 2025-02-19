@@ -557,4 +557,129 @@
 		</corePart>
 	</BodyDef>
   
+	<BodyDef>
+		<defName>AE_IceMantis</defName>
+		<label>ice mantis</label>
+		<corePart>
+			<def>AE_IceShardA</def>
+			<customLabel>ice shard torso</customLabel>
+			<height>Middle</height>
+			<depth>Outside</depth>
+			<groups>
+				<li>Torso</li>
+			</groups>
+			<parts>
+				<li>
+					<def>AE_IceShardB</def>
+					<customLabel>ice shard head</customLabel>
+					<coverage>0.07</coverage>
+					<height>Top</height>
+					<depth>Outside</depth>
+					<groups>
+						<li>Neck</li>
+						<li>UpperHead</li>
+						<li>FullHead</li>
+						<li>HeadAttackTool</li>
+						<li>Eyes</li>
+					</groups>
+					<parts>
+						<li>
+							<def>AE_SnowCoreHeart</def>
+							<coverage>0.125</coverage>
+							<depth>Inside</depth>
+							<groups>
+								<li>FullHead</li>
+							</groups>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>AE_IceShardC</def>
+					<customLabel>ice shard abdomen</customLabel>
+					<coverage>0.60</coverage>
+					<height>Bottom</height>
+					<depth>Outside</depth>
+					<groups>
+						<li>Waist</li>
+						<li>Legs</li>
+					</groups>
+					<parts>
+						<li>
+							<def>AE_IceShardD</def>
+							<customLabel>left front ice shard leg</customLabel>
+							<coverage>0.14</coverage>
+							<height>Bottom</height>
+							<groups>
+								<li>Legs</li>
+							</groups>
+							<woundAnchorTag>LeftLeg</woundAnchorTag>
+							<flipGraphic>true</flipGraphic>
+						</li>
+						<li>
+							<def>AE_IceShardD</def>
+							<customLabel>left rear ice shard leg</customLabel>
+							<coverage>0.14</coverage>
+							<height>Bottom</height>
+							<groups>
+								<li>Legs</li>
+							</groups>
+							<woundAnchorTag>LeftLeg</woundAnchorTag>
+							<flipGraphic>true</flipGraphic>
+						</li>
+						<li>
+							<def>AE_IceShardD</def>
+							<customLabel>right front ice shard leg</customLabel>
+							<coverage>0.14</coverage>
+							<height>Bottom</height>
+							<groups>
+								<li>Legs</li>
+							</groups>
+							<woundAnchorTag>RightLeg</woundAnchorTag>
+							<flipGraphic>true</flipGraphic>
+						</li>
+						<li>
+							<def>AE_IceShardD</def>
+							<customLabel>right rear ice shard leg</customLabel>
+							<coverage>0.14</coverage>
+							<height>Bottom</height>
+							<groups>
+								<li>Legs</li>
+							</groups>
+							<woundAnchorTag>RightLeg</woundAnchorTag>
+							<flipGraphic>true</flipGraphic>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>AE_IceShardE</def>
+					<customLabel>left ice shard arm</customLabel>
+					<coverage>0.08</coverage>
+					<flipGraphic>true</flipGraphic>
+					<groups>
+						<li>Arms</li>
+						<li>LeftHand</li>
+					</groups>
+				</li>
+				<li>
+					<def>AE_IceShardE</def>
+					<customLabel>right ice shard arm</customLabel>
+					<coverage>0.08</coverage>
+					<flipGraphic>true</flipGraphic>
+					<groups>
+						<li>Arms</li>
+						<li>RightHand</li>
+					</groups>
+				</li>
+				<li>
+					<def>AE_SnowCoreHeart</def>
+					<coverage>0.009</coverage>
+					<depth>Inside</depth>
+					<groups>
+						<li>Torso</li>
+					</groups>
+				</li>
+			</parts>
+		</corePart>
+	</BodyDef>
+  
 </Defs>

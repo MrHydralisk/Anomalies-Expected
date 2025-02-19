@@ -7,6 +7,7 @@
 			<ComfyTemperatureMax>20</ComfyTemperatureMax>
 			<Flammability>2</Flammability>
 			<ToxicResistance>1</ToxicResistance>
+			<EMPResistance>1</EMPResistance>
 			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
 			<ArmorRating_Sharp>1.1</ArmorRating_Sharp>
 			<ArmorRating_Blunt>0.55</ArmorRating_Blunt>
@@ -476,6 +477,149 @@
 		<butcherProducts>
 			<AE_IceCrystal>1</AE_IceCrystal>
 			<Bioferrite>2</Bioferrite>
+		</butcherProducts>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseAESnowArmy">
+		<defName>AE_IceMantis</defName>
+		<label>ice mantis</label>
+		<description>The Snowman appears harmless and made out of few big snowballs. However, its icy snow body proves surprisingly resilient, quickly dispelling any illusions of innocence. They can attack by throwing snowballs at enemies or scratching them with their stick arms. They can survive even with substantial part of their body being missing.</description>
+		<statBases>
+			<MoveSpeed>4.9</MoveSpeed>
+			<MinimumContainmentStrength>75</MinimumContainmentStrength>
+		</statBases>
+		<uiIconPath>Things/Pawn/SnowArmy/IceMantis/AE_IceMantis_south</uiIconPath>
+		<race>
+			<body>AE_IceMantis</body>
+			<thinkTreeMain>AE_SnowSpider</thinkTreeMain>
+			<intelligence>Animal</intelligence>
+			<baseBodySize>1.4</baseBodySize>
+			<baseHealthScale>1</baseHealthScale>
+			<lifeExpectancy>60</lifeExpectancy>
+			<soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
+			<lifeStageAges>
+				<li>
+					<def>EntityFullyFormed</def>
+					<soundWounded>Pawn_Shambler_Wounded</soundWounded>
+					<soundDeath>Pawn_Shambler_Killed</soundDeath>
+					<soundCall>Pawn_Shambler_Call</soundCall>
+				</li>
+			</lifeStageAges>
+		</race>
+		<comps>
+			<li Class="CompProperties_AttachPoints">
+				<points>
+					<li>
+						<offset>(-0.08, 0, 0.27)</offset>
+						<type>PlatformRestraint0</type>
+					</li>
+					<li>
+						<offset>(0.14, 0, 0.21)</offset>
+						<type>PlatformRestraint1</type>
+					</li>
+					<li>
+						<offset>(0.32, 0, -0.17)</offset>
+						<type>PlatformRestraint2</type>
+					</li>
+					<li>
+						<offset>(-0.22, 0, -0.27)</offset>
+						<type>PlatformRestraint3</type>
+					</li>
+				</points>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>120000</frequencyTicks>
+				<knowledgeCategory>Advanced</knowledgeCategory>
+				<anomalyKnowledge>1.75</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<requiresHoldingPlatform>true</requiresHoldingPlatform>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotesPawnUnlockable>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>0.01</threshold>
+						<AmountStudiedRequirment>1</AmountStudiedRequirment>
+						<label>#1/4 Ice mantis study report</label>
+						<text>Emiting Frigid Air</text>
+						<ThreatClass>1</ThreatClass>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>0.03</threshold>
+						<AmountStudiedRequirment>3</AmountStudiedRequirment>
+						<label>#2/4 Ice mantis study report</label>
+						<text>Emiting Frigid Air</text>
+						<ThreatClass>1</ThreatClass>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>0.05</threshold>
+						<AmountStudiedRequirment>5</AmountStudiedRequirment>
+						<label>#3/4 Ice mantis study report</label>
+						<text>Emiting Frigid Air</text>
+						<ThreatClass>1</ThreatClass>
+						<ThingDefSpawn>AE_ResearchNotesSAD</ThingDefSpawn>
+					</li>
+				</studyNotesPawnUnlockable>
+				<isCreateSeparateEntityEntry>true</isCreateSeparateEntityEntry>
+			</li>
+			<li Class="CompProperties_ProducesBioferrite">
+				<bioferriteDensity>1</bioferriteDensity>
+			</li>
+		</comps>
+		<tools>
+			<li>
+				<label>left blade</label>
+				<labelNoLocation>blade</labelNoLocation>
+				<capacities>
+					<li>AEFreezingCut</li>
+					<li>AEFreezingStab</li>
+				</capacities>
+				<power>15</power>
+				<cooldownTime>1.5</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>right blade</label>
+				<labelNoLocation>blade</labelNoLocation>
+				<capacities>
+					<li>AEFreezingCut</li>
+					<li>AEFreezingStab</li>
+				</capacities>
+				<power>15</power>
+				<cooldownTime>1.5</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>AEFreezingStab</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.3</chanceFactor>
+			</li>
+			<li>
+				<label>abdoment</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>18</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>Waist</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+				<soundMeleeHit>Pawn_Fleshbeast_Attack_Blunt</soundMeleeHit>
+			</li>
+		</tools>
+		<butcherProducts>
+			<AE_IceCrystal>2</AE_IceCrystal>
+			<Bioferrite>4</Bioferrite>
 		</butcherProducts>
 	</ThingDef>
 

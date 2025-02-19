@@ -373,11 +373,13 @@
 				<li>
 					<def>RangedStab</def>
 					<amount>10</amount>
+					<armorPenetration>0.38</armorPenetration>
 					<chance>0.35</chance>
 				</li>
 				<li>
 					<def>Blunt</def>
 					<amount>10</amount>
+					<armorPenetration>0.38</armorPenetration>
 					<chance>0.35</chance>
 				</li>
 			</extraDamages>

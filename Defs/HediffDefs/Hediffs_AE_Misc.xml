@@ -492,5 +492,21 @@
 			<averagePainPerSeverityPermanent>0</averagePainPerSeverityPermanent>
 		</injuryProps>
 	</HediffDef>
+  
+	<HediffDef ParentName="AESnowArmyBodyPart">
+		<defName>AE_IceThinBody</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>deflective ice</label>
+		<labelNoun>a deflective ice</labelNoun>
+		<description>A cancerous mass of semi-sentient flesh. The harsh acid it produces is painful, but strong enough to prevent most food poisoning. It can break down and reabsorb nutrients from its own tissue, allowing it to sustain itself for extended periods without external sustenance.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<isBad>false</isBad>
+		<defaultLabelColor>(0.31, 0.69, 0.835)</defaultLabelColor>
+		<comps>
+			<li>
+				<compClass>AnomaliesExpected.HediffComp_IceThinBody</compClass>
+			</li>
+		</comps>
+	</HediffDef>
 	
 </Defs>

@@ -75,7 +75,7 @@ namespace AnomaliesExpected
             }
         }
 
-        public void ExposeData()
+        public override void PostExposeData()
         {
             Scribe_Values.Look(ref PawnLabel, "PawnLabel", "Unknown");
             Scribe_Values.Look(ref PawnUniqueLoadID, "PawnUniqueLoadID", "Unknown");

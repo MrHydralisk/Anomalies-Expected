@@ -233,6 +233,7 @@
 			<li>AE_SnowMan</li>
 			<li>AE_SnowGolem</li>
 			<li>AE_SnowSpider</li>
+			<li>AE_IceMantis</li>
 		</linkedThings>
 		<provocationIncidents>
 			<li>AE_IncidentDef_ChristmasStockingsSpawn</li>

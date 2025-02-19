@@ -101,4 +101,30 @@
 		</startingHediffs>
 	</PawnKindDef>
 
+	<PawnKindDef ParentName="BaseAESnowArmyKind">
+		<defName>AE_IceMantis</defName>
+		<label>ice mantis</label>
+		<race>AE_IceMantis</race>
+		<combatPower>120</combatPower>
+		<destroyGearOnDrop>false</destroyGearOnDrop>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/SnowArmy/IceMantis/AE_IceMantis</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2</drawSize>
+          <!-- <shadowData> -->
+            <!-- <volume>(0.4, 0.8, 0.4)</volume> -->
+          <!-- </shadowData> -->
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<startingHediffs>
+			<li>
+				<def>AE_IceThinBody</def>
+				<severity>1</severity>
+			</li>
+		</startingHediffs>
+	</PawnKindDef>
+
 </Defs>

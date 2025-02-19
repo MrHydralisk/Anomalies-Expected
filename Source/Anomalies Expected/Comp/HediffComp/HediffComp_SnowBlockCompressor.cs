@@ -170,15 +170,6 @@ namespace AnomaliesExpected
             }
         }
 
-        public override void Notify_PawnPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
-        {
-            base.Notify_PawnPostApplyDamage(dinfo, totalDamageDealt);
-            if (dinfo.Def != DamageDefOf.Burn && Pawn.IsBurning())
-            {
-                dinfo.SetAmount(2f * dinfo.Amount);
-            }
-        }
-
         public override void CompExposeData()
         {
             Scribe_Values.Look(ref canNextCastAbilityTick, "canNextCastAbilityTick", -1);
