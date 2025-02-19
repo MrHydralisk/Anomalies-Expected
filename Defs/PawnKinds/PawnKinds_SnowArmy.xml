@@ -57,7 +57,6 @@
 			<li>Gun_AESnowBlock</li>
 		</weaponTags>
 		<race>AE_SnowGolem</race>
-		<maxPerGroup>3</maxPerGroup>
 		<combatPower>280</combatPower>
 		<weaponMoney>9999~9999</weaponMoney>
 		<lifeStages>
@@ -125,6 +124,27 @@
 				<severity>1</severity>
 			</li>
 		</startingHediffs>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="BaseAESnowArmyKind">
+		<defName>AE_IceMan</defName>
+		<label>ice man</label>
+		<weaponTags>
+			<li>Gun_AEIcicle</li>
+		</weaponTags>
+		<race>AE_IceMan</race>
+		<combatPower>90</combatPower>
+		<weaponMoney>9999~9999</weaponMoney>
+		<overrideDeathOnDownedChance>0.25</overrideDeathOnDownedChance>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/SnowArmy/IceMan/AE_IceMan</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2</drawSize>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
 	</PawnKindDef>
 
 </Defs>

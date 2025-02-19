@@ -234,6 +234,7 @@
 			<li>AE_SnowGolem</li>
 			<li>AE_SnowSpider</li>
 			<li>AE_IceMantis</li>
+			<li>AE_IceMan</li>
 		</linkedThings>
 		<provocationIncidents>
 			<li>AE_IncidentDef_ChristmasStockingsSpawn</li>
@@ -257,6 +258,8 @@
 					<li>AE_SnowMan</li>
 					<li>AE_SnowGolem</li>
 					<li>AE_SnowSpider</li>
+					<li>AE_IceMantis</li>
+					<li>AE_IceMan</li>
 				</groupMembersThingDefs>
 			</li>
 		</modExtensions>

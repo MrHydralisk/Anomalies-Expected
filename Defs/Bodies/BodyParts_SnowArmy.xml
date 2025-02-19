@@ -264,5 +264,14 @@
 			</li>
 		</hitChanceFactors>
 	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall">
+		<defName>AE_IceShardF</defName>
+		<hitPoints>24</hitPoints>
+		<tags>
+			<li>MovingLimbCore</li>
+			<li>Mirrored</li>
+		</tags>
+	</BodyPartDef>
   
 </Defs>

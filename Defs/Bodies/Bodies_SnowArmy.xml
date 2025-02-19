@@ -682,4 +682,84 @@
 		</corePart>
 	</BodyDef>
   
+	<BodyDef>
+		<defName>AE_IceMan</defName>
+		<label>ice man</label>
+		<corePart>
+			<def>AE_IceShardA</def>
+			<customLabel>ice shard torso</customLabel>
+			<height>Middle</height>
+			<depth>Outside</depth>
+			<groups>
+				<li>Torso</li>
+			</groups>
+			<parts>
+				<li>
+					<def>AE_IceShardB</def>
+					<customLabel>ice shard head</customLabel>
+					<coverage>0.135</coverage>
+					<height>Top</height>
+					<depth>Outside</depth>
+					<groups>
+						<li>Neck</li>
+						<li>UpperHead</li>
+						<li>FullHead</li>
+						<li>HeadAttackTool</li>
+						<li>Eyes</li>
+					</groups>
+				</li>
+				<li>
+					<def>AE_IceShardE</def>
+					<customLabel>left ice shard arm</customLabel>
+					<coverage>0.1</coverage>
+					<flipGraphic>true</flipGraphic>
+					<groups>
+						<li>Arms</li>
+						<li>LeftHand</li>
+					</groups>
+				</li>
+				<li>
+					<def>AE_IceShardE</def>
+					<customLabel>right ice shard arm</customLabel>
+					<coverage>0.1</coverage>
+					<flipGraphic>true</flipGraphic>
+					<groups>
+						<li>Arms</li>
+						<li>RightHand</li>
+					</groups>
+				</li>
+				<li>
+					<def>AE_IceShardF</def>
+					<customLabel>left ice shard leg</customLabel>
+					<coverage>0.11</coverage>
+					<height>Bottom</height>
+					<groups>
+						<li>Legs</li>
+					</groups>
+					<woundAnchorTag>LeftLeg</woundAnchorTag>
+					<flipGraphic>true</flipGraphic>
+				</li>
+				<li>
+					<def>AE_IceShardF</def>
+					<customLabel>right ice shard leg</customLabel>
+					<coverage>0.11</coverage>
+					<height>Bottom</height>
+					<groups>
+						<li>Legs</li>
+					</groups>
+					<woundAnchorTag>RightLeg</woundAnchorTag>
+					<flipGraphic>true</flipGraphic>
+				</li>
+				<li>
+					<def>AE_SnowCoreHeart</def>
+					<coverage>0.018</coverage>
+					<depth>Inside</depth>
+					<groups>
+						<li>Torso</li>
+					</groups>
+				</li>
+			</parts>
+		</corePart>
+	</BodyDef>
+  
 </Defs>

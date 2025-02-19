@@ -623,4 +623,130 @@
 		</butcherProducts>
 	</ThingDef>
 
+	<ThingDef ParentName="BaseAESnowArmy">
+		<defName>AE_IceMan</defName>
+		<label>ice man</label>
+		<description>The Snowman appears harmless and made out of few big snowballs. However, its icy snow body proves surprisingly resilient, quickly dispelling any illusions of innocence. They can attack by throwing snowballs at enemies or scratching them with their stick arms. They can survive even with substantial part of their body being missing.</description>
+		<statBases>
+			<MoveSpeed>3.7</MoveSpeed>
+			<MinimumContainmentStrength>80</MinimumContainmentStrength>
+		</statBases>
+		<uiIconPath>Things/Pawn/SnowArmy/IceMan/AE_IceMan_south</uiIconPath>
+		<race>
+			<body>AE_IceMan</body>
+			<baseBodySize>1</baseBodySize>
+			<baseHealthScale>1.5</baseHealthScale>
+			<lifeExpectancy>35</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>EntityFullyFormed</def>
+					<soundWounded>Pawn_Shambler_Wounded</soundWounded>
+					<soundDeath>Pawn_Shambler_Killed</soundDeath>
+					<soundCall>Pawn_Shambler_Call</soundCall>
+				</li>
+			</lifeStageAges>
+		</race>
+		<comps>
+			<li Class="CompProperties_AttachPoints">
+				<points>
+					<li>
+						<offset>(-0.21, 0, 0.62)</offset>
+						<type>PlatformRestraint0</type>
+					</li>
+					<li>
+						<offset>(0.28, 0, 0.28)</offset>
+						<type>PlatformRestraint1</type>
+					</li>
+					<li>
+						<offset>(0.38, 0, -0.58)</offset>
+						<type>PlatformRestraint2</type>
+					</li>
+					<li>
+						<offset>(-0.38, 0, -0.58)</offset>
+						<type>PlatformRestraint3</type>
+					</li>
+				</points>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>120000</frequencyTicks>
+				<knowledgeCategory>Basic</knowledgeCategory>
+				<anomalyKnowledge>1.5</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<requiresHoldingPlatform>true</requiresHoldingPlatform>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotesPawnUnlockable>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>0.01</threshold>
+						<AmountStudiedRequirment>1</AmountStudiedRequirment>
+						<label>#1/4 Ice man study report</label>
+						<text>Emiting Frigid Air</text>
+						<ThreatClass>1</ThreatClass>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>0.5</threshold>
+						<AmountStudiedRequirment>3</AmountStudiedRequirment>
+						<label>#2/4 Ice man study report</label>
+						<text>Emiting Frigid Air</text>
+						<ThreatClass>1</ThreatClass>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>1</threshold>
+						<AmountStudiedRequirment>5</AmountStudiedRequirment>
+						<label>#3/4 Ice man study report</label>
+						<text>Emiting Frigid Air</text>
+						<ThreatClass>1</ThreatClass>
+						<ThingDefSpawn>AE_ResearchNotesSAE</ThingDefSpawn>
+					</li>
+				</studyNotesPawnUnlockable>
+				<isCreateSeparateEntityEntry>true</isCreateSeparateEntityEntry>
+			</li>
+			<li Class="CompProperties_ProducesBioferrite">
+				<bioferriteDensity>1</bioferriteDensity>
+			</li>
+			<li>
+				<compClass>AnomaliesExpected.Comp_EntityWithWeapon</compClass>
+			</li>
+		</comps>
+		<tools>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>5</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+				<soundMeleeHit>Pawn_Fleshbeast_Attack_Blunt</soundMeleeHit>
+			</li>
+			<li>
+				<label>left ice shard arm</label>
+				<labelNoLocation>ice shard arm</labelNoLocation>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>right ice shard arm</label>
+				<labelNoLocation>ice shard arm</labelNoLocation>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+			</li>
+		</tools>
+		<butcherProducts>
+			<AE_IceCrystal>1</AE_IceCrystal>
+			<Bioferrite>3</Bioferrite>
+		</butcherProducts>
+	</ThingDef>
+
 </Defs>
