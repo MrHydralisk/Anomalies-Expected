@@ -24,5 +24,11 @@
 		<label>snow army corpses</label>
 		<parent>CorpsesEntity</parent>
 	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>AEWeaponsAnomalies</defName>
+		<label>anomaly</label>
+		<parent>Weapons</parent>
+	</ThingCategoryDef>
   
 </Defs>

@@ -7,9 +7,8 @@
 		<description>Old-school fragmentation grenades. They can be thrown a short distance, where they'll explode, damaging anything and anyone nearby.</description>
 		<tickerType>Normal</tickerType>
 		<graphicData>
-			<texPath>Things/Item/Equipment/WeaponRanged/Grenades</texPath>
+			<texPath>Things/Item/Equipment/WeaponRanged/AEGrenadeNitrogen</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<color>(0.31, 0.69, 0.835)</color>
 		</graphicData>
 		<uiIconScale>1.3</uiIconScale>
 		<statBases>
@@ -45,6 +44,7 @@
 		</comps>
 		<soundInteract>Interact_Grenade</soundInteract>
 		<thingCategories>
+			<li>AEWeaponsAnomalies</li>
 			<li>Grenades</li>
 		</thingCategories>
 		<smeltable>true</smeltable>
@@ -54,8 +54,9 @@
 		</costList>
 		<recipeMaker>
 			<researchPrerequisite>AEIceCrystalDistabilized</researchPrerequisite>
+			<displayPriority>1300</displayPriority>
 		</recipeMaker>
-		<techLevel>Industrial</techLevel>
+		<techLevel>Ultra</techLevel>
 		<weaponTags>
 			<li>GrenadeDestructive</li>
 		</weaponTags>
@@ -65,9 +66,7 @@
 		<defName>Proj_AEGrenadeNitrogen</defName>
 		<label>nitrogen grenade</label>
 		<graphicData>
-			<!-- <texPath>Things/Projectile/Grenade</texPath> -->
-			<!-- <graphicClass>Graphic_Single</graphicClass> -->
-			<color>(0.31, 0.69, 0.835)</color>
+			<texPath>Things/Projectile/AEGrenadeNitrogen</texPath>
 		</graphicData>
 		<projectile>
 			<explosionRadius>3.5</explosionRadius>

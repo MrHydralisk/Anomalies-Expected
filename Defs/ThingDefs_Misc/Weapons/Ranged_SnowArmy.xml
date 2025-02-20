@@ -16,20 +16,8 @@
 			<li>WeaponsRanged</li>
 		</thingCategories>
 		<tradeability>None</tradeability>
-		<!-- <tradeability>Sellable</tradeability> -->
 		<relicChance>0</relicChance>
 		<destroyOnDrop>true</destroyOnDrop>
-		<!-- <recipeMaker> -->
-		<!-- <workSpeedStat>GeneralLaborSpeed</workSpeedStat> -->
-		<!-- <workSkill>Crafting</workSkill> -->
-		<!-- <recipeUsers> -->
-		<!-- <li>ElectricSmithy</li> -->
-		<!-- <li>FueledSmithy</li> -->
-		<!-- </recipeUsers> -->
-		<!-- <effectWorking>Smelt</effectWorking> -->
-		<!-- <soundWorking>Recipe_MakeBow</soundWorking> -->
-		<!-- <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef> -->
-		<!-- </recipeMaker> -->
 	</ThingDef>
 
 	<ThingDef Name="BaseProjectileSnowArmy" Abstract="True">
@@ -55,11 +43,7 @@
 			<graphicClass>Graphic_Random</graphicClass>
 		</graphicData>
 		<soundInteract>Interact_BeatFire</soundInteract>
-		<!-- <costList> -->
-		<!-- <WoodLog>70</WoodLog> -->
-		<!-- </costList> -->
 		<statBases>
-			<!-- <WorkToMake>7000</WorkToMake> -->
 			<Mass>0.75</Mass>
 			<AccuracyTouch>0.75</AccuracyTouch>
 			<AccuracyShort>0.50</AccuracyShort>
@@ -73,12 +57,6 @@
 		<weaponClasses>
 			<li>Ranged</li>
 		</weaponClasses>
-		<!-- <recipeMaker> -->
-		<!-- <skillRequirements> -->
-		<!-- <Crafting>3</Crafting> -->
-		<!-- </skillRequirements> -->
-		<!-- <displayPriority>500</displayPriority> -->
-		<!-- </recipeMaker> -->
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -118,11 +96,7 @@
 			<drawSize>1.25</drawSize>
 		</graphicData>
 		<soundInteract>Interact_BeatFire</soundInteract>
-		<!-- <costList> -->
-		<!-- <WoodLog>70</WoodLog> -->
-		<!-- </costList> -->
 		<statBases>
-			<!-- <WorkToMake>7000</WorkToMake> -->
 			<Mass>12</Mass>
 			<AccuracyTouch>0.1</AccuracyTouch>
 			<AccuracyShort>0.25</AccuracyShort>
@@ -136,12 +110,6 @@
 		<weaponClasses>
 			<li>Ranged</li>
 		</weaponClasses>
-		<!-- <recipeMaker> -->
-		<!-- <skillRequirements> -->
-		<!-- <Crafting>3</Crafting> -->
-		<!-- </skillRequirements> -->
-		<!-- <displayPriority>500</displayPriority> -->
-		<!-- </recipeMaker> -->
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -204,18 +172,15 @@
 			<texPath>Things/Item/Equipment/WeaponRanged/Gun_AEIcicle</texPath>
 			<graphicClass>Graphic_Random</graphicClass>
 		</graphicData>
+		<equippedAngleOffset>30</equippedAngleOffset>
 		<soundInteract>Interact_BeatFire</soundInteract>
-		<!-- <costList> -->
-		<!-- <WoodLog>70</WoodLog> -->
-		<!-- </costList> -->
 		<statBases>
-			<!-- <WorkToMake>7000</WorkToMake> -->
 			<Mass>0.75</Mass>
 			<AccuracyTouch>0.35</AccuracyTouch>
 			<AccuracyShort>0.60</AccuracyShort>
 			<AccuracyMedium>0.80</AccuracyMedium>
 			<AccuracyLong>0.92</AccuracyLong>
-			<RangedWeapon_Cooldown>3.3</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
 		</statBases>
 		<weaponTags>
 			<li>Gun_AEIcicle</li>
@@ -223,21 +188,16 @@
 		<weaponClasses>
 			<li>Ranged</li>
 		</weaponClasses>
-		<!-- <recipeMaker> -->
-		<!-- <skillRequirements> -->
-		<!-- <Crafting>3</Crafting> -->
-		<!-- </skillRequirements> -->
-		<!-- <displayPriority>500</displayPriority> -->
-		<!-- </recipeMaker> -->
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_AEIcicle</defaultProjectile>
-				<warmupTime>2.5</warmupTime>
+				<warmupTime>2.3</warmupTime>
 				<range>40</range>
-				<soundCast>Shot_SniperRifle</soundCast>
+				<soundCast>Interact_BeatFire</soundCast>
 				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
 				<muzzleFlashScale>0</muzzleFlashScale>
 			</li>
 		</verbs>
@@ -254,16 +214,25 @@
 	</ThingDef>
 	
 	
+
+	<ThingDef Name="AE_BaseSnowArmyRangeHumanWeapon" ParentName="BaseHumanMakeableGun" Abstract="True">
+		<possessionCount>1</possessionCount>
+		<techLevel>Ultra</techLevel>
+		<recipeMaker>
+			<displayPriority>1300</displayPriority>
+		</recipeMaker>
+		<thingCategories>
+			<li>AEWeaponsAnomalies</li>
+		</thingCategories>
+	</ThingDef>
 	
-	<ThingDef ParentName="BaseHumanMakeableGun">
+	<ThingDef ParentName="AE_BaseSnowArmyRangeHumanWeapon">
 		<defName>Gun_AESnowBallGun</defName>
 		<label>snowball gun</label>
 		<description>An ancient design of shotgun that emits a tight-packed spray of pellets. Deadly, but short range.</description>
-		<possessionCount>1</possessionCount>
 		<graphicData>
-			<texPath>Things/Item/Equipment/WeaponRanged/Shotgun</texPath>
+			<texPath>Things/Item/Equipment/WeaponRanged/AESnowBallGun</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<color>(0.31, 0.69, 0.835)</color>
 		</graphicData>
 		<statBases>
 			<WorkToMake>12000</WorkToMake>
@@ -313,7 +282,6 @@
 				<Crafting>5</Crafting>
 			</skillRequirements>
 			<researchPrerequisite>AESummonSnowArmy</researchPrerequisite>
-			<displayPriority>430</displayPriority>
 		</recipeMaker>
 		<soundInteract>Interact_Shotgun</soundInteract>
 		<weaponClasses>
@@ -340,15 +308,14 @@
 		</projectile>
 	</ThingDef>
 	
-	<ThingDef ParentName="BaseHumanMakeableGun">
+	
+	<ThingDef ParentName="AE_BaseSnowArmyRangeHumanWeapon">
 		<defName>Gun_AEIcicleRifle</defName>
 		<label>icicle rifle</label>
 		<description>An ancient design of precision sniper rifle. Bolt action. It has an exceptionally long range, great accuracy and good power. Because it's so unwieldy, other weapons outclass it at close range.</description>
-		<possessionCount>1</possessionCount>
 		<graphicData>
-			<texPath>Things/Item/Equipment/WeaponRanged/SniperRifle</texPath>
+			<texPath>Things/Item/Equipment/WeaponRanged/AEIcicleRifle</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<color>(0.31, 0.69, 0.835)</color>
 		</graphicData>
 		<statBases>
 			<WorkToMake>45000</WorkToMake>
@@ -399,7 +366,6 @@
 			<skillRequirements>
 				<Crafting>7</Crafting>
 			</skillRequirements>
-			<displayPriority>425</displayPriority>
 		</recipeMaker>
 		<soundInteract>Interact_Rifle</soundInteract>
 		<weaponClasses>
