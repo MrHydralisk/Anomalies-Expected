@@ -6,7 +6,7 @@ using Verse;
 
 namespace AnomaliesExpected
 {
-    public class GameCondition_AETemperatureDrop : GameCondition
+    public class GameCondition_AETemperatureDrop : GameCondition_ForceWeather
     {
         private float tempOffset;
         public float MaxTempOffset = -100;

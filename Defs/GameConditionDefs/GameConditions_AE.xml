@@ -24,6 +24,7 @@
 		<conditionClass>AnomaliesExpected.GameCondition_AETemperatureDrop</conditionClass>
 		<label>temperature shifting</label>
 		<description>Temperature is rapidly shifting.</description>
+		<weatherDef>AE_SnowArmy</weatherDef>
 		<letterText>Temperature is rapidly shifting.</letterText>
 		<letterDef>NegativeEvent</letterDef>
 		<natural>false</natural>

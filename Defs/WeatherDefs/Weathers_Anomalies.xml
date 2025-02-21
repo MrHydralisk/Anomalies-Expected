@@ -42,6 +42,7 @@
 		<label>blood-like liquid high concentration</label>
 		<description>A crimson fog, thick and ominous, blankets the surroundings. This mist is a direct consequence of the elevated concentration of blood-like liquid in the air. Despite its apparent harmlessness, a subtle sense of dread creeps in. This phenomenon will undoubtedly affect all beings outside of enclosed spaces.</description>
 		<canOccurAsRandomForcedEvent>false</canOccurAsRandomForcedEvent>
+		<rainRate>0.05</rainRate>
 		<accuracyMultiplier>0.8</accuracyMultiplier>
 		<repeatable>true</repeatable>
 		<favorability>Neutral</favorability>
@@ -75,6 +76,51 @@
 			<sky>(0.35,0.40,0.45)</sky>
 			<shadow>(0.92,0.92,0.92)</shadow>
 			<overlay>(0.5, 0.5, 0.5)</overlay>
+			<saturation>0.9</saturation>
+		</skyColorsNightMid>
+	</WeatherDef>
+	
+	
+
+	<WeatherDef>
+		<defName>AE_SnowArmy</defName>
+		<label>heavy snow</label>
+		<description>Heavy snow created by snow army presence.</description>
+		<snowRate>1.5</snowRate>
+		<rainRate>0.05</rainRate>
+		<windSpeedFactor>1.5</windSpeedFactor>
+		<repeatable>true</repeatable>
+		<favorability>Neutral</favorability>
+		<perceivePriority>0</perceivePriority>
+		<ambientSounds>
+			<li>Ambient_Wind_Storm</li>
+		</ambientSounds>
+		<overlayClasses>
+			<li>WeatherOverlay_SnowHard</li>
+		</overlayClasses>
+		<!-- Colors are Overcast -->
+		<skyColorsDay>
+			<sky>(0.8,0.8,0.8)</sky>
+			<shadow>(0.92,0.92,0.92)</shadow>
+			<overlay>(0.7,0.7,0.7)</overlay>
+			<saturation>0.9</saturation>
+		</skyColorsDay>
+		<skyColorsDusk>
+			<sky>(1,1,1)</sky>
+			<shadow>(0.92,0.92,0.92)</shadow>
+			<overlay>(0.6,0.6,0.6)</overlay>
+			<saturation>0.9</saturation>
+		</skyColorsDusk>
+		<skyColorsNightEdge>
+			<sky>(0.35,0.40,0.45)</sky>
+			<shadow>(0.92,0.92,0.92)</shadow>
+			<overlay>(0.5,0.5,0.5)</overlay>
+			<saturation>0.9</saturation>
+		</skyColorsNightEdge>
+		<skyColorsNightMid>
+			<sky>(0.35,0.40,0.45)</sky>
+			<shadow>(0.92,0.92,0.92)</shadow>
+			<overlay>(0.5,0.5,0.5)</overlay>
 			<saturation>0.9</saturation>
 		</skyColorsNightMid>
 	</WeatherDef>
