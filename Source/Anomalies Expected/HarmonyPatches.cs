@@ -71,12 +71,11 @@ namespace AnomaliesExpected
                 if (codes[i].Calls(AccessTools.Property(typeof(ResearchProjectDef), "IsHidden").GetGetMethod()) && codes[i + 3].opcode == OpCodes.Ldloc_S && codes[i + 3].operand.ToString().Contains("UnityEngine.Rect (15)"))
                 {
                     List<CodeInstruction> instructionsToInsert = new List<CodeInstruction>();
-                    Label labelElse = il.DefineLabel();
+                    Label labelTrue = il.DefineLabel();
                     Label labelDone = (Label)codes[i + 1].operand;
-                    codes[i + 1].operand = labelElse;
-                    CodeInstruction ci = new CodeInstruction(OpCodes.Ldarg_0);
-                    ci.labels.Add(labelElse);
-                    instructionsToInsert.Add(ci);
+                    codes[i + 1] = new CodeInstruction(OpCodes.Brfalse_S, labelTrue);
+                    codes[i + 2].labels.Add(labelTrue);
+                    instructionsToInsert.Add(new CodeInstruction(OpCodes.Ldarg_0));
                     instructionsToInsert.Add(new CodeInstruction(OpCodes.Ldloc_S, 10));
                     instructionsToInsert.Add(codes[i - 1]);
                     instructionsToInsert.Add(new CodeInstruction(OpCodes.Ldloc_S, 12));
