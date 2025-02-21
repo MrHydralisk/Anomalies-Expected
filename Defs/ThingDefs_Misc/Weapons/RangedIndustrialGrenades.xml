@@ -57,9 +57,10 @@
 			<displayPriority>1300</displayPriority>
 		</recipeMaker>
 		<techLevel>Ultra</techLevel>
-		<weaponTags>
-			<li>GrenadeDestructive</li>
-		</weaponTags>
+		<tradeTags Inherit="False" />
+		<weaponTags Inherit="False" />
+		<genericMarketSellable>false</genericMarketSellable>
+		<tradeability>Sellable</tradeability>
 	</ThingDef>
 
 	<ThingDef ParentName="BaseFragGrenadeProjectile">

@@ -2,20 +2,14 @@
 <Defs>
 
 	<ThingDef Name="BaseWeaponSnowArmy" Abstract="True" ParentName="BaseWeapon">
-		<techLevel>Neolithic</techLevel>
-		<weaponTags>
-			<li>Neolithic</li>
-		</weaponTags>
-		<tradeTags>
-			<li>WeaponRanged</li>
-		</tradeTags>
-		<weaponClasses>
-			<li>Neolithic</li>
-		</weaponClasses>
+		<techLevel>Ultra</techLevel>
+		<tradeTags Inherit="False"/>
+		<weaponTags Inherit="False"/>
+		<genericMarketSellable>false</genericMarketSellable>
+		<tradeability>None</tradeability>
 		<thingCategories>
 			<li>WeaponsRanged</li>
 		</thingCategories>
-		<tradeability>None</tradeability>
 		<relicChance>0</relicChance>
 		<destroyOnDrop>true</destroyOnDrop>
 	</ThingDef>
@@ -218,6 +212,10 @@
 	<ThingDef Name="AE_BaseSnowArmyRangeHumanWeapon" ParentName="BaseHumanMakeableGun" Abstract="True">
 		<possessionCount>1</possessionCount>
 		<techLevel>Ultra</techLevel>
+		<tradeTags Inherit="False"/>
+		<weaponTags Inherit="False"/>
+		<genericMarketSellable>false</genericMarketSellable>
+		<tradeability>Sellable</tradeability>
 		<recipeMaker>
 			<displayPriority>1300</displayPriority>
 		</recipeMaker>
@@ -287,10 +285,6 @@
 		<weaponClasses>
 			<li>ShortShots</li>
 		</weaponClasses>
-		<weaponTags>
-			<li>ShortShots</li>
-			<li>PumpShotgun</li>
-		</weaponTags>
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
@@ -372,9 +366,6 @@
 			<li>LongShots</li>
 			<li>RangedHeavy</li>
 		</weaponClasses>
-		<weaponTags Inherit="False">
-			<li>SniperRifle</li>
-		</weaponTags>
 	</ThingDef>
   
 	<ThingDef ParentName="BaseBullet">

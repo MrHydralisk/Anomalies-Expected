@@ -47,6 +47,9 @@
 			</skillRequirements>
 			<displayPriority>100</displayPriority>
 		</recipeMaker>
+		<tradeTags Inherit="False" />
+		<genericMarketSellable>false</genericMarketSellable>
+		<tradeability>Sellable</tradeability>
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">

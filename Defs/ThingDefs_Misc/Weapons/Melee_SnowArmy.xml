@@ -4,6 +4,10 @@
 	<ThingDef Name="AE_BaseSnowArmyMeleeWeapon" ParentName="BaseMeleeWeapon" Abstract="True">
 		<possessionCount>1</possessionCount>
 		<techLevel>Ultra</techLevel>
+		<tradeTags Inherit="False" />
+		<weaponTags Inherit="False" />
+		<genericMarketSellable>false</genericMarketSellable>
+		<tradeability>Sellable</tradeability>
 		<recipeMaker>
 			<displayPriority>1300</displayPriority>
 		</recipeMaker>
@@ -55,9 +59,6 @@
 				<Crafting>5</Crafting>
 			</skillRequirements>
 		</recipeMaker>
-		<weaponTags>
-			<li>LongSword</li>
-		</weaponTags>
 	</ThingDef>
 	
 	<ThingDef ParentName="AE_BaseSnowArmyMeleeWeapon">
@@ -106,9 +107,6 @@
 				<Crafting>4</Crafting>
 			</skillRequirements>
 		</recipeMaker>
-		<weaponTags>
-			<li>Spear</li>
-		</weaponTags>
 	</ThingDef>
   
 </Defs>
