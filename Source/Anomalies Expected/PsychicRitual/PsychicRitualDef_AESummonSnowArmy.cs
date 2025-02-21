@@ -37,10 +37,7 @@ namespace AnomaliesExpected
         {
             List<string> inspectStrings = new List<string>();
             inspectStrings.Add(outcomeDescription.Formatted());
-            if (Prefs.DevMode && AEMod.Settings.DevModeInfo)
-            {
-                inspectStrings.Add("AnomaliesExpected.SnowArmy.Ritual.OutputDesc".Translate(CombatPointsMultFromQualityCurve.Evaluate(qualityRange.min).ToStringPercent()));
-            }
+            inspectStrings.Add("AnomaliesExpected.SnowArmy.Ritual.OutputDesc".Translate(CombatPointsMultFromQualityCurve.Evaluate(qualityRange.min).ToStringPercent()));
             return String.Join("\n", inspectStrings);
         }
     }
