@@ -10,6 +10,7 @@ namespace AnomaliesExpected
         public HediffDef AdditionalHediff;
         public bool isDealDamageToFriendly = true;
         public bool isDealDamageToDowned = true;
+        public bool isDealDamageToPlayer = true;
         public DamageDef appliedDamageDef;
     }
 }

@@ -10,6 +10,10 @@ namespace AnomaliesExpected
             AE_DamageDefExtension damageDefExtension = dinfo.Def.GetModExtension<AE_DamageDefExtension>();
             if (damageDefExtension != null)
             {
+                if (!damageDefExtension.isDealDamageToPlayer && thing.Faction == Faction.OfPlayer)
+                {
+                    return new DamageResult();
+                }
                 if (!damageDefExtension.isDealDamageToFriendly && (thing.Faction != null && dinfo.Instigator.Faction != null && !thing.Faction.HostileTo(dinfo.Instigator.Faction)))
                 {
                     return new DamageResult();
