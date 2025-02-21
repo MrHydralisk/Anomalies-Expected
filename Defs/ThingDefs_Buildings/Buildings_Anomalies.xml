@@ -783,6 +783,7 @@
 				<activeColor>(255,0,0)</activeColor>
 				<filthDef>Filth_LooseGround</filthDef>
 				<filthThickness>1</filthThickness>
+				<aggressionRadius>5</aggressionRadius>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -1079,6 +1080,7 @@
 				<filthDef>Filth_LooseGround</filthDef>
 				<filthThickness>4</filthThickness>
 				<mapGeneratorDef>AE_BloodLakeMapGenerator</mapGeneratorDef>
+				<aggressionRadius>15</aggressionRadius>
 			</li>
 		</modExtensions>
 	</ThingDef>

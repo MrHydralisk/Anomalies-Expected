@@ -147,7 +147,7 @@ namespace AnomaliesExpected
             {
                 SpawnRequest spawnRequest = new SpawnRequest(list.Cast<Thing>().ToList(), list2, 1, 1f);
                 spawnRequest.initialDelay = 0;
-                if (summonPattern.assaultColony)
+                if (summonPattern.assaultColony || GenRadial.RadialCellsAround(Position, ExtBloodLake.aggressionRadius, true).Any((IntVec3 c) => c.GetThingList(Map).Any((Thing t) => t != this && Faction.OfEntities.HostileTo(t.Faction))))
                 {
                     spawnRequest.lord = LordMaker.MakeNewLord(Faction.OfEntities, new LordJob_FleshbeastAssault(), Map);
                 }
