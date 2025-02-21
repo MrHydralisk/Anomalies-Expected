@@ -4,11 +4,14 @@
 	<ThingDef Name="AE_BaseSnowArmyMeleeWeapon" ParentName="BaseMeleeWeapon" Abstract="True">
 		<possessionCount>1</possessionCount>
 		<techLevel>Ultra</techLevel>
-		<tradeTags Inherit="False" />
-		<weaponTags Inherit="False" />
+		<tradeTags Inherit="False"/>
+		<weaponTags Inherit="False"/>
 		<genericMarketSellable>false</genericMarketSellable>
 		<tradeability>Sellable</tradeability>
 		<recipeMaker>
+			<recipeUsers Inherit="false">
+				<li>BioferriteShaper</li>
+			</recipeUsers>
 			<displayPriority>1300</displayPriority>
 		</recipeMaker>
 		<thingCategories>
@@ -51,10 +54,7 @@
 			<Steel>100</Steel>
 		</costList>
 		<recipeMaker>
-			<researchPrerequisites>
-				<li>AEFreezingFragile</li>
-				<li>LongBlades</li>
-			</researchPrerequisites>
+			<researchPrerequisite>AEFreezingFragile</researchPrerequisite>
 			<skillRequirements>
 				<Crafting>5</Crafting>
 			</skillRequirements>
@@ -99,10 +99,7 @@
 			<Steel>75</Steel>
 		</costList>
 		<recipeMaker>
-			<researchPrerequisites>
-				<li>AEFreezingFragile</li>
-				<li>LongBlades</li>
-			</researchPrerequisites>
+			<researchPrerequisite>AEFreezingFragile</researchPrerequisite>
 			<skillRequirements>
 				<Crafting>4</Crafting>
 			</skillRequirements>

@@ -31,7 +31,7 @@
 			</li>
 		</comps>
 		<specialDisplayRadius>8.9</specialDisplayRadius>
-		<researchPrerequisites>
+		<researchPrerequisites Inherit="False">
 			<li>AEIceCrystalDistabilized</li>
 		</researchPrerequisites>
 	</ThingDef>

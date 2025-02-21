@@ -53,12 +53,15 @@
 			<Chemfuel>80</Chemfuel>
 		</costList>
 		<recipeMaker>
+			<recipeUsers Inherit="false">
+				<li>BioferriteShaper</li>
+			</recipeUsers>
 			<researchPrerequisite>AEIceCrystalDistabilized</researchPrerequisite>
 			<displayPriority>1300</displayPriority>
 		</recipeMaker>
 		<techLevel>Ultra</techLevel>
-		<tradeTags Inherit="False" />
-		<weaponTags Inherit="False" />
+		<tradeTags Inherit="False"/>
+		<weaponTags Inherit="False"/>
 		<genericMarketSellable>false</genericMarketSellable>
 		<tradeability>Sellable</tradeability>
 	</ThingDef>

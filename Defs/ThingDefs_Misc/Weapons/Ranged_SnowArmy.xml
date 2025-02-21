@@ -217,6 +217,9 @@
 		<genericMarketSellable>false</genericMarketSellable>
 		<tradeability>Sellable</tradeability>
 		<recipeMaker>
+			<recipeUsers Inherit="false">
+				<li>BioferriteShaper</li>
+			</recipeUsers>
 			<displayPriority>1300</displayPriority>
 		</recipeMaker>
 		<thingCategories>

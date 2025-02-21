@@ -47,7 +47,7 @@
 			</skillRequirements>
 			<displayPriority>100</displayPriority>
 		</recipeMaker>
-		<tradeTags Inherit="False" />
+		<tradeTags Inherit="False"/>
 		<genericMarketSellable>false</genericMarketSellable>
 		<tradeability>Sellable</tradeability>
 	</ThingDef>

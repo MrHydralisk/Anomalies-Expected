@@ -12,7 +12,7 @@
 			<drawSize>0.80</drawSize>
 			<color>(107,56,76)</color>
 		</graphicData>
-		<tradeTags Inherit="False" >
+		<tradeTags Inherit="False">
 			<li>AEbodyPart</li>
 		</tradeTags>
 		<genericMarketSellable>false</genericMarketSellable>
