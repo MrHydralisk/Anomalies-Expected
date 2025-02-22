@@ -21,7 +21,7 @@ namespace AnomaliesExpected
         public ThingWithComps Source;
         public Comp_BloodSource SourceComp => sourceCompCached ?? (sourceCompCached = Source.GetComp<Comp_BloodSource>());
         private Comp_BloodSource sourceCompCached;
-        public bool isConnected => Source != null;
+        public bool isConnected => Source != null && Source.Spawned;
         public bool isPowered => PowerComp?.PowerOn ?? true;
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -38,7 +38,23 @@ namespace AnomaliesExpected
 
         public static Comp_BloodSource NearbyBloodSource(IntVec3 position, Map map, float radius)
         {
-            return GenRadial.RadialCellsAround(position, radius, useCenter: true).SelectMany((IntVec3 iv3) => map.thingGrid.ThingsListAtFast(iv3)).Where((Thing t) => t is Building && t.HasComp<Comp_BloodSource>()).Select((Thing t) => t.TryGetComp<Comp_BloodSource>()).Where((Comp_BloodSource bloodSource) => bloodSource.isCanAdd).OrderBy((Comp_BloodSource bloodSource) => bloodSource.parent.Position.DistanceTo(position)).FirstOrDefault();
+            List<Comp_BloodSource> bloodSources = new List<Comp_BloodSource>();
+            foreach (IntVec3 cell in GenRadial.RadialCellsAround(position, radius, useCenter: true))
+            {
+                List<Thing> thingList = cell.GetThingList(map);
+                for (int i = 0; i < thingList.Count; i++)
+                {
+                    if (thingList[i] is Building building)
+                    {
+                        Comp_BloodSource comp_BloodSource = building.TryGetComp<Comp_BloodSource>();
+                        if (comp_BloodSource != null && comp_BloodSource.isCanAdd && GenSight.LineOfSight(position, building.Position, map, skipFirstCell: true))
+                        {
+                            bloodSources.Add(comp_BloodSource);
+                        }
+                    }
+                }
+            }
+            return bloodSources.OrderBy((Comp_BloodSource bloodSource) => bloodSource.parent.Position.DistanceTo(position)).FirstOrDefault();
         }
 
         public bool TryFindSource()
@@ -78,12 +94,19 @@ namespace AnomaliesExpected
                 }
             }
         }
-
         public void GenerateResource()
         {
-            Thing resource = ThingMaker.MakeThing(SourceComp.Props.ResourceDef);
-            resource.stackCount = SourceComp.Props.ResourceAmount;
-            GenPlace.TryPlaceThing(resource, parent.Position, parent.Map, ThingPlaceMode.Near, null);
+            if (!GenSight.LineOfSight(parent.Position, Source.Position, parent.Map, skipFirstCell: true))
+            {
+                LostSource();
+                TryFindSource();
+            }
+            if (isConnected)
+            {
+                Thing resource = ThingMaker.MakeThing(SourceComp.Props.ResourceDef);
+                resource.stackCount = SourceComp.Props.ResourceAmount;
+                GenPlace.TryPlaceThing(resource, parent.Position, parent.Map, ThingPlaceMode.Near, null);
+            }
         }
 
         public void LostSource()
