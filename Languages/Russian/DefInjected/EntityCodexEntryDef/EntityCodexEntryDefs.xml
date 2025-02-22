@@ -24,5 +24,9 @@
 	
 	<AE_EntityCodexEntry_ChristmasStockings.label>красный носок</AE_EntityCodexEntry_ChristmasStockings.label>
 	<AE_EntityCodexEntry_ChristmasStockings.modExtensions.0.groupName>Новогодние</AE_EntityCodexEntry_ChristmasStockings.modExtensions.0.groupName>
+	
+	<AE_EntityCodexEntry_SnowArmy.label>снежная армия</AE_EntityCodexEntry_SnowArmy.label>
+	<AE_EntityCodexEntry_SnowArmy.description>Шепот ледяных ветров рассказывает о силе, скованной вечным холодом, о леденящем душу легионе, который появляется из сердце снежной бури. Мрачный след из замерзших мертвецов — это единственное напоминание об их пройденном пути.</AE_EntityCodexEntry_SnowArmy.description>
+	<AE_EntityCodexEntry_SnowArmy.modExtensions.0.groupName>Снежная армия</AE_EntityCodexEntry_SnowArmy.modExtensions.0.groupName>
 
 </LanguageData>

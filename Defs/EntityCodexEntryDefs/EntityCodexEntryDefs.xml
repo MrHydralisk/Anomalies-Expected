@@ -228,8 +228,8 @@
 		<defName>AE_EntityCodexEntry_SnowArmy</defName>
 		<label>snow army</label>
 		<category>Advanced</category>
-		<uiIconPath>UI/CodexEntries/AE_ChristmasStockings</uiIconPath>
-		<useDescriptionFrom>AE_ChristmasStockings</useDescriptionFrom>
+		<uiIconPath>UI/CodexEntries/AE_SnowArmy</uiIconPath>
+		<description>Whispers on the icy winds tell of a force frozen to the core, a chilling legion that emerges from the heart of the blizzards. The only grim evidence of their passage is the trail of frozen corpses.</description>
 		<linkedThings>
 			<li>AE_SnowMan</li>
 			<li>AE_SnowGolem</li>
@@ -237,9 +237,6 @@
 			<li>AE_IceMantis</li>
 			<li>AE_IceMan</li>
 		</linkedThings>
-		<provocationIncidents>
-			<li>AE_IncidentDef_ChristmasStockingsSpawn</li>
-		</provocationIncidents>
 		<discoveredResearchProjects>
 			<li>AESummonSnowArmy</li>
 			<li>AEAtmosphericCooler</li>
