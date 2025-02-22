@@ -109,6 +109,30 @@
 	
 
 	<HediffDef ParentName="ImplantHediffBase">
+		<defName>AEThermalReflectiveSkinImplant</defName>
+		<label>thermal-reflective skin gland</label>
+		<labelNoun>a thermal-reflective skin gland</labelNoun>
+		<description>An installed anomalous thermal-reflective skin gland, which replicate the reflective surface structure of a Transmitter. The skin's cellular structure is altered to reflect both light and thermal radiation, offering exceptional protection against burns and heat-based attacks. The altered surface beautifully diffracts light, creating a captivating interplay of colors and a radiant glow that enhances the user's attractiveness in a unique and striking manner. However, this transformation also makes the skin more fragile and susceptible to physical damage.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AEThermalReflectiveSkinImplant</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>AEThermalReflectiveSkinImplant</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<ArmorRating_Sharp>-0.1</ArmorRating_Sharp>
+					<ArmorRating_Blunt>-0.3</ArmorRating_Blunt>
+					<ArmorRating_Heat>2</ArmorRating_Heat>
+					<PawnBeauty>1</PawnBeauty>
+				</statOffsets>
+			</li>
+		</stages>
+		<tags><li>ArmorGland</li></tags>
+	</HediffDef>
+	
+	
+
+	<HediffDef ParentName="ImplantHediffBase">
 		<defName>AESnowCoreImplant</defName>
 		<label>snow core implant</label>
 		<labelNoun>a snow core implant</labelNoun>

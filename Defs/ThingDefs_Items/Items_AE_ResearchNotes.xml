@@ -140,6 +140,78 @@
 	
 
 	<ThingDef ParentName="AEResearchNotesBase">
+		<defName>AE_ResearchNotesBTA</defName>
+		<label>research note #BT01</label>
+		<comps>
+			<li Class="CompProperties_CompAnalyzableUnlockResearch">
+				<analysisID>1300501</analysisID>
+
+				<!-- Analyzable -->
+
+				<analysisDurationHours>5</analysisDurationHours>
+				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
+				<completedLetterLabel>Transmitter research note studied: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+				<completedLetterDef>PositiveEvent</completedLetterDef>
+
+				<!-- Interactable -->
+
+				<activateTexPath>UI/Icons/Study</activateTexPath>
+
+				<activateLabelString>Analyze...</activateLabelString>
+				<activateDescString>Analyze the research note.</activateDescString>
+				<jobString>Analyze research note</jobString>
+				<guiLabelString>Choose who should analyze this</guiLabelString>
+				<inspectString>Can be analyzed by a colonist.</inspectString>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="AEResearchNotesBase">
+		<defName>AE_ResearchNotesBTB</defName>
+		<label>research note #BT02</label>
+		<comps>
+			<li Class="CompProperties_CompAnalyzableUnlockResearch">
+				<analysisID>1300502</analysisID>
+
+				<!-- Analyzable -->
+
+				<analysisDurationHours>7</analysisDurationHours>
+				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
+				<completedLetterLabel>Orbital Beam Training Target research note studied: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+				<completedLetterDef>PositiveEvent</completedLetterDef>
+
+				<!-- Interactable -->
+
+				<activateTexPath>UI/Icons/Study</activateTexPath>
+
+				<activateLabelString>Analyze...</activateLabelString>
+				<activateDescString>Analyze the research note.</activateDescString>
+				<jobString>Analyze research note</jobString>
+				<guiLabelString>Choose who should analyze this</guiLabelString>
+				<inspectString>Can be analyzed by a colonist.</inspectString>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	
+
+	<ThingDef ParentName="AEResearchNotesBase">
 		<defName>AE_ResearchNotesBLA</defName>
 		<label>research note #BL01</label>
 		<comps>

@@ -31,8 +31,20 @@
 		<addsHediff>AEForbiddenFruitImplant</addsHediff>
 		<surgerySuccessChanceFactor>99999</surgerySuccessChanceFactor>
 	</RecipeDef>
+
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveAEForbiddenFruitImplant</defName>
+		<label>remove implant of forbidden knowledge</label>
+		<description>Remove implant of forbidden knowledge.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AEForbiddenFruitImplant</ThingDef>
+			<HediffDef>AEForbiddenFruitImplant</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Removing implant of forbidden knowledge.</jobString>
+		<removesHediff>AEForbiddenFruitImplant</removesHediff>
+	</RecipeDef>
 	
-	
+
 
 	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
 		<defName>InstallAEGrinderStomach</defName>
@@ -97,6 +109,53 @@
 	
 
 	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallAEThermalReflectiveSkinImplant</defName>
+		<label>install thermal-reflective skin gland</label>
+		<description>Install a thermal-reflective skin gland.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AEThermalReflectiveSkinImplant</ThingDef>
+			<HediffDef>AEThermalReflectiveSkinImplant</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing thermal-reflective skin gland.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AEThermalReflectiveSkinImplant</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AEThermalReflectiveSkinImplant</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AEThermalReflectiveSkinImplant</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>ArmorGland</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveAEThermalReflectiveSkinImplant</defName>
+		<label>remove thermal-reflective skin gland</label>
+		<description>Remove thermal-reflective skin gland.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AEThermalReflectiveSkinImplant</ThingDef>
+			<HediffDef>AEThermalReflectiveSkinImplant</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Removing thermal-reflective skin gland.</jobString>
+		<removesHediff>AEThermalReflectiveSkinImplant</removesHediff>
+	</RecipeDef>
+	
+
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
 		<defName>InstallAESnowCoreImplant</defName>
 		<label>install snow core implant</label>
 		<description>Install a snow core implant.</description>
@@ -126,4 +185,16 @@
 		<addsHediff>AESnowCoreImplant</addsHediff>
 	</RecipeDef>
 
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveAESnowCoreImplant</defName>
+		<label>remove snow core implant</label>
+		<description>Remove snow core implant.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AESnowCoreImplant</ThingDef>
+			<HediffDef>AESnowCoreImplant</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Removing snow core implant.</jobString>
+		<removesHediff>AESnowCoreImplant</removesHediff>
+	</RecipeDef>
+  
 </Defs>

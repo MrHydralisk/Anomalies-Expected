@@ -113,9 +113,6 @@
 		<label>grinder stomach</label>
 		<description>Produce grinder stomach, which replicate Meat Grinder structure.</description>
 		<tab>AnomaliesExpected</tab>
-		<prerequisites>
-			<li>Prosthetics</li>
-		</prerequisites>
 		<knowledgeCost>10</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>4</researchViewX>
@@ -220,10 +217,10 @@
 		<label>precise orbital beam targeter</label>
 		<description>Produce a targeting unit for a network of power-collection satellites based on understanding of transmitter anomaly.</description>
 		<tab>AnomaliesExpected</tab>
-		<prerequisites>
-			<li>AdvancedFabrication</li>
-		</prerequisites>
-		<knowledgeCost>100</knowledgeCost>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesBTA</li>
+		</requiredAnalyzed>
+		<knowledgeCost>35</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>5</researchViewX>
 		<researchViewY>2</researchViewY>
@@ -241,6 +238,23 @@
 		</generalRules>
 	</ResearchProjectDef>
 	
+	<ResearchProjectDef>
+		<defName>AEThermalReflectiveSkinImplant</defName>
+		<label>thermal-reflective skin gland</label>
+		<description>Produce a thermal-reflective skin gland based on understanding of transmitter anomaly.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>AEOrbitalBeamTargeter</li>
+		</prerequisites>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesBTB</li>
+		</requiredAnalyzed>
+		<knowledgeCost>75</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>6</researchViewX>
+		<researchViewY>2</researchViewY>
+	</ResearchProjectDef>
+	
 	
 
 	<ResearchProjectDef>
@@ -248,9 +262,6 @@
 		<label>blood-like liquid pump</label>
 		<description>Acquire fundamental knowledge of the blood-like liquid, including its collection through pumps and the separation of bioferrite from blood. This enables the destruction of new Blood Puddles without full study.</description>
 		<tab>AnomaliesExpected</tab>
-		<prerequisites>
-			<li>MicroelectronicsBasics</li>
-		</prerequisites>
 		<knowledgeCost>30</knowledgeCost>
 		<knowledgeCategory>Basic</knowledgeCategory>
 		<researchViewX>3</researchViewX>

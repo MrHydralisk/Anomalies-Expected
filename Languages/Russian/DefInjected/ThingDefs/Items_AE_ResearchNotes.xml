@@ -37,6 +37,28 @@
 	
 	
 
+	<AE_ResearchNotesBTA.label>исследовательские заметки #BT01</AE_ResearchNotesBTA.label>
+	<AE_ResearchNotesBTA.description>Исследовательские заметки, связанные с аномалией. Их изучение может помочь разблокировать новые исследования аномалий.</AE_ResearchNotesBTA.description>
+	<AE_ResearchNotesBTA.comps.CompAnalyzableUnlockResearch.activateDescString>Анализировать исследовательские заметки.</AE_ResearchNotesBTA.comps.CompAnalyzableUnlockResearch.activateDescString>
+	<AE_ResearchNotesBTA.comps.CompAnalyzableUnlockResearch.activateLabelString>Анализировать...</AE_ResearchNotesBTA.comps.CompAnalyzableUnlockResearch.activateLabelString>
+	<AE_ResearchNotesBTA.comps.CompAnalyzableUnlockResearch.completedLetter>Изучив исследовательские заметки, {PAWN_labelShort} приобрел необходимые знания для исследовательского проекта(ов) {RESEARCH}.\n\nТеперь ваши исследователи могут использовать исследовательские столы, чтобы начать изучение практического применения этой технологии.</AE_ResearchNotesBTA.comps.CompAnalyzableUnlockResearch.completedLetter>
+	<AE_ResearchNotesBTA.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Изучены исследовательские заметки о передатчике: разблокировано исследование {RESEARCH}</AE_ResearchNotesBTA.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+	<AE_ResearchNotesBTA.comps.CompAnalyzableUnlockResearch.guiLabelString>Выберите кто должен анализировать это</AE_ResearchNotesBTA.comps.CompAnalyzableUnlockResearch.guiLabelString>
+	<AE_ResearchNotesBTA.comps.CompAnalyzableUnlockResearch.inspectString>Может быть проанализирован колонистом.</AE_ResearchNotesBTA.comps.CompAnalyzableUnlockResearch.inspectString>
+	<AE_ResearchNotesBTA.comps.CompAnalyzableUnlockResearch.jobString>Анализирует исследовательскую заметку</AE_ResearchNotesBTA.comps.CompAnalyzableUnlockResearch.jobString>
+
+	<AE_ResearchNotesBTB.label>исследовательские заметки #BT02</AE_ResearchNotesBTB.label>
+	<AE_ResearchNotesBTB.description>Исследовательские заметки, связанные с аномалией. Их изучение может помочь разблокировать новые исследования аномалий.</AE_ResearchNotesBTB.description>
+	<AE_ResearchNotesBTB.comps.CompAnalyzableUnlockResearch.activateDescString>Анализировать исследовательские заметки.</AE_ResearchNotesBTB.comps.CompAnalyzableUnlockResearch.activateDescString>
+	<AE_ResearchNotesBTB.comps.CompAnalyzableUnlockResearch.activateLabelString>Анализировать...</AE_ResearchNotesBTB.comps.CompAnalyzableUnlockResearch.activateLabelString>
+	<AE_ResearchNotesBTB.comps.CompAnalyzableUnlockResearch.completedLetter>Изучив исследовательские заметки, {PAWN_labelShort} приобрел необходимые знания для исследовательского проекта(ов) {RESEARCH}.\n\nТеперь ваши исследователи могут использовать исследовательские столы, чтобы начать изучение практического применения этой технологии.</AE_ResearchNotesBTB.comps.CompAnalyzableUnlockResearch.completedLetter>
+	<AE_ResearchNotesBTB.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Изучены исследовательские заметки о тренировочной мишени для орбитальных лучей: разблокировано исследование {RESEARCH}</AE_ResearchNotesBTB.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+	<AE_ResearchNotesBTB.comps.CompAnalyzableUnlockResearch.guiLabelString>Выберите кто должен анализировать это</AE_ResearchNotesBTB.comps.CompAnalyzableUnlockResearch.guiLabelString>
+	<AE_ResearchNotesBTB.comps.CompAnalyzableUnlockResearch.inspectString>Может быть проанализирован колонистом.</AE_ResearchNotesBTB.comps.CompAnalyzableUnlockResearch.inspectString>
+	<AE_ResearchNotesBTB.comps.CompAnalyzableUnlockResearch.jobString>Анализирует исследовательскую заметку</AE_ResearchNotesBTB.comps.CompAnalyzableUnlockResearch.jobString>
+	
+	
+
 	<AE_ResearchNotesBLA.label>исследовательские заметки #BL01</AE_ResearchNotesBLA.label>
 	<AE_ResearchNotesBLA.description>Исследовательские заметки, связанные с аномалией. Их изучение может помочь разблокировать новые исследования аномалий.</AE_ResearchNotesBLA.description>
 	<AE_ResearchNotesBLA.comps.CompAnalyzableUnlockResearch.activateDescString>Анализировать исследовательские заметки.</AE_ResearchNotesBLA.comps.CompAnalyzableUnlockResearch.activateDescString>

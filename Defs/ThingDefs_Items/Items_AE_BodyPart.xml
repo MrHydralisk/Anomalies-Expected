@@ -107,6 +107,24 @@
 	
 	
 	<ThingDef ParentName="BodyPartAnomalyAEBase">
+		<defName>AEThermalReflectiveSkinImplant</defName>
+		<label>thermal-reflective skin gland</label>
+		<description>An anomalous thermal-reflective skin gland, which replicate the reflective surface structure of a Transmitter. The skin's cellular structure is altered to reflect both light and thermal radiation, offering exceptional protection against burns and heat-based attacks. The altered surface beautifully diffracts light, creating a captivating interplay of colors and a radiant glow that enhances the user's attractiveness in a unique and striking manner. However, this transformation also makes the skin more fragile and susceptible to physical damage.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallAEThermalReflectiveSkinImplant</RecipeDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Bioferrite>55</Bioferrite>
+			<ComponentSpacer>6</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>AEThermalReflectiveSkinImplant</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	
+	
+	<ThingDef ParentName="BodyPartAnomalyAEBase">
 		<defName>AESnowCoreImplant</defName>
 		<label>snow core implant</label>
 		<description>An anomalous implant, replicating the Snow Army's snow core, enabling the host to survive in lower temperatures. Nano-scale archites induce cellular crystallization upon injury, accelerating regeneration in lower temperatures. However, this crystallization makes the cells vulnerable to high temperatures, destabilizing their structure. The host body also lowers the temperature of the surrounding air.\n\nThis replicated snow core represents an attempt to reverse-engineer the advanced cryo-technology found within the remains of the Snow Army E-05. However, our current understanding of this technology is incomplete, resulting in a less potent replica. This necessitates the expenditure of multiple cores per replication to achieve a functional, albeit diminished, effect.</description>

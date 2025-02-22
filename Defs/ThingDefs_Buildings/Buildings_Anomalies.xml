@@ -73,6 +73,8 @@
 		</inspectorTabs>
 	</ThingDef>
 	
+	
+	
 	<ThingDef ParentName="BedWithQualityBase">
 		<defName>AE_AnomalyHospitalBed</defName>
 		<label>ordinary hospital bed</label>
@@ -199,6 +201,8 @@
 			<li>ITab_StudyNotes</li>
 		</inspectorTabs>
 	</ThingDef>
+	
+	
 	
 	<ThingDef ParentName="BuildingBase">
 		<defName>AE_MeatGrinder</defName>
@@ -415,6 +419,8 @@
 		</inspectorTabs>
 	</ThingDef>
 	
+	
+	
 	<ThingDef ParentName="BuildingBase">
 		<defName>AE_BeamTarget</defName>
 		<label>transmitter</label>
@@ -515,6 +521,7 @@
 						<threshold>2</threshold>
 						<label>#2/5 Transmitter study report</label>
 						<text>Teleportation and High-Energy Beam\n\nSubject: [REDACTED]\n\nAbstract:\nAnomalous transmitter breached containment via teleportation after receiving unknown data. Subsequent high-intensity energy beam attack caused extensive environmental damage. Transmitter recovered undamaged. Transmitter's self-teleportation and data link to destructive potential necessitate Class-2 (Warning) classification. Continuous monitoring and relocation protocols are crucial to mitigate future threats.\n\nObservations:\nSecurity footage captured the appearance of a countdown timer on the digital dial of transmitter, after which it teleported out of its containment area, with only one indicator lamp illuminated.\nA separate camera recorded the transmitter's reappearance outside the facility.\nFollowing the countdown completion, security personnel [REDACTED] within the facility reported a sudden increase in ambient light, resembling high noon, despite recorded footage indicating it was nighttime.\nCamera footage confirmed a high-intensity energy beam originating from the sky, incinerating a large area encompassing local flora and fauna.\nThe beam dissipated after approximately one hour, leaving the transmitter unscathed on the ground.\n\nOutcome:\nNo personnel, including [REDACTED], were injured during the incident due to the transmitter's prior teleportation. However, extensive environmental damage occurred within the affected area.\nThe number of illuminated indicator lamps on the transmitter changed after retrieval and relocation to the containment area. No physical damage was observed.\n\nDiscussion:\nThis dangerous incident underscores the significant danger posed by transmitter. The continuous data exchange with an unknown source appears strongly linked to the high-energy beam attack.\nWhile the beam appears to target the transmitter location upon countdown completion, this could be exploited for damage mitigation by relocating it to a nearby uninhabited area.\nUnfortunately, the transmitter self-teleportation ability renders this strategy unreliable.\nThe extent of the transmitter teleportation range is unknown, necessitating preparedness for potential teleportation within the facility.\nReclassified transmitter as Class-2 (Warning) anomaly, due to the demonstrated destructive capabilities.\n\nRecommendations:\nMeticulous monitoring of both the transmitter physical location and the displayed time on the digital dial is essential to prevent the energy beam from impacting the facility's interior.\nIn the event of an internal teleportation, immediate intervention is advised, involving personnel retrieving the transmitter and relocating it outside vital areas.</text>
+						<ThingDefSpawn>AE_ResearchNotesBTA</ThingDefSpawn>
 						<ThreatClass>2</ThreatClass>
 						<isSyncWithDB>true</isSyncWithDB>
 					</li>
@@ -540,6 +547,7 @@
 						<threshold>12</threshold>
 						<label>#5/5 Transmitter study report</label>
 						<text>Theory Regarding Transmitter\n\nAbstract:\nAnalysis of the Orbital Beam Training Target (OBTT) suggests its origin as an archeotech device for coordinating power satellites. The bottom button likely served as a safety measure for personnel. The OBTT exhibits concerning modifications: self-repair via organic material and teleportation based on satellite data (prioritizing buildings). While potentially repurposable as a weapon, its critical classification remains due to safety risks and teleportation capabilities. Removal or controlled use require careful consideration due to inherent risks.\n\nHypothesis:\nBased on observations from all experiments and data from transmission, a theory regarding the Orbital Beam Training Target (OBTT) origin and behavior was proposed.\nOBTT was build by archotech engineers to test and coordinate network of multiple power-collection satellites. Lit lamps on the indicator represent the amount of satellites it was able to connect. While digital dial represent time it takes for satellites to aim at the OBTT as the target. Additional safety feature was installed in it as button at the bottom, which allowed ground personal to delay attack to evacuate firing zone. Strong pneumatic retractable stops was installed to keep OBTT in one place during beam effect. While it was made of military grade composite to withstand multiple usage, it appears to have undergone alterations. Seems like organic metal infestated the device making it to regenerate any damage from beam. Additionally it acquired ability to self-teleport. Target of teleportation selected via processing of big amount of recieved data from satellite imaging, to prioritize building as targets. Due to the interference in the atmosphere satellite imaging not always available, making it pick random spot nearby to teleport to. Since it was made for military practice it doesn't risk being permamently deactivated by the satellites, but still require some time (~5 days) between manual activation.\n\nDiscussion:\nBased on our current understanding of the OBTT, it has the potential to be repurposed as a powerful military-grade tool. Additionally, its self-teleportation ability requires a high level of surveillance capability for preventive measures against activation in vital facility zones.\nThe current classification of the OBTT remains Class-4 (Critical) as it still pose an immediate threat to the facility and it personal, even with current safety protocols.\n\nRecommendations:\nRemoval: Given the potential for it indestructability, destruction is impossible but it can be send to the other part of the world. The OBTT teleportation abilities still present a risk of it returning to the facility one day.\nControlled Use: If the hypothesis holds true, continued utilization of the OBTT under controlled and monitored conditions could offer a sustainable fire power for the facility defense. This approach, however, requires thorough risk assessment and robust safety protocols to prevent it activation in vital zones.</text>
+						<ThingDefSpawn>AE_ResearchNotesBTB</ThingDefSpawn>
 						<isSyncWithDB>true</isSyncWithDB>
 					</li>
 				</studyNotes>
@@ -580,6 +588,8 @@
 			<li>AnomaliesExpected.PlaceWorker_ShowBeamTargetRadius</li>
 		</placeWorkers>
 	</ThingDef>
+	
+	
 	
 	<ThingDef Name="BuildingAE_BloodLakeBase" ParentName="BuildingBase" Abstract="True">
 		<graphicData>

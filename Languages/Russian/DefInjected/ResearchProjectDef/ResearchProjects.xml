@@ -76,6 +76,9 @@
 	<AEOrbitalBeamTargeter.generalRules.rulesStrings.4>subject_story->украл всю древнюю солнечную энергию</AEOrbitalBeamTargeter.generalRules.rulesStrings.4>
 	<AEOrbitalBeamTargeter.generalRules.rulesStrings.5>subject_gerund->создание целеуказатель для точечного луча</AEOrbitalBeamTargeter.generalRules.rulesStrings.5>
 	
+	<AEThermalReflectiveSkinImplant.label>термо-отражающая кожная железа</AEThermalReflectiveSkinImplant.label>
+	<AEThermalReflectiveSkinImplant.description>Создать термо-отражающую кожную железу на основе устройства аномалии передатчика.</AEThermalReflectiveSkinImplant.description>
+	
 	
 	
 	<AEBloodPump.label>насос кровиподобной жидкости</AEBloodPump.label>
