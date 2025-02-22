@@ -18,6 +18,9 @@
 		<prerequisites>
 			<li>SerumSynthesis</li>
 		</prerequisites>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesABA</li>
+		</requiredAnalyzed>
 		<knowledgeCost>35</knowledgeCost>
 		<knowledgeCategory>Basic</knowledgeCategory>
 		<researchViewX>0</researchViewX>
@@ -46,6 +49,9 @@
 		<prerequisites>
 			<li>SerumSynthesis</li>
 		</prerequisites>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesAHBA</li>
+		</requiredAnalyzed>
 		<knowledgeCost>45</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>4</researchViewX>
