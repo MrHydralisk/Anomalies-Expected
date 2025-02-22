@@ -159,6 +159,7 @@
 	<AE_BloodPuddle.comps.Comp_CanDestroyedAfterStudy.activatingStringPending>растворяет и заполняет почвой {0}</AE_BloodPuddle.comps.Comp_CanDestroyedAfterStudy.activatingStringPending>
 	<AE_BloodPuddle.comps.Comp_CanDestroyedAfterStudy.guiLabelString>Выберите кто уничтожит это.</AE_BloodPuddle.comps.Comp_CanDestroyedAfterStudy.guiLabelString>
 	<AE_BloodPuddle.comps.Comp_CanDestroyedAfterStudy.jobString>расстворить и заполнить почвой</AE_BloodPuddle.comps.Comp_CanDestroyedAfterStudy.jobString>
+	<AE_BloodPuddle.comps.Comp_CanDestroyedAfterStudy.interactionProgressString>Растворение и заполнение почвой</AE_BloodPuddle.comps.Comp_CanDestroyedAfterStudy.interactionProgressString>
 
 
 	<AE_BloodLake.label>странное озеро</AE_BloodLake.label>
@@ -196,6 +197,7 @@
 	<AE_BloodLake.comps.Comp_CanDestroyedAfterStudy.activatingStringPending>растворяет и заполняет почвой {0}</AE_BloodLake.comps.Comp_CanDestroyedAfterStudy.activatingStringPending>
 	<AE_BloodLake.comps.Comp_CanDestroyedAfterStudy.guiLabelString>Выберите кто уничтожит это.</AE_BloodLake.comps.Comp_CanDestroyedAfterStudy.guiLabelString>
 	<AE_BloodLake.comps.Comp_CanDestroyedAfterStudy.jobString>расстворить и заполнить почвой</AE_BloodLake.comps.Comp_CanDestroyedAfterStudy.jobString>
+	<AE_BloodLake.comps.Comp_CanDestroyedAfterStudy.interactionProgressString>Растворение и заполнение почвой</AE_BloodLake.comps.Comp_CanDestroyedAfterStudy.interactionProgressString>
 
 
 	<AE_BloodLakeExit.label>выход кровавого озера</AE_BloodLakeExit.label>

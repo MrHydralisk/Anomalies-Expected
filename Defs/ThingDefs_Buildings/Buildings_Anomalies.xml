@@ -678,6 +678,7 @@
 				<jobString>dissolve and fill in</jobString>
 				<activatingStringPending>dissolving and filling for {0}</activatingStringPending>
 				<activatingString>dissolving and filling for {0}: {1}s</activatingString>
+				<interactionProgressString>Dissolving and filling with soil</interactionProgressString>
 
 				<fleckOnAnomaly>PitGateCollapseDust</fleckOnAnomaly>
 				<fleckOnAnomalyScale>1</fleckOnAnomalyScale>
@@ -875,6 +876,7 @@
 				<jobString>dissolve and fill in</jobString>
 				<activatingStringPending>dissolving and filling for {0}</activatingStringPending>
 				<activatingString>dissolving and filling for {0}: {1}s</activatingString>
+				<interactionProgressString>Dissolving and filling with soil</interactionProgressString>
 
 				<fleckOnAnomaly>PitGateCollapseDust</fleckOnAnomaly>
 				<fleckOnAnomalyScale>5</fleckOnAnomalyScale>
