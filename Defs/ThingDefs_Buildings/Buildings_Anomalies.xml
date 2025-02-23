@@ -15,8 +15,10 @@
 				<rect>(0,0.05,1,1.95)</rect>
 			</damageData>
 		</graphicData>
+		<useHitPoints>false</useHitPoints>
 		<statBases>
 			<Beauty>1</Beauty>
+			<Flammability>0</Flammability>
 			<BedRestEffectiveness>0.25</BedRestEffectiveness>
 			<Comfort>0.25</Comfort>
 		</statBases>
@@ -92,11 +94,11 @@
 		</graphicData>
 		<castEdgeShadows>True</castEdgeShadows>
 		<size>(1,2)</size>
+		<useHitPoints>false</useHitPoints>
 		<statBases>
 			<Beauty>1</Beauty>
-			<MaxHitPoints>150</MaxHitPoints>
 			<Mass>35</Mass>
-			<Flammability>1.0</Flammability>
+			<Flammability>0</Flammability>
 			<BedRestEffectiveness>0.25</BedRestEffectiveness>
 			<Comfort>0.25</Comfort>
 			<ImmunityGainSpeedFactor>1.2</ImmunityGainSpeedFactor>
