@@ -107,7 +107,7 @@ namespace AnomaliesExpected
         {
             foreach (Gizmo gizmo in base.GetGizmos())
             {
-                if (gizmo is Command_Action command_Action && command_Action.icon == EnterTex && (!isReadyToEnter || !isSubMapExist))
+                if (gizmo is Command_Action command_Action && command_Action.icon == EnterTex && (!isReadyToEnter || (isCreatedMap && !isSubMapExist)))
                 {
                     continue;
                 }
