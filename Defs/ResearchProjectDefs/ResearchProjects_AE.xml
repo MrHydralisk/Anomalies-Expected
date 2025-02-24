@@ -408,7 +408,6 @@
 		<description>Build ice crystal-powered coolers that can effectively cool an entire region.</description>
 		<tab>AnomaliesExpected</tab>
 		<prerequisites>
-			<li>BioferriteGenerator</li>
 			<li>AESummonSnowArmy</li>
 		</prerequisites>
 		<requiredAnalyzed>
@@ -475,8 +474,8 @@
 
 	<ResearchProjectDef>
 		<defName>AENanoInfusedIceCrystal</defName>
-		<label>archite-infused ice crystal</label>
-		<description>Analyze the mechanisms of ice crystal control over nano-scale archites.</description>
+		<label>frostite-infused ice crystal</label>
+		<description>Analyze the mechanisms of ice crystal control over nano-scale frostites.</description>
 		<tab>AnomaliesExpected</tab>
 		<prerequisites>
 			<li>AESummonSnowArmy</li>
