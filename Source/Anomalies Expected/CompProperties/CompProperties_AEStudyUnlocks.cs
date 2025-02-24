@@ -11,6 +11,7 @@ namespace AnomaliesExpected
         public bool isCreateSeparateEntityEntry;
         public List<StudyNote> studyNotesManualUnlockable = new List<StudyNote>();
         public List<StudyNote> studyNotesPawnUnlockable = new List<StudyNote>();
+        public EntityCategoryDef category;
 
         public CompProperties_AEStudyUnlocks()
         {

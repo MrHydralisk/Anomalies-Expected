@@ -495,6 +495,7 @@ namespace AnomaliesExpected
                             $"parentEntityEntry {selectedEntry.parentEntityEntry?.AnomalyLabel ?? "---"}\n" +
                             $"groupName {selectedEntry.groupName}\n" +
                             $"categoryLabelCap {selectedEntry.categoryLabelCap}\n" +
+                            $"category {selectedEntry.category?.LabelCap ?? "---"}\n" +
                             $"threatClassString {selectedEntry.threatClassString}\n" +
                             $"modName {selectedEntry.modName}\n" +
                             $"CurrPawnAmountStudied {string.Join(" | ", selectedEntry.CurrPawnAmountStudied)}\n" +

@@ -1217,6 +1217,7 @@
 				</studyNotes>
 				<isSyncWithParent>true</isSyncWithParent>
 				<isCreateEntityEntryWithoutCodexEntry>true</isCreateEntityEntryWithoutCodexEntry>
+				<category>Advanced</category>
 			</li>
 			<li Class="AnomaliesExpected.CompProperties_CanDestroyedAfterStudy">
 				<compClass>AnomaliesExpected.Comp_BloodLakeTerminal</compClass>
@@ -1345,6 +1346,7 @@
 					</li>
 				</studyNotesManualUnlockable>
 				<isCreateEntityEntryWithoutCodexEntry>true</isCreateEntityEntryWithoutCodexEntry>
+				<category>Basic</category>
 			</li>
 			<li>
 				<compClass>AnomaliesExpected.Comp_EntityDataBaseAccess</compClass>

@@ -136,7 +136,7 @@
 		<defName>AESnowCoreImplant</defName>
 		<label>snow core implant</label>
 		<labelNoun>a snow core implant</labelNoun>
-		<description>An installed anomalous implant, replicating the Snow Army's snow core, enabling the host to survive in lower temperatures. Nano-scale archites induce cellular crystallization upon injury, accelerating regeneration in lower temperatures. However, this crystallization makes the cells vulnerable to high temperatures, destabilizing their structure. The host body also lowers the temperature of the surrounding air.\n\nRecieved damage x2, when on fire.\nMax effect at -100 degrees, including regeneration of missing parts.</description>
+		<description>An installed anomalous implant, replicating the Snow Army's snow core, enabling the host to survive in lower temperatures. Nano-scale frostites induce cellular crystallization upon injury, accelerating regeneration in lower temperatures. However, this crystallization makes the cells vulnerable to high temperatures, destabilizing their structure. The host body also lowers the temperature of the surrounding air.\n\nRecieved damage x2, when on fire.\nMax effect at -100 degrees, including regeneration of missing parts.</description>
 		<descriptionHyperlinks>
 			<ThingDef>AESnowCoreImplant</ThingDef>
 		</descriptionHyperlinks>

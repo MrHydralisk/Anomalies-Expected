@@ -229,7 +229,7 @@
 		<label>snow army</label>
 		<category>Advanced</category>
 		<uiIconPath>UI/CodexEntries/AE_SnowArmy</uiIconPath>
-		<description>Whispers on the icy winds tell of a force frozen to the core, a chilling legion that emerges from the heart of the blizzards. The only grim evidence of their passage is the trail of frozen corpses.</description>
+		<description>Whispers on the icy winds tell of a force frozen to the core, a chilling legion that emerges from the heart of the blizzards. The only grim evidence of their passage is the trail of frozen corpses.\n\nClassified as Class-4 (Critical) anomaly.</description>
 		<linkedThings>
 			<li>AE_SnowMan</li>
 			<li>AE_SnowGolem</li>
@@ -249,6 +249,7 @@
 		<modExtensions>
 			<li Class="AnomaliesExpected.EntityCodexEntryDefExtension">
 				<groupName>Snow army</groupName>
+				<defaultThreatClass>4</defaultThreatClass>
 				<groupMembersEntityCodexDefs>
 					<li>AE_EntityCodexEntry_ChristmasStockings</li>
 				</groupMembersEntityCodexDefs>

@@ -58,7 +58,7 @@
 	<ThingDef ParentName="BaseAESnowArmy">
 		<defName>AE_SnowMan</defName>
 		<label>snowman</label>
-		<description>The Snowman appears harmless and made out of few big snowballs. However, its icy snow body proves surprisingly resilient, quickly dispelling any illusions of innocence. They can attack by throwing snowballs at enemies or scratching them with their stick arms. They can survive even with substantial part of their body being missing.</description>
+		<description>The Snowman appears harmless and made out of few big snowballs. However, its icy snow body proves surprisingly resilient, quickly dispelling any illusions of innocence. They can attack by throwing snowballs at enemies or scratching them with their stick arms. They can survive even with substantial part of their body being missing.\n\nClassified as Class-2 (Warning) anomaly.</description>
 		<statBases>
 			<MoveSpeed>3.2</MoveSpeed>
 			<MinimumContainmentStrength>60</MinimumContainmentStrength>
@@ -110,29 +110,38 @@
 				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
 				<studyNotesPawnUnlockable>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<threshold>0.01</threshold>
+						<!-- <threshold>2.9</threshold> -->
+						<threshold>0.9</threshold>
 						<AmountStudiedRequirment>1</AmountStudiedRequirment>
 						<label>#1/4 Snowman study report</label>
-						<text>Emiting Frigid Air</text>
-						<ThreatClass>1</ThreatClass>
+						<text>Autopsy Report\n\nSubject:\nA large, humanoid construct resembling a snowman. Designated as entity SA-01.\n\nExternal Examination:\nThe Subject presents as a structure of 3 big spherical snowballs. The bottom sphere serves as a base, with two smaller snowballs affixed, likely functioning as pedal appendages. The middle sphere supports two stick-like appendages, possibly serving as arms, and three dark ice buttons. The superior sphere supports two dark ice orbs resembling eyes and a conical, carrot-like protrusion resembling nose. The SA-01’s exterior is coated in a thin layer of ice, exhibiting a high degree of resistance to physical trauma.\n\nInternal Examination:\nDissection revealed the Subject's internal composition to be primarily snow. This internal snow structure demonstrates a remarkable capacity for adaptation to external forces without compromising the overall structural integrity of the SA-01. Within the middle sphere was discovered an ice core, which appears to function as a vital heart-like organ.\n\nThermal Exposure Test:\nApplication of open flame to the Subject's exterior resulted in localized melting of the ice layer. Subsequent mechanical force applied to the thermally affected area produced significantly greater damage compared to control tests without thermal pre-treatment. This suggests that elevated temperatures compromise the structural integrity of the ice layer, rendering the SA-01 more vulnerable to external trauma.\n\nCryogenic Exposure Test:\nExposure to sub-zero temperatures induced regenerative capabilities. The Subject started to restore damaged areas induced by previous tests. Further reduction of ambient temperature appeared to accelerate this regenerative process.\n\nRecommendations:\nFurther study of more instances of SA-01 is recommended to get deeper understanding.\n[Total of 3 required for next study report]</text>
+						<ThreatClass>2</ThreatClass>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<threshold>0.5</threshold>
+						<threshold>0.91</threshold>
 						<AmountStudiedRequirment>3</AmountStudiedRequirment>
 						<label>#2/4 Snowman study report</label>
-						<text>Emiting Frigid Air</text>
-						<ThreatClass>1</ThreatClass>
+						<text>Combat Capabilities Analysis\n\nSubject:\nSnowman SA-01.\n\nRanged Combat Capabilities:\nThe Subject's primary ranged weapon consists of snowballs. The SA-01 appears capable of acquiring these projectiles by compressing surrounding snow or, alternatively, generating snow on its own body. Despite the seemingly fragile nature of its stick-like arms, Subject can launch snowballs with considerable velocity and force. These projectiles exhibit a density sufficient to inflict harm on human targets and even cause structural damage.\nA key characteristic of the SA-01's snowball attack is its cryo-effect. Upon impact with human skin, the snowball causes a rapid decrease in tissue temperature, leading to localized freezing. The affected area experiences minimal pain, potentially allowing damage to accumulate unnoticed until a critical state is reached. Cold-resistant skin protection has been observed to mitigate the freezing effects of these attacks.\nInstances of SA-01 often operate in groups, employing a suppressive fire tactic by continuously launching snowballs at a target.\n\nMelee Combat Capabilities:\nWhen disarmed, the SA-01 resorts to close-quarters combat. In this scenario, the subject attempts to close the distance with the target and attack using its stick-like arms or its carrot-like nose.\n\nRecommendations:\nFurther study of more instances of SA-01 is recommended to get deeper understanding.\n[Total of 5 required for next study report]</text>
+						<ThreatClass>2</ThreatClass>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<threshold>1</threshold>
+						<threshold>0.92</threshold>
 						<AmountStudiedRequirment>5</AmountStudiedRequirment>
 						<label>#3/4 Snowman study report</label>
-						<text>Emiting Frigid Air</text>
-						<ThreatClass>1</ThreatClass>
+						<text>Nano-Scale Discovery\n\nSubject:\nSnowman SA-01.\n\nSnow Analysis:\nMicroscopic examination of snow samples extracted from the Subject revealed the presence of nano-scale machines. These nanomachines exhibit structural similarities to previously observed Archites and nanomachines within some mechanoids. However, a key functional difference is their apparent ability to manipulate thermal energy, specifically by decreasing the surrounding temperature. These novel nanomachines have been designated "Frostites".\nFrostites are distributed throughout the SA-01's internal structure, seemingly responsible for maintaining its overall form and generating new snow and ice as required. These Frostites exhibit remarkable energy efficiency, deriving power from the absorption of ambient heat. A consequential side effect of this process is a constant decrease in the surrounding air temperature.\nWhile frostites can survive exposure to elevated temperatures, the structural integrity of the surrounding snow and ice structure is compromised, leading to melting. This disruption separates the frostites from their network, inducing a state of hibernation until reconnection with another frostites network occurs.\n\nIce Core Analysis:\nThe SA-01's ice core functions as a central hub for the frostites network. This core appears to be a site of frostites aggregation and their maintenance. Disruption of the ice core results in a functional collapse of the frostites network, characterized by a loss of coordinated activity and network disintegration. Therefore, the ice core's functional role should be expanded beyond that of a heart-like organ to include that of a brain-like organ, responsible for network cohesion and coordinated function.\n\nTechnological Implications:\nThe observed cryo-active properties of the frostites present a potential avenue for technological development. Replicating the frostites' mechanism of localized air temperature reduction on a wider scale could enable the effective cooling of entire regions. Further research is recommended to explore the feasibility and potential applications of this technology.\n\nRecommendations:\nFurther study of more instances of SA-01 is recommended to get deeper understanding.\n[Total of 7 required for next study report]</text>
+						<ThreatClass>2</ThreatClass>
 						<ThingDefSpawn>AE_ResearchNotesSAA</ThingDefSpawn>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>0.93</threshold>
+						<AmountStudiedRequirment>7</AmountStudiedRequirment>
+						<label>#4/4 Snowman study report</label>
+						<text>Theory Regarding Snow Army 1/5\n\nSubject:\nSnowman SA-01.\n\nOrigin Hypothesis:\nThe SA-01 is hypothesized to be a remnant of a Snow Army mechanoid force, potentially created by an extinct civilization. While this race is presumed to be extinct, their technological creations, such as the SA-01, continue to function. The advanced nature of the frostites nanotechnology suggests a sophisticated understanding of material science and energy manipulation, further supporting the hypothesis of a technologically advanced civilization.\n\nEnvironmental Adaptation:\nThe SA-01's reliance on cryo-technology, specifically the use of frostites to manipulate low temperatures, and the absence of metals within its composition strongly suggest that the creators of these machines inhabited a harsh, cold climate characterized by limited natural resources. This scarcity likely drove them to maximize the utilization of constantly available materials like snow and ice in their technological development. The SA-01's ability to generate and manipulate snow locally implies a deep understanding of cryo-dynamics and material transformation at the nanoscale. The lack of metal components also suggests a deliberate design choice to exploit the unique properties of non-metallic materials in a cold environment.\n\nConstruction and Advantages:\nThe SA-01's design appears optimized for resource efficiency. The relatively small quantity of frostites required, coupled with the abundance of constantly available snow, allows for the economical production of individual SA-01 units. This modularity and ease of "construction" likely facilitated rapid deployment and replenishment of the Snow Army. The absence of metallic components within the SA-01's structure confers a potential advantage against high-energy impulse weapons.  Such weapons, which often rely on electromagnetic pulses or directed energy, would likely have reduced effectiveness against a non-metallic target, as there are no conductive pathways for the energy to travel through, and no metal parts to short-circuit. This characteristic may have contributed to the SA-01's role as a primary force within the Snow Army, allowing them to potentially withstand attacks that would disable conventional metallic mechanoids. Furthermore, the cryo-attacks of the SA-01 might be particularly effective against opponents relying on heat-based technologies, as the extreme cold could disrupt or disable such systems.</text>
+						<ThreatClass>2</ThreatClass>
 					</li>
 				</studyNotesPawnUnlockable>
 				<isCreateSeparateEntityEntry>true</isCreateSeparateEntityEntry>
+				<category>Basic</category>
 			</li>
 			<li Class="CompProperties_ProducesBioferrite">
 				<bioferriteDensity>0.75</bioferriteDensity>
@@ -271,6 +280,7 @@
 					</li>
 				</studyNotesPawnUnlockable>
 				<isCreateSeparateEntityEntry>true</isCreateSeparateEntityEntry>
+				<category>Advanced</category>
 			</li>
 			<li Class="CompProperties_ProducesBioferrite">
 				<bioferriteDensity>0.75</bioferriteDensity>
@@ -422,6 +432,7 @@
 					</li>
 				</studyNotesPawnUnlockable>
 				<isCreateSeparateEntityEntry>true</isCreateSeparateEntityEntry>
+				<category>Advanced</category>
 			</li>
 			<li Class="CompProperties_ProducesBioferrite">
 				<bioferriteDensity>1</bioferriteDensity>
@@ -563,6 +574,7 @@
 					</li>
 				</studyNotesPawnUnlockable>
 				<isCreateSeparateEntityEntry>true</isCreateSeparateEntityEntry>
+				<category>Advanced</category>
 			</li>
 			<li Class="CompProperties_ProducesBioferrite">
 				<bioferriteDensity>1</bioferriteDensity>
@@ -701,6 +713,7 @@
 					</li>
 				</studyNotesPawnUnlockable>
 				<isCreateSeparateEntityEntry>true</isCreateSeparateEntityEntry>
+				<category>Advanced</category>
 			</li>
 			<li Class="CompProperties_ProducesBioferrite">
 				<bioferriteDensity>1</bioferriteDensity>

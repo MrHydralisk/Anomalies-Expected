@@ -66,6 +66,11 @@ namespace AnomaliesExpected
                     AnomalyDesc = entityCodexEntryDef.Description,
                     EntityCodexEntryDef = entityCodexEntryDef
                 };
+                EntityCodexEntryDefExtension modExt = entityCodexEntryDef?.GetModExtension<EntityCodexEntryDefExtension>();
+                if (modExt != null)
+                {
+                    entityEntry.ThreatClass = modExt.defaultThreatClass;
+                }
                 EntityEntries.Add(entityEntry);
             }
         }
@@ -98,6 +103,10 @@ namespace AnomaliesExpected
                         ThingDef = compAEStudyUnlocks.parent.def,
                         EntityCodexEntryDef = entityCodexEntryDef
                     };
+                }
+                if (compAEStudyUnlocks.Props is CompProperties_AEStudyUnlocks aeProps)
+                {
+                    entityEntry.category = aeProps.category;
                 }
                 EntityEntries.Add(entityEntry);
             }

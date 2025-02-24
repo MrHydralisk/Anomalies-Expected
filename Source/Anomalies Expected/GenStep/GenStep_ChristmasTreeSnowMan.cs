@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using System.Collections.Generic;
 using Verse;
 
 namespace AnomaliesExpected
@@ -28,6 +29,11 @@ namespace AnomaliesExpected
                 }
                 Pawn newThing = PawnGenerator.GeneratePawn(pawnKindCount.kindDef, Faction.OfEntities);
                 GenSpawn.Spawn(newThing, result, map);
+                List<EntityCodexEntryDef> entries = AnomalyUtility.GetCodexEntriesFor(newThing);
+                if (!entries.NullOrEmpty())
+                {
+                    Find.EntityCodex.SetDiscovered(entries, newThing.def, newThing);
+                }
             }
         }
 
