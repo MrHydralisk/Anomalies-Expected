@@ -17,6 +17,10 @@ namespace AnomaliesExpected
                 if (temp < 0)
                 {
                     parent.Severity = 1;
+                    if (!Pawn.Spawned && Pawn.SpawnedOrAnyParentSpawned)
+                    {
+                        parent.Severity = 2;
+                    }
                 }
                 else
                 {
