@@ -135,7 +135,15 @@ namespace AnomaliesExpected
 
         public void Butcher(Corpse corpse)
         {
-            IEnumerable<Thing> products = corpse.ButcherProducts(parent.Map?.mapPawns?.FreeColonists?.RandomElement(), currMood?.butcherEfficiency ?? Props.butcherEfficiency);
+            IEnumerable<Thing> products = corpse.InnerPawn.ButcherProducts(null, currMood?.butcherEfficiency ?? Props.butcherEfficiency);
+            if (corpse.InnerPawn.RaceProps.BloodDef != null)
+            {
+                FilthMaker.TryMakeFilth(parent.Position, parent.Map, corpse.InnerPawn.RaceProps.BloodDef, corpse.InnerPawn.LabelIndefinite());
+            }
+            if (corpse.InnerPawn.RaceProps.Humanlike)
+            {
+                Find.HistoryEventsManager.RecordEvent(new HistoryEvent(HistoryEventDefOf.ButcheredHuman, new SignalArgs(parent.Named(HistoryEventArgsNames.Doer), corpse.InnerPawn.Named(HistoryEventArgsNames.Victim))));
+            }
             List<IntVec3> cleanCells = GenRadial.RadialCellsAround(parent.Position, 2, useCenter: true).ToList();
             foreach (Thing product in products)
             {
