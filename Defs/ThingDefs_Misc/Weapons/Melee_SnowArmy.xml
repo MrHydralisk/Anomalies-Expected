@@ -74,6 +74,7 @@
 		<statBases>
 			<WorkToMake>12000</WorkToMake>
 			<Mass>2</Mass>
+			<VEF_MeleeWeaponRange MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">2.5</VEF_MeleeWeaponRange>
 		</statBases>
 		<tools>
 			<li>
