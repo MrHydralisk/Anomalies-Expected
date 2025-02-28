@@ -171,7 +171,12 @@ namespace AnomaliesExpected
 
         public AEEntityEntry GetEntityEntryFromThingDef(ThingDef thingDef)
         {
-            return EntityEntries.FirstOrDefault((AEEntityEntry aeee) => aeee.ThingDef == thingDef || aeee.EntityCodexEntryDef == thingDef.entityCodexEntry);
+            AEEntityEntry aEEntityEntry = EntityEntries.FirstOrDefault((AEEntityEntry aeee) => aeee.ThingDef == thingDef);
+            if (aEEntityEntry == null && thingDef.entityCodexEntry != null)
+            {
+                aEEntityEntry = GetEntityEntryFromEntityCodexEntryDef(thingDef.entityCodexEntry);
+            }
+            return aEEntityEntry;
         }
 
         public AEEntityEntry GetEntityEntryFromEntityCodexEntryDef(EntityCodexEntryDef entityCodexEntryDef)
