@@ -67,7 +67,7 @@
 						</pawnGroupKindDef>
 					</li>
 					<li>
-						<commonality>140</commonality>
+						<commonality>310</commonality>
 						<pawnsArrivalModeDef>
 							<li>EdgeWalkIn</li>
 							<li>EdgeWalkInGroups</li>

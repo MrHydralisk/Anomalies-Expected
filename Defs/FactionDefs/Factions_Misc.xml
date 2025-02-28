@@ -79,11 +79,28 @@
 				</options>
 			</li>
 			<li>
-				<!-- Spider Rush-->
+				<!-- Snow Man Rush-->
 				<kindDef>AE_BasicMonolith</kindDef>
 				<commonality>70</commonality>
 				<options>
 					<AE_SnowMan>10</AE_SnowMan>
+				</options>
+			</li>
+			<!-- Temp -->
+			<li>
+				<!-- Ice Mantis Rush-->
+				<kindDef>AE_AdvancedMonolithRush</kindDef>
+				<commonality>85</commonality>
+				<options>
+					<AE_IceMantis>10</AE_IceMantis>
+				</options>
+			</li>
+			<li>
+				<!-- Ice Man Rush-->
+				<kindDef>AE_AdvancedMonolithRush</kindDef>
+				<commonality>85</commonality>
+				<options>
+					<AE_IceMan>10</AE_IceMan>
 				</options>
 			</li>
 			<!-- <li> -->
