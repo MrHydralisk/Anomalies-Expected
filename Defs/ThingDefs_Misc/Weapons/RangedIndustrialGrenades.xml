@@ -49,8 +49,8 @@
 		</thingCategories>
 		<smeltable>true</smeltable>
 		<costList>
-			<Steel>20</Steel>
-			<Chemfuel>80</Chemfuel>
+			<AE_IceCrystalDestabilized>5</AE_IceCrystalDestabilized>
+			<Bioferrite>25</Bioferrite>
 		</costList>
 		<recipeMaker>
 			<recipeUsers Inherit="false">

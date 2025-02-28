@@ -21,14 +21,14 @@
 		</comps>
 		<projectileWhenLoaded>Bullet_Shell_AENitrogen</projectileWhenLoaded>
 		<costList>
-			<Steel>15</Steel>
-			<ComponentIndustrial>2</ComponentIndustrial>
+			<AE_IceCrystalDestabilized>1</AE_IceCrystalDestabilized>
+			<Bioferrite>15</Bioferrite>
 		</costList>
 		<costListForDifficulty>
 			<difficultyVar>classicMortars</difficultyVar>
 			<costList>
-				<Steel>25</Steel>
-				<ComponentIndustrial>2</ComponentIndustrial>
+				<AE_IceCrystalDestabilized>1</AE_IceCrystalDestabilized>
+				<Bioferrite>25</Bioferrite>
 			</costList>
 		</costListForDifficulty>
 		<recipeMaker>
@@ -40,7 +40,7 @@
 			<targetCountAdjustment>5</targetCountAdjustment>
 			<workSkill>Crafting</workSkill>
 			<recipeUsers>
-				<li>TableMachining</li>
+				<li>BioferriteShaper</li>
 			</recipeUsers>
 			<skillRequirements>
 				<Crafting>4</Crafting>

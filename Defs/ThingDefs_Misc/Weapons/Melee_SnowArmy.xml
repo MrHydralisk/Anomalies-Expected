@@ -51,7 +51,8 @@
 			</li>
 		</tools>
 		<costList>
-			<Steel>100</Steel>
+			<AE_IceCrystal>16</AE_IceCrystal>
+			<Bioferrite>10</Bioferrite>
 		</costList>
 		<recipeMaker>
 			<researchPrerequisite>AEFreezingFragile</researchPrerequisite>
@@ -97,7 +98,8 @@
 			</li>
 		</tools>
 		<costList>
-			<Steel>75</Steel>
+			<AE_IceCrystal>8</AE_IceCrystal>
+			<Bioferrite>30</Bioferrite>
 		</costList>
 		<recipeMaker>
 			<researchPrerequisite>AEFreezingFragile</researchPrerequisite>
