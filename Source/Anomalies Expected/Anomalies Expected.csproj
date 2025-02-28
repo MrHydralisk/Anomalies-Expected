@@ -48,9 +48,9 @@
     <Compile Include="Alert_ChristmasTreeUnstable.cs" />
     <Compile Include="Building\Building_AEChristmasGiftBox.cs" />
     <Compile Include="Building\Building_AEChristmasTreeExit.cs" />
-    <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilityIceCrystalDistabilization.cs" />
+    <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilityIceCrystalDestabilization.cs" />
     <Compile Include="CompProperties\HediffCompProperties\HediffCompProperties_SnowBlockCompressor.cs" />
-    <Compile Include="Comp\CompAbilityEffect\CompAbilityEffect_IceCrystalDistabilization.cs" />
+    <Compile Include="Comp\CompAbilityEffect\CompAbilityEffect_IceCrystalDestabilization.cs" />
     <Compile Include="Comp\HediffComp\HediffComp_ActivateAbilityOnRemoved.cs" />
     <Compile Include="Comp\HediffComp\HediffComp_SnowBlockCompressor.cs" />
     <Compile Include="Comp\HediffComp\HediffComp_SnowArmy.cs" />

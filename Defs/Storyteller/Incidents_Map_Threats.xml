@@ -9,7 +9,7 @@
 		<minThreatPoints>350</minThreatPoints>
 		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
 		<letterLabel>Snow army attack</letterLabel>
-		<letterText>A swarm of huge gape-mawed monsters are attacking!\n\nThese creatures' jaws are massive enough to swallow a human whole. Keep your distance!</letterText>
+		<letterText>Snow Army reconnaissance forces are now attacking our facility! Prepare for a frigid encounter!</letterText>
 		<gameCondition>AE_TemperatureDrop</gameCondition>
 		<letterDef>ThreatBig</letterDef>
 		<tags>
@@ -44,6 +44,7 @@
 	<IncidentDef ParentName="SnowArmyAssault">
 		<defName>AE_IncidentDef_SnowArmyAssaultAdvanced</defName>
 		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<letterText>Snow Army main forces are now attacking our facility! Expect extreme cold!</letterText>
 		<tags>
 			<li>AESnowArmy</li>
 		</tags>

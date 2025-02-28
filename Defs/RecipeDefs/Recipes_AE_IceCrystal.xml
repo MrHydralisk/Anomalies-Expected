@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<RecipeDef Name="RecipeMakeAEIceCrystalDistabilized" Abstract="True">
-		<description>Fuse exotic ice crystal with bioferrite from blood-like liquid by filtering it.</description>
+	<RecipeDef Name="RecipeMakeAEIceCrystalDestabilized" Abstract="True">
+		<description>Fuse exotic ice crystal with bioferrite to destabilize it.</description>
 		<descriptionHyperlinks>
-			<ThingDef>AE_IceCrystalDistabilized</ThingDef>
+			<ThingDef>AE_IceCrystalDestabilized</ThingDef>
 			<ThingDef>AE_IceCrystal</ThingDef>
 			<ThingDef>Bioferrite</ThingDef>
 		</descriptionHyperlinks>
@@ -21,15 +21,15 @@
 		<recipeUsers>
 			<li>BioferriteShaper</li>
 		</recipeUsers>
-		<researchPrerequisite>AEIceCrystalDistabilized</researchPrerequisite>
+		<researchPrerequisite>AEIceCrystalDestabilized</researchPrerequisite>
 	</RecipeDef>
 
-	<RecipeDef ParentName="RecipeMakeAEIceCrystalDistabilized">
-		<defName>MakeAEIceCrystalDistabilized</defName>
-		<label>distabilize ice crystal</label>
-		<jobString>Distabilizing ice crystal.</jobString>
+	<RecipeDef ParentName="RecipeMakeAEIceCrystalDestabilized">
+		<defName>MakeAEIceCrystalDestabilized</defName>
+		<label>destabilize ice crystal</label>
+		<jobString>Destabilizing ice crystal.</jobString>
 		<products>
-			<AE_IceCrystalDistabilized>1</AE_IceCrystalDistabilized>
+			<AE_IceCrystalDestabilized>1</AE_IceCrystalDestabilized>
 		</products>
 		<ingredients>
 			<li>
@@ -55,12 +55,12 @@
 		</skillRequirements>
 	</RecipeDef>
 
-	<RecipeDef ParentName="RecipeMakeAEIceCrystalDistabilized">
-		<defName>MakeAEIceCrystalDistabilizedBulk</defName>
-		<label>distabilize ice crystal x4</label>
-		<jobString>Distabilizing ice crystal x4.</jobString>
+	<RecipeDef ParentName="RecipeMakeAEIceCrystalDestabilized">
+		<defName>MakeAEIceCrystalDestabilizedBulk</defName>
+		<label>destabilize ice crystal x4</label>
+		<jobString>Destabilizing ice crystal x4.</jobString>
 		<products>
-			<AE_IceCrystalDistabilized>4</AE_IceCrystalDistabilized>
+			<AE_IceCrystalDestabilized>4</AE_IceCrystalDestabilized>
 		</products>
 		<ingredients>
 			<li>
@@ -86,12 +86,12 @@
 		</skillRequirements>
 	</RecipeDef>
 
-	<RecipeDef ParentName="RecipeMakeAEIceCrystalDistabilized">
-		<defName>MakeAEIceCrystalDistabilizedMass</defName>
-		<label>distabilize ice crystal x16</label>
-		<jobString>Distabilizing ice crystal x16.</jobString>
+	<RecipeDef ParentName="RecipeMakeAEIceCrystalDestabilized">
+		<defName>MakeAEIceCrystalDestabilizedMass</defName>
+		<label>destabilize ice crystal x16</label>
+		<jobString>Destabilizing ice crystal x16.</jobString>
 		<products>
-			<AE_IceCrystalDistabilized>16</AE_IceCrystalDistabilized>
+			<AE_IceCrystalDestabilized>16</AE_IceCrystalDestabilized>
 		</products>
 		<ingredients>
 			<li>

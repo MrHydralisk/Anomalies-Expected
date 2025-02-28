@@ -261,9 +261,9 @@
 	
 	
 	<AbilityDef>
-		<defName>AEIceCrystalDistabilization</defName>
-		<label>ice crystal distabilization</label>
-		<description>Increase ice crystal distabilization process to critical level, which will cause an explosion.</description>
+		<defName>AEIceCrystalDestabilization</defName>
+		<label>ice crystal destabilization</label>
+		<description>Increase ice crystal destabilization process to critical level, which will cause an explosion.</description>
 		<cooldownTicksRange>60000</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
 		<displayOrder>1300</displayOrder>
@@ -279,7 +279,7 @@
 			</targetParams>
 		</verbProperties>
 		<comps>
-			<li Class="AnomaliesExpected.CompProperties_AbilityIceCrystalDistabilization">
+			<li Class="AnomaliesExpected.CompProperties_AbilityIceCrystalDestabilization">
 				<damageDef>AENitrogen</damageDef>
 				<damAmount>16</damAmount>
 				<armorPenetration>1</armorPenetration>
@@ -293,7 +293,7 @@
 	<AbilityDef>
 		<defName>AEThrowSnowBlock</defName>
 		<label>throw snow block</label>
-		<description>Spit a sticky acid substance from acid cavity in the sternum up through the mouth to strike a distant target. The acid will stick to targets and burn them.</description>
+		<description>Throw a giant snow block at a long distance target. Will explode with nitrogen after landing.</description>
 		<iconPath>Things/Projectile/AE_SnowBlock</iconPath>
 		<cooldownTicksRange>10000~20000</cooldownTicksRange>
 		<displayOrder>1300</displayOrder>

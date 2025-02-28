@@ -61,10 +61,10 @@
 	<AnomaliesExpected.PsychicRitualDef_AESummonSnowArmy>
 		<defName>AE_SummonSnowArmy</defName>
 		<label>draw snow army</label>
-		<description>Use a psychic pulse to distort the fabric of reality, resulting in the formation of a crimson lake in the ground somewhere in the local area.</description>
+		<description>Create a psychic pulse which will draw a distant group of Snow Army towards your local area. They attack almost anyone that they see immediately. You can capture them for study or extract ice crystals from their corpses.</description>
 		<iconPath>UI/PsychicRituals/PsychicRitual_AESummonSnowArmy</iconPath>
 		<researchPrerequisite>AESummonSnowArmy</researchPrerequisite>
-		<outcomeDescription>Use a psychic pulse to distort the fabric of reality, resulting in the formation of a crimson lake in the ground somewhere in the local area.</outcomeDescription>
+		<outcomeDescription>Create a psychic pulse which will draw a distant group of Snow Army towards your local area.</outcomeDescription>
 		<hoursUntilOutcome>2</hoursUntilOutcome>
 		<castableOnPocketMaps>false</castableOnPocketMaps>
 		<requiredOffering>

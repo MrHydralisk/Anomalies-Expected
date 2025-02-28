@@ -349,11 +349,11 @@
 	</ThingDef>
 
 	<ThingDef ParentName="ResourceBase">
-		<defName>AE_IceCrystalDistabilized</defName>
-		<label>distabilized ice crystal</label>
+		<defName>AE_IceCrystalDestabilized</defName>
+		<label>destabilized ice crystal</label>
 		<description>A fusion of exotic ice crystal with bioferrite destabilizes the crystal's molecular structure, resulting in contradictory properties. Burning of this mixture releases a significant amount of energy. Its dust can drastically lower temperature of surrounding air.</description>
 		<graphicData>
-			<texPath>Things/Item/Resource/AE_IceCrystalDistabilized</texPath>
+			<texPath>Things/Item/Resource/AE_IceCrystalDestabilized</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<genericMarketSellable>false</genericMarketSellable>

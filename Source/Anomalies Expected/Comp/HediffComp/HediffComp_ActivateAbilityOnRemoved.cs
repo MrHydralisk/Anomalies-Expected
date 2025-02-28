@@ -5,7 +5,7 @@ namespace AnomaliesExpected
 {
     public class HediffComp_ActivateAbilityOnRemoved : HediffComp
     {
-        public void ActivateDistabilization()
+        public void ActivateDestabilization()
         {
             foreach (Ability ability in parent.AllAbilitiesForReading)
             {
@@ -18,7 +18,7 @@ namespace AnomaliesExpected
 
         public override void CompPostPostRemoved()
         {
-            ActivateDistabilization();
+            ActivateDestabilization();
             base.CompPostPostRemoved();
         }
     }

@@ -23,9 +23,9 @@
 		<defName>AE_TemperatureDrop</defName>
 		<conditionClass>AnomaliesExpected.GameCondition_AETemperatureDrop</conditionClass>
 		<label>temperature shifting</label>
-		<description>Temperature is rapidly shifting.</description>
+		<description>Temperature is rapidly shifting due to Snow Army's presence nearby.</description>
 		<weatherDef>AE_SnowArmy</weatherDef>
-		<letterText>Temperature is rapidly shifting.</letterText>
+		<letterText>Temperature is rapidly shifting due to Snow Army's presence nearby.</letterText>
 		<letterDef>NegativeEvent</letterDef>
 		<natural>false</natural>
 	</GameConditionDef>
@@ -34,7 +34,7 @@
 		<defName>AE_UnnaturalCold</defName>
 		<conditionClass>AnomaliesExpected.GameCondition_UnnaturalCold</conditionClass>
 		<label>unnatural cold</label>
-		<description>A thermal projection device is agitating gas molecules in the atmosphere, decreasing outdoor temperatures.</description>
+		<description>A thermal absorption device is calming gas molecules in the atmosphere, decreasing outdoor temperatures.</description>
 		<displayOnUI>false</displayOnUI>
 	</GameConditionDef>
 
@@ -42,7 +42,7 @@
 		<defName>AE_UnnaturalTemperature</defName>
 		<conditionClass>AnomaliesExpected.GameCondition_UnnaturalTemperature</conditionClass>
 		<label>unnatural temperature</label>
-		<description>A thermal projection device is agitating gas molecules in the atmosphere, changing outdoor temperatures.</description>
+		<description>A hybrid thermal control device is affecting gas molecules in the atmosphere, changing outdoor temperatures.</description>
 		<displayOnUI>false</displayOnUI>
 	</GameConditionDef>
   

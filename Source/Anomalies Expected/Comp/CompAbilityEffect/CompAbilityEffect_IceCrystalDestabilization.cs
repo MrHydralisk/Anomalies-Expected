@@ -5,9 +5,9 @@ using Verse;
 
 namespace AnomaliesExpected
 {
-    public class CompAbilityEffect_IceCrystalDistabilization : CompAbilityEffect
+    public class CompAbilityEffect_IceCrystalDestabilization : CompAbilityEffect
     {
-        public new CompProperties_AbilityIceCrystalDistabilization Props => (CompProperties_AbilityIceCrystalDistabilization)props;
+        public new CompProperties_AbilityIceCrystalDestabilization Props => (CompProperties_AbilityIceCrystalDestabilization)props;
 
         private Pawn Pawn => parent.pawn;
 

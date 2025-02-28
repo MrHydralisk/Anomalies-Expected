@@ -83,7 +83,7 @@
 	<ThingDef ParentName="BaseWeaponSnowArmy">
 		<defName>Gun_AESnowBlock</defName>
 		<label>snow block</label>
-		<description>The Snowball is a simple yet effective projectile weapon. Formed from compacted snow, it can be thrown with surprising force, delivering a chilling impact upon impact. While seemingly harmless, a well-aimed snowball can cause significant frozen through injuries.</description>
+		<description>The Snowblock is a simple yet effective projectile weapon. Formed from highly compressed snow infused with nitrogen, it can be thrown with some force, delivering a chilling impact upon everyone in impact area. When thrown, it delivers a powerful, freezing impact, causing substantial damage, slowing down targets and cryogenicly bonding mechanical components.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/WeaponRanged/Gun_AESnowBlock</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -161,7 +161,7 @@
 	<ThingDef ParentName="BaseWeaponSnowArmy">
 		<defName>Gun_AEIcicle</defName>
 		<label>icicle</label>
-		<description>The Snowball is a simple yet effective projectile weapon. Formed from compacted snow, it can be thrown with surprising force, delivering a chilling impact upon impact. While seemingly harmless, a well-aimed snowball can cause significant frozen through injuries.</description>
+		<description>The Icicle is a simple yet effective projectile weapon. Formed from sharp ice shard, it can be thrown with surprising force. Its high-impact strikes deliver precise damage, and should it shatter, the fragments inflict further injury. Its ability to effectively disrupt force fields remains a mystery.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/WeaponRanged/Gun_AEIcicle</texPath>
 			<graphicClass>Graphic_Random</graphicClass>
@@ -230,7 +230,7 @@
 	<ThingDef ParentName="AE_BaseSnowArmyRangeHumanWeapon">
 		<defName>Gun_AESnowBallGun</defName>
 		<label>snowball gun</label>
-		<description>An ancient design of shotgun that emits a tight-packed spray of pellets. Deadly, but short range.</description>
+		<description>This weapon utilizes atmospheric moisture or direct snow loading to generate snowballs, which are then fired with impressive velocity. A well-aimed shot can cause severe freezing injuries, though its effective range is limited. Replicating snowballs of SA-01.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/WeaponRanged/AESnowBallGun</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -309,7 +309,7 @@
 	<ThingDef ParentName="AE_BaseSnowArmyRangeHumanWeapon">
 		<defName>Gun_AEIcicleRifle</defName>
 		<label>icicle rifle</label>
-		<description>An ancient design of precision sniper rifle. Bolt action. It has an exceptionally long range, great accuracy and good power. Because it's so unwieldy, other weapons outclass it at close range.</description>
+		<description>This weapon utilizes atmospheric moisture or direct snow loading to generate icicles, which are then fired with exceptional speed and range. Projectiles have a chance to exhibit fragmentation upon impact, resulting in secondary projectile damage. Impact with electronic systems or force field emitters induces electrical short-circuiting. Replicating icicles of SA-05.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/WeaponRanged/AEIcicleRifle</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

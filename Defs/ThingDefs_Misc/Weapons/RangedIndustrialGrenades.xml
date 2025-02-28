@@ -4,7 +4,7 @@
 	<ThingDef ParentName="BaseMakeableGrenade">
 		<defName>Weapon_AEGrenadeNitrogen</defName>
 		<label>nitrogen grenades</label>
-		<description>Old-school fragmentation grenades. They can be thrown a short distance, where they'll explode, damaging anything and anyone nearby.</description>
+		<description>Grenades filled with destabilized ice crystal. They can be thrown a short distance, where they'll explode, spilling nitrogen around that freezing and slowing down anything and anyone nearby.</description>
 		<tickerType>Normal</tickerType>
 		<graphicData>
 			<texPath>Things/Item/Equipment/WeaponRanged/AEGrenadeNitrogen</texPath>
@@ -56,7 +56,7 @@
 			<recipeUsers Inherit="false">
 				<li>BioferriteShaper</li>
 			</recipeUsers>
-			<researchPrerequisite>AEIceCrystalDistabilized</researchPrerequisite>
+			<researchPrerequisite>AEIceCrystalDestabilized</researchPrerequisite>
 			<displayPriority>1300</displayPriority>
 		</recipeMaker>
 		<techLevel>Ultra</techLevel>
@@ -77,7 +77,6 @@
 			<damageDef>AENitrogen</damageDef>
 			<damageAmountBase>15</damageAmountBase>
 			<stoppingPower>1</stoppingPower>
-			<!-- <explosionDelay>100</explosionDelay> -->
 		</projectile>
 	</ThingDef>
 

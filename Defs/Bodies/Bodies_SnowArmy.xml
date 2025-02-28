@@ -351,7 +351,7 @@
 		<label>snow spider</label>
 		<corePart>
 			<def>AE_SnowBallD</def>
-			<customLabel>middle snowball</customLabel>
+			<customLabel>snow cephalothorax</customLabel>
 			<height>Middle</height>
 			<depth>Outside</depth>
 			<groups>
@@ -360,7 +360,7 @@
 			<parts>
 				<li>
 					<def>AE_SnowBallE</def>
-					<customLabel>front snowball</customLabel>
+					<customLabel>snow head</customLabel>
 					<coverage>0.12</coverage>
 					<depth>Outside</depth>
 					<groups>
@@ -461,7 +461,7 @@
 				</li>
 				<li>
 					<def>AE_SnowBallF</def>
-					<customLabel>rear snowball</customLabel>
+					<customLabel>snow abdomen</customLabel>
 					<coverage>0.53</coverage>
 					<depth>Outside</depth>
 					<groups>
@@ -469,9 +469,9 @@
 					</groups>
 					<parts>
 						<li>
-							<def>AE_IceCrystalDistabilized</def>
+							<def>AE_IceCrystalDestabilized</def>
 							<coverage>0.35</coverage>
-							<customLabel>big distabilized ice crystal</customLabel>
+							<customLabel>big destabilized ice crystal</customLabel>
 							<height>Top</height>
 						</li>
 					</parts>
@@ -562,7 +562,7 @@
 		<label>ice mantis</label>
 		<corePart>
 			<def>AE_IceShardA</def>
-			<customLabel>ice shard torso</customLabel>
+			<customLabel>ice shard thorax</customLabel>
 			<height>Middle</height>
 			<depth>Outside</depth>
 			<groups>

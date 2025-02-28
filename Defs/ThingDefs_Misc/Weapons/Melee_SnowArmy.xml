@@ -22,7 +22,7 @@
 	<ThingDef ParentName="AE_BaseSnowArmyMeleeWeapon">
 		<defName>MeleeWeapon_AEIceSword</defName>
 		<label>ice sword</label>
-		<description>The ancient weapon of kings, the longsword can be used for slashing or stabbing.</description>
+		<description>The weapon made out of thin ice shard, the ice sword can be used for slashing or stabbing. During attack it will spill nitrogen into the wound to make it more fragile for further attacks. Replicating blades of SA-04.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/WeaponMelee/AEIceSword</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -64,7 +64,7 @@
 	<ThingDef ParentName="AE_BaseSnowArmyMeleeWeapon">
 		<defName>MeleeWeapon_AEIceSpear</defName>
 		<label>ice spear</label>
-		<description>A polearm tipped with a sharp point for stabbing opponents.</description>
+		<description>A polearm tipped with a sharp thin ice shard point for fast stabbing opponents. During attack it will spill nitrogen into the wound to make it more fragile for further attacks. Replicating blades of SA-04.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/WeaponMelee/AEIceSpear</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

@@ -420,8 +420,8 @@
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
-		<defName>AEIceCrystalDistabilized</defName>
-		<label>distabilized ice crystal</label>
+		<defName>AEIceCrystalDestabilized</defName>
+		<label>destabilized ice crystal</label>
 		<description>Learn how destabilize ice crystals.</description>
 		<tab>AnomaliesExpected</tab>
 		<prerequisites>
@@ -444,7 +444,7 @@
 		<prerequisites>
 			<li>AtmosphericHeater</li>
 			<li>AEAtmosphericCooler</li>
-			<li>AEIceCrystalDistabilized</li>
+			<li>AEIceCrystalDestabilized</li>
 		</prerequisites>
 		<requiredAnalyzed>
 			<li>AE_ResearchNotesSAC</li>

@@ -192,8 +192,8 @@
 	</BodyPartDef>	
 
 	<BodyPartDef>
-		<defName>AE_IceCrystalDistabilized</defName>
-		<label>distabilized ice crystal</label>
+		<defName>AE_IceCrystalDestabilized</defName>
+		<label>destabilized ice crystal</label>
 		<hitPoints>80</hitPoints>
 		<skinCovered>true</skinCovered>
 		<canScarify>true</canScarify>

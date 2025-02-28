@@ -288,7 +288,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>AE_AtmosphericController</defName>
 		<label>atmospheric controller</label>
-		<description>A hybrid thermal control device powered by scavenged shards of dark archotechnology, that combines features of atmospheric heater and atmospheric cooler.\nIn heater mode device burns distabilized ice crystal to agitate gas molecules in the atmosphere, raising the local outdoor temperature.\nIn cooler mode device spread dust of distabilized ice crystal to calm gas molecules in the atmosphere, decreasing the local outdoor temperature.\nDistabilized ice crystal have higher efficiency, than bioferrite or ice crystal alone. Depending on a current mode building itself also produces enormous amounts of waste heat or cold air.</description>
+		<description>A hybrid thermal control device powered by scavenged shards of dark archotechnology, that combines features of atmospheric heater and atmospheric cooler.\nIn heater mode device burns destabilized ice crystal to agitate gas molecules in the atmosphere, raising the local outdoor temperature.\nIn cooler mode device spread dust of destabilized ice crystal to calm gas molecules in the atmosphere, decreasing the local outdoor temperature.\nDestabilized ice crystal have higher efficiency, than bioferrite or ice crystal alone. Depending on a current mode building itself also produces enormous amounts of waste heat or cold air.</description>
 		<graphicData>
 			<texPath>Things/Building/AE_AtmosphericController</texPath>
 			<graphicClass>Graphic_Indexed</graphicClass>
@@ -344,7 +344,7 @@
 				<fuelCapacity>80.0</fuelCapacity>
 				<fuelFilter>
 					<thingDefs>
-						<li>AE_IceCrystalDistabilized</li>
+						<li>AE_IceCrystalDestabilized</li>
 					</thingDefs>
 				</fuelFilter>
 				<externalTicking>true</externalTicking>

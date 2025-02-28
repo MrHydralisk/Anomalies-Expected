@@ -4,7 +4,7 @@
 	<ThingDef ParentName="ShellBase">
 		<defName>Shell_AENitrogen</defName>
 		<label>nitrogen shell</label>
-		<description>A shell filled with batteries and antennas, for generating an electromagnetic pulse when detonated. Electromagnetic pulses temporarily disable electrical devices and mechanoids. Can be fired from mortars or installed as a trap. Explodes when damaged.</description>
+		<description>A shell filled with destabilized ice crystal, for spilling nitrogen around that freezing and slowing down surrounding targets when detonated. It casues cryogenic bonding of mechanical components, effectively disrupting the functionality of different machinery and temporarily disable electrical devices. Can be fired from mortars or installed as a trap. Explodes when damaged.</description>
 		<possessionCount>1</possessionCount>
 		<graphicData>
 			<texPath>Things/Item/Resource/Shell/Shell_AENitrogen</texPath>
@@ -32,7 +32,7 @@
 			</costList>
 		</costListForDifficulty>
 		<recipeMaker>
-			<researchPrerequisite>AEIceCrystalDistabilized</researchPrerequisite>
+			<researchPrerequisite>AEIceCrystalDestabilized</researchPrerequisite>
 			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 			<effectWorking>Cook</effectWorking>
 			<soundWorking>Recipe_Machining</soundWorking>

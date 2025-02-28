@@ -8,13 +8,13 @@
 	</HediffDef>
   
 	<HediffDef ParentName="AESnowArmyBodyPart">
-		<defName>AE_IceCrystalDistabilized</defName>
-		<label>distabilized ice crystal</label>
-		<labelNoun>a distabilized ice crystal</labelNoun>
-		<description>A cancerous mass of semi-sentient flesh. The harsh acid it produces is painful, but strong enough to prevent most food poisoning. It can break down and reabsorb nutrients from its own tissue, allowing it to sustain itself for extended periods without external sustenance.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
-		<defaultInstallPart>AE_IceCrystalDistabilized</defaultInstallPart>
+		<defName>AE_IceCrystalDestabilized</defName>
+		<label>destabilized ice crystal</label>
+		<labelNoun>a destabilized ice crystal</labelNoun>
+		<description>A highly unstable ice crystal that explodes, releasing nitrogen, if enough targets are nearby.</description>
+		<defaultInstallPart>AE_IceCrystalDestabilized</defaultInstallPart>
 		<abilities>
-			<li>AEIceCrystalDistabilization</li>
+			<li>AEIceCrystalDestabilization</li>
 		</abilities>
 		<addedPartProps>
 			<solid>true</solid>
@@ -31,7 +31,7 @@
 		<defName>AE_SnowBlockCompressor</defName>
 		<label>snow block compressor</label>
 		<labelNoun>a snow block compressor</labelNoun>
-		<description>A cancerous mass of semi-sentient flesh. The harsh acid it produces is painful, but strong enough to prevent most food poisoning. It can break down and reabsorb nutrients from its own tissue, allowing it to sustain itself for extended periods without external sustenance.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<description>Allows to create giant snow block and throw it at a long distance target. Snow block will explode with nitrogen after landing.</description>
 		<defaultInstallPart>AE_SnowBlockCompressor</defaultInstallPart>
 		<abilities>
 			<li>AEThrowSnowBlock</li>

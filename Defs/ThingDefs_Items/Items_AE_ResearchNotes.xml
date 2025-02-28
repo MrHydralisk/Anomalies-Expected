@@ -440,7 +440,7 @@
 
 				<analysisDurationHours>6</analysisDurationHours>
 				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
-				<completedLetterLabel>Snow Army E-01 research note studied: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetterLabel>Snow Army SA-01 research note studied: {RESEARCH} unlocked</completedLetterLabel>
 				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
 				<completedLetterDef>PositiveEvent</completedLetterDef>
 
@@ -475,7 +475,7 @@
 
 				<analysisDurationHours>7</analysisDurationHours>
 				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
-				<completedLetterLabel>Snow Army E-02 research note studied: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetterLabel>Snow Army SA-02 research note studied: {RESEARCH} unlocked</completedLetterLabel>
 				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
 				<completedLetterDef>PositiveEvent</completedLetterDef>
 
@@ -510,7 +510,7 @@
 
 				<analysisDurationHours>10</analysisDurationHours>
 				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
-				<completedLetterLabel>Snow Army E-03 research note studied: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetterLabel>Snow Army SA-03 research note studied: {RESEARCH} unlocked</completedLetterLabel>
 				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
 				<completedLetterDef>PositiveEvent</completedLetterDef>
 
@@ -545,7 +545,7 @@
 
 				<analysisDurationHours>5</analysisDurationHours>
 				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
-				<completedLetterLabel>Snow Army E-04 research note studied: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetterLabel>Snow Army SA-04 research note studied: {RESEARCH} unlocked</completedLetterLabel>
 				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
 				<completedLetterDef>PositiveEvent</completedLetterDef>
 
@@ -580,7 +580,7 @@
 
 				<analysisDurationHours>8</analysisDurationHours>
 				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
-				<completedLetterLabel>Snow Army E-05 research note studied: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetterLabel>Snow Army SA-05 research note studied: {RESEARCH} unlocked</completedLetterLabel>
 				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
 				<completedLetterDef>PositiveEvent</completedLetterDef>
 

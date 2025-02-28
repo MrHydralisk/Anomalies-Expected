@@ -94,7 +94,7 @@
 		</lifeStages>
 		<startingHediffs>
 			<li>
-				<def>AE_IceCrystalDistabilized</def>
+				<def>AE_IceCrystalDestabilized</def>
 				<severity>1</severity>
 			</li>
 		</startingHediffs>

@@ -85,7 +85,7 @@
 	<WeatherDef>
 		<defName>AE_SnowArmy</defName>
 		<label>heavy snow</label>
-		<description>Heavy snow created by snow army presence.</description>
+		<description>Heavy snow created by Snow Army presence.</description>
 		<snowRate>1.5</snowRate>
 		<rainRate>0.05</rainRate>
 		<windSpeedFactor>1.5</windSpeedFactor>
