@@ -6,5 +6,13 @@
 	<AEFreezing.comps.HediffComp_GetsPermanent.permanentLabel>промерзли насквозь</AEFreezing.comps.HediffComp_GetsPermanent.permanentLabel>
 	<AEFreezing.injuryProps.destroyedLabel>Потеряна из-за промерзания насквозь</AEFreezing.injuryProps.destroyedLabel>
 	<AEFreezing.labelNounPretty>{0} в {1}</AEFreezing.labelNounPretty>
+	
+	<AENitrogenFreezing.label>азотное промерзание</AENitrogenFreezing.label>
+	<AENitrogenFreezing.description>Промерзание тканей и плоти, вызванное воздействием сильного холода. Из-за замерзания нервов ощущение боли притупляется. После полного промерзания части тела часто теряются.</AENitrogenFreezing.description>
+
+	<AEFreezingFragile.label>замораживающая хрупкость</AEFreezingFragile.label>
+	<AEFreezingFragile.description>Воздействие экстремального холода сделало это более уязвимым к повреждениям.</AEFreezingFragile.description>
+	<AEFreezingFragile.labelNoun>Замораживающая хрупкость</AEFreezingFragile.labelNoun>
+	<AEFreezingFragile.labelNounPretty>{0} в {1}</AEFreezingFragile.labelNounPretty>
   
 </LanguageData>

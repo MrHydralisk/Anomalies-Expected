@@ -21,7 +21,7 @@
   
 	<ThingCategoryDef>
 		<defName>CorpsesEntitySnowArmy</defName>
-		<label>AE corpses</label>
+		<label>SA corpses</label>
 		<parent>CorpsesEntity</parent>
 	</ThingCategoryDef>
 

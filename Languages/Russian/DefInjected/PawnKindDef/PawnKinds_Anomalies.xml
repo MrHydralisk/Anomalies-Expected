@@ -2,5 +2,9 @@
 <LanguageData>
 
 	<AE_SnowMan.label>снеговик</AE_SnowMan.label>
+	<AE_SnowGolem.label>снежный голем</AE_SnowGolem.label>
+	<AE_SnowSpider.label>снежный паук</AE_SnowSpider.label>
+	<AE_IceMantis.label>ледяной богомол</AE_IceMantis.label>
+	<AE_IceMan.label>ледяной человек</AE_IceMan.label>
 
 </LanguageData>

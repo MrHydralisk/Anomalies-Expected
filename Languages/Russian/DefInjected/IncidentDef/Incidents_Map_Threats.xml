@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+	<AE_IncidentDef_SnowArmyAssaultBasic.label>атака Снежной Армии</AE_IncidentDef_SnowArmyAssaultBasic.label>
+	<AE_IncidentDef_SnowArmyAssaultBasic.letterLabel>Снежная Армия атакует</AE_IncidentDef_SnowArmyAssaultBasic.letterLabel>
+	<AE_IncidentDef_SnowArmyAssaultBasic.letterText>Разведывательные силы Снежной Армии атакуют наш комплекс! Приготовьтесь к холодному столкновению!</AE_IncidentDef_SnowArmyAssaultBasic.letterText>
+
+	<AE_IncidentDef_SnowArmyAssaultAdvanced.label>атака Снежной Армии</AE_IncidentDef_SnowArmyAssaultAdvanced.label>
+	<AE_IncidentDef_SnowArmyAssaultAdvanced.letterLabel>Снежная Армия атакует</AE_IncidentDef_SnowArmyAssaultAdvanced.letterLabel>
+	<AE_IncidentDef_SnowArmyAssaultAdvanced.letterText>Основные силы Снежной Армии атакуют наш комплекс! Ожидайте наступление экстремального холода!</AE_IncidentDef_SnowArmyAssaultAdvanced.letterText>
+  
+</LanguageData>

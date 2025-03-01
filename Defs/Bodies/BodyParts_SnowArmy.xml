@@ -219,12 +219,12 @@
 		<executionPartPriority>400</executionPartPriority>
 	</BodyPartDef>
 
-	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall">
+	<BodyPartDef ParentName="BodyPart_AEBaseIceShard">
 		<defName>AE_IceShardA</defName>
 		<hitPoints>67</hitPoints>
 	</BodyPartDef>
 
-	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall">
+	<BodyPartDef ParentName="BodyPart_AEBaseIceShard">
 		<defName>AE_IceShardB</defName>
 		<hitPoints>34</hitPoints>
 		<frostbiteVulnerability>0.01</frostbiteVulnerability>
@@ -233,7 +233,7 @@
 		</tags>
 	</BodyPartDef>
 
-	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall">
+	<BodyPartDef ParentName="BodyPart_AEBaseIceShard">
 		<defName>AE_IceShardC</defName>
 		<hitPoints>82</hitPoints>
 		<tags>
@@ -241,7 +241,7 @@
 		</tags>
 	</BodyPartDef>
 
-	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall">
+	<BodyPartDef ParentName="BodyPart_AEBaseIceShard">
 		<defName>AE_IceShardD</defName>
 		<hitPoints>15</hitPoints>
 		<tags>
@@ -250,7 +250,7 @@
 		</tags>
 	</BodyPartDef>
 
-	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall">
+	<BodyPartDef ParentName="BodyPart_AEBaseIceShard">
 		<defName>AE_IceShardE</defName>
 		<hitPoints>24</hitPoints>
 		<tags>
@@ -265,7 +265,7 @@
 		</hitChanceFactors>
 	</BodyPartDef>
 
-	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall">
+	<BodyPartDef ParentName="BodyPart_AEBaseIceShard">
 		<defName>AE_IceShardF</defName>
 		<hitPoints>24</hitPoints>
 		<tags>

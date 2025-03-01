@@ -150,39 +150,39 @@
 		<stages>
 			<li>
 				<statOffsets>
-					<ComfyTemperatureMax>-20</ComfyTemperatureMax>
-					<ComfyTemperatureMin>-20</ComfyTemperatureMin>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
 				</statOffsets>
 				<minSeverity>1</minSeverity>
 			</li>
 			<li>
 				<statOffsets>
-					<ComfyTemperatureMax>-20</ComfyTemperatureMax>
-					<ComfyTemperatureMin>-20</ComfyTemperatureMin>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
 				</statOffsets>
 				<naturalHealingFactor>1</naturalHealingFactor>
 				<minSeverity>2</minSeverity>
 			</li>
 			<li>
 				<statOffsets>
-					<ComfyTemperatureMax>-20</ComfyTemperatureMax>
-					<ComfyTemperatureMin>-20</ComfyTemperatureMin>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
 				</statOffsets>
 				<naturalHealingFactor>1.5</naturalHealingFactor>
 				<minSeverity>10</minSeverity>
 			</li>
 			<li>
 				<statOffsets>
-					<ComfyTemperatureMax>-20</ComfyTemperatureMax>
-					<ComfyTemperatureMin>-20</ComfyTemperatureMin>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
 				</statOffsets>
 				<naturalHealingFactor>2</naturalHealingFactor>
 				<minSeverity>20</minSeverity>
 			</li>
 			<li>
 				<statOffsets>
-					<ComfyTemperatureMax>-20</ComfyTemperatureMax>
-					<ComfyTemperatureMin>-20</ComfyTemperatureMin>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
 				</statOffsets>
 				<naturalHealingFactor>2.5</naturalHealingFactor>
 				<totalBleedFactor>0.9</totalBleedFactor>
@@ -190,8 +190,8 @@
 			</li>
 			<li>
 				<statOffsets>
-					<ComfyTemperatureMax>-20</ComfyTemperatureMax>
-					<ComfyTemperatureMin>-20</ComfyTemperatureMin>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
 				</statOffsets>
 				<naturalHealingFactor>3</naturalHealingFactor>
 				<totalBleedFactor>0.9</totalBleedFactor>
@@ -199,8 +199,8 @@
 			</li>
 			<li>
 				<statOffsets>
-					<ComfyTemperatureMax>-20</ComfyTemperatureMax>
-					<ComfyTemperatureMin>-20</ComfyTemperatureMin>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
 				</statOffsets>
 				<naturalHealingFactor>3.5</naturalHealingFactor>
 				<totalBleedFactor>0.8</totalBleedFactor>
@@ -208,8 +208,8 @@
 			</li>
 			<li>
 				<statOffsets>
-					<ComfyTemperatureMax>-20</ComfyTemperatureMax>
-					<ComfyTemperatureMin>-20</ComfyTemperatureMin>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
 				</statOffsets>
 				<naturalHealingFactor>4</naturalHealingFactor>
 				<totalBleedFactor>0.8</totalBleedFactor>
@@ -217,8 +217,8 @@
 			</li>
 			<li>
 				<statOffsets>
-					<ComfyTemperatureMax>-20</ComfyTemperatureMax>
-					<ComfyTemperatureMin>-20</ComfyTemperatureMin>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
 				</statOffsets>
 				<naturalHealingFactor>4.5</naturalHealingFactor>
 				<totalBleedFactor>0.7</totalBleedFactor>
@@ -226,8 +226,8 @@
 			</li>
 			<li>
 				<statOffsets>
-					<ComfyTemperatureMax>-20</ComfyTemperatureMax>
-					<ComfyTemperatureMin>-20</ComfyTemperatureMin>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
 				</statOffsets>
 				<naturalHealingFactor>5</naturalHealingFactor>
 				<totalBleedFactor>0.6</totalBleedFactor>
@@ -235,8 +235,8 @@
 			</li>
 			<li>
 				<statOffsets>
-					<ComfyTemperatureMax>-20</ComfyTemperatureMax>
-					<ComfyTemperatureMin>-20</ComfyTemperatureMin>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
 				</statOffsets>
 				<naturalHealingFactor>6</naturalHealingFactor>
 				<totalBleedFactor>0.5</totalBleedFactor>

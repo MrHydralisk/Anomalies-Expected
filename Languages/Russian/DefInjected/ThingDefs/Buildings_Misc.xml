@@ -17,4 +17,15 @@
 	<AE_ChristmasGiftBox.label>новогодний подарок</AE_ChristmasGiftBox.label>
 	<AE_ChristmasGiftBox.description>Эта элегантная подарочная коробка украшена праздничными лентами. Она является идеальным контейнером для хранения особого сюрприза.</AE_ChristmasGiftBox.description>
 
+
+
+	<AE_AtmosphericHeaterGlowingVentsInv.label>Cоринка</AE_AtmosphericHeaterGlowingVentsInv.label>
+	<AE_AtmosphericCooler.label>охладитель атмосферы</AE_AtmosphericCooler.label>
+	<AE_AtmosphericCooler.description>Устройство теплопоглощения, работающее на собранных осколках тёмной архотехнологии. Устройство распыляет пыль ледяных кристаллов, чтобы успокоить молекулы газа в атмосфере, снижая локальную температуру наружного воздуха. Само здание также производит огромные объёмы холодного воздуха.</AE_AtmosphericCooler.description>
+	<AE_AtmosphericCooler.comps.Comp_AtmosphericCooler.inspectString>Заданная температура воздуха на улице</AE_AtmosphericCooler.comps.Comp_AtmosphericCooler.inspectString>
+
+	<AE_AtmosphericController.label>контроллер атмосферы</AE_AtmosphericController.label>
+	<AE_AtmosphericController.description>Гибридное устройство терморегуляции, работающее на собранных осколках тёмной архотехнологии, объединяет в себе функции атмосферного нагревателя и атмосферного охладителя.\nВ режиме нагрева устройство сжигает дестабилизированный ледяной кристалл, чтобы возбудить молекулы газа в атмосфере, повышая локальную температуру наружного воздуха.\nВ режиме охлаждения устройство распыляет пыль дестабилизированного ледяного кристалла, чтобы успокоить молекулы газа в атмосфере, снижая локальную температуру наружного воздуха.\nДестабилизированный ледяной кристалл обладает более высокой эффективностью, чем биоферрит или ледяной кристалл по отдельности. В зависимости от текущего режима, само здание также производит огромные объёмы отработанного тепла или холодного воздуха.</AE_AtmosphericController.description>
+	<AE_AtmosphericController.comps.Comp_AtmosphericController.inspectString>Заданная температура воздуха на улице</AE_AtmosphericController.comps.Comp_AtmosphericController.inspectString>
+
 </LanguageData>

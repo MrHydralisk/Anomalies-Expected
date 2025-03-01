@@ -46,5 +46,13 @@
 
 	<AE_FleshmassTumor.label>опухоль из биомассы</AE_FleshmassTumor.label>
 	<AE_FleshmassTumor.description>Живая, пульсирующая масса плоти со собственной волей, способная к быстрому росту и трансформации. Способна внедряться в тело хозяина и питаться его энергией.</AE_FleshmassTumor.description>
+	
+	
+	
+	<AE_IceCrystal.label>ледяной кристалл</AE_IceCrystal.label>
+	<AE_IceCrystal.description>Экзотический кристалл, визуально неотличимый от льда, остаётся холодным и твёрдым независимо от внешней температуры. Может быть извлечён из связанных аномалий. Его пыль способна резко снизить температуру окружающего воздуха.</AE_IceCrystal.description>
+
+	<AE_IceCrystalDestabilized.label>дестабилизированный ледяной кристалл</AE_IceCrystalDestabilized.label>
+	<AE_IceCrystalDestabilized.description>Результат слияния экзотического ледяного кристалла с биоферритом, что дестабилизирует молекулярную структуру кристалла и приводит к противоречивым свойствам. Сжигание этой смеси высвобождает значительное количество энергии. Его пыль способна резко снизить температуру окружающего воздуха.</AE_IceCrystalDestabilized.description>
 
 </LanguageData>

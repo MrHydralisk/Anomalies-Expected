@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<AE_IceCrystalDestabilized.label>дестабилизированный ледяной кристалл</AE_IceCrystalDestabilized.label>
+	<AE_IceCrystalDestabilized.description>Крайне нестабильный ледяной кристалл, который взрывается, высвобождая жидкий азот, при наличии достаточного количества целей поблизости.</AE_IceCrystalDestabilized.description>
+	<AE_IceCrystalDestabilized.labelNoun>дестабилизированный ледяной кристалл</AE_IceCrystalDestabilized.labelNoun>
+
+	<AE_SnowBlockCompressor.label>компрессор снежных блоков</AE_SnowBlockCompressor.label>
+	<AE_SnowBlockCompressor.description>Позволяет создавать гигантский снежный блок и бросать его в цель на большом расстоянии. После приземления снежный блок взрывается, высвобождая жидкий азот.</AE_SnowBlockCompressor.description>
+	<AE_SnowBlockCompressor.labelNoun>компрессор снежных блоков</AE_SnowBlockCompressor.labelNoun>
+
+</LanguageData>

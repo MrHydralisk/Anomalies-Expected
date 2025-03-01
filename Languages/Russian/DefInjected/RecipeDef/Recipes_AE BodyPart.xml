@@ -2,31 +2,41 @@
 <LanguageData>
   
 	<InstallAEForbiddenFruitImplant.label>установить имплант запретного знания</InstallAEForbiddenFruitImplant.label>
-	<InstallAEForbiddenFruitImplant.description>Установит имплант запретного знания</InstallAEForbiddenFruitImplant.description>
-	<InstallAEForbiddenFruitImplant.jobString>Устанавливает имплант запретного знания</InstallAEForbiddenFruitImplant.jobString>
+	<InstallAEForbiddenFruitImplant.description>Установит имплант запретного знания.</InstallAEForbiddenFruitImplant.description>
+	<InstallAEForbiddenFruitImplant.jobString>Устанавливает имплант запретного знания.</InstallAEForbiddenFruitImplant.jobString>
   
 	<RemoveAEForbiddenFruitImplant.label>извлечь имплант запретного знания</RemoveAEForbiddenFruitImplant.label>
-	<RemoveAEForbiddenFruitImplant.description>Извлечёт имплант запретного знания</RemoveAEForbiddenFruitImplant.description>
-	<RemoveAEForbiddenFruitImplant.jobString>Извлекает имплант запретного знания</RemoveAEForbiddenFruitImplant.jobString>
+	<RemoveAEForbiddenFruitImplant.description>Извлечёт имплант запретного знания.</RemoveAEForbiddenFruitImplant.description>
+	<RemoveAEForbiddenFruitImplant.jobString>Извлекает имплант запретного знания.</RemoveAEForbiddenFruitImplant.jobString>
 	
 	
   
 	<InstallAEGrinderStomach.label>установить желудок-измельчитель</InstallAEGrinderStomach.label>
-	<InstallAEGrinderStomach.description>Установит желудок-измельчитель</InstallAEGrinderStomach.description>
-	<InstallAEGrinderStomach.jobString>Устанавливает желудок-измельчитель</InstallAEGrinderStomach.jobString>
+	<InstallAEGrinderStomach.description>Установит желудок-измельчитель.</InstallAEGrinderStomach.description>
+	<InstallAEGrinderStomach.jobString>Устанавливает желудок-измельчитель.</InstallAEGrinderStomach.jobString>
 	
 	<InstallAEGrinderJaw.label>установить челюсть-измельчитель</InstallAEGrinderJaw.label>
-	<InstallAEGrinderJaw.description>Установит челюсть-измельчитель</InstallAEGrinderJaw.description>
-	<InstallAEGrinderJaw.jobString>Устанавливает челюсть-измельчитель</InstallAEGrinderJaw.jobString>
+	<InstallAEGrinderJaw.description>Установит челюсть-измельчитель.</InstallAEGrinderJaw.description>
+	<InstallAEGrinderJaw.jobString>Устанавливает челюсть-измельчитель.</InstallAEGrinderJaw.jobString>
 	
 	
 	
 	<InstallAEThermalReflectiveSkinImplant.label>установить термо-отражающую кожную железу</InstallAEThermalReflectiveSkinImplant.label>
-	<InstallAEThermalReflectiveSkinImplant.description>Установит термо-отражающую кожную железу</InstallAEThermalReflectiveSkinImplant.description>
-	<InstallAEThermalReflectiveSkinImplant.jobString>Устанавливает термо-отражающую кожную железу</InstallAEThermalReflectiveSkinImplant.jobString>
+	<InstallAEThermalReflectiveSkinImplant.description>Установит термо-отражающую кожную железу.</InstallAEThermalReflectiveSkinImplant.description>
+	<InstallAEThermalReflectiveSkinImplant.jobString>Устанавливает термо-отражающую кожную железу.</InstallAEThermalReflectiveSkinImplant.jobString>
 	
 	<RemoveAEThermalReflectiveSkinImplant.label>извлечь термо-отражающую кожную железу</RemoveAEThermalReflectiveSkinImplant.label>
-	<RemoveAEThermalReflectiveSkinImplant.description>Извлечёт термо-отражающую кожную железу</RemoveAEThermalReflectiveSkinImplant.description>
-	<RemoveAEThermalReflectiveSkinImplant.jobString>Извлекает термо-отражающую кожную железу</RemoveAEThermalReflectiveSkinImplant.jobString>
+	<RemoveAEThermalReflectiveSkinImplant.description>Извлечёт термо-отражающую кожную железу.</RemoveAEThermalReflectiveSkinImplant.description>
+	<RemoveAEThermalReflectiveSkinImplant.jobString>Извлекает термо-отражающую кожную железу.</RemoveAEThermalReflectiveSkinImplant.jobString>
+	
+	
+
+	<InstallAESnowCoreImplant.label>установить имплант со снежным ядром</InstallAESnowCoreImplant.label>
+	<InstallAESnowCoreImplant.description>Установит имплант со снежным ядром.</InstallAESnowCoreImplant.description>
+	<InstallAESnowCoreImplant.jobString>Установливает имплант со снежным ядром.</InstallAESnowCoreImplant.jobString>
+
+	<RemoveAESnowCoreImplant.label>извлечь имплант со снежным ядром</RemoveAESnowCoreImplant.label>
+	<RemoveAESnowCoreImplant.description>Извлечёт имплант со снежным ядром.</RemoveAESnowCoreImplant.description>
+	<RemoveAESnowCoreImplant.jobString>Извлекает имплант со снежным ядром.</RemoveAESnowCoreImplant.jobString>
   
 </LanguageData>

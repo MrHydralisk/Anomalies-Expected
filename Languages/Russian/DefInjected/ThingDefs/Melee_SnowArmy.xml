@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<MeleeWeapon_AEIceSword.label>ледяной меч</MeleeWeapon_AEIceSword.label>
+	<MeleeWeapon_AEIceSword.description>Оружие, сделанное из тонкого ледяного осколка, ледяной меч может быть использован для рубящих или колющих ударов. Во время атаки он будет выделять жидкий азот в рану, делая ее более хрупкой для дальнейших атак. Воспроизводит эффект лезвий SA-04.</MeleeWeapon_AEIceSword.description>
+	<MeleeWeapon_AEIceSword.tools.point.label>остриё</MeleeWeapon_AEIceSword.tools.point.label>
+	<MeleeWeapon_AEIceSword.tools.edge.label>лезвие</MeleeWeapon_AEIceSword.tools.edge.label>
+
+	<MeleeWeapon_AEIceSpear.label>ледяное копьё</MeleeWeapon_AEIceSpear.label>
+	<MeleeWeapon_AEIceSpear.description>Древковое оружие с острым тонким ледяным наконечником для быстрых колющих ударов по противникам. Во время атаки оно распыляет жидкий азот в рану, делая её более хрупкой для последующих атак. Воспроизводит эффект лезвия SA-04.</MeleeWeapon_AEIceSpear.description>
+	<MeleeWeapon_AEIceSpear.tools.shaft.label>древко</MeleeWeapon_AEIceSpear.tools.shaft.label>
+	<MeleeWeapon_AEIceSpear.tools.point.label>наконечник</MeleeWeapon_AEIceSpear.tools.point.label>
+
+</LanguageData>

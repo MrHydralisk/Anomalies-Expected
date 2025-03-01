@@ -45,7 +45,7 @@
 			<skillRequirements>
 				<Crafting>4</Crafting>
 			</skillRequirements>
-			<displayPriority>100</displayPriority>
+			<displayPriority>1300</displayPriority>
 		</recipeMaker>
 		<tradeTags Inherit="False"/>
 		<genericMarketSellable>false</genericMarketSellable>

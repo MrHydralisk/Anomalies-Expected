@@ -47,9 +47,31 @@
 				<kindDef>AE_AdvancedMonolith</kindDef>
 				<commonality>100</commonality>
 				<options>
+					<AE_SnowMan>30</AE_SnowMan>
+					<AE_SnowGolem>0.4</AE_SnowGolem>
+					<AE_SnowSpider>250</AE_SnowSpider>
+					<AE_IceMantis>1</AE_IceMantis>
+					<AE_IceMan>2</AE_IceMan>
+				</options>
+			</li>
+			<li>
+				<!-- Snow only-->
+				<kindDef>AE_AdvancedMonolith</kindDef>
+				<commonality>85</commonality>
+				<options>
 					<AE_SnowMan>10</AE_SnowMan>
 					<AE_SnowGolem>0.05</AE_SnowGolem>
 					<AE_SnowSpider>100</AE_SnowSpider>
+				</options>
+			</li>
+			<li>
+				<!-- Iced Art only-->
+				<kindDef>AE_AdvancedMonolith</kindDef>
+				<commonality>85</commonality>
+				<options>
+					<AE_SnowGolem>0.45</AE_SnowGolem>
+					<AE_IceMantis>5.8</AE_IceMantis>
+					<AE_IceMan>10</AE_IceMan>
 				</options>
 			</li>
 			<li>
@@ -59,102 +81,78 @@
 				<options>
 					<AE_SnowMan>10</AE_SnowMan>
 					<AE_SnowGolem>0.075</AE_SnowGolem>
+					<AE_IceMan>10</AE_IceMan>
+				</options>
+			</li>
+			<li>
+				<!-- Melee only-->
+				<kindDef>AE_AdvancedMonolith</kindDef>
+				<commonality>70</commonality>
+				<options>
+					<AE_SnowSpider>10</AE_SnowSpider>
+					<AE_IceMantis>1.9</AE_IceMantis>
+				</options>
+			</li>
+			<li>
+				<!-- Ranged only-->
+				<kindDef>AE_AdvancedMonolith</kindDef>
+				<commonality>70</commonality>
+				<options>
+					<AE_SnowMan>10</AE_SnowMan>
+					<AE_SnowGolem>0.075</AE_SnowGolem>
 				</options>
 			</li>
 			<li>
 				<!-- Spider distraction -->
 				<kindDef>AE_AdvancedMonolith</kindDef>
-				<commonality>85</commonality>
+				<commonality>70</commonality>
 				<options>
 					<AE_SnowMan>10</AE_SnowMan>
 					<AE_SnowSpider>25</AE_SnowSpider>
 				</options>
 			</li>
 			<li>
+				<!-- SnowedIce only-->
+				<kindDef>AE_AdvancedMonolith</kindDef>
+				<commonality>70</commonality>
+				<options>
+					<AE_SnowMan>10</AE_SnowMan>
+					<AE_IceMan>4.2</AE_IceMan>
+				</options>
+			</li>
+			<li>
+				<!-- Iced only-->
+				<kindDef>AE_AdvancedMonolith</kindDef>
+				<commonality>70</commonality>
+				<options>
+					<AE_IceMantis>10</AE_IceMantis>
+					<AE_IceMan>15</AE_IceMan>
+				</options>
+			</li>
+			<li>
 				<!-- Spider Rush-->
 				<kindDef>AE_AdvancedMonolithRush</kindDef>
-				<commonality>70</commonality>
+				<commonality>50</commonality>
 				<options>
 					<AE_SnowSpider>10</AE_SnowSpider>
 				</options>
 			</li>
 			<li>
-				<!-- Snow Man Rush-->
-				<kindDef>AE_BasicMonolith</kindDef>
-				<commonality>70</commonality>
-				<options>
-					<AE_SnowMan>10</AE_SnowMan>
-				</options>
-			</li>
-			<!-- Temp -->
-			<li>
 				<!-- Ice Mantis Rush-->
 				<kindDef>AE_AdvancedMonolithRush</kindDef>
-				<commonality>85</commonality>
+				<commonality>50</commonality>
 				<options>
 					<AE_IceMantis>10</AE_IceMantis>
 				</options>
 			</li>
 			<li>
-				<!-- Ice Man Rush-->
-				<kindDef>AE_AdvancedMonolithRush</kindDef>
-				<commonality>85</commonality>
+				<!-- Snow Man Rush-->
+				<kindDef>AE_BasicMonolith</kindDef>
+				<commonality>50</commonality>
 				<options>
-					<AE_IceMan>10</AE_IceMan>
+					<AE_SnowMan>10</AE_SnowMan>
 				</options>
 			</li>
-			<!-- <li> -->
-			<!-- Ranged only -->
-			<!-- <kindDef>Combat</kindDef> -->
-			<!-- <commonality>80</commonality> -->
-			<!-- <options> -->
-			<!-- <Mech_Pikeman>10</Mech_Pikeman> -->
-			<!-- <Mech_Lancer>10</Mech_Lancer> -->
-			<!-- <Mech_Scorcher MayRequire="Ludeon.RimWorld.Biotech">5</Mech_Scorcher> -->
-			<!-- <Mech_Tesseron MayRequire="Ludeon.RimWorld.Biotech">5</Mech_Tesseron> -->
-			<!-- <Mech_Legionary MayRequire="Ludeon.RimWorld.Biotech">2</Mech_Legionary> -->
-			<!-- <Mech_Diabolus MayRequire="Ludeon.RimWorld.Biotech">1</Mech_Diabolus> -->
-			<!-- </options> -->
-			<!-- </li> -->
-			<!-- <li> -->
-			<!-- Melee only -->
-			<!-- <kindDef>Combat</kindDef> -->
-			<!-- <commonality>70</commonality> -->
-			<!-- <options> -->
-			<!-- <Mech_Scyther>10</Mech_Scyther> -->
-			<!-- </options> -->
-			<!-- </li> -->
-			<!-- <li> -->
-			<!-- Centipede only -->
-			<!-- <kindDef>Combat</kindDef> -->
-			<!-- <commonality>30</commonality> -->
-			<!-- <options> -->
-			<!-- <Mech_CentipedeBlaster>10</Mech_CentipedeBlaster> -->
-			<!-- <Mech_CentipedeGunner>5</Mech_CentipedeGunner> -->
-			<!-- <Mech_CentipedeBurner>5</Mech_CentipedeBurner> -->
-			<!-- </options> -->
-			<!-- </li> -->
-			<!-- <li MayRequire="Ludeon.RimWorld.Biotech"> -->
-			<!-- militor only -->
-			<!-- <kindDef>Combat</kindDef> -->
-			<!-- <commonality>30</commonality> -->
-			<!-- <options> -->
-			<!-- <Mech_Militor>10</Mech_Militor> -->
-			<!-- </options> -->
-			<!-- </li> -->
-			<!-- <li> -->
-			<!-- breach raids -->
-			<!-- <kindDef>Combat</kindDef> -->
-			<!-- <commonality>1</commonality> -->
-			<!-- <options> -->
-			<!-- <Mech_Pikeman>10</Mech_Pikeman> -->
-			<!-- <Mech_Scyther>10</Mech_Scyther> -->
-			<!-- <Mech_Lancer>10</Mech_Lancer> -->
-			<!-- <Mech_CentipedeBlaster>10</Mech_CentipedeBlaster> -->
-			<!-- <Mech_Termite_Breach>1</Mech_Termite_Breach> -->
-			<!-- <Mech_Militor MayRequire="Ludeon.RimWorld.Biotech">20</Mech_Militor> -->
-			<!-- </options> -->
-			<!-- </li> -->
 		</pawnGroupMakers>
 	</FactionDef>
 
