@@ -59,23 +59,23 @@
 				<factionDef>AE_SnowArmy</factionDef>
 				<AssaultSummonPattern>
 					<li>
-						<commonality>270</commonality>
+						<commonality>635</commonality>
 						<pawnsArrivalModeDef>
 							<li>EdgeWalkIn</li>
+							<li>EdgeWalkInGroups</li>
 						</pawnsArrivalModeDef>
 						<pawnGroupKindDef>
 							<li>AE_AdvancedMonolith</li>
 						</pawnGroupKindDef>
 					</li>
 					<li>
-						<commonality>310</commonality>
+						<commonality>140</commonality>
 						<pawnsArrivalModeDef>
 							<li>EdgeWalkIn</li>
 							<li>EdgeWalkInGroups</li>
 							<li>EdgeWalkInDistributed</li>
 						</pawnsArrivalModeDef>
 						<pawnGroupKindDef>
-							<li>AE_BasicMonolith</li>
 							<li>AE_AdvancedMonolithRush</li>
 						</pawnGroupKindDef>
 					</li>

@@ -147,6 +147,14 @@
 			</li>
 			<li>
 				<!-- Snow Man Rush-->
+				<kindDef>AE_AdvancedMonolithRush</kindDef>
+				<commonality>40</commonality>
+				<options>
+					<AE_SnowMan>10</AE_SnowMan>
+				</options>
+			</li>
+			<li>
+				<!-- Snow Man Rush-->
 				<kindDef>AE_BasicMonolith</kindDef>
 				<commonality>50</commonality>
 				<options>
