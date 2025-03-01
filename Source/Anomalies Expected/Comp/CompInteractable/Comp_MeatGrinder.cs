@@ -179,11 +179,18 @@ namespace AnomaliesExpected
                     IEnumerable<BodyPartRecord> bodyParts = caster.health.hediffSet.GetNotMissingParts().Where((BodyPartRecord bpr) => mood.bodyPartDefs.Contains(bpr.def));
                     if (bodyParts.Count() > 0)
                     {
-                        DamageInfo dm = new DamageInfo(DamageDefOf.Cut, 500, hitPart: bodyParts.RandomElement(), instigator: this.parent);
+                        DamageInfo dm = new DamageInfo(DamageDefOf.Cut, 400, hitPart: bodyParts.RandomElement(), instigator: this.parent);
                         dm.SetAllowDamagePropagation(false);
                         DamageWorker.DamageResult damageResult = caster.TakeDamage(dm);
-                        Messages.Message("AnomaliesExpected.MeatGrinder.Consumed".Translate(caster.LabelShortCap, damageResult.LastHitPart.Label, this.parent.LabelCap).RawText, this.parent, MessageTypeDefOf.NegativeEvent);
-                        isConsumed = true;
+                        if (caster.health.hediffSet.HasMissingPartFor(damageResult.LastHitPart))
+                        {
+                            Messages.Message("AnomaliesExpected.MeatGrinder.Consumed".Translate(caster.LabelShortCap, damageResult.LastHitPart.Label, this.parent.LabelCap).RawText, this.parent, MessageTypeDefOf.NegativeEvent);
+                            isConsumed = true;
+                        }
+                        else
+                        {
+                            Messages.Message("AnomaliesExpected.MeatGrinder.EvadedConsumed".Translate(caster.LabelShortCap, damageResult.LastHitPart.Label, this.parent.LabelCap).RawText, this.parent, MessageTypeDefOf.PositiveEvent);
+                        }
                     }
                 }
                 if (isConsumed)

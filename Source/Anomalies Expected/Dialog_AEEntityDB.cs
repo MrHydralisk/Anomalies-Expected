@@ -345,7 +345,6 @@ namespace AnomaliesExpected
                 using (new TextBlock(newWordWrap: true))
                 {
                     int amountStudied = selectedEntry.CurrPawnAmountStudied.LastOrDefault();
-                    Log.Message($"AmountStudied {amountStudied}:\n{string.Join("\n", selectedEntry.CurrPawnAmountStudied)}");
                     if (amountStudied > 0)
                     {
                         string text = "AnomaliesExpected.EntityDataBase.AmountStudied".Translate(amountStudied);

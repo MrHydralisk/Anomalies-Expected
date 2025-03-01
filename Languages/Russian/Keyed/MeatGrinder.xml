@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 	<AnomaliesExpected.MeatGrinder.Consumed>{1} {0} поглощён {2}</AnomaliesExpected.MeatGrinder.Consumed>
+	<AnomaliesExpected.MeatGrinder.EvadedConsumed>{1} {0} избежал поглощения {2}</AnomaliesExpected.MeatGrinder.EvadedConsumed>
 	<AnomaliesExpected.MeatGrinder.ConsumedFully>{0} полностью поглощён {1}</AnomaliesExpected.MeatGrinder.ConsumedFully>
 	<AnomaliesExpected.MeatGrinder.Noise>Звук: {0} дБ</AnomaliesExpected.MeatGrinder.Noise>
 	<AnomaliesExpected.MeatGrinder.BodyParts>Части тела под угрозой: {0}</AnomaliesExpected.MeatGrinder.BodyParts>
