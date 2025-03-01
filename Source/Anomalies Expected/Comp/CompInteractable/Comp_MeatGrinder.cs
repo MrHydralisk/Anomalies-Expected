@@ -92,8 +92,7 @@ namespace AnomaliesExpected
                         }
                         else
                         {
-                            CallMeatGrinder();
-                            timeTillNext = timeTillNext * (60f / mood.noise);
+                            CallMeatGrinder(ref timeTillNext);
                         }
                         TickForced = Find.TickManager.TicksGame + (int)(timeTillNext * (0.5f + Rand.Value));
                     }
@@ -200,19 +199,25 @@ namespace AnomaliesExpected
             }
         }
 
-        public void CallMeatGrinder()
+        public void CallMeatGrinder(ref float time)
         {
+            time = time * (60f / (currMood?.noise ?? 30f));
             Job job = JobMaker.MakeJob(Props.jobDef, parent);
             Pawn called = (Pawn)GenClosest.ClosestThing_Global_Reachable(parent.Position, parent.Map, parent.Map.mapPawns.AllHumanlikeSpawned, PathEndMode.OnCell, TraverseParms.For(TraverseMode.PassDoors), 9999f, (Thing t) => t is Pawn p && !p.DeadOrDowned && GenClosest.ClosestThing_Global_Reachable(p.Position, p.Map, [parent], PathEndMode.OnCell, TraverseParms.For(p), 9999f) != null);
             if (called != null)
             {
-                Log.Message($"CallMeatGrinder {called.LabelCap}");
                 called.jobs.TryTakeOrderedJob(job, JobTag.Misc);
             }
             else
             {
-                Log.Message($"CallMeatGrinder failed, make random pawn go violent");
-                parent.Map?.mapPawns?.FreeColonists?.RandomElement().jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                foreach (Pawn pawn in parent.Map.mapPawns.FreeColonistsAndPrisonersSpawned)
+                {
+                    Thought_AEMemory thought = (Thought_AEMemory)ThoughtMaker.MakeThought(Props.thoughtDefNoise);
+                    thought.durationTicksOverride = (int)time;
+                    thought.SetForcedStage(Props.Moods.FindIndex((MeatGrinderMood mgm) => TickDiff > mgm.tick) + 1);
+                    thought.DescAddition = "AnomaliesExpected.MeatGrinder.NoiseSource".Translate(parent.LabelCap);
+                    pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(thought);
+                }
             }
 
             if (!Props.soundActivate.NullOrUndefined())
@@ -272,7 +277,8 @@ namespace AnomaliesExpected
                 {
                     action = delegate
                     {
-                        CallMeatGrinder();
+                        float timeTillNext = Props.tickPerForced;
+                        CallMeatGrinder(ref timeTillNext);
                     },
                     defaultLabel = "Dev: Call",
                     defaultDesc = "Call Pawn to press button"

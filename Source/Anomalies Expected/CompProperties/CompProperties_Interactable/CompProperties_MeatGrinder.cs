@@ -16,6 +16,8 @@ namespace AnomaliesExpected
         public List<MeatGrinderMood> Moods;
         public JobDef jobDef;
         public SoundDef soundConsume;
+        public ThoughtDef thoughtDefNoise;
+
         public CompProperties_MeatGrinder()
         {
             compClass = typeof(Comp_MeatGrinder);

@@ -8,6 +8,17 @@
 	<Thought_AEForbiddenFruit.stages.5.label>Судный час</Thought_AEForbiddenFruit.stages.5.label>
 	<Thought_AEForbiddenFruit.stages.5.description>Молит о прощении за то, что вкусил запретный плод.</Thought_AEForbiddenFruit.stages.5.description>
 	
+	<Thought_AEMeatGrinderNoise.stages.0.label>незначительный звук</Thought_AEMeatGrinderNoise.stages.0.label>
+	<Thought_AEMeatGrinderNoise.stages.0.description>У меня такое чувство, что я слышу мелодию, но я не уверен.</Thought_AEMeatGrinderNoise.stages.0.description>
+	<Thought_AEMeatGrinderNoise.stages.1.label>запредельный звук</Thought_AEMeatGrinderNoise.stages.1.label>
+	<Thought_AEMeatGrinderNoise.stages.1.description>Сердце бешено колотится, пот льётся ручьём. Пение никогда не прекращается. Всё, всё о чём я могу думать — это боль, страдания и враги, враги вокруг меня! Они мой кошмар, мой кошмар, кошмар...</Thought_AEMeatGrinderNoise.stages.1.description>
+	<Thought_AEMeatGrinderNoise.stages.2.label>сильный звук</Thought_AEMeatGrinderNoise.stages.2.label>
+	<Thought_AEMeatGrinderNoise.stages.2.description>Невыносимо громкий голос. Трудно сосредоточиться. Я замечаю, что разговариваю с ним, кричу на него. Но он продолжает петь!</Thought_AEMeatGrinderNoise.stages.2.description>
+	<Thought_AEMeatGrinderNoise.stages.3.label>средний звук</Thought_AEMeatGrinderNoise.stages.3.label>
+	<Thought_AEMeatGrinderNoise.stages.3.description>Кто-то невидимый постоянно поёт. Разные голоса, но слова одни и те же. Они приказывают причинять людям боль. Пусть они замолчат!</Thought_AEMeatGrinderNoise.stages.3.description>
+	<Thought_AEMeatGrinderNoise.stages.4.label>слабый звук</Thought_AEMeatGrinderNoise.stages.4.label>
+	<Thought_AEMeatGrinderNoise.stages.4.description>Как будто кто-то скребётся в глубине сознания. Голос, он что-то тихо поёт. Я могу разобрать лишь несколько слов, и мне они не нравятся.</Thought_AEMeatGrinderNoise.stages.4.description>
+	
 	<Thought_AEFleshmassLung.stages.0.label>Стимуляция легких из биомассы</Thought_AEFleshmassLung.stages.0.label>
 	<Thought_AEFleshmassLung.stages.0.description>Чувство легкости в голове. Какое приятное ощущение.</Thought_AEFleshmassLung.stages.0.description>
 	

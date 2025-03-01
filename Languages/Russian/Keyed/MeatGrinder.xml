@@ -4,6 +4,7 @@
 	<AnomaliesExpected.MeatGrinder.EvadedConsumed>{1} {0} избежал поглощения {2}</AnomaliesExpected.MeatGrinder.EvadedConsumed>
 	<AnomaliesExpected.MeatGrinder.ConsumedFully>{0} полностью поглощён {1}</AnomaliesExpected.MeatGrinder.ConsumedFully>
 	<AnomaliesExpected.MeatGrinder.Noise>Звук: {0} дБ</AnomaliesExpected.MeatGrinder.Noise>
+	<AnomaliesExpected.MeatGrinder.NoiseSource>\nЭтот звук исходит от {0}.</AnomaliesExpected.MeatGrinder.NoiseSource>
 	<AnomaliesExpected.MeatGrinder.BodyParts>Части тела под угрозой: {0}</AnomaliesExpected.MeatGrinder.BodyParts>
 	<AnomaliesExpected.MeatGrinder.Danger>Тело под угрозой поглощения</AnomaliesExpected.MeatGrinder.Danger>
 </LanguageData>
