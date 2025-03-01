@@ -37,21 +37,25 @@
 					</subNodes>
 				</li>
 
+				<!-- Forced goto -->
+				<li Class="ThinkNode_ConditionalForcedGoto">
+					<subNodes>
+						<li Class="ThinkNode_Tagger">
+							<tagToGive>Misc</tagToGive>
+							<subNodes>
+								<li Class="JobGiver_ForcedGoto"/>
+							</subNodes>
+						</li>
+					</subNodes>
+				</li>
+
 				<!-- Lord -->
 				<li Class="ThinkNode_Subtree">
 					<treeDef>LordDuty</treeDef>
 				</li>
-				<li Class="ThinkNode_ConditionalOfPlayerFaction">
-					<subNodes>
-						<li Class="JobGiver_AIFightEnemies">
-							<targetAcquireRadius>65</targetAcquireRadius>
-							<targetKeepRadius>72</targetKeepRadius>
-						</li>
-						<li Class="JobGiver_SeekAllowedArea"/>
-						<li Class="JobGiver_ShamblerWander">
-							<wanderRadius>3</wanderRadius>
-						</li>
-					</subNodes>
+				<li Class="JobGiver_AIFightEnemies">
+					<targetAcquireRadius>65</targetAcquireRadius>
+					<targetKeepRadius>72</targetKeepRadius>
 				</li>
 
 				<!-- Idle -->
@@ -60,6 +64,155 @@
 					<subNodes>
 						<li Class="JobGiver_WanderAnywhere">
 							<maxDanger>Deadly</maxDanger>
+							<ticksBetweenWandersRange>120~240</ticksBetweenWandersRange>
+						</li>
+					</subNodes>
+				</li>
+        
+				<!-- Idle error -->
+				<li Class="JobGiver_IdleError"/>
+			</subNodes>
+		</thinkRoot>
+	</ThinkTreeDef>
+  
+	<ThinkTreeDef>
+		<defName>AE_SnowGolem</defName>
+		<thinkRoot Class="ThinkNode_Priority">
+			<subNodes>
+				<!-- Despawned -->
+				<li Class="ThinkNode_Subtree">
+					<treeDef>Despawned</treeDef>
+				</li>
+
+				<!-- Downed -->
+				<li Class="ThinkNode_Subtree">
+					<treeDef>Downed</treeDef>
+				</li>
+        
+				<!-- Do a queued job -->
+				<li Class="ThinkNode_QueuedJob"/>
+				<li Class="ThinkNodeConditional_EscapingHoldingPlatform">
+					<subNodes>
+						<li Class="JobGiver_EscapingHoldingPlatform"/>
+					</subNodes>
+				</li>
+				<li Class="ThinkNode_ConditionalOfPlayerFaction">
+					<subNodes>
+						<li Class="ThinkNode_Tagger">
+							<tagToGive>DraftedOrder</tagToGive>
+							<subNodes>
+								<li Class="JobGiver_MoveToStandable"/>
+								<li Class="JobGiver_Orders"/>
+							</subNodes>
+						</li>
+					</subNodes>
+				</li>
+
+				<!-- Forced goto -->
+				<li Class="ThinkNode_ConditionalForcedGoto">
+					<subNodes>
+						<li Class="ThinkNode_Tagger">
+							<tagToGive>Misc</tagToGive>
+							<subNodes>
+								<li Class="JobGiver_ForcedGoto"/>
+							</subNodes>
+						</li>
+					</subNodes>
+				</li>
+
+				<!-- Lord -->
+				<li Class="ThinkNode_Subtree">
+					<treeDef>LordDuty</treeDef>
+				</li>
+				<li Class="JobGiver_AIFightEnemies">
+					<targetAcquireRadius>200</targetAcquireRadius>
+					<targetKeepRadius>220</targetKeepRadius>
+				</li>
+
+				<!-- Idle -->
+				<li Class="ThinkNode_Tagger">
+					<tagToGive>Idle</tagToGive>
+					<subNodes>
+						<li Class="JobGiver_WanderAnywhere">
+							<maxDanger>Deadly</maxDanger>
+							<ticksBetweenWandersRange>120~240</ticksBetweenWandersRange>
+						</li>
+					</subNodes>
+				</li>
+        
+				<!-- Idle error -->
+				<li Class="JobGiver_IdleError"/>
+			</subNodes>
+		</thinkRoot>
+	</ThinkTreeDef>
+  
+	<ThinkTreeDef>
+		<defName>AE_SnowSpider</defName>
+		<thinkRoot Class="ThinkNode_Priority">
+			<subNodes>
+				<!-- Despawned -->
+				<li Class="ThinkNode_Subtree">
+					<treeDef>Despawned</treeDef>
+				</li>
+
+				<!-- Downed -->
+				<li Class="ThinkNode_Subtree">
+					<treeDef>Downed</treeDef>
+				</li>
+        
+				<!-- Do a queued job -->
+				<li Class="ThinkNode_QueuedJob"/>
+				<li Class="ThinkNodeConditional_EscapingHoldingPlatform">
+					<subNodes>
+						<li Class="JobGiver_EscapingHoldingPlatform"/>
+					</subNodes>
+				</li>
+				<li Class="ThinkNode_Subtree">
+					<treeDef>BurningResponse</treeDef>
+				</li>
+				<li Class="ThinkNode_ConditionalOfPlayerFaction">
+					<subNodes>
+						<li Class="ThinkNode_Tagger">
+							<tagToGive>DraftedOrder</tagToGive>
+							<subNodes>
+								<li Class="JobGiver_MoveToStandable"/>
+								<li Class="JobGiver_Orders"/>
+							</subNodes>
+						</li>
+					</subNodes>
+				</li>
+
+				<!-- Forced goto -->
+				<li Class="ThinkNode_ConditionalForcedGoto">
+					<subNodes>
+						<li Class="ThinkNode_Tagger">
+							<tagToGive>Misc</tagToGive>
+							<subNodes>
+								<li Class="JobGiver_ForcedGoto"/>
+							</subNodes>
+						</li>
+					</subNodes>
+				</li>
+        
+				<!-- React to close melee threat -->
+				<li Class="JobGiver_ReactToCloseMeleeThreat"/>
+
+				<!-- Lord -->
+				<li Class="ThinkNode_Subtree">
+					<treeDef>LordDuty</treeDef>
+				</li>
+				<li Class="JobGiver_AIFightEnemies">
+					<targetAcquireRadius>30</targetAcquireRadius>
+					<targetKeepRadius>35</targetKeepRadius>
+				</li>
+
+				<!-- Idle -->
+				<li Class="ThinkNode_Tagger">
+					<tagToGive>Idle</tagToGive>
+					<subNodes>
+						<li Class="JobGiver_WanderAnywhere">
+							<maxDanger>Deadly</maxDanger>
+							<ticksBetweenWandersRange>120~240</ticksBetweenWandersRange>
 						</li>
 					</subNodes>
 				</li>
@@ -77,6 +230,15 @@
 				<!-- Despawned -->
 				<li Class="ThinkNode_Subtree">
 					<treeDef>Despawned</treeDef>
+				</li>
+
+				<li Class="ThinkNode_ConditionalCanDoLordJobNow">
+					<subNodes>
+						<!-- Lord directives -->
+						<li Class="ThinkNode_Subtree">
+							<treeDef>LordDutyConstant</treeDef>
+						</li>
+					</subNodes>
 				</li>
 			</subNodes>
 		</thinkRoot>

@@ -30,7 +30,14 @@ namespace AnomaliesExpected
                 initAction = delegate
                 {
                     Comp_MeatGrinder comp = MeatGrinder.TryGetComp<Comp_MeatGrinder>();
-                    comp?.CheckMood(pawn);
+                    if (comp?.OnCooldown ?? true)
+                    {
+                        comp?.CheckMood(pawn);
+                    }
+                    else
+                    {
+                        comp?.Interact(pawn);
+                    }
                 }
             };
         }

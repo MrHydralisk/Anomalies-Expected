@@ -1,18 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<ThingDef ParentName="BasePawn" Name="BaseAESnowMan" Abstract="True">
+	<ThingDef ParentName="BasePawn" Name="BaseAESnowArmy" Abstract="True">
 		<statBases>
 			<ComfyTemperatureMin>-2000</ComfyTemperatureMin>
 			<ComfyTemperatureMax>20</ComfyTemperatureMax>
 			<Flammability>2</Flammability>
 			<ToxicResistance>1</ToxicResistance>
+			<EMPResistance>1</EMPResistance>
 			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
 			<ArmorRating_Sharp>1.1</ArmorRating_Sharp>
 			<ArmorRating_Blunt>0.55</ArmorRating_Blunt>
 			<ArmorRating_Heat>0</ArmorRating_Heat>
 			<PainShockThreshold>0.99</PainShockThreshold>
 			<PsychicSensitivity>0</PsychicSensitivity>
+			<LeatherAmount>0</LeatherAmount>
+			<MeatAmount>0</MeatAmount>
 		</statBases>
 		<tradeability>None</tradeability>
 		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
@@ -25,7 +28,6 @@
 			<canOpenFactionlessDoors>false</canOpenFactionlessDoors>
 			<needsRest>false</needsRest>
 			<hasGenders>false</hasGenders>
-			<hasMeat>false</hasMeat>
 			<foodType>None</foodType>
 			<bloodDef>Filth_AEIceBlood</bloodDef>
 			<bloodSmearDef>Filth_AEIceBloodSmear</bloodSmearDef>
@@ -35,6 +37,11 @@
 			<isImmuneToInfections>true</isImmuneToInfections>
 			<bleedRateFactor>0</bleedRateFactor>
 			<corpseHiddenWhileUndiscovered>true</corpseHiddenWhileUndiscovered>
+			<hideTrainingTab>true</hideTrainingTab>
+			<renderTree>AE_SnowMan</renderTree>
+			<hediffGiverSets>
+				<li>AnomalyEntity</li>
+			</hediffGiverSets>
 		</race>
 		<comps>
 			<li Class="CompProperties_HoldingPlatformTarget">
@@ -48,10 +55,10 @@
 		</comps>
 	</ThingDef>
 
-	<ThingDef ParentName="BaseAESnowMan">
+	<ThingDef ParentName="BaseAESnowArmy">
 		<defName>AE_SnowMan</defName>
 		<label>snowman</label>
-		<description>The Snowman appears harmless and made out of few big snowballs. However, its icy snow body proves surprisingly resilient, quickly dispelling any illusions of innocence. They can attack by throwing snowballs at enemies or scratching them with their stick arms. They can survive even with substantial part of their body being missing.</description>
+		<description>The Snowman appears harmless and made out of few big snowballs. However, its icy snow body proves surprisingly resilient, quickly dispelling any illusions of innocence. They can attack by throwing snowballs at enemies or scratching them with their stick arms. They can survive even with substantial part of their body being missing.\n\nClassified as Class-2 (Warning) anomaly.</description>
 		<statBases>
 			<MoveSpeed>3.2</MoveSpeed>
 			<MinimumContainmentStrength>60</MinimumContainmentStrength>
@@ -59,14 +66,9 @@
 		<uiIconPath>Things/Pawn/SnowArmy/SnowMan/AE_SnowMan_A_south</uiIconPath>
 		<race>
 			<body>AE_SnowMan</body>
-			<thinkTreeMain>AE_SnowMan</thinkTreeMain>
-			<thinkTreeConstant>AE_SnowManConstant</thinkTreeConstant>
-			<baseBodySize>1.75</baseBodySize>
+			<baseBodySize>1</baseBodySize>
 			<baseHealthScale>1</baseHealthScale>
-			<lifeExpectancy>15</lifeExpectancy>
-			<!-- <soundMoving>Pawn_Fleshbeast_Bulbfreak_Moving</soundMoving> -->
-			<renderTree>AE_SnowMan</renderTree>
-			<corpseHiddenWhileUndiscovered>true</corpseHiddenWhileUndiscovered>
+			<lifeExpectancy>35</lifeExpectancy>
 			<lifeStageAges>
 				<li>
 					<def>EntityFullyFormed</def>
@@ -80,32 +82,65 @@
 			<li Class="CompProperties_AttachPoints">
 				<points>
 					<li>
-						<offset>(-.14, 0, .4)</offset>
+						<offset>(-0.21, 0, 0.62)</offset>
 						<type>PlatformRestraint0</type>
 					</li>
 					<li>
-						<offset>(.19, 0, .13)</offset>
+						<offset>(0.28, 0, 0.28)</offset>
 						<type>PlatformRestraint1</type>
 					</li>
 					<li>
-						<offset>(.27, 0, -.57)</offset>
+						<offset>(0.38, 0, -0.58)</offset>
 						<type>PlatformRestraint2</type>
 					</li>
 					<li>
-						<offset>(-.27, 0, -.57)</offset>
+						<offset>(-0.38, 0, -0.58)</offset>
 						<type>PlatformRestraint3</type>
 					</li>
 				</points>
 			</li>
 			<li Class="CompProperties_Studiable">
 				<frequencyTicks>120000</frequencyTicks>
-				<knowledgeCategory>Advanced</knowledgeCategory>
+				<knowledgeCategory>Basic</knowledgeCategory>
 				<anomalyKnowledge>1.5</anomalyKnowledge>
 				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
 				<requiresHoldingPlatform>true</requiresHoldingPlatform>
 			</li>
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotesPawnUnlockable>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>2.9</threshold>
+						<AmountStudiedRequirment>1</AmountStudiedRequirment>
+						<label>#1/4 Snowman study report</label>
+						<text>Autopsy Report\n\nSubject:\nA large, humanoid construct resembling a snowman. Designated as entity SA-01.\n\nExternal Examination:\nThe Subject presents as a structure of 3 big spherical snowballs. The bottom sphere serves as a base, with two smaller snowballs affixed, likely functioning as pedal appendages. The middle sphere supports two stick-like appendages, possibly serving as arms, and three dark ice buttons. The top sphere supports two dark ice orbs resembling eyes and a conical, carrot-like protrusion resembling nose. The SA-01’s exterior is coated in a thin layer of ice, exhibiting a high degree of resistance to physical trauma.\n\nInternal Examination:\nDissection revealed the Subject's internal composition to be primarily snow. This internal snow structure demonstrates a remarkable capacity for adaptation to external forces without compromising the overall structural integrity of the SA-01. Within the middle sphere was discovered an ice core, which appears to function as a vital heart-like organ.\n\nThermal Exposure Test:\nApplication of open flame to the Subject's exterior resulted in localized melting of the ice layer. Subsequent mechanical force applied to the thermally affected area produced significantly greater damage compared to control tests without thermal pre-treatment. This suggests that elevated temperatures compromise the structural integrity of the ice layer, rendering the SA-01 more vulnerable to external trauma.\n\nCryogenic Exposure Test:\nExposure to sub-zero temperatures induced regenerative capabilities. The Subject started to restore damaged areas induced by previous tests. Further reduction of ambient temperature appeared to accelerate this regenerative process.\n\nRecommendations:\nFurther study of more instances of SA-01 is recommended to get deeper understanding.\n[Total of 4 required for next study report]</text>
+						<ThreatClass>2</ThreatClass>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>2.91</threshold>
+						<AmountStudiedRequirment>4</AmountStudiedRequirment>
+						<label>#2/4 Snowman study report</label>
+						<text>Combat Capabilities Analysis\n\nSubject:\nSnowman SA-01.\n\nRanged Combat Capabilities:\nThe Subject's primary ranged weapon consists of snowballs. The SA-01 appears capable of acquiring these projectiles by compressing surrounding snow or, alternatively, generating snow on its own body. Despite the seemingly fragile nature of its stick-like arms, Subject can launch snowballs with considerable velocity and force. These projectiles exhibit a density sufficient to inflict harm on human targets and even cause structural damage.\nA key characteristic of the SA-01's snowball attack is its cryo-effect. Upon impact with human skin, the snowball causes a rapid decrease in tissue temperature, leading to localized freezing. The affected area experiences minimal pain, potentially allowing damage to accumulate unnoticed until a critical state is reached. Cold-resistant skin protection has been observed to mitigate the freezing effects of these attacks.\nInstances of SA-01 often operate in groups, employing a suppressive fire tactic by continuously launching snowballs at a target.\n\nMelee Combat Capabilities:\nWhen disarmed, the SA-01 resorts to close-quarters combat. In this scenario, the Subject attempts to close the distance with the target and attack using its stick-like arms or its carrot-like nose.\n\nRecommendations:\nFurther study of more instances of SA-01 is recommended to get deeper understanding.\n[Total of 7 required for next study report]</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>2.92</threshold>
+						<AmountStudiedRequirment>7</AmountStudiedRequirment>
+						<label>#3/4 Snowman study report</label>
+						<text>Nano-Scale Discovery\n\nSubject:\nSnowman SA-01.\n\nSnow Analysis:\nMicroscopic examination of snow samples extracted from the Subject revealed the presence of nano-scale machines. These nanomachines exhibit structural similarities to previously observed Archites and nanomachines within some mechanoids. However, a key functional difference is their apparent ability to manipulate thermal energy, specifically by decreasing the surrounding temperature. These novel nanomachines have been designated "Frostites".\nFrostites are distributed throughout the SA-01's internal structure, seemingly responsible for maintaining its overall form and generating new snow and ice as required. These frostites exhibit remarkable energy efficiency, deriving power from the absorption of ambient heat. A consequential side effect of this process is a constant decrease in the surrounding air temperature.\nWhile frostites can survive exposure to elevated temperatures, the structural integrity of the surrounding snow and ice structure is compromised, leading to melting. This disruption separates the frostites from their network, inducing a state of hibernation until reconnection with another frostites network occurs.\n\nIce Core Analysis:\nThe SA-01's ice core functions as a central hub for the frostites network. This core appears to be a site of frostites aggregation and their maintenance. Disruption of the ice core results in a functional collapse of the frostites network, characterized by a loss of coordinated activity and network disintegration. Therefore, the ice core's functional role should be expanded beyond that of a heart-like organ to include that of a brain-like organ, responsible for network cohesion and coordinated function.\n\nTechnological Implications:\nThe observed cryo-active properties of the frostites present a potential avenue for technological development. Replicating the frostites' mechanism of localized air temperature reduction on a wider scale could enable the effective cooling of entire regions. Further research is recommended to explore the feasibility and potential applications of this technology.\n\nRecommendations:\nFurther study of more instances of SA-01 is recommended to get deeper understanding.\n[Total of 10 required for next study report]</text>
+						<ThingDefSpawn>AE_ResearchNotesSAA</ThingDefSpawn>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>2.93</threshold>
+						<AmountStudiedRequirment>10</AmountStudiedRequirment>
+						<label>#4/4 Snowman study report</label>
+						<text>Theory Regarding Snow Army 1/5\n\nSubject:\nSnowman SA-01.\n\nOrigin Hypothesis:\nThe SA-01 is hypothesized to be a remnant of a Snow Army mechanoid force, potentially created by an extinct civilization. While this race is presumed to be extinct, their technological creations, such as the SA-01, continue to function. The advanced nature of the frostites nanotechnology suggests a sophisticated understanding of material science and energy manipulation, further supporting the hypothesis of a technologically advanced civilization.\n\nEnvironmental Adaptation:\nThe SA-01's reliance on cryo-technology, specifically the use of frostites to manipulate low temperatures, and the absence of metals within its composition strongly suggest that the creators of these machines inhabited a harsh, cold climate characterized by limited natural resources. This scarcity likely drove them to maximize the utilization of constantly available materials like snow and ice in their technological development. The SA-01's ability to generate and manipulate snow locally implies a deep understanding of cryo-dynamics and material transformation at the nanoscale. The lack of metal components also suggests a deliberate design choice to exploit the unique properties of non-metallic materials in a cold environment.\n\nConstruction and Advantages:\nThe SA-01's design appears optimized for resource efficiency. The relatively small quantity of frostites required, coupled with the abundance of constantly available snow, allows for the economical production of individual SA-01 units. This modularity and ease of "construction" likely facilitated rapid deployment and replenishment of the Snow Army. The absence of metallic components within the SA-01's structure confers a potential advantage against high-energy impulse weapons. Such weapons, which often rely on electromagnetic pulses or directed energy, would likely have reduced effectiveness against a non-metallic target, as there are no conductive pathways for the energy to travel through, and no metal parts to short-circuit. This characteristic may have contributed to the SA-01's role as a primary force within the Snow Army, allowing them to potentially withstand attacks that would disable conventional metallic mechanoids. Furthermore, the cryo-attacks of the SA-01 might be particularly effective against opponents relying on heat-based technologies, as the extreme cold could disrupt or disable such systems.</text>
+					</li>
+				</studyNotesPawnUnlockable>
+				<isCreateSeparateEntityEntry>true</isCreateSeparateEntityEntry>
+				<category>Basic</category>
+			</li>
 			<li Class="CompProperties_ProducesBioferrite">
-				<bioferriteDensity>1.5</bioferriteDensity>
+				<bioferriteDensity>0.75</bioferriteDensity>
 			</li>
 			<li>
 				<compClass>AnomaliesExpected.Comp_EntityWithWeapon</compClass>
@@ -155,9 +190,585 @@
 				<chanceFactor>0.2</chanceFactor>
 			</li>
 		</tools>
-		<killedLeavingsRanges>
-			<Bioferrite>2~5</Bioferrite>
-		</killedLeavingsRanges>
+		<butcherProducts>
+			<AE_IceCrystal>1</AE_IceCrystal>
+			<Bioferrite>1</Bioferrite>
+		</butcherProducts>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseAESnowArmy">
+		<defName>AE_SnowGolem</defName>
+		<label>snow golem</label>
+		<description>A colossal construct, serves as a mobile siege platform. Its massive snow body houses a compression chamber capable of launching cryo-explosive projectiles or emitting freezing winds. Its ability to manipulate regional temperatures and support allied units makes it a high-priority threat.\n\nClassified as Class-2 (Warning) anomaly.</description>
+		<statBases>
+			<MoveSpeed>1.6</MoveSpeed>
+			<ArmorRating_Blunt>0.7</ArmorRating_Blunt>
+			<MinimumContainmentStrength>110</MinimumContainmentStrength>
+		</statBases>
+		<uiIconPath>Things/Pawn/SnowArmy/SnowGolem/AE_SnowGolem_south</uiIconPath>
+		<race>
+			<body>AE_SnowGolem</body>
+			<thinkTreeMain>AE_SnowGolem</thinkTreeMain>
+			<baseBodySize>6</baseBodySize>
+			<baseHealthScale>9.8</baseHealthScale>
+			<lifeExpectancy>225</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>EntityFullyFormed</def>
+					<soundWounded>Pawn_Shambler_Wounded</soundWounded>
+					<soundDeath>Pawn_Shambler_Killed</soundDeath>
+					<soundCall>Pawn_Shambler_Call</soundCall>
+				</li>
+			</lifeStageAges>
+		</race>
+		<comps>
+			<li Class="CompProperties_AttachPoints">
+				<points>
+					<li>
+						<offset>(-1.13, 0, 2.1)</offset>
+						<type>PlatformRestraint0</type>
+					</li>
+					<li>
+						<offset>(1.13, 0, 1.13)</offset>
+						<type>PlatformRestraint1</type>
+					</li>
+					<li>
+						<offset>(0.85, 0, -0.85)</offset>
+						<type>PlatformRestraint2</type>
+					</li>
+					<li>
+						<offset>(-0.94, 0, -1.28)</offset>
+						<type>PlatformRestraint3</type>
+					</li>
+				</points>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>120000</frequencyTicks>
+				<knowledgeCategory>Advanced</knowledgeCategory>
+				<anomalyKnowledge>2.5</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<requiresHoldingPlatform>true</requiresHoldingPlatform>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotesPawnUnlockable>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>4.9</threshold>
+						<AmountStudiedRequirment>1</AmountStudiedRequirment>
+						<label>#1/4 Snow golem study report</label>
+						<text>Autopsy Report\n\nSubject:\nA giant, snow golem. Designated as entity SA-03.\n\nExternal Examination:\nThe Subject exhibits a primary structure consisting of a single massive snow block, shaped as a truncated pyramid towards the base. Affixed to this primary structure are eight secondary snow blocks: four positioned at bottom, serving as locomotive appendages (legs), and four positioned in the middle, laterally, serving as manipulatory appendages (arms). The frontal side of the primary structure displays a facial configuration with five embedded dark ice crystals, resembling ocular structures. A prominent rectangular hole is present on the top side, extending deep into the middle of the primary structure. The exterior of SA-03 is encased in a thick layer of ice, consistent in composition with SA-01.\n\nInternal Examination:\nInternal dissection reveals the primary constituent material to be snow, consistent with SA-01, but with significantly increased snow density. Three ice cores were extracted from the primary structure. The internal structure of the top hole requires further analysis.\n\nThermal Exposure Test: \nApplication of direct thermal energy resulted in localized melting of the superficial ice layer. Subsequent mechanical force applied to the affected area demonstrated increased vulnerability, consistent with the observed behavior in SA-01.\n\nCryogenic Exposure Test: \nExposure to sub-zero temperatures induced regenerative capabilities, similar to SA-01, but with a demonstrably increased rate of regeneration, scaling with the size and density of SA-03.\n\nRecommendations:\nFurther study of more instances of SA-03 is recommended to get deeper understanding.\n[Total of 2 required for next study report]</text>
+						<ThreatClass>2</ThreatClass>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>4.91</threshold>
+						<AmountStudiedRequirment>2</AmountStudiedRequirment>
+						<label>#2/4 Snow golem study report</label>
+						<text>Combat Capabilities Analysis\n\nSubject:\nSnow golem SA-03.\n\nRanged Combat Capabilities:\nThe SA-03's primary ranged weapon consists of compressed snow blocks. These projectiles are generated by compressing surrounding snow or, alternatively, generating snow on its own body. The snow blocks are capable of impacting multiple targets simultaneously and, upon impact, disperse liquid nitrogen, mirroring the cryo-effect observed in SA-02 detonations.\n\nLong Range Combat Capabilities:\nObservations following an impact event within a facility's room revealed the SA-03's capacity for long-range bombardment. The Subject possesses a hole on a top side that functions as a compression chamber, accumulating and densifying snow into large projectiles over time. The SA-03 is equipped with five optical sensors, enabling comprehensive target analysis and precise targeting for maximum damage or defensive grid neutralization. Using all four arms simultaneously, the SA-03 can launch these large projectiles with high accuracy, albeit at a relatively slow velocity. Upon impact, the projectile disperses a substantial quantity of liquid nitrogen, affecting a wide area.\n\nMelee Combat Capabilities:\nIn close-quarters combat, the SA-03 utilizes its arms for direct physical attacks. However, a unique and highly destructive melee tactic involves the Subject using its own body, leaving a devastating damage to a target.\n\nSupport Capabilities:\nThe SA-03 demonstrates a propensity for supporting allied Snow Army units. Specifically, the Subject has been observed to emit a powerful gust of cold wind from its top hole to extinguish fires affecting nearby SA-01 and SA-02 instances. This suggests a tactical awareness and a capacity for battlefield support.\n\nRecommendations:\nFurther study of more instances of SA-03 is recommended to get deeper understanding.\n[Total of 3 required for next study report]</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>4.92</threshold>
+						<AmountStudiedRequirment>3</AmountStudiedRequirment>
+						<label>#3/4 Snow golem study report</label>
+						<text>Cold Emmision\n\nSubject:\nSnow golem SA-03.\n\nSnow Block Compressor Analysis:\nDisassembly of multiple SA-03 specimens revealed the true function of the top hole: it is a multi-functional snow block compressor capable of generating large snow projectiles and infusing them with nitrogen. While this is a primary function, the compressor's core capability is the rapid and substantial reduction of ambient air temperature.\nThe SA-03 can emit large volumes of cold air, exceeding the cryo-capabilities of other Snow Army units. This superior performance is attributed to the significantly higher concentration of ice cores and, consequently, frostites within the SA-03's structure. This abundance of frostites and compressor enables regional-scale temperature manipulation.\n\nTechnological Implications:\nBuilding upon previous discoveries regarding large-scale temperature reduction and destabilized ice crystal energy release, an experiment was conducted to utilize destabilized ice crystals as fuel for the extracted SA-03 snow block compressor.\nThe experiment yielded successful results. When a signal was transmitted to the frostites to maintain the stabilization of the provided fuel, the compressor emitted cold air as expected. Conversely, when the stabilization signal was terminated, the compressor emitted hot air while consuming the same quantity of fuel.\nThis demonstrates the potential for precise and reversible temperature control over a wide area. This technology allows for the controlled transition between extreme cooling and heating, enabling the effective temperature management of entire regions. Further research is recommended to explore the feasibility and potential applications of this technology.\n\nRecommendations:\nFurther study of more instances of SA-03 is recommended to get deeper understanding.\n[Total of 4 required for next study report]</text>
+						<ThingDefSpawn>AE_ResearchNotesSAC</ThingDefSpawn>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>4.93</threshold>
+						<AmountStudiedRequirment>4</AmountStudiedRequirment>
+						<label>#4/4 Snow golem study report</label>
+						<text>Theory Regarding Snow Army 3/5\n\nSubject:\nSnow golem SA-03 "Fridge".\n\nConstruction and Advantages:\nThe SA-03's design indicates a multi-role combat platform, fulfilling fire support, intelligence coordination, and siege roles within the Snow Army. Key features include:\n- Elevated Battlefield Observation: Its considerable size provides a high vantage point, enhancing situational awareness.\n- Advanced Target Acquisition and Analysis: The five-sensor optical array and sophisticated algorithms surpass the target assessment capabilities of the SA-02.\n- Enhanced Durability: The SA-03 exhibits significant resilience to enemy attacks.\n- Cryogenic Offensive Capabilities: The nitrogen dispersal capability effectively breaches defensive lines and supports frontal assaults.\n- Long-Range Bombardment: The ability to launch large snow projectiles forces enemy displacement and vulnerability.\n- Counter-Measure Capabilities: The ability to extinguish fires and manipulate temperature provides significant counter measure abilities.\nThese characteristics designate the SA-03 as a high-priority target and a valuable asset on any battlefield.\nA small contingent of SA-03 units can potentially achieve victory against unprepared adversaries through regional temperature manipulation and long-range attacks targeting critical infrastructure, such as power grids. The SA-03's presence on the battlefield consistently presents a significant threat to opposing forces.\n\nPossible Peacetime Use:\nIt is theorized that the SA-03's capabilities were repurposed for military applications from a foundation of peacetime utility:\n- Construction: The ability to generate and manipulate large snow blocks could have been utilized for rapid construction of structures, with nitrogen acting as a binding agent. The SA-03's size and multiple limbs would facilitate efficient and stable construction on diverse terrains.\n- Terraforming: The SA-03's regional temperature manipulation capabilities could have been employed to terraform new territories into cold, icy environments. This could imply a physiological adaptation or cultural preference for cold climates within the civilization that created the SA-03.\n\nSide Note:\nRegarding the labeling of the SA-03 as a "Fridge": No. Absolutely not. And under no circumstances you can put food inside the compressor to cool it while at work. We already had two incidents resulting in the loss of hands and arms, when personnel attempted to retrieve food and the "Fridge" decided to compress new snow block. When I identify the individual responsible for this Subject designation, we will be having a very serious discussion.</text>
+					</li>
+				</studyNotesPawnUnlockable>
+				<isCreateSeparateEntityEntry>true</isCreateSeparateEntityEntry>
+				<category>Advanced</category>
+			</li>
+			<li Class="CompProperties_ProducesBioferrite">
+				<bioferriteDensity>0.75</bioferriteDensity>
+			</li>
+			<li>
+				<compClass>AnomaliesExpected.Comp_EntityWithWeapon</compClass>
+			</li>
+		</comps>
+		<tools>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>22</power>
+				<cooldownTime>5</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+				<soundMeleeHit>Pawn_Fleshbeast_Attack_Blunt</soundMeleeHit>
+			</li>
+			<li>
+				<label>left front snow block arm</label>
+				<labelNoLocation>snow block arm</labelNoLocation>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>AE_LeftFHand</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>left rear snow block arm</label>
+				<labelNoLocation>snow block arm</labelNoLocation>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>AE_LeftBHand</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>right front snow block arm</label>
+				<labelNoLocation>snow block arm</labelNoLocation>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>AE_LeftFHand</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>right rear snow block arm</label>
+				<labelNoLocation>snow block arm</labelNoLocation>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>AE_LeftBHand</linkedBodyPartsGroup>
+			</li>
+		</tools>
+		<butcherProducts>
+			<AE_IceCrystal>5</AE_IceCrystal>
+			<Bioferrite>6</Bioferrite>
+		</butcherProducts>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseAESnowArmy">
+		<defName>AE_SnowSpider</defName>
+		<label>snow spider</label>
+		<description>This small arachnid made out of snow with a big ice crystall on it abdomen. They attack with their sharp legs and fangs. If they surrounded they can explode spilling nitrogen fluid. Despite its size, it swarms and disables defenses effectively.\n\nClassified as Class-2 (Warning) anomaly.</description>
+		<statBases>
+			<MoveSpeed>5.5</MoveSpeed>
+			<ArmorRating_Sharp>0.9</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+			<PsychicSensitivity>0.25</PsychicSensitivity>
+			<MinimumContainmentStrength>20</MinimumContainmentStrength>
+		</statBases>
+		<uiIconPath>Things/Pawn/SnowArmy/SnowSpider/AE_SnowSpider_south</uiIconPath>
+		<race>
+			<body>AE_SnowSpider</body>
+			<thinkTreeMain>AE_SnowSpider</thinkTreeMain>
+			<intelligence>Animal</intelligence>
+			<baseBodySize>0.6</baseBodySize>
+			<baseHealthScale>0.6</baseHealthScale>
+			<lifeExpectancy>15</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>EntityFullyFormed</def>
+					<soundWounded>Pawn_Shambler_Wounded</soundWounded>
+					<soundDeath>Pawn_Shambler_Killed</soundDeath>
+					<soundCall>Pawn_Shambler_Call</soundCall>
+				</li>
+			</lifeStageAges>
+		</race>
+		<comps>
+			<li Class="CompProperties_AttachPoints">
+				<points>
+					<li>
+						<offset>(-0.08, 0, 0.27)</offset>
+						<type>PlatformRestraint0</type>
+					</li>
+					<li>
+						<offset>(0.14, 0, 0.21)</offset>
+						<type>PlatformRestraint1</type>
+					</li>
+					<li>
+						<offset>(0.32, 0, -0.17)</offset>
+						<type>PlatformRestraint2</type>
+					</li>
+					<li>
+						<offset>(-0.22, 0, -0.27)</offset>
+						<type>PlatformRestraint3</type>
+					</li>
+				</points>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>120000</frequencyTicks>
+				<knowledgeCategory>Advanced</knowledgeCategory>
+				<anomalyKnowledge>1</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<requiresHoldingPlatform>true</requiresHoldingPlatform>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotesPawnUnlockable>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>1.9</threshold>
+						<AmountStudiedRequirment>1</AmountStudiedRequirment>
+						<label>#1/4 Snow spider study report</label>
+						<text>Autopsy Report\n\nSubject:\nA small, arachnid-like construct. Designated as entity SA-02.\n\nExternal Examination:\nThe Subject presents as a tripartite structure comprising a head, cephalothorax, and abdomen, all formed from compacted snow. The cephalothorax bears six sharp, snow-constructed appendages, analogous to legs. The head features six dark blue ice crystals, resembling ocular structures, and two ice formations resembling fangs. The abdomen is dominated by a large, reddish-tinted ice crystal. Sparse snow accretions provide additional external coverage. A thin, superficial layer of ice is present, similar to SA-01, but due to the Subject’s diminutive size, its contribution to overall structural integrity is deemed negligible.\n\nInternal Examination:\nInternal dissection reveals the primary constituent material to be snow. A central ice core, analogous to that observed in SA-01, is present. The abdominal ice crystal exhibits unique characteristics requiring further analysis.\n\nThermal Exposure Test: \nApplication of direct thermal energy resulted in localized melting of the superficial ice layer. Subsequent mechanical force applied to the affected area demonstrated increased vulnerability, consistent with the observed behavior in SA-01.\n\nCryogenic Exposure Test: \nExposure to sub-zero temperatures induced regenerative capabilities, similar to SA-01.\n\nRecommendations:\nFurther study of more instances of SA-02 is recommended to get deeper understanding.\n[Total of 3 required for next study report]</text>
+						<ThreatClass>2</ThreatClass>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>1.91</threshold>
+						<AmountStudiedRequirment>3</AmountStudiedRequirment>
+						<label>#2/4 Snow spider study report</label>
+						<text>Combat Capabilities Analysis\n\nSubject:\nSnow spider SA-02.\n\nMelee Combat Capabilities:\nThe SA-02 exhibits primary melee combat capabilities. Its primary offensive weapons are its sharp legs and fangs, which necessitate close-quarters engagement with the target. These appendages are designed for laceration and puncture, inflicting direct physical trauma.\n\nArea of Effect Combat Capabilities:\nThe SA-02 is equipped with six optical sensors that continuously scan the surrounding environment for potential organic and powered targets. Upon detection of a sufficient number of targets within proximity, the SA-02 initiates a self-destruct sequence. This culminates in the detonation of an internal ice crystal located within its abdomen.\nThis detonation produces a localized cryo-effect, resulting in the rapid freezing of surrounding organic targets. Additionally, the explosion generates an ice layer that destabilizes electronic and mechanical systems within the affected area.\nThis self-destruct action is terminal for the initiating SA-02. In group engagements, other SA-02 instances demonstrate an observed behavioral adaptation: after an SA-02 initiates self-destruct, surviving instances cease targeting the previously affected targets. This behavior suggests a tactical programming designed to prevent the redundant elimination of targets and maximize the overall effectiveness of the group.\n\nRecommendations:\nFurther study of more instances of SA-02 is recommended to get deeper understanding.\n[Total of 5 required for next study report]</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>1.92</threshold>
+						<AmountStudiedRequirment>5</AmountStudiedRequirment>
+						<label>#3/4 Snow spider study report</label>
+						<text>Crystall Dystabilization Discovery\n\nSubject:\nSnow spider SA-02.\n\nIce Crystall Analysis:\nMolecular structural analysis of the abdominal ice crystal within the SA-02 revealed a highly destabilized crystalline lattice. This instability is maintained by a continuous cryo-genic input from frostites. Consequently, even minor fluctuations in temperature can trigger a rapid, exothermic release of stored energy, effectively an explosion. The SA-02 appears capable of modulating this destabilization, allowing for controlled detonation.\nPost-mortem analysis of non-triggered crystals indicates a gradual stabilization process, accompanied by the release of thermal energy. Detonation of the crystal results in the dispersal of liquid nitrogen. This nitrogen induces rapid cryo-immobilization of surrounding organic matter, inhibiting muscle contraction and overall movement. Furthermore, it causes cryogenic bonding of mechanical components, effectively disrupting the functionality of different machinery, for example, turrets.\n\nSnow and Ice Core Analysis:\nAnalysis of the SA-02's snow and ice core structures yielded results consistent with those obtained from the SA-01, indicating a shared operational principle.\n\nTechnological Implications:\nInitial attempts to extract the destabilized ice crystal resulted in uncontrolled detonations, underscoring the inherent instability of the material. Subsequent experimentation has successfully replicated the creation of this destabilized crystal. The destabilization process was determined to be a result of the introduction of bioferrite particles into the crystal's core. Further research is recommended to explore the feasibility and potential applications of this technology in weaponry.\n\nRecommendations:\nFurther study of more instances of SA-02 is recommended to get deeper understanding.\n[Total of 7 required for next study report]</text>
+						<ThingDefSpawn>AE_ResearchNotesSAB</ThingDefSpawn>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>1.93</threshold>
+						<AmountStudiedRequirment>5</AmountStudiedRequirment>
+						<label>#4/4 Snow spider study report</label>
+						<text>Theory Regarding Snow Army 2/5\n\nSubject:\nSnow spider SA-02.\n\nConstruction and Advantages:\nThe SA-02's design philosophy appears to prioritize mass production and swarm tactics, focusing on crowd control and disruption. Its capabilities include:\n- Defensive Structure Neutralization: The cryo-explosive detonation effectively disables defensive structures through cryogenic bonding and EMP disruption.\n- Frontline Soldier Impairment: The liquid nitrogen dispersal significantly impedes frontline soldier mobility and combat effectiveness.\n- Small Size and Swarming: The SA-02's compact form factor facilitates swarming tactics, overwhelming enemy defenses through sheer numbers.\n- Sabotage Capabilities: The SA-02's ability to infiltrate and disable vital enemy structures makes it highly effective in sabotage missions.\nThe SA-02's intelligence is demonstrably less complex than that of the SA-01. However, its target assessment algorithm is significantly more sophisticated. This advanced algorithm is likely a crucial adaptation to prevent premature self-destruction, ensuring the SA-02s are utilized strategically rather than indiscriminately. Without it, the SA-02 would self-destruct at the first target, even when it had little to no strategic value.\n\nPossible Peacetime Use:\nIt is theorized that the destabilized ice crystals utilized in the SA-02's self-destruct mechanism could serve as a high-density, storable energy source for the civilization that created them. This energy source could potentially power a wide range of machinery and infrastructure.\nIn a peacetime context, the SA-02 platform may have been repurposed as a transport mechanism for these energy cells. The SA-02's robust structure and internal storage capacity would make it suitable for distributing energy throughout their creators' settlements or facilities.</text>
+					</li>
+				</studyNotesPawnUnlockable>
+				<isCreateSeparateEntityEntry>true</isCreateSeparateEntityEntry>
+				<category>Advanced</category>
+			</li>
+			<li Class="CompProperties_ProducesBioferrite">
+				<bioferriteDensity>1</bioferriteDensity>
+			</li>
+		</comps>
+		<tools>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>2</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>UpperHead</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+				<soundMeleeHit>Pawn_Fleshbeast_Attack_Blunt</soundMeleeHit>
+			</li>
+			<li>
+				<label>left front snow leg</label>
+				<labelNoLocation>snow leg</labelNoLocation>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>5</power>
+				<cooldownTime>1</cooldownTime>
+				<linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>right front snow leg</label>
+				<labelNoLocation>snow leg</labelNoLocation>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>5</power>
+				<cooldownTime>1</cooldownTime>
+				<linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>fangs</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>4</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<chanceFactor>0.8</chanceFactor>
+			</li>
+		</tools>
+		<butcherProducts>
+			<AE_IceCrystal>1</AE_IceCrystal>
+			<Bioferrite>1</Bioferrite>
+		</butcherProducts>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseAESnowArmy">
+		<defName>AE_IceMantis</defName>
+		<label>ice mantis</label>
+		<description>A segmented construct of thin ice shards, wields razor-sharp forelimbs that deliver cryogenic embrittlement. Its unique, planar design offers exceptional frontal resilience. Formed from reassembled fragments, it follows core programming, targeting organic life.\n\nClassified as Class-2 (Warning) anomaly.</description>
+		<statBases>
+			<MoveSpeed>4.9</MoveSpeed>
+			<MinimumContainmentStrength>75</MinimumContainmentStrength>
+		</statBases>
+		<uiIconPath>Things/Pawn/SnowArmy/IceMantis/AE_IceMantis_south</uiIconPath>
+		<race>
+			<body>AE_IceMantis</body>
+			<thinkTreeMain>AE_SnowSpider</thinkTreeMain>
+			<intelligence>Animal</intelligence>
+			<baseBodySize>1.4</baseBodySize>
+			<baseHealthScale>1</baseHealthScale>
+			<lifeExpectancy>60</lifeExpectancy>
+			<soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
+			<lifeStageAges>
+				<li>
+					<def>EntityFullyFormed</def>
+					<soundWounded>Pawn_Shambler_Wounded</soundWounded>
+					<soundDeath>Pawn_Shambler_Killed</soundDeath>
+					<soundCall>Pawn_Shambler_Call</soundCall>
+				</li>
+			</lifeStageAges>
+		</race>
+		<comps>
+			<li Class="CompProperties_AttachPoints">
+				<points>
+					<li>
+						<offset>(-0.08, 0, 0.27)</offset>
+						<type>PlatformRestraint0</type>
+					</li>
+					<li>
+						<offset>(0.14, 0, 0.21)</offset>
+						<type>PlatformRestraint1</type>
+					</li>
+					<li>
+						<offset>(0.32, 0, -0.17)</offset>
+						<type>PlatformRestraint2</type>
+					</li>
+					<li>
+						<offset>(-0.22, 0, -0.27)</offset>
+						<type>PlatformRestraint3</type>
+					</li>
+				</points>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>120000</frequencyTicks>
+				<knowledgeCategory>Advanced</knowledgeCategory>
+				<anomalyKnowledge>1.75</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<requiresHoldingPlatform>true</requiresHoldingPlatform>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotesPawnUnlockable>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>3.4</threshold>
+						<AmountStudiedRequirment>1</AmountStudiedRequirment>
+						<label>#1/4 Ice mantis study report</label>
+						<text>Autopsy Report\n\nSubject:\nA large construct composed of multiple thin ice shards, resembling a mantis. Designated as entity SA-04.\n\nExternal Examination:\nThe Subject presents as a segmented structure comprised of nine distinct, unconnected thin ice shards. A central shard replicates a thorax, with two laterally projecting shards serving as bladed, mantis-like forelimbs. A smaller shard on top replicates a head, while a larger shard at bottom replicates an abdomen. Four smaller shards are positioned in proximity to the abdominal shard, functioning as locomotive appendages (legs). Unlike SA-01, SA-04's structure appears to be entirely composed of ice, resulting in increased resistance to physical trauma. Dark inclusions are visible deep within the ice, suggesting impurities.\n\nInternal Examination:\nDeep core sampling of the dark inclusions within the ice shards revealed the presence of organic tissue and osseous structures. Additionally, an ice core, analogous to that observed in SA-01, was identified.\n\nThermal Exposure Test: \nApplication of direct thermal energy resulted in localized melting of the superficial ice layer. Subsequent mechanical force applied to the affected area demonstrated increased vulnerability, consistent with the observed behavior in SA-01.\n\nCryogenic Exposure Test: \nExposure to sub-zero temperatures induced regenerative capabilities, similar to SA-01.\n\nRecommendations:\nFurther study of more instances of SA-04 is recommended to get deeper understanding.\n[Total of 3 required for next study report]</text>
+						<ThreatClass>2</ThreatClass>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>3.41</threshold>
+						<AmountStudiedRequirment>3</AmountStudiedRequirment>
+						<label>#2/4 Ice mantis study report</label>
+						<text>Combat Capabilities Analysis\n\nSubject:\nIce Mantis SA-04.\n\nMelee Combat Capabilities:\nThe SA-04's primary offensive strategy revolves around the use of its sharp, blade-like appendages. These blades are designed to inflict lacerations upon enemy targets. Notably, the blades deliver a localized application of liquid nitrogen upon impact, which induces cryogenic embrittlement of the wound, rendering it more susceptible to subsequent damage. Alternatively, the SA-04 can utilize other ice shards from its body for attacks.\n\nFrontal Resilience:\nThe SA-04's physical morphology exhibits a high degree of frontal and rear resilience. The Subject's body is composed of thin, planar ice shards, all oriented in a parallel configuration. This design presents a minimal cross-sectional area to attacks originating from the front or rear, making the SA-04 difficult to detect and target.\nFurthermore, the shallow angle of incidence for projectiles approaching from these directions significantly increases the effective thickness of the ice armor. This increased thickness provides enhanced protection against incoming projectiles, as the projectile must penetrate a greater volume of ice to inflict damage and have chance to be deflected.\n\nRecommendations:\nFurther study of more instances of SA-04 is recommended to get deeper understanding.\n[Total of 5 required for next study report]</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>3.42</threshold>
+						<AmountStudiedRequirment>5</AmountStudiedRequirment>
+						<label>#3/4 Ice mantis study report</label>
+						<text>Different Remains Discovery\n\nSubject:\nIce Mantis SA-04.\n\nRemains Analysis:\nFurther analysis of biological materials embedded within the SA-04's ice shards, including bone and tissue samples, revealed a significant anomaly. DNA analysis indicates that these remains originate from a diverse range of creatures, encompassing not only different individuals but also distinct species.\n\nTechnological Implications:\nThe SA-04's ability to deliver a localized cryogenic embrittlement effect via liquid nitrogen application has been successfully replicated. Further research is recommended to explore the feasibility and potential applications of this technology.\n\nRecommendations:\nFurther study of more instances of SA-04 is recommended to get deeper understanding.\n[Total of 7 required for next study report]</text>
+						<ThingDefSpawn>AE_ResearchNotesSAD</ThingDefSpawn>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>3.43</threshold>
+						<AmountStudiedRequirment>5</AmountStudiedRequirment>
+						<label>#4/4 Ice mantis study report</label>
+						<text>Theory Regarding Snow Army 4/5\n\nSubject:\nIce Mantis SA-04.\n\nConstruction and Advantages:\nThe SA-04's construction appears to be a result of unintentional reassembly rather than deliberate design. It is theorized that fragments of destroyed SA-05 units, or shattered ice shards from these units, are drawn together to reconstitute a functional frostites network.\nThis reassembly process is driven by the presence of a viable ice core within at least one of the fragments. This core directs the collection of nearby shards, regardless of whether they originated from the same SA-05 instance, in an attempt to rebuild the original structure.\nWhile the reassembled SA-04 lacks centralized intelligent control, the frostites network retains its core programming. If a mission directive is present, the SA-04 will attempt to execute it. In the absence of a specific mission, the SA-04 will exhibit a tendency to follow other friendly Snow Army units.\n\nMechanoids Connection:\nIn-depth analysis of the frostites network and its associated targeting algorithms suggests a potential for compatibility between the Snow Army and previously encountered mechanoid factions. The targeting algorithms of both groups appear to exclude each other as hostile targets.\nHowever, the Snow Army's primary directive is to eliminate organic life and related technological infrastructure. Therefore, while direct conflict with mechanoids may be avoided, the Snow Army will actively seek to clear any territory of biological presence and associated machinery.</text>
+					</li>
+				</studyNotesPawnUnlockable>
+				<isCreateSeparateEntityEntry>true</isCreateSeparateEntityEntry>
+				<category>Advanced</category>
+			</li>
+			<li Class="CompProperties_ProducesBioferrite">
+				<bioferriteDensity>1</bioferriteDensity>
+			</li>
+		</comps>
+		<tools>
+			<li>
+				<label>left blade</label>
+				<labelNoLocation>blade</labelNoLocation>
+				<capacities>
+					<li>AEFreezingCut</li>
+					<li>AEFreezingStab</li>
+				</capacities>
+				<power>15</power>
+				<cooldownTime>1.5</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>right blade</label>
+				<labelNoLocation>blade</labelNoLocation>
+				<capacities>
+					<li>AEFreezingCut</li>
+					<li>AEFreezingStab</li>
+				</capacities>
+				<power>15</power>
+				<cooldownTime>1.5</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>AEFreezingStab</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.3</chanceFactor>
+			</li>
+			<li>
+				<label>abdoment</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>18</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>Waist</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+				<soundMeleeHit>Pawn_Fleshbeast_Attack_Blunt</soundMeleeHit>
+			</li>
+		</tools>
+		<butcherProducts>
+			<AE_IceCrystal>2</AE_IceCrystal>
+			<Bioferrite>1</Bioferrite>
+		</butcherProducts>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseAESnowArmy">
+		<defName>AE_IceMan</defName>
+		<label>ice man</label>
+		<description>A humanoid ice construct, launches icicles that can disable electronics and split in multiple fragments. It prioritizes attacking from long distance and provide support by dealing with force fields.\n\nClassified as Class-2 (Warning) anomaly.</description>
+		<statBases>
+			<MoveSpeed>3.7</MoveSpeed>
+			<MinimumContainmentStrength>80</MinimumContainmentStrength>
+		</statBases>
+		<uiIconPath>Things/Pawn/SnowArmy/IceMan/AE_IceMan_south</uiIconPath>
+		<race>
+			<body>AE_IceMan</body>
+			<baseBodySize>1</baseBodySize>
+			<baseHealthScale>1.5</baseHealthScale>
+			<lifeExpectancy>35</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>EntityFullyFormed</def>
+					<soundWounded>Pawn_Shambler_Wounded</soundWounded>
+					<soundDeath>Pawn_Shambler_Killed</soundDeath>
+					<soundCall>Pawn_Shambler_Call</soundCall>
+				</li>
+			</lifeStageAges>
+		</race>
+		<comps>
+			<li Class="CompProperties_AttachPoints">
+				<points>
+					<li>
+						<offset>(-0.21, 0, 0.62)</offset>
+						<type>PlatformRestraint0</type>
+					</li>
+					<li>
+						<offset>(0.28, 0, 0.28)</offset>
+						<type>PlatformRestraint1</type>
+					</li>
+					<li>
+						<offset>(0.38, 0, -0.58)</offset>
+						<type>PlatformRestraint2</type>
+					</li>
+					<li>
+						<offset>(-0.38, 0, -0.58)</offset>
+						<type>PlatformRestraint3</type>
+					</li>
+				</points>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>120000</frequencyTicks>
+				<knowledgeCategory>Basic</knowledgeCategory>
+				<anomalyKnowledge>1.5</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<requiresHoldingPlatform>true</requiresHoldingPlatform>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotesPawnUnlockable>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>2.9</threshold>
+						<AmountStudiedRequirment>1</AmountStudiedRequirment>
+						<label>#1/4 Ice man study report</label>
+						<text>Autopsy Report\n\nSubject:\nA humanoid construct made of ice resembling a human. Designated as entity SA-05.\n\nExternal Examination:\nThe Subject presents as an anatomically accurate humanoid figure constructed from ice. The head and limbs replicate those of an average human, while the torso exhibits an enlarged posterior aspect, covering the spinal region. Multiple icicles protrude from the Subject’s dorsal surface. Similar to SA-04, the Subject’s body is entirely composed of ice, conferring increased resistance to physical trauma. Dark inclusions are visible within the ice, particularly in the central regions.\n\nInternal Examination:\nDeep core sampling of the dark inclusions revealed the presence of a well-preserved, but ultimately deceased, human-like organism. Due to the extended period of preservation, the remains are deemed non-viable and are classified as a corpse. An ice core, analogous to that observed in SA-01, was identified.\n\nThermal Exposure Test: \nApplication of direct thermal energy resulted in localized melting of the superficial ice layer. Subsequent mechanical force applied to the affected area demonstrated increased vulnerability, consistent with the observed behavior in SA-01.\n\nCryogenic Exposure Test: \nExposure to sub-zero temperatures induced regenerative capabilities, similar to SA-01.\n\nRecommendations:\nFurther study of more instances of SA-05 is recommended to get deeper understanding.\n[Total of 3 required for next study report]</text>
+						<ThreatClass>2</ThreatClass>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>2.91</threshold>
+						<AmountStudiedRequirment>3</AmountStudiedRequirment>
+						<label>#2/4 Ice man study report</label>
+						<text>Combat Capabilities Analysis\n\nSubject:\nIce man SA-05.\n\nRanged Combat Capabilities:\nThe SA-05's primary ranged weapon consists of icicle projectiles. These projectiles are generated by breaking off icicles that grow on the Subject's dorsal surface. The SA-05 can launch these icicles with significant force and velocity. Upon impact, the icicle exhibits a probabilistic fragmentation effect, shattering into multiple pieces. Each fragment acts as a secondary projectile, inflicting additional damage to the target.\n\nMelee Combat Capabilities:\nIn close-quarters combat, the SA-05 engages the target using its arms and head. The Subject attempts to close the distance and inflict blunt force trauma through direct physical contact.\n\nRecommendations:\nFurther study of more instances of SA-05 is recommended to get deeper understanding.\n[Total of 5 required for next study report]</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>2.92</threshold>
+						<AmountStudiedRequirment>5</AmountStudiedRequirment>
+						<label>#3/4 Ice man study report</label>
+						<text>Electromagnetic Pulse Discovery\n\nSubject:\nIce man SA-05.\n\nIcicle Analysis:\nAccidental impact of an SA-05 icicle on a powered device during experimentation resulted in device deactivation. Subsequent testing and analysis revealed that the icicles generate an electromagnetic pulse (EMP)-like effect. Each icicle contains a thin layer of frostites that, upon impact with susceptible targets, generate an electromagnetic impulse.\nFurthermore, the icicle's fragmentation upon impact is not a random occurrence. The frostites create pre-determined micro-fractures within the icicle structure, facilitating optimal shattering and maximizing secondary projectile damage.\n\nCorpse Analysis:\nAutopsy of the organic component within the SA-05 revealed a small implant. This implant functions as both an ice core and a frostites activation device. The implant directs the frostites to operate at low temperatures, enhancing the host's regenerative capabilities.\n\nTechnological Implications:\nThe command sequence that triggers the frostites to generate the icicle's EMP effect has been successfully replicated. Additionally an optimal method for frostites-mediated cryogenic cellular preservation and regeneration has been developed. This process improves regeneration at low temperatures. The precise mechanisms by which the implant functions beyond the initial regeneration process remain unknown, warranting further investigation. Further research is recommended to explore the feasibility and potential applications of this technology.\n\nRecommendations:\nFurther study of more instances of SA-05 is recommended to get deeper understanding.\n[Total of 7 required for next study report]</text>
+						<ThingDefSpawn>AE_ResearchNotesSAE</ThingDefSpawn>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>2.93</threshold>
+						<AmountStudiedRequirment>5</AmountStudiedRequirment>
+						<label>#4/4 Ice man study report</label>
+						<text>Theory Regarding Snow Army 5/5\n\nSubject:\nIce man SA-05.\n\nConstruction and Advantages:\nThe SA-05 is theorized to originate as an organic soldier augmented with an implant containing an ice core. During combat, upon sustaining injuries, the implant activates, triggering frostites-mediated cellular cryopreservation and localized regeneration. These frostites also generate ice formations capable of disrupting enemy electronic systems. While these capabilities appear to be the implant's intended function, the observed outcomes suggest a degree of functionality exceeding the original design parameters.\nUpon sustaining a lethal wound, the frostites initiate a comprehensive preservation protocol, encasing the host's body in a thick layer of ice. The host may remain conscious during this process. Even in cases of unconsciousness, the frostites establish a neural interface with the host's brain tissue, enabling the iced soldier to continue its mission. Following mission completion, these iced soldiers are intended to be transported to medical facilities for controlled thawing and treatment, with the aim of preserving their lives. However, prolonged mission durations or the absence of adequate medical facilities can result in the formation of the SA-05.\nThe SA-05 represents a soldier subjected to prolonged cryopreservation, rendering them beyond even conventional resurrection. The frostites, exhibiting a persistent preservation drive, continue to maintain the host's body and execute mission objectives.\n\nTactical Doctrine and Intelligence:\nThe SA-05 exhibits a tactical doctrine characterized by long-range engagement and the neutralization of powered defensive systems and force fields. This suggests an intelligence framework capable of strategic planning and adaptation to battlefield conditions. The SA-05 seems to prioritize disabling enemy tech, before engaging in direct combat.</text>
+					</li>
+				</studyNotesPawnUnlockable>
+				<isCreateSeparateEntityEntry>true</isCreateSeparateEntityEntry>
+				<category>Advanced</category>
+			</li>
+			<li Class="CompProperties_ProducesBioferrite">
+				<bioferriteDensity>1</bioferriteDensity>
+			</li>
+			<li>
+				<compClass>AnomaliesExpected.Comp_EntityWithWeapon</compClass>
+			</li>
+		</comps>
+		<tools>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>5</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+				<soundMeleeHit>Pawn_Fleshbeast_Attack_Blunt</soundMeleeHit>
+			</li>
+			<li>
+				<label>left ice shard arm</label>
+				<labelNoLocation>ice shard arm</labelNoLocation>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>right ice shard arm</label>
+				<labelNoLocation>ice shard arm</labelNoLocation>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+			</li>
+		</tools>
+		<butcherProducts>
+			<AE_IceCrystal>1</AE_IceCrystal>
+			<Bioferrite>1</Bioferrite>
+		</butcherProducts>
 	</ThingDef>
 
 </Defs>

@@ -40,5 +40,14 @@
 
 	<Hediff_AEDestabilization.label>дестабилизирующая мутация</Hediff_AEDestabilization.label>
 	<Hediff_AEDestabilization.description>Дестабилизация биологической структуры для улучшения физических параметров существа. Продолжительность жизни существа значительно уменьшится из-за данной мутации.</Hediff_AEDestabilization.description>
+	
+	
+
+	<Hediff_AESnowArmy.label>замораживающее ядро</Hediff_AESnowArmy.label>
+	<Hediff_AESnowArmy.description>Скорость регенерации увеличивается пропорционально снижению температуры окружающей среды. При воздействии огня его поверхность становится значительно более восприимчивой к повреждениям.\n\nПолучаемый урон x2, когда горит.</Hediff_AESnowArmy.description>
+
+	<AE_IceThinBody.label>отражающий лёд</AE_IceThinBody.label>
+	<AE_IceThinBody.description>Эта структура из тонких ледяных осколков имеет высокий шанс отражение входящих атак. Снижает получаемый фронтальный и тыловой урон, но увеличивает урон с боков.</AE_IceThinBody.description>
+	<AE_IceThinBody.labelNoun>отражающий лёд</AE_IceThinBody.labelNoun>
   
 </LanguageData>

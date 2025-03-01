@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+	<MakeAEIceCrystalDestabilized.label>дестабилизировать ледяной кристалл</MakeAEIceCrystalDestabilized.label>
+	<MakeAEIceCrystalDestabilized.description>Совместите экзотический ледяной кристалл с биоферритом, чтобы дестабилизировать его.</MakeAEIceCrystalDestabilized.description>
+	<MakeAEIceCrystalDestabilized.jobString>Дестабилизирует ледяной кристалл.</MakeAEIceCrystalDestabilized.jobString>
+	<MakeAEIceCrystalDestabilizedBulk.label>дестабилизировать ледяной кристалл x4</MakeAEIceCrystalDestabilizedBulk.label>
+	<MakeAEIceCrystalDestabilizedBulk.description>Совместите экзотический ледяной кристалл с биоферритом, чтобы дестабилизировать его.</MakeAEIceCrystalDestabilizedBulk.description>
+	<MakeAEIceCrystalDestabilizedBulk.jobString>Дестабилизирует ледяной кристалл x4.</MakeAEIceCrystalDestabilizedBulk.jobString>
+	<MakeAEIceCrystalDestabilizedMass.label>дестабилизировать ледяной кристалл x16</MakeAEIceCrystalDestabilizedMass.label>
+	<MakeAEIceCrystalDestabilizedMass.description>Совместите экзотический ледяной кристалл с биоферритом, чтобы дестабилизировать его.</MakeAEIceCrystalDestabilizedMass.description>
+	<MakeAEIceCrystalDestabilizedMass.jobString>Дестабилизирует ледяной кристалл x16.</MakeAEIceCrystalDestabilizedMass.jobString>
+  
+</LanguageData>

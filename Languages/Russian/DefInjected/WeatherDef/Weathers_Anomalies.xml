@@ -7,4 +7,7 @@
 	<AE_BloodLakeWeatherBloodFog.label>высокая концентрация кровиподобной жидкости</AE_BloodLakeWeatherBloodFog.label>
 	<AE_BloodLakeWeatherBloodFog.description>Густой, зловещий кроваво-красный туман окутывает окрестности. Этот туман - прямое следствие высокой концентрации кровиподобной жидкости в воздухе. Несмотря на кажущуюся безвредность, возникает едва уловимое чувство страха. Это явление, несомненно, повлияет на всех существ, находящихся вне закрытых помещений.</AE_BloodLakeWeatherBloodFog.description>
 
+	<AE_SnowArmy.label>тяжёлый снег</AE_SnowArmy.label>
+	<AE_SnowArmy.description>Тяжёлый снег вызванный присутствием Снежной Армии</AE_SnowArmy.description>
+
 </LanguageData>

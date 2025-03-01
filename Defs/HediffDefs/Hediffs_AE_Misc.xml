@@ -289,10 +289,224 @@
 					<ArmorRating_Heat>0.5</ArmorRating_Heat>
 				</statOffsets>
 				<statFactors>
-				  <IncomingDamageFactor>0.75</IncomingDamageFactor>
+					<IncomingDamageFactor>0.75</IncomingDamageFactor>
 				</statFactors>
 			</li>
 		</stages>
+	</HediffDef>
+	
+	
+	
+	<HediffDef>
+		<defName>Hediff_AESnowArmy</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>freezing core</label>
+		<description>Regeneration speed increases proportionally to the decrease in ambient temperature. When exposed to fire, its surface becomes significantly more susceptible to damage.\n\nReceivied damage x2, when on fire.</description>
+		<initialSeverity>0</initialSeverity>
+		<maxSeverity>2000</maxSeverity>
+		<minSeverity>-2000</minSeverity>
+		<isBad>false</isBad>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<defaultLabelColor>(0.31, 0.69, 0.835)</defaultLabelColor>
+		<comps>
+			<li>
+				<compClass>AnomaliesExpected.HediffComp_SnowArmy</compClass>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<regeneration>0</regeneration>
+				<minSeverity>1</minSeverity>
+			</li>
+			<li>
+				<regeneration>1</regeneration>
+				<minSeverity>2</minSeverity>
+			</li>
+			<li>
+				<regeneration>5</regeneration>
+				<minSeverity>5</minSeverity>
+			</li>
+			<li>
+				<regeneration>10</regeneration>
+				<minSeverity>10</minSeverity>
+			</li>
+			<li>
+				<regeneration>15</regeneration>
+				<minSeverity>15</minSeverity>
+			</li>
+			<li>
+				<regeneration>20</regeneration>
+				<minSeverity>20</minSeverity>
+			</li>
+			<li>
+				<regeneration>25</regeneration>
+				<minSeverity>25</minSeverity>
+			</li>
+			<li>
+				<regeneration>30</regeneration>
+				<minSeverity>30</minSeverity>
+			</li>
+			<li>
+				<regeneration>35</regeneration>
+				<minSeverity>35</minSeverity>
+			</li>
+			<li>
+				<regeneration>40</regeneration>
+				<minSeverity>40</minSeverity>
+			</li>
+			<li>
+				<regeneration>45</regeneration>
+				<minSeverity>45</minSeverity>
+			</li>
+			<li>
+				<regeneration>50</regeneration>
+				<minSeverity>50</minSeverity>
+			</li>
+			<li>
+				<regeneration>75</regeneration>
+				<minSeverity>75</minSeverity>
+			</li>
+			<li>
+				<regeneration>100</regeneration>
+				<minSeverity>100</minSeverity>
+			</li>
+			<li>
+				<regeneration>150</regeneration>
+				<minSeverity>150</minSeverity>
+			</li>
+			<li>
+				<regeneration>200</regeneration>
+				<minSeverity>200</minSeverity>
+			</li>
+			<li>
+				<regeneration>250</regeneration>
+				<minSeverity>250</minSeverity>
+			</li>
+			<li>
+				<regeneration>300</regeneration>
+				<minSeverity>300</minSeverity>
+			</li>
+			<li>
+				<regeneration>400</regeneration>
+				<minSeverity>400</minSeverity>
+			</li>
+			<li>
+				<regeneration>500</regeneration>
+				<minSeverity>500</minSeverity>
+			</li>
+			<li>
+				<regeneration>600</regeneration>
+				<minSeverity>600</minSeverity>
+			</li>
+			<li>
+				<regeneration>700</regeneration>
+				<minSeverity>700</minSeverity>
+			</li>
+			<li>
+				<regeneration>800</regeneration>
+				<minSeverity>800</minSeverity>
+			</li>
+			<li>
+				<regeneration>900</regeneration>
+				<minSeverity>900</minSeverity>
+			</li>
+			<li>
+				<regeneration>1000</regeneration>
+				<minSeverity>1000</minSeverity>
+			</li>
+			<li>
+				<regeneration>1100</regeneration>
+				<minSeverity>1100</minSeverity>
+			</li>
+			<li>
+				<regeneration>1200</regeneration>
+				<minSeverity>1200</minSeverity>
+			</li>
+			<li>
+				<regeneration>1300</regeneration>
+				<minSeverity>1300</minSeverity>
+			</li>
+			<li>
+				<regeneration>1400</regeneration>
+				<minSeverity>1400</minSeverity>
+			</li>
+			<li>
+				<regeneration>1500</regeneration>
+				<minSeverity>1500</minSeverity>
+			</li>
+			<li>
+				<regeneration>1600</regeneration>
+				<minSeverity>1600</minSeverity>
+			</li>
+			<li>
+				<regeneration>2000</regeneration>
+				<minSeverity>1638</minSeverity>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>AENitrogenFreezing</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>nitrogen freezing</label>
+		<description>Frozen tissue and flesh caused by exposure to extreme cold. Due to freezing to the nerves, the feeling of pain is dulled. After completely freezing through body parts are often lost.</description>
+		<maxSeverity>1</maxSeverity>
+		<displayWound>false</displayWound>
+		<defaultLabelColor>(0.31, 0.69, 0.835)</defaultLabelColor>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-2</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<statFactors>
+					<MoveSpeed>0.5</MoveSpeed>
+				</statFactors>
+				<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="InjuryBase">
+		<defName>AEFreezingFragile</defName>
+		<label>freezing fragile</label>
+		<labelNoun>Freezing fragile</labelNoun>
+		<description>Exposure to extreme cold made this more vulnerable to damage.</description>
+		<maxSeverity>4</maxSeverity>
+		<displayWound>false</displayWound>
+		<defaultLabelColor>(0.31, 0.69, 0.835)</defaultLabelColor>
+		<comps>
+			<li Class="HediffCompProperties_TendDuration">
+				<labelTendedWell>bandaged</labelTendedWell>
+				<labelTendedWellInner>tended</labelTendedWellInner>
+				<labelSolidTendedWell>tended</labelSolidTendedWell>
+			</li>
+			<li>
+				<compClass>AnomaliesExpected.HediffComp_FreezingFragile</compClass>
+			</li>
+		</comps>
+		<injuryProps>
+			<painPerSeverity>0</painPerSeverity>
+			<averagePainPerSeverityPermanent>0</averagePainPerSeverityPermanent>
+		</injuryProps>
+	</HediffDef>
+  
+	<HediffDef ParentName="AESnowArmyBodyPart">
+		<defName>AE_IceThinBody</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>deflective ice</label>
+		<labelNoun>a deflective ice</labelNoun>
+		<description>This thin ice shard structure enhances incoming attack deflection. It reduces received frontal and rear damage, but increases damage from the sides.</description>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<isBad>false</isBad>
+		<defaultLabelColor>(0.31, 0.69, 0.835)</defaultLabelColor>
+		<comps>
+			<li>
+				<compClass>AnomaliesExpected.HediffComp_IceThinBody</compClass>
+			</li>
+		</comps>
 	</HediffDef>
 	
 </Defs>

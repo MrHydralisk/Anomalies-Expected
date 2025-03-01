@@ -24,5 +24,13 @@
 
 	<AEFleshmassStomach.label>метаболическая переработка</AEFleshmassStomach.label>
 	<AEFleshmassStomach.description>Разложение и повторное поглощение питательных веществ из собственных тканей.</AEFleshmassStomach.description>
+	
+	
+	
+	<AEIceCrystalDestabilization.label>дестабилизировать ледяной кристалл</AEIceCrystalDestabilization.label>
+	<AEIceCrystalDestabilization.description>Довести дестабилизацию ледяного кристалла до критической точки, вызвав взрыв.</AEIceCrystalDestabilization.description>
+
+	<AEThrowSnowBlock.label>бросить снежный блок</AEThrowSnowBlock.label>
+	<AEThrowSnowBlock.description>Бросить гигантский снежный блок в цель на большом расстоянии. Взорвётся распылив жидкий азот после приземления.</AEThrowSnowBlock.description>
 
 </LanguageData>

@@ -76,6 +76,9 @@
 	<AEOrbitalBeamTargeter.generalRules.rulesStrings.4>subject_story->украл всю древнюю солнечную энергию</AEOrbitalBeamTargeter.generalRules.rulesStrings.4>
 	<AEOrbitalBeamTargeter.generalRules.rulesStrings.5>subject_gerund->создание целеуказатель для точечного луча</AEOrbitalBeamTargeter.generalRules.rulesStrings.5>
 	
+	<AEThermalReflectiveSkinImplant.label>термо-отражающая кожная железа</AEThermalReflectiveSkinImplant.label>
+	<AEThermalReflectiveSkinImplant.description>Создать термо-отражающую кожную железу на основе устройства аномалии передатчика.</AEThermalReflectiveSkinImplant.description>
+	
 	
 	
 	<AEBloodPump.label>насос кровиподобной жидкости</AEBloodPump.label>
@@ -105,5 +108,25 @@
 
 	<AEAskingProvider.label>просьба Предоставителя</AEAskingProvider.label>
 	<AEAskingProvider.description>Собранные исследования будут использованы в качестве жертвы для ритуала просьбы Предоставителя</AEAskingProvider.description>
+
+
+
+	<AESummonSnowArmy.label>призвать Снежную Армию</AESummonSnowArmy.label>
+	<AESummonSnowArmy.description>Изучить ритуал призыва Снежной Армии.</AESummonSnowArmy.description>
+
+	<AEAtmosphericCooler.label>охладитель атмосферы</AEAtmosphericCooler.label>
+	<AEAtmosphericCooler.description>Создайте охладитель атмосферы, работающие на ледяных кристаллах, которые могут эффективно охладить целый регион.</AEAtmosphericCooler.description>
+
+	<AEIceCrystalDestabilized.label>дестабилизированный ледяной кристалл</AEIceCrystalDestabilized.label>
+	<AEIceCrystalDestabilized.description>Изучите как дестабилизировать ледяной кристалл.</AEIceCrystalDestabilized.description>
+
+	<AEAtmosphericController.label>контроллер атмосферы</AEAtmosphericController.label>
+	<AEAtmosphericController.description>Создайте контроллер атмосферы, работающий на дестабилизированных ледяных кристаллах, состоящий из нагревателя атмосферы на биоферрите и охладителя атмосферы на ледяных кристаллах с повышенной эффективностью, для контроля температуры целого региона.</AEAtmosphericController.description>
+
+	<AEFreezingFragile.label>хрупкость от низких температур</AEFreezingFragile.label>
+	<AEFreezingFragile.description>Изучить влияние низких температур на хрупкость материалов.</AEFreezingFragile.description>
+
+	<AENanoInfusedIceCrystal.label>ледяной кристалл, насыщенный фроститами</AENanoInfusedIceCrystal.label>
+	<AENanoInfusedIceCrystal.description>Проанализировать механизмы контроля ледяного кристалла над наноразмерными фроститами.</AENanoInfusedIceCrystal.description>
 
 </LanguageData>

@@ -11,5 +11,62 @@
 	<AE_SnowMan.corePart.parts.bottom_snowball.parts.right_snowball_leg.customLabel>правая нога снежный ком</AE_SnowMan.corePart.parts.bottom_snowball.parts.right_snowball_leg.customLabel>
 	<AE_SnowMan.corePart.parts.left_stick_arm.customLabel>левая рука ветка</AE_SnowMan.corePart.parts.left_stick_arm.customLabel>
 	<AE_SnowMan.corePart.parts.right_stick_arm.customLabel>правая рука ветка</AE_SnowMan.corePart.parts.right_stick_arm.customLabel>
+	
+	<AE_SnowGolem.label>снежный голем</AE_SnowGolem.label>
+	<AE_SnowGolem.corePart.customLabel>торс снежный блок</AE_SnowGolem.corePart.customLabel>
+	<AE_SnowGolem.corePart.parts.AE_SnowFacePlate.parts.left_bottom_eye_stone.customLabel>левый нижний глаз камень</AE_SnowGolem.corePart.parts.AE_SnowFacePlate.parts.left_bottom_eye_stone.customLabel>
+	<AE_SnowGolem.corePart.parts.AE_SnowFacePlate.parts.left_top_eye_stone.customLabel>левый верхний глаз камень</AE_SnowGolem.corePart.parts.AE_SnowFacePlate.parts.left_top_eye_stone.customLabel>
+	<AE_SnowGolem.corePart.parts.AE_SnowFacePlate.parts.top_eye_stone.customLabel>верхний глаз камень</AE_SnowGolem.corePart.parts.AE_SnowFacePlate.parts.top_eye_stone.customLabel>
+	<AE_SnowGolem.corePart.parts.AE_SnowFacePlate.parts.right_bottom_eye_stone.customLabel>правый нижний глаз камень</AE_SnowGolem.corePart.parts.AE_SnowFacePlate.parts.right_bottom_eye_stone.customLabel>
+	<AE_SnowGolem.corePart.parts.AE_SnowFacePlate.parts.right_top_eye_stone.customLabel>правый верхний глаз камень</AE_SnowGolem.corePart.parts.AE_SnowFacePlate.parts.right_top_eye_stone.customLabel>
+	<AE_SnowGolem.corePart.parts.left_front_snow_block_leg.customLabel>левая передняя нога снежный блок</AE_SnowGolem.corePart.parts.left_front_snow_block_leg.customLabel>
+	<AE_SnowGolem.corePart.parts.left_rear_snow_block_leg.customLabel>левая задняя нога снежный блок</AE_SnowGolem.corePart.parts.left_rear_snow_block_leg.customLabel>
+	<AE_SnowGolem.corePart.parts.right_front_snow_block_leg.customLabel>правая передняя нога снежный блок</AE_SnowGolem.corePart.parts.right_front_snow_block_leg.customLabel>
+	<AE_SnowGolem.corePart.parts.right_rear_snow_block_leg.customLabel>правая задняя нога снежный блок</AE_SnowGolem.corePart.parts.right_rear_snow_block_leg.customLabel>
+	<AE_SnowGolem.corePart.parts.left_front_snow_block_arm.customLabel>левая передняя рука снежный блок</AE_SnowGolem.corePart.parts.left_front_snow_block_arm.customLabel>
+	<AE_SnowGolem.corePart.parts.left_rear_snow_block_arm.customLabel>левая задняя рука снежный блок</AE_SnowGolem.corePart.parts.left_rear_snow_block_arm.customLabel>
+	<AE_SnowGolem.corePart.parts.right_front_snow_block_arm.customLabel>правая передняя рука снежный блок</AE_SnowGolem.corePart.parts.right_front_snow_block_arm.customLabel>
+	<AE_SnowGolem.corePart.parts.right_rear_snow_block_arm.customLabel>правая задняя рука снежный блок</AE_SnowGolem.corePart.parts.right_rear_snow_block_arm.customLabel>
+	<AE_SnowGolem.corePart.parts.right_snow_core.customLabel>правое снежное ядро</AE_SnowGolem.corePart.parts.right_snow_core.customLabel>
+	<AE_SnowGolem.corePart.parts.middle_snow_core.customLabel>среднее снежное ядро</AE_SnowGolem.corePart.parts.middle_snow_core.customLabel>
+	<AE_SnowGolem.corePart.parts.left_snow_core.customLabel>левое снежное ядро</AE_SnowGolem.corePart.parts.left_snow_core.customLabel>
+
+	<AE_SnowSpider.label>снежный паук</AE_SnowSpider.label>
+	<AE_SnowSpider.corePart.customLabel>снежное туловище</AE_SnowSpider.corePart.customLabel>
+	<AE_SnowSpider.corePart.parts.snow_head.customLabel>снежная голова</AE_SnowSpider.corePart.parts.snow_head.customLabel>
+	<AE_SnowSpider.corePart.parts.snow_head.parts.left_eye_stone-0.customLabel>левый глаз камень</AE_SnowSpider.corePart.parts.snow_head.parts.left_eye_stone-0.customLabel>
+	<AE_SnowSpider.corePart.parts.snow_head.parts.left_eye_stone-1.customLabel>левый глаз камень</AE_SnowSpider.corePart.parts.snow_head.parts.left_eye_stone-1.customLabel>
+	<AE_SnowSpider.corePart.parts.snow_head.parts.left_eye_stone-2.customLabel>левый глаз камень</AE_SnowSpider.corePart.parts.snow_head.parts.left_eye_stone-2.customLabel>
+	<AE_SnowSpider.corePart.parts.snow_head.parts.right_eye_stone-0.customLabel>правый глаз камень</AE_SnowSpider.corePart.parts.snow_head.parts.right_eye_stone-0.customLabel>
+	<AE_SnowSpider.corePart.parts.snow_head.parts.right_eye_stone-1.customLabel>правый глаз камень</AE_SnowSpider.corePart.parts.snow_head.parts.right_eye_stone-1.customLabel>
+	<AE_SnowSpider.corePart.parts.snow_head.parts.right_eye_stone-2.customLabel>правый глаз камень</AE_SnowSpider.corePart.parts.snow_head.parts.right_eye_stone-2.customLabel>
+	<AE_SnowSpider.corePart.parts.snow_abdomen.customLabel>снежное брюшко</AE_SnowSpider.corePart.parts.snow_abdomen.customLabel>
+	<AE_SnowSpider.corePart.parts.snow_abdomen.parts.big_destabilized_ice_crystal.customLabel>большой дестабилизированный ледяной кристалл</AE_SnowSpider.corePart.parts.snow_abdomen.parts.big_destabilized_ice_crystal.customLabel>
+	<AE_SnowSpider.corePart.parts.left_front_snow_leg.customLabel>левая передняя снежная нога</AE_SnowSpider.corePart.parts.left_front_snow_leg.customLabel>
+	<AE_SnowSpider.corePart.parts.left_snow_leg.customLabel>левая снежная нога</AE_SnowSpider.corePart.parts.left_snow_leg.customLabel>
+	<AE_SnowSpider.corePart.parts.left_rear_snow_leg.customLabel>левая задняя снежная нога</AE_SnowSpider.corePart.parts.left_rear_snow_leg.customLabel>
+	<AE_SnowSpider.corePart.parts.right_front_snow_leg.customLabel>правая передняя снежная нога</AE_SnowSpider.corePart.parts.right_front_snow_leg.customLabel>
+	<AE_SnowSpider.corePart.parts.right_snow_leg.customLabel>правая снежная нога</AE_SnowSpider.corePart.parts.right_snow_leg.customLabel>
+	<AE_SnowSpider.corePart.parts.right_rear_snow_leg.customLabel>правая задняя снежная нога</AE_SnowSpider.corePart.parts.right_rear_snow_leg.customLabel>
+	<AE_SnowSpider.corePart.parts.snow_core.customLabel>снежное ядро</AE_SnowSpider.corePart.parts.snow_core.customLabel>
+
+	<AE_IceMantis.label>ледяной богомол</AE_IceMantis.label>
+	<AE_IceMantis.corePart.customLabel>ледяной осколок туловища</AE_IceMantis.corePart.customLabel>
+	<AE_IceMantis.corePart.parts.ice_shard_head.customLabel>ледяной осколок головы</AE_IceMantis.corePart.parts.ice_shard_head.customLabel>
+	<AE_IceMantis.corePart.parts.ice_shard_abdomen.customLabel>ледяной осколок брюшка</AE_IceMantis.corePart.parts.ice_shard_abdomen.customLabel>
+	<AE_IceMantis.corePart.parts.ice_shard_abdomen.parts.left_front_ice_shard_leg.customLabel>левый передний ледяной осколок ноги</AE_IceMantis.corePart.parts.ice_shard_abdomen.parts.left_front_ice_shard_leg.customLabel>
+	<AE_IceMantis.corePart.parts.ice_shard_abdomen.parts.left_rear_ice_shard_leg.customLabel>левый задний ледяной осколок ноги</AE_IceMantis.corePart.parts.ice_shard_abdomen.parts.left_rear_ice_shard_leg.customLabel>
+	<AE_IceMantis.corePart.parts.ice_shard_abdomen.parts.right_front_ice_shard_leg.customLabel>правый передний ледяной осколок ноги</AE_IceMantis.corePart.parts.ice_shard_abdomen.parts.right_front_ice_shard_leg.customLabel>
+	<AE_IceMantis.corePart.parts.ice_shard_abdomen.parts.right_rear_ice_shard_leg.customLabel>правый задний ледяной осколок ноги</AE_IceMantis.corePart.parts.ice_shard_abdomen.parts.right_rear_ice_shard_leg.customLabel>
+	<AE_IceMantis.corePart.parts.left_ice_shard_arm.customLabel>левое лезвие ледяного осколка</AE_IceMantis.corePart.parts.left_ice_shard_arm.customLabel>
+	<AE_IceMantis.corePart.parts.right_ice_shard_arm.customLabel>правое лезвие ледяного осколка</AE_IceMantis.corePart.parts.right_ice_shard_arm.customLabel>
+
+	<AE_IceMan.label>ледяной человек</AE_IceMan.label>
+	<AE_IceMan.corePart.customLabel>ледяной осколок туловища</AE_IceMan.corePart.customLabel>
+	<AE_IceMan.corePart.parts.ice_shard_head.customLabel>ледяной осколок головы</AE_IceMan.corePart.parts.ice_shard_head.customLabel>
+	<AE_IceMan.corePart.parts.left_ice_shard_arm.customLabel>левый ледяной осколок руки</AE_IceMan.corePart.parts.left_ice_shard_arm.customLabel>
+	<AE_IceMan.corePart.parts.right_ice_shard_arm.customLabel>правый ледяной осколок руки</AE_IceMan.corePart.parts.right_ice_shard_arm.customLabel>
+	<AE_IceMan.corePart.parts.left_ice_shard_leg.customLabel>левый ледяной осколок ноги</AE_IceMan.corePart.parts.left_ice_shard_leg.customLabel>
+	<AE_IceMan.corePart.parts.right_ice_shard_leg.customLabel>правый ледяной осколок ноги</AE_IceMan.corePart.parts.right_ice_shard_leg.customLabel>
 
 </LanguageData>

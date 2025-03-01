@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-	<SummonBloodLake.label>спровоцировать странное озеро</SummonBloodLake.label>
-	<SummonBloodLake.description>Использовать психический импульс, чтобы исказить ткань реальности, в результате чего где-то поблизости на земле образуется багровое озеро.</SummonBloodLake.description>
-	<SummonBloodLake.outcomeDescription>Использовать психический импульс, чтобы исказить ткань реальности, в результате чего где-то поблизости на земле образуется багровое озеро.</SummonBloodLake.outcomeDescription>
+	<AE_SummonBloodLake.label>спровоцировать странное озеро</AE_SummonBloodLake.label>
+	<AE_SummonBloodLake.description>Использовать психический импульс, чтобы исказить ткань реальности, в результате чего где-то поблизости на земле образуется багровое озеро.</AE_SummonBloodLake.description>
+	<AE_SummonBloodLake.outcomeDescription>Использовать психический импульс, чтобы исказить ткань реальности, в результате чего где-то поблизости на земле образуется багровое озеро.</AE_SummonBloodLake.outcomeDescription>
   
 </LanguageData>

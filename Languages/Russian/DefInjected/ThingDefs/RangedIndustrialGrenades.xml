@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<Weapon_AEGrenadeNitrogen.label>гранаты с жидким азотом</Weapon_AEGrenadeNitrogen.label>
+	<Weapon_AEGrenadeNitrogen.description>Граната, содержащая дестабилизированным ледяным кристаллом. Её можно бросить на небольшое расстояние, где она взорвётся, распыляя жидкий азот вокруг, замораживая и замедляя всё и всех поблизости.</Weapon_AEGrenadeNitrogen.description>
+	<Weapon_AEGrenadeNitrogen.verbs.throw_nitrogen_grenade.label>бросить гранату с жидким азотом</Weapon_AEGrenadeNitrogen.verbs.throw_nitrogen_grenade.label>
+	<Proj_AEGrenadeNitrogen.label>граната с жидким азотом</Proj_AEGrenadeNitrogen.label>
+
+</LanguageData>

@@ -1,13 +1,31 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
 
-	<AE_SnowBall.label>снежный ком</AE_SnowBall.label>
-	<AE_SnowBallTop.label>снежный ком</AE_SnowBallTop.label>
-	<AE_SnowBallBottom.label>снежный ком</AE_SnowBallBottom.label>
+	<AE_SnowBallA.label>снежный ком</AE_SnowBallA.label>
+	<AE_SnowBallB.label>снежный ком</AE_SnowBallB.label>
+	<AE_SnowBallC.label>снежный ком</AE_SnowBallC.label>
 	<AE_SnowCoreHeart.label>снежное ядро</AE_SnowCoreHeart.label>
-	<AE_SnowEye.label>глаз камень</AE_SnowEye.label>
-	<AE_SnowNose.label>нос морковка</AE_SnowNose.label>
 	<AE_SnowArm.label>рука ветка</AE_SnowArm.label>
-	<AE_SnowLeg.label>нога снежный ком</AE_SnowLeg.label>
+	<AE_SnowNose.label>нос морковка</AE_SnowNose.label>
+	<AE_SnowEyeA.label>глаз камень</AE_SnowEyeA.label>
+	<AE_SnowLegA.label>нога снежный ком</AE_SnowLegA.label>
+	<AE_SnowBlock.label>снежный блок</AE_SnowBlock.label>
+	<AE_SnowFacePlate.label>лицевая пластина</AE_SnowFacePlate.label>
+	<AE_SnowEyeB.label>глаз камень</AE_SnowEyeB.label>
+	<AE_SnowBlockLeg.label>нога снежный блок</AE_SnowBlockLeg.label>
+	<AE_SnowBlockArm.label>рука снежный блок</AE_SnowBlockArm.label>
+	<AE_SnowBlockCompressor.label>компрессор снежных блоков</AE_SnowBlockCompressor.label>
+	<AE_SnowBallD.label>снежный ком</AE_SnowBallD.label>
+	<AE_SnowBallE.label>снежный ком</AE_SnowBallE.label>
+	<AE_SnowEyeC.label>глаз камень</AE_SnowEyeC.label>
+	<AE_SnowBallF.label>снежный ком</AE_SnowBallF.label>
+	<AE_IceCrystalDestabilized.label>дестабилизированный ледяной кристалл</AE_IceCrystalDestabilized.label>
+	<AE_SnowLegB.label>снежная нога</AE_SnowLegB.label>
+	<AE_IceShardA.label>ледяной осколок</AE_IceShardA.label>
+	<AE_IceShardB.label>ледяной осколок</AE_IceShardB.label>
+	<AE_IceShardC.label>ледяной осколок</AE_IceShardC.label>
+	<AE_IceShardD.label>ледяной осколок</AE_IceShardD.label>
+	<AE_IceShardE.label>ледяной осколок</AE_IceShardE.label>
+	<AE_IceShardF.label>ледяной осколок</AE_IceShardF.label>
 
 </LanguageData>

@@ -9,5 +9,11 @@
 	<AE_TemperatureDrop.label>температура меняется</AE_TemperatureDrop.label>
 	<AE_TemperatureDrop.description>Температура резко меняется.</AE_TemperatureDrop.description>
 	<AE_TemperatureDrop.letterText>Температура резко меняется.</AE_TemperatureDrop.letterText>
+	
+	<AE_UnnaturalCold.label>неестественный холод</AE_UnnaturalCold.label>
+	<AE_UnnaturalCold.description>Теплопоглащающее устройство замедляет молекулы воздуха в атмосфере, и температура на улице снижается.</AE_UnnaturalCold.description>
+
+	<AE_UnnaturalTemperature.label>неестественная температура</AE_UnnaturalTemperature.label>
+	<AE_UnnaturalTemperature.description>Гибридное термальное устройство влияет на молекулы воздуха в атмосфере, и температура на улице изменяется.</AE_UnnaturalTemperature.description>
 
 </LanguageData>

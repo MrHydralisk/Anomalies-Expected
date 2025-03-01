@@ -8,6 +8,12 @@
 		<armorCategory>Sharp</armorCategory>
 		<hediff>AcidBurn</hediff>
 		<scaleDamageToBuildingsBasedOnFlammability>false</scaleDamageToBuildingsBasedOnFlammability>
+		<modExtensions>
+			<li Class="AnomaliesExpected.AE_DamageDefExtension">
+				<isDealDamageToFriendly>false</isDealDamageToFriendly>
+				<isDealDamageToDowned>false</isDealDamageToDowned>
+			</li>
+		</modExtensions>
 	</DamageDef>
 
 	<DamageDef ParentName="Flame">
@@ -32,6 +38,9 @@
 		<makesBlood>false</makesBlood>
 		<isRanged>true</isRanged>
 		<makesAnimalsFlee>true</makesAnimalsFlee>
+		<explosionCellFleck>BlastExtinguisher</explosionCellFleck>
+		<explosionColorEdge>(0.821, 0.819, 0.953, 0.7)</explosionColorEdge>
+		<soundExplosion>Explosion_Smoke</soundExplosion>
 		<modExtensions>
 			<li Class="AnomaliesExpected.AE_DamageDefExtension">
 				<DamageMultiplierCurve>
@@ -45,6 +54,123 @@
 						<li>60, 2</li>
 					</points>
 				</DamageMultiplierCurve>
+			</li>
+		</modExtensions>
+	</DamageDef>
+  
+	<DamageDef Name="AENitrogenBase">
+		<defName>AENitrogen</defName>
+		<label>nitrogen</label>
+		<workerClass>AnomaliesExpected.DamageWorker_Freezing</workerClass>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has succumbed to nitrogen freezing.</deathMessage>
+		<hediff>AEFreezing</hediff>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+		<makesBlood>false</makesBlood>
+		<isRanged>true</isRanged>
+		<makesAnimalsFlee>true</makesAnimalsFlee>
+		<explosionCellFleck>BlastExtinguisher</explosionCellFleck>
+		<explosionColorEdge>(0.67, 0.819, 0.953, 0.7)</explosionColorEdge>
+		<soundExplosion>Explosion_Smoke</soundExplosion>
+		<causeStun>true</causeStun>
+		<constantStunDurationTicks>2500</constantStunDurationTicks>
+		<modExtensions>
+			<li Class="AnomaliesExpected.AE_DamageDefExtension">
+				<DamageMultiplierCurve>
+					<points>
+						<li>-200, 0</li>
+						<li>-100, 0.2</li>
+						<li>-50, 0.5</li>
+						<li>-20, 1</li>
+						<li>0, 1</li>
+						<li>20, 1.2</li>
+						<li>60, 2</li>
+					</points>
+				</DamageMultiplierCurve>
+				<DamageMultiplierForNonPoweredBuildings>0.1</DamageMultiplierForNonPoweredBuildings>
+				<DamageMultiplierForPoweredBuildings>3</DamageMultiplierForPoweredBuildings>
+				<AdditionalHediff>AENitrogenFreezing</AdditionalHediff>
+				<isDealDamageToFriendly>false</isDealDamageToFriendly>
+				<isDealDamageToDowned>false</isDealDamageToDowned>
+			</li>
+		</modExtensions>
+	</DamageDef>
+	
+	<DamageDef ParentName="AENitrogenBase">
+		<defName>AENitrogenPlayer</defName>
+		<modExtensions Inherit="false">
+			<li Class="AnomaliesExpected.AE_DamageDefExtension">
+				<DamageMultiplierCurve>
+					<points>
+						<li>-200, 0</li>
+						<li>-100, 0.2</li>
+						<li>-50, 0.5</li>
+						<li>-20, 1</li>
+						<li>0, 1</li>
+						<li>20, 1.2</li>
+						<li>60, 2</li>
+					</points>
+				</DamageMultiplierCurve>
+				<DamageMultiplierForNonPoweredBuildings>0.1</DamageMultiplierForNonPoweredBuildings>
+				<DamageMultiplierForPoweredBuildings>3</DamageMultiplierForPoweredBuildings>
+				<AdditionalHediff>AENitrogenFreezing</AdditionalHediff>
+				<isDealDamageToPlayer>false</isDealDamageToPlayer>
+				<isDealDamageToDowned>false</isDealDamageToDowned>
+			</li>
+		</modExtensions>
+	</DamageDef>
+	
+	<DamageDef Name="AEFreezingFragileBase">
+		<defName>AEFreezingFragileCut</defName>
+		<label>freezing fragile</label>
+		<workerClass>AnomaliesExpected.DamageWorker_FreezingFragile</workerClass>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} become too fragile from freezing.</deathMessage>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<impactSoundType>Slice</impactSoundType>
+		<armorCategory>Sharp</armorCategory>
+		<makesAnimalsFlee>true</makesAnimalsFlee>
+		<makesBlood>false</makesBlood>
+		<modExtensions>
+			<li Class="AnomaliesExpected.AE_DamageDefExtension">
+				<DamageMultiplierCurve>
+					<points>
+						<li>-200, 0.1</li>
+						<li>-100, 0.25</li>
+						<li>-50, 0.5</li>
+						<li>-20, 0.75</li>
+						<li>0, 1</li>
+						<li>20, 1.5</li>
+						<li>60, 2</li>
+					</points>
+				</DamageMultiplierCurve>
+				<DamageMultiplierForPoweredBuildings>2</DamageMultiplierForPoweredBuildings>
+				<AdditionalHediff>AEFreezingFragile</AdditionalHediff>
+				<appliedDamageDef>Cut</appliedDamageDef>
+			</li>
+		</modExtensions>
+	</DamageDef>
+	
+	<DamageDef ParentName="AEFreezingFragileBase">
+		<defName>AEFreezingFragileStab</defName>
+		<harmAllLayersUntilOutside>false</harmAllLayersUntilOutside>
+		<modExtensions Inherit="false">
+			<li Class="AnomaliesExpected.AE_DamageDefExtension">
+				<DamageMultiplierCurve>
+					<points>
+						<li>-200, 0.1</li>
+						<li>-100, 0.25</li>
+						<li>-50, 0.5</li>
+						<li>-20, 0.75</li>
+						<li>0, 1</li>
+						<li>20, 1.5</li>
+						<li>60, 2</li>
+					</points>
+				</DamageMultiplierCurve>
+				<DamageMultiplierForPoweredBuildings>2</DamageMultiplierForPoweredBuildings>
+				<AdditionalHediff>AEFreezingFragile</AdditionalHediff>
+				<appliedDamageDef>Stab</appliedDamageDef>
 			</li>
 		</modExtensions>
 	</DamageDef>

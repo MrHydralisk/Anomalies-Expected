@@ -11,6 +11,9 @@ namespace AnomaliesExpected
         public string AnomalyDesc;
         [MustTranslate]
         public string AnomalyDescPart;
+        public int ThreatClass = -1;
+        public int AmountStudiedRequirment = -1;
+        public bool isSyncWithDB;
         public ThingDef ThingDefSpawn;
     }
 }

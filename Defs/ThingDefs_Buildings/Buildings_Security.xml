@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="TrapIEDBase">
+		<defName>TrapIED_AENitrogen</defName>
+		<label>IED nitrogen trap</label>
+		<description>A pair of nitrogen shells connected to a trigger which detonates on touch or bullet impact. The explosion can destabilize ice crystal, which will spill nitrogen around that freezing and slowing down surrounding targets. Since it is hidden in the surrounding terrain, it cannot be placed adjacent to other traps. Animals can sense these when calm.</description>
+		<graphicData>
+			<texPath>Things/Building/Security/IEDAENitrogen</texPath>
+		</graphicData>
+		<uiOrder>1300</uiOrder>
+		<costList>
+			<Shell_AENitrogen>2</Shell_AENitrogen>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>8.9</explosiveRadius>
+				<explosiveDamageType>AENitrogenPlayer</explosiveDamageType>
+				<damageAmountBase>35</damageAmountBase>
+				<startWickHitPointsPercent>0.2</startWickHitPointsPercent>
+				<wickTicks>15</wickTicks>
+				<startWickOnDamageTaken>
+					<li>Bullet</li>
+					<li>Arrow</li>
+					<li>ArrowHighVelocity</li>
+				</startWickOnDamageTaken>
+				<explosionSound>SpitterSpitLands</explosionSound>
+				<preExplosionSpawnThingDef>Filth_AESpentNitrogen</preExplosionSpawnThingDef>
+				<preExplosionSpawnThingCount>1</preExplosionSpawnThingCount>
+				<explosionEffect>Shell_AESnowBlockImpact</explosionEffect>
+			</li>
+		</comps>
+		<specialDisplayRadius>8.9</specialDisplayRadius>
+		<researchPrerequisites Inherit="False">
+			<li>AEIceCrystalDestabilized</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+</Defs>

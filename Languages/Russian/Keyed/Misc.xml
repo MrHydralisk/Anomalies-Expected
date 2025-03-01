@@ -4,4 +4,6 @@
 	
 	<AnomaliesExpected.Misc.ResearchNote.Letter.Label>{0} доступен к изучению</AnomaliesExpected.Misc.ResearchNote.Letter.Label>
 	<AnomaliesExpected.Misc.ResearchNote.Letter.Desc>После изучения {0}, исследование {1} теперь доступно. Исследователи могут использовать исследовательский стол, чтобы начать исследование того как использовать технологию.</AnomaliesExpected.Misc.ResearchNote.Letter.Desc>
+	<AnomaliesExpected.Misc.ResearchNote.HiddenTip.0>Для разблокироки требуется исследовательские заметки. Требуется изучение:\n</AnomaliesExpected.Misc.ResearchNote.HiddenTip.0>
+	<AnomaliesExpected.Misc.ResearchNote.HiddenTip.1>\nЧтобы их добыть, исследуйте соответствующие тёмные феномены и собирайте новые отчеты об исследованиях.</AnomaliesExpected.Misc.ResearchNote.HiddenTip.1>
 </LanguageData>

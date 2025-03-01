@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>AE_HeatDistortionInv</defName>
+		<graphicData>
+			<graphicClass>Graphic_FleckPulse</graphicClass>
+			<texPath>Things/Mote/AE_HeatDistortionInv</texPath>
+			<shaderType>MoteHeatDistortion</shaderType>
+			<shaderParameters>
+				<_distortionIntensity>.01</_distortionIntensity>
+			</shaderParameters>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<fadeInTime>2</fadeInTime>
+		<solidTime>5</solidTime>
+		<fadeOutTime>2</fadeOutTime>
+		<growthRate>0</growthRate>
+	</FleckDef>
+	
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>Fleck_SnowBlockLaunchedMist</defName>
+		<fadeInTime>0</fadeInTime>
+		<solidTime>1</solidTime>
+		<fadeOutTime>1</fadeOutTime>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<growthRate>1</growthRate>
+		<graphicData>
+			<texPath>Things/Mote/Smoke</texPath>
+			<shaderType>Transparent</shaderType>
+			<drawSize>1</drawSize>
+			<color>(0.67, 0.819, 0.953, 0.7)</color>
+			<renderQueue>3200</renderQueue>
+		</graphicData>
+	</FleckDef>
+  
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>Fleck_SnowBlockLaunchedDenseMist</defName>
+		<fadeInTime>0</fadeInTime>
+		<solidTime>.1</solidTime>
+		<fadeOutTime>.65</fadeOutTime>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<growthRate>4</growthRate>
+		<graphicData>
+			<texPath>Things/Mote/Smoke</texPath>
+			<shaderType>Transparent</shaderType>
+			<drawSize>1</drawSize>
+			<color>(0.67, 0.819, 0.953, 0.7)</color>
+		</graphicData>
+	</FleckDef>
+
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>Fleck_SnowBlockLaunchedGlob</defName>
+		<fadeInTime>0</fadeInTime>
+		<solidTime>1</solidTime>
+		<fadeOutTime>0</fadeOutTime>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<growthRate>-.3</growthRate>
+		<graphicData>
+			<texPath>Things/Mote/Smoke</texPath>
+			<shaderType>Transparent</shaderType>
+			<drawSize>3</drawSize>
+			<color>(0.67, 0.819, 0.953, 0.7)</color>
+		</graphicData>
+	</FleckDef>
+
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>Fleck_SnowBlockLaunchedGlobFast</defName>
+		<fadeInTime>0</fadeInTime>
+		<solidTime>.6</solidTime>
+		<fadeOutTime>0</fadeOutTime>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<growthRate>-2</growthRate>
+		<graphicData>
+			<texPath>Things/Mote/Smoke</texPath>
+			<shaderType>Transparent</shaderType>
+			<drawSize>3</drawSize>
+			<color>(0.67, 0.819, 0.953, 0.7)</color>
+		</graphicData>
+	</FleckDef>
+
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>Fleck_SnowBlockImpact</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<fadeInTime>0</fadeInTime>
+		<solidTime>0.3</solidTime>
+		<fadeOutTime>0.1</fadeOutTime>
+		<growthRate>.1</growthRate>
+		<graphicData>
+			<texPath>Things/Mote/AcidSplashSheet</texPath>
+			<graphicClass>Graphic_FleckPulse</graphicClass>
+			<shaderType>TransparentAnimatedColorLerp</shaderType>
+			<shaderParameters>
+				<_NumFrames>8</_NumFrames>
+				<_FramesPerSec>16</_FramesPerSec>
+				<_Loop>0</_Loop>
+				<_ColorLerp>/Things/Mote/AcidSplashColorLerp</_ColorLerp>
+				<_Duration>.2</_Duration>
+			</shaderParameters>
+			<drawSize>(5, 5)</drawSize>
+			<color>(0.67, 0.819, 0.953, 0.7)</color>
+		</graphicData>
+	</FleckDef>
+  
+</Defs>

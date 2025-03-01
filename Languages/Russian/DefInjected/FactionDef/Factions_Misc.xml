@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<AE_SnowArmy.label>сущности Снежной Армии</AE_SnowArmy.label>
+	<AE_SnowArmy.fixedName>Снежная Армия</AE_SnowArmy.fixedName>
+	<AE_SnowArmy.leaderTitle>лидер</AE_SnowArmy.leaderTitle>
+	<AE_SnowArmy.pawnSingular>снежный солдат</AE_SnowArmy.pawnSingular>
+	<AE_SnowArmy.pawnsPlural>снежная армия</AE_SnowArmy.pawnsPlural>
+
+</LanguageData>

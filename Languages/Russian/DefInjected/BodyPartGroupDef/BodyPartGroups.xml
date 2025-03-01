@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<AE_LeftFHand.label>левая передняя рука</AE_LeftFHand.label>
+	<AE_LeftFHand.labelShort>рука</AE_LeftFHand.labelShort>
+	<AE_LeftBHand.label>левая задняя рука</AE_LeftBHand.label>
+	<AE_LeftBHand.labelShort>рука</AE_LeftBHand.labelShort>
+	<AE_RightFHand.label>правая передняя рука</AE_RightFHand.label>
+	<AE_RightFHand.labelShort>рука</AE_RightFHand.labelShort>
+	<AE_RightBHand.label>правая задняя рука</AE_RightBHand.label>
+	<AE_RightBHand.labelShort>рука</AE_RightBHand.labelShort>
+
+</LanguageData>

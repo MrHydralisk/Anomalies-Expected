@@ -8,5 +8,13 @@
 	
 	<AEFreezing.label>промерзание</AEFreezing.label>
 	<AEFreezing.deathMessage>{0} промёрз до смерти</AEFreezing.deathMessage>
+	<AENitrogen.label>жидкий азот</AENitrogen.label>
+	<AENitrogen.deathMessage>{0} промёрз до смерти мз-за жидкого азота</AENitrogen.deathMessage>
+	<AENitrogenPlayer.label>жидкий азот</AENitrogenPlayer.label>
+	<AENitrogenPlayer.deathMessage>{0} промёрз до смерти мз-за жидкого азота</AENitrogenPlayer.deathMessage>
+	<AEFreezingFragileCut.label>замораживающая хрупкость</AEFreezingFragileCut.label>
+	<AEFreezingFragileCut.deathMessage>{0} стал слишком хрупкими из-за замерзания.</AEFreezingFragileCut.deathMessage>
+	<AEFreezingFragileStab.label>замораживающая хрупкость</AEFreezingFragileStab.label>
+	<AEFreezingFragileStab.deathMessage>{0} стал слишком хрупкими из-за замерзания.</AEFreezingFragileStab.deathMessage>
 
 </LanguageData>

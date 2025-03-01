@@ -1,38 +1,41 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<!-- <PawnKindDef Name="BaseFleshbeastKind" Abstract="True"> -->
-	<!-- <defaultFactionType>Entities</defaultFactionType> -->
-	<!-- <overrideDebugActionCategory>Entity</overrideDebugActionCategory> -->
-	<!-- <meleeAttackInfectionPathways> -->
-	<!-- <li>EntityAttacked</li> -->
-	<!-- </meleeAttackInfectionPathways> -->
-	<!-- </PawnKindDef> -->
+	<PawnKindDef Name="BaseAESnowArmyKind" Abstract="True">
+		<defaultFactionType>AE_SnowArmy</defaultFactionType>
+		<overrideDebugActionCategory>Entity</overrideDebugActionCategory>
+		<meleeAttackInfectionPathways>
+			<li>EntityAttacked</li>
+		</meleeAttackInfectionPathways>
+		<overrideDeathOnDownedChance>0.5</overrideDeathOnDownedChance>
+		<preventIdeo>true</preventIdeo>
+		<aiAvoidCover>true</aiAvoidCover>
+		<destroyGearOnDrop>true</destroyGearOnDrop>
+		<startingHediffs>
+			<li>
+				<def>Hediff_AESnowArmy</def>
+				<severity>1</severity>
+			</li>
+		</startingHediffs>
+	</PawnKindDef>
 
-	<PawnKindDef ParentName="BaseFleshbeastKind">
+	<PawnKindDef ParentName="BaseAESnowArmyKind">
 		<defName>AE_SnowMan</defName>
 		<label>snowman</label>
 		<weaponTags>
 			<li>Gun_AESnowBall</li>
 		</weaponTags>
-		<overrideDeathOnDownedChance>0.8</overrideDeathOnDownedChance>
-		<preventIdeo>true</preventIdeo>
-		<aiAvoidCover>true</aiAvoidCover>
-		<destroyGearOnDrop>true</destroyGearOnDrop>
 		<race>AE_SnowMan</race>
 		<combatPower>60</combatPower>
 		<weaponMoney>9999~9999</weaponMoney>
+		<overrideDeathOnDownedChance>0.8</overrideDeathOnDownedChance>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/SnowArmy/SnowMan/AE_SnowMan_A</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
-					<drawSize>1.5</drawSize>
+					<drawSize>2</drawSize>
 				</bodyGraphicData>
-				<!-- <butcherBodyPart> -->
-					<!-- <bodyPartGroup>AEIceCore</bodyPartGroup> -->
-					<!-- <thing>AE_IceCrystal</thing> -->
-				<!-- </butcherBodyPart> -->
 			</li>
 		</lifeStages>
 		<alternateGraphicChance>0.66</alternateGraphicChance>
@@ -45,6 +48,103 @@
 				<texPath>Things/Pawn/SnowArmy/SnowMan/AE_SnowMan_C</texPath>
 			</li>
 		</alternateGraphics>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="BaseAESnowArmyKind">
+		<defName>AE_SnowGolem</defName>
+		<label>snow golem</label>
+		<weaponTags>
+			<li>Gun_AESnowBlock</li>
+		</weaponTags>
+		<race>AE_SnowGolem</race>
+		<combatPower>280</combatPower>
+		<weaponMoney>9999~9999</weaponMoney>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/SnowArmy/SnowGolem/AE_SnowGolem</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>4.5</drawSize>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<startingHediffs>
+			<li>
+				<def>AE_SnowBlockCompressor</def>
+				<severity>1</severity>
+			</li>
+		</startingHediffs>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="BaseAESnowArmyKind">
+		<defName>AE_SnowSpider</defName>
+		<label>snow spider</label>
+		<race>AE_SnowSpider</race>
+		<combatPower>40</combatPower>
+		<overrideDeathOnDownedChance>0</overrideDeathOnDownedChance>
+		<destroyGearOnDrop>false</destroyGearOnDrop>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/SnowArmy/SnowSpider/AE_SnowSpider</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.34</drawSize>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<startingHediffs>
+			<li>
+				<def>AE_IceCrystalDestabilized</def>
+				<severity>1</severity>
+			</li>
+		</startingHediffs>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="BaseAESnowArmyKind">
+		<defName>AE_IceMantis</defName>
+		<label>ice mantis</label>
+		<race>AE_IceMantis</race>
+		<combatPower>120</combatPower>
+		<destroyGearOnDrop>false</destroyGearOnDrop>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/SnowArmy/IceMantis/AE_IceMantis</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2</drawSize>
+          <!-- <shadowData> -->
+            <!-- <volume>(0.4, 0.8, 0.4)</volume> -->
+          <!-- </shadowData> -->
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<startingHediffs>
+			<li>
+				<def>AE_IceThinBody</def>
+				<severity>1</severity>
+			</li>
+		</startingHediffs>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="BaseAESnowArmyKind">
+		<defName>AE_IceMan</defName>
+		<label>ice man</label>
+		<weaponTags>
+			<li>Gun_AEIcicle</li>
+		</weaponTags>
+		<race>AE_IceMan</race>
+		<combatPower>90</combatPower>
+		<weaponMoney>9999~9999</weaponMoney>
+		<overrideDeathOnDownedChance>0.25</overrideDeathOnDownedChance>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/SnowArmy/IceMan/AE_IceMan</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2</drawSize>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
 	</PawnKindDef>
 
 </Defs>

@@ -2,7 +2,7 @@
 <Defs>
 
 	<AnomaliesExpected.PsychicRitualDef_AESummonBloodLake>
-		<defName>SummonBloodLake</defName>
+		<defName>AE_SummonBloodLake</defName>
 		<label>provoke strange lake</label>
 		<description>Use a psychic pulse to distort the fabric of reality, resulting in the formation of a crimson lake in the ground somewhere in the local area.</description>
 		<iconPath>UI/PsychicRituals/PsychicRitual_AESummonBloodLake</iconPath>
@@ -55,5 +55,39 @@
 			<li>(1, 1)</li>
 		</multFromQuality>
 	</AnomaliesExpected.PsychicRitualDef_AEAskingProvider>
+	
+	
+
+	<AnomaliesExpected.PsychicRitualDef_AESummonSnowArmy>
+		<defName>AE_SummonSnowArmy</defName>
+		<label>draw snow army</label>
+		<description>Create a psychic pulse which will draw a distant group of Snow Army towards your local area. They attack almost anyone that they see immediately. You can capture them for study or extract ice crystals from their corpses.</description>
+		<iconPath>UI/PsychicRituals/PsychicRitual_AESummonSnowArmy</iconPath>
+		<researchPrerequisite>AESummonSnowArmy</researchPrerequisite>
+		<outcomeDescription>Create a psychic pulse which will draw a distant group of Snow Army towards your local area.</outcomeDescription>
+		<hoursUntilOutcome>2</hoursUntilOutcome>
+		<castableOnPocketMaps>false</castableOnPocketMaps>
+		<requiredOffering>
+			<filter>
+				<thingDefs>
+					<li>Bioferrite</li>
+				</thingDefs>
+			</filter>
+			<count>75</count>
+		</requiredOffering>
+		<cooldownHours>120</cooldownHours>
+		<chanterRole>ChanterAdvanced</chanterRole>
+		<CombatPointsMultFromQualityCurve>
+		  <points>
+			<li>(0.2, 0.5)</li>
+			<li>(0.6, 1)</li>
+			<li>(0.8, 1)</li>
+			<li>(1, 1.5)</li>
+		  </points>
+		</CombatPointsMultFromQualityCurve>
+		<IncidentDefBasic>AE_IncidentDef_SnowArmyAssaultBasic</IncidentDefBasic>
+		<IncidentDefAdvanced>AE_IncidentDef_SnowArmyAssaultAdvanced</IncidentDefAdvanced>
+		<soundDef>Explosion_Stun</soundDef>
+	</AnomaliesExpected.PsychicRitualDef_AESummonSnowArmy>
 
 </Defs>

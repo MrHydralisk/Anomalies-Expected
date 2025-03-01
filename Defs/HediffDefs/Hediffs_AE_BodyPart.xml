@@ -5,7 +5,7 @@
 		<defName>AEForbiddenFruitImplant</defName>
 		<label>implant of forbidden knowledge</label>
 		<labelNoun>an implant of forbidden knowledge</labelNoun>
-		<description>An installed an anomalous brain implant, which maintains connection between the host's consciousness and the entity, facilitating the exchange of knowledge and thoughts, without disturbing the entity.</description>
+		<description>An installed anomalous brain implant, which maintains connection between the host's consciousness and the entity, facilitating the exchange of knowledge and thoughts, without disturbing the entity.</description>
 		<descriptionHyperlinks>
 			<ThingDef>AEForbiddenFruitImplant</ThingDef>
 		</descriptionHyperlinks>
@@ -104,6 +104,146 @@
 				</tools>
 			</li>
 		</comps>
+	</HediffDef>
+	
+	
+
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>AEThermalReflectiveSkinImplant</defName>
+		<label>thermal-reflective skin gland</label>
+		<labelNoun>a thermal-reflective skin gland</labelNoun>
+		<description>An installed anomalous thermal-reflective skin gland, which replicate the reflective surface structure of a Transmitter. The skin's cellular structure is altered to reflect both light and thermal radiation, offering exceptional protection against burns and heat-based attacks. The altered surface beautifully diffracts light, creating a captivating interplay of colors and a radiant glow that enhances the user's attractiveness in a unique and striking manner. However, this transformation also makes the skin more fragile and susceptible to physical damage.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AEThermalReflectiveSkinImplant</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>AEThermalReflectiveSkinImplant</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<ArmorRating_Sharp>-0.1</ArmorRating_Sharp>
+					<ArmorRating_Blunt>-0.3</ArmorRating_Blunt>
+					<ArmorRating_Heat>2</ArmorRating_Heat>
+					<PawnBeauty>1</PawnBeauty>
+				</statOffsets>
+			</li>
+		</stages>
+		<tags><li>ArmorGland</li></tags>
+	</HediffDef>
+	
+	
+
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>AESnowCoreImplant</defName>
+		<label>snow core implant</label>
+		<labelNoun>a snow core implant</labelNoun>
+		<description>An installed anomalous implant, replicating the Snow Army's snow core, enabling the host to survive in lower temperatures. Nano-scale frostites induce cellular crystallization upon injury, accelerating regeneration in lower temperatures. However, this crystallization makes the cells vulnerable to high temperatures, destabilizing their structure. The host body also lowers the temperature of the surrounding air.\n\nRecieved damage x2, when on fire.\nMax effect at -100 degrees, including regeneration of missing parts.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AESnowCoreImplant</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>AESnowCoreImplant</spawnThingOnRemoved>
+		<defaultLabelColor>(0.31, 0.69, 0.835)</defaultLabelColor>
+		<comps>
+			<li>
+				<compClass>AnomaliesExpected.HediffComp_SnowArmy</compClass>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<minSeverity>1</minSeverity>
+			</li>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>1</naturalHealingFactor>
+				<minSeverity>2</minSeverity>
+			</li>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>1.5</naturalHealingFactor>
+				<minSeverity>10</minSeverity>
+			</li>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>2</naturalHealingFactor>
+				<minSeverity>20</minSeverity>
+			</li>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>2.5</naturalHealingFactor>
+				<totalBleedFactor>0.9</totalBleedFactor>
+				<minSeverity>30</minSeverity>
+			</li>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>3</naturalHealingFactor>
+				<totalBleedFactor>0.9</totalBleedFactor>
+				<minSeverity>40</minSeverity>
+			</li>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>3.5</naturalHealingFactor>
+				<totalBleedFactor>0.8</totalBleedFactor>
+				<minSeverity>50</minSeverity>
+			</li>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>4</naturalHealingFactor>
+				<totalBleedFactor>0.8</totalBleedFactor>
+				<minSeverity>60</minSeverity>
+			</li>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>4.5</naturalHealingFactor>
+				<totalBleedFactor>0.7</totalBleedFactor>
+				<minSeverity>70</minSeverity>
+			</li>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>5</naturalHealingFactor>
+				<totalBleedFactor>0.6</totalBleedFactor>
+				<minSeverity>80</minSeverity>
+			</li>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>6</naturalHealingFactor>
+				<totalBleedFactor>0.5</totalBleedFactor>
+				<regeneration>5</regeneration>
+				<minSeverity>100</minSeverity>
+			</li>
+		</stages>
 	</HediffDef>
 	
 </Defs>

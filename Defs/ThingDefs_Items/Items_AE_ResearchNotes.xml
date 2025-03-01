@@ -29,6 +29,80 @@
 	
 
 	<ThingDef ParentName="AEResearchNotesBase">
+		<defName>AE_ResearchNotesABA</defName>
+		<label>research note #AB01</label>
+		<comps>
+			<li Class="CompProperties_CompAnalyzableUnlockResearch">
+				<analysisID>1300101</analysisID>
+
+				<!-- Analyzable -->
+
+				<analysisDurationHours>4</analysisDurationHours>
+				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
+				<completedLetterLabel>Neural Collective Processing Unit research note studied: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+				<completedLetterDef>PositiveEvent</completedLetterDef>
+
+				<!-- Interactable -->
+
+				<activateTexPath>UI/Icons/Study</activateTexPath>
+
+				<activateLabelString>Analyze...</activateLabelString>
+				<activateDescString>Analyze the research note.</activateDescString>
+				<jobString>Analyze research note</jobString>
+				<guiLabelString>Choose who should analyze this</guiLabelString>
+				<inspectString>Can be analyzed by a colonist.</inspectString>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	
+
+	<ThingDef ParentName="AEResearchNotesBase">
+		<defName>AE_ResearchNotesAHBA</defName>
+		<label>research note #AHB01</label>
+		<comps>
+			<li Class="CompProperties_CompAnalyzableUnlockResearch">
+				<analysisID>1300201</analysisID>
+
+				<!-- Analyzable -->
+
+				<analysisDurationHours>4</analysisDurationHours>
+				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
+				<completedLetterLabel>Emergency Cellular Restoration Unit research note studied: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+				<completedLetterDef>PositiveEvent</completedLetterDef>
+
+				<!-- Interactable -->
+
+				<activateTexPath>UI/Icons/Study</activateTexPath>
+
+				<activateLabelString>Analyze...</activateLabelString>
+				<activateDescString>Analyze the research note.</activateDescString>
+				<jobString>Analyze research note</jobString>
+				<guiLabelString>Choose who should analyze this</guiLabelString>
+				<inspectString>Can be analyzed by a colonist.</inspectString>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	
+
+	<ThingDef ParentName="AEResearchNotesBase">
 		<defName>AE_ResearchNotesFFA</defName>
 		<label>research note #FF01</label>
 		<comps>
@@ -114,6 +188,78 @@
 				<analysisDurationHours>5</analysisDurationHours>
 				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
 				<completedLetterLabel>Self-Baking Pies research note studied: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+				<completedLetterDef>PositiveEvent</completedLetterDef>
+
+				<!-- Interactable -->
+
+				<activateTexPath>UI/Icons/Study</activateTexPath>
+
+				<activateLabelString>Analyze...</activateLabelString>
+				<activateDescString>Analyze the research note.</activateDescString>
+				<jobString>Analyze research note</jobString>
+				<guiLabelString>Choose who should analyze this</guiLabelString>
+				<inspectString>Can be analyzed by a colonist.</inspectString>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	
+
+	<ThingDef ParentName="AEResearchNotesBase">
+		<defName>AE_ResearchNotesBTA</defName>
+		<label>research note #BT01</label>
+		<comps>
+			<li Class="CompProperties_CompAnalyzableUnlockResearch">
+				<analysisID>1300501</analysisID>
+
+				<!-- Analyzable -->
+
+				<analysisDurationHours>5</analysisDurationHours>
+				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
+				<completedLetterLabel>Transmitter research note studied: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+				<completedLetterDef>PositiveEvent</completedLetterDef>
+
+				<!-- Interactable -->
+
+				<activateTexPath>UI/Icons/Study</activateTexPath>
+
+				<activateLabelString>Analyze...</activateLabelString>
+				<activateDescString>Analyze the research note.</activateDescString>
+				<jobString>Analyze research note</jobString>
+				<guiLabelString>Choose who should analyze this</guiLabelString>
+				<inspectString>Can be analyzed by a colonist.</inspectString>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="AEResearchNotesBase">
+		<defName>AE_ResearchNotesBTB</defName>
+		<label>research note #BT02</label>
+		<comps>
+			<li Class="CompProperties_CompAnalyzableUnlockResearch">
+				<analysisID>1300502</analysisID>
+
+				<!-- Analyzable -->
+
+				<analysisDurationHours>7</analysisDurationHours>
+				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
+				<completedLetterLabel>Orbital Beam Training Target research note studied: {RESEARCH} unlocked</completedLetterLabel>
 				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
 				<completedLetterDef>PositiveEvent</completedLetterDef>
 
@@ -258,6 +404,183 @@
 				<analysisDurationHours>5</analysisDurationHours>
 				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
 				<completedLetterLabel>The One Who Provides research note studied: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+				<completedLetterDef>PositiveEvent</completedLetterDef>
+
+				<!-- Interactable -->
+
+				<activateTexPath>UI/Icons/Study</activateTexPath>
+
+				<activateLabelString>Analyze...</activateLabelString>
+				<activateDescString>Analyze the research note.</activateDescString>
+				<jobString>Analyze research note</jobString>
+				<guiLabelString>Choose who should analyze this</guiLabelString>
+				<inspectString>Can be analyzed by a colonist.</inspectString>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	
+
+	<ThingDef ParentName="AEResearchNotesBase">
+		<defName>AE_ResearchNotesSAA</defName>
+		<label>research note #SA01</label>
+		<comps>
+			<li Class="CompProperties_CompAnalyzableUnlockResearch">
+				<analysisID>1301201</analysisID>
+
+				<!-- Analyzable -->
+
+				<analysisDurationHours>6</analysisDurationHours>
+				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
+				<completedLetterLabel>Snow Army SA-01 research note studied: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+				<completedLetterDef>PositiveEvent</completedLetterDef>
+
+				<!-- Interactable -->
+
+				<activateTexPath>UI/Icons/Study</activateTexPath>
+
+				<activateLabelString>Analyze...</activateLabelString>
+				<activateDescString>Analyze the research note.</activateDescString>
+				<jobString>Analyze research note</jobString>
+				<guiLabelString>Choose who should analyze this</guiLabelString>
+				<inspectString>Can be analyzed by a colonist.</inspectString>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="AEResearchNotesBase">
+		<defName>AE_ResearchNotesSAB</defName>
+		<label>research note #SA02</label>
+		<comps>
+			<li Class="CompProperties_CompAnalyzableUnlockResearch">
+				<analysisID>1301202</analysisID>
+
+				<!-- Analyzable -->
+
+				<analysisDurationHours>7</analysisDurationHours>
+				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
+				<completedLetterLabel>Snow Army SA-02 research note studied: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+				<completedLetterDef>PositiveEvent</completedLetterDef>
+
+				<!-- Interactable -->
+
+				<activateTexPath>UI/Icons/Study</activateTexPath>
+
+				<activateLabelString>Analyze...</activateLabelString>
+				<activateDescString>Analyze the research note.</activateDescString>
+				<jobString>Analyze research note</jobString>
+				<guiLabelString>Choose who should analyze this</guiLabelString>
+				<inspectString>Can be analyzed by a colonist.</inspectString>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="AEResearchNotesBase">
+		<defName>AE_ResearchNotesSAC</defName>
+		<label>research note #SA03</label>
+		<comps>
+			<li Class="CompProperties_CompAnalyzableUnlockResearch">
+				<analysisID>1301203</analysisID>
+
+				<!-- Analyzable -->
+
+				<analysisDurationHours>10</analysisDurationHours>
+				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
+				<completedLetterLabel>Snow Army SA-03 research note studied: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+				<completedLetterDef>PositiveEvent</completedLetterDef>
+
+				<!-- Interactable -->
+
+				<activateTexPath>UI/Icons/Study</activateTexPath>
+
+				<activateLabelString>Analyze...</activateLabelString>
+				<activateDescString>Analyze the research note.</activateDescString>
+				<jobString>Analyze research note</jobString>
+				<guiLabelString>Choose who should analyze this</guiLabelString>
+				<inspectString>Can be analyzed by a colonist.</inspectString>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="AEResearchNotesBase">
+		<defName>AE_ResearchNotesSAD</defName>
+		<label>research note #SA04</label>
+		<comps>
+			<li Class="CompProperties_CompAnalyzableUnlockResearch">
+				<analysisID>1301204</analysisID>
+
+				<!-- Analyzable -->
+
+				<analysisDurationHours>5</analysisDurationHours>
+				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
+				<completedLetterLabel>Snow Army SA-04 research note studied: {RESEARCH} unlocked</completedLetterLabel>
+				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
+				<completedLetterDef>PositiveEvent</completedLetterDef>
+
+				<!-- Interactable -->
+
+				<activateTexPath>UI/Icons/Study</activateTexPath>
+
+				<activateLabelString>Analyze...</activateLabelString>
+				<activateDescString>Analyze the research note.</activateDescString>
+				<jobString>Analyze research note</jobString>
+				<guiLabelString>Choose who should analyze this</guiLabelString>
+				<inspectString>Can be analyzed by a colonist.</inspectString>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="AEResearchNotesBase">
+		<defName>AE_ResearchNotesSAE</defName>
+		<label>research note #SA05</label>
+		<comps>
+			<li Class="CompProperties_CompAnalyzableUnlockResearch">
+				<analysisID>1301205</analysisID>
+
+				<!-- Analyzable -->
+
+				<analysisDurationHours>8</analysisDurationHours>
+				<destroyedOnAnalyzed>true</destroyedOnAnalyzed>
+				<completedLetterLabel>Snow Army SA-05 research note studied: {RESEARCH} unlocked</completedLetterLabel>
 				<completedLetter>By studying research note, {PAWN_labelShort} has acquired the insight needed for the research project(s) {RESEARCH}.\n\nYour researchers can now use research benches to begin researching how to actually use the technology.</completedLetter>
 				<completedLetterDef>PositiveEvent</completedLetterDef>
 

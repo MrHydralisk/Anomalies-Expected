@@ -8,10 +8,42 @@ namespace AnomaliesExpected
         public override DamageResult Apply(DamageInfo dinfo, Thing thing)
         {
             AE_DamageDefExtension damageDefExtension = dinfo.Def.GetModExtension<AE_DamageDefExtension>();
-            if (thing is Pawn pawn && damageDefExtension != null)
+            if (damageDefExtension != null)
             {
-                float statValue = pawn.GetStatValue(StatDefOf.ComfyTemperatureMin);
-                dinfo.SetAmount(dinfo.Amount * damageDefExtension.DamageMultiplierCurve.Evaluate(statValue));
+                if (!damageDefExtension.isDealDamageToPlayer && thing.Faction == Faction.OfPlayer)
+                {
+                    return new DamageResult();
+                }
+                if (!damageDefExtension.isDealDamageToFriendly && (thing.Faction != null && dinfo.Instigator.Faction != null && !thing.Faction.HostileTo(dinfo.Instigator.Faction)))
+                {
+                    return new DamageResult();
+                }
+                if (thing is Pawn pawn)
+                {
+                    if ((!damageDefExtension.isDealDamageToDowned && pawn.DeadOrDowned))
+                    {
+                        return new DamageResult();
+                    }
+                    float statValue = pawn.GetStatValue(StatDefOf.ComfyTemperatureMin);
+                    dinfo.SetAmount(dinfo.Amount * damageDefExtension.DamageMultiplierCurve.Evaluate(statValue));
+                    if (damageDefExtension.AdditionalHediff != null)
+                    {
+                        HealthUtility.AdjustSeverity(pawn, damageDefExtension.AdditionalHediff, 0.5f);
+                    }
+                }
+                if (thing is Building building)
+                {
+                    float mult = 1;
+                    if (building.GetComp<CompPowerTrader>()?.PowerOn ?? false)
+                    {
+                        mult *= damageDefExtension.DamageMultiplierForPoweredBuildings;
+                    }
+                    else
+                    {
+                        mult *= damageDefExtension.DamageMultiplierForNonPoweredBuildings;
+                    }
+                    dinfo.SetAmount(dinfo.Amount * mult);
+                }
             }
             return base.Apply(dinfo, thing);
         }

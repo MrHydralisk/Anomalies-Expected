@@ -12,5 +12,6 @@ namespace AnomaliesExpected
         public int filthThickness;
         public ThingDef filthDef;
         public MapGeneratorDef mapGeneratorDef;
+        public float aggressionRadius = 1;
     }
 }

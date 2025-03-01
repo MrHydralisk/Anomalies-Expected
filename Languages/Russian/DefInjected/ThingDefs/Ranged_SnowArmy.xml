@@ -6,4 +6,30 @@
 	<Gun_AESnowBall.verbs.Verb_Shoot.label>снежок</Gun_AESnowBall.verbs.Verb_Shoot.label>
 	<Gun_AESnowBall_Thrown.label>снежок</Gun_AESnowBall_Thrown.label>
 
+	<Gun_AESnowBlock.label>снежный блок</Gun_AESnowBlock.label>
+	<Gun_AESnowBlock.description>Снежный блок — простое, но эффективное метательное оружие. Сформированный из сильно сжатого снега, насыщенного жидким азотом, он может быть брошен с достаточной силой, нанося леденящий удар всем в зоне поражения. При броске он наносит мощный, замораживающий удар, причиняя значительный урон, замедляя цели и криогенно связывая механические компоненты.</Gun_AESnowBlock.description>
+	<Gun_AESnowBlock.verbs.Verb_Shoot.label>снежный блок</Gun_AESnowBlock.verbs.Verb_Shoot.label>
+	<Gun_AESnowBlock_Thrown.label>снежный блок</Gun_AESnowBlock_Thrown.label>
+	<AE_Bullet_Shell_SnowBlockAbility.label>гигантский снежный блок</AE_Bullet_Shell_SnowBlockAbility.label>
+
+	<Gun_AEIcicle.label>сосулька</Gun_AEIcicle.label>
+	<Gun_AEIcicle.description>Сосулька — простое, но эффективное метательное оружие. Сформированная из острого ледяного осколка, она может быть брошена с удивительной силой. Её мощные удары наносят точный урон, а если она разбивается, осколки причиняют дополнительные повреждения. Её способность эффективно нарушать работу силовых полей остаётся загадкой.</Gun_AEIcicle.description>
+	<Gun_AEIcicle.tools.point.label>остриё</Gun_AEIcicle.tools.point.label>
+	<Gun_AEIcicle.verbs.Verb_Shoot.label>сосулька</Gun_AEIcicle.verbs.Verb_Shoot.label>
+	<Bullet_AEIcicle.label>сосулька</Bullet_AEIcicle.label>
+
+	<Gun_AESnowBallGun.label>cнежкомёт</Gun_AESnowBallGun.label>
+	<Gun_AESnowBallGun.description>Это оружие использует атмосферную влагу или прямую загрузку снега для создания снежков, которые затем выстреливаются с впечатляющей скоростью. Меткий выстрел может вызвать серьёзные обморожения, хотя его эффективная дальность ограничена. Воспроизводит эффект снежков SA-01.</Gun_AESnowBallGun.description>
+	<Gun_AESnowBallGun.tools.stock.label>приклад</Gun_AESnowBallGun.tools.stock.label>
+	<Gun_AESnowBallGun.tools.barrel.label>ствол</Gun_AESnowBallGun.tools.barrel.label>
+	<Gun_AESnowBallGun.verbs.Verb_Shoot.label>cнежкомёт</Gun_AESnowBallGun.verbs.Verb_Shoot.label>
+	<Bullet_AESnowBall.label>снежок</Bullet_AESnowBall.label>
+
+	<Gun_AEIcicleRifle.label>ледяная винтовка</Gun_AEIcicleRifle.label>
+	<Gun_AEIcicleRifle.description>Это оружие использует атмосферную влагу или прямую загрузку снега для создания сосулек, которые затем выстреливаются с исключительной скоростью и дальностью. Снаряды имеют шанс разбиться на несколько осколков при ударе, нанося вторичные повреждения осколками. Попадание в электронные системы или излучатели силовых полей вызывает короткое замыкание. Воспроизводит эффект сосулек SA-05.</Gun_AEIcicleRifle.description>
+	<Gun_AEIcicleRifle.tools.stock.label>приклад</Gun_AEIcicleRifle.tools.stock.label>
+	<Gun_AEIcicleRifle.tools.barrel.label>ствол</Gun_AEIcicleRifle.tools.barrel.label>
+	<Gun_AEIcicleRifle.verbs.Verb_Shoot.label>ледяная винтовка</Gun_AEIcicleRifle.verbs.Verb_Shoot.label>
+
+
 </LanguageData>
