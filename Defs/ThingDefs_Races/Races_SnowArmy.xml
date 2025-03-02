@@ -68,7 +68,7 @@
 			<body>AE_SnowMan</body>
 			<baseBodySize>1</baseBodySize>
 			<baseHealthScale>1</baseHealthScale>
-			<lifeExpectancy>35</lifeExpectancy>
+			<lifeExpectancy>50</lifeExpectancy>
 			<lifeStageAges>
 				<li>
 					<def>EntityFullyFormed</def>
@@ -211,7 +211,7 @@
 			<thinkTreeMain>AE_SnowGolem</thinkTreeMain>
 			<baseBodySize>6</baseBodySize>
 			<baseHealthScale>9.8</baseHealthScale>
-			<lifeExpectancy>225</lifeExpectancy>
+			<lifeExpectancy>2500</lifeExpectancy>
 			<lifeStageAges>
 				<li>
 					<def>EntityFullyFormed</def>
@@ -367,7 +367,7 @@
 			<intelligence>Animal</intelligence>
 			<baseBodySize>0.6</baseBodySize>
 			<baseHealthScale>0.6</baseHealthScale>
-			<lifeExpectancy>15</lifeExpectancy>
+			<lifeExpectancy>100</lifeExpectancy>
 			<lifeStageAges>
 				<li>
 					<def>EntityFullyFormed</def>
@@ -507,7 +507,7 @@
 			<intelligence>Animal</intelligence>
 			<baseBodySize>1.4</baseBodySize>
 			<baseHealthScale>1</baseHealthScale>
-			<lifeExpectancy>60</lifeExpectancy>
+			<lifeExpectancy>2500</lifeExpectancy>
 			<soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
 			<soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
 			<soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
@@ -653,7 +653,7 @@
 			<body>AE_IceMan</body>
 			<baseBodySize>1</baseBodySize>
 			<baseHealthScale>1.5</baseHealthScale>
-			<lifeExpectancy>35</lifeExpectancy>
+			<lifeExpectancy>1250</lifeExpectancy>
 			<lifeStageAges>
 				<li>
 					<def>EntityFullyFormed</def>

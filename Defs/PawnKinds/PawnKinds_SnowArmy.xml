@@ -59,6 +59,7 @@
 		<race>AE_SnowGolem</race>
 		<combatPower>280</combatPower>
 		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge MayRequire="Ludeon.RimWorld.Biotech">120</minGenerationAge>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
@@ -106,6 +107,7 @@
 		<race>AE_IceMantis</race>
 		<combatPower>120</combatPower>
 		<destroyGearOnDrop>false</destroyGearOnDrop>
+		<minGenerationAge MayRequire="Ludeon.RimWorld.Biotech">1000</minGenerationAge>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
@@ -136,6 +138,7 @@
 		<combatPower>90</combatPower>
 		<weaponMoney>9999~9999</weaponMoney>
 		<overrideDeathOnDownedChance>0.25</overrideDeathOnDownedChance>
+		<minGenerationAge MayRequire="Ludeon.RimWorld.Biotech">10</minGenerationAge>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
