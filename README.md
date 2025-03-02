@@ -8,9 +8,10 @@ If you want more anomalies to explore and experiment with, then you might like t
 
 Mod adding new anomalies for Anomaly DLC. With it own benefits and risks.
 Most anomalies here give you some benefit for keeping them in colony with it own containment risks, rather than being just a temporary threat event to the colony like most of anomalies from DLC.
-While usually I try to explain in mod description how mod content work in details, due to the main interest of anomalies is to discover and study them, I won't spoil it.
-Have it own research tab Anomalies Expected, which work same way as Anomaly tab.
+Mod have it own research tab Anomalies Expected, which work same way as Anomaly tab.
+Also this mod adding a reworked Entity Codex as new Entity Database, which allowing to read study notes, carry over study progress between anomalies and see all information related to each entity.
 On some study notes label and description of anomaly might change to fit the current understanding of the anomaly. Additionally some study notes will unlock new research projects to motivate full study of related anomaly.
+While usually I try to explain in mod description how mod content work in details, due to the main interest of anomalies is to discover and study them, I won't spoil it.
 
 ![Text](/Mod%20Page/Images/Content/AEDesc1.png)
 ![Text](/Mod%20Page/Images/Content/AEDesc2.png)
@@ -23,6 +24,7 @@ On some study notes label and description of anomaly might change to fit the cur
 ![Text](/Mod%20Page/Images/Content/AEDesc9.png)
 ![Text](/Mod%20Page/Images/Content/AEDesc10.png)
 ![Text](/Mod%20Page/Images/Content/AEDesc11.png)
+![Text](/Mod%20Page/Images/Content/AEDesc12.png)
 
 Anomalies Classification:
 * Class 0 anomaly "Safe".
@@ -33,7 +35,7 @@ Anomalies Classification:
 
 Currently available:
 * 6 Anomaly of basic category
-* 5 Anomaly of advanced category
+* 6 Anomaly of advanced category
 
 ## Links
 
