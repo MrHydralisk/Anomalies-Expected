@@ -35,9 +35,6 @@ namespace AnomaliesExpected
                 return;
             }
             tickOnDestroy = Find.TickManager.TicksGame + 300000;
-
-            //GameCondition cond = GameConditionMaker.MakeCondition(GameConditionDefOfLocal.AE_TemperatureDrop, 120000);
-            //map.gameConditionManager.RegisterCondition(cond);
         }
 
         public override void MapComponentTick()
@@ -61,6 +58,7 @@ namespace AnomaliesExpected
                     pawn.Kill(damageInfo);
                 }
             }
+            Entrance.CancelLoad();
             Alert_ChristmasTreeUnstable.RemoveTarget(Exit);
             if (!Entrance.isBeenExited)
             {

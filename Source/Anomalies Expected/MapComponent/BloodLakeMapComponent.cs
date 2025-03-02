@@ -188,6 +188,7 @@ namespace AnomaliesExpected
                     }
                 }
             }
+            Entrance.CancelLoad();
             PocketMapUtility.DestroyPocketMap(map);
             if (!lostConnection)
             {
