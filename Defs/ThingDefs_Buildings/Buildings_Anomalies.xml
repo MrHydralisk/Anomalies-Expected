@@ -416,7 +416,7 @@
 				</targetingParameters>
 				
 				<jobDef>AE_RemoveAnomaly</jobDef>
-				<minStudy>5</minStudy>
+				<minStudy>6</minStudy>
 				
 				<requiredThings>
 					<Shard>1</Shard>
