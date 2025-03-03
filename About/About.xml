@@ -7,7 +7,7 @@
 		<li>1.5</li>
 	</supportedVersions>
 	<modIconPath IgnoreIfNoMatchingField="True">UI/Icons/AEModIcon</modIconPath>
-	<description>Additional anomalies for Anomaly DLC. Reworking Entity Codex as Entity Database. Can partially work without DLC.</description>
+	<description>Additional anomalies for Anomaly DLC. Including reworked Entity Codex in a form of new Entity Database. Can partially work without DLC.</description>
 	<loadAfter>
 		<li>Ludeon.RimWorld</li>
 		<li>Ludeon.Anomaly</li>
