@@ -27,6 +27,8 @@
 		<costList>
 			<Bioferrite>45</Bioferrite>
 		</costList>
+		<techLevel>Ultra</techLevel>
+		<researchPrerequisites Inherit="False"/>
 		<tickerType>Rare</tickerType>
 		<designationCategory/>
 		<comps>
