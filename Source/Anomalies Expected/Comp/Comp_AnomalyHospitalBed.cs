@@ -72,7 +72,7 @@ namespace AnomaliesExpected
                 {
                     severityDealt *= Props.SeverityPerDmgDonorMult;
                 }
-                float severityLeft = severityRecord.Severity - severityDealt;
+                float severityLeft = Mathf.Round((severityRecord.Severity - severityDealt) * 100) / 100;
                 if (severityLeft > 0)
                 {
                     storedSeverityList.Replace(severityRecord, new SeverityRecord(severityRecord.Name, severityLeft));
@@ -107,6 +107,11 @@ namespace AnomaliesExpected
                     hediff.Heal(severityToHeal);
                     severityHealed += severityToHeal * Props.MultInjury;
                 }
+                else if (hediff is Hediff_MissingPart)
+                {
+                    RestorePartRecursiveInt(pawn, hediff.Part, ref severityHealed);
+                    j--;
+                }
                 else if (hediff.def.isInfection)
                 {
                     hediff.Heal(severityToHeal);
@@ -118,11 +123,42 @@ namespace AnomaliesExpected
                     severityHealed += severityToHeal * Props.MultBloodLoss;
                 }
             }
+            severityHealed = Mathf.Round(severityHealed * 100) / 100;
             if (severityHealed > 0)
             {
+                pawn.health.hediffSet.DirtyCache();
                 storedSeverityList.Add(new SeverityRecord(pawn.LabelShortCap, severityHealed));
                 storedSeverityList.SortByDescending(sr => sr.Severity);
                 Studiable.Study(pawn, 0, severityHealed * Props.StudyHealMult);
+            }
+        }
+
+        private void RestorePartRecursiveInt(Pawn pawn, BodyPartRecord part, ref float severityOffset)
+        {
+            List<Hediff> hediffs = pawn.health.hediffSet.hediffs;
+            for (int num = hediffs.Count - 1; num >= 0; num--)
+            {
+                Hediff hediff = hediffs[num];
+                if (hediff.Part == part && !hediff.def.keepOnBodyPartRestoration)
+                {
+                    if (hediff is Hediff_MissingPart)
+                    {
+                        if (!(hediff.Part?.def?.IsSkinCovered(hediff.Part, pawn.health.hediffSet) ?? true) && !(hediff.Part?.def?.IsSolid(hediff.Part, pawn.health.hediffSet.hediffs) ?? true))
+                        {
+                            severityOffset += (hediff.Part?.def?.hitPoints ?? hediff.Severity) * Props.MultMissingPartOrgan;
+                        }
+                        else
+                        {
+                            severityOffset += (hediff.Part?.def?.hitPoints ?? hediff.Severity) * Props.MultMissingPartSkin;
+                        }
+                    }
+                    hediffs.RemoveAt(num);
+                    hediff.PostRemoved();
+                }
+            }
+            for (int i = 0; i < part.parts.Count; i++)
+            {
+                RestorePartRecursiveInt(pawn, part.parts[i], ref severityOffset);
             }
         }
 

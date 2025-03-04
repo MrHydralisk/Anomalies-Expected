@@ -133,6 +133,8 @@
 				<TendQuality>1</TendQuality>
 				<MaxDamage>5</MaxDamage>
 				<MultInjury>1</MultInjury>
+				<MultMissingPartSkin>0.34</MultMissingPartSkin>
+				<MultMissingPartOrgan>2</MultMissingPartOrgan>
 				<MultInfection>100</MultInfection>
 				<MultBloodLoss>50</MultBloodLoss>
 				<StudyHealMult>0.005</StudyHealMult>

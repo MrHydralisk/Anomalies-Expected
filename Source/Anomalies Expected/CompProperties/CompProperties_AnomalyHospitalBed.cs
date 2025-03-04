@@ -10,6 +10,8 @@ namespace AnomaliesExpected
         public float TendQuality = 1;
         public float MaxDamage = 5;
         public float MultInjury = 1;
+        public float MultMissingPartSkin = 1;
+        public float MultMissingPartOrgan = 4;
         public float MultInfection = 100;
         public float MultBloodLoss = 50;
         public float StudyHealMult = 0.005f;
