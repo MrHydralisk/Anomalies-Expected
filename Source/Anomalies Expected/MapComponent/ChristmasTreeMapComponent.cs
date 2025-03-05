@@ -58,7 +58,10 @@ namespace AnomaliesExpected
                     pawn.Kill(damageInfo);
                 }
             }
-            Entrance.CancelLoad();
+            if (Entrance.LoadInProgress)
+            {
+                Entrance.CancelLoad();
+            }
             Alert_ChristmasTreeUnstable.RemoveTarget(Exit);
             if (!Entrance.isBeenExited)
             {
