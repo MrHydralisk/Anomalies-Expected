@@ -21,7 +21,7 @@ namespace AnomaliesExpected
         public ThingWithComps Source;
         public Comp_BloodSource SourceComp => sourceCompCached ?? (sourceCompCached = Source.GetComp<Comp_BloodSource>());
         private Comp_BloodSource sourceCompCached;
-        public bool isConnected => Source != null && Source.Spawned;
+        public bool isConnected => Source != null;
         public bool isPowered => PowerComp?.PowerOn ?? true;
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -74,6 +74,14 @@ namespace AnomaliesExpected
         {
             if (isConnected && isPowered)
             {
+                if (!Source.Spawned)
+                {
+                    LostSource();
+                    if (!TryFindSource())
+                    {
+                        return;
+                    }
+                }
                 TickTillNextSpawn -= 250;
                 if (TickTillNextSpawn <= 0)
                 {
