@@ -71,7 +71,7 @@
 				<options>
 					<AE_SnowGolem>0.45</AE_SnowGolem>
 					<AE_IceMantis>5.8</AE_IceMantis>
-					<AE_IceMan>10</AE_IceMan>
+					<AE_IceMan>6</AE_IceMan>
 				</options>
 			</li>
 			<li>
@@ -81,7 +81,7 @@
 				<options>
 					<AE_SnowMan>10</AE_SnowMan>
 					<AE_SnowGolem>0.075</AE_SnowGolem>
-					<AE_IceMan>10</AE_IceMan>
+					<AE_IceMan>0.75</AE_IceMan>
 				</options>
 			</li>
 			<li>
@@ -94,7 +94,7 @@
 				</options>
 			</li>
 			<li>
-				<!-- Ranged only-->
+				<!-- Ranged Snow only-->
 				<kindDef>AE_AdvancedMonolith</kindDef>
 				<commonality>70</commonality>
 				<options>
@@ -126,7 +126,7 @@
 				<commonality>70</commonality>
 				<options>
 					<AE_IceMantis>10</AE_IceMantis>
-					<AE_IceMan>15</AE_IceMan>
+					<AE_IceMan>6</AE_IceMan>
 				</options>
 			</li>
 			<li>

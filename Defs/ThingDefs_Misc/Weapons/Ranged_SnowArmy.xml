@@ -174,7 +174,7 @@
 			<AccuracyShort>0.60</AccuracyShort>
 			<AccuracyMedium>0.80</AccuracyMedium>
 			<AccuracyLong>0.92</AccuracyLong>
-			<RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>3.7</RangedWeapon_Cooldown>
 		</statBases>
 		<weaponTags>
 			<li>Gun_AEIcicle</li>
@@ -300,7 +300,7 @@
 		</graphicData>
 		<projectile>
 			<damageDef>AEFreezing</damageDef>
-			<damageAmountBase>13</damageAmountBase>
+			<damageAmountBase>16</damageAmountBase>
 			<stoppingPower>1.4</stoppingPower>
 			<speed>25</speed>
 		</projectile>
@@ -322,7 +322,7 @@
 			<AccuracyShort>0.60</AccuracyShort>
 			<AccuracyMedium>0.80</AccuracyMedium>
 			<AccuracyLong>0.92</AccuracyLong>
-			<RangedWeapon_Cooldown>3.3</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>3.1</RangedWeapon_Cooldown>
 		</statBases>
 		<verbs>
 			<li>
@@ -393,13 +393,13 @@
 				<li>
 					<def>RangedStab</def>
 					<amount>10</amount>
-					<armorPenetration>0.38</armorPenetration>
+					<armorPenetration>0.07</armorPenetration>
 					<chance>0.35</chance>
 				</li>
 				<li>
 					<def>Blunt</def>
 					<amount>10</amount>
-					<armorPenetration>0.38</armorPenetration>
+					<armorPenetration>0.07</armorPenetration>
 					<chance>0.35</chance>
 				</li>
 			</extraDamages>

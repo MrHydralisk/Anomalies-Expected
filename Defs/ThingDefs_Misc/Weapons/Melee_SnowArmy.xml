@@ -85,7 +85,7 @@
 				</capacities>
 				<power>12</power>
 				<cooldownTime>3</cooldownTime>
-				<chanceFactor>0.4</chanceFactor>
+				<chanceFactor>0.2</chanceFactor>
 			</li>
 			<li>
 				<label>point</label>
@@ -94,7 +94,7 @@
 				</capacities>
 				<power>15</power>
 				<armorPenetration>0.50</armorPenetration>
-				<cooldownTime>1.4</cooldownTime>
+				<cooldownTime>1.3</cooldownTime>
 			</li>
 		</tools>
 		<costList>

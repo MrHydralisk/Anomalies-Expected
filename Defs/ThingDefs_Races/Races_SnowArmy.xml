@@ -9,8 +9,6 @@
 			<ToxicResistance>1</ToxicResistance>
 			<EMPResistance>1</EMPResistance>
 			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
-			<ArmorRating_Sharp>1.1</ArmorRating_Sharp>
-			<ArmorRating_Blunt>0.55</ArmorRating_Blunt>
 			<ArmorRating_Heat>0</ArmorRating_Heat>
 			<PainShockThreshold>0.99</PainShockThreshold>
 			<PsychicSensitivity>0</PsychicSensitivity>
@@ -61,6 +59,8 @@
 		<description>The Snowman appears harmless and made out of few big snowballs. However, its icy snow body proves surprisingly resilient, quickly dispelling any illusions of innocence. They can attack by throwing snowballs at enemies or scratching them with their stick arms. They can survive even with substantial part of their body being missing.\n\nClassified as Class-2 (Warning) anomaly.</description>
 		<statBases>
 			<MoveSpeed>3.2</MoveSpeed>
+			<ArmorRating_Sharp>0.95</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.65</ArmorRating_Blunt>
 			<MinimumContainmentStrength>60</MinimumContainmentStrength>
 		</statBases>
 		<uiIconPath>Things/Pawn/SnowArmy/SnowMan/AE_SnowMan_A_south</uiIconPath>
@@ -202,6 +202,7 @@
 		<description>A colossal construct, serves as a mobile siege platform. Its massive snow body houses a compression chamber capable of launching cryo-explosive projectiles or emitting freezing winds. Its ability to manipulate regional temperatures and support allied units makes it a high-priority threat.\n\nClassified as Class-2 (Warning) anomaly.</description>
 		<statBases>
 			<MoveSpeed>1.6</MoveSpeed>
+			<ArmorRating_Sharp>1.1</ArmorRating_Sharp>
 			<ArmorRating_Blunt>0.7</ArmorRating_Blunt>
 			<MinimumContainmentStrength>110</MinimumContainmentStrength>
 		</statBases>
@@ -355,8 +356,8 @@
 		<description>This small arachnid made out of snow with a big ice crystall on it abdomen. They attack with their sharp legs and fangs. If they surrounded they can explode spilling nitrogen fluid. Despite its size, it swarms and disables defenses effectively.\n\nClassified as Class-2 (Warning) anomaly.</description>
 		<statBases>
 			<MoveSpeed>5.5</MoveSpeed>
-			<ArmorRating_Sharp>0.9</ArmorRating_Sharp>
-			<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.4</ArmorRating_Blunt>
 			<PsychicSensitivity>0.25</PsychicSensitivity>
 			<MinimumContainmentStrength>20</MinimumContainmentStrength>
 		</statBases>
@@ -498,6 +499,8 @@
 		<description>A segmented construct of thin ice shards, wields razor-sharp forelimbs that deliver cryogenic embrittlement. Its unique, planar design offers exceptional frontal resilience. Formed from reassembled fragments, it follows core programming, targeting organic life.\n\nClassified as Class-2 (Warning) anomaly.</description>
 		<statBases>
 			<MoveSpeed>4.9</MoveSpeed>
+			<ArmorRating_Sharp>1.1</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.55</ArmorRating_Blunt>
 			<MinimumContainmentStrength>75</MinimumContainmentStrength>
 		</statBases>
 		<uiIconPath>Things/Pawn/SnowArmy/IceMantis/AE_IceMantis_south</uiIconPath>
@@ -645,7 +648,9 @@
 		<label>ice man</label>
 		<description>A humanoid ice construct, launches icicles that can disable electronics and split in multiple fragments. It prioritizes attacking from long distance and provide support by dealing with force fields.\n\nClassified as Class-2 (Warning) anomaly.</description>
 		<statBases>
-			<MoveSpeed>3.7</MoveSpeed>
+			<MoveSpeed>2.8</MoveSpeed>
+			<ArmorRating_Sharp>1</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.3</ArmorRating_Blunt>
 			<MinimumContainmentStrength>80</MinimumContainmentStrength>
 		</statBases>
 		<uiIconPath>Things/Pawn/SnowArmy/IceMan/AE_IceMan_south</uiIconPath>

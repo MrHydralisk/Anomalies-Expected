@@ -19,7 +19,7 @@
 		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
-			<range>4.9</range>
+			<range>5.9</range>
 			<warmupTime>0.5</warmupTime>
 			<soundCast>AcidSpray_Resolve</soundCast>
 			<targetParams>
@@ -29,7 +29,7 @@
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_AbilitySpewLiquid">
 				<damageDef>AcidBurn</damageDef>
-				<damAmount>14</damAmount>
+				<damAmount>20</damAmount>
 				<armorPenetration>0.8</armorPenetration>
 				<lineWidthEnd>10</lineWidthEnd>
 				<filthDef>Filth_SpentAcid</filthDef>
@@ -78,7 +78,7 @@
 			<shadowSize>1</shadowSize>
 			<damageDef>AcidBurn</damageDef>
 			<spinRate>5</spinRate>
-			<damageAmountBase>25</damageAmountBase>
+			<damageAmountBase>35</damageAmountBase>
 			<armorPenetrationBase>0.8</armorPenetrationBase>
 			<stoppingPower>1</stoppingPower>
 			<speed>21</speed>
@@ -295,7 +295,7 @@
 		<label>throw snow block</label>
 		<description>Throw a giant snow block at a long distance target. Will explode with nitrogen after landing.</description>
 		<iconPath>Things/Projectile/AE_SnowBlock</iconPath>
-		<cooldownTicksRange>10000~20000</cooldownTicksRange>
+		<cooldownTicksRange>7000~11000</cooldownTicksRange>
 		<displayOrder>1300</displayOrder>
 		<category>AEAnomaliesExpected</category>
 		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
@@ -326,7 +326,7 @@
 		</graphicData>
 		<projectile>
 			<shadowSize>2.25</shadowSize>
-			<damageAmountBase>25</damageAmountBase>
+			<damageAmountBase>28</damageAmountBase>
 			<speed>10</speed>
 			<stoppingPower>2.5</stoppingPower>
 			<arcHeightFactor>2</arcHeightFactor>

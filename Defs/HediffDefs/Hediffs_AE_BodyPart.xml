@@ -45,7 +45,7 @@
 				<statFactors>
 					<RawNutritionFactor MayRequire="Ludeon.RimWorld.Biotech">2</RawNutritionFactor>
 				</statFactors>
-				<hungerRateFactor>1.15</hungerRateFactor>
+				<hungerRateFactor>1.1</hungerRateFactor>
 			</li>
 		</stages>
 		<addedPartProps>
