@@ -669,6 +669,8 @@
 					<min>45000</min>
 					<max>75000</max>
 				</DecelerationIntervalRange>
+				<deathDamageDef>Bomb</deathDamageDef>
+				<deathDamagePerLevel>35</deathDamagePerLevel>
 				<AccelerationHediffDef>Hediff_AEAcceleration</AccelerationHediffDef>
 				<DecelerationHediffDef>Hediff_AEDeceleration</DecelerationHediffDef>
 				<dropTexPath>UI/Icons/AE_SpeedometerDrop_Icon</dropTexPath>

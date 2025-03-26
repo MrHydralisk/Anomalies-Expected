@@ -38,7 +38,7 @@ namespace AnomaliesExpected
         {
             if (!Speedometer.DestroyedOrNull())
             {
-                GenPlace.TryPlaceThing(Speedometer, pawn.Position, pawn.Map, ThingPlaceMode.Near, null);
+                GenPlace.TryPlaceThing(Speedometer, pawn.PositionHeld, pawn.MapHeld, ThingPlaceMode.Near, null);
                 SpeedometerComp.CooldownsStart();
             }
             base.PostRemoved();
@@ -49,6 +49,13 @@ namespace AnomaliesExpected
             base.SetLevelTo(targetLevel);
             SpeedometerComp.TryUpdateUnlockedLevel(targetLevel);
             UpdateActiveTexture();
+        }
+
+        public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
+        {
+            base.Notify_PawnDied(dinfo, culprit);
+            pawn.health.RemoveHediff(this);
+            GenExplosion.DoExplosion(pawn.PositionHeld, pawn.MapHeld, Mathf.Pow(1.8f, level), SpeedometerComp.Props.deathDamageDef, Speedometer, damAmount: SpeedometerComp.Props.deathDamagePerLevel * level);
         }
 
         public override IEnumerable<Gizmo> GetGizmos()

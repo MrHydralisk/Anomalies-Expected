@@ -7,6 +7,8 @@ namespace AnomaliesExpected
     {
         public int tickPerAction = 60000;
         public IntRange DecelerationIntervalRange = new IntRange(45000, 75000);
+        public DamageDef deathDamageDef;
+        public int deathDamagePerLevel = 35;
 
         public HediffDef AccelerationHediffDef;
         public HediffDef DecelerationHediffDef;
