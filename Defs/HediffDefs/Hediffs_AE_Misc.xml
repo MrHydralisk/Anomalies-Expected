@@ -836,4 +836,23 @@
 		</stages>
 	</HediffDef>
 	
+	<HediffDef>
+		<defName>Hediff_AEChronoDestabilization</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>chrono destabilization</label>
+		<description>Destabilization of biological structure to amplify creature physical performance. The creature's life expectancy will be drastically reduced due to the mutation.</description>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>120</maxSeverity>
+		<lethalSeverity>120</lethalSeverity>
+		<isBad>true</isBad>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-1</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+		</comps>
+	</HediffDef>
+	
 </Defs>

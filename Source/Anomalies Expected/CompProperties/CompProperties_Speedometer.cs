@@ -12,6 +12,7 @@ namespace AnomaliesExpected
 
         public HediffDef AccelerationHediffDef;
         public HediffDef DecelerationHediffDef;
+        public HediffDef ChronoDestabilizationHediffDef;
 
         [NoTranslate]
         public string dropTexPath;
