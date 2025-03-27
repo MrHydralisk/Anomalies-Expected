@@ -515,7 +515,7 @@
 		<defName>Hediff_AEAcceleration</defName>
 		<hediffClass>AnomaliesExpected.Hediff_SpeedometerLevel</hediffClass>
 		<label>speedometer acceleration</label>
-		<description>The effects the fruit had on the body.\nIt appears to have made the host's thoughts sharper, making it more wise.</description>
+		<description>The implanted Speedometer accelerates all processes within the host body.</description>
 		<initialSeverity>1</initialSeverity>
 		<minSeverity>0</minSeverity>
 		<maxSeverity>6</maxSeverity>
@@ -784,7 +784,7 @@
 	<HediffDef>
 		<defName>Hediff_AEDeceleration</defName>
 		<label>speedometer deceleration</label>
-		<description>The effects the fruit had on the body.\nIt appears to have made the host's thoughts sharper, making it more wise.</description>
+		<description>Under the Speedometer's influence, the body's processes are decelerating.</description>
 		<initialSeverity>1</initialSeverity>
 		<maxSeverity>1</maxSeverity>
 		<isBad>false</isBad>
@@ -840,12 +840,11 @@
 		<defName>Hediff_AEChronoDestabilization</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>chrono destabilization</label>
-		<description>Destabilization of biological structure to amplify creature physical performance. The creature's life expectancy will be drastically reduced due to the mutation.</description>
+		<description>The Speedometer's constant influence destabilizes biological systems. This manifests as some cells speeding up dramatically, while others sluggishly decelerate.  Extended exposure is lethal.  The body recovers its normal function after the Speedometer is no longer affecting it.</description>
 		<initialSeverity>0.01</initialSeverity>
 		<maxSeverity>120</maxSeverity>
 		<lethalSeverity>120</lethalSeverity>
 		<isBad>true</isBad>
-		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>-1</severityPerDay>
