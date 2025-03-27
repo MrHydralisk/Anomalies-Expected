@@ -32,7 +32,10 @@ namespace AnomaliesExpected
             {
                 pawn.ageTracker.AgeTickMothballed(ageTicks);
             }
-            HealthUtility.AdjustSeverity(pawn, SpeedometerComp.Props.ChronoDestabilizationHediffDef, (Mathf.Pow(2, level) + 1)/60000);
+            if (pawn.ageTracker.AgeBiologicalYears >= pawn.RaceProps.lifeExpectancy || pawn.ageTracker.BiologicalTicksPerTick <= 0)
+            {
+                HealthUtility.AdjustSeverity(pawn, SpeedometerComp.Props.ChronoDestabilizationHediffDef, (Mathf.Pow(2, level) + 1) / 60000);
+            }
         }
 
         public override void PostRemoved()

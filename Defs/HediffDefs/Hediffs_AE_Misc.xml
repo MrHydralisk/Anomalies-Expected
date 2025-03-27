@@ -853,6 +853,11 @@
 				<showDaysToRecover>true</showDaysToRecover>
 			</li>
 		</comps>
+		<stages>
+			<li>
+				<lifeThreatening>true</lifeThreatening>
+			</li>
+		</stages>
 	</HediffDef>
 	
 </Defs>
