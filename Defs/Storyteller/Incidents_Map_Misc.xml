@@ -304,5 +304,33 @@
 			</li>
 		</modExtensions>
 	</IncidentDef>
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_SpeedometerSpawn</defName>
+		<label>speedometer</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingFromOrbit</workerClass>
+		<letterLabel>Found speedometer</letterLabel>
+		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a dark circular gauge with faded numbers and a thin red needle.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>120</earliestDay>
+		<baseChance>0.2</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minRefireDays>120</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableThingDefs>
+					<li>AE_Speedometer</li>
+				</DeployableThingDefs>
+				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
+				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+			</li>
+		</modExtensions>
+	</IncidentDef>
 
 </Defs>

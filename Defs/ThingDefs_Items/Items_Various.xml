@@ -608,7 +608,7 @@
 	<ThingDef>
 		<defName>AE_Speedometer</defName>
 		<label>speedometer</label>
-		<description>A normal looking notepad, its yellow pages filled with handwritten notes.\n\nYou can examine it pages.</description>
+		<description>A dark circular gauge with faded numbers marking increments up to six. A thin, red needle rests near the lower end of the scale, hinting at a mechanism designed to measure some kind of rate or velocity.</description>
 		<thingClass>AnomaliesExpected.ThingWithComps_AE</thingClass>
 		<category>Item</category>
 		<genericMarketSellable>false</genericMarketSellable>

@@ -264,4 +264,19 @@
 		</modExtensions>
 	</EntityCodexEntryDef>
 
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_Speedometer</defName>
+		<label>speedometer</label>
+		<category>Advanced</category>
+		<uiIconPath>UI/CodexEntries/AE_Speedometer</uiIconPath>
+		<useDescriptionFrom>AE_Speedometer</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_Speedometer</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_SpeedometerSpawn</li>
+		</provocationIncidents>
+		<orderInCategory>1300</orderInCategory>
+	</EntityCodexEntryDef>
+
 </Defs>
