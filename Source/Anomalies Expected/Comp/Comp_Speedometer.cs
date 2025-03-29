@@ -13,18 +13,38 @@ namespace AnomaliesExpected
         protected CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = parent.TryGetComp<CompAEStudyUnlocks>());
         private CompAEStudyUnlocks studyUnlocksCached;
 
-        public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? 2) <= 1;
+        public override bool HideInteraction => !isDeceleratedOnce;
 
         public List<Pawn> deceleratedPawns = new List<Pawn>();
         public int TickNextAction = 0;
         public int TickNextDeceleration = 0;
         public int UnlockedLevel = 1;
+        public bool isDeceleratedOnce;
+        public bool isExplodedOnce;
+        public bool isDestabilizedOnce;
 
         public override void PostPostMake()
         {
             base.PostPostMake();
             TickNextDeceleration = Find.TickManager.TicksGame + (int)Props.DecelerationIntervalRange.Average;
             parent.overrideGraphicIndex = 0;
+        }
+
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            base.PostSpawnSetup(respawningAfterLoad);
+            if (StudyUnlocks.isStudyNoteManualUnlocked(0))
+            {
+                isDeceleratedOnce = true;
+            }
+            if (StudyUnlocks.isStudyNoteManualUnlocked(7))
+            {
+                isExplodedOnce = true;
+            }
+            if (StudyUnlocks.isStudyNoteManualUnlocked(8))
+            {
+                isDestabilizedOnce = true;
+            }
         }
 
         public override void CompTick()
@@ -61,6 +81,7 @@ namespace AnomaliesExpected
             {
                 Pawn DeceleratedPawn = Rand.Element(AvailablePawns.ToArray());
                 GiveHediff(DeceleratedPawn, Props.DecelerationHediffDef);
+                Notify_Decelerated(DeceleratedPawn);
                 if (!Props.soundActivate.NullOrUndefined())
                 {
                     Props.soundActivate.PlayOneShot(SoundInfo.InMap(parent));
@@ -84,6 +105,33 @@ namespace AnomaliesExpected
             Hediff AddedHediff = HediffMaker.MakeHediff(hediffDef, pawn);
             pawn.health.AddHediff(AddedHediff);
             return AddedHediff;
+        }
+
+        public void Notify_Decelerated(Pawn pawn)
+        {
+            if (!isDeceleratedOnce)
+            {
+                StudyUnlocks.UnlockStudyNoteManual(0, pawn);
+                isDeceleratedOnce = true;
+            }
+        }
+
+        public void Notify_Exploded(Pawn pawn)
+        {
+            if (!isExplodedOnce)
+            {
+                StudyUnlocks.UnlockStudyNoteManual(7, pawn);
+                isExplodedOnce = true;
+            }
+        }
+
+        public void Notify_Destabilized(Pawn pawn)
+        {
+            if (!isDestabilizedOnce)
+            {
+                StudyUnlocks.UnlockStudyNoteManual(8, pawn);
+                isDestabilizedOnce = true;
+            }
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -153,6 +201,9 @@ namespace AnomaliesExpected
             Scribe_Values.Look(ref UnlockedLevel, "UnlockedLevel", 1);
             Scribe_Values.Look(ref TickNextAction, "TickNextAction", 0);
             Scribe_Values.Look(ref TickNextDeceleration, "TickNextDeceleration", 0);
+            Scribe_Values.Look(ref isDeceleratedOnce, "isDeceleratedOnce", false);
+            Scribe_Values.Look(ref isExplodedOnce, "isExplodedOnce", false);
+            Scribe_Values.Look(ref isDestabilizedOnce, "isDestabilizedOnce", false);
             Scribe_Collections.Look(ref deceleratedPawns, "deceleratedPawns", LookMode.Reference);
         }
     }

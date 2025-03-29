@@ -492,7 +492,7 @@
 			<averagePainPerSeverityPermanent>0</averagePainPerSeverityPermanent>
 		</injuryProps>
 	</HediffDef>
-  
+ 
 	<HediffDef ParentName="AESnowArmyBodyPart">
 		<defName>AE_IceThinBody</defName>
 		<hediffClass>HediffWithComps</hediffClass>
@@ -840,7 +840,7 @@
 		<defName>Hediff_AEChronoDestabilization</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>chrono destabilization</label>
-		<description>The Speedometer's constant influence destabilizes biological systems. This manifests as some cells speeding up dramatically, while others sluggishly decelerate.  Extended exposure is lethal.  The body recovers its normal function after the Speedometer is no longer affecting it.</description>
+		<description>The Speedometer's constant influence destabilizes biological systems. This manifests as some cells speeding up dramatically, while others sluggishly decelerate. Extended exposure is lethal. The body recovers its normal function after the Speedometer is no longer affecting it.</description>
 		<initialSeverity>0.01</initialSeverity>
 		<maxSeverity>120</maxSeverity>
 		<lethalSeverity>120</lethalSeverity>

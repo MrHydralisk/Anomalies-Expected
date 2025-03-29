@@ -690,52 +690,63 @@
 						<AnomalyLabel>speedometer</AnomalyLabel>
 						<AnomalyDesc>A normal looking notepad, its yellow pages filled with handwritten notes.\n\nYou can examine it pages to learn about the requested skill.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
 						<threshold>0.01</threshold>
-						<label>#1/1 Yellow notepad study report</label>
+						<label>#1/1 Speedometer study report</label>
 						<text>Interactive Knowledge Conduit\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nThis report details the examination of yellow notepad. The notepad, upon inputting a specific skill, dynamically generates content related to that skill. The subject who interacted with the notepad experienced a significant increase in their medical knowledge after inputting "Medical". The notepad exhibited no hostile behavior and reverted to its original state post-examination. Given its passive nature and potential for knowledge acquisition, the notepad is provisionally classified as a Class-0 (Safe) anomaly. Further research is recommended to fully understand its capabilities and limitations.\n\nObservations:\nUpon initial examination, {PAWN_nameDef} observed a notepad containing numerous pages filled with research notes on diverse topics.\nSubject reported noticing a field on each page for inputting a specific "Skill".\n{PAWN_nameDef} was instructed to input the "Medical" into this field.\nSubsequently, the content on subsequent pages transformed to focus on medical topics.\nUpon examining this pages, Subject reported that text dissapeared from them.\n\nOutcome:\nThroughout the examination, the notepad displayed no hostile.\nFollowing the examination, all pages within the notepad reverted to a blank state. Additionally {PAWN_nameDef} experienced an improvement in their medical skills.\n\nDiscussion:\nIt appears that the quantity of experience gained by the Subject is correlated with the number of pages that manifested within the notepad. \nGiven the absence of hostile behavior, the notepad has been temporary classified as Class-0 (Safe) anomaly.\n\nRecommendations:\nContinued research and utilization of notepad is required to further investigate its anomalous properties and explore potential applications.</text>
-					</li>
-					<li Class="AnomaliesExpected.AEStudyNote">
-						<AnomalyLabel>speedometer</AnomalyLabel>
-						<AnomalyDesc>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
-						<threshold>2</threshold>
-						<label>#0/6 Christmas tree study report</label>
-						<text>Giant Tree</text>
 					</li>
 				</studyNotes>				
 				<studyNotesManualUnlockable>
 					<li Class="AnomaliesExpected.AEStudyNote">
 						<AnomalyLabel>speedometer</AnomalyLabel>
 						<AnomalyDesc>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
-						<label>#1/6 Christmas tree study report</label>
+						<label>[0]</label>
 						<text>Giant Tree</text>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
 						<AnomalyLabel>speedometer</AnomalyLabel>
 						<AnomalyDesc>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
-						<label>#2/6 Christmas tree study report</label>
+						<label>#1/6 Speedometer study report</label>
 						<text>Giant Tree</text>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
 						<AnomalyLabel>speedometer</AnomalyLabel>
 						<AnomalyDesc>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
-						<label>#3/6 Christmas tree study report</label>
+						<label>#2/6 Speedometer study report</label>
 						<text>Giant Tree</text>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
 						<AnomalyLabel>speedometer</AnomalyLabel>
 						<AnomalyDesc>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
-						<label>#4/6 Christmas tree study report</label>
+						<label>#3/6 Speedometer study report</label>
 						<text>Giant Tree</text>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
 						<AnomalyLabel>speedometer</AnomalyLabel>
 						<AnomalyDesc>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
-						<label>#5/6 Christmas tree study report</label>
+						<label>#4/6 Speedometer study report</label>
 						<text>Giant Tree</text>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
 						<AnomalyLabel>speedometer</AnomalyLabel>
 						<AnomalyDesc>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
-						<label>#6/6 Christmas tree study report</label>
+						<label>#5/6 Speedometer study report</label>
+						<text>Giant Tree</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>speedometer</AnomalyLabel>
+						<AnomalyDesc>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<label>#6/6 Speedometer study report</label>
+						<text>Giant Tree</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>speedometer</AnomalyLabel>
+						<AnomalyDesc>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<label>[7]</label>
+						<text>Giant Tree</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>speedometer</AnomalyLabel>
+						<AnomalyDesc>Giant fresh Christmas tree with some Christmas toys on it and some snow on it.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<label>[8]</label>
 						<text>Giant Tree</text>
 					</li>
 				</studyNotesManualUnlockable>

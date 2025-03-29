@@ -35,6 +35,7 @@ namespace AnomaliesExpected
             if (pawn.ageTracker.AgeBiologicalYears >= pawn.RaceProps.lifeExpectancy || pawn.ageTracker.BiologicalTicksPerTick <= 0)
             {
                 HealthUtility.AdjustSeverity(pawn, SpeedometerComp.Props.ChronoDestabilizationHediffDef, (Mathf.Pow(2, level) + 1) / 60000);
+                SpeedometerComp.Notify_Destabilized(pawn);
             }
         }
 
@@ -60,6 +61,7 @@ namespace AnomaliesExpected
             base.Notify_PawnDied(dinfo, culprit);
             pawn.health.RemoveHediff(this);
             GenExplosion.DoExplosion(pawn.PositionHeld, pawn.MapHeld, Mathf.Pow(1.8f, level), SpeedometerComp.Props.deathDamageDef, Speedometer, damAmount: SpeedometerComp.Props.deathDamagePerLevel * level);
+            SpeedometerComp.Notify_Exploded(pawn);
         }
 
         public override IEnumerable<Gizmo> GetGizmos()

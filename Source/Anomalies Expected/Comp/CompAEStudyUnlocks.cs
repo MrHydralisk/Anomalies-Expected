@@ -178,6 +178,24 @@ namespace AnomaliesExpected
             }
         }
 
+        public void UnlockStudyNoteManual(int index, Pawn studier)
+        {
+            UnlockStudyNoteManual(index, studier?.Name?.ToStringShort ?? "AnomaliesExpected.Misc.Redacted".Translate());
+        }
+
+        public bool isStudyNoteManualUnlocked(int index)
+        {
+            if (Props is CompProperties_AEStudyUnlocks aeProps)
+            {
+                StudyNote studyNote = aeProps.studyNotesManualUnlockable.ElementAtOrDefault(index);
+                if (studyNote != null && letters.Any((ChoiceLetter cl) => cl.Label == studyNote.label))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public void RegisterPawnStudyLevel(Pawn studier, int i, AEStudyNote aEStudyNote)
         {
             if (NextPawnSNIndex <= i)
