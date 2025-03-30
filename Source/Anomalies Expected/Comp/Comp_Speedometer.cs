@@ -56,11 +56,11 @@ namespace AnomaliesExpected
             }
         }
 
-        public void TryUpdateUnlockedLevel(int targetLevel)
+        public void TryUpdateUnlockedLevel(int targetLevel, Pawn carrier)
         {
             if (UnlockedLevel == targetLevel && targetLevel > 0 && targetLevel < 7)
             {
-                StudyUnlocks.UnlockStudyNoteManual(targetLevel - 1);
+                StudyUnlocks.UnlockStudyNoteManual(targetLevel - 1, carrier);
             }
             UnlockedLevel = Mathf.Max(UnlockedLevel, targetLevel + 1);
             parent.overrideGraphicIndex = targetLevel;

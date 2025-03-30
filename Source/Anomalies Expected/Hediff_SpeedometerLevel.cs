@@ -52,7 +52,7 @@ namespace AnomaliesExpected
         public override void SetLevelTo(int targetLevel)
         {
             base.SetLevelTo(targetLevel);
-            SpeedometerComp.TryUpdateUnlockedLevel(targetLevel);
+            SpeedometerComp.TryUpdateUnlockedLevel(targetLevel, pawn);
             UpdateActiveTexture();
         }
 
