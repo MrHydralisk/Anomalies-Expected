@@ -49,5 +49,16 @@
 	<AE_IceThinBody.label>отражающий лёд</AE_IceThinBody.label>
 	<AE_IceThinBody.description>Эта структура из тонких ледяных осколков имеет высокий шанс отражение входящих атак. Снижает получаемый фронтальный и тыловой урон, но увеличивает урон с боков.</AE_IceThinBody.description>
 	<AE_IceThinBody.labelNoun>отражающий лёд</AE_IceThinBody.labelNoun>
+	
+	
+	
+	<Hediff_AEAcceleration.label>ускорение спидометра</Hediff_AEAcceleration.label>
+	<Hediff_AEAcceleration.description>Имплантированный Спидометр ускоряет все процессы в организме носителя.</Hediff_AEAcceleration.description>
+
+	<Hediff_AEDeceleration.label>замедление спидометра</Hediff_AEDeceleration.label>
+	<Hediff_AEDeceleration.description>Под воздействием Спидометра процессы в организме замедляются.</Hediff_AEDeceleration.description>
+
+	<Hediff_AEChronoDestabilization.label>хронодестабилизация</Hediff_AEChronoDestabilization.label>
+	<Hediff_AEChronoDestabilization.description>Постоянное воздействие Спидометра дестабилизирует биологические системы. Это проявляется в том, что некоторые клетки резко ускоряются, в то время как другие значительно замедляются. Длительное воздействие смертельно. После прекращения влияния Спидометра организм восстанавливает свои нормальные функции.</Hediff_AEChronoDestabilization.description>
   
 </LanguageData>
