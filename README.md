@@ -25,6 +25,7 @@ While usually I try to explain in mod description how mod content work in detail
 ![Text](/Mod%20Page/Images/Content/AEDesc10.png)
 ![Text](/Mod%20Page/Images/Content/AEDesc11.png)
 ![Text](/Mod%20Page/Images/Content/AEDesc12.png)
+![Text](/Mod%20Page/Images/Content/AEDesc13.png)
 
 Anomalies Classification:
 * Class 0 anomaly "Safe".
@@ -35,7 +36,7 @@ Anomalies Classification:
 
 Currently available:
 * 6 Anomaly of basic category
-* 6 Anomaly of advanced category
+* 7 Anomaly of advanced category
 
 ## Links
 
