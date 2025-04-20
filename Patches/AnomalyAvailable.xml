@@ -947,6 +947,32 @@
 						<li>AE_EntityDatabase</li>
 					</value>
 				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="PsychicRitualSpot"]/comps/li[@Class="CompProperties_MeditationFocus"]/offsets</xpath>
+					<order>Append</order>
+					<value>
+						<li Class="FocusStrengthOffset_BuildingDefs">
+							<defs>
+								<li>AE_ProviderBox</li>
+							</defs>
+							<offsetPerBuilding>0.03</offsetPerBuilding>
+							<radius>9.9</radius>
+							<maxBuildings>1</maxBuildings>
+							<explanationKey>MeditationFocusPerBuilding</explanationKey>
+							<explanationKeyAbstract>MeditationFocusPerBuildingAbstract</explanationKeyAbstract>
+						</li>
+						<li Class="FocusStrengthOffset_BuildingDefs">
+							<defs>
+								<li>AE_EntityDatabase</li>
+							</defs>
+							<offsetPerBuilding>0.06</offsetPerBuilding>
+							<radius>9.9</radius>
+							<maxBuildings>1</maxBuildings>
+							<explanationKey>MeditationFocusPerBuilding</explanationKey>
+							<explanationKeyAbstract>MeditationFocusPerBuildingAbstract</explanationKeyAbstract>
+						</li>
+					</value>
+				</li>
 			</operations>
 		</match>
 	</Operation>
