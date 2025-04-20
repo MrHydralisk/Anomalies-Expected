@@ -1441,35 +1441,8 @@
 			<Shard>1</Shard>
 		</killedLeavings>
 		<comps>
-			<!-- <li Class="AnomaliesExpected.CompProperties_MeatGrinder"> -->
-				<!-- <activeTicks>250</activeTicks> -->
-				<!-- <cooldownTicks>10000</cooldownTicks> -->
-				<!-- <ticksToActivate>250</ticksToActivate> -->
-				<!-- <activateTexPath>Things/Building/AE_MeatGrinder</activateTexPath> -->
- 
-				<!-- <activateLabelString>Press button</activateLabelString> -->
-				<!-- <activateDescString>Press button to activate machine.</activateDescString> -->
-				<!-- <guiLabelString>Choose who should activate this.</guiLabelString> -->
-				<!-- <jobString>press button</jobString> -->
-				<!-- <activatingStringPending>pressing button {0}</activatingStringPending> -->
-				<!-- <activatingString>pressing button {0}: {1}s</activatingString> -->
-				<!-- <onCooldownString>reactivating</onCooldownString> -->
-
-				<!-- <fleckOnUsed>PsycastAreaEffect</fleckOnUsed> -->
-				<!-- <fleckOnUsedScale>4</fleckOnUsedScale> -->
-				<!-- <soundActivate>FlickSwitch</soundActivate> -->
-				<!-- <soundConsume>AE_ButcherCorpseFlesh</soundConsume> -->
-
-				<!-- <targetingParameters> -->
-					<!-- <canTargetBuildings>false</canTargetBuildings> -->
-					<!-- <canTargetAnimals>false</canTargetAnimals> -->
-					<!-- <canTargetMechs>false</canTargetMechs> -->
-					<!-- <onlyTargetControlledPawns>true</onlyTargetControlledPawns> -->
-				<!-- </targetingParameters> -->
-				
-				<!-- <jobDef>AE_CalledMeatGrinder</jobDef> -->
-				<!-- <thoughtDefNoise>Thought_AEMeatGrinderNoise</thoughtDefNoise> -->
-			<!-- </li> -->
+			<li Class="AnomaliesExpected.CompProperties_EntityDatabaseAnomaly">
+			</li>
 			<li Class="CompProperties_Studiable">
 				<compClass>AnomaliesExpected.CompStudiableAE</compClass>
 				<frequencyTicks>120000</frequencyTicks>

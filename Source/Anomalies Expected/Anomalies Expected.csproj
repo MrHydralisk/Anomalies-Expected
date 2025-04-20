@@ -38,6 +38,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AEDebugTools.cs" />
+    <Compile Include="CompProperties\CompProperties_EntityDatabaseAnomaly.cs" />
+    <Compile Include="Comp\Comp_EntityDatabaseAnomaly.cs" />
     <Compile Include="Comp\Comp_EntityDataBaseAccess.cs" />
     <Compile Include="Comp\HediffComp\HediffComp_FreezingFragile.cs" />
     <Compile Include="Comp\HediffComp\HediffComp_IceThinBody.cs" />
