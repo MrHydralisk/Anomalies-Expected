@@ -76,9 +76,10 @@ namespace AnomaliesExpected
             }
         }
 
-        //public override void PostExposeData()
-        //{
-        //}
+        public override void PostExposeData()
+        {
+            Scribe_Defs.Look(ref selectedIncidentDef, "selectedIncidentDef");
+        }
 
         //public override string CompInspectStringExtra()
         //{

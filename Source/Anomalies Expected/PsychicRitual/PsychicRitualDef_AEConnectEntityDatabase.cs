@@ -9,40 +9,37 @@ namespace AnomaliesExpected
 {
     public class PsychicRitualDef_AEConnectEntityDatabase : PsychicRitualDef_VoidProvocation
     {
-        //public ThingDef ProviderBoxDef;
-        //public float MaxWealth;
-        //public ResearchProjectDef researchProjectDef;
-        //public float maxResearchMult;
-        //public List<Vector2> multFromQuality = new List<Vector2>();
-        //private Building_Storage ProviderBox;
-
-
-        //private static Dictionary<PsychicRitualRoleDef, List<IntVec3>> tmpParticipants = new Dictionary<PsychicRitualRoleDef, List<IntVec3>>(8);
+        public ThingDef EntityDatabaseAnomalyDef;
+        private Comp_EntityDatabaseAnomaly EntityDatabaseComp;
 
         public override List<PsychicRitualToil> CreateToils(PsychicRitual psychicRitual, PsychicRitualGraph graph)
         {
             List<PsychicRitualToil> list = base.CreateToils(psychicRitual, graph);
-            list.Replace(list.FirstOrDefault((PsychicRitualToil prt) => prt is PsychicRitualToil_VoidProvocation), new PsychicRitualToil_AEConnectEntityDatabase(InvokerRole, psychicShockChanceFromQualityCurve));
+            list.Replace(list.FirstOrDefault((PsychicRitualToil prt) => prt is PsychicRitualToil_VoidProvocation), new PsychicRitualToil_AEConnectEntityDatabase(InvokerRole, psychicShockChanceFromQualityCurve)
+            {
+                selectedIncidentDef = EntityDatabaseComp.selectedIncidentDef
+            });
             return list;
         }
 
-        //public override IEnumerable<string> BlockingIssues(PsychicRitualRoleAssignments assignments, Map map)
-        //{
-        //    foreach (string item in base.BlockingIssues(assignments, map))
-        //    {
-        //        yield return item;
-        //    }
-        //    CompAffectedByFacilities compAffectedByFacilities = (assignments.Target.Thing as ThingWithComps).GetComp<CompAffectedByFacilities>();
-        //    ProviderBox = compAffectedByFacilities.LinkedFacilitiesListForReading.FirstOrDefault((Thing t) => t.def == ProviderBoxDef) as Building_Storage;
-        //    if (ProviderBox == null)
-        //    {
-        //        yield return "AnomaliesExpected.ProviderScripture.Ritual.MissingTheBox".Translate();
-        //    }
-        //    if (ProviderBox.slotGroup.HeldThings.EnumerableNullOrEmpty())
-        //    {
-        //        yield return "AnomaliesExpected.ProviderScripture.Ritual.BoxEmpty".Translate();
-        //    }
-        //}
+        public override IEnumerable<string> BlockingIssues(PsychicRitualRoleAssignments assignments, Map map)
+        {
+            foreach (string item in base.BlockingIssues(assignments, map))
+            {
+                yield return item;
+            }
+            CompAffectedByFacilities compAffectedByFacilities = (assignments.Target.Thing as ThingWithComps).GetComp<CompAffectedByFacilities>();
+            Thing EntityDatabaseAnomaly = compAffectedByFacilities.LinkedFacilitiesListForReading.FirstOrDefault((Thing t) => t.def == EntityDatabaseAnomalyDef);
+            EntityDatabaseComp = EntityDatabaseAnomaly?.TryGetComp<Comp_EntityDatabaseAnomaly>();
+            if (EntityDatabaseComp == null)
+            {
+                yield return "AnomaliesExpected.ProviderScripture.Ritual.MissingTheBox".Translate();
+            }
+            if (EntityDatabaseComp.selectedIncidentDef == null)
+            {
+                yield return "AnomaliesExpected.ProviderScripture.Ritual.BoxEmpty".Translate();
+            }
+        }
 
         //public override TaggedString OutcomeDescription(FloatRange qualityRange, string qualityNumber, PsychicRitualRoleAssignments assignments)
         //{

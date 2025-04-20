@@ -121,8 +121,10 @@
 			<!-- </filter> -->
 			<!-- <count>30</count> -->
 		<!-- </requiredOffering> -->
-		<cooldownHours>96</cooldownHours>
+		<!-- <cooldownHours>96</cooldownHours> -->
+		<cooldownHours>1</cooldownHours>
 		<chanterRole>ChanterAdvanced</chanterRole>
+		<EntityDatabaseAnomalyDef>AE_EntityDatabase</EntityDatabaseAnomalyDef>
 	</AnomaliesExpected.PsychicRitualDef_AEConnectEntityDatabase>
 
 </Defs>
