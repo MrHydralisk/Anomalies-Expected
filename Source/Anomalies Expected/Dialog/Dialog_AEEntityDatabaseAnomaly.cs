@@ -66,27 +66,25 @@ namespace AnomaliesExpected
             Rect viewRect = new Rect(0f, 0f, rect.width - 16f, ScrollHeight);
             Widgets.BeginScrollView(rect, ref ScrollPos, viewRect);
             float num = 0f;
-            Text.Anchor = TextAnchor.MiddleCenter;
             foreach (EntityCodexEntryDef entityCodexEntryDef in DefDatabase<EntityCodexEntryDef>.AllDefs)
             {
-                Rect rect2 = new Rect(0, num, EntrySize, EntrySize);
+                Rect rect2 = new Rect(0, num, viewRect.width, EntrySize);
                 DrawEntry(rect2, entityCodexEntryDef);
                 num += EntryGap + EntrySize;
             }
             ScrollHeight = num;
-            Text.Anchor = TextAnchor.UpperLeft;
             Widgets.EndScrollView();
         }
 
         private void DrawEntry(Rect rect, EntityCodexEntryDef entry)
         {
             Widgets.DrawOptionBackground(rect, entry.provocationIncidents.Contains(entityDatabaseAnomaly.selectedIncidentDef));
-            Rect rect1 = new Rect(rect);
+            Rect rect1 = new Rect(rect.x, rect.y, EntrySize, EntrySize);
             Texture2D uiIcon;
             Color colorTMP = GUI.color;
             if (entry.Discovered)
             {
-                uiIcon = entry.icon; ;
+                uiIcon = entry.icon;
             }
             else
             {
@@ -94,6 +92,10 @@ namespace AnomaliesExpected
             }
             GUI.DrawTexture(rect1.ContractedBy(2f), uiIcon);
             GUI.color = colorTMP;
+            using (new TextBlock(GameFont.Medium))
+            {
+                Widgets.Label(new Rect(rect.x + EntrySize + 4, rect.y, rect.width - EntrySize - 4, HeaderHeight), entry.LabelCap);
+            }
             //if (entry.letters.Count() > 0)
             //{
             //    GUI.DrawTexture(new Rect(rect.x + rect.width - 20, rect.y - 1, 18, 18), TexButton.CategorizedResourceReadout);
