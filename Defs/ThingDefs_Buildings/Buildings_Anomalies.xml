@@ -1395,4 +1395,145 @@
 		</comps>
 	</ThingDef>
 	
+	
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>AE_EntityDatabase</defName>
+		<label>Ancient Database</label>
+		<description>...</description>
+		<thingClass>AnomaliesExpected.Building_AE</thingClass>
+		<graphicData>
+			<texPath>UI/Buttons/AEEntityDB</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shadowData>
+				<volume>(0.72, 0.2, 0.68)</volume>
+				<offset>(0,0,-0.01)</offset>
+			</shadowData>
+		</graphicData>
+		<fillPercent>0.20</fillPercent>
+		<canOverlapZones>false</canOverlapZones>
+		<minifiedDef>MinifiedThingAE</minifiedDef>
+		<thingCategories>
+			<li>BuildingsMisc</li>
+		</thingCategories>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<altitudeLayer>Building</altitudeLayer>
+		<useHitPoints>false</useHitPoints>
+		<rotatable>false</rotatable>
+		<statBases>
+			<Mass>15</Mass>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Cleanliness>0</Cleanliness>
+		</statBases>
+		<building>
+			<deconstructible>false</deconstructible>
+			<uninstallWork>2500</uninstallWork>
+		</building>
+		<holdsRoof>true</holdsRoof>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<tickerType>Normal</tickerType>
+		<designationCategory/>
+		<killedLeavings>
+			<Bioferrite>75</Bioferrite>
+			<ComponentSpacer>3</ComponentSpacer>
+			<Shard>1</Shard>
+		</killedLeavings>
+		<comps>
+			<!-- <li Class="AnomaliesExpected.CompProperties_MeatGrinder"> -->
+				<!-- <activeTicks>250</activeTicks> -->
+				<!-- <cooldownTicks>10000</cooldownTicks> -->
+				<!-- <ticksToActivate>250</ticksToActivate> -->
+				<!-- <activateTexPath>Things/Building/AE_MeatGrinder</activateTexPath> -->
+ 
+				<!-- <activateLabelString>Press button</activateLabelString> -->
+				<!-- <activateDescString>Press button to activate machine.</activateDescString> -->
+				<!-- <guiLabelString>Choose who should activate this.</guiLabelString> -->
+				<!-- <jobString>press button</jobString> -->
+				<!-- <activatingStringPending>pressing button {0}</activatingStringPending> -->
+				<!-- <activatingString>pressing button {0}: {1}s</activatingString> -->
+				<!-- <onCooldownString>reactivating</onCooldownString> -->
+
+				<!-- <fleckOnUsed>PsycastAreaEffect</fleckOnUsed> -->
+				<!-- <fleckOnUsedScale>4</fleckOnUsedScale> -->
+				<!-- <soundActivate>FlickSwitch</soundActivate> -->
+				<!-- <soundConsume>AE_ButcherCorpseFlesh</soundConsume> -->
+
+				<!-- <targetingParameters> -->
+					<!-- <canTargetBuildings>false</canTargetBuildings> -->
+					<!-- <canTargetAnimals>false</canTargetAnimals> -->
+					<!-- <canTargetMechs>false</canTargetMechs> -->
+					<!-- <onlyTargetControlledPawns>true</onlyTargetControlledPawns> -->
+				<!-- </targetingParameters> -->
+				
+				<!-- <jobDef>AE_CalledMeatGrinder</jobDef> -->
+				<!-- <thoughtDefNoise>Thought_AEMeatGrinderNoise</thoughtDefNoise> -->
+			<!-- </li> -->
+			<li Class="CompProperties_Studiable">
+				<compClass>AnomaliesExpected.CompStudiableAE</compClass>
+				<frequencyTicks>120000</frequencyTicks>
+				<knowledgeCategory>Advanced</knowledgeCategory>
+				<anomalyKnowledge>1</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<showToggleGizmo>true</showToggleGizmo>
+			</li>
+			<li Class="CompProperties_StudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotes>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>Ancient Database</AnomalyLabel>
+						<AnomalyDesc>...\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>0.01</threshold>
+						<label>#1/2 Ancient Database study report</label>
+						<text>Init. Decryption.</text>
+						<ThreatClass>0</ThreatClass>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>Entity Database</AnomalyLabel>
+						<AnomalyDesc>...\n\nClassified as Class-2 (Warning) anomaly.</AnomalyDesc>
+						<threshold>2</threshold>
+						<label>#2/2 Ancient Database study report</label>
+						<text>Entity info. </text>
+						<ThreatClass>2</ThreatClass>
+						<isSyncWithDB>true</isSyncWithDB>
+						<!-- <ThingDefSpawn>AE_ResearchNotesMGA</ThingDefSpawn> -->
+					</li>
+				</studyNotes>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_CanDestroyedAfterStudy">
+				<ticksToActivate>60000</ticksToActivate>
+				<maintainProgress>true</maintainProgress>
+				<activateTexPath>UI/Designators/Deconstruct</activateTexPath>
+ 
+				<activateLabelString>Deconstruct</activateLabelString>
+				<activateDescString>Deconstruct and fully disassemble. [Will destroy it]</activateDescString>
+				<guiLabelString>Choose who should deconstruct this.</guiLabelString>
+				<jobString>deconstruct</jobString>
+				<activatingStringPending>deconstructing {0}</activatingStringPending>
+				<activatingString>deconstructing {0}: {1}s</activatingString>
+				<interactionProgressString>Deconstructing</interactionProgressString>
+
+				<soundActivate>Building_Deconstructed</soundActivate>
+				<interactionEffecter>ConstructMetal</interactionEffecter>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<jobDef>AE_RemoveAnomaly</jobDef>
+				<minStudy>2</minStudy>
+				
+				<DestroyMode>2</DestroyMode>
+			</li>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_StudyNotes</li>
+		</inspectorTabs>
+	</ThingDef>
+	
 </Defs>
