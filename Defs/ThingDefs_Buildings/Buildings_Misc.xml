@@ -198,6 +198,7 @@
 		<tickerType>Normal</tickerType>
 	</ThingDef>
 	
+	
 	<ThingDef ParentName="BuildingBase">
 		<defName>AE_AtmosphericCooler</defName>
 		<label>atmospheric cooler</label>

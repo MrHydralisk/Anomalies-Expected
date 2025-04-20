@@ -1442,6 +1442,10 @@
 		</killedLeavings>
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_EntityDatabaseAnomaly">
+				<incidentActiveDelayHoursRange>1~3</incidentActiveDelayHoursRange>
+				<soundActivate>FlickSwitch</soundActivate>
+				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
+				<fleckOnUsedScale>1.5</fleckOnUsedScale>
 			</li>
 			<li Class="CompProperties_Studiable">
 				<compClass>AnomaliesExpected.CompStudiableAE</compClass>
@@ -1468,7 +1472,7 @@
 						<AnomalyDesc>...\n\nClassified as Class-2 (Warning) anomaly.</AnomalyDesc>
 						<threshold>2</threshold>
 						<label>#2/2 Ancient Database study report</label>
-						<text>Entity info. </text>
+						<text>Entity info.</text>
 						<ThreatClass>2</ThreatClass>
 						<isSyncWithDB>true</isSyncWithDB>
 						<!-- <ThingDefSpawn>AE_ResearchNotesMGA</ThingDefSpawn> -->
@@ -1502,6 +1506,24 @@
 				<minStudy>2</minStudy>
 				
 				<DestroyMode>2</DestroyMode>
+			</li>
+			<li Class="CompProperties_Activity">
+				<startingRange>0~0.5</startingRange>
+				<changePerDayBase>0.25</changePerDayBase>
+				<changePerDamage>0.001</changePerDamage>
+				<warning>0.9</warning>
+				<workerClass>ActivityWorker</workerClass>
+				<activityResearchFactorCurve>
+					<points>
+						<li>0, 0.5</li>
+						<li>0.5, 1</li>
+						<li>0.99, 2</li>
+					</points>
+				</activityResearchFactorCurve>
+				<showLetterOnActivated>true</showLetterOnActivated>
+				<letterDef>NegativeEvent</letterDef>
+				<letterTitle>Ancient Database Activated</letterTitle>
+				<letterDesc></letterDesc>
 			</li>
 			<li Class="CompProperties_Facility">
 				<maxSimultaneous>1</maxSimultaneous>
