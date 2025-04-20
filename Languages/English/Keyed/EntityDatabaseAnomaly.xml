@@ -2,5 +2,6 @@
 <LanguageData>
 	
 	<AnomaliesExpected.EntityDatabaseAnomaly.Active>{0} emitted a psychic pulse of strength {1}</AnomaliesExpected.EntityDatabaseAnomaly.Active>
+	<AnomaliesExpected.EntityDatabaseAnomaly.Desc>All entities available in {0}</AnomaliesExpected.EntityDatabaseAnomaly.Desc>
 	
 </LanguageData>

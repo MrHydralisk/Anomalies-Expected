@@ -45,7 +45,8 @@
     <Compile Include="Comp\HediffComp\HediffComp_IceThinBody.cs" />
     <Compile Include="DamageWorker\DamageWorker_FreezingFragile.cs" />
     <Compile Include="DefModExtension\EntityCodexEntryDefExtension.cs" />
-    <Compile Include="Dialog_AEEntityDB.cs" />
+    <Compile Include="Dialog\Dialog_AEEntityDatabaseAnomaly.cs" />
+    <Compile Include="Dialog\Dialog_AEEntityDB.cs" />
     <Compile Include="GameComponent_AnomaliesExpected.cs" />
     <Compile Include="Alert_ChristmasTreeUnstable.cs" />
     <Compile Include="Building\Building_AEChristmasGiftBox.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="PsychicRitual\PsychicRitualDef_AESummonSnowArmy.cs" />
     <Compile Include="PsychicRitual\PsychicRitualToil_AEConnectEntityDatabase.cs" />
     <Compile Include="PsychicRitual\PsychicRitualToil_AESummonSnowArmy.cs" />
+    <Compile Include="Structures\AEEntityIncidents.cs" />
     <Compile Include="Structures\AssaultSummonPattern.cs" />
     <Compile Include="Structures\Enum\BeamTargetState.cs" />
     <Compile Include="Structures\AEEntityEntry.cs" />

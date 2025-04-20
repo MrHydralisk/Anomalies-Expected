@@ -14,6 +14,31 @@ namespace AnomaliesExpected
         public IncidentDef selectedIncidentDef;
         private float activityOnPassive;
 
+        //public List<AEEntityIncidents> entityIncidents
+        //{
+        //    get
+        //    {
+        //        if (entityIncidentsCached.NullOrEmpty() || entityIncidentsCachedTick != Find.TickManager.TicksGame)
+        //        {
+        //            entityIncidentsCached = new List<AEEntityIncidents>();
+        //            foreach (EntityCodexEntryDef entityCodexEntryDef in DefDatabase<EntityCodexEntryDef>.AllDefs)
+        //            {
+        //                if (!entityCodexEntryDef.provocationIncidents.NullOrEmpty())
+        //                {
+        //                    entityIncidentsCached.Add(new AEEntityIncidents(entityCodexEntryDef, entityCodexEntryDef.))
+        //                }
+
+        //            }
+        //            entityIncidentsCachedTick = Find.TickManager.TicksGame;
+        //        }
+        //        return entityIncidentsCached;
+        //    }
+        //}
+        //private List<AEEntityIncidents> entityIncidentsCached = new List<AEEntityIncidents>();
+        //private int entityIncidentsCachedTick;
+
+        //public void
+
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             foreach (Gizmo gizmo in base.CompGetGizmosExtra())
@@ -72,6 +97,7 @@ namespace AnomaliesExpected
                 {
                     action = delegate
                     {
+                        Find.WindowStack.Add(new Dialog_AEEntityDatabaseAnomaly(this));
                     },
                     defaultLabel = "Dev: ",
                     defaultDesc = ""
