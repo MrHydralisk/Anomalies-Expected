@@ -1462,7 +1462,7 @@
 						<AnomalyLabel>Ancient Database</AnomalyLabel>
 						<AnomalyDesc>...\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
 						<threshold>0.01</threshold>
-						<label>#1/2 Ancient Database study report</label>
+						<label>#1/3 Ancient Database study report</label>
 						<text>Init. Decryption.</text>
 						<ThreatClass>0</ThreatClass>
 						<isSyncWithDB>true</isSyncWithDB>
@@ -1471,11 +1471,17 @@
 						<AnomalyLabel>Entity Database</AnomalyLabel>
 						<AnomalyDesc>...\n\nClassified as Class-2 (Warning) anomaly.</AnomalyDesc>
 						<threshold>2</threshold>
-						<label>#2/2 Ancient Database study report</label>
+						<label>#2/3 Ancient Database study report</label>
 						<text>Entity info.</text>
 						<ThreatClass>2</ThreatClass>
 						<isSyncWithDB>true</isSyncWithDB>
 						<!-- <ThingDefSpawn>AE_ResearchNotesMGA</ThingDefSpawn> -->
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>30</threshold>
+						<label>#3/3 Ancient Database study report</label>
+						<text>Deconstruct.</text>
+						<isSyncWithDB>true</isSyncWithDB>
 					</li>
 				</studyNotes>
 			</li>
@@ -1503,7 +1509,7 @@
 				</targetingParameters>
 				
 				<jobDef>AE_RemoveAnomaly</jobDef>
-				<minStudy>2</minStudy>
+				<minStudy>3</minStudy>
 				
 				<DestroyMode>2</DestroyMode>
 			</li>
@@ -1520,10 +1526,6 @@
 						<li>0.99, 2</li>
 					</points>
 				</activityResearchFactorCurve>
-				<showLetterOnActivated>true</showLetterOnActivated>
-				<letterDef>NegativeEvent</letterDef>
-				<letterTitle>Ancient Database Activated</letterTitle>
-				<letterDesc></letterDesc>
 			</li>
 			<li Class="CompProperties_Facility">
 				<maxSimultaneous>1</maxSimultaneous>
