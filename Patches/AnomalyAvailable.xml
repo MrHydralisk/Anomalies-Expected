@@ -944,6 +944,7 @@
 					<order>Append</order>
 					<value>
 						<li>AE_ProviderBox</li>
+						<li>AE_EntityDatabase</li>
 					</value>
 				</li>
 			</operations>

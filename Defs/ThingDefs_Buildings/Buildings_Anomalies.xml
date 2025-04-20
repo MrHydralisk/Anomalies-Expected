@@ -1503,6 +1503,13 @@
 				
 				<DestroyMode>2</DestroyMode>
 			</li>
+			<li Class="CompProperties_Facility">
+				<maxSimultaneous>1</maxSimultaneous>
+				<maxDistance>10</maxDistance>
+				<statOffsets>
+					<PsychicRitualQuality>0.05</PsychicRitualQuality>
+				</statOffsets>
+			</li>
 		</comps>
 		<inspectorTabs>
 			<li>ITab_StudyNotes</li>
