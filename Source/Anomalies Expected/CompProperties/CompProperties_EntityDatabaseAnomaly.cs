@@ -11,6 +11,8 @@ namespace AnomaliesExpected
         public FleckDef fleckOnUsed;
         public float fleckOnUsedScale;
         public List<EntityCodexEntryDef> entityCodexEntryDefsBlacklist = new List<EntityCodexEntryDef>();
+        [NoTranslate]
+        public string activateTexPath;
 
         public CompProperties_EntityDatabaseAnomaly()
         {

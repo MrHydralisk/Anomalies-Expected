@@ -12,6 +12,7 @@ namespace AnomaliesExpected
     {
         public CompProperties_EntityDatabaseAnomaly Props => (CompProperties_EntityDatabaseAnomaly)props;
 
+
         public IncidentDef selectedIncidentDef;
         private float activityOnPassive;
 
@@ -32,6 +33,19 @@ namespace AnomaliesExpected
         }
         private List<AEEntityIncidents> entityIncidentsCached = new List<AEEntityIncidents>();
         private int lastUpToDateTick;
+
+        public Texture2D UIIcon
+        {
+            get
+            {
+                if (!(activateTex != null))
+                {
+                    return activateTex = ContentFinder<Texture2D>.Get(Props.activateTexPath);
+                }
+                return activateTex;
+            }
+        }
+        private Texture2D activateTex;
 
         public IEnumerable<AEEntityIncidents> entityIncidentsAvailable => entityIncidents.Where((AEEntityIncidents aeei) => aeei.entityCodexEntryDef.Discovered);
 
@@ -62,7 +76,8 @@ namespace AnomaliesExpected
                     Find.WindowStack.Add(new Dialog_AEEntityDatabaseAnomaly(this));
                 },
                 defaultLabel = "AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Label".Translate(),
-                defaultDesc = "AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Desc".Translate()
+                defaultDesc = "AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Desc".Translate(),
+                icon = UIIcon
             };
         }
 

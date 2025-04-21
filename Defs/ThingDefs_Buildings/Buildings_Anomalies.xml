@@ -1454,6 +1454,7 @@
 					<li>Fleshbeasts</li>
 					<li>AE_EntityCodexEntry_BloodLake</li>
 				</entityCodexEntryDefsBlacklist>
+				<activateTexPath>UI/Buttons/AEEntityDB</activateTexPath>
 			</li>
 			<li Class="CompProperties_Studiable">
 				<compClass>AnomaliesExpected.CompStudiableAE</compClass>
