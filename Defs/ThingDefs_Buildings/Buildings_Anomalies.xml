@@ -1399,7 +1399,7 @@
 	
 	<ThingDef ParentName="BuildingBase">
 		<defName>AE_EntityDatabase</defName>
-		<label>Ancient Database</label>
+		<label>ancient server</label>
 		<description>...</description>
 		<thingClass>AnomaliesExpected.Building_AE</thingClass>
 		<graphicData>

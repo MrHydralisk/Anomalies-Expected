@@ -279,4 +279,22 @@
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>
 
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_EntityDatabase</defName>
+		<label>ancient server</label>
+		<category>Basic</category>
+		<uiIconPath>UI/CodexEntries/AE_EntityDatabase</uiIconPath>
+		<useDescriptionFrom>AE_EntityDatabase</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_EntityDatabase</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_EntityDatabaseSpawn</li>
+		</provocationIncidents>
+		<!-- <discoveredResearchProjects> -->
+			<!-- <li>AEConnectEntityDatabase</li> -->
+		<!-- </discoveredResearchProjects> -->
+		<orderInCategory>1300</orderInCategory>
+	</EntityCodexEntryDef>
+
 </Defs>
