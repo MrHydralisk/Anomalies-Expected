@@ -1,5 +1,4 @@
 ﻿using RimWorld;
-using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 using Verse.AI.Group;
@@ -27,22 +26,15 @@ namespace AnomaliesExpected
             Pawn pawn = psychicRitual.assignments.FirstAssignedPawn(invokerRole);
             if (pawn != null)
             {
-                ApplyOutcome(psychicRitual, pawn);
-            }
-        }
-        public override bool Tick(PsychicRitual psychicRitual, PsychicRitualGraph parent)
-        {
-            if (Find.TickManager.TicksGame % 60 == 0)
-            {
                 IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(selectedIncidentDef.category, psychicRitual.Map);
                 incidentParms.bypassStorytellerSettings = true;
                 if (!selectedIncidentDef.Worker.CanFireNow(incidentParms))
                 {
-                    psychicRitual.CancelPsychicRitual("AnomaliesExpected.EntityDatabaseAnomaly.AlreadyProvoked".Translate());
-                    return true;
+                    psychicRitual.CancelPsychicRitual("AnomaliesExpected.EntityDatabaseAnomaly.Ritual.AlreadyProvoked".Translate());
+                    return;
                 }
+                ApplyOutcome(psychicRitual, pawn);
             }
-            return false;
         }
 
         private void ApplyOutcome(PsychicRitual psychicRitual, Pawn invoker)
