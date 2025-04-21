@@ -84,7 +84,7 @@ namespace AnomaliesExpected
                 {
                     IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(provocationIncident.category, parent.MapHeld);
                     incidentParms.bypassStorytellerSettings = true;
-                    if (provocationIncident.Worker.CanFireNow(incidentParms))
+                    if (provocationIncident.Worker.ChanceFactorNow(incidentParms.target) > 0 && provocationIncident.Worker.CanFireNow(incidentParms))
                     {
                         list.Add(provocationIncident);
                     }

@@ -39,7 +39,7 @@ namespace AnomaliesExpected
                 IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(incidentDef.category, map);
                 incidentParms.bypassStorytellerSettings = true;
                 isFiredTooRecently = isFiredTooRecently && incidentDef.Worker.FiredTooRecently(incidentParms.target);
-                if (incidentDef.Worker.CanFireNow(incidentParms))
+                if (incidentDef.Worker.ChanceFactorNow(incidentParms.target) > 0 && incidentDef.Worker.CanFireNow(incidentParms))
                 {
                     incidentDefs.Add(incidentDef);
                 }
