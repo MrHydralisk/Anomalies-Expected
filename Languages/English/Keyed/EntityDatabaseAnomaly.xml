@@ -6,6 +6,11 @@
 	<AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Label>Access Database</AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Label>
 	<AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Desc>Open database to select entity as a target</AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Desc>
 	
+	<AnomaliesExpected.EntityDatabaseAnomaly.Ritual.OutputDesc>\n{0} entity will be provoked.</AnomaliesExpected.EntityDatabaseAnomaly.Ritual.OutputDesc>
+	<AnomaliesExpected.EntityDatabaseAnomaly.Ritual.MissingEntityDatabase>Missing Entity Database for ritual.</AnomaliesExpected.EntityDatabaseAnomaly.Ritual.MissingEntityDatabase>
+	<AnomaliesExpected.EntityDatabaseAnomaly.Ritual.EntityNotSelected>Entity not selected in Entity Database.</AnomaliesExpected.EntityDatabaseAnomaly.Ritual.EntityNotSelected>
+	<AnomaliesExpected.EntityDatabaseAnomaly.Ritual.AlreadyProvoked>Entity already was provoked.</AnomaliesExpected.EntityDatabaseAnomaly.Ritual.AlreadyProvoked>
+	
 	<AnomaliesExpected.EntityDatabaseAnomaly.Desc>All known entities: available {0}/{1}</AnomaliesExpected.EntityDatabaseAnomaly.Desc>
 	<AnomaliesExpected.EntityDatabaseAnomaly.Available.Now>Available now.</AnomaliesExpected.EntityDatabaseAnomaly.Available.Now>
 	<AnomaliesExpected.EntityDatabaseAnomaly.Available.Recently>Was provoked too recently.</AnomaliesExpected.EntityDatabaseAnomaly.Available.Recently>

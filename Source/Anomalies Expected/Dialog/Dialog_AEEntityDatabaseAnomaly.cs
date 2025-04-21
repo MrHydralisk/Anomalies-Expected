@@ -14,26 +14,14 @@ namespace AnomaliesExpected
 
         private float ScrollHeight;
 
-        //private AEEntityEntry selectedEntry;
-
-        //private List<(string, List<AEEntityEntry>)> EntriesByType = new List<(string, List<AEEntityEntry>)>();
-
-        //private Dictionary<string, float> categoryRectSizes = new Dictionary<string, float>();
-
-        //private static readonly Vector2 ButSize = new Vector2(150f, 38f);
-
         private const float HeaderHeight = 30f;
 
         private const float EntrySize = 128f;
 
         private const float EntryGap = 8f;
-        //private List<Thing> RelatedAnalyzableThingsCached = new List<Thing>();
 
         public override Vector2 InitialSize => new Vector2(UI.screenWidth * 0.6f, UI.screenHeight * 0.75f);
 
-        //private int state = 0;
-        //private bool isShowRecord;
-        //private bool[] lettersOpened;
         private Comp_EntityDatabaseAnomaly entityDatabaseAnomaly;
 
         public Dialog_AEEntityDatabaseAnomaly(Comp_EntityDatabaseAnomaly comp_EntityDatabaseAnomaly)
@@ -47,7 +35,6 @@ namespace AnomaliesExpected
         {
             Text.Font = GameFont.Small;
             Rect rect = inRect;
-            //rect.height -= ButSize.y + 10f;
             TaggedString taggedString = "AnomaliesExpected.EntityDatabaseAnomaly.Desc".Translate(entityDatabaseAnomaly.entityIncidentsAvailable.Count((AEEntityIncidents aeei) => aeei.isCanFireNow), entityDatabaseAnomaly.entityIncidentsAvailable.Count());
             using (new TextBlock(GameFont.Medium))
             {
@@ -95,17 +82,9 @@ namespace AnomaliesExpected
             if (entityIncidents.entityCodexEntryDef.Discovered && entityIncidents.isCanFireNow && Widgets.ButtonInvisible(rect))
             {
                 entityDatabaseAnomaly.selectedIncidentDef = entityIncidents.incidentDefs.RandomElement();
+                SoundDefOf.Tick_High.PlayOneShotOnCamera();
             }
         }
-
-        //public void SelectEntry(AEEntityEntry entry)
-        //{
-        //    selectedEntry = entry;
-        //    isShowRecord = true;
-        //    lettersOpened = new bool[selectedEntry.letters.Count()];
-        //    SoundDefOf.Tick_High.PlayOneShotOnCamera();
-        //    UpdateRelatedAnalyzableThing();
-        //}
     }
 }
 

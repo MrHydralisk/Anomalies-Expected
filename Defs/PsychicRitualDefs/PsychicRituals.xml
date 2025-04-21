@@ -100,7 +100,7 @@
 		<researchPrerequisite>BasicPsychicRituals</researchPrerequisite>
 		<outcomeDescription>With the current quality, there's a {0} chance the invoker will receive dark psychic shock.</outcomeDescription>
 		<!-- <hoursUntilOutcome>4</hoursUntilOutcome> -->
-		<hoursUntilOutcome>0.1</hoursUntilOutcome>
+		<hoursUntilOutcome>1</hoursUntilOutcome>
 		<castableOnPocketMaps>false</castableOnPocketMaps>
 		<psychicShockChanceFromQualityCurve>
 			<points>
