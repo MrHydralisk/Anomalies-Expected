@@ -48,7 +48,8 @@ namespace AnomaliesExpected
             Text.Font = GameFont.Small;
             Rect rect = inRect;
             //rect.height -= ButSize.y + 10f;
-            TaggedString taggedString = "AnomaliesExpected.EntityDatabaseAnomaly.Desc".Translate(entityDatabaseAnomaly.parent.Label);
+            List<AEEntityIncidents> entityIncidents = entityDatabaseAnomaly.entityIncidents.Where((AEEntityIncidents aeei) => aeei.entityCodexEntryDef.Discovered).ToList();
+            TaggedString taggedString = "AnomaliesExpected.EntityDatabaseAnomaly.Desc".Translate(entityIncidents.Count((AEEntityIncidents aeei) => aeei.isCanFireNow), entityIncidents.Count);
             using (new TextBlock(GameFont.Medium))
             {
                 Widgets.Label(new Rect(0f, 0f, rect.width, HeaderHeight), entityDatabaseAnomaly.parent.Label);
@@ -66,43 +67,35 @@ namespace AnomaliesExpected
             Rect viewRect = new Rect(0f, 0f, rect.width - 16f, ScrollHeight);
             Widgets.BeginScrollView(rect, ref ScrollPos, viewRect);
             float num = 0f;
-            foreach (EntityCodexEntryDef entityCodexEntryDef in DefDatabase<EntityCodexEntryDef>.AllDefs)
+            foreach (AEEntityIncidents entityIncidents in entityDatabaseAnomaly.entityIncidents.Where((AEEntityIncidents aeei) => aeei.entityCodexEntryDef.Discovered))
             {
                 Rect rect2 = new Rect(0, num, viewRect.width, EntrySize);
-                DrawEntry(rect2, entityCodexEntryDef);
+                DrawEntry(rect2, entityIncidents);
                 num += EntryGap + EntrySize;
             }
             ScrollHeight = num;
             Widgets.EndScrollView();
         }
 
-        private void DrawEntry(Rect rect, EntityCodexEntryDef entry)
+        private void DrawEntry(Rect rect, AEEntityIncidents entityIncidents)
         {
-            Widgets.DrawOptionBackground(rect, entry.provocationIncidents.Contains(entityDatabaseAnomaly.selectedIncidentDef));
+            Widgets.DrawOptionBackground(rect, entityIncidents.entityCodexEntryDef.provocationIncidents.Contains(entityDatabaseAnomaly.selectedIncidentDef));
             Rect rect1 = new Rect(rect.x, rect.y, EntrySize, EntrySize);
-            Texture2D uiIcon;
+            Texture2D uiIcon = entityIncidents.entityCodexEntryDef.icon;
             Color colorTMP = GUI.color;
-            if (entry.Discovered)
-            {
-                uiIcon = entry.icon;
-            }
-            else
-            {
-                uiIcon = entry.silhouette;
-            }
             GUI.DrawTexture(rect1.ContractedBy(2f), uiIcon);
             GUI.color = colorTMP;
             using (new TextBlock(GameFont.Medium))
             {
-                Widgets.Label(new Rect(rect.x + EntrySize + 4, rect.y, rect.width - EntrySize - 4, HeaderHeight), entry.LabelCap);
+                Widgets.Label(new Rect(rect.x + EntrySize + 4, rect.y, rect.width - EntrySize - 4, HeaderHeight), entityIncidents.entityCodexEntryDef.LabelCap);
             }
-            //if (entry.letters.Count() > 0)
-            //{
-            //    GUI.DrawTexture(new Rect(rect.x + rect.width - 20, rect.y - 1, 18, 18), TexButton.CategorizedResourceReadout);
-            //}
-            if (Widgets.ButtonInvisible(rect))
+            using (new TextBlock(GameFont.Small))
             {
-                //SelectEntry(entry);
+                Widgets.Label(new Rect(rect.x + EntrySize + 4, rect.y + HeaderHeight, rect.width - EntrySize - 4, rect.height - HeaderHeight), (entityIncidents.isCanFireNow ? "AnomaliesExpected.EntityDatabaseAnomaly.Available.Now".Translate() : entityIncidents.isFiredTooRecently ? "AnomaliesExpected.EntityDatabaseAnomaly.Available.Recently".Translate() : entityIncidents.isCannotBeProvoked ? "Cant" : "AnomaliesExpected.EntityDatabaseAnomaly.Available.Else".Translate()));
+            }
+            if (entityIncidents.entityCodexEntryDef.Discovered && entityIncidents.isCanFireNow && Widgets.ButtonInvisible(rect))
+            {
+                entityDatabaseAnomaly.selectedIncidentDef = entityIncidents.incidentDefs.RandomElement();
             }
         }
 

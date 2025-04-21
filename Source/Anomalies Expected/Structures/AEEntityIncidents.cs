@@ -1,6 +1,5 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
-using System.Linq;
 using Verse;
 
 namespace AnomaliesExpected
@@ -9,18 +8,44 @@ namespace AnomaliesExpected
     {
         public EntityCodexEntryDef entityCodexEntryDef;
         public List<IncidentDef> incidentDefs = new List<IncidentDef>();
+        public bool isCanFireNow;
+        public bool isFiredTooRecently;
+        public bool isCannotBeProvoked => entityCodexEntryDef.provocationIncidents.NullOrEmpty();
+        private int lastUpdateTick;
 
-        public AEEntityIncidents(EntityCodexEntryDef entityCodexEntryDef, List<IncidentDef> incidentDefs = null)
+        public AEEntityIncidents(EntityCodexEntryDef entityCodexEntryDef, Map map = null)
         {
             this.entityCodexEntryDef = entityCodexEntryDef;
-            if (incidentDefs != null)
+            if (map != null)
             {
-                this.incidentDefs = incidentDefs;
+                UpToDate(map);
             }
-            else
+        }
+
+        public void UpToDate(Map map)
+        {
+            if (lastUpdateTick == Find.TickManager.TicksGame)
             {
-                incidentDefs = new List<IncidentDef>();
+                return;
             }
+            if (isCannotBeProvoked)
+            {
+                return;
+            }
+            isFiredTooRecently = true;
+            incidentDefs = new List<IncidentDef>();
+            foreach (IncidentDef incidentDef in entityCodexEntryDef.provocationIncidents)
+            {
+                IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(incidentDef.category, map);
+                incidentParms.bypassStorytellerSettings = true;
+                isFiredTooRecently = isFiredTooRecently && incidentDef.Worker.FiredTooRecently(incidentParms.target);
+                if (incidentDef.Worker.CanFireNow(incidentParms))
+                {
+                    incidentDefs.Add(incidentDef);
+                }
+            }
+            isCanFireNow = !incidentDefs.NullOrEmpty();
+            lastUpdateTick = Find.TickManager.TicksGame;
         }
     }
 }

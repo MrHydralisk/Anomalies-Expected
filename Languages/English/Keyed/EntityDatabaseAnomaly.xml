@@ -2,6 +2,13 @@
 <LanguageData>
 	
 	<AnomaliesExpected.EntityDatabaseAnomaly.Active>{0} emitted a psychic pulse of strength {1}</AnomaliesExpected.EntityDatabaseAnomaly.Active>
-	<AnomaliesExpected.EntityDatabaseAnomaly.Desc>All entities available in {0}</AnomaliesExpected.EntityDatabaseAnomaly.Desc>
+	<AnomaliesExpected.EntityDatabaseAnomaly.Selected>Selected entity: {0}</AnomaliesExpected.EntityDatabaseAnomaly.Selected>
+	<AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Label>Access Database</AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Label>
+	<AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Desc>Open database to select entity as a target</AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Desc>
+	
+	<AnomaliesExpected.EntityDatabaseAnomaly.Desc>All known entities: available {0}/{1}</AnomaliesExpected.EntityDatabaseAnomaly.Desc>
+	<AnomaliesExpected.EntityDatabaseAnomaly.Available.Now>Available now.</AnomaliesExpected.EntityDatabaseAnomaly.Available.Now>
+	<AnomaliesExpected.EntityDatabaseAnomaly.Available.Recently>Was provoked too recently.</AnomaliesExpected.EntityDatabaseAnomaly.Available.Recently>
+	<AnomaliesExpected.EntityDatabaseAnomaly.Available.Else>Prevented by something.</AnomaliesExpected.EntityDatabaseAnomaly.Available.Else>
 	
 </LanguageData>

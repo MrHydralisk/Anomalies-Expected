@@ -1,7 +1,9 @@
 ﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Networking.Types;
 using Verse;
 using Verse.Sound;
 
@@ -14,30 +16,32 @@ namespace AnomaliesExpected
         public IncidentDef selectedIncidentDef;
         private float activityOnPassive;
 
-        //public List<AEEntityIncidents> entityIncidents
-        //{
-        //    get
-        //    {
-        //        if (entityIncidentsCached.NullOrEmpty() || entityIncidentsCachedTick != Find.TickManager.TicksGame)
-        //        {
-        //            entityIncidentsCached = new List<AEEntityIncidents>();
-        //            foreach (EntityCodexEntryDef entityCodexEntryDef in DefDatabase<EntityCodexEntryDef>.AllDefs)
-        //            {
-        //                if (!entityCodexEntryDef.provocationIncidents.NullOrEmpty())
-        //                {
-        //                    entityIncidentsCached.Add(new AEEntityIncidents(entityCodexEntryDef, entityCodexEntryDef.))
-        //                }
+        public List<AEEntityIncidents> entityIncidents
+        {
+            get
+            {
+                if (lastUpToDateTick != Find.TickManager.TicksGame)
+                {
+                    foreach (AEEntityIncidents entityIncidents in entityIncidentsCached)
+                    {
+                        entityIncidents.UpToDate(parent.MapHeld);
+                    }
+                    lastUpToDateTick = Find.TickManager.TicksGame;
+                }
+                return entityIncidentsCached;
+            }
+        }
+        private List<AEEntityIncidents> entityIncidentsCached = new List<AEEntityIncidents>();
+        private int lastUpToDateTick;
 
-        //            }
-        //            entityIncidentsCachedTick = Find.TickManager.TicksGame;
-        //        }
-        //        return entityIncidentsCached;
-        //    }
-        //}
-        //private List<AEEntityIncidents> entityIncidentsCached = new List<AEEntityIncidents>();
-        //private int entityIncidentsCachedTick;
-
-        //public void
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            base.PostSpawnSetup(respawningAfterLoad);
+            foreach (EntityCodexEntryDef entityCodexEntryDef in DefDatabase<EntityCodexEntryDef>.AllDefs)
+            {
+                entityIncidentsCached.Add(new AEEntityIncidents(entityCodexEntryDef, parent.MapHeld));
+            }
+        }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
@@ -49,60 +53,11 @@ namespace AnomaliesExpected
             {
                 action = delegate
                 {
-                    List<FloatMenuOption> floatMenuOptions = new List<FloatMenuOption>();
-                    List<IncidentDef> list = new List<IncidentDef>();
-                    //Log.Message($"---");
-                    foreach (EntityCategoryDef item in DefDatabase<EntityCategoryDef>.AllDefs.OrderBy((EntityCategoryDef x) => x.listOrder))
-                    {
-                        foreach (EntityCodexEntryDef allDef in DefDatabase<EntityCodexEntryDef>.AllDefs)
-                        {
-                            if (allDef.category != item || allDef.provocationIncidents.NullOrEmpty() || !allDef.Discovered)
-                            {
-                                //Log.Message($"S {allDef.label} | {allDef.Discovered}");
-                                continue;
-                            }
-                            foreach (IncidentDef provocationIncident in allDef.provocationIncidents)
-                            {
-                                IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(provocationIncident.category, parent.MapHeld);
-                                incidentParms.bypassStorytellerSettings = true;
-                                //Log.Message($"T {allDef.label} | {provocationIncident.defName} | {provocationIncident.Worker.CanFireNow(incidentParms)}");
-                                FloatMenuOption floatMenuOption = new FloatMenuOption($"{allDef.label} | {provocationIncident.defName}", delegate
-                                {
-                                    selectedIncidentDef = provocationIncident;
-                                });
-                                if (provocationIncident == selectedIncidentDef)
-                                {
-                                    floatMenuOption.Label = $"[{floatMenuOption.Label}]";
-                                }
-                                if (provocationIncident.Worker.CanFireNow(incidentParms))
-                                {
-                                    list.Add(provocationIncident);
-                                }
-                                else
-                                {
-                                    floatMenuOption.Disabled = true;
-                                }
-                                floatMenuOptions.Add(floatMenuOption);
-                            }
-                        }
-                    }
-                    Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
+                    Find.WindowStack.Add(new Dialog_AEEntityDatabaseAnomaly(this));
                 },
-                defaultLabel = "Dev: Summon now",
-                defaultDesc = "Summon pattern"
+                defaultLabel = "AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Label".Translate(),
+                defaultDesc = "AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Desc".Translate()
             };
-            if (DebugSettings.ShowDevGizmos)
-            {
-                yield return new Command_Action
-                {
-                    action = delegate
-                    {
-                        Find.WindowStack.Add(new Dialog_AEEntityDatabaseAnomaly(this));
-                    },
-                    defaultLabel = "Dev: ",
-                    defaultDesc = ""
-                };
-            }
         }
 
         public override void PostExposeData()
@@ -207,19 +162,11 @@ namespace AnomaliesExpected
             return null;
         }
 
-        //public override string CompInspectStringExtra()
-        //{
-        //    List<string> inspectStrings = new List<string>();
-        //    if (isConnected)
-        //    {
-        //        inspectStrings.Add("AnomaliesExpected.BloodPump.Connected".Translate(Source.LabelCap));
-        //        inspectStrings.Add("AnomaliesExpected.BloodPump.TimeTillSpawn".Translate(TickTillNextSpawn.ToStringTicksToPeriod()));
-        //    }
-        //    else
-        //    {
-        //        inspectStrings.Add("AnomaliesExpected.BloodPump.NotConnected".Translate());
-        //    }
-        //    return String.Join("\n", inspectStrings);
-        //}
+        public override string CompInspectStringExtra()
+        {
+            List<string> inspectStrings = new List<string>();
+            inspectStrings.Add("AnomaliesExpected.EntityDatabaseAnomaly.Selected".Translate(entityIncidents.FirstOrDefault((AEEntityIncidents aeei) => aeei.entityCodexEntryDef.provocationIncidents?.Any((IncidentDef id) => id == selectedIncidentDef) ?? false)?.entityCodexEntryDef.LabelCap ?? "---"));
+            return String.Join("\n", inspectStrings);
+        }
     }
 }
