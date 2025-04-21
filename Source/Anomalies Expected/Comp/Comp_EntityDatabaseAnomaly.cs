@@ -34,12 +34,18 @@ namespace AnomaliesExpected
         private List<AEEntityIncidents> entityIncidentsCached = new List<AEEntityIncidents>();
         private int lastUpToDateTick;
 
+        public IEnumerable<AEEntityIncidents> entityIncidentsAvailable => entityIncidents.Where((AEEntityIncidents aeei) => aeei.entityCodexEntryDef.Discovered);
+
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
             foreach (EntityCodexEntryDef entityCodexEntryDef in DefDatabase<EntityCodexEntryDef>.AllDefs)
             {
-                entityIncidentsCached.Add(new AEEntityIncidents(entityCodexEntryDef, parent.MapHeld));
+                AEEntityIncidents entityIncidents = new AEEntityIncidents(entityCodexEntryDef);
+                if (!entityIncidents.isCannotBeProvoked && !Props.entityCodexEntryDefsBlacklist.Contains(entityCodexEntryDef))
+                {
+                    entityIncidentsCached.Add(entityIncidents);
+                }
             }
         }
 

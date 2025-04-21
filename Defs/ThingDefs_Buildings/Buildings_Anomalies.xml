@@ -1446,6 +1446,14 @@
 				<soundActivate>FlickSwitch</soundActivate>
 				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
 				<fleckOnUsedScale>1.5</fleckOnUsedScale>
+				<entityCodexEntryDefsBlacklist>
+					<li>PitGate</li>
+					<li>Dreadmeld</li>
+					<li>Shambler</li>
+					<li>BloodRain</li>
+					<li>Fleshbeasts</li>
+					<li>AE_EntityCodexEntry_BloodLake</li>
+				</entityCodexEntryDefsBlacklist>
 			</li>
 			<li Class="CompProperties_Studiable">
 				<compClass>AnomaliesExpected.CompStudiableAE</compClass>

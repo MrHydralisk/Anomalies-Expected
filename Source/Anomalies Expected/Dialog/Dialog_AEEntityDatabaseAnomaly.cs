@@ -48,8 +48,7 @@ namespace AnomaliesExpected
             Text.Font = GameFont.Small;
             Rect rect = inRect;
             //rect.height -= ButSize.y + 10f;
-            List<AEEntityIncidents> entityIncidents = entityDatabaseAnomaly.entityIncidents.Where((AEEntityIncidents aeei) => aeei.entityCodexEntryDef.Discovered).ToList();
-            TaggedString taggedString = "AnomaliesExpected.EntityDatabaseAnomaly.Desc".Translate(entityIncidents.Count((AEEntityIncidents aeei) => aeei.isCanFireNow), entityIncidents.Count);
+            TaggedString taggedString = "AnomaliesExpected.EntityDatabaseAnomaly.Desc".Translate(entityDatabaseAnomaly.entityIncidentsAvailable.Count((AEEntityIncidents aeei) => aeei.isCanFireNow), entityDatabaseAnomaly.entityIncidentsAvailable.Count());
             using (new TextBlock(GameFont.Medium))
             {
                 Widgets.Label(new Rect(0f, 0f, rect.width, HeaderHeight), entityDatabaseAnomaly.parent.Label);
@@ -67,7 +66,7 @@ namespace AnomaliesExpected
             Rect viewRect = new Rect(0f, 0f, rect.width - 16f, ScrollHeight);
             Widgets.BeginScrollView(rect, ref ScrollPos, viewRect);
             float num = 0f;
-            foreach (AEEntityIncidents entityIncidents in entityDatabaseAnomaly.entityIncidents.Where((AEEntityIncidents aeei) => aeei.entityCodexEntryDef.Discovered))
+            foreach (AEEntityIncidents entityIncidents in entityDatabaseAnomaly.entityIncidentsAvailable)
             {
                 Rect rect2 = new Rect(0, num, viewRect.width, EntrySize);
                 DrawEntry(rect2, entityIncidents);

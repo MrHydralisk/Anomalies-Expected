@@ -1,4 +1,6 @@
-﻿using Verse;
+﻿using RimWorld;
+using System.Collections.Generic;
+using Verse;
 
 namespace AnomaliesExpected
 {
@@ -8,6 +10,7 @@ namespace AnomaliesExpected
         public SoundDef soundActivate;
         public FleckDef fleckOnUsed;
         public float fleckOnUsedScale;
+        public List<EntityCodexEntryDef> entityCodexEntryDefsBlacklist = new List<EntityCodexEntryDef>();
 
         public CompProperties_EntityDatabaseAnomaly()
         {
