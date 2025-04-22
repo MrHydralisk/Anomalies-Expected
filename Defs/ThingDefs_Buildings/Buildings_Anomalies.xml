@@ -1508,13 +1508,13 @@
 				<maintainProgress>true</maintainProgress>
 				<activateTexPath>UI/Designators/Deconstruct</activateTexPath>
  
-				<activateLabelString>Deconstruct</activateLabelString>
-				<activateDescString>Deconstruct and fully disassemble. [Will destroy it]</activateDescString>
-				<guiLabelString>Choose who should deconstruct this.</guiLabelString>
-				<jobString>deconstruct</jobString>
-				<activatingStringPending>deconstructing {0}</activatingStringPending>
-				<activatingString>deconstructing {0}: {1}s</activatingString>
-				<interactionProgressString>Deconstructing</interactionProgressString>
+				<activateLabelString>Activate Protocol</activateLabelString>
+				<activateDescString>Activate Database Erasure Protocol. [Will destroy it]</activateDescString>
+				<guiLabelString>Choose who should activate protocol for this.</guiLabelString>
+				<jobString>activate protocol</jobString>
+				<activatingStringPending>activating protocol {0}</activatingStringPending>
+				<activatingString>activating protocol {0}: {1}s</activatingString>
+				<interactionProgressString>Activating protocol</interactionProgressString>
 
 				<soundActivate>Building_Deconstructed</soundActivate>
 				<interactionEffecter>ConstructMetal</interactionEffecter>

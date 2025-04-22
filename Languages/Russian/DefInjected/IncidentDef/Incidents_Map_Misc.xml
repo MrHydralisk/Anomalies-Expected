@@ -48,5 +48,9 @@
 	<AE_IncidentDef_SpeedometerSpawn.label>cпидометр</AE_IncidentDef_SpeedometerSpawn.label>
 	<AE_IncidentDef_SpeedometerSpawn.letterLabel>Найден cпидометр</AE_IncidentDef_SpeedometerSpawn.letterLabel>
 	<AE_IncidentDef_SpeedometerSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При ближайшем рассмотрении он оказался темным круглым прибором с выцветшими цифрами и тонкой красной стрелкой.</AE_IncidentDef_SpeedometerSpawn.letterText>
+	
+	<AE_IncidentDef_EntityDatabaseSpawn.label>древний сервер</AE_IncidentDef_EntityDatabaseSpawn.label>
+	<AE_IncidentDef_EntityDatabaseSpawn.letterLabel>Найден древний сервер</AE_IncidentDef_EntityDatabaseSpawn.letterLabel>
+	<AE_IncidentDef_EntityDatabaseSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это древний сервер, состоящий из трёх соединённых секций. Данные, которые он содержит, однако, остаются неизвестными.</AE_IncidentDef_EntityDatabaseSpawn.letterText>
 
 </LanguageData>

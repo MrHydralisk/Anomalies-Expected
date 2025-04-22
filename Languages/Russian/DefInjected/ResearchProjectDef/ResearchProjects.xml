@@ -128,5 +128,10 @@
 
 	<AENanoInfusedIceCrystal.label>ледяной кристалл, насыщенный фроститами</AENanoInfusedIceCrystal.label>
 	<AENanoInfusedIceCrystal.description>Проанализировать механизмы контроля ледяного кристалла над наноразмерными фроститами.</AENanoInfusedIceCrystal.description>
+	
+	
+	
+	<AEConnectEntityDatabase.label>подключение к базе данных тёмных феноменов</AEConnectEntityDatabase.label>
+	<AEConnectEntityDatabase.description>Изучение данных из базы данных тёмных феноменов и проведения ритуала подключения к базе данных тёмных феноменов.</AEConnectEntityDatabase.description>
 
 </LanguageData>

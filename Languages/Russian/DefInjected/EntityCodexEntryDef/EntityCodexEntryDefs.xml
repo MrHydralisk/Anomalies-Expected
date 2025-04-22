@@ -30,5 +30,7 @@
 	<AE_EntityCodexEntry_SnowArmy.modExtensions.0.groupName>Снежная армия</AE_EntityCodexEntry_SnowArmy.modExtensions.0.groupName>
 	
 	<AE_EntityCodexEntry_Speedometer.label>cпидометр</AE_EntityCodexEntry_Speedometer.label>
+	
+	<AE_EntityCodexEntry_EntityDatabase.label>древний сервер</AE_EntityCodexEntry_EntityDatabase.label>
 
 </LanguageData>

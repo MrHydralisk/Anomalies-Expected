@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	
+	<AnomaliesExpected.EntityDatabaseAnomaly.Active>{0} испускает псионический импульс категории {1}</AnomaliesExpected.EntityDatabaseAnomaly.Active>
+	<AnomaliesExpected.EntityDatabaseAnomaly.Selected>Выберите сущность: {0}</AnomaliesExpected.EntityDatabaseAnomaly.Selected>
+	<AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Label>Открыть базу данных</AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Label>
+	<AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Desc>Открыть базу данных для выбора сушности в качестве цели для ритуала.</AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Desc>
+	
+	<AnomaliesExpected.EntityDatabaseAnomaly.Ritual.OutputDesc>\n{0} сущность будет призвана.</AnomaliesExpected.EntityDatabaseAnomaly.Ritual.OutputDesc>
+	<AnomaliesExpected.EntityDatabaseAnomaly.Ritual.MissingEntityDatabase>Отсутствует база данных тёмных феноменов для ритуала.</AnomaliesExpected.EntityDatabaseAnomaly.Ritual.MissingEntityDatabase>
+	<AnomaliesExpected.EntityDatabaseAnomaly.Ritual.EntityNotSelected>Сущность не выбрана в базе данных тёмных феноменов.</AnomaliesExpected.EntityDatabaseAnomaly.Ritual.EntityNotSelected>
+	<AnomaliesExpected.EntityDatabaseAnomaly.Ritual.AlreadyProvoked>Сущность уже призвана.</AnomaliesExpected.EntityDatabaseAnomaly.Ritual.AlreadyProvoked>
+	
+	<AnomaliesExpected.EntityDatabaseAnomaly.Desc>Все известные сущности: доступно {0}/{1}</AnomaliesExpected.EntityDatabaseAnomaly.Desc>
+	<AnomaliesExpected.EntityDatabaseAnomaly.Available.Now>Лоступно сейчас.</AnomaliesExpected.EntityDatabaseAnomaly.Available.Now>
+	<AnomaliesExpected.EntityDatabaseAnomaly.Available.Recently>Была призвана недавно.</AnomaliesExpected.EntityDatabaseAnomaly.Available.Recently>
+	<AnomaliesExpected.EntityDatabaseAnomaly.Available.Else>Что-то мешает призыву.</AnomaliesExpected.EntityDatabaseAnomaly.Available.Else>
+	
+</LanguageData>

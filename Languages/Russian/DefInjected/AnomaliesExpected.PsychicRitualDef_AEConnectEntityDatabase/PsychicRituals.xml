@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<AE_ConnectEntityDatabase.label>подключение к базе данных тёмных феноменов</AE_ConnectEntityDatabase.label>
+	<AE_ConnectEntityDatabase.description>Устанавливает псионическую связь с пустотой через подключение к базе данных тёмных феноменов и призывает снова в наш мир ранее изученную тварь. Есть вероятность того, что заклинатель впадёт в кому на несколько часов.</AE_ConnectEntityDatabase.description>
+	<AE_ConnectEntityDatabase.outcomeDescription>Учитывая качество ритуала, вероятность получения заклинателем тёмного пси-шока составляет {0}.</AE_ConnectEntityDatabase.outcomeDescription>
+  
+</LanguageData>
