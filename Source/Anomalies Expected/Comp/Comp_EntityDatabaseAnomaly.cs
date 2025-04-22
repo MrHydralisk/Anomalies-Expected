@@ -12,6 +12,8 @@ namespace AnomaliesExpected
     {
         public CompProperties_EntityDatabaseAnomaly Props => (CompProperties_EntityDatabaseAnomaly)props;
 
+        protected CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = parent.TryGetComp<CompAEStudyUnlocks>());
+        private CompAEStudyUnlocks studyUnlocksCached;
 
         public IncidentDef selectedIncidentDef;
         private float activityOnPassive;
@@ -69,16 +71,19 @@ namespace AnomaliesExpected
             {
                 yield return gizmo;
             }
-            yield return new Command_Action
+            if ((StudyUnlocks?.NextIndex ?? 2) >= 2)
             {
-                action = delegate
+                yield return new Command_Action
                 {
-                    Find.WindowStack.Add(new Dialog_AEEntityDatabaseAnomaly(this));
-                },
-                defaultLabel = "AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Label".Translate(),
-                defaultDesc = "AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Desc".Translate(),
-                icon = UIIcon
-            };
+                    action = delegate
+                    {
+                        Find.WindowStack.Add(new Dialog_AEEntityDatabaseAnomaly(this));
+                    },
+                    defaultLabel = "AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Label".Translate(),
+                    defaultDesc = "AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Desc".Translate(),
+                    icon = UIIcon
+                };
+            }
         }
 
         public override void PostExposeData()
@@ -178,7 +183,10 @@ namespace AnomaliesExpected
         public override string CompInspectStringExtra()
         {
             List<string> inspectStrings = new List<string>();
-            inspectStrings.Add("AnomaliesExpected.EntityDatabaseAnomaly.Selected".Translate(entityIncidents.FirstOrDefault((AEEntityIncidents aeei) => aeei.entityCodexEntryDef.provocationIncidents?.Any((IncidentDef id) => id == selectedIncidentDef) ?? false)?.entityCodexEntryDef.LabelCap ?? "---"));
+            if ((StudyUnlocks?.NextIndex ?? 2) >= 2)
+            {
+                inspectStrings.Add("AnomaliesExpected.EntityDatabaseAnomaly.Selected".Translate(entityIncidents.FirstOrDefault((AEEntityIncidents aeei) => aeei.entityCodexEntryDef.provocationIncidents?.Any((IncidentDef id) => id == selectedIncidentDef) ?? false)?.entityCodexEntryDef.LabelCap ?? "---"));
+            }
             return String.Join("\n", inspectStrings);
         }
     }

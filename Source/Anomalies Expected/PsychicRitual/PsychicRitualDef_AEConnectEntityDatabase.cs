@@ -38,6 +38,12 @@ namespace AnomaliesExpected
             {
                 yield return "AnomaliesExpected.EntityDatabaseAnomaly.Ritual.EntityNotSelected".Translate();
             }
+            IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(EntityDatabaseComp.selectedIncidentDef.category, map);
+            incidentParms.bypassStorytellerSettings = true;
+            if (EntityDatabaseComp.selectedIncidentDef.Worker.ChanceFactorNow(incidentParms.target) <= 0 || !EntityDatabaseComp.selectedIncidentDef.Worker.CanFireNow(incidentParms))
+            {
+                yield return "AnomaliesExpected.EntityDatabaseAnomaly.Ritual.AlreadyProvoked".Translate();
+            }
         }
 
         public override TaggedString OutcomeDescription(FloatRange qualityRange, string qualityNumber, PsychicRitualRoleAssignments assignments)

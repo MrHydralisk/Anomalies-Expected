@@ -24,20 +24,16 @@ namespace AnomaliesExpected
         public override void Start(PsychicRitual psychicRitual, PsychicRitualGraph parent)
         {
             Pawn pawn = psychicRitual.assignments.FirstAssignedPawn(invokerRole);
-            Log.Message($"Start 1");
             if (pawn != null)
             {
                 IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(selectedIncidentDef.category, psychicRitual.Map);
                 incidentParms.bypassStorytellerSettings = true;
-                Log.Message($"Start 2 {selectedIncidentDef.Worker.CanFireNow(incidentParms)}");
                 if (selectedIncidentDef.Worker.ChanceFactorNow(incidentParms.target) <= 0 || !selectedIncidentDef.Worker.CanFireNow(incidentParms))
                 {
                     psychicRitual.CancelPsychicRitual("AnomaliesExpected.EntityDatabaseAnomaly.Ritual.AlreadyProvoked".Translate());
-                    Log.Message($"3");
                     return;
                 }
                 ApplyOutcome(psychicRitual, pawn);
-                Log.Message($"4");
             }
         }
 
