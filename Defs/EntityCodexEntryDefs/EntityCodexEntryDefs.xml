@@ -291,9 +291,9 @@
 		<provocationIncidents>
 			<li>AE_IncidentDef_EntityDatabaseSpawn</li>
 		</provocationIncidents>
-		<!-- <discoveredResearchProjects> -->
-			<!-- <li>AEConnectEntityDatabase</li> -->
-		<!-- </discoveredResearchProjects> -->
+		<discoveredResearchProjects>
+			<li>AEConnectEntityDatabase</li>
+		</discoveredResearchProjects>
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>
 

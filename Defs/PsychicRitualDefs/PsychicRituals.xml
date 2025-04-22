@@ -97,7 +97,7 @@
 		<label>connect with entity database</label>
 		<description>Psychically commune with the void through connection with Entity Database, attracting previously studied entities again. There’s a chance that the invoker will fall into a coma for several hours.</description>
 		<iconPath>UI/PsychicRituals/PsychicRitual_AEConnectEntityDatabase</iconPath>
-		<researchPrerequisite>BasicPsychicRituals</researchPrerequisite>
+		<researchPrerequisite>AEConnectEntityDatabase</researchPrerequisite>
 		<outcomeDescription>With the current quality, there's a {0} chance the invoker will receive dark psychic shock.</outcomeDescription>
 		<!-- <hoursUntilOutcome>4</hoursUntilOutcome> -->
 		<hoursUntilOutcome>1</hoursUntilOutcome>

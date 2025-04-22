@@ -488,5 +488,24 @@
 		<researchViewX>5</researchViewX>
 		<researchViewY>5.8</researchViewY>
 	</ResearchProjectDef>
+	
+	
+
+	<ResearchProjectDef>
+		<defName>AEConnectEntityDatabase</defName>
+		<label>connect with entity database</label>
+		<description>Examining data from entity database and learn connect with entity database ritual.</description>
+		<tab>AnomaliesExpected</tab>
+		<prerequisites>
+			<li>BasicPsychicRituals</li>
+		</prerequisites>
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesEDA</li>
+		</requiredAnalyzed>
+		<knowledgeCost>35</knowledgeCost>
+		<knowledgeCategory>Basic</knowledgeCategory>
+		<researchViewX>1</researchViewX>
+		<researchViewY>4</researchViewY>
+	</ResearchProjectDef>
 
 </Defs>
