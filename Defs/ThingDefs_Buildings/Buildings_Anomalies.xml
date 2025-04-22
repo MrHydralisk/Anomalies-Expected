@@ -1400,7 +1400,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>AE_EntityDatabase</defName>
 		<label>ancient server</label>
-		<description>...</description>
+		<description>An ancient server composed of three connected sections. The data it holds, however, remains unknown.</description>
 		<thingClass>AnomaliesExpected.Building_AE</thingClass>
 		<graphicData>
 			<texPath>UI/Buttons/AEEntityDB</texPath>
@@ -1422,7 +1422,7 @@
 		<rotatable>false</rotatable>
 		<statBases>
 			<Mass>15</Mass>
-			<WorkToBuild>2000</WorkToBuild>
+			<WorkToBuild>500</WorkToBuild>
 			<Flammability>0</Flammability>
 			<Cleanliness>0</Cleanliness>
 		</statBases>
@@ -1465,35 +1465,43 @@
 				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
 				<showToggleGizmo>true</showToggleGizmo>
 			</li>
-			<li Class="CompProperties_StudyUnlocks">
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
 				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
 				<studyNotes>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<AnomalyLabel>Ancient Database</AnomalyLabel>
-						<AnomalyDesc>...\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<AnomalyLabel>ancient database</AnomalyLabel>
+						<AnomalyDesc>This ancient server, featuring three interconnected sections and safeguarding an perception-based encrypted database. It seems to contain its own power source and resistant to outside damage. It is constantly engaged in processing, receiving and transmitting data to an unknown destination.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
 						<threshold>0.01</threshold>
 						<label>#1/3 Ancient Database study report</label>
-						<text>Init. Decryption.</text>
+						<text>Encrypted Database\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nInitial examination of the recovered ancient server revealed an internal power source, negating the need for external connections. Standard input and output peripherals were successfully interfaced via a surface access port. However, the output displayed incomprehensible linguistic data, despite utilizing a known language. Physical attempts to breach the server's internal structure proved unsuccessful. Subsequent data analysis confirmed the presence of a database with currently indecipherable content, theorized to be protected by a perception-based based encryption method.\n\nObservations:\nUpon initial examination, {PAWN_nameDef} noted that server seems to be self-powered without any outside source of power.\nSubject was able to connect standard input and output device to server through access port on it surface.\n{PAWN_nameDef} reported an inability to comprehend the textual output, despite its apparent composition in a language familiar to the Subject.\nAttempts by {PAWN_nameDef} to forcibly access the server's internal components through physical manipulation yielded no discernible progress.\n\nOutcome:\nThe ancient server did not exhibit any overt hostile behavior during the observation and manipulation process.\nComprehensive analysis of the data retrieved from the server confirmed the presence of a structured database, the specific contents of which remain presently undetermined.\n\nDiscussion:\nLinguistic analysis confirmed that all data within database is using same language used within our facility. Nevertheless, surprisingly, none of the reviewing personnel could ascertain its meaning, experiencing a transient loss of comprehension upon attempting to read individual words, as if the moment they read each word it slips away from their mind. We theorize that this is some sort of perception-based encrypted method used by server to restrict data access from conventional users.\nWas noticed that any user activity decrease operational efficiency of constant processing, receiving and transmitting data to currently unknown destination.\nGiven the lack of hostile behavior, speedometer has been temporary classified as Class-0 (Safe) anomaly.\n\nRecommendations:\nAdditional study and analysis of database content is require to gain further understanding.</text>
 						<ThreatClass>0</ThreatClass>
 						<isSyncWithDB>true</isSyncWithDB>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<AnomalyLabel>Entity Database</AnomalyLabel>
-						<AnomalyDesc>...\n\nClassified as Class-2 (Warning) anomaly.</AnomalyDesc>
+						<AnomalyLabel>entity database</AnomalyLabel>
+						<AnomalyDesc>This ancient server, featuring three interconnected sections and safeguarding an perception-based encrypted entity database. It seems to contain its own power source and resistant to outside damage. It is constantly engaged in processing, receiving and transmitting data to the void.\n\nCan be connected with through psychic ritual to provoke selected entity in database.\n\nClassified as Class-2 (Warning) anomaly.</AnomalyDesc>
 						<threshold>2</threshold>
 						<label>#2/3 Ancient Database study report</label>
-						<text>Entity info.</text>
+						<text>Found Data on Known Entities\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nDuring a standard database review, {PAWN_nameDef} identified several comprehensible entries. Analysis revealed these entries contain data pertaining to anomalous entities previously encountered in this facility. Furthermore, information regarding a ritual and the destination of the server's continuous data transmission was uncovered. This confirms the server's function as an entity database, with only familiar entities lacking perception-based encryption. The escalating risk of the server provoking hostile entity manifestations has prompted a reclassification to Class-2 (Warning). A potential Database Erasure Protocol has been located, but decryption requires further analysis. Controlled ritualistic connection for acquiring known entities, continued protocol decryption, and user interaction to suppress void provocation are recommended.\n\nObservations:\nDuring a routine inspection of the database, {PAWN_nameDef} reported the identification of a limited number of entries that were readily understandable.\nSubsequent analysis of these accessible entries indicated that they contained data directly related to anomalous entities encountered in prior incidents.\nAdditionally, an entry detailing a specific ritual and information concerning the recipient of the server's ongoing data transmissions were discovered.\n\nOutcome:\nIt has been definitively established that the server functions as an entity database. Notably, only data pertaining to entities with which we have prior experience is not subject to perception-based encryption.\nEach entity entry also includes supplementary, currently unidentified information associated with a ritual process.\n\nDiscussion:\nOur preliminary understanding suggests this ritual mechanism operates similarly to the void provocation ritual, involving the transmission of a specific psychic pulse containing entry data into the void. This action potentially facilitates the manifestation of the entity corresponding to the selected database entry.\nWe have also observed a consistent increase in the rate of data transmission into the void, a process that could lead to the spontaneous provocation of entities if not mitigated by user interaction.\nThe growing threat of entity database provoking void to summon hostile anomalies has led to the reclassification of it to Class-2 (Warning).\nEvidence of a Database Erasure Protocol has been found, representing a potential method for neutralizing the server, although its decryption requires further dedicated effort.\n\nRecommendations:\nControlled Use: It is recommended to to perfom Connect With Entity Database ritual to acquire new instances of previously found anomalous entities.\nStudy: Continued efforts towards the decryption of the Database Erasure Protocol are recommended to potentially unlock a last-resort neutralization option.\nSuppression: Regular user interaction with the database is advised to slow down its process of provoking the void and potentially summoning entities.</text>
 						<ThreatClass>2</ThreatClass>
 						<isSyncWithDB>true</isSyncWithDB>
 						<!-- <ThingDefSpawn>AE_ResearchNotesMGA</ThingDefSpawn> -->
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>future entity database</AnomalyLabel>
 						<threshold>30</threshold>
 						<label>#3/3 Ancient Database study report</label>
-						<text>Deconstruct.</text>
+						<text>Database Erasure Protocol\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nThe Database Erasure Protocol is decrypted and ready. Subject accessed server system data. A hypothesis was proposed by {PAWN_nameDef}.\n\nOutcome:\nThe decryption process for the Database Erasure Protocol has been finished, and the protocol is now ready for immediate deployment. Furthermore, Subject successfully accessed specific segments of the server's underlying system data.\n\nHypothesis:\n{PAWN_nameDef} has formulated a hypothesis concerning the nature of the Entity Database. This server appears to be a copy, supposedly engineered by employee [REDACTED] of our facility as a comprehensive repository of information pertaining to void creatures, based on the existing Entity Database from the year [REDACTED]. Which shouldn't be possible, since this year is so far away in the future. This raising the possibility that the employee has not yet been born, as no evidence of them exists at our time. This database not only stores data on anomalous entities but also incorporates mechanisms to provoke the void, thereby attracting such entities. The server was intentionally modified to establish a direct connection with the void to enhance its operational efficiency. However, a critical system anomaly occurring on [REDACTED] is theorized to have disabled crucial safety protocols limiting data transmission to the void, resulting in the facility being overwhelmed by various entities. Following this critical failure, a perception-based encryption mechanism was implemented as a safeguard to prevent the attraction of high-threat entities. This measure effectively restricted database utilization by unauthorized personnel, limiting access primarily to data concerning entities already familiar to the user. Additionally, the Database Erasure Protocol was integrated as a final contingency for the server's destruction should it fall into unauthorized hands. [REDACTED] appears to be the latest recorded date, possibly indicating when it was sent to our time.\n\nRecommendations:\nNeutralization: Activation of the Database Erasure Protocol presents a potentially optimal strategy for the complete destruction of this server, thereby mitigating the risk of future void provocation incidents.\nControlled Use: It is recommended to to perfom Connect With Entity Database ritual to acquire new instances of previously found anomalous entities.\nContingency Plan: This database could function as a backup of all the information we've collected about the anomalies we've come across.</text>
 						<isSyncWithDB>true</isSyncWithDB>
 					</li>
 				</studyNotes>
+				<studyNotesManualUnlockable>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>3</threshold>
+						<label>Ancient Database summoning incident report</label>
+						<text>Psychic Pulse\n\nAbstract:\nServer efficiency surged to 200%, followed by a psychic pulse and a [REDACTED] entity incident. Efficiency dropped to 50%. This highlights the server's void-provoking danger, requiring 4 days to regain peak efficiency. User interaction is recommended to suppress this process and prevent entity summoning.\n\nObservations:\nThe server's operational efficiency peaked at 200%.\nA distinct psychic pulse emanated from the server unit.\nWithin a short timeframe of several hours following the pulse, an incident involving the [REDACTED] entity took place.\n\nOutcome:\nThe server's operational efficiency subsequently decreased to 50%.\n\nDiscussion:\nThis incident illustrates the inherent threat posed by the server's capacity to provoke the void and attract dangerous anomalous entities to our facility. The observed 4 day duration required for the server to return to a 200% operational efficiency level from 50% underscores the necessity of consistent user interaction with the database to counteract and reduce its operational efficiency, thereby mitigating the risk of further provocations.\n\nRecommendations:\nSuppression: Consistent user interaction with the database is strongly advised as a countermeasure to slow down its inherent process of provoking the void and, consequently, reducing the likelihood of summoning potentially hostile entities.</text>
+					</li>
+				</studyNotesManualUnlockable>
 			</li>
 			<li Class="AnomaliesExpected.CompProperties_CanDestroyedAfterStudy">
 				<ticksToActivate>60000</ticksToActivate>
