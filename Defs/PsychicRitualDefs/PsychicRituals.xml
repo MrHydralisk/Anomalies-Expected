@@ -99,8 +99,7 @@
 		<iconPath>UI/PsychicRituals/PsychicRitual_AEConnectEntityDatabase</iconPath>
 		<researchPrerequisite>AEConnectEntityDatabase</researchPrerequisite>
 		<outcomeDescription>With the current quality, there's a {0} chance the invoker will receive dark psychic shock.</outcomeDescription>
-		<!-- <hoursUntilOutcome>4</hoursUntilOutcome> -->
-		<hoursUntilOutcome>1</hoursUntilOutcome>
+		<hoursUntilOutcome>4</hoursUntilOutcome>
 		<castableOnPocketMaps>false</castableOnPocketMaps>
 		<psychicShockChanceFromQualityCurve>
 			<points>
@@ -111,18 +110,16 @@
 			</points>
 		</psychicShockChanceFromQualityCurve>
 		<darkPsychicShockDurarionHoursRange>2~4</darkPsychicShockDurarionHoursRange>
-		<incidentDelayHoursRange>0</incidentDelayHoursRange>
-		<!-- <incidentDelayHoursRange>2~4</incidentDelayHoursRange> -->
-		<!-- <requiredOffering> -->
-			<!-- <filter> -->
-				<!-- <thingDefs> -->
-					<!-- <li>Bioferrite</li> -->
-				<!-- </thingDefs> -->
-			<!-- </filter> -->
-			<!-- <count>30</count> -->
-		<!-- </requiredOffering> -->
-		<!-- <cooldownHours>96</cooldownHours> -->
-		<cooldownHours>2</cooldownHours>
+		<incidentDelayHoursRange>2~4</incidentDelayHoursRange>
+		<requiredOffering>
+			<filter>
+				<thingDefs>
+					<li>Bioferrite</li>
+				</thingDefs>
+			</filter>
+			<count>30</count>
+		</requiredOffering>
+		<cooldownHours>96</cooldownHours>
 		<chanterRole>ChanterAdvanced</chanterRole>
 		<EntityDatabaseAnomalyDef>AE_EntityDatabase</EntityDatabaseAnomalyDef>
 	</AnomaliesExpected.PsychicRitualDef_AEConnectEntityDatabase>
