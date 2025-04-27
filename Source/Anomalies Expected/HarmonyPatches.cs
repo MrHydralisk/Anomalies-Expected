@@ -145,6 +145,8 @@ namespace AnomaliesExpected
                 SnowArmy = FactionGenerator.NewGeneratedFaction(new FactionGeneratorParms(FactionDefOfLocal.AE_SnowArmy));
                 Find.FactionManager.Add(SnowArmy);
             }
+            if(Find.FactionManager.OfMechanoids == null) return;
+            
             FactionRelation factionRelationAB = SnowArmy.RelationWith(Find.FactionManager.OfMechanoids);
             factionRelationAB.baseGoodwill = 0;
             factionRelationAB.kind = FactionRelationKind.Neutral;
