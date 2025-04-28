@@ -145,12 +145,16 @@ namespace AnomaliesExpected
                 SnowArmy = FactionGenerator.NewGeneratedFaction(new FactionGeneratorParms(FactionDefOfLocal.AE_SnowArmy));
                 Find.FactionManager.Add(SnowArmy);
             }
-            FactionRelation factionRelationAB = SnowArmy.RelationWith(Find.FactionManager.OfMechanoids);
-            factionRelationAB.baseGoodwill = 0;
-            factionRelationAB.kind = FactionRelationKind.Neutral;
-            FactionRelation factionRelationBA = Find.FactionManager.OfMechanoids.RelationWith(SnowArmy);
-            factionRelationBA.baseGoodwill = 0;
-            factionRelationBA.kind = FactionRelationKind.Neutral;
+            Faction Mechanoids = Find.FactionManager.OfMechanoids;
+            if (Mechanoids != null)
+            {
+                FactionRelation factionRelationAB = SnowArmy.RelationWith(Mechanoids);
+                factionRelationAB.baseGoodwill = 0;
+                factionRelationAB.kind = FactionRelationKind.Neutral;
+                FactionRelation factionRelationBA = Mechanoids.RelationWith(SnowArmy);
+                factionRelationBA.baseGoodwill = 0;
+                factionRelationBA.kind = FactionRelationKind.Neutral;
+            }
         }
 
         public static void PC_DoPlaySettingsGlobalControls_Postfix(WidgetRow row, bool worldView)
