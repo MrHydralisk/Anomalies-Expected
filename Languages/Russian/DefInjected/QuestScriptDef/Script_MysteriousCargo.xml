@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<AE_MysteriousCargoMeatGrinder.questContentRules.rulesStrings>
+		<li>deliveredLetterLabel->Таинственный груз</li>
+		<li>deliveredLetterText->Вы получили таинственный груз. При внимательном рассмотрении он похож на индустриальный металлический ящик высотой со стол. Маленькие дверцы прерывают гладкую поверхность по бокам, а сверху находится большое отверстие со скрытыми внутри лезвиями. Рядом с отверстием находится одинокая кнопка, намекающая на какую-то неизвестную функцию.</li>
+	</AE_MysteriousCargoMeatGrinder.questContentRules.rulesStrings>
+	<AE_MysteriousCargoMeatGrinder.questDescriptionRules.rulesStrings>
+		<li>questDescription(askerIsNull==true)->От анонимного ИИ поступил необычный запрос: он попросил вас принять груз, не указав, что это такое. ИИ избегает ответа на все вопросы о грузе.\n\nЕсли вы примете этот запрос, груз будет доставлен в транспортной капсуле.</li>
+		<li>questDescription(asker_factionLeader==true)->[asker_faction_leaderTitle] [asker_nameFull] из фракции [asker_faction_name] обращается к вам с необычной просьбой. [asker_pronoun] хочет, чтобы вы приняли какой-то груз, но уходит от ответа на все вопросы о содержимом. В [asker_possessive] голосе чувствуется отчаяние.\n\nЕсли вы согласитесь, [asker_nameFull] доставит груз транспортной капсулой.</li>
+		<li>questDescription(asker_royalInCurrentFaction==true)->[asker_nameFull], [asker_royalTitleInCurrentFaction] фракции [asker_faction_name], обращается к вам с необычной просьбой. [asker_pronoun] хочет, чтобы вы приняли какой-то груз, но уходит от ответа на все вопросы о содержимом. В [asker_possessive] голосе чувствуется отчаяние.\n\nЕсли вы согласитесь, [asker_nameFull] доставит груз транспортной капсулой.</li>
+	</AE_MysteriousCargoMeatGrinder.questDescriptionRules.rulesStrings>
+	<AE_MysteriousCargoMeatGrinder.questNameRules.rulesStrings>
+		<li>questName->Таинственный груз</li>
+	</AE_MysteriousCargoMeatGrinder.questNameRules.rulesStrings>
+
+	<AE_MysteriousCargoBakingPies.questContentRules.rulesStrings>
+		<li>deliveredLetterLabel->Таинственный груз</li>
+		<li>deliveredLetterText->Вы получили таинственный груз. При внимательном рассмотрении кажется, что это круглый большой пирог на тарелке. Выглядит аппетитно.</li>
+	</AE_MysteriousCargoBakingPies.questContentRules.rulesStrings>
+	<AE_MysteriousCargoBakingPies.questDescriptionRules.rulesStrings>
+		<li>questDescription(askerIsNull==true)->От анонимного ИИ поступил необычный запрос: он попросил вас принять груз, не указав, что это такое. ИИ избегает ответа на все вопросы о грузе.\n\nЕсли вы примете этот запрос, груз будет доставлен в транспортной капсуле.</li>
+		<li>questDescription(asker_factionLeader==true)->[asker_faction_leaderTitle] [asker_nameFull] из фракции [asker_faction_name] обращается к вам с необычной просьбой. [asker_pronoun] хочет, чтобы вы приняли какой-то груз, но уходит от ответа на все вопросы о содержимом. В [asker_possessive] голосе чувствуется отчаяние.\n\nЕсли вы согласитесь, [asker_nameFull] доставит груз транспортной капсулой.</li>
+		<li>questDescription(asker_royalInCurrentFaction==true)->[asker_nameFull], [asker_royalTitleInCurrentFaction] фракции [asker_faction_name], обращается к вам с необычной просьбой. [asker_pronoun] хочет, чтобы вы приняли какой-то груз, но уходит от ответа на все вопросы о содержимом. В [asker_possessive] голосе чувствуется отчаяние.\n\nЕсли вы согласитесь, [asker_nameFull] доставит груз транспортной капсулой.</li>
+	</AE_MysteriousCargoBakingPies.questDescriptionRules.rulesStrings>
+	<AE_MysteriousCargoBakingPies.questNameRules.rulesStrings>
+		<li>questName->Таинственный груз</li>
+	</AE_MysteriousCargoBakingPies.questNameRules.rulesStrings>
+
+	<AE_MysteriousCargoBeamTarget.questContentRules.rulesStrings>
+		<li>deliveredLetterLabel->Таинственный груз</li>
+		<li>deliveredLetterText->Вы получили таинственный груз. При внимательном рассмотрении он похож на Маленькое устройство с пневматическими выдвижными опоры. На корпусе имеются индикаторы со светодиодами, антенна и маленькая кнопка. Похоже на оборудование военного назначения.</li>
+	</AE_MysteriousCargoBeamTarget.questContentRules.rulesStrings>
+	<AE_MysteriousCargoBeamTarget.questDescriptionRules.rulesStrings>
+		<li>questDescription(askerIsNull==true)->От анонимного ИИ поступил необычный запрос: он попросил вас принять груз, не указав, что это такое. ИИ избегает ответа на все вопросы о грузе.\n\nЕсли вы примете этот запрос, груз будет доставлен в транспортной капсуле.</li>
+		<li>questDescription(asker_factionLeader==true)->[asker_faction_leaderTitle] [asker_nameFull] из фракции [asker_faction_name] обращается к вам с необычной просьбой. [asker_pronoun] хочет, чтобы вы приняли какой-то груз, но уходит от ответа на все вопросы о содержимом. В [asker_possessive] голосе чувствуется отчаяние.\n\nЕсли вы согласитесь, [asker_nameFull] доставит груз транспортной капсулой.</li>
+		<li>questDescription(asker_royalInCurrentFaction==true)->[asker_nameFull], [asker_royalTitleInCurrentFaction] фракции [asker_faction_name], обращается к вам с необычной просьбой. [asker_pronoun] хочет, чтобы вы приняли какой-то груз, но уходит от ответа на все вопросы о содержимом. В [asker_possessive] голосе чувствуется отчаяние.\n\nЕсли вы согласитесь, [asker_nameFull] доставит груз транспортной капсулой.</li>
+	</AE_MysteriousCargoBeamTarget.questDescriptionRules.rulesStrings>
+	<AE_MysteriousCargoBeamTarget.questNameRules.rulesStrings>
+		<li>questName->Таинственный груз</li>
+	</AE_MysteriousCargoBeamTarget.questNameRules.rulesStrings>
+  
+</LanguageData>

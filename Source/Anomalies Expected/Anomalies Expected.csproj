@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AEDebugTools.cs" />
+    <Compile Include="QuestNode_Root_AEMysteriousCargo.cs" />
     <Compile Include="CompProperties\CompProperties_EntityDatabaseAnomaly.cs" />
     <Compile Include="Comp\Comp_EntityDatabaseAnomaly.cs" />
     <Compile Include="Comp\Comp_EntityDataBaseAccess.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="DefOfLocal\DamageDefOfLocal.cs" />
     <Compile Include="DefOfLocal\FleshTypeDefOfLocal.cs" />
     <Compile Include="IncidentWorker\IncidentWorker_AE.cs" />
+    <Compile Include="IncidentWorker\IncidentWorker_DeployFromQuest.cs" />
     <Compile Include="IncidentWorker\IncidentWorker_DeployThingWithSkip.cs" />
     <Compile Include="IncidentWorker\IncidentWorker_EntityAssault.cs" />
     <Compile Include="MapComponent\SnowArmyMapComponent.cs" />

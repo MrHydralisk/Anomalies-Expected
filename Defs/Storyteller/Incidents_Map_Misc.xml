@@ -25,6 +25,8 @@
 			</li>
 		</modExtensions>
 	</IncidentDef>
+	
+	
   
 	<IncidentDef>
 		<defName>AE_IncidentDef_AnomalyHospitalBedSpawn</defName>
@@ -50,6 +52,8 @@
 			</li>
 		</modExtensions>
 	</IncidentDef>
+	
+	
   
 	<IncidentDef>
 		<defName>AE_IncidentDef_ForbiddenFruitSpawn</defName>
@@ -78,6 +82,8 @@
 			</li>
 		</modExtensions>
 	</IncidentDef>
+	
+	
   
 	<IncidentDef>
 		<defName>AE_IncidentDef_MeatGrinderSpawn</defName>
@@ -95,6 +101,12 @@
 		<requireColonistsPresent>True</requireColonistsPresent>
 		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
 		<minRefireDays>120</minRefireDays>
+		<tags>
+			<li>AEMeatGrinder</li>
+		</tags>
+		<refireCheckTags>
+			<li>AEMeatGrinder</li>
+		</refireCheckTags>
 		<modExtensions>
 			<li Class="AnomaliesExpected.IncidentDefExtension">
 				<DeployableObjectDef>AE_MeatGrinder</DeployableObjectDef>
@@ -103,6 +115,36 @@
 			</li>
 		</modExtensions>
 	</IncidentDef>
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_MeatGrinderMysteriousCargo</defName>
+		<label>industrial metal box</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromQuest</workerClass>
+		<questScriptDef>AE_MysteriousCargoMeatGrinder</questScriptDef>
+		<earliestDay>60</earliestDay>
+		<baseChance>0.1</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minRefireDays>240</minRefireDays>
+		<tags>
+			<li>AEMeatGrinder</li>
+		</tags>
+		<refireCheckTags>
+			<li>AEMeatGrinder</li>
+		</refireCheckTags>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableObjectDef>AE_MeatGrinder</DeployableObjectDef>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+	
+	
   
 	<IncidentDef>
 		<defName>AE_IncidentDef_BakingPiesSpawn</defName>
@@ -120,6 +162,12 @@
 		<requireColonistsPresent>True</requireColonistsPresent>
 		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
 		<minRefireDays>240</minRefireDays>
+		<tags>
+			<li>AEBakingPies</li>
+		</tags>
+		<refireCheckTags>
+			<li>AEBakingPies</li>
+		</refireCheckTags>
 		<modExtensions>
 			<li Class="AnomaliesExpected.IncidentDefExtension">
 				<DeployableThingDefs>
@@ -130,6 +178,38 @@
 			</li>
 		</modExtensions>
 	</IncidentDef>
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_BakingPiesMysteriousCargo</defName>
+		<label>big pie</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromQuest</workerClass>
+		<questScriptDef>AE_MysteriousCargoBakingPies</questScriptDef>
+		<earliestDay>60</earliestDay>
+		<baseChance>0.1</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+		<minRefireDays>240</minRefireDays>
+		<tags>
+			<li>AEBakingPies</li>
+		</tags>
+		<refireCheckTags>
+			<li>AEBakingPies</li>
+		</refireCheckTags>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableThingDefs>
+					<li>AE_BakingPies</li>
+				</DeployableThingDefs>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+	
+	
   
 	<IncidentDef>
 		<defName>AE_IncidentDef_BeamTargetSpawn</defName>
@@ -155,6 +235,37 @@
 			</li>
 		</modExtensions>
 	</IncidentDef>
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_BeamTargetMysteriousCargo</defName>
+		<label>transmitter</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromQuest</workerClass>
+		<questScriptDef>AE_MysteriousCargoBeamTarget</questScriptDef>
+		<earliestDay>60</earliestDay>
+		<baseChance>0.1</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minRefireDays>240</minRefireDays>
+		<tags>
+			<li>AEBeamTarget</li>
+		</tags>
+		<refireCheckTags>
+			<li>AEBeamTarget</li>
+		</refireCheckTags>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableObjectDef>AE_BeamTarget</DeployableObjectDef>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+				<FleckScale>0.42</FleckScale>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+	
+	
   
 	<IncidentDef>
 		<defName>AE_IncidentDef_BloodPuddleSpawn</defName>
@@ -185,6 +296,8 @@
 			</li>
 		</modExtensions>
 	</IncidentDef>
+	
+	
   
 	<IncidentDef>
 		<defName>AE_IncidentDef_BloodLakeSpawn</defName>
@@ -214,6 +327,8 @@
 			</li>
 		</modExtensions>
 	</IncidentDef>
+	
+	
   
 	<IncidentDef>
 		<defName>AE_IncidentDef_StudyNotepadSpawn</defName>
@@ -242,6 +357,8 @@
 			</li>
 		</modExtensions>
 	</IncidentDef>
+	
+	
   
 	<IncidentDef>
 		<defName>AE_IncidentDef_ProviderScriptureSpawn</defName>
@@ -270,6 +387,8 @@
 			</li>
 		</modExtensions>
 	</IncidentDef>
+	
+	
   
 	<IncidentDef>
 		<defName>AE_IncidentDef_ChristmasStockingsSpawn</defName>
@@ -303,6 +422,8 @@
 			</li>
 		</modExtensions>
 	</IncidentDef>
+	
+	
   
 	<IncidentDef>
 		<defName>AE_IncidentDef_SpeedometerSpawn</defName>
@@ -337,6 +458,8 @@
 			</li>
 		</modExtensions>
 	</IncidentDef>
+	
+	
   
 	<IncidentDef>
 		<defName>AE_IncidentDef_EntityDatabaseSpawn</defName>

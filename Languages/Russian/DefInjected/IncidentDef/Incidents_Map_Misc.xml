@@ -5,49 +5,79 @@
 	<AE_IncidentDef_AnomalyBedSpawn.letterLabel>Найдена обычная кровать</AE_IncidentDef_AnomalyBedSpawn.letterLabel>
 	<AE_IncidentDef_AnomalyBedSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это обычная кровать, но с каркасом из органического металла. Она выглядит очень удобной для сна.</AE_IncidentDef_AnomalyBedSpawn.letterText>
   
+  
+  
 	<AE_IncidentDef_AnomalyHospitalBedSpawn.label>обычная медицинская кровать</AE_IncidentDef_AnomalyHospitalBedSpawn.label>
 	<AE_IncidentDef_AnomalyHospitalBedSpawn.letterLabel>Найдена обычная медицинская кровать</AE_IncidentDef_AnomalyHospitalBedSpawn.letterLabel>
 	<AE_IncidentDef_AnomalyHospitalBedSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это обычная кровать, специально предназначенная для использования в больницах, но с каркасом из органического металла. Медицинский планшет, лежащий на кровати, с написанным на нем текстом.</AE_IncidentDef_AnomalyHospitalBedSpawn.letterText>
+  
+  
   
 	<AE_IncidentDef_ForbiddenFruitSpawn.label>огромное яблоко</AE_IncidentDef_ForbiddenFruitSpawn.label>
 	<AE_IncidentDef_ForbiddenFruitSpawn.letterLabel>Найдена огромное яблоко</AE_IncidentDef_ForbiddenFruitSpawn.letterLabel>
 	<AE_IncidentDef_ForbiddenFruitSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это огромное яблоко.</AE_IncidentDef_ForbiddenFruitSpawn.letterText>
 	
+	
+	
 	<AE_IncidentDef_MeatGrinderSpawn.label>промышленный металлический ящик</AE_IncidentDef_MeatGrinderSpawn.label>
 	<AE_IncidentDef_MeatGrinderSpawn.letterLabel>Найден промышленный металлический ящик</AE_IncidentDef_MeatGrinderSpawn.letterLabel>
 	<AE_IncidentDef_MeatGrinderSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении он похож на индустриальный металлический ящик высотой со стол. Маленькие дверцы прерывают гладкую поверхность по бокам, а сверху находится большое отверстие со скрытыми внутри лезвиями. Рядом с отверстием находится одинокая кнопка, намекающая на какую-то неизвестную функцию.</AE_IncidentDef_MeatGrinderSpawn.letterText>
+	
+	<AE_IncidentDef_MeatGrinderMysteriousCargo.label>промышленный металлический ящик</AE_IncidentDef_MeatGrinderMysteriousCargo.label>
+	
+	
 	
 	<AE_IncidentDef_BakingPiesSpawn.label>большой пирог</AE_IncidentDef_BakingPiesSpawn.label>
 	<AE_IncidentDef_BakingPiesSpawn.letterLabel>Найден большой пирог</AE_IncidentDef_BakingPiesSpawn.letterLabel>
 	<AE_IncidentDef_BakingPiesSpawn.letterText>Ваш колонист заметил неподалёку какой-то объект, появившийся из ниоткуда. При внимательном рассмотрении кажется, что это круглый большой пирог на тарелке. Выглядит аппетитно.</AE_IncidentDef_BakingPiesSpawn.letterText>
 	
+	<AE_IncidentDef_BakingPiesMysteriousCargo.label>большой пирог</AE_IncidentDef_BakingPiesMysteriousCargo.label>
+	
+	
+	
 	<AE_IncidentDef_BeamTargetSpawn.label>передатчик</AE_IncidentDef_BeamTargetSpawn.label>
 	<AE_IncidentDef_BeamTargetSpawn.letterLabel>Найден передатчик</AE_IncidentDef_BeamTargetSpawn.letterLabel>
 	<AE_IncidentDef_BeamTargetSpawn.letterText>Ваш колонист заметил неподалёку какой-то объект, появившийся из ниоткуда. При внимательном рассмотрении он похож на Маленькое устройство с пневматическими выдвижными опоры. На корпусе имеются индикаторы со светодиодами, антенна и маленькая кнопка. Похоже на оборудование военного назначения.</AE_IncidentDef_BeamTargetSpawn.letterText>
+	
+	<AE_IncidentDef_BeamTargetMysteriousCargo.label>передатчик</AE_IncidentDef_BeamTargetMysteriousCargo.label>
+	
+	
 	
 	<AE_IncidentDef_BloodPuddleSpawn.label>странная лужа</AE_IncidentDef_BloodPuddleSpawn.label>
 	<AE_IncidentDef_BloodPuddleSpawn.letterLabel>Найдена странная лужа</AE_IncidentDef_BloodPuddleSpawn.letterLabel>
 	<AE_IncidentDef_BloodPuddleSpawn.letterText>Ваш колонист зафиксировал незначительные сейсмические колебания. Похоже, что из-под земли просачивается лужа жидкости.</AE_IncidentDef_BloodPuddleSpawn.letterText>
 
+
+
 	<AE_IncidentDef_BloodLakeSpawn.label>странное озеро</AE_IncidentDef_BloodLakeSpawn.label>
 	<AE_IncidentDef_BloodLakeSpawn.letterLabel>Найдено странное озеро</AE_IncidentDef_BloodLakeSpawn.letterLabel>
 	<AE_IncidentDef_BloodLakeSpawn.letterText>Ваш колонист зафиксировал значительные сейсмические колебания. Похоже, что из-под земли просачивается озеро жидкости.</AE_IncidentDef_BloodLakeSpawn.letterText>
+  
+  
   
 	<AE_IncidentDef_StudyNotepadSpawn.label>жёлтый блокнот</AE_IncidentDef_StudyNotepadSpawn.label>
 	<AE_IncidentDef_StudyNotepadSpawn.letterLabel>Найден жёлтый блокнот</AE_IncidentDef_StudyNotepadSpawn.letterLabel>
 	<AE_IncidentDef_StudyNotepadSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это блокнот с желтыми страницами, заполненными рукописными заметками.</AE_IncidentDef_StudyNotepadSpawn.letterText>
 	
+	
+	
 	<AE_IncidentDef_ProviderScriptureSpawn.label>древнее писание</AE_IncidentDef_ProviderScriptureSpawn.label>
 	<AE_IncidentDef_ProviderScriptureSpawn.letterLabel>Найдено древнее писание</AE_IncidentDef_ProviderScriptureSpawn.letterLabel>
 	<AE_IncidentDef_ProviderScriptureSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это старинная книга с темной обложкой, украшенная заметным символом.</AE_IncidentDef_ProviderScriptureSpawn.letterText>
+	
+	
 	
 	<AE_IncidentDef_ChristmasStockingsSpawn.label>красный носок</AE_IncidentDef_ChristmasStockingsSpawn.label>
 	<AE_IncidentDef_ChristmasStockingsSpawn.letterLabel>Найден красный носок</AE_IncidentDef_ChristmasStockingsSpawn.letterLabel>
 	<AE_IncidentDef_ChristmasStockingsSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это красный носок с белыми частями и символом снежинки. Похоже, он наполнен чем-то.</AE_IncidentDef_ChristmasStockingsSpawn.letterText>
 	
+	
+	
 	<AE_IncidentDef_SpeedometerSpawn.label>cпидометр</AE_IncidentDef_SpeedometerSpawn.label>
 	<AE_IncidentDef_SpeedometerSpawn.letterLabel>Найден cпидометр</AE_IncidentDef_SpeedometerSpawn.letterLabel>
 	<AE_IncidentDef_SpeedometerSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При ближайшем рассмотрении он оказался темным круглым прибором с выцветшими цифрами и тонкой красной стрелкой.</AE_IncidentDef_SpeedometerSpawn.letterText>
+	
+	
 	
 	<AE_IncidentDef_EntityDatabaseSpawn.label>древний сервер</AE_IncidentDef_EntityDatabaseSpawn.label>
 	<AE_IncidentDef_EntityDatabaseSpawn.letterLabel>Найден древний сервер</AE_IncidentDef_EntityDatabaseSpawn.letterLabel>
