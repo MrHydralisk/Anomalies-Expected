@@ -1,30 +1,16 @@
 ﻿using RimWorld;
-using System.Linq;
-using UnityEngine;
 using Verse;
 
 namespace AnomaliesExpected
 {
-    public class IncidentWorker_DeployFromOrbit : IncidentWorker
+    public class IncidentWorker_DeployFromOrbit : IncidentWorker_AE
     {
-        public ThingDef DeployableObjectDef => Ext?.DeployableObjectDef;
-        public ThingDef SkyfallerDef => Ext?.SkyfallerDef;
-        public float ChanceFactorPowPerBuilding => Ext?.ChanceFactorPowPerBuilding ?? 1f;
-
-        public IncidentDefExtension Ext => def.GetModExtension<IncidentDefExtension>();
-
-        public override float ChanceFactorNow(IIncidentTarget target)
-        {
-            if (!(target is Map map) || ChanceFactorPowPerBuilding == 1)
-            {
-                return base.ChanceFactorNow(target);
-            }
-            int num = map.listerBuildings.allBuildingsNonColonist.Count((Building b) => b.def == DeployableObjectDef);
-            return ((num > 0) ? Mathf.Pow(ChanceFactorPowPerBuilding, num) : 1f) * base.ChanceFactorNow(target);
-        }
-
         protected override bool CanFireNowSub(IncidentParms parms)
         {
+            if (!base.CanFireNowSub(parms))
+            {
+                return false;
+            }
             Map map = (Map)parms.target;
             IntVec3 cell;
             return TryFindCell(out cell, map, DeployableObjectDef);

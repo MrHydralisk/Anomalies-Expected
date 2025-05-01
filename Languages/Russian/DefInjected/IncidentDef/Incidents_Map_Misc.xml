@@ -19,11 +19,11 @@
 	
 	<AE_IncidentDef_BakingPiesSpawn.label>большой пирог</AE_IncidentDef_BakingPiesSpawn.label>
 	<AE_IncidentDef_BakingPiesSpawn.letterLabel>Найден большой пирог</AE_IncidentDef_BakingPiesSpawn.letterLabel>
-	<AE_IncidentDef_BakingPiesSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это круглый большой пирог на тарелке. Выглядит аппетитно.</AE_IncidentDef_BakingPiesSpawn.letterText>
+	<AE_IncidentDef_BakingPiesSpawn.letterText>Ваш колонист заметил неподалёку какой-то объект, появившийся из ниоткуда. При внимательном рассмотрении кажется, что это круглый большой пирог на тарелке. Выглядит аппетитно.</AE_IncidentDef_BakingPiesSpawn.letterText>
 	
 	<AE_IncidentDef_BeamTargetSpawn.label>передатчик</AE_IncidentDef_BeamTargetSpawn.label>
 	<AE_IncidentDef_BeamTargetSpawn.letterLabel>Найден передатчик</AE_IncidentDef_BeamTargetSpawn.letterLabel>
-	<AE_IncidentDef_BeamTargetSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении он похож на Маленькое устройство с пневматическими выдвижными опоры. На корпусе имеются индикаторы со светодиодами, антенна и маленькая кнопка. Похоже на оборудование военного назначения.</AE_IncidentDef_BeamTargetSpawn.letterText>
+	<AE_IncidentDef_BeamTargetSpawn.letterText>Ваш колонист заметил неподалёку какой-то объект, появившийся из ниоткуда. При внимательном рассмотрении он похож на Маленькое устройство с пневматическими выдвижными опоры. На корпусе имеются индикаторы со светодиодами, антенна и маленькая кнопка. Похоже на оборудование военного назначения.</AE_IncidentDef_BeamTargetSpawn.letterText>
 	
 	<AE_IncidentDef_BloodPuddleSpawn.label>странная лужа</AE_IncidentDef_BloodPuddleSpawn.label>
 	<AE_IncidentDef_BloodPuddleSpawn.letterLabel>Найдена странная лужа</AE_IncidentDef_BloodPuddleSpawn.letterLabel>
@@ -51,6 +51,6 @@
 	
 	<AE_IncidentDef_EntityDatabaseSpawn.label>древний сервер</AE_IncidentDef_EntityDatabaseSpawn.label>
 	<AE_IncidentDef_EntityDatabaseSpawn.letterLabel>Найден древний сервер</AE_IncidentDef_EntityDatabaseSpawn.letterLabel>
-	<AE_IncidentDef_EntityDatabaseSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это древний сервер, состоящий из трёх соединённых секций. Данные, которые он содержит, однако, остаются неизвестными.</AE_IncidentDef_EntityDatabaseSpawn.letterText>
+	<AE_IncidentDef_EntityDatabaseSpawn.letterText>Ваш колонист заметил неподалёку какой-то объект, появившийся из ниоткуда. При внимательном рассмотрении кажется, что это древний сервер, состоящий из трёх соединённых секций. Данные, которые он содержит, однако, остаются неизвестными.</AE_IncidentDef_EntityDatabaseSpawn.letterText>
 
 </LanguageData>

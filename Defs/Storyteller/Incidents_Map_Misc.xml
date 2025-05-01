@@ -111,9 +111,9 @@
 		<targetTags>
 			<li>Map_PlayerHome</li>
 		</targetTags>
-		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingFromOrbit</workerClass>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingWithSkip</workerClass>
 		<letterLabel>Found big pie</letterLabel>
-		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a round big pie on a plate. It looks appetizing.</letterText>
+		<letterText>Your colonist noticed some object appeared nearby. At close inspection it seems like a round big pie on a plate. It looks appetizing.</letterText>
 		<letterDef>NeutralEvent</letterDef>
 		<earliestDay>60</earliestDay>
 		<baseChance>0.1</baseChance>
@@ -125,9 +125,8 @@
 				<DeployableThingDefs>
 					<li>AE_BakingPies</li>
 				</DeployableThingDefs>
-				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
-				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
 				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+				<FleckScale>0.25</FleckScale>
 			</li>
 		</modExtensions>
 	</IncidentDef>
@@ -139,9 +138,9 @@
 		<targetTags>
 			<li>Map_PlayerHome</li>
 		</targetTags>
-		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromOrbit</workerClass>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingWithSkip</workerClass>
 		<letterLabel>Found transmitter</letterLabel>
-		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a small device with pneumatic retractable stops. On its body there are indicators with lights, an antenna and a small button. It looks like military grade.</letterText>
+		<letterText>Your colonist noticed some object appeared nearby. At close inspection it seems like a small device with pneumatic retractable stops. On its body there are indicators with lights, an antenna and a small button. It looks like military grade.</letterText>
 		<letterDef>NeutralEvent</letterDef>
 		<earliestDay>60</earliestDay>
 		<baseChance>0.1</baseChance>
@@ -151,8 +150,8 @@
 		<modExtensions>
 			<li Class="AnomaliesExpected.IncidentDefExtension">
 				<DeployableObjectDef>AE_BeamTarget</DeployableObjectDef>
-				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
 				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+				<FleckScale>0.42</FleckScale>
 			</li>
 		</modExtensions>
 	</IncidentDef>
@@ -329,6 +328,12 @@
 				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
 				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
 				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+				<ChanceFactorPowPerHediffDefs>
+					<li>
+						<hediffDef>Hediff_AEAcceleration</hediffDef>
+						<factor>0</factor>
+					</li>
+				</ChanceFactorPowPerHediffDefs>
 			</li>
 		</modExtensions>
 	</IncidentDef>
@@ -340,9 +345,9 @@
 		<targetTags>
 			<li>Map_PlayerHome</li>
 		</targetTags>
-		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingFromOrbit</workerClass>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingWithSkip</workerClass>
 		<letterLabel>Found ancient server</letterLabel>
-		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like an ancient server composed of three connected sections. The data it holds, however, remains unknown.</letterText>
+		<letterText>Your colonist noticed some object appeared nearby. At close inspection it seems like an ancient server composed of three connected sections. The data it holds, however, remains unknown.</letterText>
 		<letterDef>NeutralEvent</letterDef>
 		<earliestDay>60</earliestDay>
 		<baseChance>0.2</baseChance>
@@ -354,9 +359,8 @@
 				<DeployableThingDefs>
 					<li>AE_EntityDatabase</li>
 				</DeployableThingDefs>
-				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
-				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
 				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+				<FleckScale>0.46</FleckScale>
 			</li>
 		</modExtensions>
 	</IncidentDef>
