@@ -226,7 +226,7 @@
 		<letterLabel>Found yellow notepad</letterLabel>
 		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a notepad, its yellow pages filled with handwritten notes.</letterText>
 		<letterDef>NeutralEvent</letterDef>
-		<earliestDay>30</earliestDay>
+		<earliestDay>120</earliestDay>
 		<baseChance>0.2</baseChance>
 		<requireColonistsPresent>True</requireColonistsPresent>
 		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
@@ -254,7 +254,7 @@
 		<letterLabel>Found ancient scripture</letterLabel>
 		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a dark-covered book bearing the marks of time, featuring a prominent symbol.</letterText>
 		<letterDef>NeutralEvent</letterDef>
-		<earliestDay>60</earliestDay>
+		<earliestDay>180</earliestDay>
 		<baseChance>0.2</baseChance>
 		<requireColonistsPresent>True</requireColonistsPresent>
 		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
