@@ -59,7 +59,7 @@ Supported languages:
 
 ## Add/Remove
 
-Anomalies Expected mod should be safe to add to existing save. But when you want to remove it, better make backup save just in case and remove all anomalies off map from mod.
+Anomalies Expected mod should be safe to add to existing save (there is button in mod settings, if AE research tree still hidden). But when you want to remove it, better make backup save just in case and remove all anomalies off map from mod.
 
 ## To Do
 

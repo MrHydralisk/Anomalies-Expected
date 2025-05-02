@@ -40,7 +40,7 @@ namespace AnomaliesExpected
             {
                 if (DeployableObjectDef != null)
                 {
-                    int num = map.listerBuildings.allBuildingsNonColonist.Count((Building b) => b.def == DeployableObjectDef);
+                    int num = map.listerThings.AllThings.Count((Thing t) => t.def == DeployableObjectDef);
                     if (num > 0)
                     {
                         chance *= Mathf.Pow(ChanceFactorPowPerBuilding, num);
@@ -59,7 +59,7 @@ namespace AnomaliesExpected
             {
                 foreach (ThingDefCountClass tdcc in ChanceFactorPowPerOtherBuildings)
                 {
-                    int num = map.listerBuildings.allBuildingsNonColonist.Count((Building b) => b.def == tdcc.thingDef);
+                    int num = map.listerThings.AllThings.Count((Thing t) => t.def == tdcc.thingDef);
                     if (num > 0)
                     {
                         chance *= Mathf.Pow(tdcc.DropChance, num);
