@@ -194,6 +194,7 @@ namespace AnomaliesExpected
                 IntVec3 SubMapSize = new IntVec3(Mathf.Min(AEMod.Settings.BloodLakeSubMapMaxSize, Map.Size.x), Mathf.Min(AEMod.Settings.BloodLakeSubMapMaxSize, Map.Size.y), Mathf.Min(AEMod.Settings.BloodLakeSubMapMaxSize, Map.Size.z));
                 subMap = MapGenerator.GenerateMap(SubMapSize, pocketMapParent, ExtBloodLake.mapGeneratorDef, isPocketMap: true);
                 Find.World.pocketMaps.Add(pocketMapParent);
+                mapComponentCached = subMap?.GetComponent<BloodLakeMapComponent>() ?? null;
                 exitBuilding.StudyUnlocks.SetParentThing(this);
                 mapComponent?.Terminal?.StudyUnlocks.SetParentThing(this);
                 StudyUnlocks.UnlockStudyNoteManual(0);

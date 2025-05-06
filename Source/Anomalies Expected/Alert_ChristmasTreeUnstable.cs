@@ -1,5 +1,4 @@
 ﻿using RimWorld;
-using RimWorld.Planet;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -10,9 +9,9 @@ namespace AnomaliesExpected
 
     public class Alert_ChristmasTreeUnstable : Alert_Critical
     {
-        private static List<GlobalTargetInfo> targets = new List<GlobalTargetInfo>();
+        private static List<Thing> targets = new List<Thing>();
 
-        private Building_AEChristmasTreeExit ChristmasTree => targets.FirstOrDefault().Thing as Building_AEChristmasTreeExit;
+        private Building_AEChristmasTreeExit ChristmasTree => targets.FirstOrDefault() as Building_AEChristmasTreeExit;
 
         protected override Color BGColor
         {
@@ -36,7 +35,7 @@ namespace AnomaliesExpected
 
         public static void AddTarget(Building_AEChristmasTreeExit christmasTree)
         {
-            if (targets.IndexOf(christmasTree) == -1)
+            if (targets.All((Thing t) => t.ThingID != christmasTree.ThingID))
             {
                 targets.Add(christmasTree);
             }
@@ -44,10 +43,12 @@ namespace AnomaliesExpected
 
         public static void RemoveTarget(Building_AEChristmasTreeExit christmasTree)
         {
-            int index = targets.IndexOf(christmasTree);
-            if (index >= 0)
+            for (int i = targets.Count - 1; i >= 0; i--)
             {
-                targets.RemoveAt(index);
+                if (targets[i].ThingID == christmasTree.ThingID)
+                {
+                    targets.RemoveAt(i);
+                }
             }
         }
 
@@ -58,6 +59,10 @@ namespace AnomaliesExpected
 
         public override AlertReport GetReport()
         {
+            if (targets.NullOrEmpty() || ChristmasTree.DestroyedOrNull() || !ChristmasTree.Spawned)
+            {
+                return false;
+            }
             return AlertReport.CulpritsAre(targets);
         }
     }

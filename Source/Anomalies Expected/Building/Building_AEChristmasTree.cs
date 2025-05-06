@@ -64,6 +64,7 @@ namespace AnomaliesExpected
                 subMap = MapGenerator.GenerateMap(new IntVec3(50, 1, 50), pocketMapParent, ExtBloodLake.mapGeneratorDef, isPocketMap: true);
                 Find.World.pocketMaps.Add(pocketMapParent);
                 isCreatedMap = true;
+                mapComponentCached = subMap?.GetComponent<ChristmasTreeMapComponent>() ?? null;
                 NewYearTick = NextNewYearTick;
                 Find.LetterStack.ReceiveLetter("AnomaliesExpected.ChristmasStockings.LetterEnter.Label".Translate(), "AnomaliesExpected.ChristmasStockings.LetterEnter.Text".Translate(), LetterDefOf.ThreatSmall, new TargetInfo(exitBuilding));
             }
