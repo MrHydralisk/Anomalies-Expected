@@ -81,7 +81,7 @@ namespace AnomaliesExpected
                         int j = 0;
                         if ((j = StudyNotesStudy.IndexOf(studyNote)) >= 0)
                         {
-                            nextIndex = i + 1;
+                            nextIndex = j + 1;
                             studyProgress = nextIndex;
                             StudyComp.anomalyKnowledgeGained = Mathf.Max(StudyComp.anomalyKnowledgeGained, studyNote.threshold);
                         }
@@ -132,7 +132,7 @@ namespace AnomaliesExpected
                         int j = 0;
                         if ((j = StudyNotesStudy.IndexOf(studyNote)) >= 0)
                         {
-                            nextIndex = i + 1;
+                            nextIndex = j + 1;
                             studyProgress = nextIndex;
                             StudyComp.anomalyKnowledgeGained = Mathf.Max(StudyComp.anomalyKnowledgeGained, studyNote.threshold);
                         }
