@@ -268,7 +268,7 @@ namespace AnomaliesExpected
                     {
                         if (Find.TickManager.TicksGame > lastNotificationTick)
                         {
-                            Messages.Message("AnomaliesExpected.EntityDataBase.ThreatClassIncreased".Translate(parent.LabelCap), parent, MessageTypeDefOf.CautionInput);
+                            Messages.Message("AnomaliesExpected.EntityDataBase.ThreatClassIncreased".Translate(parent.LabelCap), parent, MessageTypeDefOf.CautionInput, historical: false);
                             lastNotificationTick = Find.TickManager.TicksGame + 250;
                         }
                         ThreatClass = aestudyNote.ThreatClass;
