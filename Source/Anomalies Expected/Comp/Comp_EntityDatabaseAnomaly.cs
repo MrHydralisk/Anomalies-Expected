@@ -64,6 +64,10 @@ namespace AnomaliesExpected
                     entityIncidentsCached.Add(entityIncidents);
                 }
             }
+            if (!entityIncidents.Any((AEEntityIncidents aeei) => aeei.incidentDefs.Contains(selectedIncidentDef)))
+            {
+                selectedIncidentDef = null;
+            }
             if (StudyUnlocks.isStudyNoteManualUnlocked(0))
             {
                 isActivatedOnce = true;
