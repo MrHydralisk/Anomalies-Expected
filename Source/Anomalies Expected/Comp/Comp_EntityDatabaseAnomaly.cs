@@ -17,6 +17,7 @@ namespace AnomaliesExpected
 
         public IncidentDef selectedIncidentDef;
         private float activityOnPassive;
+        public bool isActivatedOnce;
 
         public List<AEEntityIncidents> entityIncidents
         {
@@ -63,6 +64,10 @@ namespace AnomaliesExpected
                     entityIncidentsCached.Add(entityIncidents);
                 }
             }
+            if (StudyUnlocks.isStudyNoteManualUnlocked(0))
+            {
+                isActivatedOnce = true;
+            }
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -89,6 +94,7 @@ namespace AnomaliesExpected
         public override void PostExposeData()
         {
             Scribe_Defs.Look(ref selectedIncidentDef, "selectedIncidentDef");
+            Scribe_Values.Look(ref isActivatedOnce, "isActivatedOnce", false);
         }
 
         public void OnActivityActivated()
@@ -144,6 +150,11 @@ namespace AnomaliesExpected
                 signalStrength = 0;
             }
             Messages.Message("AnomaliesExpected.EntityDatabaseAnomaly.Active".Translate(parent.LabelCap, signalStrength).RawText, parent, messageTypeDef);
+            if (!isActivatedOnce)
+            {
+                StudyUnlocks.UnlockStudyNoteManual(0);
+                isActivatedOnce = true;
+            }
             if (!Props.soundActivate.NullOrUndefined())
             {
                 Props.soundActivate.PlayOneShot(SoundInfo.InMap(parent));
