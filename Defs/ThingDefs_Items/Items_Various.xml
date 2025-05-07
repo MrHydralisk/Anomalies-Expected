@@ -531,6 +531,8 @@
 				<thoughtDefPositive>Thought_AEChristmasCandyCane</thoughtDefPositive>
 				<thoughtDefNegative>Thought_AEChristmasCoal</thoughtDefNegative>
 				<lastGift>AE_ChristmasTree</lastGift>
+				
+				<jobDef>AE_InteractChristmasStockings</jobDef>
 			</li>
 			<li Class="CompProperties_Studiable">
 				<frequencyTicks>60000</frequencyTicks>
