@@ -858,5 +858,28 @@
 			</li>
 		</stages>
 	</HediffDef>
+  
+	<HediffDef>
+		<defName>Hediff_AEChronoComa</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>chrono coma</label>
+		<description>This person forcefully separated Speedometer from their body. Severing the link this way has put them in a coma.</description>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>true</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>0.1</postFactor>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
 	
 </Defs>

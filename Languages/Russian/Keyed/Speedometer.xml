@@ -9,4 +9,7 @@
 	<AnomaliesExpected.Speedometer.TakeOff>Снять {0}?</AnomaliesExpected.Speedometer.TakeOff>
 	<AnomaliesExpected.Speedometer.TakeOff.Label>Снять</AnomaliesExpected.Speedometer.TakeOff.Label>
 	<AnomaliesExpected.Speedometer.TakeOff.Desc>Снять {0} с себя</AnomaliesExpected.Speedometer.TakeOff.Desc>
+	<AnomaliesExpected.Speedometer.TakeOffEarly>Насильно извлечь {0}?\nВызовет хронокому на {1}.</AnomaliesExpected.Speedometer.TakeOffEarly>
+	<AnomaliesExpected.Speedometer.TakeOffEarly.Label>Насильно извлечь</AnomaliesExpected.Speedometer.TakeOffEarly.Label>
+	<AnomaliesExpected.Speedometer.TakeOffEarly.Desc>Насильно извлечь {0} до того как связь с телом может быть разорвана. Может быть безопасно снят через {1}.</AnomaliesExpected.Speedometer.TakeOffEarly.Desc>
 </LanguageData>

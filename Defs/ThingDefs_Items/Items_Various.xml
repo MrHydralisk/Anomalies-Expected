@@ -674,6 +674,7 @@
 				<AccelerationHediffDef>Hediff_AEAcceleration</AccelerationHediffDef>
 				<DecelerationHediffDef>Hediff_AEDeceleration</DecelerationHediffDef>
 				<ChronoDestabilizationHediffDef>Hediff_AEChronoDestabilization</ChronoDestabilizationHediffDef>
+				<ChronoComaHediffDef>Hediff_AEChronoComa</ChronoComaHediffDef>
 				<dropTexPath>UI/Icons/AE_SpeedometerDrop_Icon</dropTexPath>
 			</li>
 			<li Class="CompProperties_Studiable">
