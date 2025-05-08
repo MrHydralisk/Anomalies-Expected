@@ -18,6 +18,8 @@ namespace AnomaliesExpected
         public Texture2D DropTex => dropTexCached ?? (dropTexCached = ContentFinder<Texture2D>.Get(SpeedometerComp.Props.dropTexPath));
         private Texture2D dropTexCached;
 
+        private int maxLevel;
+
         public Texture UpdateActiveTexture()
         {
             activeTexCached = Speedometer.Graphic.MatSingleFor(Speedometer).mainTexture;
@@ -44,7 +46,7 @@ namespace AnomaliesExpected
             if (!Speedometer.DestroyedOrNull())
             {
                 GenPlace.TryPlaceThing(Speedometer, pawn.PositionHeld, pawn.MapHeld, ThingPlaceMode.Near, null);
-                SpeedometerComp.CooldownsStart();
+                SpeedometerComp.CooldownsStart(maxLevel);
             }
             base.PostRemoved();
         }
@@ -52,6 +54,7 @@ namespace AnomaliesExpected
         public override void SetLevelTo(int targetLevel)
         {
             base.SetLevelTo(targetLevel);
+            maxLevel = Mathf.Max(maxLevel, targetLevel);
             SpeedometerComp.TryUpdateUnlockedLevel(targetLevel, pawn);
             UpdateActiveTexture();
         }
@@ -165,6 +168,7 @@ namespace AnomaliesExpected
         {
             base.ExposeData();
             Scribe_Deep.Look(ref Speedometer, "Speedometer");
+            Scribe_Values.Look(ref maxLevel, "maxLevel");
         }
     }
 }

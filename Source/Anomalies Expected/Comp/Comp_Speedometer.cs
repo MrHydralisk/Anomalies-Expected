@@ -200,9 +200,9 @@ namespace AnomaliesExpected
             return true;
         }
 
-        public void CooldownsStart()
+        public void CooldownsStart(int mode = 1)
         {
-            StartCooldown();
+            cooldownTicks = Props.cooldownTicks * mode;
             TickNextDeceleration = Find.TickManager.TicksGame + Props.DecelerationIntervalRange.RandomInRange;
             parent.overrideGraphicIndex = 0;
         }
