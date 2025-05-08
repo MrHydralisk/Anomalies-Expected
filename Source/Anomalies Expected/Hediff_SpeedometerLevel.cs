@@ -88,7 +88,7 @@ namespace AnomaliesExpected
                             floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.Speedometer.TurnPointer".Translate(levelNext), delegate
                             {
                                 SetLevelTo(levelNext);
-                                SpeedometerComp.TickNextAction = Find.TickManager.TicksGame + SpeedometerComp.Props.tickPerAction;
+                                SpeedometerComp.TickNextAction = Find.TickManager.TicksGame + SpeedometerComp.Props.tickPerAction * levelNext;
                                 if (!SpeedometerComp.Props.soundActivate.NullOrUndefined())
                                 {
                                     SpeedometerComp.Props.soundActivate.PlayOneShot(SoundInfo.InMap(pawn));
