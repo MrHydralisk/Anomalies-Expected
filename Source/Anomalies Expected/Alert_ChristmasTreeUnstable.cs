@@ -31,6 +31,7 @@ namespace AnomaliesExpected
             defaultLabel = "AnomaliesExpected.ChristmasStockings.AlertSubMap.Label".Translate();
             defaultExplanation = "AnomaliesExpected.ChristmasStockings.AlertSubMap.Desc".Translate();
             requireAnomaly = true;
+            targets = new List<Thing>();
         }
 
         public static void AddTarget(Building_AEChristmasTreeExit christmasTree)
