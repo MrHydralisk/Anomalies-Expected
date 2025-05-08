@@ -337,6 +337,7 @@
 				<activatingStringPending>examining {0}</activatingStringPending>
 				<activatingString>examining {0}: {1}s</activatingString>
 				<onCooldownString>restoring</onCooldownString>
+				<messageCooldownEnded>Yellow notepad is ready to use again.</messageCooldownEnded>
 
 				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
 				<fleckOnUsedScale>3</fleckOnUsedScale>
@@ -516,6 +517,7 @@
 				<activatingStringPending>taking gift {0}</activatingStringPending>
 				<activatingString>taking gift {0}: {1}s</activatingString>
 				<onCooldownString>preparing</onCooldownString>
+				<messageCooldownEnded>Red stockings is ready to use again.</messageCooldownEnded>
 
 				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
 				<fleckOnUsedScale>3</fleckOnUsedScale>
@@ -652,6 +654,7 @@
 				<activatingStringPending>implanting {0}</activatingStringPending>
 				<activatingString>implanting {0}: {1}s</activatingString>
 				<onCooldownString>readjusting</onCooldownString>
+				<messageCooldownEnded>Speedometer is ready to use again.</messageCooldownEnded>
 
 				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
 				<fleckOnUsedScale>5</fleckOnUsedScale>
