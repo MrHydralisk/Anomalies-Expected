@@ -19,5 +19,11 @@
 		<reportString>applying TargetA to TargetB.</reportString>
 		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
 	</JobDef>
+
+	<JobDef>
+		<defName>AE_InteractChristmasStockings</defName>
+		<driverClass>JobDriver_InteractThing</driverClass>
+		<reportString>taking gift.</reportString>
+	</JobDef>
   
 </Defs>

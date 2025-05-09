@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using Verse;
+using Verse.AI;
 
 namespace AnomaliesExpected
 {
@@ -14,11 +15,13 @@ namespace AnomaliesExpected
         public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? 1) == 0;
 
         public int giftAmount;
+        private int TickForced;
 
         public override void PostPostMake()
         {
             base.PostPostMake();
             giftAmount = Props.giftAmount;
+            TickForced = Find.TickManager.TicksGame + Props.cooldownTicks * 3;
         }
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
@@ -38,6 +41,15 @@ namespace AnomaliesExpected
             base.PostDestroy(mode, previousMap);
         }
 
+        public override void CompTick()
+        {
+            base.CompTick();
+            if (Find.TickManager.TicksGame % 250 == 0 && Find.TickManager.TicksGame >= TickForced && !HideInteraction)
+            {
+                CallToTakeGift();
+            }
+        }
+
         private void TakeGift(Pawn pawn)
         {
             Thought_Memory thought = null;
@@ -51,6 +63,7 @@ namespace AnomaliesExpected
             }
             pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(thought);
             giftAmount--;
+            TickForced = Find.TickManager.TicksGame + Props.cooldownTicks * 3;
             if (giftAmount < 1)
             {
                 Comp_CanDestroyedAfterStudy canDestroyedAfterStudy = parent.GetComp<Comp_CanDestroyedAfterStudy>();
@@ -82,6 +95,18 @@ namespace AnomaliesExpected
             //    $"KillsMechanoids {records.GetValue(RecordDefOf.KillsMechanoids) * Props.goodPerKillsMechanoids} = {records.GetValue(RecordDefOf.KillsMechanoids)} * {Props.goodPerKillsMechanoids}\n" +
             //    $"TimesTendedOther {records.GetValue(RecordDefOf.TimesTendedOther) * Props.goodPerTimesTendedOther} = {records.GetValue(RecordDefOf.TimesTendedOther)} * {Props.goodPerTimesTendedOther}");
             return goodDeeds;
+        }
+
+        private void CallToTakeGift()
+        {
+            Job job = JobMaker.MakeJob(Props.jobDef, parent);
+            Pawn called = (Pawn)GenClosest.ClosestThing_Global_Reachable(parent.Position, parent.Map, parent.Map.mapPawns.AllHumanlikeSpawned, PathEndMode.OnCell, TraverseParms.For(TraverseMode.PassDoors), 9999f,
+                (Thing t) => t is Pawn p && !p.DeadOrDowned && CanInteract(p) && GenClosest.ClosestThing_Global_Reachable(p.Position, p.Map, [parent], PathEndMode.OnCell, TraverseParms.For(p), 9999f) != null);
+            if (called != null)
+            {
+                called.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                TickForced = Find.TickManager.TicksGame + 5000;
+            }
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -130,6 +155,15 @@ namespace AnomaliesExpected
                     defaultLabel = "Dev: Change Gift Amount",
                     defaultDesc = $"Change amount of gits: {giftAmount}/{Props.giftAmount}"
                 };
+                yield return new Command_Action
+                {
+                    action = delegate
+                    {
+                        CallToTakeGift();
+                    },
+                    defaultLabel = "Dev: Call",
+                    defaultDesc = $"Call Pawn to take gift"
+                };
             }
         }
 
@@ -169,6 +203,7 @@ namespace AnomaliesExpected
         {
             base.PostExposeData();
             Scribe_Values.Look(ref giftAmount, "giftAmount");
+            Scribe_Values.Look(ref TickForced, "TickForced", Find.TickManager.TicksGame);
         }
 
         public override string CompInspectStringExtra()
