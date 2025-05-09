@@ -26,5 +26,18 @@
 	<Thought_AEChristmasCandyCane.stages.got_candy_cane.description>Волна сладкого ожидания захлестнула их, улыбка расплылась по их лицам, когда они развернули ярко-красную и белую леденцовую трость.</Thought_AEChristmasCandyCane.stages.got_candy_cane.description>
 	<Thought_AEChristmasCoal.stages.got_lump_of_coal.label>получил кусок угля</Thought_AEChristmasCoal.stages.got_lump_of_coal.label>
 	<Thought_AEChristmasCoal.stages.got_lump_of_coal.description>Разочарование накрыло их волной, когда они вытащили кусок угля, и на мгновение их настроение омрачилось чувством стыда.</Thought_AEChristmasCoal.stages.got_lump_of_coal.description>
+	
+	<Thought_AEAcceleration.stages.0.label>Я есть сама скорость</Thought_AEAcceleration.stages.0.label>
+	<Thought_AEAcceleration.stages.0.description>Всё замедлилось. Но я теперь быстрее всех вокруг.</Thought_AEAcceleration.stages.0.description>
+	<Thought_AEAcceleration.stages.1.label>Тянущиеся слова</Thought_AEAcceleration.stages.1.label>
+	<Thought_AEAcceleration.stages.1.description>Все говорят так медленно, слова просто... тянутся. Это так тяжело поддерживать диалог с ними.</Thought_AEAcceleration.stages.1.description>
+	<Thought_AEAcceleration.stages.2.label>Развлечения стали нудными</Thought_AEAcceleration.stages.2.label>
+	<Thought_AEAcceleration.stages.2.description>Те мои любимые занятия, чтобы расслабиться? Теперь они просто тянутся и тянутся... Так тяжело теперь получать от них удовольствие.</Thought_AEAcceleration.stages.2.description>
+	<Thought_AEAcceleration.stages.3.label>Быстро, но всё же медленно</Thought_AEAcceleration.stages.3.label>
+	<Thought_AEAcceleration.stages.3.description>Я могу сделать что угодно быстро. Какие минусы? Осознание того насколько медленно работает все остальное в мире и необходимости ожидания окончания этих процессов.</Thought_AEAcceleration.stages.3.description>
+	<Thought_AEAcceleration.stages.4.label>Раздражающие разговоры</Thought_AEAcceleration.stages.4.label>
+	<Thought_AEAcceleration.stages.4.description>Все тянется так медленно. Это почти физически больно. И когда я пытаюсь поговорить с людьми, они не понимают ни слова, и я не могу дожидаться, чтобы расшифровать то, что они пытаются мне сказать.</Thought_AEAcceleration.stages.4.description>
+	<Thought_AEAcceleration.stages.5.label>Одиночество в застывшем мире</Thought_AEAcceleration.stages.5.label>
+	<Thought_AEAcceleration.stages.5.description>Такое ощущение, что время замерло для всех кроме меня. И затем на меня обрушивается волна одиночества.</Thought_AEAcceleration.stages.5.description>
   
 </LanguageData>
