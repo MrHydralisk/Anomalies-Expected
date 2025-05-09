@@ -81,7 +81,7 @@ namespace AnomaliesExpected
                         int j = 0;
                         if ((j = StudyNotesStudy.IndexOf(studyNote)) >= 0)
                         {
-                            nextIndex = i + 1;
+                            nextIndex = j + 1;
                             studyProgress = nextIndex;
                             StudyComp.anomalyKnowledgeGained = Mathf.Max(StudyComp.anomalyKnowledgeGained, studyNote.threshold);
                         }
@@ -132,7 +132,7 @@ namespace AnomaliesExpected
                         int j = 0;
                         if ((j = StudyNotesStudy.IndexOf(studyNote)) >= 0)
                         {
-                            nextIndex = i + 1;
+                            nextIndex = j + 1;
                             studyProgress = nextIndex;
                             StudyComp.anomalyKnowledgeGained = Mathf.Max(StudyComp.anomalyKnowledgeGained, studyNote.threshold);
                         }
@@ -268,7 +268,7 @@ namespace AnomaliesExpected
                     {
                         if (Find.TickManager.TicksGame > lastNotificationTick)
                         {
-                            Messages.Message("AnomaliesExpected.EntityDataBase.ThreatClassIncreased".Translate(parent.LabelCap), parent, MessageTypeDefOf.CautionInput);
+                            Messages.Message("AnomaliesExpected.EntityDataBase.ThreatClassIncreased".Translate(parent.LabelCap), parent, MessageTypeDefOf.CautionInput, historical: false);
                             lastNotificationTick = Find.TickManager.TicksGame + 250;
                         }
                         ThreatClass = aestudyNote.ThreatClass;
