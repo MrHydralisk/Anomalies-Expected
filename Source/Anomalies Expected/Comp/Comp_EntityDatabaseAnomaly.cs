@@ -64,7 +64,7 @@ namespace AnomaliesExpected
                     entityIncidentsCached.Add(entityIncidents);
                 }
             }
-            if (!entityIncidents.Any((AEEntityIncidents aeei) => aeei.incidentDefs.Contains(selectedIncidentDef)))
+            if (!entityIncidentsCached.Any((AEEntityIncidents aeei) => aeei.incidentDefs.Contains(selectedIncidentDef)))
             {
                 selectedIncidentDef = null;
             }
