@@ -566,6 +566,7 @@
 					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">2</ActivitySuppressionRate>
 				</statFactors>
 				<hungerRateFactor>1.5</hungerRateFactor>
+				<socialFightChanceFactor>1.5</socialFightChanceFactor>
 			</li>
 			<li>
 				<minSeverity>2</minSeverity>
@@ -608,6 +609,7 @@
 					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">4</ActivitySuppressionRate>
 				</statFactors>
 				<hungerRateFactor>2</hungerRateFactor>
+				<socialFightChanceFactor>2</socialFightChanceFactor>
 			</li>
 			<li>
 				<minSeverity>3</minSeverity>
@@ -650,6 +652,7 @@
 					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">8</ActivitySuppressionRate>
 				</statFactors>
 				<hungerRateFactor>2.5</hungerRateFactor>
+				<socialFightChanceFactor>3</socialFightChanceFactor>
 			</li>
 			<li>
 				<minSeverity>4</minSeverity>
@@ -692,6 +695,7 @@
 					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">16</ActivitySuppressionRate>
 				</statFactors>
 				<hungerRateFactor>3</hungerRateFactor>
+				<socialFightChanceFactor>4</socialFightChanceFactor>
 			</li>
 			<li>
 				<minSeverity>5</minSeverity>
@@ -734,6 +738,7 @@
 					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">32</ActivitySuppressionRate>
 				</statFactors>
 				<hungerRateFactor>3.5</hungerRateFactor>
+				<socialFightChanceFactor>5</socialFightChanceFactor>
 			</li>
 			<li>
 				<minSeverity>6</minSeverity>
@@ -777,6 +782,7 @@
 					<!-- <MaxNutrition>8</MaxNutrition> -->
 				</statFactors>
 				<hungerRateFactor>4</hungerRateFactor>
+				<socialFightChanceFactor>6</socialFightChanceFactor>
 			</li>
 		</stages>
 	</HediffDef>
@@ -855,6 +861,29 @@
 		<stages>
 			<li>
 				<lifeThreatening>true</lifeThreatening>
+			</li>
+		</stages>
+	</HediffDef>
+  
+	<HediffDef>
+		<defName>Hediff_AEChronoComa</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>chrono coma</label>
+		<description>This person forcefully separated Speedometer from their body. Severing the link this way has put them in a coma.</description>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>true</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>0.1</postFactor>
+					</li>
+				</capMods>
 			</li>
 		</stages>
 	</HediffDef>

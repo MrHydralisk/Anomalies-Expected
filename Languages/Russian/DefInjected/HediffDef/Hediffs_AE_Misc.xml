@@ -60,5 +60,8 @@
 
 	<Hediff_AEChronoDestabilization.label>хронодестабилизация</Hediff_AEChronoDestabilization.label>
 	<Hediff_AEChronoDestabilization.description>Постоянное воздействие Спидометра дестабилизирует биологические системы. Это проявляется в том, что некоторые клетки резко ускоряются, в то время как другие значительно замедляются. Длительное воздействие смертельно. После прекращения влияния Спидометра организм восстанавливает свои нормальные функции.</Hediff_AEChronoDestabilization.description>
+
+	<Hediff_AEChronoComa.label>хронокома</Hediff_AEChronoComa.label>
+	<Hediff_AEChronoComa.description>Этот человек насильно извлёк Спидометр из своего тела. Разрыв связи таким путём поместил носителя в временную кому.</Hediff_AEChronoComa.description>
   
 </LanguageData>

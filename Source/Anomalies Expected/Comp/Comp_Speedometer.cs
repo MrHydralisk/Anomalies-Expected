@@ -17,6 +17,7 @@ namespace AnomaliesExpected
 
         public List<Pawn> deceleratedPawns = new List<Pawn>();
         public int TickNextAction = 0;
+        public int TickCanRemove = 0;
         public int TickNextDeceleration = 0;
         public int UnlockedLevel = 1;
         public bool isDeceleratedOnce;
@@ -100,7 +101,7 @@ namespace AnomaliesExpected
             }
         }
 
-        private Hediff GiveHediff(Pawn pawn, HediffDef hediffDef)
+        public Hediff GiveHediff(Pawn pawn, HediffDef hediffDef)
         {
             Hediff AddedHediff = HediffMaker.MakeHediff(hediffDef, pawn);
             pawn.health.AddHediff(AddedHediff);
@@ -134,6 +135,16 @@ namespace AnomaliesExpected
             }
         }
 
+        public void Notify_RemovedEarly(Pawn pawn, int ticksDuration)
+        {
+            HediffWithComps hediffWithComps = GiveHediff(pawn, Props.ChronoComaHediffDef) as HediffWithComps;
+            HediffComp_Disappears hediffComp_Disappears = hediffWithComps.GetComp<HediffComp_Disappears>();
+            if (hediffComp_Disappears != null)
+            {
+                hediffComp_Disappears.SetDuration(ticksDuration);
+            }
+        }
+
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             foreach (Gizmo gizmo in base.CompGetGizmosExtra())
@@ -163,6 +174,7 @@ namespace AnomaliesExpected
             hediff_SpeedometerLevel.Speedometer = parent;
             hediff_SpeedometerLevel.SetLevelTo(1);
             TickNextAction = Find.TickManager.TicksGame + Props.tickPerAction;
+            TickCanRemove = Find.TickManager.TicksGame + Props.tickPerAction;
             for (int i = deceleratedPawns.Count() - 1; i >= 0; i--)
             {
                 deceleratedPawns[i]?.health?.hediffSet?.hediffs?.RemoveAll((Hediff h) => h.def == Props.DecelerationHediffDef);
@@ -188,9 +200,9 @@ namespace AnomaliesExpected
             return true;
         }
 
-        public void CooldownsStart()
+        public void CooldownsStart(int mode = 1)
         {
-            StartCooldown();
+            cooldownTicks = Props.cooldownTicks * mode;
             TickNextDeceleration = Find.TickManager.TicksGame + Props.DecelerationIntervalRange.RandomInRange;
             parent.overrideGraphicIndex = 0;
         }
@@ -200,6 +212,7 @@ namespace AnomaliesExpected
             base.PostExposeData();
             Scribe_Values.Look(ref UnlockedLevel, "UnlockedLevel", 1);
             Scribe_Values.Look(ref TickNextAction, "TickNextAction", 0);
+            Scribe_Values.Look(ref TickCanRemove, "TickCanRemove", 0);
             Scribe_Values.Look(ref TickNextDeceleration, "TickNextDeceleration", 0);
             Scribe_Values.Look(ref isDeceleratedOnce, "isDeceleratedOnce", false);
             Scribe_Values.Look(ref isExplodedOnce, "isExplodedOnce", false);

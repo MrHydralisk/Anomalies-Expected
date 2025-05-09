@@ -118,5 +118,47 @@
 			<li>Thought_AEChristmasCandyCane</li>
 		</replaceThoughts>
 	</ThoughtDef>
+	
+	
+	
+	<ThoughtDef>
+		<defName>Thought_AEAcceleration</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>Hediff_AEAcceleration</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+		<stages>
+			<li>
+				<label>I'm the speed</label>
+				<description>Everything slowed down. But I'm actually faster than anyone around me.</description>
+				<baseMoodEffect>2</baseMoodEffect>
+			</li>
+			<li>
+				<label>Dragging words</label>
+				<description>Everyone's words are just... dragging. It's so hard to actually talk with them.</description>
+				<baseMoodEffect>-2</baseMoodEffect>
+			</li>
+			<li>
+				<label>Pastimes now tedious</label>
+				<description>Those things I loved doing to relax? Now they just drag on and on... It's hard to enjoy them like this.</description>
+				<baseMoodEffect>-4</baseMoodEffect>
+			</li>
+			<li>
+				<label>Fast, but yet slow</label>
+				<description>I can do everything really fast. The downside? Realizing just how slow everything else is, and knowing I have to adjust and wait for it.</description>
+				<baseMoodEffect>-8</baseMoodEffect>
+			</li>
+			<li>
+				<label>Frustrating conversations</label>
+				<description>Everything just drags on so slowly. It's almost physically painful. And when I try to talk to people, they don't understand a word, and I can't wait to decipher what they're trying to tell me either.</description>
+				<baseMoodEffect>-16</baseMoodEffect>
+			</li>
+			<li>
+				<label>The lonely frozen world</label>
+				<description>It feels like time itself has stopped for everyone but me. And then this wave of loneliness just washes over me.</description>
+				<baseMoodEffect>-24</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
   
 </Defs>

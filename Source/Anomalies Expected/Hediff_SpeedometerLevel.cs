@@ -18,6 +18,8 @@ namespace AnomaliesExpected
         public Texture2D DropTex => dropTexCached ?? (dropTexCached = ContentFinder<Texture2D>.Get(SpeedometerComp.Props.dropTexPath));
         private Texture2D dropTexCached;
 
+        private int maxLevel;
+
         public Texture UpdateActiveTexture()
         {
             activeTexCached = Speedometer.Graphic.MatSingleFor(Speedometer).mainTexture;
@@ -44,7 +46,7 @@ namespace AnomaliesExpected
             if (!Speedometer.DestroyedOrNull())
             {
                 GenPlace.TryPlaceThing(Speedometer, pawn.PositionHeld, pawn.MapHeld, ThingPlaceMode.Near, null);
-                SpeedometerComp.CooldownsStart();
+                SpeedometerComp.CooldownsStart(maxLevel);
             }
             base.PostRemoved();
         }
@@ -52,6 +54,7 @@ namespace AnomaliesExpected
         public override void SetLevelTo(int targetLevel)
         {
             base.SetLevelTo(targetLevel);
+            maxLevel = Mathf.Max(maxLevel, targetLevel);
             SpeedometerComp.TryUpdateUnlockedLevel(targetLevel, pawn);
             UpdateActiveTexture();
         }
@@ -70,6 +73,8 @@ namespace AnomaliesExpected
             {
                 yield return gizmo;
             }
+            int actionTicksLeft = SpeedometerComp.TickNextAction - Find.TickManager.TicksGame;
+            string TakeOff = actionTicksLeft > 0 ? "TakeOffEarly" : "TakeOff";
             yield return new Command_Action
             {
                 action = delegate
@@ -88,7 +93,8 @@ namespace AnomaliesExpected
                             floatMenuOptions.Add(new FloatMenuOption("AnomaliesExpected.Speedometer.TurnPointer".Translate(levelNext), delegate
                             {
                                 SetLevelTo(levelNext);
-                                SpeedometerComp.TickNextAction = Find.TickManager.TicksGame + SpeedometerComp.Props.tickPerAction;
+                                SpeedometerComp.TickNextAction = Find.TickManager.TicksGame + SpeedometerComp.Props.tickPerAction * levelNext;
+                                SpeedometerComp.TickCanRemove = Find.TickManager.TicksGame + SpeedometerComp.Props.tickPerAction;
                                 if (!SpeedometerComp.Props.soundActivate.NullOrUndefined())
                                 {
                                     SpeedometerComp.Props.soundActivate.PlayOneShot(SoundInfo.InMap(pawn));
@@ -109,34 +115,52 @@ namespace AnomaliesExpected
                 defaultLabel = "AnomaliesExpected.Speedometer.TurnPointer.Label".Translate(),
                 defaultDesc = "AnomaliesExpected.Speedometer.TurnPointer.Desc".Translate(),
                 icon = ActiveTex,
-                Disabled = SpeedometerComp.TickNextAction > Find.TickManager.TicksGame,
-                disabledReason = SpeedometerComp.Props.onCooldownString + " (" + "DurationLeft".Translate((SpeedometerComp.TickNextAction - Find.TickManager.TicksGame).ToStringTicksToPeriod()) + ")"
+                Disabled = actionTicksLeft > 0,
+                disabledReason = SpeedometerComp.Props.onCooldownString + " (" + "DurationLeft".Translate(actionTicksLeft.ToStringTicksToPeriod()) + ")"
             };
             yield return new Command_Action
             {
                 action = delegate
                 {
-                    Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("AnomaliesExpected.Speedometer.TakeOff".Translate(Speedometer?.Label ?? "---"), delegate
+                    Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation($"AnomaliesExpected.Speedometer.{TakeOff}".Translate(Speedometer?.Label ?? "---", actionTicksLeft.ToStringTicksToPeriod()), delegate
                     {
                         pawn.health.RemoveHediff(this);
+                        if (actionTicksLeft > 0)
+                        {
+                            SpeedometerComp.Notify_RemovedEarly(pawn, actionTicksLeft);
+                        }
                     }));
                 },
-                defaultLabel = "AnomaliesExpected.Speedometer.TakeOff.Label".Translate(),
-                defaultDesc = "AnomaliesExpected.Speedometer.TakeOff.Desc".Translate(Speedometer?.Label ?? "---"),
+                defaultLabel = $"AnomaliesExpected.Speedometer.{TakeOff}.Label".Translate(),
+                defaultDesc = $"AnomaliesExpected.Speedometer.{TakeOff}.Desc".Translate(Speedometer?.Label ?? "---", actionTicksLeft.ToStringTicksToPeriod()),
                 icon = DropTex,
-                Disabled = SpeedometerComp.TickNextAction > Find.TickManager.TicksGame,
-                disabledReason = SpeedometerComp.Props.onCooldownString + " (" + "DurationLeft".Translate((SpeedometerComp.TickNextAction - Find.TickManager.TicksGame).ToStringTicksToPeriod()) + ")"
+                Disabled = SpeedometerComp.TickCanRemove > Find.TickManager.TicksGame,
+                disabledReason = SpeedometerComp.Props.onCooldownString + " (" + "DurationLeft".Translate((SpeedometerComp.TickCanRemove - Find.TickManager.TicksGame).ToStringTicksToPeriod()) + ")"
             };
-            if (DebugSettings.ShowDevGizmos && SpeedometerComp.TickNextAction > Find.TickManager.TicksGame)
+            if (DebugSettings.ShowDevGizmos)
             {
-                yield return new Command_Action
+                if (SpeedometerComp.TickNextAction > Find.TickManager.TicksGame)
                 {
-                    defaultLabel = "Dev: Reset cooldown",
-                    action = delegate
+                    yield return new Command_Action
                     {
-                        SpeedometerComp.TickNextAction = 0;
-                    }
-                };
+                        defaultLabel = "Dev: Reset cooldown",
+                        action = delegate
+                        {
+                            SpeedometerComp.TickNextAction = 0;
+                        }
+                    };
+                }
+                if (SpeedometerComp.TickCanRemove > Find.TickManager.TicksGame)
+                {
+                    yield return new Command_Action
+                    {
+                        defaultLabel = "Dev: Reset early remove cooldown",
+                        action = delegate
+                        {
+                            SpeedometerComp.TickCanRemove = 0;
+                        }
+                    };
+                }
             }
         }
 
@@ -144,6 +168,7 @@ namespace AnomaliesExpected
         {
             base.ExposeData();
             Scribe_Deep.Look(ref Speedometer, "Speedometer");
+            Scribe_Values.Look(ref maxLevel, "maxLevel");
         }
     }
 }
