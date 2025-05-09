@@ -691,7 +691,7 @@
 			</li>
 			<li Class="CompProperties_Studiable">
 				<frequencyTicks>120000</frequencyTicks>
-				<knowledgeCategory>Basic</knowledgeCategory>
+				<knowledgeCategory>Advanced</knowledgeCategory>
 				<anomalyKnowledge>1.5</anomalyKnowledge>
 				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
 				<requiresHoldingPlatform>true</requiresHoldingPlatform>
