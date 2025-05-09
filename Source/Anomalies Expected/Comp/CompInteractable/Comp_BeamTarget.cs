@@ -14,11 +14,16 @@ namespace AnomaliesExpected
         private int beamNextCount = 1;
         private int beamMaxCount = 1;
         private int TickNextState = 20000;
+        private int TickUnlockStudy = -1;
+        private bool studyMustBeEnabled;
 
         private BeamTargetState beamTargetState = BeamTargetState.Searching;
 
         protected CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = parent.TryGetComp<CompAEStudyUnlocks>());
         private CompAEStudyUnlocks studyUnlocksCached;
+
+        protected CompStudiable Studiable => studiableCached ?? (studiableCached = parent.TryGetComp<CompStudiable>());
+        private CompStudiable studiableCached;
 
         public override bool HideInteraction => (StudyUnlocks?.NextIndex ?? 4) < 4;
 
@@ -63,6 +68,12 @@ namespace AnomaliesExpected
                         }
                 }
             }
+            if (studyMustBeEnabled && !Studiable.studyEnabled && TickUnlockStudy > -1 && Find.TickManager.TicksGame >= TickUnlockStudy)
+            {
+                Studiable.SetStudyEnabled(studyMustBeEnabled);
+                studyMustBeEnabled = false;
+                TickUnlockStudy = -1;
+            }
         }
 
         public void ManualActivation()
@@ -92,6 +103,10 @@ namespace AnomaliesExpected
             if (beamNextCount == beamMaxCount && beamNextCount < Props.beamMaxCount)
             {
                 beamMaxCount = Mathf.Min(beamMaxCount + 1, Props.beamMaxCount);
+            }
+            if (studyMustBeEnabled)
+            {
+                TickUnlockStudy = Find.TickManager.TicksGame + Props.beamDuration;
             }
         }
 
@@ -131,6 +146,12 @@ namespace AnomaliesExpected
                     Messages.Message("AnomaliesExpected.BeamTarget.LeftContainment".Translate(parent.LabelCap).RawText, targetInfoFrom, MessageTypeDefOf.NegativeEvent);
                 }
                 parent.Position = result;
+            }
+            if (Studiable.studyEnabled)
+            {
+                Studiable.SetStudyEnabled(false);
+                studyMustBeEnabled = true;
+                TickUnlockStudy = -1;
             }
         }
 
@@ -212,6 +233,8 @@ namespace AnomaliesExpected
             Scribe_Values.Look(ref beamNextCount, "beamNextCount", 1);
             Scribe_Values.Look(ref beamMaxCount, "beamMaxCount", 1);
             Scribe_Values.Look(ref TickNextState, "TickNextState", Find.TickManager.TicksGame + Props.beamIntervalRange.min);
+            Scribe_Values.Look(ref TickUnlockStudy, "TickUnlockStudy");
+            Scribe_Values.Look(ref studyMustBeEnabled, "studyMustBeEnabled");
             Scribe_Values.Look(ref beamTargetState, "beamTargetState", BeamTargetState.Searching);
         }
 
