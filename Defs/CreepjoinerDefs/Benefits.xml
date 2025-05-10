@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <!-- <CreepJoinerBenefitDef> -->
+    <!-- <defName>AESnowBender</defName> -->
+    <!-- <label>shambler overlord</label> -->
+		<!-- <canOccurRandomly>false</canOccurRandomly> -->
+    <!-- <letterExtra>{PAWN_nameDef}'s body is riddled with corrupt archites. {PAWN_pronoun} can release them at will, creating a cloud of deadlife dust which can reanimate nearby corpses.</letterExtra> -->
+    <!-- <abilities> -->
+      <!-- <li>ReleaseDeadlifeDust</li> -->
+    <!-- </abilities> -->
+  <!-- </CreepJoinerBenefitDef> -->
+  
+</Defs>

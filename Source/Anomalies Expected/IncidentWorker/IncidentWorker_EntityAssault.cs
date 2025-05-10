@@ -6,27 +6,8 @@ using Verse.AI.Group;
 
 namespace AnomaliesExpected
 {
-    public class IncidentWorker_EntityAssault : IncidentWorker
+    public class IncidentWorker_EntityAssault : IncidentWorker_AE
     {
-        public IncidentDefExtension Ext => def.GetModExtension<IncidentDefExtension>();
-        public List<EntityCodexEntryDef> entityCodexEntryDefsRequired => Ext?.entityCodexEntryDefsRequired ?? null;
-
-        protected override bool CanFireNowSub(IncidentParms parms)
-        {
-            if (ModsConfig.AnomalyActive)
-            {
-                if (Find.Anomaly.LevelDef.anomalyThreatTier > Ext.maxAnomalyThreatLevel || !Find.Anomaly.GenerateMonolith)
-                {
-                    return false;
-                }
-                if (entityCodexEntryDefsRequired?.Any(eced => !Find.EntityCodex.Discovered(eced)) ?? false)
-                {
-                    return false;
-                }
-            }
-            return base.CanFireNowSub(parms);
-        }
-
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
             AssaultSummonPattern assaultSummonPattern = Ext.AssaultSummonPattern.RandomElementByWeight((AssaultSummonPattern asp) => asp.commonality);

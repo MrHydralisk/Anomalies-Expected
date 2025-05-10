@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<QuestScriptDef ParentName="CreepjoinerArrivalBase">
+		<defName>AE_CreepJoinerArrival_IceMan</defName>
+		<root Class="QuestNode_Sequence">
+			<nodes>
+				<li Class="QuestNode_SetupCreepjoiner">
+					<form>AE_CreepJoiner_IceMan</form>
+					<benefit>DeathRefusal</benefit>
+					<downside>Aggressive</downside>
+					<aggressive>AE_AggressiveIncident_SnowArmyAssault</aggressive>
+					<rejection>AggressiveRejection</rejection>
+
+					<storeFormAs>form</storeFormAs>
+					<storeBenefitAs>benefit</storeBenefitAs>
+					<storeDownsideAs>downside</storeDownsideAs>
+					<storeAggressiveAs>aggressive</storeAggressiveAs>
+					<storeRejectionAs>rejection</storeRejectionAs>
+				</li>
+				<li Class="QuestNode_Root_Creepjoiner_Arrival"/>
+			</nodes>
+		</root>
+	</QuestScriptDef>
+
+</Defs>

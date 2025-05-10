@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AEDebugTools.cs" />
+    <Compile Include="DefModExtension\CreepJoinerDefExtension.cs" />
     <Compile Include="QuestNode_Root_AEMysteriousCargo.cs" />
     <Compile Include="CompProperties\CompProperties_EntityDatabaseAnomaly.cs" />
     <Compile Include="Comp\Comp_EntityDatabaseAnomaly.cs" />
@@ -175,6 +176,7 @@
     <Compile Include="Structures\BloodLakeSummonHistory.cs" />
     <Compile Include="DamageWorker\DamageWorker_AddInjuryFleshmass.cs" />
     <Compile Include="Thought_AEMemory.cs" />
+    <Compile Include="CreepJoinerWorker_AEAggressiveIncident.cs" />
     <Compile Include="Verb_AEPowerBeam.cs" />
     <Compile Include="PlaceWorker\PlaceWorker_ShowBeamTargetRadius.cs" />
     <Compile Include="Thing\MinifiedThing_AE.cs" />

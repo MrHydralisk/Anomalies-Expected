@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+	<CreepJoinerAggressiveDef>
+		<defName>AE_AggressiveIncident_SnowArmyAssault</defName>
+		<label>chilling call</label>
+		<weight>1</weight>
+		<workerType>AnomaliesExpected.CreepJoinerWorker_AEAggressiveIncident</workerType>
+		<canOccurRandomly>false</canOccurRandomly>
+		<hasLetter>true</hasLetter>
+		<letterLabel>{PAWN_nameDef}'s chilling call</letterLabel>
+		<letterDesc>{PAWN_nameDef} has let out a psychic pulse which will draw something from the distance towards your local area. You can feel that temperature starting to drop.\n\nThey are coming...</letterDesc>
+		<letterDef>ThreatBig</letterDef>
+		<minCombatPoints>350</minCombatPoints>
+		<modExtensions Inherit="False">
+			<li Class="AnomaliesExpected.CreepJoinerDefExtension">
+				<incidentDef>AE_IncidentDef_SnowArmyAssaultAdvanced</incidentDef>
+				<factionDef>AE_SnowArmy</factionDef>
+				<canKidnap>true</canKidnap>
+				<canTimeoutOrFlee>true</canTimeoutOrFlee>
+				<soundDef>Explosion_Stun</soundDef>
+			</li>
+		</modExtensions>
+	</CreepJoinerAggressiveDef>
+  
+</Defs>

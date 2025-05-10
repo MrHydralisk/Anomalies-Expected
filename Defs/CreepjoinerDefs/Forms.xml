@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<CreepJoinerFormKindDef ParentName="BaseCreepJoinerKind">
+		<defName>AE_CreepJoiner_IceMan</defName>
+		<label>frostbitten stranger</label>
+		<weight>0</weight>
+		<letterLabel>A mangled figure is approaching the colony.</letterLabel>
+		<letterPrompt>The mangled stranger stares at you with empty eyes and speaks in a broken voice. {PAWN_pronoun} claims to have escaped from a terrible cult and begs to join your colony.</letterPrompt>
+		<minGenerationAge>50</minGenerationAge>
+		<maxGenerationAge>70</maxGenerationAge>
+		<startingHediffs>
+			<li>
+				<def>AESnowCoreImplantHidden</def>
+			</li>
+		</startingHediffs>
+		<existingDamage>
+			<li>
+				<damage>Frostbite</damage>
+				<groups>
+					<li>Arms</li>
+				</groups>
+			</li>
+			<li>
+				<damage>Frostbite</damage>
+				<groups>
+					<li>Arms</li>
+				</groups>
+			</li>
+			<li>
+				<damage>Frostbite</damage>
+				<groups>
+					<li>Legs</li>
+				</groups>
+			</li>
+			<li>
+				<damage>Frostbite</damage>
+				<groups>
+					<li>Legs</li>
+				</groups>
+			</li>
+		</existingDamage>
+		<fixedInventory>
+			<Apparel_BasicShirt>
+				<stuff>Cloth</stuff>
+				<quality>Poor</quality>
+			</Apparel_BasicShirt>
+			<Apparel_Pants>
+				<stuff>Cloth</stuff>
+				<quality>Poor</quality>
+			</Apparel_Pants>
+			<Apparel_Robe>
+				<stuff>Cloth</stuff>
+				<quality>Poor</quality>
+			</Apparel_Robe>
+		</fixedInventory>
+		<requires>
+			<li>AE_AggressiveIncident_SnowArmyAssault</li>
+			<li>DeathRefusal</li>
+			<li>Aggressive</li>
+			<li>AggressiveRejection</li>
+		</requires>
+		<excludes>
+			<li>Assault</li>
+		</excludes>
+	</CreepJoinerFormKindDef>
+
+</Defs>

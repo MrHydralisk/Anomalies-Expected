@@ -401,11 +401,11 @@
 		<letterLabel>Found red stockings</letterLabel>
 		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a red stockings, featuring white details and a snowflake symbol. It appear to be filled with something.</letterText>
 		<letterDef>NeutralEvent</letterDef>
-		<earliestDay>60</earliestDay> <!-- 60 -->
-		<baseChance>0.2</baseChance> <!-- 0.2 -->
+		<earliestDay>60</earliestDay><!-- 60 -->
+		<baseChance>0.2</baseChance><!-- 0.2 -->
 		<requireColonistsPresent>True</requireColonistsPresent>
 		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
-		<minRefireDays>60</minRefireDays> <!-- 60 -->
+		<minRefireDays>60</minRefireDays><!-- 60 -->
 		<modExtensions>
 			<li Class="AnomaliesExpected.IncidentDefExtension">
 				<DeployableThingDefs>
@@ -418,6 +418,34 @@
 					<AE_ChristmasTree>
 						<chance>0</chance>
 					</AE_ChristmasTree>
+				</ChanceFactorPowPerOtherBuildings>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_CreepJoinerJoin_IceMan</defName>
+		<label>creepjoiner join</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromQuest</workerClass>
+		<questScriptDef>AE_CreepJoinerArrival_IceMan</questScriptDef>
+		<earliestDay>60</earliestDay>
+		<baseChance>0.3</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minRefireDays>60</minRefireDays>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<entityCodexEntryDefsRequired>
+					<li>AE_EntityCodexEntry_ChristmasStockings</li>
+				</entityCodexEntryDefsRequired>
+				<ChanceFactorPowPerOtherBuildings>
+					<AE_ChristmasStockings>
+						<chance>2</chance>
+					</AE_ChristmasStockings>
 				</ChanceFactorPowPerOtherBuildings>
 			</li>
 		</modExtensions>
