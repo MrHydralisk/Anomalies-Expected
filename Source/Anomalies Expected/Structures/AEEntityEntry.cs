@@ -94,7 +94,6 @@ namespace AnomaliesExpected
             IntVec3 pos;
             Map map;
             Thing monolith = Find.Anomaly.monolith;
-            Log.Message($"{monolith != null} && {monolith.Spawned}");
             if (monolith != null && monolith.Spawned)
             {
                 pos = monolith.Position;
