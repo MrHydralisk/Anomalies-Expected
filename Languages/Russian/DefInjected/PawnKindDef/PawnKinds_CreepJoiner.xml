@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<AE_CreepJoiner_IceMan.label>обмороженный незнакомец</AE_CreepJoiner_IceMan.label>
+	<AE_CreepJoiner_IceMan.letterLabel>К поселению приближается дрожащая фигура.</AE_CreepJoiner_IceMan.letterLabel>
+	<AE_CreepJoiner_IceMan.letterPrompt>Незнакомец смотрит на вас холодными глазами и говорит дрожащим голосом. На открытых участках тела видны следы обморожения. {PAWN_pronoun} рассказывает, что {PAWN_gender ? сбежал : сбежала} от ужасной снежной бури, и умоляет позволить присоединиться к вашему поселению, чтобы согреться и восстановиться.</AE_CreepJoiner_IceMan.letterPrompt>
+
+</LanguageData>

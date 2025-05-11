@@ -6,5 +6,7 @@
 	<AE_RemoveAnomaly.reportString>уничтожает TargetA.</AE_RemoveAnomaly.reportString>
 	
 	<AE_ApplyUsableTo.reportString>применияет TargetA к TargetB.</AE_ApplyUsableTo.reportString>
+	
+	<AE_InteractChristmasStockings.reportString>вытаскивает подарок.</AE_InteractChristmasStockings.reportString>
 
 </LanguageData>

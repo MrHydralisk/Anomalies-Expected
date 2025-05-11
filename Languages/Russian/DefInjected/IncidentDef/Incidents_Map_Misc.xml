@@ -71,6 +71,8 @@
 	<AE_IncidentDef_ChristmasStockingsSpawn.letterLabel>Найден красный носок</AE_IncidentDef_ChristmasStockingsSpawn.letterLabel>
 	<AE_IncidentDef_ChristmasStockingsSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это красный носок с белыми частями и символом снежинки. Похоже, он наполнен чем-то.</AE_IncidentDef_ChristmasStockingsSpawn.letterText>
 	
+	<AE_IncidentDef_CreepJoinerJoin_IceMan.label>жуткий странник</AE_IncidentDef_CreepJoinerJoin_IceMan.label>
+	
 	
 	
 	<AE_IncidentDef_SpeedometerSpawn.label>cпидометр</AE_IncidentDef_SpeedometerSpawn.label>

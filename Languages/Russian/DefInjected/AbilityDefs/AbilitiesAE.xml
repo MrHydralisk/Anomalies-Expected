@@ -32,5 +32,8 @@
 
 	<AEThrowSnowBlock.label>бросить снежный блок</AEThrowSnowBlock.label>
 	<AEThrowSnowBlock.description>Бросить гигантский снежный блок в цель на большом расстоянии. Взорвётся распылив жидкий азот после приземления.</AEThrowSnowBlock.description>
+	
+	<AESpawnSnowMan.label>создать снеговика</AESpawnSnowMan.label>
+	<AESpawnSnowMan.description>Создает снег из влаги окружающего воздуха и превращает его в живого снеговика.</AESpawnSnowMan.description>
 
 </LanguageData>

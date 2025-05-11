@@ -50,6 +50,9 @@
 	<AE_IceThinBody.description>Эта структура из тонких ледяных осколков имеет высокий шанс отражение входящих атак. Снижает получаемый фронтальный и тыловой урон, но увеличивает урон с боков.</AE_IceThinBody.description>
 	<AE_IceThinBody.labelNoun>отражающий лёд</AE_IceThinBody.labelNoun>
 	
+	<Hediff_AESnowMelting.label>таяние</Hediff_AESnowMelting.label>
+	<Hediff_AESnowMelting.description>Тело существа медлено тает.</Hediff_AESnowMelting.description>
+	
 	
 	
 	<Hediff_AEAcceleration.label>ускорение спидометра</Hediff_AEAcceleration.label>
