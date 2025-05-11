@@ -130,7 +130,7 @@
 	<AE_ChristmasStockings.comps.Comp_ChristmasStockings.guiLabelString>Выберите кто вытащит из этого</AE_ChristmasStockings.comps.Comp_ChristmasStockings.guiLabelString>
 	<AE_ChristmasStockings.comps.Comp_ChristmasStockings.jobString>вытащить подарок изнутри</AE_ChristmasStockings.comps.Comp_ChristmasStockings.jobString>
 	<AE_ChristmasStockings.comps.Comp_ChristmasStockings.onCooldownString>подготавливается</AE_ChristmasStockings.comps.Comp_ChristmasStockings.onCooldownString>
-	<AE_ChristmasStockings.comps.Comp_StudyNotepad.messageCooldownEnded>Красный носок можно использовать снова.</AE_ChristmasStockings.comps.Comp_StudyNotepad.messageCooldownEnded>
+	<AE_ChristmasStockings.comps.Comp_ChristmasStockings.messageCooldownEnded>Красный носок можно использовать снова.</AE_ChristmasStockings.comps.Comp_ChristmasStockings.messageCooldownEnded>
 
 	<AE_ChristmasStockings.comps.CompAEStudyUnlocks.studyNotes.0.label>#1/3 Отчет об исследовании красного носка</AE_ChristmasStockings.comps.CompAEStudyUnlocks.studyNotes.0.label>
 	<AE_ChristmasStockings.comps.CompAEStudyUnlocks.studyNotes.0.AnomalyDesc>Ярко-красный носок с белыми частями и символом снежинки.\n\nВы можете извлечь подарки изнутри.\n\nКлассифицируется как аномалия Класс-0 (Безопасность).</AE_ChristmasStockings.comps.CompAEStudyUnlocks.studyNotes.0.AnomalyDesc>
@@ -163,7 +163,7 @@
 	<AE_Speedometer.comps.Comp_Speedometer.guiLabelString>Выберите кто вживит это себе.</AE_Speedometer.comps.Comp_Speedometer.guiLabelString>
 	<AE_Speedometer.comps.Comp_Speedometer.jobString>вживить</AE_Speedometer.comps.Comp_Speedometer.jobString>
 	<AE_Speedometer.comps.Comp_Speedometer.onCooldownString>перенастройка</AE_Speedometer.comps.Comp_Speedometer.onCooldownString>
-	<AE_Speedometer.comps.Comp_StudyNotepad.messageCooldownEnded>Спидометр можно использовать снова.</AE_Speedometer.comps.Comp_StudyNotepad.messageCooldownEnded>
+	<AE_Speedometer.comps.Comp_Speedometer.messageCooldownEnded>Спидометр можно использовать снова.</AE_Speedometer.comps.Comp_Speedometer.messageCooldownEnded>
 
 	<AE_Speedometer.comps.CompAEStudyUnlocks.studyNotes.0.label>#1/1 Отчет об исследовании спидометра</AE_Speedometer.comps.CompAEStudyUnlocks.studyNotes.0.label>
 	<AE_Speedometer.comps.CompAEStudyUnlocks.studyNotes.0.AnomalyDesc>Тёмный круглый прибор с выцветшими цифрами, обозначающими деления до шести. Тонкая красная стрелка покоится вблизи нижнего края шкалы, намекая на механизм, предназначенный для измерения какой-либо скорости или величины.\n\nCпособен сливаться с плотью.\n\nКлассифицируется как аномалия Класс-0 (Безопасность).</AE_Speedometer.comps.CompAEStudyUnlocks.studyNotes.0.AnomalyDesc>
