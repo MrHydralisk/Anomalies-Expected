@@ -368,15 +368,15 @@
 	<AbilityDef ParentName="AESpawnSnowArmyBase">
 		<defName>AESpawnSnowMan</defName>
 		<label>spawn Snow Man</label>
-		<description>Grow fleshmass from whole body and mutate it into a Toughspike. This fleshbeast is afflicted with by destabilization mutation, granting it enhanced physical capabilities but a shortened lifespan.</description>
-		<cooldownTicksRange>60000</cooldownTicksRange>
+		<description>Creates snow from moisture in surrounding air and combines it into a living snowman.</description>
+		<cooldownTicksRange>30000</cooldownTicksRange>
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_AbilitySpawnSnowArmy">
 				<pawnKindCount>
 					<kindDef>AE_SnowMan</kindDef>
 					<count>1</count>
 				</pawnKindCount>
-				<maxAmount>1</maxAmount>
+				<maxAmount>2</maxAmount>
 				<addHediff>Hediff_AESnowMelting</addHediff>
 			</li>
 		</comps>

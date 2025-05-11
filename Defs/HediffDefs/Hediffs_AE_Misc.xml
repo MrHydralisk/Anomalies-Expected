@@ -509,6 +509,23 @@
 		</comps>
 	</HediffDef>
 	
+	<HediffDef>
+		<defName>Hediff_AESnowMelting</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>melting</label>
+		<description>The creature's body gradually melts away.</description>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<lethalSeverity>1</lethalSeverity>
+		<isBad>true</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>1</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+	</HediffDef>
+	
 	
 	
 	<HediffDef>
@@ -886,23 +903,6 @@
 				</capMods>
 			</li>
 		</stages>
-	</HediffDef>
-	
-	<HediffDef>
-		<defName>Hediff_AESnowMelting</defName>
-		<hediffClass>HediffWithComps</hediffClass>
-		<label>melting</label>
-		<description>Destabilization of biological structure to amplify creature physical performance. The creature's life expectancy will be drastically reduced due to the mutation.</description>
-		<initialSeverity>0.01</initialSeverity>
-		<maxSeverity>1</maxSeverity>
-		<lethalSeverity>1</lethalSeverity>
-		<isBad>true</isBad>
-		<comps>
-			<li Class="HediffCompProperties_SeverityPerDay">
-				<severityPerDay>1</severityPerDay>
-				<showHoursToRecover>true</showHoursToRecover>
-			</li>
-		</comps>
 	</HediffDef>
 	
 </Defs>

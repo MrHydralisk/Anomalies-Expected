@@ -5,8 +5,8 @@
 		<defName>AE_CreepJoiner_IceMan</defName>
 		<label>frostbitten stranger</label>
 		<weight>0</weight>
-		<letterLabel>A mangled figure is approaching the colony.</letterLabel>
-		<letterPrompt>The mangled stranger stares at you with empty eyes and speaks in a broken voice. {PAWN_pronoun} claims to have escaped from a terrible cult and begs to join your colony.</letterPrompt>
+		<letterLabel>A shivering figure is approaching the colony.</letterLabel>
+		<letterPrompt>The stranger stares at you with cold eyes and speaks in a shivering voice. Traces of frostbite are visible on exposed areas of the body. {PAWN_pronoun} claims to have escaped from a harsh heavy snow and begs to join your colony to warm up and recover.</letterPrompt>
 		<minGenerationAge>50</minGenerationAge>
 		<maxGenerationAge>70</maxGenerationAge>
 		<startingHediffs>

@@ -5,7 +5,7 @@
 		<defName>AESummonSnowMan</defName>
 		<label>summon snow man</label>
 		<canOccurRandomly>false</canOccurRandomly>
-		<letterExtra>{PAWN_nameDef}'s body is riddled with corrupt archites. {PAWN_pronoun} can release them at will, creating a cloud of deadlife dust which can reanimate nearby corpses.</letterExtra>
+		<letterExtra>{PAWN_nameDef} is able to partially control snow. {PAWN_pronoun} can create snow from moisture in surrounding air and animate it.</letterExtra>
 		<abilities>
 			<li>AESpawnSnowMan</li>
 		</abilities>
