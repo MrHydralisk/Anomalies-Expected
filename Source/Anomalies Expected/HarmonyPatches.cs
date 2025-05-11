@@ -51,6 +51,8 @@ namespace AnomaliesExpected
             val.Patch(AccessTools.Method(typeof(EntityCodex), "SetDiscovered", new Type[] { typeof(EntityCodexEntryDef), typeof(ThingDef), typeof(Thing) }), transpiler: new HarmonyMethod(patchType, "EC_SetDiscovered_Transpiler"));
 
             val.Patch(AccessTools.Method(typeof(VerbUtility), "IsEMP"), postfix: new HarmonyMethod(patchType, "VU_IsEMP_Postfix"));
+
+            val.Patch(AccessTools.Method(typeof(CreepJoinerUtility), "GenerateAndSpawn", new Type[] { typeof(Map), typeof(float)}), transpiler: new HarmonyMethod(patchType, "CJU_GenerateAndSpawn_Transpiler"));
         }
 
         public static bool RPD_IsHidden_Prefix(ref bool __result, ResearchProjectDef __instance)
@@ -351,6 +353,25 @@ namespace AnomaliesExpected
             {
                 __result = !(verb.GetProjectile()?.projectile?.extraDamages?.Any((ExtraDamage ed) => ed.def != DamageDefOf.EMP) ?? false);
             }
+        }
+
+        public static IEnumerable<CodeInstruction> CJU_GenerateAndSpawn_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+            for (int i = 0; i < codes.Count - 1; i++)
+            {
+                if (codes[i].opcode == OpCodes.Ldsfld && codes[i].operand.ToString().Contains("CreepJoinerFormKindDef"))
+                {
+                    codes.Insert(i, new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(HarmonyPatches), "CreepJoinerFormKindDefCanOccurRandomly")));
+                    break;
+                }
+            }
+            return codes.AsEnumerable();
+        }
+
+        public static IEnumerable<CreepJoinerFormKindDef> CreepJoinerFormKindDefCanOccurRandomly(List<CreepJoinerFormKindDef> creepJoinerFormKindDefs)
+        {
+            return creepJoinerFormKindDefs.Where((CreepJoinerFormKindDef cjfkd) => cjfkd.CanOccurRandomly);
         }
     }
 }

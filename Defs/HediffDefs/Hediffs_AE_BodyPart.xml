@@ -256,6 +256,14 @@
 			<li Class="HediffCompProperties_SurgeryInspectable">
 				<surgicalDetectionDesc>Found some sort of snow core implant withing subject torso.</surgicalDetectionDesc>
 			</li>
+			<li Class="HediffCompProperties_DissolveGearOnDeath">
+				<fleck>SnowBits</fleck>
+				<moteCount>6</moteCount>
+				<moteOffsetRange>0.25~0.75</moteOffsetRange>
+				<sound>Explosion_Stun</sound>
+				<injuryCreatedOnDeath>Frostbite</injuryCreatedOnDeath>
+				<injuryCount>9~15</injuryCount>
+			</li>
 		</comps>
 		<stages Inherit="false">
 			<li>

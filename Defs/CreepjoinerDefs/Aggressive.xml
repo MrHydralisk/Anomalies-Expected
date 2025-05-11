@@ -5,6 +5,7 @@
 		<defName>AE_AggressiveIncident_SnowArmyAssault</defName>
 		<label>chilling call</label>
 		<workerType>AnomaliesExpected.CreepJoinerWorker_AEAggressiveIncident</workerType>
+		<weight>1</weight>
 		<canOccurRandomly>false</canOccurRandomly>
 		<hasLetter>true</hasLetter>
 		<letterLabel>{PAWN_nameDef}'s chilling call</letterLabel>

@@ -4,6 +4,7 @@
 	<CreepJoinerBenefitDef>
 		<defName>AESummonSnowMan</defName>
 		<label>summon snow man</label>
+		<weight>1</weight>
 		<canOccurRandomly>false</canOccurRandomly>
 		<letterExtra>{PAWN_nameDef} is able to partially control snow. {PAWN_pronoun} can create snow from moisture in surrounding air and animate it.</letterExtra>
 		<abilities>

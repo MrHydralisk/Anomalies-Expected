@@ -4,11 +4,22 @@
 	<CreepJoinerFormKindDef ParentName="BaseCreepJoinerKind">
 		<defName>AE_CreepJoiner_IceMan</defName>
 		<label>frostbitten stranger</label>
-		<weight>0</weight>
+		<weight>1</weight>
+		<canOccurRandomly>false</canOccurRandomly>
 		<letterLabel>A shivering figure is approaching the colony.</letterLabel>
 		<letterPrompt>The stranger stares at you with cold eyes and speaks in a shivering voice. Traces of frostbite are visible on exposed areas of the body. {PAWN_pronoun} claims to have escaped from a harsh heavy snow and begs to join your colony to warm up and recover.</letterPrompt>
 		<minGenerationAge>50</minGenerationAge>
 		<maxGenerationAge>70</maxGenerationAge>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>14~20</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>14~20</range>
+			</li>
+		</skills>
 		<startingHediffs>
 			<li>
 				<def>AESnowCoreImplantHidden</def>
@@ -41,28 +52,27 @@
 			</li>
 		</existingDamage>
 		<fixedInventory>
-			<Apparel_BasicShirt>
-				<stuff>Cloth</stuff>
-				<quality>Poor</quality>
-			</Apparel_BasicShirt>
-			<Apparel_Pants>
-				<stuff>Cloth</stuff>
-				<quality>Poor</quality>
-			</Apparel_Pants>
-			<Apparel_Robe>
-				<stuff>Cloth</stuff>
-				<quality>Poor</quality>
-			</Apparel_Robe>
+			<Gun_AESnowBallGun/>
 		</fixedInventory>
+		<apparelRequired>
+			<li>Apparel_Tuque</li>
+			<li>Apparel_Parka</li>
+			<li>Apparel_BasicShirt</li>
+			<li>Apparel_Pants</li>
+		</apparelRequired>
+		<minApparelQuality>Poor</minApparelQuality>
+		<maxApparelQuality>Poor</maxApparelQuality>
+		<forceNormalGearQuality>false</forceNormalGearQuality>
+		<gearHealthRange>0.4~0.6</gearHealthRange>
+		<apparelColor>(0.31, 0.69, 0.835)</apparelColor>
+		<ignoreIdeoApparelColors>true</ignoreIdeoApparelColors>
+		<favoriteColor>(0.31, 0.69, 0.835)</favoriteColor>
 		<requires>
-			<li>AE_AggressiveIncident_SnowArmyAssault</li>
 			<li>AESummonSnowMan</li>
 			<li>Aggressive</li>
+			<li>AE_AggressiveIncident_SnowArmyAssault</li>
 			<li>AggressiveRejection</li>
 		</requires>
-		<excludes>
-			<li>Assault</li>
-		</excludes>
 	</CreepJoinerFormKindDef>
 
 </Defs>
