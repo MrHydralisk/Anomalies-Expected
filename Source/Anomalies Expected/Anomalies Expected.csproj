@@ -38,6 +38,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AEDebugTools.cs" />
+    <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilitySpawnSnowArmy.cs" />
+    <Compile Include="Comp\CompAbilityEffect\CompAbilityEffect_SpawnSnowArmy.cs" />
     <Compile Include="DefModExtension\CreepJoinerDefExtension.cs" />
     <Compile Include="QuestNode_Root_AEMysteriousCargo.cs" />
     <Compile Include="CompProperties\CompProperties_EntityDatabaseAnomaly.cs" />

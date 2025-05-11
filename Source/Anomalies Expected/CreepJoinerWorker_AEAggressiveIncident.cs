@@ -29,6 +29,10 @@ namespace AnomaliesExpected
                     base.Pawn.GetLord().Notify_PawnLost(base.Pawn, PawnLostCondition.Undefined);
                 }
                 LordMaker.MakeNewLord(faction, new LordJob_AssaultColony(faction, canKidnap: Ext.canKidnap, canTimeoutOrFlee: Ext.canTimeoutOrFlee, sappers: false, useAvoidGridSmart: false, canSteal: false), base.Pawn.MapHeld).AddPawn(base.Pawn);
+                foreach (Ability ability in base.Pawn.abilities.abilities)
+                {
+                    ability.ResetCooldown();
+                }
             }
             IncidentParms incidentParms = new IncidentParms();
             incidentParms.target = base.Pawn.MapHeld;

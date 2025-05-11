@@ -343,5 +343,43 @@
 			</li>
 		</comps>
 	</ThingDef>
+	
+	<AbilityDef Name="AESpawnSnowArmyBase" Abstract="True">
+		<iconPath>Things/Pawn/SnowArmy/SnowMan/AE_SnowMan_A_south</iconPath>
+		<aiCanUse>true</aiCanUse>
+		<displayOrder>1302</displayOrder>
+		<category>AEAnomaliesExpected</category>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<warmupEffecter>HoraxianAbilityCasting</warmupEffecter>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<warmupTime>0.5</warmupTime>
+			<violent>false</violent>
+			<soundCast>Explosion_Stun</soundCast>
+			<targetable>false</targetable>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+
+	<AbilityDef ParentName="AESpawnSnowArmyBase">
+		<defName>AESpawnSnowMan</defName>
+		<label>spawn Snow Man</label>
+		<description>Grow fleshmass from whole body and mutate it into a Toughspike. This fleshbeast is afflicted with by destabilization mutation, granting it enhanced physical capabilities but a shortened lifespan.</description>
+		<cooldownTicksRange>60000</cooldownTicksRange>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilitySpawnSnowArmy">
+				<pawnKindCount>
+					<kindDef>AE_SnowMan</kindDef>
+					<count>1</count>
+				</pawnKindCount>
+				<maxAmount>1</maxAmount>
+				<addHediff>Hediff_AESnowMelting</addHediff>
+			</li>
+		</comps>
+	</AbilityDef>
 
 </Defs>

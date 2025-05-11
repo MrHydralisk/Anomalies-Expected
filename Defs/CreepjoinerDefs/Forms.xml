@@ -56,7 +56,7 @@
 		</fixedInventory>
 		<requires>
 			<li>AE_AggressiveIncident_SnowArmyAssault</li>
-			<li>DeathRefusal</li>
+			<li>AESummonSnowMan</li>
 			<li>Aggressive</li>
 			<li>AggressiveRejection</li>
 		</requires>

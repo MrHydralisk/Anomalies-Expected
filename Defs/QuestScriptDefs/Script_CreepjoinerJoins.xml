@@ -7,7 +7,7 @@
 			<nodes>
 				<li Class="QuestNode_SetupCreepjoiner">
 					<form>AE_CreepJoiner_IceMan</form>
-					<benefit>DeathRefusal</benefit>
+					<benefit>AESummonSnowMan</benefit>
 					<downside>Aggressive</downside>
 					<aggressive>AE_AggressiveIncident_SnowArmyAssault</aggressive>
 					<rejection>AggressiveRejection</rejection>
