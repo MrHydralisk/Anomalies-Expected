@@ -4,7 +4,6 @@
 	<CreepJoinerAggressiveDef>
 		<defName>AE_AggressiveIncident_SnowArmyAssault</defName>
 		<label>chilling call</label>
-		<weight>1</weight>
 		<workerType>AnomaliesExpected.CreepJoinerWorker_AEAggressiveIncident</workerType>
 		<canOccurRandomly>false</canOccurRandomly>
 		<hasLetter>true</hasLetter>

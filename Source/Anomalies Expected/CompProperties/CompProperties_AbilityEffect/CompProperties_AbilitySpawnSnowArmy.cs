@@ -1,16 +1,7 @@
-﻿using RimWorld;
-using Verse;
-
-namespace AnomaliesExpected
+﻿namespace AnomaliesExpected
 {
-    public class CompProperties_AbilitySpawnSnowArmy : CompProperties_AbilityEffect
+    public class CompProperties_AbilitySpawnSnowArmy : CompProperties_AbilitySpawnSummon
     {
-        public PawnKindCount pawnKindCount;
-
-        public int maxAmount;
-
-        public HediffDef addHediff;
-
         public float snowRadius = 2.9f;
 
         public CompProperties_AbilitySpawnSnowArmy()

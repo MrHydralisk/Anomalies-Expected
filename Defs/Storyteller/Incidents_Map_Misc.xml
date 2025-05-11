@@ -437,6 +437,7 @@
 		<requireColonistsPresent>True</requireColonistsPresent>
 		<minRefireDays>60</minRefireDays>
 		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minThreatPoints>350</minThreatPoints>
 		<modExtensions>
 			<li Class="AnomaliesExpected.IncidentDefExtension">
 				<entityCodexEntryDefsRequired>
