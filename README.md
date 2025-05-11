@@ -38,6 +38,8 @@ Anomalies Classification:
 Currently available:
 * 7 Anomaly of basic category
 * 7 Anomaly of advanced category
+* 3 Mysterious cargo
+* 1 Creepjoiner
 
 ## Links
 
@@ -47,7 +49,9 @@ Currently available:
 
 ## Mod Compatibility
 
-**While Anomalies Expected made for Anomaly DLC, it include non-anomaly patch, which will cut DLC only parts like process of anomaly studying and related to it notes, if DLC not available. But will still allow you to recieve some of the content from this mod.**
+Currently doesn't have native patch for CE, but still can be played with CE without major issues. I not playing with CE to make patch, so ask CE.
+
+Anomalies Expected can be used as dependency framework for anyone who want to make their own anomalies mod that utilize AE approach to anomaly and Anomaly DLC fixes it applies. 
 
 Should have no compatibility issues with other mods.
 
