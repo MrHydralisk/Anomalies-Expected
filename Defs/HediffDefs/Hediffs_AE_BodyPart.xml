@@ -264,6 +264,13 @@
 				<injuryCreatedOnDeath>Frostbite</injuryCreatedOnDeath>
 				<injuryCount>9~15</injuryCount>
 			</li>
+			<li Class="AnomaliesExpected.HediffCompProperties_SpawnPawnOnDeath">
+				<pawnKindCount>
+					<kindDef>AE_IceMan</kindDef>
+					<count>1</count>
+				</pawnKindCount>
+				<factionDef>AE_SnowArmy</factionDef>
+			</li>
 		</comps>
 		<stages Inherit="false">
 			<li>

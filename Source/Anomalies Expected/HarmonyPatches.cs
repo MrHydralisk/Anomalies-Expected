@@ -52,7 +52,7 @@ namespace AnomaliesExpected
 
             val.Patch(AccessTools.Method(typeof(VerbUtility), "IsEMP"), postfix: new HarmonyMethod(patchType, "VU_IsEMP_Postfix"));
 
-            val.Patch(AccessTools.Method(typeof(CreepJoinerUtility), "GenerateAndSpawn", new Type[] { typeof(Map), typeof(float)}), transpiler: new HarmonyMethod(patchType, "CJU_GenerateAndSpawn_Transpiler"));
+            val.Patch(AccessTools.Method(typeof(CreepJoinerUtility), "GenerateAndSpawn", new Type[] { typeof(Map), typeof(float) }), transpiler: new HarmonyMethod(patchType, "CJU_GenerateAndSpawn_Transpiler"));
         }
 
         public static bool RPD_IsHidden_Prefix(ref bool __result, ResearchProjectDef __instance)
