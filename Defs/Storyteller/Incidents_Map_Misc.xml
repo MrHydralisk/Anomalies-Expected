@@ -157,7 +157,7 @@
 		<letterLabel>Found big pie</letterLabel>
 		<letterText>Your colonist noticed some object appeared nearby. At close inspection it seems like a round big pie on a plate. It looks appetizing.</letterText>
 		<letterDef>NeutralEvent</letterDef>
-		<earliestDay>60</earliestDay>
+		<earliestDay>30</earliestDay>
 		<baseChance>0.1</baseChance>
 		<requireColonistsPresent>True</requireColonistsPresent>
 		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
@@ -188,7 +188,7 @@
 		</targetTags>
 		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromQuest</workerClass>
 		<questScriptDef>AE_MysteriousCargoBakingPies</questScriptDef>
-		<earliestDay>60</earliestDay>
+		<earliestDay>30</earliestDay>
 		<baseChance>0.1</baseChance>
 		<requireColonistsPresent>True</requireColonistsPresent>
 		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
@@ -311,7 +311,7 @@
 		<letterText>Your colonist noticed some strong ground vibration. It seems like a giant pool of liquid seeping up from beneath the ground.</letterText>
 		<letterDef>NeutralEvent</letterDef>
 		<minThreatPoints>500</minThreatPoints>
-		<earliestDay>60</earliestDay>
+		<earliestDay>90</earliestDay>
 		<baseChance>0.1</baseChance>
 		<requireColonistsPresent>True</requireColonistsPresent>
 		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
@@ -401,7 +401,7 @@
 		<letterLabel>Found red stockings</letterLabel>
 		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a red stockings, featuring white details and a snowflake symbol. It appear to be filled with something.</letterText>
 		<letterDef>NeutralEvent</letterDef>
-		<earliestDay>60</earliestDay><!-- 60 -->
+		<earliestDay>45</earliestDay><!-- 60 -->
 		<baseChance>0.2</baseChance><!-- 0.2 -->
 		<requireColonistsPresent>True</requireColonistsPresent>
 		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
