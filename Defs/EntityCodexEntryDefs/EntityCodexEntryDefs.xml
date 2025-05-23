@@ -245,6 +245,9 @@
 			<li>AEFreezingFragile</li>
 			<li>AENanoInfusedIceCrystal</li>
 		</discoveredResearchProjects>
+		<provocationIncidents>
+			<li>AE_IncidentDef_CreepJoinerJoin_IceMan</li>
+		</provocationIncidents>
 		<orderInCategory>1300</orderInCategory>
 		<modExtensions>
 			<li Class="AnomaliesExpected.EntityCodexEntryDefExtension">
