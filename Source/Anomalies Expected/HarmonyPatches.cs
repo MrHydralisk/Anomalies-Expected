@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace AnomaliesExpected
 {
@@ -53,6 +54,8 @@ namespace AnomaliesExpected
             val.Patch(AccessTools.Method(typeof(VerbUtility), "IsEMP"), postfix: new HarmonyMethod(patchType, "VU_IsEMP_Postfix"));
 
             val.Patch(AccessTools.Method(typeof(CreepJoinerUtility), "GenerateAndSpawn", new Type[] { typeof(Map), typeof(float) }), transpiler: new HarmonyMethod(patchType, "CJU_GenerateAndSpawn_Transpiler"));
+
+            val.Patch(AccessTools.Method(typeof(TerrainGrid), "Notify_TerrainDestroyed"), transpiler: new HarmonyMethod(patchType, "TG_Notify_TerrainDestroyed_Transpiler"));
         }
 
         public static bool RPD_IsHidden_Prefix(ref bool __result, ResearchProjectDef __instance)
@@ -372,6 +375,49 @@ namespace AnomaliesExpected
         public static IEnumerable<CreepJoinerFormKindDef> CreepJoinerFormKindDefCanOccurRandomly(List<CreepJoinerFormKindDef> creepJoinerFormKindDefs)
         {
             return creepJoinerFormKindDefs.Where((CreepJoinerFormKindDef cjfkd) => cjfkd.CanOccurRandomly);
+        }
+
+        public static IEnumerable<CodeInstruction> TG_Notify_TerrainDestroyed_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+            for (int i = 0; i < codes.Count; i++)
+            {
+                if (codes[i].opcode == OpCodes.Callvirt && codes[i].operand.ToString().Contains("Kill"))
+                {
+                    codes[i] = new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(HarmonyPatches), "Notify_TerrainDestroyedKillFirst"));
+                    break;
+                }
+            }
+            return codes.AsEnumerable();
+        }
+
+        public static void Notify_TerrainDestroyedKillFirst(Building building, DamageInfo? dinfo = null, Hediff exactCulprit = null)
+        {
+            if (building.HasComp<CompStudiableAE>())
+            {
+                Map map = building.Map;
+                IntVec3 result = IntVec3.Invalid;
+                if (RCellFinder.TryFindRandomCellNearWith(building.Position, (IntVec3 c) => IsValidCell(c, map), map, out result, 10)
+                    || CellFinder.TryFindRandomCell(map, (IntVec3 c) => IsValidCell(c, map), out result))
+                {
+                    SkipUtility.SkipTo(building, result, map);
+                    TargetInfo targetInfoFrom = new TargetInfo(building.Position, map);
+                    SoundDefOfLocal.Psycast_Skip_Exit.PlayOneShot(targetInfoFrom);
+                    FleckMaker.Static(targetInfoFrom.Cell, targetInfoFrom.Map, FleckDefOf.PsycastSkipInnerExit, building.def.Size.Magnitude);
+                    TargetInfo targetInfoTo = new TargetInfo(result, map);
+                    SoundDefOf.Psycast_Skip_Entry.PlayOneShot(targetInfoTo);
+                    FleckMaker.Static(targetInfoTo.Cell, targetInfoFrom.Map, FleckDefOf.PsycastSkipFlashEntry, building.def.Size.Magnitude);
+                    building.Position = result;
+                }
+            }
+            else
+            {
+                building.Kill(dinfo, exactCulprit);
+            }
+            bool IsValidCell(IntVec3 cell, Map map)
+            {
+                return cell.InBounds(map) && cell.Walkable(map) && !cell.Fogged(map);
+            }
         }
     }
 }
