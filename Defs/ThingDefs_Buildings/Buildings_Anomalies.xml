@@ -1454,6 +1454,7 @@
 					<li>Fleshbeasts</li>
 					<li>AE_EntityCodexEntry_BloodLake</li>
 					<li>AE_EntityCodexEntry_EntityDatabase</li>
+					<li>AE_EntityCodexEntry_SnowArmy</li>
 				</entityCodexEntryDefsBlacklist>
 				<activateTexPath>UI/Buttons/AEEntityDB</activateTexPath>
 			</li>
