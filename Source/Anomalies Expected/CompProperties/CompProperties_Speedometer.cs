@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using System.Collections.Generic;
 using Verse;
 
 namespace AnomaliesExpected
@@ -17,6 +18,8 @@ namespace AnomaliesExpected
 
         [NoTranslate]
         public string dropTexPath;
+
+        public List<GeneDef> destabilizationGeneDefs = new List<GeneDef>();
 
         public CompProperties_Speedometer()
         {

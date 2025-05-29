@@ -20,6 +20,19 @@ namespace AnomaliesExpected
 
         private int maxLevel;
 
+        public bool isDestabilize
+        {
+            get
+            {
+                if (pawn.IsHashIntervalTick(2500))
+                {
+                    isDestabilizeCached = pawn.ageTracker.AgeBiologicalYears >= pawn.RaceProps.lifeExpectancy || pawn.ageTracker.BiologicalTicksPerTick <= 0 || pawn.IsMutant || (pawn.genes != null && SpeedometerComp.Props.destabilizationGeneDefs.Any((GeneDef gd) => pawn.genes.HasActiveGene(gd)));
+                }
+                return isDestabilizeCached;
+            }
+        }
+        private bool isDestabilizeCached;
+
         public Texture UpdateActiveTexture()
         {
             activeTexCached = Speedometer.Graphic.MatSingleFor(Speedometer).mainTexture;
@@ -34,7 +47,7 @@ namespace AnomaliesExpected
             {
                 pawn.ageTracker.AgeTickMothballed(ageTicks);
             }
-            if (pawn.ageTracker.AgeBiologicalYears >= pawn.RaceProps.lifeExpectancy || pawn.ageTracker.BiologicalTicksPerTick <= 0)
+            if (isDestabilize)
             {
                 HealthUtility.AdjustSeverity(pawn, SpeedometerComp.Props.ChronoDestabilizationHediffDef, (Mathf.Pow(2, level) + 1) / 60000);
                 SpeedometerComp.Notify_Destabilized(pawn);

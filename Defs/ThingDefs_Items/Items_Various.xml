@@ -681,6 +681,10 @@
 				<ChronoDestabilizationHediffDef>Hediff_AEChronoDestabilization</ChronoDestabilizationHediffDef>
 				<ChronoComaHediffDef>Hediff_AEChronoComa</ChronoComaHediffDef>
 				<dropTexPath>UI/Icons/AE_SpeedometerDrop_Icon</dropTexPath>
+				<destabilizationGeneDefs>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Ageless</li>
+					<li MayRequire="RedMattis.BigSmall.Core">BS_TrulyAgeless</li>
+				</destabilizationGeneDefs>
 			</li>
 			<li Class="CompProperties_Studiable">
 				<frequencyTicks>120000</frequencyTicks>
