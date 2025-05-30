@@ -786,7 +786,7 @@
 		<drawGUIOverlay>true</drawGUIOverlay>
 		<pathCost>14</pathCost>
 		<graphicData>
-			<texPath>Things/Item/Consumable/AE_BakingPies</texPath>
+			<texPath>Things/Item/Consumable/AE_BirthdayCake</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(0.75,0.75)</drawSize>
 		</graphicData>
@@ -802,13 +802,13 @@
 		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
 		<allowedArchonexusCount>1</allowedArchonexusCount>
 		<comps>
-			<li Class="AnomaliesExpected.CompProperties_Interactable">
+			<li Class="CompProperties_Interactable">
 				<compClass>AnomaliesExpected.Comp_BirthdayCake</compClass>
 				<!-- <ticksToActivate>7500</ticksToActivate> -->
 				<!-- <cooldownTicks>5000</cooldownTicks> -->
 				<ticksToActivate>500</ticksToActivate>
 				<cooldownTicks>500</cooldownTicks>
-				<activateTexPath>Things/Item/Consumable/AE_BakingPies</activateTexPath>
+				<activateTexPath>Things/Item/Consumable/AE_BirthdayCake</activateTexPath>
         
 				<activateLabelString>Celebrate Birthday</activateLabelString>
 				<activateDescString>Make someone eat the cake on a plate and blow out the candles.</activateDescString>
