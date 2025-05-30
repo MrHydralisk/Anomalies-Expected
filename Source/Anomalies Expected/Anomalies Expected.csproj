@@ -40,9 +40,11 @@
     <Compile Include="AEDebugTools.cs" />
     <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilitySpawnSummon.cs" />
     <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilitySpawnSnowArmy.cs" />
+    <Compile Include="CompProperties\CompProperties_Interactable\CompProperties_BirthdayCake.cs" />
     <Compile Include="CompProperties\HediffCompProperties\HediffCompProperties_SpawnPawnOnDeath.cs" />
     <Compile Include="Comp\CompAbilityEffect\CompAbilityEffect_SpawnSummon.cs" />
     <Compile Include="Comp\CompAbilityEffect\CompAbilityEffect_SpawnSnowArmy.cs" />
+    <Compile Include="Comp\CompInteractable\Comp_BirthdayCake.cs" />
     <Compile Include="Comp\HediffComp\HediffComp_SpawnPawnOnDeath.cs" />
     <Compile Include="DefModExtension\CreepJoinerDefExtension.cs" />
     <Compile Include="QuestNode_Root_AEMysteriousCargo.cs" />
