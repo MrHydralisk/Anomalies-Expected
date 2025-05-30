@@ -802,21 +802,26 @@
 		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
 		<allowedArchonexusCount>1</allowedArchonexusCount>
 		<comps>
-			<li Class="AnomaliesExpected.CompProperties_BirthdayCake">
+			<li Class="AnomaliesExpected.CompProperties_Interactable">
+				<compClass>AnomaliesExpected.Comp_BirthdayCake</compClass>
 				<!-- <ticksToActivate>7500</ticksToActivate> -->
 				<!-- <cooldownTicks>5000</cooldownTicks> -->
 				<ticksToActivate>500</ticksToActivate>
 				<cooldownTicks>500</cooldownTicks>
 				<activateTexPath>Things/Item/Consumable/AE_BakingPies</activateTexPath>
         
-				<activateLabelString>Consume</activateLabelString>
-				<activateDescString>Make someone pour out concentrated stomach acid and fully consume it. [Will destroy it]</activateDescString>
-				<guiLabelString>Choose who should consume this.</guiLabelString>
-				<jobString>consume</jobString>
-				<activatingStringPending>consuming {0}</activatingStringPending>
-				<activatingString>consuming {0}: {1}s</activatingString>
+				<activateLabelString>Celebrate Birthday</activateLabelString>
+				<activateDescString>Make someone eat the cake on a plate and blow out the candles.</activateDescString>
+				<guiLabelString>Choose who should eat this.</guiLabelString>
+				<jobString>eat</jobString>
+				<activatingStringPending>eating {0}</activatingStringPending>
+				<activatingString>eating {0}: {1}s</activatingString>
+				<onCooldownString>restoring</onCooldownString>
+				<messageCooldownEnded>Can celebrate birthday again.</messageCooldownEnded>
 
-				<soundActivate>AE_RawVegetableEat</soundActivate>
+				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
+				<fleckOnUsedScale>5</fleckOnUsedScale>
+				<soundActivate>PsychicAnimalPulserCast</soundActivate>
 				<interactionEffecter>EatVegetarian</interactionEffecter>
 
 				<targetingParameters>
@@ -825,10 +830,6 @@
 					<canTargetMechs>false</canTargetMechs>
 					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
 				</targetingParameters>
-				
-				<!-- <piePiece>AE_BakingPiesPiece</piePiece> -->
-				<!-- <tickPerSpawn>60000</tickPerSpawn> -->
-				<!-- <ConsumptionHediffDef>Hediff_AEDigestingPie</ConsumptionHediffDef> -->
 			</li>
 			<li Class="CompProperties_Studiable">
 				<frequencyTicks>120000</frequencyTicks>
@@ -841,8 +842,8 @@
 				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
 				<studyNotes>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<AnomalyLabel>vatrushka</AnomalyLabel>
-						<AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<!-- <AnomalyLabel>vatrushka</AnomalyLabel> -->
+						<!-- <AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc> -->
 						<threshold>0.01</threshold>
 						<label>#1/4 Big pie study report</label>
 						<text>.</text>
@@ -850,22 +851,22 @@
 						<isSyncWithDB>true</isSyncWithDB>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged. It can replicate a piece of itself, which can be consumed.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<!-- <AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged. It can replicate a piece of itself, which can be consumed.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc> -->
 						<threshold>1</threshold>
 						<label>#2/4 Big pie study report</label>
 						<text>.</text>
 						<isSyncWithDB>true</isSyncWithDB>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged. Each day will replicate a piece of itself based on the amount of existing pieces, which can be consumed.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<!-- <AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged. Each day will replicate a piece of itself based on the amount of existing pieces, which can be consumed.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc> -->
 						<threshold>2</threshold>
 						<label>#3/4 Big pie study report</label>
 						<text>.</text>
 						<isSyncWithDB>true</isSyncWithDB>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<AnomalyLabel>Self-Baking Pies</AnomalyLabel>
-						<AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack. A remarkable colony of sentient yeast that have made cake their primary habitat.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged. Each day will replicate a piece of itself based on the amount of existing pieces, which can be consumed.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<!-- <AnomalyLabel>Self-Baking Pies</AnomalyLabel> -->
+						<!-- <AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack. A remarkable colony of sentient yeast that have made cake their primary habitat.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged. Each day will replicate a piece of itself based on the amount of existing pieces, which can be consumed.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc> -->
 						<threshold>5</threshold>
 						<label>#4/4 Big pie study report</label>
 						<text>.</text>

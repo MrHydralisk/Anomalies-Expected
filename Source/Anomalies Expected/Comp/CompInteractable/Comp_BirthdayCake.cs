@@ -23,7 +23,6 @@ namespace AnomaliesExpected
             Pawn_AgeTracker ageTracker = pawn.ageTracker;
             long ticksSinceBirthday = ageTracker.AgeBiologicalTicks - Mathf.FloorToInt(ageTracker.AgeBiologicalYearsFloat) * 3600000L;
             long ticksTillBirthday = Mathf.CeilToInt(ageTracker.AgeBiologicalYearsFloat) * 3600000L - ageTracker.AgeBiologicalTicks;
-            Log.Message($"{pawn.Name}:{ticksSinceBirthday} < {ticksTillBirthday}");
             if (ticksTillBirthday < ticksSinceBirthday)
             {
                 ageTracker.AgeBiologicalTicks = Mathf.CeilToInt(ageTracker.AgeBiologicalYearsFloat) * 3600000L;
@@ -31,7 +30,9 @@ namespace AnomaliesExpected
             else
             {
                 ageTracker.AgeBiologicalTicks = Mathf.FloorToInt(ageTracker.AgeBiologicalYearsFloat) * 3600000L;
-            }            
+            }
+            Messages.Message("AnomaliesExpected.BirthdayCake.BirthdayCelebration".Translate(parent.LabelCap, ageTracker.AgeBiologicalYears).RawText, new TargetInfo(parent.Position, parent.Map), MessageTypeDefOf.NeutralEvent);
+            StudyUnlocks.UnlockStudyNoteManual(0, pawn);
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
