@@ -771,7 +771,7 @@
 	<ThingDef>
 		<defName>AE_BirthdayCake</defName>
 		<label>big cake</label>
-		<description>A round big pie on a plate. It is a baked dish with a pastry crust surrounding the filling.\n\nIt looks appetizing.</description>
+		<description>A round big cake on a red plate. It covered in white frosting and garnished with colorful toppings.\n\nIt looks appetizing.</description>
 		<thingClass>AnomaliesExpected.ThingWithComps_AE</thingClass>
 		<category>Item</category>
 		<genericMarketSellable>false</genericMarketSellable>
@@ -804,18 +804,16 @@
 		<comps>
 			<li Class="CompProperties_Interactable">
 				<compClass>AnomaliesExpected.Comp_BirthdayCake</compClass>
-				<!-- <ticksToActivate>7500</ticksToActivate> -->
-				<!-- <cooldownTicks>5000</cooldownTicks> -->
-				<ticksToActivate>500</ticksToActivate>
-				<cooldownTicks>500</cooldownTicks>
+				<ticksToActivate>5000</ticksToActivate>
+				<cooldownTicks>420000</cooldownTicks>
 				<activateTexPath>Things/Item/Consumable/AE_BirthdayCake</activateTexPath>
         
 				<activateLabelString>Celebrate Birthday</activateLabelString>
 				<activateDescString>Make someone eat the cake on a plate and blow out the candles.</activateDescString>
 				<guiLabelString>Choose who should eat this.</guiLabelString>
-				<jobString>eat</jobString>
-				<activatingStringPending>eating {0}</activatingStringPending>
-				<activatingString>eating {0}: {1}s</activatingString>
+				<jobString>celebrate birthday</jobString>
+				<activatingStringPending>celebrating birthday with {0}</activatingStringPending>
+				<activatingString>celebrating birthday with {0}: {1}s</activatingString>
 				<onCooldownString>restoring</onCooldownString>
 				<messageCooldownEnded>Can celebrate birthday again.</messageCooldownEnded>
 
@@ -842,42 +840,29 @@
 				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
 				<studyNotes>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<!-- <AnomalyLabel>vatrushka</AnomalyLabel> -->
-						<!-- <AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc> -->
+						<AnomalyLabel>Birthday Cake</AnomalyLabel>
+						<AnomalyDesc>A round big cake on a red plate. It covered with white frosting, adorned with pink whipped cream swirls, fresh raspberries, and a delicate chocolate drizzle. This soft cake has a delicious strawberry flavor and bears the inscription "Happy Birthday".\n\nUpon interaction with cake or it plate, lit candles appear on its top.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
 						<threshold>0.01</threshold>
-						<label>#1/4 Big pie study report</label>
-						<text>.</text>
+						<label>#1/2 Big cake study report</label>
+						<text>Connection to Birthday Celebration\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nA large, strawberry-flavored cake and its accompanying red plate exhibit anomalous properties: the cake demonstrates self-restoration after damage, while the plate proves indestructible. Upon interaction with a fully restored cake, candles appear, and an inscription personalized to the Subject's name and age materializes, suggesting a direct link to birthday celebrations. The cake lacks nutritional value. Classified as Class-0 (Safe), further controlled experimentation is recommended to confirm its properties and explore its celebratory nature.\n\nObservations:\nSubject was presented with a standard steel knife. {PAWN_nameDef} was able to cleanly cut a piece from the large cake.\nSubject attempted to smash the red plate onto solid ground. The plate remained entirely intact, demonstrating complete resistance to impact. Detached fragments of the large cake that fell during this attempt were subsequently collected for analysis.\n{PAWN_nameDef} exposed big cake to a controlled fire for 30 minutes. Upon extinguishing the fire, the large cake was completely consumed by flames, leaving only the red plate, which exhibited no signs of charring or melting.\nFollowing all tests it took [REDACTED] hours for the cake to return to its initial, complete state, with all missing pieces spontaneously regenerated. Previously separated fragments of the cake exhibited no anomalous effects and did not display restorative capabilities.\nWhen Subject attempted to pick up the plate holding the fully restored cake, multiple lit candles spontaneously appeared on its upper surface. Concurrently, the inscription on the cake's frosting changed to "Happy Birthday, {PAWN_nameDef}".\n\nOutcome:\nThroughout the testing procedures, big cake displayed no hostile reaction.\nThorough analysis of the separated cake fragments revealed no discernible nutritional value, though they did possess a distinct strawberry flavor.\nThe quantity of spontaneously appearing candles precisely coincided with the Subject's documented age at the time of the interaction.\n\nDiscussion:\nThe big cake appears to possess anomalous self-restorative properties, while the red plate's anomalous properties rendering it indestructible by conventional means.\nThe lack of nutritional content in the cake precludes its viability as a sustainable food source.\nThe spontaneous appearance of lit candles and the customized inscription upon interaction strongly suggest a profound connection between cake's properties and the concept of a birthday celebration. This direct correlation warrants further investigation.\nTemporary big cake has been classified as Class-0 (Safe) anomaly.\n\nRecommendations:\nControlled experiments simulating a birthday celebration, involving the designated subject and the cake, are highly recommended to explore the possibility of further anomalous properties.</text>
 						<ThreatClass>0</ThreatClass>
 						<isSyncWithDB>true</isSyncWithDB>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<!-- <AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged. It can replicate a piece of itself, which can be consumed.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc> -->
-						<threshold>1</threshold>
-						<label>#2/4 Big pie study report</label>
-						<text>.</text>
-						<isSyncWithDB>true</isSyncWithDB>
-					</li>
-					<li Class="AnomaliesExpected.AEStudyNote">
-						<!-- <AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged. Each day will replicate a piece of itself based on the amount of existing pieces, which can be consumed.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc> -->
-						<threshold>2</threshold>
-						<label>#3/4 Big pie study report</label>
-						<text>.</text>
-						<isSyncWithDB>true</isSyncWithDB>
-					</li>
-					<li Class="AnomaliesExpected.AEStudyNote">
-						<!-- <AnomalyLabel>Self-Baking Pies</AnomalyLabel> -->
-						<!-- <AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack. A remarkable colony of sentient yeast that have made cake their primary habitat.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged. Each day will replicate a piece of itself based on the amount of existing pieces, which can be consumed.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc> -->
-						<threshold>5</threshold>
-						<label>#4/4 Big pie study report</label>
-						<text>.</text>
+						<AnomalyLabel>Today Will Be My Birthday</AnomalyLabel>
+						<AnomalyDesc>A round big cake on a red plate. It covered with white frosting, adorned with pink whipped cream swirls, fresh raspberries, and a delicate chocolate drizzle. This soft cake has a delicious strawberry flavor and bears the inscription "Happy Birthday".\n\nUpon interaction with cake or it plate, lit candles appear on its top. When person using the cake to celebrate birthday, then their age changes to fit date of the closest birthday.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>7</threshold>
+						<label>#2/2 Big cake study report</label>
+						<text>Theory Regarding Big Cake\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nAnalysis of the red plate revealed inscriptions and corroded organic metal, indicating it as the anomaly source. Hypothesized regarding big cake was made. Classified Class-0 (Safe), controlled age manipulation is recommended.\n\nOutcome:\nMultispectral Imaging was applied to analyze the red plate associated with big cake. Analysis revealed residual textual inscriptions, which partially was restored: "May you be able to experience this moment any time. Happy birthday, [REDACTED]. 03.06.[REDACTED]".\nAdditionally, traces of organic metal were identified within the plate's composition, exhibiting signs consistent with galvanic corrosion.\n\nDiscussion:\nObservations indicate varying interests in the cake's age-manipulating properties among different demographic groups within the facility. Adults whose chronological birthdays are within six months prior to today have expressed interest in utilizing the cake to decrease their biological age, presumably for life prolongation. Conversely, adolescent subjects whose chronological birthdays are within six months following today have demonstrated interest in using the cake to accelerate their growth.\nGiven passive and non-hostile behavior of the big cake, its current classification as a Class-0 (Safe) anomaly remains unchanged.\n\nHypothesis:\n{PAWN_nameDef} has proposed a hypothesis regarding the origins of this big cake. Based on conducted experiments, it can be theorized that big cake itself is not anomalous, hile the source of all effects is the red plate itself. What was meant to be a birthday gift made by an Archotech for someone, based on found parts of text, seems to malfunction nowadays due to foreign intervention into its inner structure. Its original purpose was supposed to bring a person back to their last birthday and allow them to enjoy the party with cake, but due to this malfunction, it is now changing a person's age to align with the closest birthday date.\n\nRecommendations:\nControlled Use: Controlled birthday celebration protocols, specifically utilizing the big cake, can be used as a potential means for precise, controlled age manipulation within the facility.</text>
 						<isSyncWithDB>true</isSyncWithDB>
 					</li>
 				</studyNotes>
 				<studyNotesManualUnlockable>
 					<li Class="AnomaliesExpected.AEStudyNote">
-						<threshold>0.09</threshold>
-						<label>Speedometer Chrono Destabilization incident report</label>
-						<text>. </text>
+						<AnomalyDesc>A round big cake on a red plate. It covered with white frosting, adorned with pink whipped cream swirls, fresh raspberries, and a delicate chocolate drizzle. This soft cake has a delicious strawberry flavor and bears the inscription "Happy Birthday".\n\nUpon interaction with cake or it plate, lit candles appear on its top. When person using the cake to celebrate birthday, then their age changes to fit date of the closest birthday.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>0.05</threshold>
+						<label>Birthday Cake incident report</label>
+						<text>Birthday Chronological Influence\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nConsumption of the anomalous big cake, following a simulated birthday celebration, resulted in a spontaneous shift in the Subject's perceived and measured biological age to align with the current date as their birthday. Preliminary observations suggest the cake induces age modification based on proximity to the Subject's next or previous chronological birthday. This anomaly presents a potential for controlled age manipulation within the facility.\n\nObservations:\nSubject was instructed to pick up the plate and proceed with normal birthday celebration. Note should be made that Subject's birthday date is different from date of experiment.\nAs previously observed, the inscription on the cake's frosting changed to "Happy Birthday, {PAWN_nameDef}".\nSubject then proceeded to extinguish the spontaneously appeared lit candles and fully consume the entirety of the cake.\nPost-consumption, {PAWN_nameDef} expressed surprise, articulating a strong conviction that the current date was indeed their birthday, despite prior knowledge to the contrary.\n\nOutcome:\nSubsequent biological age analysis of the Subject revealed a measurable physiological alteration, indicating a shift in their age metrics to correspond precisely with the current date being their birth anniversary.\n\nDiscussion:\nThe Subject's post-experiment conviction regarding their birthday's date, despite contradictory official documentation, directly correlates with the observed physiological age alteration. We hypothesize that the full consumption of the big cake, following a simulated birthday celebration, induces a recalibration of the Subject's biological age to align with the current date as their birth date.\nPreliminary evidence suggests that if the Subject's chronological age was closer to their next birthday, their biological age increased to match. Conversely, if their chronological age was closer to their previous birthday, their biological age decreased. This implies a unique age-normalization mechanism relative to the current date.\n\nRecommendations:\nControlled birthday celebration protocols, specifically utilizing the big cake, should be meticulously investigated as a potential means for precise, controlled age manipulation within the facility.</text>
 					</li>
 				</studyNotesManualUnlockable>
 			</li>
