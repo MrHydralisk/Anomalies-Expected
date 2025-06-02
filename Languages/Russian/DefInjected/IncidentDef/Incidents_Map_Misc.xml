@@ -84,5 +84,11 @@
 	<AE_IncidentDef_EntityDatabaseSpawn.label>древний сервер</AE_IncidentDef_EntityDatabaseSpawn.label>
 	<AE_IncidentDef_EntityDatabaseSpawn.letterLabel>Найден древний сервер</AE_IncidentDef_EntityDatabaseSpawn.letterLabel>
 	<AE_IncidentDef_EntityDatabaseSpawn.letterText>Ваш колонист заметил неподалёку какой-то объект, появившийся из ниоткуда. При внимательном рассмотрении кажется, что это древний сервер, состоящий из трёх соединённых секций. Данные, которые он содержит, однако, остаются неизвестными.</AE_IncidentDef_EntityDatabaseSpawn.letterText>
+	
+	
+	
+	<AE_IncidentDef_BirthdayCakeSpawn.label>большой торт</AE_IncidentDef_BirthdayCakeSpawn.label>
+	<AE_IncidentDef_BirthdayCakeSpawn.letterLabel>Найден большой торт</AE_IncidentDef_BirthdayCakeSpawn.letterLabel>
+	<AE_IncidentDef_BirthdayCakeSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это круглый большой торт на красной тарелке. Выглядит аппетитно.</AE_IncidentDef_BirthdayCakeSpawn.letterText>
 
 </LanguageData>

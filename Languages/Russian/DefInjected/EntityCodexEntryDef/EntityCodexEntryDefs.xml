@@ -32,5 +32,7 @@
 	<AE_EntityCodexEntry_Speedometer.label>cпидометр</AE_EntityCodexEntry_Speedometer.label>
 	
 	<AE_EntityCodexEntry_EntityDatabase.label>древний сервер</AE_EntityCodexEntry_EntityDatabase.label>
+	
+	<AE_EntityCodexEntry_BirthdayCake.label>большой торт</AE_EntityCodexEntry_BirthdayCake.label>
 
 </LanguageData>
