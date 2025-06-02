@@ -16,7 +16,7 @@ namespace AnomaliesExpected
         public bool isHaveArrow = true;
         public List<EntityCodexEntryDef> entityCodexEntryDefsRequired = new List<EntityCodexEntryDef>();
         public FactionDef factionDef;
-        public int maxAnomalyThreatLevel = int.MaxValue;
+        public int maxAnomalyThreatLevel = -1;
         public List<AssaultSummonPattern> AssaultSummonPattern = new List<AssaultSummonPattern>();
         public float FleckScale = 1;
     }

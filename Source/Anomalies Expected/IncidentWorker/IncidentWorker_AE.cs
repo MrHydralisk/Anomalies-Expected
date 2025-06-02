@@ -24,7 +24,7 @@ namespace AnomaliesExpected
         {
             if (ModsConfig.AnomalyActive && !parms.forced)
             {
-                if (Find.Anomaly.LevelDef.anomalyThreatTier > Ext.maxAnomalyThreatLevel || !Find.Anomaly.GenerateMonolith)
+                if (Ext.maxAnomalyThreatLevel > -1 && (Find.Anomaly.LevelDef.anomalyThreatTier > Ext.maxAnomalyThreatLevel || !Find.Anomaly.GenerateMonolith))
                 {
                     return false;
                 }
