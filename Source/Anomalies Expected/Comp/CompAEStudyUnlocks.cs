@@ -172,8 +172,8 @@ namespace AnomaliesExpected
                     if (studyNote.threshold > CurrThreshold)
                     {
                         UpdateFromStudyNote(studyNote);
-                        GameComponent_AnomaliesExpected.instance.SyncEntityEntry(this);
                     }
+                    GameComponent_AnomaliesExpected.instance.SyncEntityEntry(this);
                 }
             }
         }
