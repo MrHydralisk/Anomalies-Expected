@@ -300,4 +300,19 @@
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>
 
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_BirthdayCake</defName>
+		<label>big cake</label>
+		<category>Basic</category>
+		<uiIconPath>UI/CodexEntries/AE_BirthdayCake</uiIconPath>
+		<useDescriptionFrom>AE_BirthdayCake</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_BirthdayCake</li>
+		</linkedThings>
+		<provocationIncidents>
+			<li>AE_IncidentDef_BirthdayCakeSpawn</li>
+		</provocationIncidents>
+		<orderInCategory>1300</orderInCategory>
+	</EntityCodexEntryDef>
+
 </Defs>
