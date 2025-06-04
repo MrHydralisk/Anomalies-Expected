@@ -776,7 +776,7 @@
 		<category>Item</category>
 		<genericMarketSellable>false</genericMarketSellable>
 		<drawerType>MapMeshOnly</drawerType>
-		<tickerType>Long</tickerType>
+		<tickerType>Normal</tickerType>
 		<rotatable>false</rotatable>
 		<altitudeLayer>Item</altitudeLayer>
 		<selectable>true</selectable>
@@ -804,6 +804,7 @@
 		<comps>
 			<li Class="CompProperties_Interactable">
 				<compClass>AnomaliesExpected.Comp_BirthdayCake</compClass>
+				<activeTicks>1</activeTicks>
 				<ticksToActivate>5000</ticksToActivate>
 				<cooldownTicks>420000</cooldownTicks>
 				<activateTexPath>Things/Item/Consumable/AE_BirthdayCake</activateTexPath>
