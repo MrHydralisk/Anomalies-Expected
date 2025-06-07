@@ -21,7 +21,7 @@ namespace AnomaliesExpected
             long ticksTillBirthday = Mathf.CeilToInt(ageTracker.AgeBiologicalYearsFloat) * 3600000L - ageTracker.AgeBiologicalTicks;
             if (ticksTillBirthday < ticksSinceBirthday)
             {
-                ageTracker.AgeBiologicalTicks = Mathf.CeilToInt(ageTracker.AgeBiologicalYearsFloat) * 3600000L;
+                ageTracker.AgeBiologicalTicks = Mathf.CeilToInt(ageTracker.AgeBiologicalYearsFloat) * 3600000L - 1;
             }
             else
             {
