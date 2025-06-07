@@ -42,6 +42,8 @@ Currently available:
 * 3 Mysterious cargo
 * 1 Creepjoiner
 
+Includes a designator for multi-selection of entities for captured in the orders category.
+
 ## Links
 
 [Steam Workshop Page](https://steamcommunity.com/sharedfiles/filedetails/?id=3240752689)
