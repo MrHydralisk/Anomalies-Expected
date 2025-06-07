@@ -973,6 +973,13 @@
 						</li>
 					</value>
 				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/DesignationCategoryDef[defName="Orders"]/specialDesignatorClasses</xpath>
+					<order>Append</order>
+					<value>
+						<li>AnomaliesExpected.Designator_CaptureEntity</li>
+					</value>
+				</li>
 			</operations>
 		</match>
 	</Operation>

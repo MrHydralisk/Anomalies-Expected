@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<AnomaliesExpected.Designator.MessageMustDesignateCapturable>Must designate capturable entities.</AnomaliesExpected.Designator.MessageMustDesignateCapturable>
+	<AnomaliesExpected.Designator.CaptureEntity.Desc>Capture entity. It must be restrained on a holding platform. Once restrained, it can be studied.</AnomaliesExpected.Designator.CaptureEntity.Desc>
+	
+</LanguageData>
