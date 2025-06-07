@@ -7,7 +7,6 @@ using Verse.AI;
 
 namespace AnomaliesExpected
 {
-
     public class Designator_CaptureEntity : Designator
     {
         private List<Building_HoldingPlatform> HoldingPlatforms = new List<Building_HoldingPlatform>();

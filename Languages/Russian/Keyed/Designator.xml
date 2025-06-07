@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<AnomaliesExpected.Designator.MessageMustDesignateCapturable>Нужно указать тёмных сущностей, которым можно захватить.</AnomaliesExpected.Designator.MessageMustDesignateCapturable>
+	<AnomaliesExpected.Designator.CaptureEntity.Desc>Тёмная сущность будет у вас в плену. Существо нужно удерживать на фиксирующей платформе. После фиксации его можно будет изучать.</AnomaliesExpected.Designator.CaptureEntity.Desc>
+	
+</LanguageData>
