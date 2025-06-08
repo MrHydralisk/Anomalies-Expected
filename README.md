@@ -6,7 +6,7 @@ If you want more anomalies to explore and experiment with, then you might like t
 
 ## Mod Contents
 
-Mod adding new anomalies for Anomaly DLC. With it own benefits and risks.
+Mod adding vatiety of new anomalies for Anomaly DLC. With it own benefits and risks.
 Most anomalies here give you some benefit for keeping them in colony with it own containment risks, rather than being just a temporary threat event to the colony like most of anomalies from DLC.
 Mod have it own research tab Anomalies Expected, which work same way as Anomaly tab.
 Also this mod adding a reworked Entity Codex as new Entity Database, which allowing to read study notes, carry over study progress between anomalies and see all information related to each entity.
@@ -43,6 +43,7 @@ Currently available:
 * 1 Creepjoiner
 
 Includes a designator for multi-selection of entities for captured in the orders category.
+Also have mod settings with option to adjust Void Provocation ritual cooldown.
 
 ## Links
 
