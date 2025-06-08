@@ -13,6 +13,8 @@
 	<AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestFrequencyMult>Set multiplier for time between fleshbeast generation from nests to {0}</AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestFrequencyMult>
 	<AnomaliesExpected.Settings.BloodLake.BloodLakeSubMapMaxSize>Set maximum size for Lake sub map generation to {0}x{0} (by default will copy size of colony map)\n(Size affect amount of loot, enemies and required resources from PC)</AnomaliesExpected.Settings.BloodLake.BloodLakeSubMapMaxSize>
 	
+	<AnomaliesExpected.Settings.Patch.VoidProvactionCooldown>Set Void Provaction ritual Cooldown to {0} hours (by default 120h) [Take effect on a game launch]</AnomaliesExpected.Settings.Patch.VoidProvactionCooldown>
+	
 	<AnomaliesExpected.Settings.ResearchTab.Unlock>Try Unlock Anomalies Expected Research Tab</AnomaliesExpected.Settings.ResearchTab.Unlock>
 	
 	<AnomaliesExpected.Settings.DevMode.Info>Show additional information for debug</AnomaliesExpected.Settings.DevMode.Info>

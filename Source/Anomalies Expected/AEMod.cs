@@ -33,6 +33,9 @@ namespace AnomaliesExpected
             options.Label("AnomaliesExpected.Settings.BloodLake.BloodLakeSubMapMaxSize".Translate(Settings.BloodLakeSubMapMaxSize.ToString()));
             Settings.BloodLakeSubMapMaxSize = Mathf.RoundToInt(options.Slider(Settings.BloodLakeSubMapMaxSize, 75, 325));
             options.GapLine();
+            options.Label("AnomaliesExpected.Settings.Patch.VoidProvactionCooldown".Translate(Settings.VoidProvactionCooldown.ToString()));
+            Settings.VoidProvactionCooldown = Mathf.RoundToInt(options.Slider(Settings.VoidProvactionCooldown, 12, 120));
+            options.GapLine();
             if (Current.Game != null && options.ButtonText("AnomaliesExpected.Settings.ResearchTab.Unlock".Translate().RawText))
             {
                 Find.ResearchManager.Notify_MonolithLevelChanged(Find.Anomaly.Level);

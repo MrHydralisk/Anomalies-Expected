@@ -30,6 +30,12 @@ namespace AnomaliesExpected
                 }
             }
 
+            PsychicRitualDef_VoidProvocation psychicRitualDef_VoidProvocation = DefDatabase<PsychicRitualDef_VoidProvocation>.GetNamed("VoidProvocation");
+            if (psychicRitualDef_VoidProvocation != null)
+            {
+                psychicRitualDef_VoidProvocation.cooldownHours = AEMod.Settings.VoidProvactionCooldown;
+            }
+
             val.Patch(AccessTools.Property(typeof(ResearchProjectDef), "IsHidden").GetGetMethod(), prefix: new HarmonyMethod(patchType, "RPD_IsHidden_Prefix"));
             val.Patch(AccessTools.Method(typeof(MainTabWindow_Research), "ListProjects"), transpiler: new HarmonyMethod(patchType, "MTWR_ListProjects_Transpiler"));
             val.Patch(AccessTools.Method(typeof(MainTabWindow_Research), "Select"), prefix: new HarmonyMethod(patchType, "MTWR_Select_Prefix"));

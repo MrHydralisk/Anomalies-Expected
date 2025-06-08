@@ -12,6 +12,7 @@ namespace AnomaliesExpected
         public float UndergroundFleshmassNestMult = 0.3f;
         public float UndergroundFleshmassNestFrequencyMult = 1f;
         public int BloodLakeSubMapMaxSize = 200;
+        public int VoidProvactionCooldown = 120;
         public bool DevModeInfo = false;
 
         public override void ExposeData()
@@ -25,6 +26,7 @@ namespace AnomaliesExpected
             Scribe_Values.Look(ref UndergroundFleshmassNestMult, "UndergroundFleshmassNestMult", defaultValue: 0.3f);
             Scribe_Values.Look(ref UndergroundFleshmassNestFrequencyMult, "UndergroundFleshmassNestFrequencyMult", defaultValue: 1f);
             Scribe_Values.Look(ref BloodLakeSubMapMaxSize, "BloodLakeSubMapMaxSize", defaultValue: 200);
+            Scribe_Values.Look(ref VoidProvactionCooldown, "VoidProvactionCooldown", defaultValue: 120);
             Scribe_Values.Look(ref DevModeInfo, "DevModeInfo", defaultValue: false);
         }
     }
