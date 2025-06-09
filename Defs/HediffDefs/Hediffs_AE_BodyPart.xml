@@ -25,7 +25,7 @@
 	
 	
 
-	<HediffDef ParentName="AddedBodyPartBase">
+	<HediffDef Name="AEGrinderStomach" ParentName="AddedBodyPartBase">
 		<defName>AEGrinderStomach</defName>
 		<label>grinder stomach</label>
 		<labelNoun>a grinder stomach</labelNoun>
@@ -55,7 +55,7 @@
 		</addedPartProps>
 	</HediffDef>
 	
-	<HediffDef ParentName="AddedBodyPartBase">
+	<HediffDef Name="AEGrinderJaw" ParentName="AddedBodyPartBase">
 		<defName>AEGrinderJaw</defName>
 		<label>grinder jaw</label>
 		<labelNoun>a grinder jaw</labelNoun>
@@ -104,6 +104,66 @@
 				</tools>
 			</li>
 		</comps>
+	</HediffDef>
+	
+	<HediffDef ParentName="AEGrinderStomach">
+		<defName>AEGrinderStomachHidden</defName>
+		<description>An installed anomalous artificial stomach. Internal blades grind up any foreign organic objects to create a nutrient source. A person with this has almost no chance of getting food poisoning, and is immune to some stomach diseases. To sustain itself, it will drain more nutrients from the host. This organic metal possesses self-healing properties, repairing damage on its own. It drastically surpasses its biological counterpart in several aspects.</description>
+		<descriptionHyperlinks Inherit="false"/>
+		<spawnThingOnRemoved Inherit="false"/>
+		<defaultInstallPart>Stomach</defaultInstallPart>
+		<comps>
+			<li Class="HediffCompProperties_SurgeryInspectable">
+				<surgicalDetectionDesc>Found some sort of artificial implant that replacing subject stomach.</surgicalDetectionDesc>
+			</li>
+		</comps>
+		<stages Inherit="false">
+			<li>
+				<becomeVisible>false</becomeVisible>
+				<makeImmuneTo>
+					<li>GutWorms</li>
+					<li>FoodPoisoning</li>
+					<li>MuscleParasites</li>
+				</makeImmuneTo>
+				<foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
+				<statFactors>
+					<RawNutritionFactor MayRequire="Ludeon.RimWorld.Biotech">2</RawNutritionFactor>
+				</statFactors>
+				<hungerRateFactor>1.1</hungerRateFactor>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="AEGrinderJaw">
+		<defName>AEGrinderJawHidden</defName>
+		<description>An installed anomalous artificial jaw. Spinning razor-sharp blades within, pulverizing any food source into a digestible slurry, allowing for significantly faster consumption. Its immense power even enables it to bite off limbs of living opponents. The intense vibrations cause pain to the host. Paradoxically, the jaw also enhances the user's voice, making it more soothing. This organic metal possesses self-healing properties, repairing damage on its own. It drastically surpasses its biological counterpart in several aspects.</description>
+		<descriptionHyperlinks Inherit="false"/>
+		<spawnThingOnRemoved Inherit="false"/>
+		<defaultInstallPart>Jaw</defaultInstallPart>
+		<comps>
+			<li Class="HediffCompProperties_SurgeryInspectable">
+				<surgicalDetectionDesc>Found some sort of artificial implant that replacing subject jaw.</surgicalDetectionDesc>
+			</li>
+		</comps>
+		<stages Inherit="false">
+			<li>
+				<becomeVisible>false</becomeVisible>
+				<statFactors>
+					<EatingSpeed>2</EatingSpeed>
+				</statFactors>
+				<painOffset>0.15</painOffset>
+				<capMods>
+					<li>
+						<capacity>Eating</capacity>
+						<postFactor>2</postFactor>
+					</li>
+					<li>
+						<capacity>Talking</capacity>
+						<postFactor>0.8</postFactor>
+					</li>
+				</capMods>
+			</li>
+		</stages>
 	</HediffDef>
 	
 	
@@ -254,7 +314,7 @@
 		<defaultInstallPart>Torso</defaultInstallPart>
 		<comps>
 			<li Class="HediffCompProperties_SurgeryInspectable">
-				<surgicalDetectionDesc>Found some sort of snow core implant withing subject torso.</surgicalDetectionDesc>
+				<surgicalDetectionDesc>Found some sort of snow core implant within subject torso.</surgicalDetectionDesc>
 			</li>
 			<li Class="HediffCompProperties_DissolveGearOnDeath">
 				<fleck>SnowBits</fleck>
