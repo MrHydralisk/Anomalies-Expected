@@ -149,7 +149,7 @@
 		<favoriteColor>(0.208, 0.247, 0.208)</favoriteColor>
 		<requires>
 			<li>AEGrindBody</li>
-			<li>Aggressive</li>
+			<li>AE_DownsideMentalState_BingingFood</li>
 			<li>Assault</li>
 			<li>AggressiveRejection</li>
 		</requires>

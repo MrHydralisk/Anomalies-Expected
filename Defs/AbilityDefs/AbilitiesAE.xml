@@ -28,7 +28,6 @@
 			<warmupTime>0.5</warmupTime>
 			<requireLineOfSight>true</requireLineOfSight>
 			<drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
-			<!-- <soundCast>VoidTerrorCast</soundCast> -->
 			<targetParams>
 				<canTargetSelf>false</canTargetSelf>
 				<canTargetMechs>false</canTargetMechs>

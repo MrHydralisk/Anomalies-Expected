@@ -11,5 +11,6 @@ namespace AnomaliesExpected
         public bool canTimeoutOrFlee;
         public SoundDef soundDef;
         public int ticksBeforeIncident = 2500;
+        public MentalStateDef mentalStateDef;
     }
 }

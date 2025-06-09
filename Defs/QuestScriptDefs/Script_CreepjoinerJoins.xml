@@ -30,7 +30,7 @@
 				<li Class="QuestNode_SetupCreepjoiner">
 					<form>AE_CreepJoiner_Grinder</form>
 					<benefit>AEGrindBody</benefit>
-					<downside>Aggressive</downside>
+					<downside>AE_DownsideMentalState_BingingFood</downside>
 					<aggressive>Assault</aggressive>
 					<rejection>AggressiveRejection</rejection>
 
