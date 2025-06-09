@@ -11,5 +11,14 @@
 			<li>AESpawnSnowMan</li>
 		</abilities>
 	</CreepJoinerBenefitDef>
+	
+	<CreepJoinerBenefitDef>
+		<defName>AEGrindBody</defName>
+		<label>grind body</label>
+		<letterExtra>{PAWN_nameDef}'s body is riddled with corrupt archites. {PAWN_pronoun} can release them at will, creating a cloud of deadlife dust which can reanimate nearby corpses.</letterExtra>
+		<abilities>
+			<li>AEGrindBody</li>
+		</abilities>
+	</CreepJoinerBenefitDef>
   
 </Defs>

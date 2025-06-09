@@ -29,7 +29,7 @@
 			<nodes>
 				<li Class="QuestNode_SetupCreepjoiner">
 					<form>AE_CreepJoiner_Grinder</form>
-					<benefit>AESummonSnowMan</benefit>
+					<benefit>AEGrindBody</benefit>
 					<downside>Aggressive</downside>
 					<aggressive>Assault</aggressive>
 					<rejection>AggressiveRejection</rejection>

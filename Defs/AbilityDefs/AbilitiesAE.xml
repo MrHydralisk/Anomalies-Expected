@@ -7,6 +7,46 @@
 	</AbilityCategoryDef>
 
 	<AbilityDef>
+		<defName>AEGrindBody</defName>
+		<label>grind body</label>
+		<description>A concentrated burst of psychic energy, fired from the eyes and striking targets in front of them.</description>
+		<iconPath>UI/Abilities/ShapeFlesh</iconPath>
+		<cooldownTicksRange>5000</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayOrder>1300</displayOrder>
+		<category>AEAnomaliesExpected</category>
+		<showPsycastEffects>false</showPsycastEffects>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<warmupEffecter>HoraxianAbilityCasting</warmupEffecter>
+		<warmupSound>AnomalyAbilityWarmup</warmupSound>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>4.9</range>
+			<warmupTime>0.5</warmupTime>
+			<requireLineOfSight>true</requireLineOfSight>
+			<drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
+			<!-- <soundCast>VoidTerrorCast</soundCast> -->
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetMechs>false</canTargetMechs>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetCorpses>true</canTargetCorpses>
+				<onlyTargetCorpses>true</onlyTargetCorpses>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilityGrindBody">
+				<butcherEfficiency>2</butcherEfficiency>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	
+
+	<AbilityDef>
 		<defName>AEAcidSpew</defName>
 		<label>acid spew</label>
 		<description>Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them.</description>

@@ -94,6 +94,9 @@
 				<range>14~20</range>
 			</li>
 		</skills>
+		<forcedTraits>
+			<Masochist/>
+		</forcedTraits>
 		<startingHediffs>
 			<li>
 				<def>AEGrinderStomachHidden</def>
@@ -104,28 +107,28 @@
 		</startingHediffs>
 		<existingDamage>
 			<!-- <li> -->
-				<!-- <damage>Frostbite</damage> -->
-				<!-- <groups> -->
-					<!-- <li>Arms</li> -->
-				<!-- </groups> -->
+			<!-- <damage>Frostbite</damage> -->
+			<!-- <groups> -->
+			<!-- <li>Arms</li> -->
+			<!-- </groups> -->
 			<!-- </li> -->
 			<!-- <li> -->
-				<!-- <damage>Frostbite</damage> -->
-				<!-- <groups> -->
-					<!-- <li>Arms</li> -->
-				<!-- </groups> -->
+			<!-- <damage>Frostbite</damage> -->
+			<!-- <groups> -->
+			<!-- <li>Arms</li> -->
+			<!-- </groups> -->
 			<!-- </li> -->
 			<!-- <li> -->
-				<!-- <damage>Frostbite</damage> -->
-				<!-- <groups> -->
-					<!-- <li>Legs</li> -->
-				<!-- </groups> -->
+			<!-- <damage>Frostbite</damage> -->
+			<!-- <groups> -->
+			<!-- <li>Legs</li> -->
+			<!-- </groups> -->
 			<!-- </li> -->
 			<!-- <li> -->
-				<!-- <damage>Frostbite</damage> -->
-				<!-- <groups> -->
-					<!-- <li>Legs</li> -->
-				<!-- </groups> -->
+			<!-- <damage>Frostbite</damage> -->
+			<!-- <groups> -->
+			<!-- <li>Legs</li> -->
+			<!-- </groups> -->
 			<!-- </li> -->
 		</existingDamage>
 		<fixedInventory>
@@ -145,7 +148,7 @@
 		<ignoreIdeoApparelColors>true</ignoreIdeoApparelColors>
 		<favoriteColor>(0.208, 0.247, 0.208)</favoriteColor>
 		<requires>
-			<li>AESummonSnowMan</li>
+			<li>AEGrindBody</li>
 			<li>Aggressive</li>
 			<li>Assault</li>
 			<li>AggressiveRejection</li>
