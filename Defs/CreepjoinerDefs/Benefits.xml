@@ -15,7 +15,7 @@
 	<CreepJoinerBenefitDef>
 		<defName>AEGrindBody</defName>
 		<label>grind body</label>
-		<letterExtra>{PAWN_nameDef}'s body is riddled with corrupt archites. {PAWN_pronoun} can release them at will, creating a cloud of deadlife dust which can reanimate nearby corpses.</letterExtra>
+		<letterExtra>{PAWN_nameDef} appear to possess the ability to butcher any body in front of them with anomalous efficiency.</letterExtra>
 		<abilities>
 			<li>AEGrindBody</li>
 		</abilities>

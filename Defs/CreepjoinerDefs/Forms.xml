@@ -80,8 +80,8 @@
 		<label>smiling butcher</label>
 		<weight>1</weight>
 		<canOccurRandomly>false</canOccurRandomly>
-		<letterLabel>A shivering figure is approaching the colony.</letterLabel>
-		<letterPrompt>The stranger stares at you with cold eyes and speaks in a shivering voice. Traces of frostbite are visible on exposed areas of the body. {PAWN_pronoun} claims to have escaped from a harsh heavy snow and begs to join your colony to warm up and recover.</letterPrompt>
+		<letterLabel>A smiling figure is approaching the colony.</letterLabel>
+		<letterPrompt>The stranger takes initiative in the conversation, immediately discussing the efficiency of {PAWN_possessive} butchering methods, even without proper instruments at hand. {PAWN_pronoun} claims to be in a long search for a place where {PAWN_possessive} skills can be applied to their maximum potential.</letterPrompt>
 		<minGenerationAge>35</minGenerationAge>
 		<maxGenerationAge>70</maxGenerationAge>
 		<skills>

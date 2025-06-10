@@ -146,7 +146,7 @@
   
 	<IncidentDef>
 		<defName>AE_IncidentDef_CreepJoinerJoin_Grinder</defName>
-		<label>creepjoiner join</label>
+		<label>grinder creepjoiner join</label>
 		<category>Misc</category>
 		<targetTags>
 			<li>Map_PlayerHome</li>
@@ -457,7 +457,7 @@
   
 	<IncidentDef>
 		<defName>AE_IncidentDef_CreepJoinerJoin_IceMan</defName>
-		<label>creepjoiner join</label>
+		<label>ice man creepjoiner join</label>
 		<category>Misc</category>
 		<targetTags>
 			<li>Map_PlayerHome</li>

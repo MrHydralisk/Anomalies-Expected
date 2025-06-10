@@ -9,8 +9,8 @@
 	<AbilityDef>
 		<defName>AEGrindBody</defName>
 		<label>grind body</label>
-		<description>A concentrated burst of psychic energy, fired from the eyes and striking targets in front of them.</description>
-		<iconPath>UI/Abilities/ShapeFlesh</iconPath>
+		<description>Grind off the skin and flesh of corpse bones. This produces a way bigger amount of butcher products than should be logically possible.</description>
+		<iconPath>Things/Item/Resource/MeatFoodRaw/Meat_Big/Meat_Big_c</iconPath>
 		<cooldownTicksRange>5000</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
 		<displayOrder>1300</displayOrder>
