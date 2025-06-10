@@ -40,7 +40,7 @@ Currently available:
 * 8 Anomaly of basic category
 * 7 Anomaly of advanced category
 * 3 Mysterious cargo
-* 1 Creepjoiner
+* 2 Creepjoiner
 
 Includes a designator for multi-selection of entities for captured in the orders category.
 Also have mod settings with option to adjust Void Provocation ritual cooldown.
