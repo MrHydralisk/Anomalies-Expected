@@ -106,44 +106,37 @@
 			</li>
 		</startingHediffs>
 		<existingDamage>
-			<!-- <li> -->
-			<!-- <damage>Frostbite</damage> -->
-			<!-- <groups> -->
-			<!-- <li>Arms</li> -->
-			<!-- </groups> -->
-			<!-- </li> -->
-			<!-- <li> -->
-			<!-- <damage>Frostbite</damage> -->
-			<!-- <groups> -->
-			<!-- <li>Arms</li> -->
-			<!-- </groups> -->
-			<!-- </li> -->
-			<!-- <li> -->
-			<!-- <damage>Frostbite</damage> -->
-			<!-- <groups> -->
-			<!-- <li>Legs</li> -->
-			<!-- </groups> -->
-			<!-- </li> -->
-			<!-- <li> -->
-			<!-- <damage>Frostbite</damage> -->
-			<!-- <groups> -->
-			<!-- <li>Legs</li> -->
-			<!-- </groups> -->
-			<!-- </li> -->
+			<li>
+				<damage>Cut</damage>
+				<groups>
+					<li>Arms</li>
+				</groups>
+			</li>
+			<li>
+				<damage>Cut</damage>
+				<groups>
+					<li>Arms</li>
+				</groups>
+			</li>
+			<li>
+				<damage>Cut</damage>
+				<groups>
+					<li>FullHead</li>
+				</groups>
+			</li>
 		</existingDamage>
 		<fixedInventory>
-			<!-- <Gun_AESnowBallGun/> -->
+			<MeleeWeapon_Knife/>
 		</fixedInventory>
 		<apparelRequired>
-			<li>Apparel_Tuque</li>
-			<li>Apparel_Parka</li>
+			<li>Apparel_Jacket</li>
 			<li>Apparel_BasicShirt</li>
 			<li>Apparel_Pants</li>
 		</apparelRequired>
 		<minApparelQuality>Poor</minApparelQuality>
-		<maxApparelQuality>Poor</maxApparelQuality>
+		<maxApparelQuality>Good</maxApparelQuality>
 		<forceNormalGearQuality>false</forceNormalGearQuality>
-		<gearHealthRange>0.4~0.6</gearHealthRange>
+		<gearHealthRange>0.6~0.9</gearHealthRange>
 		<apparelColor>(0.208, 0.247, 0.208)</apparelColor>
 		<ignoreIdeoApparelColors>true</ignoreIdeoApparelColors>
 		<favoriteColor>(0.208, 0.247, 0.208)</favoriteColor>
