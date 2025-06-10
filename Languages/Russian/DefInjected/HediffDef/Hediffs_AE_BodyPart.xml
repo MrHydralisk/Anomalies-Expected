@@ -16,6 +16,18 @@
 	<AEGrinderJaw.comps.HediffComp_VerbGiver.tools.grinder_jaw.label>челюсть-измельчитель</AEGrinderJaw.comps.HediffComp_VerbGiver.tools.grinder_jaw.label>
 	<AEGrinderJaw.labelNoun>челюсть-измельчитель</AEGrinderJaw.labelNoun>
 	
+
+	<AEGrinderStomachHidden.label>желудок-измельчитель</AEGrinderStomachHidden.label>
+	<AEGrinderStomachHidden.description>Установленный аномальный искусственный желудок. Внутренние лезвия измельчают любые посторонние органические предметы, превращая их в источник питательных веществ. У носителя практически нет шансов получить пищевое отравление, и он невосприимчив к некоторым заболеваниям желудка. Чтобы поддерживать себя, он будет поглощать больше питательных веществ из носителя. Этот органический металл обладает свойствами самовосстановления, самостоятельно устраняя повреждения. Он радикально превосходит свой биологический аналог по нескольким аспектам.</AEGrinderStomachHidden.description>
+	<AEGrinderStomachHidden.comps.HediffComp_SurgeryInspectable.surgicalDetectionDesc>Обнаружено некий имплант заменяющий желудок субъекта.</AEGrinderStomachHidden.comps.HediffComp_SurgeryInspectable.surgicalDetectionDesc>
+	<AEGrinderStomachHidden.labelNoun>желудок-измельчитель</AEGrinderStomachHidden.labelNoun>
+	
+	<AEGrinderJawHidden.label>челюсть-измельчитель</AEGrinderJawHidden.label>
+	<AEGrinderJawHidden.description>Установленная аномальная искусственная челюсть. Вращающиеся внутри острые как бритва лезвия измельчают любой источник пищи в легкоусвояемую кашицу, что позволяет значительно ускорить ее потребление. Его огромная сила позволяет носителю даже откусывать конечности живым противникам. Интенсивные вибрации причиняют носителю боль, но челюсть также усиливает голос пользователя, делая его более успокаивающим. Этот органический металл обладает свойствами самовосстановления, самостоятельно устраняя повреждения. Он радикально превосходит свой биологический аналог по нескольким аспектам.</AEGrinderJawHidden.description>
+	<AEGrinderJawHidden.comps.HediffComp_VerbGiver.tools.grinder_jaw.label>челюсть-измельчитель</AEGrinderJawHidden.comps.HediffComp_VerbGiver.tools.grinder_jaw.label>
+	<AEGrinderJawHidden.comps.HediffComp_SurgeryInspectable.surgicalDetectionDesc>Обнаружено некий имплант заменяющий челюсть субъекта.</AEGrinderJawHidden.comps.HediffComp_SurgeryInspectable.surgicalDetectionDesc>
+	<AEGrinderJawHidden.labelNoun>челюсть-измельчитель</AEGrinderJawHidden.labelNoun>
+	
 	
 	
 	<AEThermalReflectiveSkinImplant.label>термо-отражающая кожная железа</AEThermalReflectiveSkinImplant.label>
@@ -27,6 +39,7 @@
 	<AESnowCoreImplant.label>имплантат с ледяным ядром</AESnowCoreImplant.label>
 	<AESnowCoreImplant.description>Установленный аномальный имплантат, повторяющий ледяное ядро Снежной Армии, позволяет носителю выживать при пониженных температурах. Наноразмерные фроститы вызывают кристаллизацию клеток при ранении, ускоряя регенерацию при пониженных температурах. Однако эта кристаллизация делает клетки уязвимыми к высоким температурам, дестабилизируя их структуру. Тело носителя также понижает температуру окружающего воздуха.\n\nПолучает двойной урон от огня.\nМаксимальный эффект при -100 градусах, включая регенерацию отсутствующих частей.</AESnowCoreImplant.description>
 	<AESnowCoreImplant.labelNoun>имплантат с ледяным ядром</AESnowCoreImplant.labelNoun>
+	
 	
 	<AESnowCoreImplantHidden.label>имплантат с ледяным ядром</AESnowCoreImplantHidden.label>
 	<AESnowCoreImplantHidden.description>Установленный замёрзший имплантат позволяет носителю выживать при пониженных температурах. Что-то вызывает кристаллизацию клеток при ранении, ускоряя регенерацию при пониженных температурах. Однако эта кристаллизация делает клетки уязвимыми к высоким температурам, дестабилизируя их структуру. Тело носителя также понижает температуру окружающего воздуха.\n\nПолучает двойной урон от огня.\nМаксимальный эффект при -100 градусах\nПозволяет регенерацию отсутствующих частей после -50 градусов.</AESnowCoreImplantHidden.description>

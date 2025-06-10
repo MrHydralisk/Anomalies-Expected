@@ -25,6 +25,9 @@
 	
 	<AE_IncidentDef_MeatGrinderMysteriousCargo.label>промышленный металлический ящик</AE_IncidentDef_MeatGrinderMysteriousCargo.label>
 	
+	<AE_IncidentDef_CreepJoinerJoin_Grinder.label>жуткий странник измельчитель</AE_IncidentDef_CreepJoinerJoin_Grinder.label>'grinder creepjoiner join'
+
+	
 	
 	
 	<AE_IncidentDef_BakingPiesSpawn.label>большой пирог</AE_IncidentDef_BakingPiesSpawn.label>
@@ -71,7 +74,7 @@
 	<AE_IncidentDef_ChristmasStockingsSpawn.letterLabel>Найден красный носок</AE_IncidentDef_ChristmasStockingsSpawn.letterLabel>
 	<AE_IncidentDef_ChristmasStockingsSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это красный носок с белыми частями и символом снежинки. Похоже, он наполнен чем-то.</AE_IncidentDef_ChristmasStockingsSpawn.letterText>
 	
-	<AE_IncidentDef_CreepJoinerJoin_IceMan.label>жуткий странник</AE_IncidentDef_CreepJoinerJoin_IceMan.label>
+	<AE_IncidentDef_CreepJoinerJoin_IceMan.label>жуткий странник ледяной человек</AE_IncidentDef_CreepJoinerJoin_IceMan.label>
 	
 	
 	

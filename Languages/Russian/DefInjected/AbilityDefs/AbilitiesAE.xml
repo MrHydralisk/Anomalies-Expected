@@ -1,5 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
+
+	<AEGrindBody.label>измельчить труп</AEGrindBody.label>
+	<AEGrindBody.description>Отделяет кожу и плоть от костей трупа. Что даёт намного больше продуктов разделки, чем логически возможно.</AEGrindBody.description>
+	
+	
   
 	<AEAcidSpew.label>кислотное распыление</AEAcidSpew.label>
 	<AEAcidSpew.description>Распыляет вязкую кислотную субстанцию из желез в шее через рот по всей целевой области. Кислота прилипнет к целям и сожжет их.</AEAcidSpew.description>

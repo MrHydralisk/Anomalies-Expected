@@ -5,4 +5,8 @@
 	<AE_CreepJoiner_IceMan.letterLabel>К поселению приближается дрожащая фигура.</AE_CreepJoiner_IceMan.letterLabel>
 	<AE_CreepJoiner_IceMan.letterPrompt>Незнакомец смотрит на вас холодными глазами и говорит дрожащим голосом. На открытых участках тела видны следы обморожения. {PAWN_pronoun} рассказывает, что {PAWN_gender ? сбежал : сбежала} от ужасной снежной бури, и умоляет позволить присоединиться к вашему поселению, чтобы согреться и восстановиться.</AE_CreepJoiner_IceMan.letterPrompt>
 
+	<AE_CreepJoiner_Grinder.label>улыбающийся мясник</AE_CreepJoiner_Grinder.label>
+	<AE_CreepJoiner_Grinder.letterLabel>К поселению приближается улыбающаяся фигура.</AE_CreepJoiner_Grinder.letterLabel>
+	<AE_CreepJoiner_Grinder.letterPrompt>Незнакомец берёт инициативу в разговоре, сразу же обсуждая эффективность своих методов разделки, даже не имея под рукой надлежащих инструментов. {PAWN_pronoun} утверждает, что давно ищет место, где {PAWN_possessive} умения могли бы быть использованы в полной мере.</AE_CreepJoiner_Grinder.letterPrompt>
+
 </LanguageData>

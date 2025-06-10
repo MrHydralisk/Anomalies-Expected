@@ -18,7 +18,6 @@
 		<showPsycastEffects>false</showPsycastEffects>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
-		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
 		<warmupEffecter>HoraxianAbilityCasting</warmupEffecter>
 		<warmupSound>AnomalyAbilityWarmup</warmupSound>
 		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>

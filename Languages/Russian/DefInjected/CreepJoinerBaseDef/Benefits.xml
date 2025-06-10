@@ -3,5 +3,8 @@
 
 	<AESummonSnowMan.label>призыв снеговика</AESummonSnowMan.label>
 	<AESummonSnowMan.letterExtra>{PAWN_nameDef} {PAWN_gender ? способен : способна} частично контролировать снег. {PAWN_pronoun} может создавать снег из влаги в окружающем воздухе и оживлять его.</AESummonSnowMan.letterExtra>
-  
+	
+	<AEGrindBody.label>измельчить труп</AEGrindBody.label>
+	<AEGrindBody.letterExtra>{PAWN_nameDef} обладает способностью разделывать любой труп с аномальной эффективностью.</AEGrindBody.letterExtra>
+
 </LanguageData>

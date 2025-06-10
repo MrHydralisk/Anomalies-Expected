@@ -8,5 +8,15 @@
 	<AE_CreepJoinerArrival_IceMan.questNameRules.rulesStrings>
 		<li>questDescription->жуткий странник</li>
 	</AE_CreepJoinerArrival_IceMan.questNameRules.rulesStrings>
+	
+	
+  
+	<AE_CreepJoinerArrival_Grinder.questDescriptionRules.rulesStrings>
+		<li>questDescription->жуткий странник</li>
+	</AE_CreepJoinerArrival_Grinder.questDescriptionRules.rulesStrings>
+	
+	<AE_CreepJoinerArrival_Grinder.questNameRules.rulesStrings>
+		<li>questDescription->жуткий странник</li>
+	</AE_CreepJoinerArrival_Grinder.questNameRules.rulesStrings>
   
 </LanguageData>
