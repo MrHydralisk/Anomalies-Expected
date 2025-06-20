@@ -60,6 +60,7 @@ namespace AnomaliesExpected
             val.Patch(AccessTools.Method(typeof(VerbUtility), "IsEMP"), postfix: new HarmonyMethod(patchType, "VU_IsEMP_Postfix"));
 
             val.Patch(AccessTools.Method(typeof(CreepJoinerUtility), "GenerateAndSpawn", new Type[] { typeof(Map), typeof(float) }), transpiler: new HarmonyMethod(patchType, "CJU_GenerateAndSpawn_Transpiler"));
+            val.Patch(AccessTools.Method(typeof(CreepJoinerUtility), "GetCreepjoinerSpecifics"), transpiler: new HarmonyMethod(patchType, "CJU_GenerateAndSpawn_Transpiler"));
 
             val.Patch(AccessTools.Method(typeof(TerrainGrid), "Notify_TerrainDestroyed"), transpiler: new HarmonyMethod(patchType, "TG_Notify_TerrainDestroyed_Transpiler"));
         }
