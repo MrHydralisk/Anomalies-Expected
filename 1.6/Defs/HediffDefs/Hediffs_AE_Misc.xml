@@ -1,0 +1,908 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef>
+		<defName>Hediff_AEFatigue</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>fatigue</label>
+		<description>The body feels heavy and requires additional rest.</description>
+		<initialSeverity>0</initialSeverity>
+		<maxSeverity>3</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.25</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<statOffsets>
+					<RestFallRateFactor>0.75</RestFallRateFactor>
+					<RestRateMultiplier>-0.25</RestRateMultiplier>
+				</statOffsets>
+				<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	
+	
+	<HediffDef>
+		<defName>Hediff_AEForbiddenFruit</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>fruit's effects</label>
+		<description>The effects the fruit had on the body.\nIt appears to have made the host's thoughts sharper, making it more wise.</description>
+		<initialSeverity>0.01</initialSeverity>
+		<lethalSeverity>5.5</lethalSeverity>
+		<maxSeverity>5.5</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>0.5</severityPerDay>
+				<showHoursToRecover>false</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>Seeking</label>
+				<statOffsets>
+					<GlobalLearningFactor>0.05</GlobalLearningFactor>
+					<ReadingSpeed>0.05</ReadingSpeed>
+				</statOffsets>
+				<statFactors>
+					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.05</StudyEfficiency>
+				</statFactors>
+			</li>
+			<li>
+				<label>Awareness</label>
+				<minSeverity>1</minSeverity>
+				<statOffsets>
+					<GlobalLearningFactor>0.15</GlobalLearningFactor>
+					<ReadingSpeed>0.1</ReadingSpeed>
+				</statOffsets>
+				<statFactors>
+					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.15</StudyEfficiency>
+				</statFactors>
+			</li>
+			<li>
+				<label>Enlightenment</label>
+				<minSeverity>2</minSeverity>
+				<statOffsets>
+					<GlobalLearningFactor>0.3</GlobalLearningFactor>
+					<ReadingSpeed>0.15</ReadingSpeed>
+				</statOffsets>
+				<statFactors>
+					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.3</StudyEfficiency>
+				</statFactors>
+			</li>
+			<li>
+				<label>Transcendence</label>
+				<minSeverity>3</minSeverity>
+				<statOffsets>
+					<GlobalLearningFactor>0.5</GlobalLearningFactor>
+					<ReadingSpeed>0.2</ReadingSpeed>
+				</statOffsets>
+				<statFactors>
+					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.5</StudyEfficiency>
+				</statFactors>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>0.9</postFactor>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>Retribution</label>
+				<minSeverity>4</minSeverity>
+				<statOffsets>
+					<GlobalLearningFactor>0.5</GlobalLearningFactor>
+					<ReadingSpeed>0.2</ReadingSpeed>
+				</statOffsets>
+				<statFactors>
+					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.5</StudyEfficiency>
+				</statFactors>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>0.5</postFactor>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>Wrath</label>
+				<minSeverity>5</minSeverity>
+				<severityGainFactor>0</severityGainFactor>
+				<lifeThreatening>true</lifeThreatening>
+				<statOffsets>
+					<GlobalLearningFactor>0.5</GlobalLearningFactor>
+					<ReadingSpeed>0.2</ReadingSpeed>
+				</statOffsets>
+				<statFactors>
+					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.5</StudyEfficiency>
+				</statFactors>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>0.25</postFactor>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>Hediff_AEForbiddenFruitWithdrawal</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>fruit's effects inhibitor</label>
+		<description>Withdrawal of the effects the fruit had on the body.\nIt appears to decrease the host's experience of outwordly pressure.</description>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>5.5</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-1</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>Forgiveness</label>
+				<statOffsets>
+					<GlobalLearningFactor>-0.10</GlobalLearningFactor>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>0.95</postFactor>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>Repentance</label>
+				<minSeverity>3</minSeverity>
+				<statOffsets>
+					<GlobalLearningFactor>-0.20</GlobalLearningFactor>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>0.75</postFactor>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	
+
+	<HediffDef>
+		<defName>Hediff_AEDigestingPie</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>digesting pie</label>
+		<description>Feeling heavy in the stomach.</description>
+		<initialSeverity>0</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.05</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<statOffsets>
+					<MoveSpeed>-5</MoveSpeed>
+				</statOffsets>
+				<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	
+
+	<HediffDef>
+		<defName>Hediff_AEDogTag</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>dog tag</label>
+		<description>I can psychically feel the imprint of the person who once owned it.</description>
+		<initialSeverity>0</initialSeverity>
+		<maxSeverity>20</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<statOffsets>
+					<PsychicSensitivity>0.05</PsychicSensitivity>
+				</statOffsets>
+				<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>Hediff_AEBloodLiquidConcentration</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>blood-like liquid concentration</label>
+		<description>A blood-like liquid is introduced into the body. At high concentration it might mutate flesh into something hostile. The body will eventually filter out the substance.</description>
+		<initialSeverity>0</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.35</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+			<li Class="AnomaliesExpected.HediffCompProperties_FleshbeastEmergeOnStage">
+				<initialStage>4</initialStage>
+				<ticksBetweenSpawn>20000~40000</ticksBetweenSpawn>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>minor</label>
+				<becomeVisible>false</becomeVisible>
+			</li>
+			<li>
+				<minSeverity>0.20</minSeverity>
+				<label>minor</label>
+			</li>
+			<li>
+				<minSeverity>0.40</minSeverity>
+				<label>moderate</label>
+			</li>
+			<li>
+				<minSeverity>0.60</minSeverity>
+				<label>severe</label>
+			</li>
+			<li>
+				<minSeverity>0.80</minSeverity>
+				<label>extreme</label>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>Hediff_AEDestabilization</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>destabilization mutation</label>
+		<description>Destabilization of biological structure to amplify creature physical performance. The creature's life expectancy will be drastically reduced due to the mutation.</description>
+		<skinShader>Metalblood</skinShader>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<lethalSeverity>1</lethalSeverity>
+		<isBad>true</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>1</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<painFactor>0.25</painFactor>
+				<totalBleedFactor>0.25</totalBleedFactor>
+				<statOffsets>
+					<ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.7</ArmorRating_Blunt>
+					<ArmorRating_Heat>0.5</ArmorRating_Heat>
+				</statOffsets>
+				<statFactors>
+					<IncomingDamageFactor>0.75</IncomingDamageFactor>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	
+	
+	<HediffDef>
+		<defName>Hediff_AESnowArmy</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>freezing core</label>
+		<description>Regeneration speed increases proportionally to the decrease in ambient temperature. When exposed to fire, its surface becomes significantly more susceptible to damage.\n\nReceivied damage x2, when on fire.</description>
+		<initialSeverity>0</initialSeverity>
+		<maxSeverity>2000</maxSeverity>
+		<minSeverity>-2000</minSeverity>
+		<isBad>false</isBad>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<defaultLabelColor>(0.31, 0.69, 0.835)</defaultLabelColor>
+		<comps>
+			<li>
+				<compClass>AnomaliesExpected.HediffComp_SnowArmy</compClass>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<regeneration>0</regeneration>
+				<minSeverity>1</minSeverity>
+			</li>
+			<li>
+				<regeneration>1</regeneration>
+				<minSeverity>2</minSeverity>
+			</li>
+			<li>
+				<regeneration>5</regeneration>
+				<minSeverity>5</minSeverity>
+			</li>
+			<li>
+				<regeneration>10</regeneration>
+				<minSeverity>10</minSeverity>
+			</li>
+			<li>
+				<regeneration>15</regeneration>
+				<minSeverity>15</minSeverity>
+			</li>
+			<li>
+				<regeneration>20</regeneration>
+				<minSeverity>20</minSeverity>
+			</li>
+			<li>
+				<regeneration>25</regeneration>
+				<minSeverity>25</minSeverity>
+			</li>
+			<li>
+				<regeneration>30</regeneration>
+				<minSeverity>30</minSeverity>
+			</li>
+			<li>
+				<regeneration>35</regeneration>
+				<minSeverity>35</minSeverity>
+			</li>
+			<li>
+				<regeneration>40</regeneration>
+				<minSeverity>40</minSeverity>
+			</li>
+			<li>
+				<regeneration>45</regeneration>
+				<minSeverity>45</minSeverity>
+			</li>
+			<li>
+				<regeneration>50</regeneration>
+				<minSeverity>50</minSeverity>
+			</li>
+			<li>
+				<regeneration>75</regeneration>
+				<minSeverity>75</minSeverity>
+			</li>
+			<li>
+				<regeneration>100</regeneration>
+				<minSeverity>100</minSeverity>
+			</li>
+			<li>
+				<regeneration>150</regeneration>
+				<minSeverity>150</minSeverity>
+			</li>
+			<li>
+				<regeneration>200</regeneration>
+				<minSeverity>200</minSeverity>
+			</li>
+			<li>
+				<regeneration>250</regeneration>
+				<minSeverity>250</minSeverity>
+			</li>
+			<li>
+				<regeneration>300</regeneration>
+				<minSeverity>300</minSeverity>
+			</li>
+			<li>
+				<regeneration>400</regeneration>
+				<minSeverity>400</minSeverity>
+			</li>
+			<li>
+				<regeneration>500</regeneration>
+				<minSeverity>500</minSeverity>
+			</li>
+			<li>
+				<regeneration>600</regeneration>
+				<minSeverity>600</minSeverity>
+			</li>
+			<li>
+				<regeneration>700</regeneration>
+				<minSeverity>700</minSeverity>
+			</li>
+			<li>
+				<regeneration>800</regeneration>
+				<minSeverity>800</minSeverity>
+			</li>
+			<li>
+				<regeneration>900</regeneration>
+				<minSeverity>900</minSeverity>
+			</li>
+			<li>
+				<regeneration>1000</regeneration>
+				<minSeverity>1000</minSeverity>
+			</li>
+			<li>
+				<regeneration>1100</regeneration>
+				<minSeverity>1100</minSeverity>
+			</li>
+			<li>
+				<regeneration>1200</regeneration>
+				<minSeverity>1200</minSeverity>
+			</li>
+			<li>
+				<regeneration>1300</regeneration>
+				<minSeverity>1300</minSeverity>
+			</li>
+			<li>
+				<regeneration>1400</regeneration>
+				<minSeverity>1400</minSeverity>
+			</li>
+			<li>
+				<regeneration>1500</regeneration>
+				<minSeverity>1500</minSeverity>
+			</li>
+			<li>
+				<regeneration>1600</regeneration>
+				<minSeverity>1600</minSeverity>
+			</li>
+			<li>
+				<regeneration>2000</regeneration>
+				<minSeverity>1638</minSeverity>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>AENitrogenFreezing</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>nitrogen freezing</label>
+		<description>Frozen tissue and flesh caused by exposure to extreme cold. Due to freezing to the nerves, the feeling of pain is dulled. After completely freezing through body parts are often lost.</description>
+		<maxSeverity>1</maxSeverity>
+		<displayWound>false</displayWound>
+		<defaultLabelColor>(0.31, 0.69, 0.835)</defaultLabelColor>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-2</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<statFactors>
+					<MoveSpeed>0.5</MoveSpeed>
+				</statFactors>
+				<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="InjuryBase">
+		<defName>AEFreezingFragile</defName>
+		<label>freezing fragile</label>
+		<labelNoun>Freezing fragile</labelNoun>
+		<description>Exposure to extreme cold made this more vulnerable to damage.</description>
+		<maxSeverity>4</maxSeverity>
+		<displayWound>false</displayWound>
+		<defaultLabelColor>(0.31, 0.69, 0.835)</defaultLabelColor>
+		<comps>
+			<li Class="HediffCompProperties_TendDuration">
+				<labelTendedWell>bandaged</labelTendedWell>
+				<labelTendedWellInner>tended</labelTendedWellInner>
+				<labelSolidTendedWell>tended</labelSolidTendedWell>
+			</li>
+			<li>
+				<compClass>AnomaliesExpected.HediffComp_FreezingFragile</compClass>
+			</li>
+		</comps>
+		<injuryProps>
+			<painPerSeverity>0</painPerSeverity>
+			<averagePainPerSeverityPermanent>0</averagePainPerSeverityPermanent>
+		</injuryProps>
+	</HediffDef>
+ 
+	<HediffDef ParentName="AESnowArmyBodyPart">
+		<defName>AE_IceThinBody</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>deflective ice</label>
+		<labelNoun>a deflective ice</labelNoun>
+		<description>This thin ice shard structure enhances incoming attack deflection. It reduces received frontal and rear damage, but increases damage from the sides.</description>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<isBad>false</isBad>
+		<defaultLabelColor>(0.31, 0.69, 0.835)</defaultLabelColor>
+		<comps>
+			<li>
+				<compClass>AnomaliesExpected.HediffComp_IceThinBody</compClass>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>Hediff_AESnowMelting</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>melting</label>
+		<description>The creature's body gradually melts away.</description>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<lethalSeverity>1</lethalSeverity>
+		<isBad>true</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>1</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef>
+		<defName>Hediff_AEAcceleration</defName>
+		<hediffClass>AnomaliesExpected.Hediff_SpeedometerLevel</hediffClass>
+		<label>speedometer acceleration</label>
+		<description>The implanted Speedometer accelerates all processes within the host body.</description>
+		<initialSeverity>1</initialSeverity>
+		<minSeverity>0</minSeverity>
+		<maxSeverity>6</maxSeverity>
+		<isBad>false</isBad>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<levelIsQuantity>true</levelIsQuantity>
+		<duplicationAllowed>false</duplicationAllowed>
+		<defaultInstallPart>Torso</defaultInstallPart>
+		<stages>
+			<li>
+				<minSeverity>1</minSeverity>
+				<statFactors>
+					<MoveSpeed>2</MoveSpeed>
+					<CrawlSpeed>2</CrawlSpeed>
+					<GlobalLearningFactor>2</GlobalLearningFactor>
+					<!-- <RestRateMultiplier>2</RestRateMultiplier> -->
+					<EatingSpeed>2</EatingSpeed>
+					<ImmunityGainSpeed>2</ImmunityGainSpeed>
+					<InjuryHealingFactor>2</InjuryHealingFactor>
+					<ForagedNutritionPerDay>2</ForagedNutritionPerDay>
+					<AnimalsLearningFactor>2</AnimalsLearningFactor>
+					<!-- <RestFallRateFactor>2</RestFallRateFactor> -->
+					<!-- <JoyFallRateFactor>2</JoyFallRateFactor> -->
+					
+					<MeleeCooldownFactor>0.5</MeleeCooldownFactor>
+					<MeleeDodgeChance>2</MeleeDodgeChance>
+					<RangedCooldownFactor>0.5</RangedCooldownFactor>
+					<AimingDelayFactor>0.5</AimingDelayFactor>
+					<StaggerDurationFactor>0.5</StaggerDurationFactor>
+					
+					<WorkSpeedGlobal>2</WorkSpeedGlobal>
+					<CleaningSpeed>2</CleaningSpeed>
+					<ReadingSpeed>2</ReadingSpeed>
+					
+					<BiosculpterOccupantSpeed MayRequire="Ludeon.RimWorld.Ideology">2</BiosculpterOccupantSpeed>
+					
+					<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">2</PsychicEntropyGain>
+					
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Biotech">2</MeditationFocusGain>
+					<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Biotech">2</PsychicEntropyRecoveryRate>
+					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">2</MechFormingSpeed>
+					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">2</MechRepairSpeed>
+					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">2</SubcoreEncodingSpeed>
+					<ControlTakingTime MayRequire="Ludeon.RimWorld.Biotech">0.5</ControlTakingTime>
+					<LearningRateFactor MayRequire="Ludeon.RimWorld.Biotech">2</LearningRateFactor>
+					<GrowthVatOccupantSpeed MayRequire="Ludeon.RimWorld.Biotech">2</GrowthVatOccupantSpeed>
+					
+					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">2</ActivitySuppressionRate>
+				</statFactors>
+				<hungerRateFactor>1.5</hungerRateFactor>
+				<socialFightChanceFactor>1.5</socialFightChanceFactor>
+			</li>
+			<li>
+				<minSeverity>2</minSeverity>
+				<statFactors>
+					<MoveSpeed>4</MoveSpeed>
+					<CrawlSpeed>4</CrawlSpeed>
+					<GlobalLearningFactor>4</GlobalLearningFactor>
+					<!-- <RestRateMultiplier>4</RestRateMultiplier> -->
+					<EatingSpeed>4</EatingSpeed>
+					<ImmunityGainSpeed>4</ImmunityGainSpeed>
+					<InjuryHealingFactor>4</InjuryHealingFactor>
+					<ForagedNutritionPerDay>4</ForagedNutritionPerDay>
+					<AnimalsLearningFactor>4</AnimalsLearningFactor>
+					<!-- <RestFallRateFactor>4</RestFallRateFactor> -->
+					<!-- <JoyFallRateFactor>4</JoyFallRateFactor> -->
+					
+					<MeleeCooldownFactor>0.25</MeleeCooldownFactor>
+					<MeleeDodgeChance>4</MeleeDodgeChance>
+					<RangedCooldownFactor>0.25</RangedCooldownFactor>
+					<AimingDelayFactor>0.25</AimingDelayFactor>
+					<StaggerDurationFactor>0.25</StaggerDurationFactor>
+					
+					<WorkSpeedGlobal>4</WorkSpeedGlobal>
+					<CleaningSpeed>4</CleaningSpeed>
+					<ReadingSpeed>4</ReadingSpeed>
+					
+					<BiosculpterOccupantSpeed MayRequire="Ludeon.RimWorld.Ideology">4</BiosculpterOccupantSpeed>
+					
+					<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">4</PsychicEntropyGain>
+					
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Biotech">4</MeditationFocusGain>
+					<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Biotech">4</PsychicEntropyRecoveryRate>
+					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">4</MechFormingSpeed>
+					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">4</MechRepairSpeed>
+					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">4</SubcoreEncodingSpeed>
+					<ControlTakingTime MayRequire="Ludeon.RimWorld.Biotech">0.25</ControlTakingTime>
+					<LearningRateFactor MayRequire="Ludeon.RimWorld.Biotech">4</LearningRateFactor>
+					<GrowthVatOccupantSpeed MayRequire="Ludeon.RimWorld.Biotech">4</GrowthVatOccupantSpeed>
+					
+					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">4</ActivitySuppressionRate>
+				</statFactors>
+				<hungerRateFactor>2</hungerRateFactor>
+				<socialFightChanceFactor>2</socialFightChanceFactor>
+			</li>
+			<li>
+				<minSeverity>3</minSeverity>
+				<statFactors>
+					<MoveSpeed>8</MoveSpeed>
+					<CrawlSpeed>8</CrawlSpeed>
+					<GlobalLearningFactor>8</GlobalLearningFactor>
+					<!-- <RestRateMultiplier>8</RestRateMultiplier> -->
+					<EatingSpeed>8</EatingSpeed>
+					<ImmunityGainSpeed>8</ImmunityGainSpeed>
+					<InjuryHealingFactor>8</InjuryHealingFactor>
+					<ForagedNutritionPerDay>8</ForagedNutritionPerDay>
+					<AnimalsLearningFactor>8</AnimalsLearningFactor>
+					<!-- <RestFallRateFactor>8</RestFallRateFactor> -->
+					<!-- <JoyFallRateFactor>8</JoyFallRateFactor> -->
+					
+					<MeleeCooldownFactor>0.125</MeleeCooldownFactor>
+					<MeleeDodgeChance>8</MeleeDodgeChance>
+					<RangedCooldownFactor>0.125</RangedCooldownFactor>
+					<AimingDelayFactor>0.125</AimingDelayFactor>
+					<StaggerDurationFactor>0.125</StaggerDurationFactor>
+					
+					<WorkSpeedGlobal>8</WorkSpeedGlobal>
+					<CleaningSpeed>8</CleaningSpeed>
+					<ReadingSpeed>8</ReadingSpeed>
+					
+					<BiosculpterOccupantSpeed MayRequire="Ludeon.RimWorld.Ideology">8</BiosculpterOccupantSpeed>
+					
+					<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">8</PsychicEntropyGain>
+					
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Biotech">8</MeditationFocusGain>
+					<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Biotech">8</PsychicEntropyRecoveryRate>
+					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">8</MechFormingSpeed>
+					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">8</MechRepairSpeed>
+					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">8</SubcoreEncodingSpeed>
+					<ControlTakingTime MayRequire="Ludeon.RimWorld.Biotech">0.125</ControlTakingTime>
+					<LearningRateFactor MayRequire="Ludeon.RimWorld.Biotech">8</LearningRateFactor>
+					<GrowthVatOccupantSpeed MayRequire="Ludeon.RimWorld.Biotech">8</GrowthVatOccupantSpeed>
+					
+					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">8</ActivitySuppressionRate>
+				</statFactors>
+				<hungerRateFactor>2.5</hungerRateFactor>
+				<socialFightChanceFactor>3</socialFightChanceFactor>
+			</li>
+			<li>
+				<minSeverity>4</minSeverity>
+				<statFactors>
+					<MoveSpeed>16</MoveSpeed>
+					<CrawlSpeed>16</CrawlSpeed>
+					<GlobalLearningFactor>16</GlobalLearningFactor>
+					<!-- <RestRateMultiplier>16</RestRateMultiplier> -->
+					<EatingSpeed>16</EatingSpeed>
+					<ImmunityGainSpeed>16</ImmunityGainSpeed>
+					<InjuryHealingFactor>16</InjuryHealingFactor>
+					<ForagedNutritionPerDay>16</ForagedNutritionPerDay>
+					<AnimalsLearningFactor>16</AnimalsLearningFactor>
+					<!-- <RestFallRateFactor>16</RestFallRateFactor> -->
+					<!-- <JoyFallRateFactor>16</JoyFallRateFactor> -->
+					
+					<MeleeCooldownFactor>0.0625</MeleeCooldownFactor>
+					<MeleeDodgeChance>16</MeleeDodgeChance>
+					<RangedCooldownFactor>0.0625</RangedCooldownFactor>
+					<AimingDelayFactor>0.0625</AimingDelayFactor>
+					<StaggerDurationFactor>0.0625</StaggerDurationFactor>
+					
+					<WorkSpeedGlobal>16</WorkSpeedGlobal>
+					<CleaningSpeed>16</CleaningSpeed>
+					<ReadingSpeed>16</ReadingSpeed>
+					
+					<BiosculpterOccupantSpeed MayRequire="Ludeon.RimWorld.Ideology">16</BiosculpterOccupantSpeed>
+					
+					<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">16</PsychicEntropyGain>
+					
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Biotech">16</MeditationFocusGain>
+					<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Biotech">16</PsychicEntropyRecoveryRate>
+					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">16</MechFormingSpeed>
+					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">16</MechRepairSpeed>
+					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">16</SubcoreEncodingSpeed>
+					<ControlTakingTime MayRequire="Ludeon.RimWorld.Biotech">0.0625</ControlTakingTime>
+					<LearningRateFactor MayRequire="Ludeon.RimWorld.Biotech">16</LearningRateFactor>
+					<GrowthVatOccupantSpeed MayRequire="Ludeon.RimWorld.Biotech">16</GrowthVatOccupantSpeed>
+					
+					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">16</ActivitySuppressionRate>
+				</statFactors>
+				<hungerRateFactor>3</hungerRateFactor>
+				<socialFightChanceFactor>4</socialFightChanceFactor>
+			</li>
+			<li>
+				<minSeverity>5</minSeverity>
+				<statFactors>
+					<MoveSpeed>32</MoveSpeed>
+					<CrawlSpeed>32</CrawlSpeed>
+					<GlobalLearningFactor>32</GlobalLearningFactor>
+					<!-- <RestRateMultiplier>32</RestRateMultiplier> -->
+					<EatingSpeed>32</EatingSpeed>
+					<ImmunityGainSpeed>32</ImmunityGainSpeed>
+					<InjuryHealingFactor>32</InjuryHealingFactor>
+					<ForagedNutritionPerDay>32</ForagedNutritionPerDay>
+					<AnimalsLearningFactor>32</AnimalsLearningFactor>
+					<!-- <RestFallRateFactor>32</RestFallRateFactor> -->
+					<!-- <JoyFallRateFactor>32</JoyFallRateFactor> -->
+					
+					<MeleeCooldownFactor>0.03125</MeleeCooldownFactor>
+					<MeleeDodgeChance>32</MeleeDodgeChance>
+					<RangedCooldownFactor>0.03125</RangedCooldownFactor>
+					<AimingDelayFactor>0.03125</AimingDelayFactor>
+					<StaggerDurationFactor>0.03125</StaggerDurationFactor>
+					
+					<WorkSpeedGlobal>32</WorkSpeedGlobal>
+					<CleaningSpeed>32</CleaningSpeed>
+					<ReadingSpeed>32</ReadingSpeed>
+					
+					<BiosculpterOccupantSpeed MayRequire="Ludeon.RimWorld.Ideology">32</BiosculpterOccupantSpeed>
+					
+					<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">32</PsychicEntropyGain>
+					
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Biotech">32</MeditationFocusGain>
+					<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Biotech">32</PsychicEntropyRecoveryRate>
+					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">32</MechFormingSpeed>
+					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">32</MechRepairSpeed>
+					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">32</SubcoreEncodingSpeed>
+					<ControlTakingTime MayRequire="Ludeon.RimWorld.Biotech">0.03125</ControlTakingTime>
+					<LearningRateFactor MayRequire="Ludeon.RimWorld.Biotech">32</LearningRateFactor>
+					<GrowthVatOccupantSpeed MayRequire="Ludeon.RimWorld.Biotech">32</GrowthVatOccupantSpeed>
+					
+					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">32</ActivitySuppressionRate>
+				</statFactors>
+				<hungerRateFactor>3.5</hungerRateFactor>
+				<socialFightChanceFactor>5</socialFightChanceFactor>
+			</li>
+			<li>
+				<minSeverity>6</minSeverity>
+				<statFactors>
+					<MoveSpeed>64</MoveSpeed>
+					<CrawlSpeed>64</CrawlSpeed>
+					<GlobalLearningFactor>64</GlobalLearningFactor>
+					<!-- <RestRateMultiplier>64</RestRateMultiplier> -->
+					<EatingSpeed>64</EatingSpeed>
+					<ImmunityGainSpeed>64</ImmunityGainSpeed>
+					<InjuryHealingFactor>64</InjuryHealingFactor>
+					<ForagedNutritionPerDay>64</ForagedNutritionPerDay>
+					<AnimalsLearningFactor>64</AnimalsLearningFactor>
+					<!-- <RestFallRateFactor>64</RestFallRateFactor> -->
+					<!-- <JoyFallRateFactor>64</JoyFallRateFactor> -->
+					
+					<MeleeCooldownFactor>0.015625</MeleeCooldownFactor>
+					<MeleeDodgeChance>64</MeleeDodgeChance>
+					<RangedCooldownFactor>0.015625</RangedCooldownFactor>
+					<AimingDelayFactor>0.015625</AimingDelayFactor>
+					<StaggerDurationFactor>0.015625</StaggerDurationFactor>
+					
+					<WorkSpeedGlobal>64</WorkSpeedGlobal>
+					<CleaningSpeed>64</CleaningSpeed>
+					<ReadingSpeed>64</ReadingSpeed>
+					
+					<BiosculpterOccupantSpeed MayRequire="Ludeon.RimWorld.Ideology">64</BiosculpterOccupantSpeed>
+					
+					<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">64</PsychicEntropyGain>
+					
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Biotech">64</MeditationFocusGain>
+					<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Biotech">64</PsychicEntropyRecoveryRate>
+					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">64</MechFormingSpeed>
+					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">64</MechRepairSpeed>
+					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">64</SubcoreEncodingSpeed>
+					<ControlTakingTime MayRequire="Ludeon.RimWorld.Biotech">0.015625</ControlTakingTime>
+					<LearningRateFactor MayRequire="Ludeon.RimWorld.Biotech">64</LearningRateFactor>
+					<GrowthVatOccupantSpeed MayRequire="Ludeon.RimWorld.Biotech">64</GrowthVatOccupantSpeed>
+					
+					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">64</ActivitySuppressionRate>
+					<!-- <MaxNutrition>8</MaxNutrition> -->
+				</statFactors>
+				<hungerRateFactor>4</hungerRateFactor>
+				<socialFightChanceFactor>6</socialFightChanceFactor>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>Hediff_AEDeceleration</defName>
+		<label>speedometer deceleration</label>
+		<description>Under the Speedometer's influence, the body's processes are decelerating.</description>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<isBad>false</isBad>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<duplicationAllowed>false</duplicationAllowed>
+		<defaultInstallPart>Torso</defaultInstallPart>
+		<stages>
+			<li>
+				<statFactors>
+					<MoveSpeed>0.01</MoveSpeed>
+					<CrawlSpeed>0.01</CrawlSpeed>
+					<GlobalLearningFactor>0.01</GlobalLearningFactor>
+					<!-- <RestRateMultiplier>0.01</RestRateMultiplier> -->
+					<EatingSpeed>0.01</EatingSpeed>
+					<ImmunityGainSpeed>0.01</ImmunityGainSpeed>
+					<InjuryHealingFactor>0.01</InjuryHealingFactor>
+					<ForagedNutritionPerDay>0.01</ForagedNutritionPerDay>
+					<AnimalsLearningFactor>0.01</AnimalsLearningFactor>
+					<!-- <RestFallRateFactor>0.01</RestFallRateFactor> -->
+					<!-- <JoyFallRateFactor>0.01</JoyFallRateFactor> -->
+					
+					<MeleeCooldownFactor>100</MeleeCooldownFactor>
+					<MeleeDodgeChance>0.01</MeleeDodgeChance>
+					<RangedCooldownFactor>100</RangedCooldownFactor>
+					<AimingDelayFactor>100</AimingDelayFactor>
+					<StaggerDurationFactor>100</StaggerDurationFactor>
+					
+					<WorkSpeedGlobal>0.01</WorkSpeedGlobal>
+					<CleaningSpeed>0.01</CleaningSpeed>
+					<ReadingSpeed>0.01</ReadingSpeed>
+					
+					<BiosculpterOccupantSpeed MayRequire="Ludeon.RimWorld.Ideology">0.01</BiosculpterOccupantSpeed>
+					
+					<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">0.01</PsychicEntropyGain>
+					
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Biotech">0.01</MeditationFocusGain>
+					<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Biotech">0.01</PsychicEntropyRecoveryRate>
+					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">0.01</MechFormingSpeed>
+					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">0.01</MechRepairSpeed>
+					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">0.01</SubcoreEncodingSpeed>
+					<ControlTakingTime MayRequire="Ludeon.RimWorld.Biotech">100</ControlTakingTime>
+					<LearningRateFactor MayRequire="Ludeon.RimWorld.Biotech">0.01</LearningRateFactor>
+					<GrowthVatOccupantSpeed MayRequire="Ludeon.RimWorld.Biotech">0.01</GrowthVatOccupantSpeed>
+					
+					<ActivitySuppressionRate MayRequire="Ludeon.RimWorld.Anomaly">0.01</ActivitySuppressionRate>
+				</statFactors>
+				<hungerRateFactor>0.16</hungerRateFactor>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>Hediff_AEChronoDestabilization</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>chrono destabilization</label>
+		<description>The Speedometer's constant influence destabilizes biological systems. This manifests as some cells speeding up dramatically, while others sluggishly decelerate. Extended exposure is lethal. The body recovers its normal function after the Speedometer is no longer affecting it.</description>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>120</maxSeverity>
+		<lethalSeverity>120</lethalSeverity>
+		<isBad>true</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-1</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<lifeThreatening>true</lifeThreatening>
+			</li>
+		</stages>
+	</HediffDef>
+  
+	<HediffDef>
+		<defName>Hediff_AEChronoComa</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>chrono coma</label>
+		<description>This person forcefully separated Speedometer from their body. Severing the link this way has put them in a coma.</description>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>true</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>0.1</postFactor>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	
+</Defs>

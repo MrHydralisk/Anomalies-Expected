@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<GenStepDef>
+		<defName>AE_BloodLakeTerrain</defName>
+		<order>210</order>
+		<genStep Class="AnomaliesExpected.GenStep_BloodLakeTerrain">
+			<terrainDefDefault>Flesh</terrainDefDefault>
+		</genStep>
+	</GenStepDef>
+  
+	<GenStepDef>
+		<defName>AE_BloodLakeScatterRuinsSimple</defName>
+		<order>300</order>
+		<genStep Class="GenStep_ScatterRuinsSimple">
+			<countPer10kCellsRange>1~5</countPer10kCellsRange>
+			<canBeOnEdge>true</canBeOnEdge>
+		</genStep>
+	</GenStepDef>
+  
+	<GenStepDef>
+		<defName>AE_BloodLakeScatterShrines</defName>
+		<order>301</order>
+		<genStep Class="GenStep_ScatterShrines">
+			<countPer10kCellsRange><min>0.24</min><max>0.5</max></countPer10kCellsRange>
+		</genStep>
+	</GenStepDef>
+
+	<GenStepDef>
+		<defName>AE_BloodLakeFindExit</defName>
+		<order>302</order>
+		<genStep Class="AnomaliesExpected.GenStep_BloodLakeFindExit">
+			<BloodLakeExit>AE_BloodLakeExit</BloodLakeExit>
+		</genStep>
+	</GenStepDef>
+
+	<GenStepDef>
+		<defName>AE_BloodLakeFindTerminal</defName>
+		<order>303</order>
+		<genStep Class="AnomaliesExpected.GenStep_BloodLakeFindTerminal">
+			<BloodLakeTerminal>AE_BloodLakeTerminal</BloodLakeTerminal>
+		</genStep>
+	</GenStepDef>
+
+	<GenStepDef>
+		<defName>AE_BloodLakeFleshmassUndergroundNest</defName>
+		<order>304</order>
+		<genStep Class="AnomaliesExpected.GenStep_BloodLakeFleshmassUNest">
+			<BloodLakeUndergroundNest>AE_BloodLakeUndergroundNest</BloodLakeUndergroundNest>
+		</genStep>
+	</GenStepDef>
+
+	<GenStepDef>
+		<defName>AE_BloodLakeFog</defName>
+		<order>305</order>
+		<genStep Class="GenStep_Fog"/>
+	</GenStepDef>
+
+	<GenStepDef>
+		<defName>AE_BloodLakeFleshmass</defName>
+		<order>350</order>
+		<genStep Class="GenStep_Fleshmass">
+			<fleshFrequency>0.10</fleshFrequency>
+			<fleshThreshold>0.05</fleshThreshold>
+			<bloodFrequency>0.6</bloodFrequency>
+			<bloodThreshold>0.4</bloodThreshold>
+		</genStep>
+	</GenStepDef>
+
+	<GenStepDef>
+		<defName>AE_BloodLakeFleshSacks</defName>
+		<order>351</order>
+		<genStep Class="AnomaliesExpected.GenStep_BloodLakeFleshSacks"/>
+	</GenStepDef>
+
+	<GenStepDef>
+		<defName>AE_BloodLakeFleshmassSpitterGiant</defName>
+		<order>352</order>
+		<genStep Class="AnomaliesExpected.GenStep_BloodLakeFleshmassSpitter">
+			<numFleshSpitterPerTiles>5000</numFleshSpitterPerTiles>
+			<spitterDef>AE_FleshmassSpitterGiant</spitterDef>
+		</genStep>
+	</GenStepDef>
+
+	<GenStepDef>
+		<defName>AE_BloodLakeFleshmassSpitterMedium</defName>
+		<order>353</order>
+		<genStep Class="AnomaliesExpected.GenStep_BloodLakeFleshmassSpitter">
+			<spitterDef>AE_FleshmassSpitterMedium</spitterDef>
+		</genStep>
+	</GenStepDef>
+
+	<GenStepDef>
+		<defName>AE_BloodLakeFleshmassSpitterSmall</defName>
+		<order>354</order>
+		<genStep Class="AnomaliesExpected.GenStep_BloodLakeFleshmassSpitter">
+			<numFleshSpitterPerTiles>333</numFleshSpitterPerTiles>
+			<spitterDef>AE_FleshmassSpitterSmall</spitterDef>
+			<isEasyAccess>true</isEasyAccess>
+		</genStep>
+	</GenStepDef>
+
+	<GenStepDef>
+		<defName>AE_BloodLakeFindDogTag</defName>
+		<order>500</order>
+		<genStep Class="AnomaliesExpected.GenStep_BloodLakeFindDogTag"/>
+	</GenStepDef>
+
+	<GenStepDef>
+		<defName>AE_BloodLakeFleshbeasts</defName>
+		<order>650</order>
+		<genStep Class="AnomaliesExpected.GenStep_BloodLakeFleshbeasts">
+			<pawnKindsPerTiles>
+				<li>
+					<kindDef>Fingerspike</kindDef>
+					<count>200</count>
+				</li>
+				<li>
+					<kindDef>Trispike</kindDef>
+					<count>600</count>
+				</li>
+				<li>
+					<kindDef>Toughspike</kindDef>
+					<count>1000</count>
+				</li>
+				<li>
+					<kindDef>Bulbfreak</kindDef>
+					<count>3000</count>
+				</li>
+			</pawnKindsPerTiles>
+		</genStep>
+	</GenStepDef>
+  
+</Defs>

@@ -26,7 +26,7 @@ namespace AnomaliesExpected
 
             public override void ProcessGroupInput(Event ev, List<Gizmo> group)
             {
-                controller.InterfaceChangeTargetTemperature_NewTemp(offset);
+                controller.InterfaceChangeTargetTemperature(offset);
             }
         }
 
@@ -151,14 +151,14 @@ namespace AnomaliesExpected
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            float num = RoundedToCurrentTempModeOffset_NewTemp(-10f);
+            float num = RoundedToCurrentTempModeOffset(-10f);
             Command_GroupedTempChange command_GroupedTempChange = new Command_GroupedTempChange(this, num);
             command_GroupedTempChange.defaultLabel = num.ToStringTemperatureOffset("F0");
             command_GroupedTempChange.defaultDesc = "CommandLowerTempDesc".Translate();
             command_GroupedTempChange.hotKey = KeyBindingDefOf.Misc5;
             command_GroupedTempChange.icon = ContentFinder<Texture2D>.Get("UI/Commands/TempLower");
             yield return command_GroupedTempChange;
-            float num2 = RoundedToCurrentTempModeOffset_NewTemp(-1f);
+            float num2 = RoundedToCurrentTempModeOffset(-1f);
             Command_GroupedTempChange command_GroupedTempChange2 = new Command_GroupedTempChange(this, num2);
             command_GroupedTempChange2.defaultLabel = num2.ToStringTemperatureOffset("F0");
             command_GroupedTempChange2.defaultDesc = "CommandLowerTempDesc".Translate();
@@ -170,21 +170,21 @@ namespace AnomaliesExpected
             {
                 TargetTemperature = 21f;
                 SoundDefOf.Tick_Tiny.PlayOneShotOnCamera();
-                ThrowCurrentTemperatureText_NewTemp();
+                ThrowCurrentTemperatureText();
             };
             command_Action.defaultLabel = "CommandResetTemp".Translate();
             command_Action.defaultDesc = "CommandResetTempDesc".Translate();
             command_Action.hotKey = KeyBindingDefOf.Misc1;
             command_Action.icon = ContentFinder<Texture2D>.Get("UI/Commands/TempReset");
             yield return command_Action;
-            float num3 = RoundedToCurrentTempModeOffset_NewTemp(1f);
+            float num3 = RoundedToCurrentTempModeOffset(1f);
             Command_GroupedTempChange command_GroupedTempChange3 = new Command_GroupedTempChange(this, num3);
             command_GroupedTempChange3.defaultLabel = "+" + num3.ToStringTemperatureOffset("F0");
             command_GroupedTempChange3.defaultDesc = "CommandRaiseTempDesc".Translate();
             command_GroupedTempChange3.hotKey = KeyBindingDefOf.Misc2;
             command_GroupedTempChange3.icon = ContentFinder<Texture2D>.Get("UI/Commands/TempRaise");
             yield return command_GroupedTempChange3;
-            float num4 = RoundedToCurrentTempModeOffset_NewTemp(10f);
+            float num4 = RoundedToCurrentTempModeOffset(10f);
             Command_GroupedTempChange command_GroupedTempChange4 = new Command_GroupedTempChange(this, num4);
             command_GroupedTempChange4.defaultLabel = "+" + num4.ToStringTemperatureOffset("F0");
             command_GroupedTempChange4.defaultDesc = "CommandRaiseTempDesc".Translate();

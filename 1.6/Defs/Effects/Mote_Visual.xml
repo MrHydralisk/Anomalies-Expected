@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="MoteBase">
+		<defName>Mote_AEBloodLiquidInjector</defName>
+		<thingClass>MoteAttached</thingClass>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<fadeInTime>0.35</fadeInTime>
+			<fadeOutTime>0.25</fadeOutTime>
+			<solidTime>999999</solidTime>
+			<needsMaintenance>True</needsMaintenance>
+		</mote>
+		<graphicData>
+			<graphicClass>Graphic_PawnBodySilhouette</graphicClass>
+			<color>(1, 0, 0, 1.0)</color>
+			<shaderType>MoteMultiplyAddScroll</shaderType>
+			<texPath>Things/Mote/Transparent</texPath>
+			<shaderParameters>
+				<_MultiplyTexA>/Things/Mote/Cloudy_B</_MultiplyTexA>
+				<_MultiplyTexB>/Things/Mote/Cloudy_C</_MultiplyTexB>
+				<_DetailTex>/Things/Mote/Speckles</_DetailTex>
+				<_detailIntensity>1.3</_detailIntensity>
+				<_texAScale>0.4</_texAScale>
+				<_texBScale>0.3</_texBScale>
+				<_DetailScale>1.25</_DetailScale>
+				<_texAScrollSpeed>(0, 0.15, 0)</_texAScrollSpeed>
+				<_texBScrollSpeed>(0.12, 0, 0)</_texBScrollSpeed>
+				<_detailScrollSpeed>(0.15, 0.15, 0)</_detailScrollSpeed>
+			</shaderParameters>
+		</graphicData>
+	</ThingDef>
+
+
+
+	<ThingDef ParentName="MoteBase">
+		<defName>AE_AtmosphericHeaterGlowingVentsInv</defName>
+		<thingClass>MoteAttached</thingClass>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<fadeInTime>0</fadeInTime>
+			<solidTime>77777</solidTime>
+			<fadeOutTime>1</fadeOutTime>
+			<needsMaintenance>true</needsMaintenance>
+		</mote>
+		<graphicData>
+			<texPath>Things/Mote/AE_AtmosphericHeaterVentsInv</texPath>
+			<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+			<renderInstanced>true</renderInstanced>
+			<shaderType>MoteGlowPulse</shaderType>
+			<shaderParameters>
+				<_Interval>.5</_Interval>
+				<_PulseMin>.8</_PulseMin>
+				<_PulseMax>1</_PulseMax>
+			</shaderParameters>
+		</graphicData>
+	</ThingDef>
+  
+</Defs>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef>
+		<defName>AE_BakingPiesPiece</defName>
+		<label>piece of pie</label>
+		<description>A piece of a big pie.\n\nA sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged.</description>
+		<thingClass>ThingWithComps</thingClass>
+		<graphicData>
+			<texPath>Things/Item/Consumable/AE_BakingPiesPiece</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+			<drawSize>(0.75,0.75)</drawSize>
+		</graphicData>
+		<category>Item</category>
+		<drawerType>MapMeshOnly</drawerType>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<selectable>true</selectable>
+		<statBases>
+			<MaxHitPoints>50</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<Beauty>1</Beauty>
+			<Mass>0.32</Mass>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Nutrition>0.9</Nutrition>
+			<MarketValue>12</MarketValue>
+		</statBases>
+		<altitudeLayer>Item</altitudeLayer>
+		<stackLimit>1</stackLimit>
+		<tickerType>Never</tickerType>
+		<tradeability>None</tradeability>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<thingCategories>
+			<li>FoodMeals</li>
+			<li>ItemsAnomalies</li>
+		</thingCategories>
+		<alwaysHaulable>true</alwaysHaulable>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li MayRequire="Ludeon.RimWorld.Anomaly" Class="CompProperties_MetalhorrorInfectible"/>
+		</comps>
+		<pathCost>14</pathCost>
+		<allowedArchonexusCount>40</allowedArchonexusCount>
+		<resourceReadoutPriority>Last</resourceReadoutPriority>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<ingestible>
+			<foodType>Meal</foodType>
+			<ingestEffect>EatVegetarian</ingestEffect>
+			<ingestSound>Meal_Eat</ingestSound>
+			<maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+			<defaultNumToIngestAtOnce>1</defaultNumToIngestAtOnce>
+			<preferability>MealFine</preferability>
+			<optimalityOffsetHumanlikes>20</optimalityOffsetHumanlikes>
+			<optimalityOffsetFeedingAnimals>-40</optimalityOffsetFeedingAnimals>
+			<baseIngestTicks>1000</baseIngestTicks>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>Hediff_AEDigestingPie</hediffDef>
+					<severity>0.05</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+	</ThingDef>
+
+</Defs>

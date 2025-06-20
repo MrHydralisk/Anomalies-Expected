@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RecipeDef Name="RecipeMakeAEBloodLiquidBioferrite" Abstract="True">
+		<description>Separate bioferrite from blood-like liquid by filtering it.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AE_BloodLiquid</ThingDef>
+			<ThingDef>Bioferrite</ThingDef>
+		</descriptionHyperlinks>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<effectWorking>Cremate</effectWorking>
+		<workSkill>Crafting</workSkill>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AE_BloodLiquid</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<recipeUsers>
+			<li>BiofuelRefinery</li>
+		</recipeUsers>
+		<researchPrerequisite>AEBloodPump</researchPrerequisite>
+	</RecipeDef>
+
+	<RecipeDef ParentName="RecipeMakeAEBloodLiquidBioferrite">
+		<defName>MakeAEBloodLiquidBioferrite</defName>
+		<label>filter out bioferrite</label>
+		<jobString>Filtering out bioferite.</jobString>
+		<products>
+			<Bioferrite>2</Bioferrite>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AE_BloodLiquid</li>
+					</thingDefs>
+				</filter>
+				<count>8</count>
+			</li>
+		</ingredients>
+		<workAmount>1100</workAmount>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	</RecipeDef>
+
+	<RecipeDef ParentName="RecipeMakeAEBloodLiquidBioferrite">
+		<defName>MakeAEBloodLiquidBioferriteBulk</defName>
+		<label>filter out bioferrite x4</label>
+		<jobString>Filtering out bioferite x4.</jobString>
+		<products>
+			<Bioferrite>8</Bioferrite>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AE_BloodLiquid</li>
+					</thingDefs>
+				</filter>
+				<count>32</count>
+			</li>
+		</ingredients>
+		<workAmount>3960</workAmount>
+		<skillRequirements>
+			<Crafting>10</Crafting>
+		</skillRequirements>
+	</RecipeDef>
+
+	<RecipeDef ParentName="RecipeMakeAEBloodLiquidBioferrite">
+		<defName>MakeAEBloodLiquidBioferriteMass</defName>
+		<label>filter out bioferrite x16</label>
+		<jobString>Filtering out bioferite x16.</jobString>
+		<products>
+			<Bioferrite>32</Bioferrite>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AE_BloodLiquid</li>
+					</thingDefs>
+				</filter>
+				<count>128</count>
+			</li>
+		</ingredients>
+		<workAmount>14080</workAmount>
+		<skillRequirements>
+			<Crafting>12</Crafting>
+		</skillRequirements>
+	</RecipeDef>
+
+</Defs>

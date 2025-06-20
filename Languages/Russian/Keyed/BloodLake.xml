@@ -2,7 +2,9 @@
 <LanguageData>
 	<AnomaliesExpected.BloodLake.UndergroundNestSpawn>Группа биошматов вылезает из подземного гнезда биомассы рядом</AnomaliesExpected.BloodLake.UndergroundNestSpawn>
 	<AnomaliesExpected.BloodLake.ReactorMeltdownExplosion>Реактор комплекса взорвался, отрезая связь с другим кровавым озером</AnomaliesExpected.BloodLake.ReactorMeltdownExplosion>
-	<AnomaliesExpected.BloodLake.Enter>Нырнуть в кровавое озеро</AnomaliesExpected.BloodLake.Enter>
+	<AnomaliesExpected.BloodLake.Enter>Нырнуть в {0}</AnomaliesExpected.BloodLake.Enter>
+	<AnomaliesExpected.BloodLake.Entering>Ныряет в {0}</AnomaliesExpected.BloodLake.Entering>
+	<AnomaliesExpected.BloodLake.Exit>Выйти, нырнув обратно в {0}</AnomaliesExpected.BloodLake.Exit>
 	<AnomaliesExpected.BloodLake.ViewSubMap.Label>Взглянуть по другую сторону</AnomaliesExpected.BloodLake.ViewSubMap.Label>
 	<AnomaliesExpected.BloodLake.ViewSubMap.Desc>Взглянуть на связанную карту по другую сторону</AnomaliesExpected.BloodLake.ViewSubMap.Desc>
 	<AnomaliesExpected.BloodLake.Density>Плотность жидкости: {0} кг/м3</AnomaliesExpected.BloodLake.Density>

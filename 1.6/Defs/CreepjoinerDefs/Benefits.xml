@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+	<CreepJoinerBenefitDef>
+		<defName>AESummonSnowMan</defName>
+		<label>summon snow man</label>
+		<weight>1</weight>
+		<canOccurRandomly>false</canOccurRandomly>
+		<letterExtra>{PAWN_nameDef} is able to partially control snow. {PAWN_pronoun} can create snow from moisture in surrounding air and animate it.</letterExtra>
+		<abilities>
+			<li>AESpawnSnowMan</li>
+		</abilities>
+	</CreepJoinerBenefitDef>
+	
+	<CreepJoinerBenefitDef>
+		<defName>AEGrindBody</defName>
+		<label>grind body</label>
+		<letterExtra>{PAWN_nameDef} appear to possess the ability to butcher any body in front of them with anomalous efficiency.</letterExtra>
+		<abilities>
+			<li>AEGrindBody</li>
+		</abilities>
+	</CreepJoinerBenefitDef>
+  
+</Defs>

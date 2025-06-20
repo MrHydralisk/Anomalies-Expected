@@ -47,7 +47,7 @@ namespace AnomaliesExpected
                 FloatMenuOption floatMenuOption = FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(FloatMenuOptionLabel(myPawn), delegate
                 {
                     TryStartUseJob(myPawn, myPawn, Props.ignoreOtherReservations);
-                }, priority: Props.floatMenuOptionPriority, itemIcon: Icon, iconColor: IconColor), myPawn, parent);
+                }, priority: Props.floatMenuOptionPriority, iconTex: Icon, iconColor: IconColor), myPawn, parent);
                 if (!acceptanceReport.Accepted)
                 {
                     floatMenuOption.Disabled = true;
@@ -67,7 +67,7 @@ namespace AnomaliesExpected
                         }
                     }
                     TryStartUseJob(myPawn, GetExtraTarget(myPawn), Props.ignoreOtherReservations);
-                }, priority: Props.floatMenuOptionPriority, itemIcon: Icon, iconColor: IconColor), myPawn, parent);
+                }, priority: Props.floatMenuOptionPriority, iconTex: Icon, iconColor: IconColor), myPawn, parent);
                 yield return floatMenuOption;
             }
         }

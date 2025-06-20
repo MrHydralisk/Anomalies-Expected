@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<QuestScriptDef ParentName="CreepjoinerArrivalBase">
+		<defName>AE_CreepJoinerArrival_IceMan</defName>
+		<root Class="QuestNode_Sequence">
+			<nodes>
+				<li Class="QuestNode_SetupCreepjoiner">
+					<form>AE_CreepJoiner_IceMan</form>
+					<benefit>AESummonSnowMan</benefit>
+					<downside>Aggressive</downside>
+					<aggressive>AE_AggressiveIncident_SnowArmyAssault</aggressive>
+					<rejection>AggressiveRejection</rejection>
+
+					<storeFormAs>form</storeFormAs>
+					<storeBenefitAs>benefit</storeBenefitAs>
+					<storeDownsideAs>downside</storeDownsideAs>
+					<storeAggressiveAs>aggressive</storeAggressiveAs>
+					<storeRejectionAs>rejection</storeRejectionAs>
+				</li>
+				<li Class="QuestNode_Root_Creepjoiner_Arrival"/>
+			</nodes>
+		</root>
+	</QuestScriptDef>
+
+	<QuestScriptDef ParentName="CreepjoinerArrivalBase">
+		<defName>AE_CreepJoinerArrival_Grinder</defName>
+		<root Class="QuestNode_Sequence">
+			<nodes>
+				<li Class="QuestNode_SetupCreepjoiner">
+					<form>AE_CreepJoiner_Grinder</form>
+					<benefit>AEGrindBody</benefit>
+					<downside>AE_DownsideMentalState_BingingFood</downside>
+					<aggressive>Assault</aggressive>
+					<rejection>AggressiveRejection</rejection>
+
+					<storeFormAs>form</storeFormAs>
+					<storeBenefitAs>benefit</storeBenefitAs>
+					<storeDownsideAs>downside</storeDownsideAs>
+					<storeAggressiveAs>aggressive</storeAggressiveAs>
+					<storeRejectionAs>rejection</storeRejectionAs>
+				</li>
+				<li Class="QuestNode_Root_Creepjoiner_Arrival"/>
+			</nodes>
+		</root>
+	</QuestScriptDef>
+
+</Defs>

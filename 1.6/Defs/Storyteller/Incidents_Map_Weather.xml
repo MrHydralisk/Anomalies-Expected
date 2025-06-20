@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<IncidentDef>
+		<defName>AE_BloodLakeWeatherBloodFog</defName>
+		<label>blood-like liquid high concentration</label>
+		<category>ThreatSmall</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<baseChance>0</baseChance>
+		<minRefireDays>1</minRefireDays>
+		<workerClass>IncidentWorker_MakeGameCondition</workerClass>
+		<gameCondition>AE_BloodFog</gameCondition>
+		<durationDays>0.66~1.33</durationDays>
+	</IncidentDef>
+
+</Defs>

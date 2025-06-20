@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AbilityCategoryDef>
+		<defName>AEAnomaliesExpected</defName>
+		<displayOrder>1300</displayOrder>
+	</AbilityCategoryDef>
+
+	<AbilityDef>
+		<defName>AEGrindBody</defName>
+		<label>grind body</label>
+		<description>Grind off the skin and flesh of corpse bones. This produces a way bigger amount of butcher products than should be logically possible.</description>
+		<iconPath>Things/Item/Resource/MeatFoodRaw/Meat_Big/Meat_Big_c</iconPath>
+		<cooldownTicksRange>5000</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayOrder>1300</displayOrder>
+		<category>AEAnomaliesExpected</category>
+		<showPsycastEffects>false</showPsycastEffects>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<warmupEffecter>HoraxianAbilityCasting</warmupEffecter>
+		<warmupSound>AnomalyAbilityWarmup</warmupSound>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>4.9</range>
+			<warmupTime>0.5</warmupTime>
+			<requireLineOfSight>true</requireLineOfSight>
+			<drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetMechs>false</canTargetMechs>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetCorpses>true</canTargetCorpses>
+				<onlyTargetCorpses>true</onlyTargetCorpses>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilityGrindBody">
+				<butcherEfficiency>2</butcherEfficiency>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	
+
+	<AbilityDef>
+		<defName>AEAcidSpew</defName>
+		<label>acid spew</label>
+		<description>Spray a sticky acid substance from glands in the neck up through the mouth and all over the target area. The acid will stick to targets and burn them.</description>
+		<iconPath>UI/Abilities/AcidSpray</iconPath>
+		<cooldownTicksRange>10000</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayOrder>1300</displayOrder>
+		<category>AEAnomaliesExpected</category>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>5.9</range>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>AcidSpray_Resolve</soundCast>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilitySpewLiquid">
+				<damageDef>AcidBurn</damageDef>
+				<damAmount>20</damAmount>
+				<armorPenetration>0.8</armorPenetration>
+				<lineWidthEnd>10</lineWidthEnd>
+				<filthDef>Filth_SpentAcid</filthDef>
+				<sprayEffecter>AcidSpray_Directional</sprayEffecter>
+				<canHitFilledCells>true</canHitFilledCells>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef>
+		<defName>AEAcidSpit</defName>
+		<label>acid spit</label>
+		<description>Spit a sticky acid substance from acid cavity in the sternum up through the mouth to strike a distant target. The acid will stick to targets and burn them.</description>
+		<iconPath>UI/Abilities/AcidSpray</iconPath>
+		<cooldownTicksRange>60000</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayOrder>1300</displayOrder>
+		<category>AEAnomaliesExpected</category>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>1</warmupTime>
+			<requireLineOfSight>false</requireLineOfSight>
+			<range>25.9</range>
+			<soundCast>AcidSpray_Resolve</soundCast>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilitySpitLiquid">
+				<projectileDef>AE_Bullet_Shell_AcidSpitAbility</projectileDef>
+				<sprayEffecter>AcidSpray_Directional</sprayEffecter>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<ThingDef ParentName="Bullet_Shell_AcidSpit">
+		<defName>AE_Bullet_Shell_AcidSpitAbility</defName>
+		<label>acid spit</label>
+		<graphicData>
+			<drawSize>(1.25, 1.25)</drawSize>
+		</graphicData>
+		<projectile>
+			<shadowSize>1</shadowSize>
+			<damageDef>AcidBurn</damageDef>
+			<spinRate>5</spinRate>
+			<damageAmountBase>35</damageAmountBase>
+			<armorPenetrationBase>0.8</armorPenetrationBase>
+			<stoppingPower>1</stoppingPower>
+			<speed>21</speed>
+			<arcHeightFactor>3</arcHeightFactor>
+			<explosionRadius>3.9</explosionRadius>
+			<explosionEffectLifetimeTicks>60</explosionEffectLifetimeTicks>
+		</projectile>
+	</ThingDef>
+
+	<AbilityDef>
+		<defName>AEPsychicFlash</defName>
+		<label>psychic flash</label>
+		<description>A concentrated burst of psychic energy, fired from the eyes and striking targets in front of them.</description>
+		<iconPath>UI/Abilities/VoidTerror</iconPath>
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayOrder>1301</displayOrder>
+		<category>AEAnomaliesExpected</category>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<warmupEffecter>HoraxianSpellDark_Warmup</warmupEffecter>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>4.9</range>
+			<warmupTime>0.5</warmupTime>
+			<requireLineOfSight>true</requireLineOfSight>
+			<soundCast>VoidTerrorCast</soundCast>
+			<targetParams>
+				<canTargetBuildings>false</canTargetBuildings>
+				<onlyTargetPsychicSensitive>true</onlyTargetPsychicSensitive>
+				<neverTargetIncapacitated>true</neverTargetIncapacitated>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilitySpewLiquid">
+				<damageDef>AEPsychicFlash</damageDef>
+				<damAmount>-1</damAmount>
+				<lineWidthEnd>8</lineWidthEnd>
+				<canHitFilledCells>true</canHitFilledCells>
+				<fleckDef>PsycastPsychicLine</fleckDef>
+				<effecterDef>VoidTerror_Target</effecterDef>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef Name="AESpawnFleshbeastBase" Abstract="True">
+		<iconPath>UI/CodexEntries/Fleshbeasts</iconPath>
+		<aiCanUse>true</aiCanUse>
+		<displayOrder>1302</displayOrder>
+		<category>AEAnomaliesExpected</category>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<warmupEffecter>HoraxianAbilityCasting</warmupEffecter>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<warmupTime>0.5</warmupTime>
+			<violent>false</violent>
+			<soundCast>Pawn_Fleshbeast_EmergeFromPitGate</soundCast>
+			<targetable>false</targetable>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+
+	<AbilityDef ParentName="AESpawnFleshbeastBase">
+		<defName>AESpawnKidneyFleshbeast</defName>
+		<label>spawn Fingerspike</label>
+		<description>Grow fleshmass from kidney and mutate it into a Fingerspike. This fleshbeast is afflicted with by destabilization mutation, granting it enhanced physical capabilities but a shortened lifespan.</description>
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<charges>2</charges>
+		<cooldownPerCharge>true</cooldownPerCharge>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilitySpawnFleshbeast">
+				<pawnKindCount>
+					<kindDef>Fingerspike</kindDef>
+					<count>1</count>
+				</pawnKindCount>
+				<maxAmount>3</maxAmount>
+				<addHediff>Hediff_AEDestabilization</addHediff>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef ParentName="AESpawnFleshbeastBase">
+		<defName>AESpawnBodyMutationFleshbeast</defName>
+		<label>spawn Toughspike</label>
+		<description>Grow fleshmass from whole body and mutate it into a Toughspike. This fleshbeast is afflicted with by destabilization mutation, granting it enhanced physical capabilities but a shortened lifespan.</description>
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilitySpawnFleshbeast">
+				<pawnKindCount>
+					<kindDef>Toughspike</kindDef>
+					<count>1</count>
+				</pawnKindCount>
+				<maxAmount>2</maxAmount>
+				<addHediff>Hediff_AEDestabilization</addHediff>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef Name="AEFleshbeastCommandBase">
+		<defName>AEFleshbeastCommandMove</defName>
+		<label>command: move to</label>
+		<description>Send a psychic command to surrounding fleshbeasts to move in a specific direction.</description>
+		<iconPath>UI/Abilities/AECommandFleshbeast</iconPath>
+		<cooldownTicksRange>2500</cooldownTicksRange>
+		<displayOrder>1303</displayOrder>
+		<category>AEAnomaliesExpected</category>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<warmupEffecter>HoraxianAbilityCasting</warmupEffecter>
+		<charges>5</charges>
+		<cooldownPerCharge>true</cooldownPerCharge>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>0.5</warmupTime>
+			<requireLineOfSight>false</requireLineOfSight>
+			<range>50.9</range>
+			<violent>false</violent>
+			<soundCast>Pawn_Fleshbeast_EmergeFromPitGate</soundCast>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilityFleshbeastCommand">
+				<gatherRadius>2.9</gatherRadius>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef ParentName="AEFleshbeastCommandBase">
+		<defName>AEFleshbeastCommandGather</defName>
+		<label>command: call</label>
+		<description>Send a psychic command to fleshbeasts in specific area to move to the caster.</description>
+		<comps Inherit="false">
+			<li Class="AnomaliesExpected.CompProperties_AbilityFleshbeastCommand">
+				<gatherRadius>2.9</gatherRadius>
+				<isCall>true</isCall>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef>
+		<defName>AEFleshmassStomach</defName>
+		<label>metabolic recycling</label>
+		<description>Break down and reabsorb nutrients from its own tissue.</description>
+		<iconPath>UI/Abilities/AEConsumeFlesh</iconPath>
+		<cooldownTicksRange>60000</cooldownTicksRange>
+		<displayOrder>1304</displayOrder>
+		<category>AEAnomaliesExpected</category>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<warmupEffecter>EatMeat</warmupEffecter>
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<targetRequired>False</targetRequired>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>5</warmupTime>
+			<requireLineOfSight>false</requireLineOfSight>
+			<violent>false</violent>
+			<soundCast>AE_RawMeatEat</soundCast>
+			<targetable>false</targetable>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilityFleshmassStomach">
+				<damAmount>18</damAmount>
+				<nutAmount>0.9</nutAmount>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	
+	
+	<AbilityDef>
+		<defName>AEIceCrystalDestabilization</defName>
+		<label>ice crystal destabilization</label>
+		<description>Increase ice crystal destabilization process to critical level, which will cause an explosion.</description>
+		<cooldownTicksRange>60000</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayOrder>1300</displayOrder>
+		<category>AEAnomaliesExpected</category>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>2.9</range>
+			<warmupTime>0</warmupTime>
+			<targetable>false</targetable>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilityIceCrystalDestabilization">
+				<damageDef>AENitrogen</damageDef>
+				<damAmount>16</damAmount>
+				<armorPenetration>1</armorPenetration>
+				<ignoreWithHediffDef>AENitrogenFreezing</ignoreWithHediffDef>
+				<minTargets>1</minTargets>
+				<minTargetsWEffect>3</minTargetsWEffect>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef>
+		<defName>AEThrowSnowBlock</defName>
+		<label>throw snow block</label>
+		<description>Throw a giant snow block at a long distance target. Will explode with nitrogen after landing.</description>
+		<iconPath>Things/Projectile/AE_SnowBlock</iconPath>
+		<cooldownTicksRange>7000~11000</cooldownTicksRange>
+		<displayOrder>1300</displayOrder>
+		<category>AEAnomaliesExpected</category>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>6</warmupTime>
+			<requireLineOfSight>false</requireLineOfSight>
+			<range>150</range>
+			<soundCast>AcidSpray_Resolve</soundCast>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilitySpitLiquid">
+				<projectileDef>AE_Bullet_Shell_SnowBlockAbility</projectileDef>
+				<isAICanTargetAlways>true</isAICanTargetAlways>
+			</li>
+		</comps>
+	</AbilityDef>
+  
+	<ThingDef ParentName="BaseProjectileSnowArmySnowBlock">
+		<defName>AE_Bullet_Shell_SnowBlockAbility</defName>
+		<label>giant snow block</label>
+		<graphicData>
+			<drawSize>2.25</drawSize>
+		</graphicData>
+		<projectile>
+			<shadowSize>2.25</shadowSize>
+			<damageAmountBase>28</damageAmountBase>
+			<speed>10</speed>
+			<stoppingPower>2.5</stoppingPower>
+			<arcHeightFactor>2</arcHeightFactor>
+			<explosionRadius>5.9</explosionRadius>
+			<filthCount>1</filthCount>
+			<explosionEffectLifetimeTicks>60</explosionEffectLifetimeTicks>
+		</projectile>
+		<comps Inherit="false">
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>Shell_AESnowBlockStream</effecterDef>
+			</li>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>Shell_AESnowBlockLaunched</effecterDef>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<AbilityDef Name="AESpawnSnowArmyBase" Abstract="True">
+		<iconPath>Things/Pawn/SnowArmy/SnowMan/AE_SnowMan_A_south</iconPath>
+		<aiCanUse>true</aiCanUse>
+		<displayOrder>1302</displayOrder>
+		<category>AEAnomaliesExpected</category>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<warmupEffecter>HoraxianAbilityCasting</warmupEffecter>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<warmupTime>0.5</warmupTime>
+			<violent>false</violent>
+			<soundCast>Explosion_Stun</soundCast>
+			<targetable>false</targetable>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+
+	<AbilityDef ParentName="AESpawnSnowArmyBase">
+		<defName>AESpawnSnowMan</defName>
+		<label>spawn Snow Man</label>
+		<description>Creates snow from moisture in surrounding air and combines it into a living snowman.</description>
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_AbilitySpawnSnowArmy">
+				<pawnKindCount>
+					<kindDef>AE_SnowMan</kindDef>
+					<count>1</count>
+				</pawnKindCount>
+				<maxAmount>2</maxAmount>
+				<addHediff>Hediff_AESnowMelting</addHediff>
+			</li>
+		</comps>
+	</AbilityDef>
+
+</Defs>

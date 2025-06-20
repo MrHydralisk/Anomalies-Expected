@@ -39,7 +39,7 @@ namespace AnomaliesExpected
 
         private bool TryFindCell(out IntVec3 cell, Map map, ThingDef deployableObjectDef)
         {
-            return CellFinderLoose.TryFindSkyfallerCell(SkyfallerDef, map, out cell, 10, default(IntVec3), -1, allowRoofedCells: true, allowCellsWithItems: false, allowCellsWithBuildings: false, colonyReachable: false, avoidColonistsIfExplosive: true, alwaysAvoidColonists: true, delegate (IntVec3 x)
+            return CellFinderLoose.TryFindSkyfallerCell(SkyfallerDef, map, null, out cell, 10, default(IntVec3), -1, allowRoofedCells: true, allowCellsWithItems: false, allowCellsWithBuildings: false, colonyReachable: false, avoidColonistsIfExplosive: true, alwaysAvoidColonists: true, delegate (IntVec3 x)
             {
                 if ((float)x.DistanceToEdge(map) < 20f + (float)map.Size.x * 0.1f)
                 {

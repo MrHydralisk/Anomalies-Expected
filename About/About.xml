@@ -5,6 +5,7 @@
 	<packageId>MrHydralisk.AnomaliesExpected</packageId>
 	<supportedVersions>
 		<li>1.5</li>
+		<li>1.6</li>
 	</supportedVersions>
 	<modIconPath IgnoreIfNoMatchingField="True">UI/Icons/AEModIcon</modIconPath>
 	<description>Additional anomalies for Anomaly DLC. Including reworked Entity Codex in a form of new Entity Database.</description>

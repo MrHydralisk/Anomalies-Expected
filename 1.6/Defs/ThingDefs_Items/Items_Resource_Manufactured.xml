@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="SerumBase">
+		<defName>AESleepEnhancerSerum</defName>
+		<label>sleep enhancer serum</label>
+		<description>A syringe of clear, viscous fluid. Injected near the brainstem, it affect stressed part of the brain and distribute the load among neurons, making rest via sleep more time efficient.\n\nThe effect is temporary and does not stack.\n\nFrom 16/8 to 20/4 sleep shedule.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AESleepEnhancerSerum</HediffDef>
+		</descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Serum/AESleepEnhancerSerum</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>35</MarketValue>
+		</statBases>
+		<genericMarketSellable>false</genericMarketSellable>
+		<tradeability>Sellable</tradeability>
+		<comps>
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>Hediff_AESleepEnhancerSerum</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>MechSerumUsed</soundOnUsed>
+			</li>
+		</comps>
+		<costList>
+			<Neutroamine>2</Neutroamine>
+			<Bioferrite>15</Bioferrite>
+		</costList>
+		<recipeMaker>
+			<workAmount>720</workAmount>
+			<skillRequirements>
+				<Crafting>4</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>AESleepEnhancerSerum</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	
+	
+	<ThingDef ParentName="SerumBase">
+		<defName>AERegenSerum</defName>
+		<label>regen serum</label>
+		<description>A syringe of crimson, viscous fluid. Injected in bloodstream, it affect damaged tissue and increase healing factor.\n\nThe effect is temporary and does not stack.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AERegenSerum</HediffDef>
+		</descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Serum/AERegenSerum</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>70</MarketValue>
+		</statBases>
+		<genericMarketSellable>false</genericMarketSellable>
+		<tradeability>Sellable</tradeability>
+		<comps>
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>Hediff_AERegenSerum</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>MechSerumUsed</soundOnUsed>
+			</li>
+		</comps>
+		<costList>
+			<Meat_Human>15</Meat_Human>
+			<Bioferrite>15</Bioferrite>
+		</costList>
+		<recipeMaker>
+			<workAmount>720</workAmount>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>AERegenSerum</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	
+	
+	<ThingDef ParentName="SerumBase">
+		<defName>AEFruitInhibitorSerum</defName>
+		<label>giant apple inhibitor serum</label>
+		<description>A syringe filled with purple fluid. Injected in bloodstream, it removes the effect given by the Giant Apple.\n\nThe effect is not instant.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AEForbiddenFruit</HediffDef>
+			<HediffDef>Hediff_AEForbiddenFruitWithdrawal</HediffDef>
+		</descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Serum/AEFruitInhibitorSerum</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>18</MarketValue>
+		</statBases>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_UseEffectReplaceHediff">
+				<hediffDefFrom>Hediff_AEForbiddenFruit</hediffDefFrom>
+				<hediffDefTo>Hediff_AEForbiddenFruitWithdrawal</hediffDefTo>
+				<severityTransfere>1</severityTransfere>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>MechSerumUsed</soundOnUsed>
+			</li>
+		</comps>
+		<costList>
+			<Bioferrite>12</Bioferrite>
+		</costList>
+		<recipeMaker>
+			<workAmount>570</workAmount>
+			<skillRequirements>
+				<Crafting>3</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>AEFruitInhibitorSerum</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	
+	
+	<ThingDef ParentName="SerumBase">
+		<defName>AEBingingFoodSerum</defName>
+		<label>binging food serum</label>
+		<description>A syringe of green, viscous fluid. Injected in esophagus, it stimulates the digestive system and makes person feel really hungry for a good meal. Additionally reduces Big Pie effect.\n\nThe effect is temporary and does not stack.</description>
+		<descriptionHyperlinks>
+			<mentalStateDef>Binging_Food</mentalStateDef>
+			<HediffDef>Hediff_AEBingingFoodSerum</HediffDef>
+		</descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Serum/AEBingingFoodSerum</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>30</MarketValue>
+		</statBases>
+		<tradeability>Sellable</tradeability>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_UseEffectAddMentalState">
+				<mentalStateDef>Binging_Food</mentalStateDef>
+			</li>
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>Hediff_AEBingingFoodSerum</hediffDef>
+				<allowRepeatedUse>true</allowRepeatedUse>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_UseEffecRemoveHediff">
+				<hediffDef>Hediff_AEDigestingPie</hediffDef>
+				<severity>0.5</severity>
+				<requireHediffToUse>false</requireHediffToUse>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>MechSerumUsed</soundOnUsed>
+			</li>
+		</comps>
+		<costList>
+			<Milk>9</Milk>
+			<Bioferrite>9</Bioferrite>
+		</costList>
+		<recipeMaker>
+			<workAmount>540</workAmount>
+			<skillRequirements>
+				<Crafting>3</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>AEBingingFoodSerum</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	<ThingDef ParentName="SerumBase">
+		<defName>AEHungerSuppressorSerum</defName>
+		<label>hunger suppressor serum</label>
+		<description>A syringe of green, viscous fluid. Injected in esophagus, it contains nutrients and changes metabolism to increase efficiency of digestive system and stimulate body to use it nutrient reserves for the time being.\n\nThe effect is temporary and does not stack. After effect it will take time to restore metabolism to normal state.\n\nActive effect lasts 1 day. Increase time x2 till malnourished.</description>
+		<descriptionHyperlinks>
+			<HediffDef>Hediff_AEHungerSuppressorSerum</HediffDef>
+		</descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Item/Serum/AEHungerSuppressorSerum</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>65</MarketValue>
+			<Nutrition>1</Nutrition>
+		</statBases>
+		<genericMarketSellable>false</genericMarketSellable>
+		<tradeability>Sellable</tradeability>
+		<comps>
+			<li Class="CompProperties_UseEffectAddHediff">
+				<hediffDef>Hediff_AEHungerSuppressorSerum</hediffDef>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>MechSerumUsed</soundOnUsed>
+			</li>
+		</comps>
+		<costList>
+			<RawPotatoes>40</RawPotatoes>
+			<Bioferrite>15</Bioferrite>
+		</costList>
+		<recipeMaker>
+			<workAmount>720</workAmount>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>AEHungerSuppressorSerum</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	
+
+	<ThingDef ParentName="SerumBase">
+		<defName>AE_BloodLiquidInjector</defName>
+		<label>blood-like liquid injector</label>
+		<description>A one-use dose of blood-like liquid. This liquid, when administered, transmute to replace some of lost blood and increases its density around major wounds to prevent further blood loss. It prioritizes the 5 most severe injuries, focusing on those with the highest bleeding rates. Precise dosing is crucial to avoid excessive blood-liquid levels in the bloodstream.</description>
+		<thingClass>ThingWithComps</thingClass>
+		<graphicData>
+			<texPath>Things/Item/Serum/AEBloodLiquidInjector</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<stackLimit>30</stackLimit>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+			<MarketValue>12</MarketValue>
+		</statBases>
+		<genericMarketSellable>false</genericMarketSellable>
+		<tradeability>Sellable</tradeability>
+		<ingestible>
+			<ingestCommandString>Inject self with {0}</ingestCommandString>
+			<ingestReportString>Injecting {0}.</ingestReportString>
+		</ingestible>
+		<comps Inherit="False">
+			<li Class="AnomaliesExpected.CompProperties_ApplyUsableTo">
+				<useJob>UseItem</useJob>
+				<applyToJob>AE_ApplyUsableTo</applyToJob>
+				<useLabel>Inject self</useLabel>
+				<useToLabel>Inject someone else</useToLabel>
+				<useDuration>200</useDuration>
+				<warmupMote>Mote_AEBloodLiquidInjector</warmupMote>
+				<showUseGizmo>true</showUseGizmo>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_UseEffectBloodLiquidInjector">
+				<amountOfInjuries>5</amountOfInjuries>
+				<tendQualityRange>0.4~0.8</tendQualityRange>
+				<sideEffectHediff>Hediff_AEBloodLiquidConcentration</sideEffectHediff>
+				<sideEffectHediffSeverityAdd>0.18</sideEffectHediffSeverityAdd>
+			</li>
+			<li Class="CompProperties_Targetable">
+				<compClass>AnomaliesExpected.CompTargetable_SinglePawnUseFirstEffect</compClass>
+			</li>
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>MechSerumUsed</soundOnUsed>
+			</li>
+			<li Class="CompProperties_Drug">
+				<listOrder>1300</listOrder>
+				<teetotalerCanConsume>true</teetotalerCanConsume>
+			</li>
+		</comps>
+		<costList>
+			<AE_BloodLiquid>10</AE_BloodLiquid>
+			<Bioferrite>10</Bioferrite>
+		</costList>
+		<recipeMaker>
+			<workAmount>1200</workAmount>
+			<skillRequirements>
+				<Crafting>10</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>AEBloodInjector</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>AE_FleshmassCyst</defName>
+		<label>fleshmass cyst</label>
+		<description>A parasitic, pulsating small mass of flesh, capable of rapid growth and transformation. Сapable of embedding itself within a host and drawing sustenance from their body.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/AEFleshmassCyst</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(0.75, 0.75)</drawSize>
+		</graphicData>
+		<genericMarketSellable>false</genericMarketSellable>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+			<MarketValue>300</MarketValue>
+			<Mass>0.15</Mass>
+		</statBases>
+		<tradeability>Sellable</tradeability>
+		<stackLimit>15</stackLimit>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>AE_FleshmassTumor</defName>
+		<label>fleshmass tumor</label>
+		<description>A living, pulsating mass of flesh with it own will, capable of rapid growth and transformation. Сapable of embedding itself within a host and drawing sustenance from their body.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/AEFleshmassTumor</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(0.75, 0.75)</drawSize>
+		</graphicData>
+		<genericMarketSellable>false</genericMarketSellable>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+			<MarketValue>1200</MarketValue>
+			<Mass>0.5</Mass>
+		</statBases>
+		<tradeability>Sellable</tradeability>
+		<stackLimit>5</stackLimit>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+	</ThingDef>
+	
+	
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>AE_IceCrystal</defName>
+		<label>ice crystal</label>
+		<description>An exotic crystal, visually indistinguishable from ice, remains cold and solid regardless of external temperature. Can be extracted from related anomalies. Its dust can drastically lower temperature of surrounding air.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/AE_IceCrystal</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<genericMarketSellable>false</genericMarketSellable>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+			<MarketValue>1.5</MarketValue>
+			<Flammability>0</Flammability>
+			<Mass>0.5</Mass>
+		</statBases>
+		<tradeability>Sellable</tradeability>
+		<stackLimit>75</stackLimit>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>AE_IceCrystalDestabilized</defName>
+		<label>destabilized ice crystal</label>
+		<description>A fusion of exotic ice crystal with bioferrite destabilizes the crystal's molecular structure, resulting in contradictory properties. Burning of this mixture releases a significant amount of energy. Its dust can drastically lower temperature of surrounding air.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/AE_IceCrystalDestabilized</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<genericMarketSellable>false</genericMarketSellable>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+			<MarketValue>3</MarketValue>
+			<Flammability>0</Flammability>
+			<Mass>1</Mass>
+		</statBases>
+		<tradeability>Sellable</tradeability>
+		<stackLimit>75</stackLimit>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+	</ThingDef>
+
+</Defs>

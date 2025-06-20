@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<BodyPartGroupDef>
+		<defName>AE_LeftFHand</defName>
+		<label>left front hand</label>
+		<labelShort>hand</labelShort>
+	</BodyPartGroupDef>
+
+	<BodyPartGroupDef>
+		<defName>AE_LeftBHand</defName>
+		<label>left rear hand</label>
+		<labelShort>hand</labelShort>
+	</BodyPartGroupDef>
+
+	<BodyPartGroupDef>
+		<defName>AE_RightFHand</defName>
+		<label>right front hand</label>
+		<labelShort>hand</labelShort>
+	</BodyPartGroupDef>
+
+	<BodyPartGroupDef>
+		<defName>AE_RightBHand</defName>
+		<label>right rear hand</label>
+		<labelShort>hand</labelShort>
+	</BodyPartGroupDef>
+
+</Defs>

@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef>
+		<defName>AE_BloodPuddleSpawner</defName>
+		<label>underground emergence</label>
+		<description>Something is emerging from the ground here.</description>
+		<thingClass>BuildingGroundSpawner</thingClass>
+		<selectable>true</selectable>
+		<tickerType>Normal</tickerType>
+		<useHitPoints>false</useHitPoints>
+		<drawerType>RealtimeOnly</drawerType>
+		<size>(1, 1)</size>
+		<uiIconPath>UI/Icons/UndergroundEmergence</uiIconPath>
+		<building>
+			<groundSpawnerSustainedEffecter>EmergencePointSustained2X2</groundSpawnerSustainedEffecter>
+			<groundSpawnerCompleteEffecter>EmergencePointComplete2X2</groundSpawnerCompleteEffecter>
+			<groundSpawnerThingToSpawn>AE_BloodPuddle</groundSpawnerThingToSpawn>
+			<groundSpawnerSpawnDelay>600</groundSpawnerSpawnDelay>
+			<groundSpawnerDestroyAdjacent>true</groundSpawnerDestroyAdjacent>
+			<groundSpawnerSustainerSound>PitBurrowOpening</groundSpawnerSustainerSound>
+		</building>
+	</ThingDef>
+
+	<ThingDef>
+		<defName>AE_BloodLakeSpawner</defName>
+		<label>underground emergence</label>
+		<description>Something is emerging from the ground here.</description>
+		<thingClass>BuildingGroundSpawner</thingClass>
+		<selectable>true</selectable>
+		<tickerType>Normal</tickerType>
+		<useHitPoints>false</useHitPoints>
+		<drawerType>RealtimeOnly</drawerType>
+		<size>(5, 3)</size>
+		<uiIconPath>UI/Icons/UndergroundEmergence</uiIconPath>
+		<building>
+			<groundSpawnerSustainedEffecter>EmergencePointSustained8X8</groundSpawnerSustainedEffecter>
+			<groundSpawnerCompleteEffecter>EmergencePointComplete8X8</groundSpawnerCompleteEffecter>
+			<groundSpawnerThingToSpawn>AE_BloodLake</groundSpawnerThingToSpawn>
+			<groundSpawnerSpawnDelay>2500</groundSpawnerSpawnDelay>
+			<groundSpawnerDestroyAdjacent>true</groundSpawnerDestroyAdjacent>
+			<groundSpawnerSustainerSound>PitGateOpening</groundSpawnerSustainerSound>
+		</building>
+	</ThingDef>
+	
+	
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>AE_ProviderBox</defName>
+		<label>provider box</label>
+		<description>The ritual box, designed to hold sacrificial offerings for asking Provider ritual. Its surface corroded, aged prematurely, and became marred with scratches upon creation.</description>
+		<thingClass>Building_Storage</thingClass>
+		<graphicData>
+			<texPath>Things/Building/AE_ProviderBox</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shadowData>
+				<volume>(0.78, 0.4, 0.53)</volume>
+				<offset>(0,0,0.005)</offset>
+			</shadowData>
+			<damageData>
+				<rect>(0.11,0.24,0.78,0.53)</rect>
+			</damageData>
+			<!-- <drawSize>(1.28,1.28)</drawSize> -->
+		</graphicData>
+		<genericMarketSellable>false</genericMarketSellable>
+		<tickerType>Never</tickerType>
+		<altitudeLayer>Building</altitudeLayer>
+		<statBases>
+			<MaxHitPoints>300</MaxHitPoints>
+			<WorkToMake>45000</WorkToMake>
+			<Flammability>0</Flammability>
+			<Beauty>90</Beauty>
+			<Mass>18</Mass>
+		</statBases>
+		<fillPercent>0.4</fillPercent>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<ai_neverTrashThis>true</ai_neverTrashThis>
+			<destroySound>BuildingDestroyed_Metal_Small</destroySound>
+			<uninstallWork>2500</uninstallWork>
+			<preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+			<ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+			<maxItemsInCell>1</maxItemsInCell>
+			<blueprintClass>Blueprint_Storage</blueprintClass>
+			<storageGroupTag>ProviderBox</storageGroupTag>
+			<fixedStorageSettings>
+				<filter>
+					<disallowNotEverStorable>true</disallowNotEverStorable>
+					<categories>
+						<li>FoodRaw</li>
+						<li>Textiles</li>
+						<li>ResourcesRaw</li>
+					</categories>
+					<disallowedCategories>
+						<li>EggsFertilized</li>
+						<li>PlantMatter</li>
+						<li>StoneBlocks</li>
+					</disallowedCategories>
+				</filter>
+			</fixedStorageSettings>
+			<defaultStorageSettings>
+				<priority>Preferred</priority>
+				<filter>
+					<disallowNotEverStorable>true</disallowNotEverStorable>
+					<categories>
+						<li>FoodRaw</li>
+						<li>Textiles</li>
+						<li>ResourcesRaw</li>
+					</categories>
+					<disallowedCategories>
+						<li>EggsFertilized</li>
+						<li>PlantMatter</li>
+						<li>StoneBlocks</li>
+					</disallowedCategories>
+				</filter>
+			</defaultStorageSettings>
+		</building>
+		<costList>
+			<Bioferrite>100</Bioferrite>
+			<Shard>1</Shard>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>AEProviderScripture</researchPrerequisite>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Artistic</workSkill>
+			<unfinishedThingDef>UnfinishedSculpture</unfinishedThingDef>
+			<effectWorking>Sculpt</effectWorking>
+			<soundWorking>Recipe_Sculpt</soundWorking>
+			<recipeUsers>
+				<li>TableSculpting</li>
+			</recipeUsers>
+		</recipeMaker>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsMisc</li>
+		</thingCategories>
+		<pathCost>45</pathCost>
+		<canOverlapZones>false</canOverlapZones>
+		<passability>PassThroughOnly</passability>
+		<surfaceType>Item</surfaceType>
+		<rotatable>false</rotatable>
+		<comps>
+			<li Class="CompProperties_Art">
+				<nameMaker>NamerArtVoidSculpture</nameMaker>
+				<descriptionMaker>ArtDescription_VoidSculpture</descriptionMaker>
+				<canBeEnjoyedAsArt>true</canBeEnjoyedAsArt>
+			</li>
+			<li Class="CompProperties_Facility">
+				<maxSimultaneous>1</maxSimultaneous>
+				<maxDistance>10</maxDistance>
+				<statOffsets>
+					<PsychicRitualQuality>0.05</PsychicRitualQuality>
+				</statOffsets>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+		<inspectorTabs>
+			<li>ITab_Storage</li>
+		</inspectorTabs>
+	</ThingDef>
+	
+	
+
+	<ThingDef ParentName="CrateBase">
+		<defName>AE_ChristmasGiftBox</defName>
+		<label>christmas gift box</label>
+		<description>This elegant Christmas gift box is adorned with festive ribbons. It's the perfect container that holds a special surprise.</description>
+		<thingClass>AnomaliesExpected.Building_AEChristmasGiftBox</thingClass>
+		<graphicData>
+			<texPath>Things/Building/AE_ChristmasGiftBox</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(1, 1)</drawSize>
+			<drawRotated>false</drawRotated>
+			<shadowData>
+				<volume>(0.55, 0.45, 0.55)</volume>
+			</shadowData>
+		</graphicData>
+		<size>(1, 1)</size>
+		<useHitPoints>false</useHitPoints>
+		<hasInteractionCell>false</hasInteractionCell>
+		<fillPercent>0.6</fillPercent>
+		<building>
+			<openingEffect>GrayBoxOpened</openingEffect>
+			<uninstallWork>2500</uninstallWork>
+			<paintable>false</paintable>
+			<deconstructible>false</deconstructible>
+			<claimable>false</claimable>
+			<neverBuildable>true</neverBuildable>
+		</building>
+		<comps>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<tickerType>Normal</tickerType>
+	</ThingDef>
+	
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>AE_AtmosphericCooler</defName>
+		<label>atmospheric cooler</label>
+		<description>A thermal absorption device powered by scavenged shards of dark archotechnology. The device spread dust of ice crystal to calm gas molecules in the atmosphere, decreasing the local outdoor temperature. The building itself also produces huge amounts of cold air.</description>
+		<graphicData>
+			<texPath>Things/Building/AE_AtmosphericCooler</texPath>
+			<graphicClass>Graphic_Indexed</graphicClass>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<designationCategory>Anomaly</designationCategory>
+		<castEdgeShadows>true</castEdgeShadows>
+		<uiOrder>400</uiOrder>
+		<size>(3,3)</size>
+		<fillPercent>0.9</fillPercent>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<researchPrerequisites>
+			<li>AEAtmosphericCooler</li>
+		</researchPrerequisites>
+		<building>
+			<claimable>false</claimable>
+			<expandHomeArea>false</expandHomeArea>
+			<buildingTags>
+				<li>Anomaly</li>
+			</buildingTags>
+		</building>
+		<costList>
+			<Shard>2</Shard>
+			<Bioferrite>150</Bioferrite>
+			<Steel>150</Steel>
+			<ComponentIndustrial>8</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<Beauty>-40</Beauty>
+			<MaxHitPoints>300</MaxHitPoints>
+			<Flammability>0.5</Flammability>
+			<WorkToBuild>12000</WorkToBuild>
+		</statBases>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<comps>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusherPowered</compClass>
+				<heatPerSecond>-120</heatPerSecond><!-- Same as active steam geyser -->
+			</li>
+			<li Class="CompProperties_TempControl">
+				<compClass>AnomaliesExpected.Comp_AtmosphericCooler</compClass>
+				<lowPowerConsumptionFactor>0.05</lowPowerConsumptionFactor>
+				<inspectString>Target outdoor temperature</inspectString>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>4</fuelConsumptionRate>
+				<fuelCapacity>40.0</fuelCapacity>
+				<fuelFilter>
+					<thingDefs>
+						<li>AE_IceCrystal</li>
+					</thingDefs>
+				</fuelFilter>
+				<externalTicking>true</externalTicking>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>5</glowRadius>
+				<glowColor>(100,100,230,0)</glowColor>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>1500</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_HeatPusherEffecter">
+				<effecterDef>AE_AtmosphericCoolerAmbience</effecterDef>
+			</li>
+			<li Class="CompProperties_AttachPoints">
+				<points>
+					<li>
+						<offset>(.5, 0, 1)</offset>
+						<type>Exhaust</type>
+					</li>
+				</points>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>AE_AtmosphericController</defName>
+		<label>atmospheric controller</label>
+		<description>A hybrid thermal control device powered by scavenged shards of dark archotechnology, that combines features of atmospheric heater and atmospheric cooler.\nIn heater mode device burns destabilized ice crystal to agitate gas molecules in the atmosphere, raising the local outdoor temperature.\nIn cooler mode device spread dust of destabilized ice crystal to calm gas molecules in the atmosphere, decreasing the local outdoor temperature.\nDestabilized ice crystal have higher efficiency, than bioferrite or ice crystal alone. Depending on a current mode building itself also produces enormous amounts of waste heat or cold air.</description>
+		<graphicData>
+			<texPath>Things/Building/AE_AtmosphericController</texPath>
+			<graphicClass>Graphic_Indexed</graphicClass>
+			<drawSize>(5,3)</drawSize>
+		</graphicData>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<designationCategory>Anomaly</designationCategory>
+		<castEdgeShadows>true</castEdgeShadows>
+		<uiOrder>400</uiOrder>
+		<size>(5,3)</size>
+		<fillPercent>0.9</fillPercent>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<researchPrerequisites>
+			<li>AEAtmosphericController</li>
+		</researchPrerequisites>
+		<building>
+			<claimable>false</claimable>
+			<expandHomeArea>false</expandHomeArea>
+			<buildingTags>
+				<li>Anomaly</li>
+			</buildingTags>
+		</building>
+		<costList>
+			<Shard>5</Shard>
+			<Bioferrite>300</Bioferrite>
+			<Steel>300</Steel>
+			<ComponentIndustrial>10</ComponentIndustrial>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Beauty>-60</Beauty>
+			<MaxHitPoints>600</MaxHitPoints>
+			<Flammability>0.5</Flammability>
+			<WorkToBuild>24000</WorkToBuild>
+		</statBases>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<comps>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>AnomaliesExpected.Comp_HeatPusher</compClass>
+				<heatPerSecond>240</heatPerSecond>
+			</li>
+			<li Class="CompProperties_TempControl">
+				<compClass>AnomaliesExpected.Comp_AtmosphericController</compClass>
+				<lowPowerConsumptionFactor>0.075</lowPowerConsumptionFactor>
+				<inspectString>Target outdoor temperature</inspectString>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>4</fuelConsumptionRate>
+				<fuelCapacity>80.0</fuelCapacity>
+				<fuelFilter>
+					<thingDefs>
+						<li>AE_IceCrystalDestabilized</li>
+					</thingDefs>
+				</fuelFilter>
+				<externalTicking>true</externalTicking>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>9</glowRadius>
+				<glowColor>(230,100,100,0)</glowColor>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>3000</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_HeatPusherEffecter">
+				<effecterDef>AE_AtmosphericControllerAmbience</effecterDef>
+			</li>
+			<li Class="CompProperties_AttachPoints">
+				<points>
+					<li>
+						<offset>(1.5, 0, 1)</offset>
+						<type>CableConnection0</type>
+					</li>
+					<li>
+						<offset>(-1.5, 0, 1)</offset>
+						<type>CableConnection1</type>
+					</li>
+				</points>
+			</li>
+		</comps>
+	</ThingDef>
+	
+</Defs>

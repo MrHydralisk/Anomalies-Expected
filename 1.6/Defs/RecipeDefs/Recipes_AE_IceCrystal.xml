@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RecipeDef Name="RecipeMakeAEIceCrystalDestabilized" Abstract="True">
+		<description>Fuse exotic ice crystal with bioferrite to destabilize it.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AE_IceCrystalDestabilized</ThingDef>
+			<ThingDef>AE_IceCrystal</ThingDef>
+			<ThingDef>Bioferrite</ThingDef>
+		</descriptionHyperlinks>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<effectWorking>Smith</effectWorking>
+		<workSkill>Crafting</workSkill>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AE_IceCrystal</li>
+				<li>Bioferrite</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<recipeUsers>
+			<li>BioferriteShaper</li>
+		</recipeUsers>
+		<researchPrerequisite>AEIceCrystalDestabilized</researchPrerequisite>
+	</RecipeDef>
+
+	<RecipeDef ParentName="RecipeMakeAEIceCrystalDestabilized">
+		<defName>MakeAEIceCrystalDestabilized</defName>
+		<label>destabilize ice crystal</label>
+		<jobString>Destabilizing ice crystal.</jobString>
+		<products>
+			<AE_IceCrystalDestabilized>1</AE_IceCrystalDestabilized>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AE_IceCrystal</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Bioferrite</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+		<workAmount>150</workAmount>
+		<skillRequirements>
+			<Crafting>4</Crafting>
+		</skillRequirements>
+	</RecipeDef>
+
+	<RecipeDef ParentName="RecipeMakeAEIceCrystalDestabilized">
+		<defName>MakeAEIceCrystalDestabilizedBulk</defName>
+		<label>destabilize ice crystal x4</label>
+		<jobString>Destabilizing ice crystal x4.</jobString>
+		<products>
+			<AE_IceCrystalDestabilized>4</AE_IceCrystalDestabilized>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AE_IceCrystal</li>
+					</thingDefs>
+				</filter>
+				<count>4</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Bioferrite</li>
+					</thingDefs>
+				</filter>
+				<count>8</count>
+			</li>
+		</ingredients>
+		<workAmount>540</workAmount>
+		<skillRequirements>
+			<Crafting>6</Crafting>
+		</skillRequirements>
+	</RecipeDef>
+
+	<RecipeDef ParentName="RecipeMakeAEIceCrystalDestabilized">
+		<defName>MakeAEIceCrystalDestabilizedMass</defName>
+		<label>destabilize ice crystal x16</label>
+		<jobString>Destabilizing ice crystal x16.</jobString>
+		<products>
+			<AE_IceCrystalDestabilized>16</AE_IceCrystalDestabilized>
+		</products>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AE_IceCrystal</li>
+					</thingDefs>
+				</filter>
+				<count>16</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Bioferrite</li>
+					</thingDefs>
+				</filter>
+				<count>32</count>
+			</li>
+		</ingredients>
+		<workAmount>1920</workAmount>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+	</RecipeDef>
+
+</Defs>

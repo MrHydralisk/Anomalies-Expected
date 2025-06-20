@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<FleshTypeDef>
+		<defName>AE_EntitySnowArmy</defName>
+		<corpseCategory>CorpsesEntitySnowArmy</corpseCategory>
+		<damageEffecter>Damage_HitMechanoid</damageEffecter>
+		<isOrganic>false</isOrganic>
+		<genericWounds>
+			<li>
+				<texture>Things/Pawn/Wounds/WoundA</texture>
+				<color>0.31,0.69,0.835</color>
+			</li>
+			<li>
+				<texture>Things/Pawn/Wounds/WoundB</texture>
+				<color>0.31,0.69,0.835</color>
+			</li>
+			<li>
+				<texture>Things/Pawn/Wounds/WoundC</texture>
+				<color>0.31,0.69,0.835</color>
+			</li>
+		</genericWounds>
+	</FleshTypeDef>
+  
+</Defs>

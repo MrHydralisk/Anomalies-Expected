@@ -13,16 +13,16 @@ namespace AnomaliesExpected
             }
             if (def.questScriptDef != null)
             {
-                if (!def.questScriptDef.CanRun(parms.points))
+                if (!def.questScriptDef.CanRun(parms.points, null))
                 {
                     return false;
                 }
             }
-            else if (parms.questScriptDef != null && !parms.questScriptDef.CanRun(parms.points))
+            else if (parms.questScriptDef != null && !parms.questScriptDef.CanRun(parms.points, null))
             {
                 return false;
             }
-            return PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_FreeColonists_NoSuspended.Any();
+            return PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_FreeColonists_NoSuspended.Any();
         }
 
         protected override bool TryExecuteWorker(IncidentParms parms)

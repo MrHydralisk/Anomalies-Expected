@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef Name="BaseWeaponSnowArmy" Abstract="True" ParentName="BaseWeapon">
+		<techLevel>Ultra</techLevel>
+		<tradeTags Inherit="False"/>
+		<weaponTags Inherit="False"/>
+		<genericMarketSellable>false</genericMarketSellable>
+		<tradeability>None</tradeability>
+		<thingCategories>
+			<li>WeaponsRanged</li>
+		</thingCategories>
+		<relicChance>0</relicChance>
+		<destroyOnDrop>true</destroyOnDrop>
+	</ThingDef>
+
+	<ThingDef Name="BaseProjectileSnowArmy" Abstract="True">
+		<category>Projectile</category>
+		<tickerType>Normal</tickerType>
+		<altitudeLayer>Projectile</altitudeLayer>
+		<thingClass>Bullet</thingClass>
+		<label>arrow</label>
+		<useHitPoints>False</useHitPoints>
+		<neverMultiSelect>True</neverMultiSelect>
+		<graphicData>
+			<shaderType>Transparent</shaderType>
+		</graphicData>
+	</ThingDef>
+	
+  
+	<ThingDef ParentName="BaseWeaponSnowArmy">
+		<defName>Gun_AESnowBall</defName>
+		<label>snowball</label>
+		<description>The Snowball is a simple yet effective projectile weapon. Formed from compacted snow, it can be thrown with surprising force, delivering a chilling impact upon impact. While seemingly harmless, a well-aimed snowball can cause significant frozen through injuries.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/Gun_AESnowBall</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_BeatFire</soundInteract>
+		<statBases>
+			<Mass>0.75</Mass>
+			<AccuracyTouch>0.75</AccuracyTouch>
+			<AccuracyShort>0.50</AccuracyShort>
+			<AccuracyMedium>0.26</AccuracyMedium>
+			<AccuracyLong>0.1</AccuracyLong>
+			<RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>Gun_AESnowBall</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>Ranged</li>
+		</weaponClasses>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Gun_AESnowBall_Thrown</defaultProjectile>
+				<warmupTime>0.4</warmupTime>
+				<range>18.9</range>
+				<soundCast>Interact_BeatFire</soundCast>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+			</li>
+		</verbs>
+	</ThingDef>
+  
+	<ThingDef ParentName="BaseProjectileSnowArmy">
+		<defName>Gun_AESnowBall_Thrown</defName>
+		<label>snowball</label>
+		<graphicData>
+			<texPath>Things/Projectile/AE_SnowBall</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>AEFreezing</damageDef>
+			<damageAmountBase>4.5</damageAmountBase>
+			<stoppingPower>1.2</stoppingPower>
+			<speed>27</speed>
+		</projectile>
+	</ThingDef>
+	
+  
+	<ThingDef ParentName="BaseWeaponSnowArmy">
+		<defName>Gun_AESnowBlock</defName>
+		<label>snow block</label>
+		<description>The Snowblock is a simple yet effective projectile weapon. Formed from highly compressed snow infused with nitrogen, it can be thrown with some force, delivering a chilling impact upon everyone in impact area. When thrown, it delivers a powerful, freezing impact, causing substantial damage, slowing down targets and cryogenicly bonding mechanical components.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/Gun_AESnowBlock</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.25</drawSize>
+		</graphicData>
+		<soundInteract>Interact_BeatFire</soundInteract>
+		<statBases>
+			<Mass>12</Mass>
+			<AccuracyTouch>0.1</AccuracyTouch>
+			<AccuracyShort>0.25</AccuracyShort>
+			<AccuracyMedium>0.50</AccuracyMedium>
+			<AccuracyLong>0.75</AccuracyLong>
+			<RangedWeapon_Cooldown>6.0</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>Gun_AESnowBlock</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>Ranged</li>
+		</weaponClasses>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Gun_AESnowBlock_Thrown</defaultProjectile>
+				<forcedMissRadius>3</forcedMissRadius>
+				<isMortar>true</isMortar>
+				<requireLineOfSight>false</requireLineOfSight>
+				<warmupTime>4.0</warmupTime>
+				<minRange>7</minRange>
+				<range>50</range>
+				<soundCast>Interact_BeatFire</soundCast>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+			</li>
+		</verbs>
+	</ThingDef>
+  
+	<ThingDef ParentName="BaseProjectileSnowArmy" Name="BaseProjectileSnowArmySnowBlock">
+		<defName>Gun_AESnowBlock_Thrown</defName>
+		<label>snow block</label>
+		<graphicData>
+			<texPath>Things/Projectile/AE_SnowBlock</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.25</drawSize>
+		</graphicData>
+		<thingClass>Projectile_Explosive</thingClass>
+		<projectile>
+			<useGraphicClass>True</useGraphicClass>
+			<shadowSize>1</shadowSize>
+			<damageDef>AENitrogen</damageDef>
+			<damageAmountBase>6</damageAmountBase>
+			<speed>16</speed>
+			<stoppingPower>1</stoppingPower>
+			<arcHeightFactor>1</arcHeightFactor>
+			<explosionRadius>2.5</explosionRadius>
+			<flyOverhead>true</flyOverhead>
+			<soundExplode>SpitterSpitLands</soundExplode>
+			<filth>Filth_AESpentNitrogen</filth>
+			<filthCount>1</filthCount>
+			<explosionEffect>Shell_AESnowBlockImpact</explosionEffect>
+			<explosionEffectLifetimeTicks>15</explosionEffectLifetimeTicks>
+			<doExplosionVFX>false</doExplosionVFX>
+		</projectile>
+		<comps>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>Shell_AESnowBlockStream</effecterDef>
+			</li>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>Shell_AESnowBlockLaunched</effecterDef>
+			</li>
+		</comps>
+	</ThingDef>
+	
+  
+	<ThingDef ParentName="BaseWeaponSnowArmy">
+		<defName>Gun_AEIcicle</defName>
+		<label>icicle</label>
+		<description>The Icicle is a simple yet effective projectile weapon. Formed from sharp ice shard, it can be thrown with surprising force. Its high-impact strikes deliver precise damage, and should it shatter, the fragments inflict further injury. Its ability to effectively disrupt force fields remains a mystery.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/Gun_AEIcicle</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<equippedAngleOffset>30</equippedAngleOffset>
+		<soundInteract>Interact_BeatFire</soundInteract>
+		<statBases>
+			<Mass>0.75</Mass>
+			<AccuracyTouch>0.35</AccuracyTouch>
+			<AccuracyShort>0.60</AccuracyShort>
+			<AccuracyMedium>0.80</AccuracyMedium>
+			<AccuracyLong>0.92</AccuracyLong>
+			<RangedWeapon_Cooldown>3.7</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>Gun_AEIcicle</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>Ranged</li>
+		</weaponClasses>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_AEIcicle</defaultProjectile>
+				<warmupTime>2.3</warmupTime>
+				<range>40</range>
+				<soundCast>Interact_BeatFire</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+				<muzzleFlashScale>0</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>point</label>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>13</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+	
+	
+
+	<ThingDef Name="AE_BaseSnowArmyRangeHumanWeapon" ParentName="BaseHumanMakeableGun" Abstract="True">
+		<possessionCount>1</possessionCount>
+		<techLevel>Ultra</techLevel>
+		<tradeTags Inherit="False"/>
+		<weaponTags Inherit="False"/>
+		<genericMarketSellable>false</genericMarketSellable>
+		<tradeability>Sellable</tradeability>
+		<recipeMaker>
+			<recipeUsers Inherit="false">
+				<li>BioferriteShaper</li>
+			</recipeUsers>
+			<displayPriority>1300</displayPriority>
+		</recipeMaker>
+		<thingCategories>
+			<li>AEWeaponsAnomalies</li>
+		</thingCategories>
+	</ThingDef>
+	
+	<ThingDef ParentName="AE_BaseSnowArmyRangeHumanWeapon">
+		<defName>Gun_AESnowBallGun</defName>
+		<label>snowball gun</label>
+		<description>This weapon utilizes atmospheric moisture or direct snow loading to generate snowballs, which are then fired with impressive velocity. A well-aimed shot can cause severe freezing injuries, though its effective range is limited. Replicating snowballs of SA-01.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/AESnowBallGun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<WorkToMake>12000</WorkToMake>
+			<Mass>3.4</Mass>
+			<AccuracyTouch>0.8</AccuracyTouch>
+			<AccuracyShort>0.65</AccuracyShort>
+			<AccuracyMedium>0.50</AccuracyMedium>
+			<AccuracyLong>0.1</AccuracyLong>
+			<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+		</statBases>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_AESnowBall</defaultProjectile>
+				<warmupTime>0.4</warmupTime>
+				<range>18.9</range>
+				<soundCast>Shot_Shotgun</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>0</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>4</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>3</cooldownTime>
+			</li>
+		</tools>
+		<costList>
+			<AE_IceCrystal>8</AE_IceCrystal>
+			<Bioferrite>35</Bioferrite>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>AESummonSnowArmy</researchPrerequisite>
+		</recipeMaker>
+		<soundInteract>Interact_Shotgun</soundInteract>
+		<weaponClasses>
+			<li>ShortShots</li>
+		</weaponClasses>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_AESnowBall</defName>
+		<label>snowball</label>
+		<graphicData>
+			<texPath>Things/Projectile/AE_SnowBall</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>AEFreezing</damageDef>
+			<damageAmountBase>16</damageAmountBase>
+			<stoppingPower>1.4</stoppingPower>
+			<speed>25</speed>
+		</projectile>
+	</ThingDef>
+	
+	
+	<ThingDef ParentName="AE_BaseSnowArmyRangeHumanWeapon">
+		<defName>Gun_AEIcicleRifle</defName>
+		<label>icicle rifle</label>
+		<description>This weapon utilizes atmospheric moisture or direct snow loading to generate icicles, which are then fired with exceptional speed and range. Projectiles have a chance to exhibit fragmentation upon impact, resulting in secondary projectile damage. Impact with electronic systems or force field emitters induces electrical short-circuiting. Replicating icicles of SA-05.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/AEIcicleRifle</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<WorkToMake>45000</WorkToMake>
+			<Mass>4</Mass>
+			<AccuracyTouch>0.35</AccuracyTouch>
+			<AccuracyShort>0.60</AccuracyShort>
+			<AccuracyMedium>0.80</AccuracyMedium>
+			<AccuracyLong>0.92</AccuracyLong>
+			<RangedWeapon_Cooldown>3.1</RangedWeapon_Cooldown>
+		</statBases>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_AEIcicle</defaultProjectile>
+				<warmupTime>2.5</warmupTime>
+				<range>40</range>
+				<soundCast>Shot_SniperRifle</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>0</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<costList>
+			<AE_IceCrystal>12</AE_IceCrystal>
+			<Bioferrite>45</Bioferrite>
+			<ComponentIndustrial>5</ComponentIndustrial>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>AENanoInfusedIceCrystal</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<weaponClasses>
+			<li>LongShots</li>
+			<li>RangedHeavy</li>
+		</weaponClasses>
+	</ThingDef>
+  
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_AEIcicle</defName>
+		<label>icicle</label>
+		<graphicData>
+			<texPath>Things/Projectile/AE_Icicle</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>EMP</damageDef>
+			<damageAmountBase>15</damageAmountBase>
+			<stoppingPower>2.5</stoppingPower>
+			<speed>90</speed>
+			<extraDamages>
+				<li>
+					<def>AEFreezing</def>
+					<amount>20</amount>
+				</li>
+				<li>
+					<def>RangedStab</def>
+					<amount>10</amount>
+					<armorPenetration>0.07</armorPenetration>
+					<chance>0.35</chance>
+				</li>
+				<li>
+					<def>Blunt</def>
+					<amount>10</amount>
+					<armorPenetration>0.07</armorPenetration>
+					<chance>0.35</chance>
+				</li>
+			</extraDamages>
+		</projectile>
+	</ThingDef>
+  
+</Defs>

@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>AEForbiddenFruitImplant</defName>
+		<label>implant of forbidden knowledge</label>
+		<labelNoun>an implant of forbidden knowledge</labelNoun>
+		<description>An installed anomalous brain implant, which maintains connection between the host's consciousness and the entity, facilitating the exchange of knowledge and thoughts, without disturbing the entity.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AEForbiddenFruitImplant</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>AEForbiddenFruitImplant</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<GlobalLearningFactor>0.35</GlobalLearningFactor>
+					<ReadingSpeed>0.15</ReadingSpeed>
+				</statOffsets>
+				<statFactors>
+					<StudyEfficiency MayRequire="Ludeon.RimWorld.Anomaly">1.35</StudyEfficiency>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	
+
+	<HediffDef Name="AEGrinderStomach" ParentName="AddedBodyPartBase">
+		<defName>AEGrinderStomach</defName>
+		<label>grinder stomach</label>
+		<labelNoun>a grinder stomach</labelNoun>
+		<description>An installed anomalous artificial stomach, which replicate Meat Grinder structure. Internal blades grind up any foreign organic objects to create a nutrient source. A person with this has almost no chance of getting food poisoning, and is immune to some stomach diseases. To sustain itself, it will drain more nutrients from the host. This organic metal possesses self-healing properties, repairing damage on its own. It drastically surpasses its biological counterpart in several aspects.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AEGrinderStomach</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>AEGrinderStomach</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<makeImmuneTo>
+					<li>GutWorms</li>
+					<li>FoodPoisoning</li>
+					<li>MuscleParasites</li>
+				</makeImmuneTo>
+				<foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
+				<statFactors>
+					<RawNutritionFactor MayRequire="Ludeon.RimWorld.Biotech">2</RawNutritionFactor>
+				</statFactors>
+				<hungerRateFactor>1.1</hungerRateFactor>
+			</li>
+		</stages>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>2</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+	
+	<HediffDef Name="AEGrinderJaw" ParentName="AddedBodyPartBase">
+		<defName>AEGrinderJaw</defName>
+		<label>grinder jaw</label>
+		<labelNoun>a grinder jaw</labelNoun>
+		<description>An installed anomalous artificial jaw, which replicate Meat Grinder structure. Spinning razor-sharp blades within, pulverizing any food source into a digestible slurry, allowing for significantly faster consumption. Its immense power even enables it to bite off limbs of living opponents. The intense vibrations cause pain to the host. Paradoxically, the jaw also enhances the user's voice, making it more soothing. This organic metal possesses self-healing properties, repairing damage on its own. It drastically surpasses its biological counterpart in several aspects.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AEGrinderJaw</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>AEGrinderJaw</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statFactors>
+					<EatingSpeed>2</EatingSpeed>
+				</statFactors>
+				<painOffset>0.15</painOffset>
+				<capMods>
+					<li>
+						<capacity>Eating</capacity>
+						<postFactor>2</postFactor>
+					</li>
+					<li>
+						<capacity>Talking</capacity>
+						<postFactor>0.8</postFactor>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>2</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>grinder jaw</label>
+						<capacities>
+							<li>Bite</li>
+						</capacities>
+						<power>32</power>
+						<chanceFactor>0.3</chanceFactor>
+						<cooldownTime>2</cooldownTime>
+						<soundMeleeHit>Pawn_Melee_PowerClaw_Hit</soundMeleeHit>
+						<soundMeleeMiss>Pawn_Melee_PowerClaw_Miss</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	<HediffDef ParentName="AEGrinderStomach">
+		<defName>AEGrinderStomachHidden</defName>
+		<description>An installed anomalous artificial stomach. Internal blades grind up any foreign organic objects to create a nutrient source. A person with this has almost no chance of getting food poisoning, and is immune to some stomach diseases. To sustain itself, it will drain more nutrients from the host. This organic metal possesses self-healing properties, repairing damage on its own. It drastically surpasses its biological counterpart in several aspects.</description>
+		<descriptionHyperlinks Inherit="false"/>
+		<spawnThingOnRemoved Inherit="false"/>
+		<defaultInstallPart>Stomach</defaultInstallPart>
+		<comps>
+			<li Class="HediffCompProperties_SurgeryInspectable">
+				<surgicalDetectionDesc>Found some sort of artificial implant that replacing subject stomach.</surgicalDetectionDesc>
+			</li>
+		</comps>
+		<stages Inherit="false">
+			<li>
+				<becomeVisible>false</becomeVisible>
+				<makeImmuneTo>
+					<li>GutWorms</li>
+					<li>FoodPoisoning</li>
+					<li>MuscleParasites</li>
+				</makeImmuneTo>
+				<foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
+				<statFactors>
+					<RawNutritionFactor MayRequire="Ludeon.RimWorld.Biotech">2</RawNutritionFactor>
+				</statFactors>
+				<hungerRateFactor>1.1</hungerRateFactor>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="AEGrinderJaw">
+		<defName>AEGrinderJawHidden</defName>
+		<description>An installed anomalous artificial jaw. Spinning razor-sharp blades within, pulverizing any food source into a digestible slurry, allowing for significantly faster consumption. Its immense power even enables it to bite off limbs of living opponents. The intense vibrations cause pain to the host. Paradoxically, the jaw also enhances the user's voice, making it more soothing. This organic metal possesses self-healing properties, repairing damage on its own. It drastically surpasses its biological counterpart in several aspects.</description>
+		<descriptionHyperlinks Inherit="false"/>
+		<spawnThingOnRemoved Inherit="false"/>
+		<defaultInstallPart>Jaw</defaultInstallPart>
+		<comps>
+			<li Class="HediffCompProperties_SurgeryInspectable">
+				<surgicalDetectionDesc>Found some sort of artificial implant that replacing subject jaw.</surgicalDetectionDesc>
+			</li>
+		</comps>
+		<stages Inherit="false">
+			<li>
+				<becomeVisible>false</becomeVisible>
+				<statFactors>
+					<EatingSpeed>2</EatingSpeed>
+				</statFactors>
+				<painOffset>0.15</painOffset>
+				<capMods>
+					<li>
+						<capacity>Eating</capacity>
+						<postFactor>2</postFactor>
+					</li>
+					<li>
+						<capacity>Talking</capacity>
+						<postFactor>0.8</postFactor>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	
+
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>AEThermalReflectiveSkinImplant</defName>
+		<label>thermal-reflective skin gland</label>
+		<labelNoun>a thermal-reflective skin gland</labelNoun>
+		<description>An installed anomalous thermal-reflective skin gland, which replicate the reflective surface structure of a Transmitter. The skin's cellular structure is altered to reflect both light and thermal radiation, offering exceptional protection against burns and heat-based attacks. The altered surface beautifully diffracts light, creating a captivating interplay of colors and a radiant glow that enhances the user's attractiveness in a unique and striking manner. However, this transformation also makes the skin more fragile and susceptible to physical damage.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AEThermalReflectiveSkinImplant</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>AEThermalReflectiveSkinImplant</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<statOffsets>
+					<ArmorRating_Sharp>-0.1</ArmorRating_Sharp>
+					<ArmorRating_Blunt>-0.3</ArmorRating_Blunt>
+					<ArmorRating_Heat>2</ArmorRating_Heat>
+					<PawnBeauty>1</PawnBeauty>
+				</statOffsets>
+			</li>
+		</stages>
+		<tags><li>ArmorGland</li></tags>
+	</HediffDef>
+	
+	
+
+	<HediffDef Name="AESnowCoreImplant" ParentName="ImplantHediffBase">
+		<defName>AESnowCoreImplant</defName>
+		<label>snow core implant</label>
+		<labelNoun>a snow core implant</labelNoun>
+		<description>An installed anomalous implant, replicating the Snow Army's snow core, enabling the host to survive in lower temperatures. Nano-scale frostites induce cellular crystallization upon injury, accelerating regeneration in lower temperatures. However, this crystallization makes the cells vulnerable to high temperatures, destabilizing their structure. The host body also lowers the temperature of the surrounding air.\n\nRecieved damage x2, when on fire.\nMax effect at -100 degrees, including regeneration of missing parts.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AESnowCoreImplant</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>AESnowCoreImplant</spawnThingOnRemoved>
+		<defaultLabelColor>(0.31, 0.69, 0.835)</defaultLabelColor>
+		<comps>
+			<li>
+				<compClass>AnomaliesExpected.HediffComp_SnowArmy</compClass>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<minSeverity>1</minSeverity>
+			</li>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>1</naturalHealingFactor>
+				<minSeverity>2</minSeverity>
+			</li>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>1.5</naturalHealingFactor>
+				<minSeverity>10</minSeverity>
+			</li>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>2</naturalHealingFactor>
+				<minSeverity>20</minSeverity>
+			</li>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>2.5</naturalHealingFactor>
+				<totalBleedFactor>0.9</totalBleedFactor>
+				<minSeverity>30</minSeverity>
+			</li>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>3</naturalHealingFactor>
+				<totalBleedFactor>0.9</totalBleedFactor>
+				<minSeverity>40</minSeverity>
+			</li>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>3.5</naturalHealingFactor>
+				<totalBleedFactor>0.8</totalBleedFactor>
+				<minSeverity>50</minSeverity>
+			</li>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>4</naturalHealingFactor>
+				<totalBleedFactor>0.8</totalBleedFactor>
+				<minSeverity>60</minSeverity>
+			</li>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>4.5</naturalHealingFactor>
+				<totalBleedFactor>0.7</totalBleedFactor>
+				<minSeverity>70</minSeverity>
+			</li>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>5</naturalHealingFactor>
+				<totalBleedFactor>0.6</totalBleedFactor>
+				<minSeverity>80</minSeverity>
+			</li>
+			<li>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>6</naturalHealingFactor>
+				<totalBleedFactor>0.5</totalBleedFactor>
+				<regeneration>5</regeneration>
+				<minSeverity>100</minSeverity>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="AESnowCoreImplant">
+		<defName>AESnowCoreImplantHidden</defName>
+		<description>An installed frozen implant, enabling the host to survive in lower temperatures. Something induce cellular crystallization upon injury, accelerating regeneration in lower temperatures. However, this crystallization makes the cells vulnerable to high temperatures, destabilizing their structure. The host body also lowers the temperature of the surrounding air.\n\nRecieved damage x2, when on fire.\nMax effect at -100 degrees.\nStart regenerating missing parts after -50 degrees.</description>
+		<descriptionHyperlinks Inherit="false"/>
+		<spawnThingOnRemoved Inherit="false"/>
+		<defaultInstallPart>Torso</defaultInstallPart>
+		<comps>
+			<li Class="HediffCompProperties_SurgeryInspectable">
+				<surgicalDetectionDesc>Found some sort of snow core implant within subject torso.</surgicalDetectionDesc>
+			</li>
+			<li Class="HediffCompProperties_DissolveGearOnDeath">
+				<fleck>SnowBits</fleck>
+				<moteCount>6</moteCount>
+				<moteOffsetRange>0.25~0.75</moteOffsetRange>
+				<sound>Explosion_Stun</sound>
+				<injuryCreatedOnDeath>Frostbite</injuryCreatedOnDeath>
+				<injuryCount>9~15</injuryCount>
+			</li>
+			<li Class="AnomaliesExpected.HediffCompProperties_SpawnPawnOnDeath">
+				<pawnKindCount>
+					<kindDef>AE_IceMan</kindDef>
+					<count>1</count>
+				</pawnKindCount>
+				<factionDef>AE_SnowArmy</factionDef>
+			</li>
+		</comps>
+		<stages Inherit="false">
+			<li>
+				<becomeVisible>false</becomeVisible>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-50</ComfyTemperatureMin>
+				</statOffsets>
+				<minSeverity>1</minSeverity>
+			</li>
+			<li>
+				<becomeVisible>false</becomeVisible>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-50</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>1.5</naturalHealingFactor>
+				<minSeverity>2</minSeverity>
+			</li>
+			<li>
+				<becomeVisible>false</becomeVisible>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-50</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>2</naturalHealingFactor>
+				<minSeverity>10</minSeverity>
+			</li>
+			<li>
+				<becomeVisible>false</becomeVisible>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-50</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>2.5</naturalHealingFactor>
+				<minSeverity>20</minSeverity>
+			</li>
+			<li>
+				<becomeVisible>false</becomeVisible>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-50</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>3</naturalHealingFactor>
+				<totalBleedFactor>0.9</totalBleedFactor>
+				<minSeverity>30</minSeverity>
+			</li>
+			<li>
+				<becomeVisible>false</becomeVisible>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-50</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>3.5</naturalHealingFactor>
+				<totalBleedFactor>0.9</totalBleedFactor>
+				<minSeverity>40</minSeverity>
+			</li>
+			<li>
+				<becomeVisible>false</becomeVisible>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-50</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>4</naturalHealingFactor>
+				<totalBleedFactor>0.8</totalBleedFactor>
+				<regeneration>1</regeneration>
+				<minSeverity>50</minSeverity>
+			</li>
+			<li>
+				<becomeVisible>false</becomeVisible>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-50</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>4.5</naturalHealingFactor>
+				<totalBleedFactor>0.8</totalBleedFactor>
+				<regeneration>3</regeneration>
+				<minSeverity>60</minSeverity>
+			</li>
+			<li>
+				<becomeVisible>false</becomeVisible>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-50</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>5</naturalHealingFactor>
+				<totalBleedFactor>0.7</totalBleedFactor>
+				<regeneration>5</regeneration>
+				<minSeverity>70</minSeverity>
+			</li>
+			<li>
+				<becomeVisible>false</becomeVisible>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-50</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>5.5</naturalHealingFactor>
+				<totalBleedFactor>0.6</totalBleedFactor>
+				<regeneration>7</regeneration>
+				<minSeverity>80</minSeverity>
+			</li>
+			<li>
+				<becomeVisible>false</becomeVisible>
+				<statOffsets>
+					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-50</ComfyTemperatureMin>
+				</statOffsets>
+				<naturalHealingFactor>9</naturalHealingFactor>
+				<totalBleedFactor>0.5</totalBleedFactor>
+				<regeneration>10</regeneration>
+				<minSeverity>100</minSeverity>
+			</li>
+		</stages>
+	</HediffDef>
+	
+</Defs>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="FleshmassSpitter">
+		<defName>AE_FleshmassSpitterGiant</defName>
+		<label>giant fleshmass spitter</label>
+		<description>A giant defensive fleshmass organ that can spit acid very long distances. The acid is a natural byproduct of toxins filtered from the surrounding biomass.</description>
+		<size>(3, 3)</size>
+		<statBases>
+			<MaxHitPoints>900</MaxHitPoints>
+		</statBases>
+		<graphicData>
+			<drawSize>(3.75, 3.75)</drawSize>
+		</graphicData>
+		<verbs Inherit="False">
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+				<warmupTime>4.0</warmupTime>
+				<forcedMissRadius>5</forcedMissRadius>
+				<defaultProjectile>AE_Bullet_Shell_AcidSpitGiant</defaultProjectile>
+				<isMortar>true</isMortar>
+				<requireLineOfSight>false</requireLineOfSight>
+				<minRange>29.9</minRange>
+				<range>401.9</range>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>SpitterSpit</soundCast>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<comps Inherit="False">
+			<li Class="AnomaliesExpected.CompProperties_AEFleshmassSpitter">
+				<SpitIntervalInitRangeTicks>40000~80000</SpitIntervalInitRangeTicks>
+				<SpitIntervalRangeTicks>25000~55000</SpitIntervalRangeTicks>
+				<isAbleToFireThroughRoof>true</isAbleToFireThroughRoof>
+			</li>
+			<li Class="CompProperties_FleshmassBase">
+				<size>3</size>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="Bullet_Shell_AcidSpit">
+		<defName>AE_Bullet_Shell_AcidSpitGiant</defName>
+		<label>giant acid spit</label>
+		<graphicData>
+			<drawSize>(1.5, 1.5)</drawSize>
+		</graphicData>
+		<projectile>
+			<shadowSize>2</shadowSize>
+			<damageDef>AcidBurnFleshmass</damageDef>
+			<spinRate>5</spinRate>
+			<damageAmountBase>30</damageAmountBase>
+			<speed>18</speed>
+			<arcHeightFactor>2</arcHeightFactor>
+			<explosionRadius>7.9</explosionRadius>
+			<explosionEffectLifetimeTicks>90</explosionEffectLifetimeTicks>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="FleshmassSpitter">
+		<defName>AE_FleshmassSpitterMedium</defName>
+		<verbs Inherit="False">
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+				<warmupTime>2.0</warmupTime>
+				<forcedMissRadius>3</forcedMissRadius>
+				<defaultProjectile>AE_Bullet_Shell_AcidSpitMedium</defaultProjectile>
+				<isMortar>true</isMortar>
+				<requireLineOfSight>false</requireLineOfSight>
+				<minRange>8.9</minRange>
+				<range>51.9</range>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>SpitterSpit</soundCast>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<comps Inherit="False">
+			<li Class="AnomaliesExpected.CompProperties_AEFleshmassSpitter">
+				<SpitIntervalInitRangeTicks>20000~40000</SpitIntervalInitRangeTicks>
+				<SpitIntervalRangeTicks>10000~30000</SpitIntervalRangeTicks>
+			</li>
+			<li Class="CompProperties_FleshmassBase">
+				<size>2</size>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="Bullet_Shell_AcidSpit">
+		<defName>AE_Bullet_Shell_AcidSpitMedium</defName>
+		<projectile>
+			<damageDef>AcidBurnFleshmass</damageDef>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="FleshmassSpitter">
+		<defName>AE_FleshmassSpitterSmall</defName>
+		<label>small fleshmass spitter</label>
+		<description>A defensive fleshmass organ that can spit acid short distances. The acid is a natural byproduct of toxins filtered from the surrounding biomass.</description>
+		<size>(1, 1)</size>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+		</statBases>
+		<graphicData>
+			<drawSize>(1.25, 1.25)</drawSize>
+		</graphicData>
+		<verbs Inherit="False">
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+				<warmupTime>1.0</warmupTime>
+				<forcedMissRadius>1</forcedMissRadius>
+				<defaultProjectile>AE_Bullet_Shell_AcidSpitSmall</defaultProjectile>
+				<isMortar>true</isMortar>
+				<requireLineOfSight>false</requireLineOfSight>
+				<range>20.9</range>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>SpitterSpit</soundCast>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<comps Inherit="False">
+			<li Class="AnomaliesExpected.CompProperties_AEFleshmassSpitter">
+				<SpitIntervalInitRangeTicks>10000~20000</SpitIntervalInitRangeTicks>
+				<SpitIntervalRangeTicks>5000~15000</SpitIntervalRangeTicks>
+			</li>
+			<li Class="CompProperties_FleshmassBase">
+				<size>1</size>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="Bullet_Shell_AcidSpit">
+		<defName>AE_Bullet_Shell_AcidSpitSmall</defName>
+		<label>small acid spit</label>
+		<graphicData>
+			<drawSize>(0.5, 0.5)</drawSize>
+		</graphicData>
+		<projectile>
+			<shadowSize>0.5</shadowSize>
+			<damageDef>AcidBurnFleshmass</damageDef>
+			<spinRate>40</spinRate>
+			<damageAmountBase>5</damageAmountBase>
+			<speed>70</speed>
+			<arcHeightFactor>1</arcHeightFactor>
+			<explosionRadius>1.9</explosionRadius>
+			<explosionEffectLifetimeTicks>30</explosionEffectLifetimeTicks>
+		</projectile>
+	</ThingDef>
+	
+	
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>AE_BloodLakeUndergroundNest</defName>
+		<label>underground fleshmass nest</label>
+		<description>A massive, ominous hole that connects the surface to a subterranean network of passages and tunnels infested by fleshmass.</description>
+		<graphicData>
+			<texPath>Things/Building/AE_BloodLakeUndergroundNest</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<size>(3,3)</size>
+		<canOverlapZones>false</canOverlapZones>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<altitudeLayer>FloorEmplacement</altitudeLayer>
+		<useHitPoints>false</useHitPoints>
+		<rotatable>false</rotatable>
+		<pathCost>30</pathCost>
+		<holdsRoof>true</holdsRoof>
+		<statBases>
+			<Flammability>0</Flammability>
+			<Cleanliness>-30</Cleanliness>
+		</statBases>
+		<tickerType>Never</tickerType>
+		<building>
+			<isEdifice>true</isEdifice>
+			<deconstructible>false</deconstructible>
+			<isTargetable>false</isTargetable>
+			<isInert>true</isInert>
+			<claimable>false</claimable>
+			<expandHomeArea>false</expandHomeArea>
+		</building>
+		<comps>
+			<li Class="CompProperties_Glower">
+				<glowRadius>18</glowRadius>
+				<glowColor>(150, 0, 0, 0)</glowColor>
+			</li>
+		</comps>
+	</ThingDef>
+	
+</Defs>

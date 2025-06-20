@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallAEForbiddenFruitImplant</defName>
+		<label>install implant of forbidden knowledge</label>
+		<description>Install an implant of forbidden knowledge.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AEForbiddenFruitImplant</ThingDef>
+			<HediffDef>AEForbiddenFruitImplant</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing implant of forbidden knowledge.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AEForbiddenFruitImplant</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AEForbiddenFruitImplant</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AEForbiddenFruitImplant</addsHediff>
+		<surgerySuccessChanceFactor>99999</surgerySuccessChanceFactor>
+	</RecipeDef>
+
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveAEForbiddenFruitImplant</defName>
+		<label>remove implant of forbidden knowledge</label>
+		<description>Remove implant of forbidden knowledge.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AEForbiddenFruitImplant</ThingDef>
+			<HediffDef>AEForbiddenFruitImplant</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Removing implant of forbidden knowledge.</jobString>
+		<removesHediff>AEForbiddenFruitImplant</removesHediff>
+	</RecipeDef>
+	
+
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallAEGrinderStomach</defName>
+		<label>install grinder stomach</label>
+		<description>Install a grinder stomach.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AEGrinderStomach</ThingDef>
+			<HediffDef>AEGrinderStomach</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing grinder stomach.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AEGrinderStomach</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AEGrinderStomach</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Stomach</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AEGrinderStomach</addsHediff>
+	</RecipeDef>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>InstallAEGrinderJaw</defName>
+		<label>Install grinder jaw</label>
+		<description>Install grinder jaw.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AEGrinderJaw</ThingDef>
+			<HediffDef>AEGrinderJaw</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing grinder jaw.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AEGrinderJaw</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AEGrinderJaw</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Jaw</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AEGrinderJaw</addsHediff>
+	</RecipeDef>
+	
+	
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallAEThermalReflectiveSkinImplant</defName>
+		<label>install thermal-reflective skin gland</label>
+		<description>Install a thermal-reflective skin gland.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AEThermalReflectiveSkinImplant</ThingDef>
+			<HediffDef>AEThermalReflectiveSkinImplant</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing thermal-reflective skin gland.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AEThermalReflectiveSkinImplant</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AEThermalReflectiveSkinImplant</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AEThermalReflectiveSkinImplant</addsHediff>
+		<incompatibleWithHediffTags>
+			<li>ArmorGland</li>
+		</incompatibleWithHediffTags>
+	</RecipeDef>
+
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveAEThermalReflectiveSkinImplant</defName>
+		<label>remove thermal-reflective skin gland</label>
+		<description>Remove thermal-reflective skin gland.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AEThermalReflectiveSkinImplant</ThingDef>
+			<HediffDef>AEThermalReflectiveSkinImplant</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Removing thermal-reflective skin gland.</jobString>
+		<removesHediff>AEThermalReflectiveSkinImplant</removesHediff>
+	</RecipeDef>
+	
+
+
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>InstallAESnowCoreImplant</defName>
+		<label>install snow core implant</label>
+		<description>Install a snow core implant.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AESnowCoreImplant</ThingDef>
+			<HediffDef>AESnowCoreImplant</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing snow core implant.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AESnowCoreImplant</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>AESnowCoreImplant</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Torso</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AESnowCoreImplant</addsHediff>
+	</RecipeDef>
+
+	<RecipeDef ParentName="SurgeryRemoveImplantBase">
+		<defName>RemoveAESnowCoreImplant</defName>
+		<label>remove snow core implant</label>
+		<description>Remove snow core implant.</description>
+		<descriptionHyperlinks>
+			<ThingDef>AESnowCoreImplant</ThingDef>
+			<HediffDef>AESnowCoreImplant</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Removing snow core implant.</jobString>
+		<removesHediff>AESnowCoreImplant</removesHediff>
+	</RecipeDef>
+  
+</Defs>

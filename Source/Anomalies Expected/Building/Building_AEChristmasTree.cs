@@ -1,20 +1,13 @@
 ﻿using RimWorld;
-using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
-using Verse.Sound;
 
 namespace AnomaliesExpected
 {
     public class Building_AEChristmasTree : Building_AEMapPortal
     {
-        private static readonly CachedTexture EnterPitGateTex = new CachedTexture("UI/Commands/EnterPitGate");
-        protected override Texture2D EnterTex => EnterPitGateTex.Texture;
-
-        private static readonly CachedTexture ViewUndercaveTex = new CachedTexture("UI/Commands/ViewUndercave");
-
         public AE_BloodLakeExtension ExtBloodLake => extBloodLakeCached ?? (extBloodLakeCached = def.GetModExtension<AE_BloodLakeExtension>());
         private AE_BloodLakeExtension extBloodLakeCached;
 
@@ -28,7 +21,8 @@ namespace AnomaliesExpected
         private bool isReadyToEnter => (StudyUnlocks?.NextIndex ?? 1) >= 1;
         public bool isSubMapExist => subMap != null && Find.Maps.IndexOf(subMap) >= 0;
 
-        public override string EnterCommandString => "AnomaliesExpected.ChristmasStockings.Enter".Translate();
+        public override string EnterString => "AnomaliesExpected.ChristmasStockings.Enter".Translate(Label);
+        public override string EnteringString => "AnomaliesExpected.ChristmasStockings.Entering".Translate(Label);
 
         public override bool AutoDraftOnEnter => true;
         public bool isCreatedMap;
@@ -45,7 +39,7 @@ namespace AnomaliesExpected
             base.Destroy(mode);
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             if (Find.TickManager.TicksGame > NewYearTick && isCreatedMap)
@@ -57,12 +51,9 @@ namespace AnomaliesExpected
 
         public void GenerateSubMap()
         {
-            if (ExtBloodLake.mapGeneratorDef != null)
+            if (def.portal.pocketMapGenerator != null)
             {
-                PocketMapParent pocketMapParent = WorldObjectMaker.MakeWorldObject(WorldObjectDefOf.PocketMap) as PocketMapParent;
-                pocketMapParent.sourceMap = Map;
-                subMap = MapGenerator.GenerateMap(new IntVec3(50, 1, 50), pocketMapParent, ExtBloodLake.mapGeneratorDef, isPocketMap: true);
-                Find.World.pocketMaps.Add(pocketMapParent);
+                subMap = PocketMapUtility.GeneratePocketMap(new IntVec3(def.portal.pocketMapSize, 1, def.portal.pocketMapSize), def.portal.pocketMapGenerator, null, Map);
                 isCreatedMap = true;
                 mapComponentCached = subMap?.GetComponent<ChristmasTreeMapComponent>() ?? null;
                 NewYearTick = NextNewYearTick;
@@ -94,14 +85,6 @@ namespace AnomaliesExpected
                 isBeenEntered = true;
                 StudyUnlocks.UnlockStudyNoteManual(1);
             }
-            if (Find.CurrentMap == base.Map)
-            {
-                SoundDefOf.TraversePitGate.PlayOneShot(this);
-            }
-            else if (Find.CurrentMap == exitBuilding.Map)
-            {
-                SoundDefOf.TraversePitGate.PlayOneShot(exitBuilding);
-            }
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
@@ -120,7 +103,7 @@ namespace AnomaliesExpected
                 {
                     defaultLabel = "AnomaliesExpected.BloodLake.ViewSubMap.Label".Translate(),
                     defaultDesc = "AnomaliesExpected.BloodLake.ViewSubMap.Desc".Translate(),
-                    icon = ViewUndercaveTex.Texture,
+                    icon = ViewSubMapTex.Texture,
                     action = delegate
                     {
                         CameraJumper.TryJumpAndSelect(exitBuilding);

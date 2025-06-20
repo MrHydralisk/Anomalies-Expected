@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<CreepJoinerDownsideDef>
+		<defName>AE_DownsideMentalState_BingingFood</defName>
+		<label>binging food</label>
+		<workerType>AnomaliesExpected.CreepJoinerWorker_AEDownsideMentalState</workerType>
+		<weight>1</weight>
+		<canOccurRandomly>false</canOccurRandomly>
+		<repeats>true</repeats>
+		<triggerMtbDays>4</triggerMtbDays>
+		<triggerMinDays>2</triggerMinDays>
+		<mustBeConscious>true</mustBeConscious>
+		<canOccurWhileDowned>false</canOccurWhileDowned>
+		<canOccurWhenImprisoned>true</canOccurWhenImprisoned>
+		<modExtensions Inherit="False">
+			<li Class="AnomaliesExpected.CreepJoinerDefExtension">
+				<mentalStateDef>Binging_Food</mentalStateDef>
+			</li>
+		</modExtensions>
+	</CreepJoinerDownsideDef>
+
+</Defs>

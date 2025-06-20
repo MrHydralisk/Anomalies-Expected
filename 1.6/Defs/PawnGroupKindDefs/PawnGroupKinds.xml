@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+	<PawnGroupKindDef Name="AE_PGKW_Normal">
+		<defName>AE_BasicMonolith</defName>
+		<workerClass>PawnGroupKindWorker_Normal</workerClass>
+	</PawnGroupKindDef>
+  
+	<PawnGroupKindDef ParentName="AE_PGKW_Normal">
+		<defName>AE_AdvancedMonolith</defName>
+	</PawnGroupKindDef>
+  
+	<PawnGroupKindDef ParentName="AE_PGKW_Normal">
+		<defName>AE_AdvancedMonolithRush</defName>
+	</PawnGroupKindDef>
+	
+</Defs>

@@ -15,16 +15,16 @@ namespace AnomaliesExpected
                 things.Add(ThingMaker.MakeThing(deployThingDef));
             }
             IntVec3 intVec = DropCellFinder.RandomDropSpot(map);
-            ActiveDropPodInfo activeDropPodInfo = new ActiveDropPodInfo();
+            ActiveTransporterInfo activeTransporterInfo = new ActiveTransporterInfo();
             foreach (Thing item2 in things)
             {
-                activeDropPodInfo.innerContainer.TryAdd(item2);
+                activeTransporterInfo.innerContainer.TryAdd(item2);
             }
-            activeDropPodInfo.openDelay = 110;
-            activeDropPodInfo.leaveSlag = false;
-            ActiveDropPod activeDropPod = (ActiveDropPod)ThingMaker.MakeThing(ActiveDropPodDef);
-            activeDropPod.Contents = activeDropPodInfo;
-            SkyfallerMaker.SpawnSkyfaller(SkyfallerDef, activeDropPod, intVec, map);
+            activeTransporterInfo.openDelay = 110;
+            activeTransporterInfo.leaveSlag = false;
+            ActiveTransporter activeTransporter = (ActiveTransporter)ThingMaker.MakeThing(ActiveDropPodDef);
+            activeTransporter.Contents = activeTransporterInfo;
+            SkyfallerMaker.SpawnSkyfaller(SkyfallerDef, activeTransporter, intVec, map);
             SendStandardLetter(def.letterLabel, def.letterText, def.letterDef ?? LetterDefOf.NeutralEvent, parms, new TargetInfo(intVec, map));
             return true;
         }

@@ -5,6 +5,110 @@
 		<mods>
 			<li>Anomaly</li>
 		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/MutantDef[defName="Ghoul"]/drugWhitelist</xpath>
+					<order>Append</order>
+					<value>
+						<li>AERegenSerum</li>
+					</value>
+				</li>
+				<li Class="PatchOperationConditional">
+					<xpath>Defs/MutantDef[defName="Ghoul"]/removesHediffs</xpath>
+					<match Class="PatchOperationAdd">
+						<xpath>Defs/MutantDef[defName="Ghoul"]/removesHediffs</xpath>
+						<order>Append</order>
+						<value>
+							<li>Hediff_AEFleshmassCystAssimilation</li>
+							<li>AE_FleshmassStomach</li>
+							<li>AE_FleshmassAcidCavity</li>
+							<li>Hediff_AEFleshmassTumorAssimilation</li>
+							<li>AE_FleshmassEye</li>
+							<li>AE_FleshmassEar</li>
+							<li>AE_FleshmassKidney</li>
+							<li>AE_FleshmassHeart</li>
+							<li>AE_FleshmassBrainTumor</li>
+							<li>AE_FleshmassBodyMutation</li>
+							<li>Hediff_AEFleshmassPartRestoration</li>
+							<li>AE_FleshmassOrganogenesisCore</li>
+						</value>
+					</match>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/MutantDef[defName="Ghoul"]</xpath>
+						<order>Append</order>
+						<value>
+							<removesHediffs>
+								<li>Hediff_AEFleshmassCystAssimilation</li>
+								<li>AE_FleshmassStomach</li>
+								<li>AE_FleshmassAcidCavity</li>
+								<li>Hediff_AEFleshmassTumorAssimilation</li>
+								<li>AE_FleshmassEye</li>
+								<li>AE_FleshmassEar</li>
+								<li>AE_FleshmassKidney</li>
+								<li>AE_FleshmassHeart</li>
+								<li>AE_FleshmassBrainTumor</li>
+								<li>AE_FleshmassBodyMutation</li>
+								<li>Hediff_AEFleshmassPartRestoration</li>
+								<li>AE_FleshmassOrganogenesisCore</li>
+							</removesHediffs>
+						</value>
+					</nomatch>
+				</li>
+				<li Class="PatchOperationAttributeAdd">
+					<xpath>Defs/ThingDef[defName ="FleshmassSpitter"]</xpath>
+					<attribute>Name</attribute>
+					<value>FleshmassSpitter</value>
+				</li>
+				<li Class="PatchOperationAttributeAdd">
+					<xpath>Defs/ThingDef[defName ="Bullet_Shell_AcidSpit"]</xpath>
+					<attribute>Name</attribute>
+					<value>Bullet_Shell_AcidSpit</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="PsychicRitualSpot"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+					<order>Append</order>
+					<value>
+						<li>AE_ProviderBox</li>
+						<li>AE_EntityDatabase</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="PsychicRitualSpot"]/comps/li[@Class="CompProperties_MeditationFocus"]/offsets</xpath>
+					<order>Append</order>
+					<value>
+						<li Class="FocusStrengthOffset_BuildingDefs">
+							<defs>
+								<li>AE_ProviderBox</li>
+							</defs>
+							<offsetPerBuilding>0.03</offsetPerBuilding>
+							<radius>9.9</radius>
+							<maxBuildings>1</maxBuildings>
+							<explanationKey>MeditationFocusPerBuilding</explanationKey>
+							<explanationKeyAbstract>MeditationFocusPerBuildingAbstract</explanationKeyAbstract>
+						</li>
+						<li Class="FocusStrengthOffset_BuildingDefs">
+							<defs>
+								<li>AE_EntityDatabase</li>
+							</defs>
+							<offsetPerBuilding>0.06</offsetPerBuilding>
+							<radius>9.9</radius>
+							<maxBuildings>1</maxBuildings>
+							<explanationKey>MeditationFocusPerBuilding</explanationKey>
+							<explanationKeyAbstract>MeditationFocusPerBuildingAbstract</explanationKeyAbstract>
+						</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/DesignationCategoryDef[defName="Orders"]/specialDesignatorClasses</xpath>
+					<order>Append</order>
+					<value>
+						<li>AnomaliesExpected.Designator_CaptureEntity</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+		
 		<nomatch Class="PatchOperationSequence">
 			<operations>
 				<li Class="PatchOperationReplace">
@@ -902,86 +1006,6 @@
 				</li>
 			</operations>
 		</nomatch>
-		<match Class="PatchOperationSequence">
-			<operations>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/MutantDef[defName="Ghoul"]/drugWhitelist</xpath>
-					<order>Append</order>
-					<value>
-						<li>AERegenSerum</li>
-					</value>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/MutantDef[defName="Ghoul"]/removesHediffs</xpath>
-					<order>Append</order>
-					<value>
-						<li>Hediff_AEFleshmassCystAssimilation</li>
-						<li>AE_FleshmassStomach</li>
-						<li>AE_FleshmassAcidCavity</li>
-						<li>Hediff_AEFleshmassTumorAssimilation</li>
-						<li>AE_FleshmassEye</li>
-						<li>AE_FleshmassEar</li>
-						<li>AE_FleshmassKidney</li>
-						<li>AE_FleshmassHeart</li>
-						<li>AE_FleshmassBrainTumor</li>
-						<li>AE_FleshmassBodyMutation</li>
-						<li>Hediff_AEFleshmassPartRestoration</li>
-						<li>AE_FleshmassOrganogenesisCore</li>
-					</value>
-				</li>
-				<li Class="PatchOperationAttributeAdd">
-					<xpath>Defs/ThingDef[defName ="FleshmassSpitter"]</xpath>
-					<attribute>Name</attribute>
-					<value>FleshmassSpitter</value>
-				</li>
-				<li Class="PatchOperationAttributeAdd">
-					<xpath>Defs/ThingDef[defName ="Bullet_Shell_AcidSpit"]</xpath>
-					<attribute>Name</attribute>
-					<value>Bullet_Shell_AcidSpit</value>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="PsychicRitualSpot"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
-					<order>Append</order>
-					<value>
-						<li>AE_ProviderBox</li>
-						<li>AE_EntityDatabase</li>
-					</value>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/ThingDef[defName="PsychicRitualSpot"]/comps/li[@Class="CompProperties_MeditationFocus"]/offsets</xpath>
-					<order>Append</order>
-					<value>
-						<li Class="FocusStrengthOffset_BuildingDefs">
-							<defs>
-								<li>AE_ProviderBox</li>
-							</defs>
-							<offsetPerBuilding>0.03</offsetPerBuilding>
-							<radius>9.9</radius>
-							<maxBuildings>1</maxBuildings>
-							<explanationKey>MeditationFocusPerBuilding</explanationKey>
-							<explanationKeyAbstract>MeditationFocusPerBuildingAbstract</explanationKeyAbstract>
-						</li>
-						<li Class="FocusStrengthOffset_BuildingDefs">
-							<defs>
-								<li>AE_EntityDatabase</li>
-							</defs>
-							<offsetPerBuilding>0.06</offsetPerBuilding>
-							<radius>9.9</radius>
-							<maxBuildings>1</maxBuildings>
-							<explanationKey>MeditationFocusPerBuilding</explanationKey>
-							<explanationKeyAbstract>MeditationFocusPerBuildingAbstract</explanationKeyAbstract>
-						</li>
-					</value>
-				</li>
-				<li Class="PatchOperationAdd">
-					<xpath>Defs/DesignationCategoryDef[defName="Orders"]/specialDesignatorClasses</xpath>
-					<order>Append</order>
-					<value>
-						<li>AnomaliesExpected.Designator_CaptureEntity</li>
-					</value>
-				</li>
-			</operations>
-		</match>
 	</Operation>
 
 </Patch>

@@ -11,7 +11,6 @@ namespace AnomaliesExpected
         public Color activeColor = new Color(1, 0, 0);
         public int filthThickness;
         public ThingDef filthDef;
-        public MapGeneratorDef mapGeneratorDef;
         public float aggressionRadius = 1;
     }
 }

@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<BodyPartDef Name="BodyPart_AEBaseSnowBall" Abstract="True">
+		<label>snowball</label>
+		<skinCovered>true</skinCovered>
+		<canScarify>true</canScarify>
+		<canSuggestAmputation>false</canSuggestAmputation>
+		<executionPartPriority>400</executionPartPriority>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall">
+		<defName>AE_SnowBallA</defName>
+		<hitPoints>50</hitPoints>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall">
+		<defName>AE_SnowBallB</defName>
+		<hitPoints>25</hitPoints>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall">
+		<defName>AE_SnowBallC</defName>
+		<hitPoints>80</hitPoints>
+		<tags>
+			<li>MovingLimbCore</li>
+		</tags>
+	</BodyPartDef>
+
+	<BodyPartDef>
+		<defName>AE_SnowCoreHeart</defName>
+		<label>snow core</label>
+		<hitPoints>18</hitPoints>
+		<skinCovered>false</skinCovered>
+		<tags>
+			<li>BloodPumpingSource</li>
+			<li>BloodFiltrationSource</li>
+			<li>ConsciousnessSource</li>
+		</tags>
+		<canSuggestAmputation>false</canSuggestAmputation>
+	</BodyPartDef>
+
+	<BodyPartDef Name="BodyPart_AEBaseSnowEye">
+		<defName>AE_SnowEyeA</defName>
+		<label>eye stone</label>
+		<hitPoints>12</hitPoints>
+		<bleedRate>0</bleedRate>
+		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+		<frostbiteVulnerability>0.5</frostbiteVulnerability>
+		<delicate>true</delicate>
+		<skinCovered>false</skinCovered>
+		<canScarify>true</canScarify>
+		<socketed>true</socketed>
+		<beautyRelated>true</beautyRelated>
+		<tags>
+			<li>SightSource</li>
+			<li>Mirrored</li>
+		</tags>
+		<hitChanceFactors>
+			<li>
+				<key>Blunt</key>
+				<value>0</value>
+			</li>
+		</hitChanceFactors>
+	</BodyPartDef>
+
+	<BodyPartDef>
+		<defName>AE_SnowNose</defName>
+		<label>carrot nose</label>
+		<hitPoints>16</hitPoints>
+		<bleedRate>0</bleedRate>
+		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+		<frostbiteVulnerability>0.5</frostbiteVulnerability>
+		<skinCovered>true</skinCovered>
+		<canScarify>true</canScarify>
+		<beautyRelated>true</beautyRelated>
+		<solid>true</solid>
+	</BodyPartDef>
+
+	<BodyPartDef>
+		<defName>AE_SnowArm</defName>
+		<label>stick arm</label>
+		<hitPoints>4</hitPoints>
+		<skinCovered>true</skinCovered>
+		<canScarify>true</canScarify>
+		<tags>
+			<li>ManipulationLimbCore</li>
+			<li>Mirrored</li>
+		</tags>
+		<hitChanceFactors>
+			<li>
+				<key>Blunt</key>
+				<value>0.3</value>
+			</li>
+		</hitChanceFactors>
+	</BodyPartDef>
+
+	<BodyPartDef Name="BodyPart_BaseSnowLeg">
+		<defName>AE_SnowLegA</defName>
+		<label>snowball leg</label>
+		<hitPoints>10</hitPoints>
+		<skinCovered>true</skinCovered>
+		<canScarify>true</canScarify>
+		<tags>
+			<li>MovingLimbDigit</li>
+			<li>Mirrored</li>
+		</tags>
+	</BodyPartDef>
+	
+
+	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall" Name="BodyPart_AEBaseSnowBlock">
+		<defName>AE_SnowBlock</defName>
+		<label>snow block</label>
+		<hitPoints>120</hitPoints>
+	</BodyPartDef>
+
+	<BodyPartDef>
+		<defName>AE_SnowFacePlate</defName>
+		<label>face plate</label>
+		<hitPoints>16</hitPoints>
+		<bleedRate>0</bleedRate>
+		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+		<frostbiteVulnerability>0.5</frostbiteVulnerability>
+		<skinCovered>true</skinCovered>
+		<canScarify>true</canScarify>
+		<canSuggestAmputation>false</canSuggestAmputation>
+		<beautyRelated>true</beautyRelated>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_AEBaseSnowEye">
+		<defName>AE_SnowEyeB</defName>
+		<hitPoints>2</hitPoints>
+	</BodyPartDef>
+
+	<BodyPartDef>
+		<defName>AE_SnowBlockLeg</defName>
+		<label>snow block leg</label>
+		<hitPoints>15</hitPoints>
+		<skinCovered>true</skinCovered>
+		<canScarify>true</canScarify>
+		<tags>
+			<li>MovingLimbCore</li>
+			<li>Mirrored</li>
+		</tags>
+	</BodyPartDef>
+
+	<BodyPartDef>
+		<defName>AE_SnowBlockArm</defName>
+		<label>snow block arm</label>
+		<hitPoints>15</hitPoints>
+		<skinCovered>true</skinCovered>
+		<canScarify>true</canScarify>
+		<tags>
+			<li>ManipulationLimbCore</li>
+			<li>Mirrored</li>
+		</tags>
+		<hitChanceFactors>
+			<li>
+				<key>Blunt</key>
+				<value>0.3</value>
+			</li>
+		</hitChanceFactors>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_AEBaseSnowBlock">
+		<defName>AE_SnowBlockCompressor</defName>
+		<label>snow block compressor</label>
+		<hitPoints>25</hitPoints>
+		<skinCovered>false</skinCovered>
+		<canSuggestAmputation>false</canSuggestAmputation>
+	</BodyPartDef>
+	
+
+	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall">
+		<defName>AE_SnowBallD</defName>
+		<hitPoints>34</hitPoints>
+	</BodyPartDef>
+	
+	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall">
+		<defName>AE_SnowBallE</defName>
+		<hitPoints>22</hitPoints>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_AEBaseSnowEye">
+		<defName>AE_SnowEyeC</defName>
+		<hitPoints>12</hitPoints>
+	</BodyPartDef>
+	
+	<BodyPartDef ParentName="BodyPart_AEBaseSnowBall">
+		<defName>AE_SnowBallF</defName>
+		<hitPoints>45</hitPoints>
+	</BodyPartDef>	
+
+	<BodyPartDef>
+		<defName>AE_IceCrystalDestabilized</defName>
+		<label>destabilized ice crystal</label>
+		<hitPoints>80</hitPoints>
+		<skinCovered>true</skinCovered>
+		<canScarify>true</canScarify>
+		<canSuggestAmputation>false</canSuggestAmputation>
+		<executionPartPriority>400</executionPartPriority>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_BaseSnowLeg">
+		<defName>AE_SnowLegB</defName>
+		<label>snow leg</label>
+		<hitPoints>14</hitPoints>
+		<tags>
+			<li>MovingLimbCore</li>
+		</tags>
+	</BodyPartDef>
+	
+	
+	<BodyPartDef Name="BodyPart_AEBaseIceShard" Abstract="True">
+		<label>ice shard</label>
+		<skinCovered>true</skinCovered>
+		<canScarify>true</canScarify>
+		<canSuggestAmputation>false</canSuggestAmputation>
+		<executionPartPriority>400</executionPartPriority>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_AEBaseIceShard">
+		<defName>AE_IceShardA</defName>
+		<hitPoints>67</hitPoints>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_AEBaseIceShard">
+		<defName>AE_IceShardB</defName>
+		<hitPoints>34</hitPoints>
+		<frostbiteVulnerability>0.01</frostbiteVulnerability>
+		<tags>
+			<li>SightSource</li>
+		</tags>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_AEBaseIceShard">
+		<defName>AE_IceShardC</defName>
+		<hitPoints>82</hitPoints>
+		<tags>
+			<li>MovingLimbCore</li>
+		</tags>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_AEBaseIceShard">
+		<defName>AE_IceShardD</defName>
+		<hitPoints>15</hitPoints>
+		<tags>
+			<li>MovingLimbDigit</li>
+			<li>Mirrored</li>
+		</tags>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_AEBaseIceShard">
+		<defName>AE_IceShardE</defName>
+		<hitPoints>24</hitPoints>
+		<tags>
+			<li>ManipulationLimbCore</li>
+			<li>Mirrored</li>
+		</tags>
+		<hitChanceFactors>
+			<li>
+				<key>Blunt</key>
+				<value>0.3</value>
+			</li>
+		</hitChanceFactors>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_AEBaseIceShard">
+		<defName>AE_IceShardF</defName>
+		<hitPoints>24</hitPoints>
+		<tags>
+			<li>MovingLimbCore</li>
+			<li>Mirrored</li>
+		</tags>
+	</BodyPartDef>
+  
+</Defs>

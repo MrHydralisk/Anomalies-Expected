@@ -1,19 +1,13 @@
 ﻿using RimWorld;
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 using Verse;
 using Verse.Sound;
 
 namespace AnomaliesExpected
 {
-    public class Building_AEBloodLakeExit : Building_AEMapPortal
+    public class Building_AEBloodLakeExit : Building_AEPocketMapExit
     {
-        private static readonly CachedTexture ExitPitGateTex = new CachedTexture("UI/Commands/ExitPitGate");
-        protected override Texture2D EnterTex => ExitPitGateTex.Texture;
-
-        private static readonly CachedTexture ViewSurfaceTex = new CachedTexture("UI/Commands/ViewUndercave");
-
         public AE_BloodLakeExtension ExtBloodLake => extBloodLakeCached ?? (extBloodLakeCached = def.GetModExtension<AE_BloodLakeExtension>());
         private AE_BloodLakeExtension extBloodLakeCached;
 
@@ -21,7 +15,8 @@ namespace AnomaliesExpected
         private BloodLakeMapComponent mapComponentCached;
         public Building_AEBloodLake entranceBuilding => mapComponent?.Entrance;
 
-        public override string EnterCommandString => "AnomaliesExpected.BloodLake.Enter".Translate();
+        public override string EnterString => "AnomaliesExpected.BloodLake.Exit".Translate(Label);
+        public override string EnteringString => "AnomaliesExpected.BloodLake.Entering".Translate(Label);
 
         public override bool AutoDraftOnEnter => true;
 
@@ -60,11 +55,11 @@ namespace AnomaliesExpected
             base.OnEntered(pawn);
             if (Find.CurrentMap == base.Map)
             {
-                SoundDefOf.TraversePitGate.PlayOneShot(this);
+                entranceBuilding.def.portal.traverseSound?.PlayOneShot(this);
             }
             else if (Find.CurrentMap == entranceBuilding.Map)
             {
-                SoundDefOf.TraversePitGate.PlayOneShot(entranceBuilding);
+                entranceBuilding.def.portal.traverseSound?.PlayOneShot(entranceBuilding);
             }
         }
 
@@ -78,7 +73,7 @@ namespace AnomaliesExpected
             {
                 defaultLabel = "AnomaliesExpected.BloodLake.ViewSubMap.Label".Translate(),
                 defaultDesc = "AnomaliesExpected.BloodLake.ViewSubMap.Desc".Translate(),
-                icon = ViewSurfaceTex.Texture,
+                icon = ViewSubMapTex.Texture,
                 action = delegate
                 {
                     CameraJumper.TryJumpAndSelect(entranceBuilding);

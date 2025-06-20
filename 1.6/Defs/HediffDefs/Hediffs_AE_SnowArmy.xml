@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<HediffDef Name="AESnowArmyBodyPart" ParentName="AddedBodyPartBase" Abstract="True">
+		<organicAddedBodypart>true</organicAddedBodypart>
+		<keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+		<defaultLabelColor>(0.31, 0.69, 0.835)</defaultLabelColor>
+	</HediffDef>
+  
+	<HediffDef ParentName="AESnowArmyBodyPart">
+		<defName>AE_IceCrystalDestabilized</defName>
+		<label>destabilized ice crystal</label>
+		<labelNoun>a destabilized ice crystal</labelNoun>
+		<description>A highly unstable ice crystal that explodes, releasing nitrogen, if enough targets are nearby.</description>
+		<defaultInstallPart>AE_IceCrystalDestabilized</defaultInstallPart>
+		<abilities>
+			<li>AEIceCrystalDestabilization</li>
+		</abilities>
+		<addedPartProps>
+			<solid>true</solid>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<comps>
+			<li>
+				<compClass>AnomaliesExpected.HediffComp_ActivateAbilityOnRemoved</compClass>
+			</li>
+		</comps>
+	</HediffDef>
+  
+	<HediffDef ParentName="AESnowArmyBodyPart">
+		<defName>AE_SnowBlockCompressor</defName>
+		<label>snow block compressor</label>
+		<labelNoun>a snow block compressor</labelNoun>
+		<description>Allows to create giant snow block and throw it at a long distance target. Snow block will explode with nitrogen after landing.</description>
+		<defaultInstallPart>AE_SnowBlockCompressor</defaultInstallPart>
+		<abilities>
+			<li>AEThrowSnowBlock</li>
+		</abilities>
+		<addedPartProps>
+			<solid>true</solid>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<comps>
+			<li Class="AnomaliesExpected.HediffCompProperties_SnowBlockCompressor">
+				<radius>6.9</radius>
+				<ticksBetweenExtinguish>2500</ticksBetweenExtinguish>
+				<color>(0.31, 0.69, 0.835, 0.25)</color>
+				<fleckDef>AirPuff</fleckDef>
+				<soundDef>Explosion_Stun</soundDef>
+				<ProjectileDef>AE_Bullet_Shell_SnowBlockAbility</ProjectileDef>
+				<ignoreWithHediffDef>AENitrogenFreezing</ignoreWithHediffDef>
+			</li>
+		</comps>
+	</HediffDef>
+	
+</Defs>
