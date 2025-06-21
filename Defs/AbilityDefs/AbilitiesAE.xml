@@ -11,7 +11,7 @@
 		<label>grind body</label>
 		<description>Grind off the skin and flesh of corpse bones. This produces a way bigger amount of butcher products than should be logically possible.</description>
 		<iconPath>Things/Item/Resource/MeatFoodRaw/Meat_Big/Meat_Big_c</iconPath>
-		<cooldownTicksRange>5000</cooldownTicksRange>
+		<cooldownTicksRange>15000</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
 		<displayOrder>1300</displayOrder>
 		<category>AEAnomaliesExpected</category>
@@ -38,6 +38,7 @@
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_AbilityGrindBody">
 				<butcherEfficiency>2</butcherEfficiency>
+				<butcherEfficiencyRotten>0.5</butcherEfficiencyRotten>
 			</li>
 		</comps>
 	</AbilityDef>

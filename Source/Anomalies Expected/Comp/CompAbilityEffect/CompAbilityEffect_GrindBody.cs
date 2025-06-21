@@ -10,12 +10,31 @@ namespace AnomaliesExpected
 
         private Pawn Pawn => parent.pawn;
 
+        public ThingFilter Filter
+        {
+            get
+            {
+                if (filterCached == null)
+                {
+                    filterCached = new ThingFilter();
+                    filterCached.SetAllow(ThingCategoryDefOf.Corpses, allow: true);
+                    filterCached.SetAllow(ThingCategoryDefOf.CorpsesMechanoid, allow: false);
+                    if (ModsConfig.AnomalyActive)
+                    {
+                        filterCached.SetAllow(SpecialThingFilterDefOf.AllowCorpsesUnnatural, allow: false);
+                    }
+                }
+                return filterCached;
+            }
+        }
+        public ThingFilter filterCached;
+
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
             base.Apply(target, dest);
             if (target.Thing is Corpse corpse && corpse.InnerPawn != null)
             {
-                IEnumerable<Thing> products = corpse.InnerPawn.ButcherProducts(Pawn, Props.butcherEfficiency);
+                IEnumerable<Thing> products = corpse.InnerPawn.ButcherProducts(Pawn, corpse.IsNotFresh() ? Props.butcherEfficiencyRotten : Props.butcherEfficiency);
                 if (corpse.InnerPawn.RaceProps.BloodDef != null)
                 {
                     FilthMaker.TryMakeFilth(corpse.Position, corpse.Map, corpse.InnerPawn.RaceProps.BloodDef, corpse.InnerPawn.LabelIndefinite());
@@ -32,9 +51,9 @@ namespace AnomaliesExpected
             }
         }
 
-        public override bool AICanTargetNow(LocalTargetInfo target)
+        public override bool Valid(LocalTargetInfo target, bool throwMessages = false)
         {
-            if (Pawn.Faction != null && target.Thing is Corpse corpse && corpse.InnerPawn != null && corpse.Faction != Pawn.Faction)
+            if (Pawn.Faction != null && target.Thing is Corpse corpse && corpse.InnerPawn != null && corpse.Faction != Pawn.Faction && Filter.Allows(corpse))
             {
                 return true;
             }
