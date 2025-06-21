@@ -2,7 +2,9 @@
 <LanguageData>
 	<AnomaliesExpected.BloodLake.UndergroundNestSpawn>A group of fleshbeasts is emerging from Underground Fleshmass Nest nearby</AnomaliesExpected.BloodLake.UndergroundNestSpawn>
 	<AnomaliesExpected.BloodLake.ReactorMeltdownExplosion>The facility's reactor exploded, severing the connection with other Blood Lake</AnomaliesExpected.BloodLake.ReactorMeltdownExplosion>
-	<AnomaliesExpected.BloodLake.Enter>Dive into blood lake</AnomaliesExpected.BloodLake.Enter>
+	<AnomaliesExpected.BloodLake.Enter>Dive into {0}</AnomaliesExpected.BloodLake.Enter>
+	<AnomaliesExpected.BloodLake.Entering>Diving into {0}</AnomaliesExpected.BloodLake.Entering>
+	<AnomaliesExpected.BloodLake.Exit>Exit by diving into {0}</AnomaliesExpected.BloodLake.Exit>
 	<AnomaliesExpected.BloodLake.ViewSubMap.Label>View the other side</AnomaliesExpected.BloodLake.ViewSubMap.Label>
 	<AnomaliesExpected.BloodLake.ViewSubMap.Desc>View the connected map on the other side</AnomaliesExpected.BloodLake.ViewSubMap.Desc>
 	<AnomaliesExpected.BloodLake.Density>Liquid density: {0} kg/m3</AnomaliesExpected.BloodLake.Density>

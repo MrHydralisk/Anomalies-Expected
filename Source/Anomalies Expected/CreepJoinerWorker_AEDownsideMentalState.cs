@@ -4,7 +4,7 @@ using Verse;
 
 namespace AnomaliesExpected
 {
-    public class CreepJoinerWorker_AEDownsideMentalState : BaseCreepJoinerDownsideWorker
+    public class CreepJoinerWorker_AEDownsideMentalState : BaseCreepJoinerWorker
     {
         public CreepJoinerDefExtension Ext => Tracker.downside.GetModExtension<CreepJoinerDefExtension>();
 

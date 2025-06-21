@@ -1,0 +1,876 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+	<ThingDef>
+		<defName>AE_ForbiddenFruit</defName>
+		<label>giant apple</label>
+		<description>A normal looking apple, if not for it giant size. Despite its immense size, the apple seems perfectly ripe, its skin giving slightly with the promise of juicy sweetness.\n\nSeems like you can take a bite of it.</description>
+		<thingClass>AnomaliesExpected.ThingWithComps_AE</thingClass>
+		<category>Item</category>
+		<genericMarketSellable>false</genericMarketSellable>
+		<drawerType>MapMeshOnly</drawerType>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<altitudeLayer>Item</altitudeLayer>
+		<selectable>true</selectable>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<alwaysHaulable>true</alwaysHaulable>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<pathCost>14</pathCost>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Item/Special/AE_ForbiddenFruit</texPath>
+		</graphicData>
+		<statBases>
+			<Mass>1</Mass>
+			<Beauty>20</Beauty>
+			<Flammability>0</Flammability>
+			<MarketValue>260</MarketValue>
+		</statBases>
+		<thingCategories>
+			<li>ItemsAnomalies</li>
+		</thingCategories>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+		<allowedArchonexusCount>1</allowedArchonexusCount>
+		<comps>
+			<li Class="CompProperties_Interactable">
+				<compClass>AnomaliesExpected.Comp_ForbiddenFruit</compClass>
+				<activeTicks>1</activeTicks>
+				<cooldownTicks>30000</cooldownTicks>
+				<ticksToActivate>250</ticksToActivate>
+				<activateTexPath>Things/Item/Special/AE_ForbiddenFruit</activateTexPath>
+        
+				<activateLabelString>Take a bite</activateLabelString>
+				<activateDescString>Make someone take a bite of this apple and consume it.</activateDescString>
+				<guiLabelString>Choose who should bite this.</guiLabelString>
+				<jobString>bite</jobString>
+				<activatingStringPending>biting {0}</activatingStringPending>
+				<activatingString>biting {0}: {1}s</activatingString>
+				<onCooldownString>regenereating</onCooldownString>
+
+				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
+				<fleckOnUsedScale>3</fleckOnUsedScale>
+				<soundActivate>PsychicAnimalPulserCast</soundActivate>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>120000</frequencyTicks>
+				<knowledgeCategory>Basic</knowledgeCategory>
+				<anomalyKnowledge>1</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<showToggleGizmo>true</showToggleGizmo>
+			</li>
+			<li Class="CompProperties_StudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotes>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>holy apple</AnomalyLabel>
+						<AnomalyDesc>A normal looking apple, if not for it giant size. Despite its immense size, the apple seems perfectly ripe, its skin giving slightly with the promise of juicy sweetness.\n\nThe apple regenerates after being bitten, allowing for partial consumption.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>0.01</threshold>
+						<label>#1/4 Giant apple study report</label>
+						<text>Regenerative Properties of a Giant Apple\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nA giant apple exhibited remarkable resilience, resisting damage from blades, fire, and blunt force. Consumption triggered rapid regeneration of bitten pieces and a positive subjective experience in the subject. Further research is needed to explore potential applications and long-term effects of the apple's anomalous properties.\n\nObservations:\nSubject was presented with a standard steel knife. {PAWN_nameDef} attempted to cut apple, but to no avail.\nSubject attempted to smash apple onto solid ground. It remained completely undamaged.\n{PAWN_nameDef} exposed apple to a controlled fire for 30 minutes. Upon extinguishing the fire, the apple exhibited no signs of charring or melting.\nSubject was instructed to bite the apple without swallowing the piece. {PAWN_nameDef} was able to effortlessly bit off a portion of apple and put it next to apple itself. The bitten portion displayed rapid decomposition, while the remaining apple regenerated the missing piece within a short period.\n\nOutcome:\nNo hostile response was observed during interaction.\nAfter experiment {PAWN_nameDef} reported a sensation of "holiness" upon biting the apple.\n\nDiscussion:\nThe giant apple appears indestructible by conventional means.\nThe apple can be bitten and consumed by humans. \nThe apple possesses a regenerative property that activates upon consumption of a portion.\nThe anomalous properties of giant apple have potential applications and risks that need to be explored.\nTemporary giant apple has been classified as Class-0 (Safe) anomaly.\n\nRecommendations:\nFurther experimentation of biting and eating of apple is required to explore effects it have on human body.</text>
+						<ThreatClass>0</ThreatClass>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyDesc>A normal looking apple, if not for it giant size. Despite its immense size, the apple seems perfectly ripe, its skin giving slightly with the promise of juicy sweetness.\n\nThe apple regenerates after being bitten, allowing for partial consumption. Which increases the speed of learning and knowledge acquisition by the consumer.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>2</threshold>
+						<label>#2/4 Giant apple study report</label>
+						<text>Enhanced Learning and Divine Inspiration\n\nSubject: [REDACTED]\n\nAbstract:\nConsumption of a giant anomalous apple led to a drastic increase in learning speed and knowledge retention in the Subject. The Subject reported experiencing divine inspiration and a heightened understanding of a divine entity. Further research is needed to understand the source of the knowledge and potential long-term effects.\n\nObservations:\nSubject was instructed to bite the apple and swallow the piece. After consumption, [REDACTED] reported experiencing a surge of divine inspiration, accompanied by a newfound sense of wisdom. Notably, the Subject achieved a breakthrough on a previously encountered task that had posed an initial challenge.\nSubject was then instructed to consume another bite of the apple. [REDACTED] reported a further increase in their understanding of the divine will.\n\nOutcome:\nSubject demonstrated a significant improvement in knowledge retention and learning speed compared to pre-experiment baseline.\n[REDACTED] described gaining access to previously unconsidered perspectives and experiencing a heightened sense of connection to a divine entity.\n\nDiscussion:\nThese findings suggest that consumption of the anomalous apple facilitates accelerated learning and knowledge acquisition in the subject. The rate of learning appears to correlate with the amount of apple consumed. \nFurther investigation is required to determine the source of this knowledge and the potential long-term effects of repeated exposure.\n\nRecommendations:\nContinued experimentation with controlled apple consumption is necessary to fully understand the cognitive effects on the subject. Monitoring of the subject's health and mental state is crucial throughout the research process.</text>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>the forbidden fruit of knowledge</AnomalyLabel>
+						<AnomalyDesc>A normal looking apple, if not for it giant size. Despite its immense size, the apple seems perfectly ripe, its skin giving slightly with the promise of juicy sweetness.\n\nThe apple regenerates after being bitten, allowing for partial consumption. Which increases the speed of learning and knowledge acquisition by the consumer. Long term consumption can anger the divine entity, leading to the death of consumer.\n\nClassified as Class-1 (Caution) anomaly.</AnomalyDesc>
+						<threshold>3</threshold>
+						<label>#3/4 Giant apple study report</label>
+						<text>The Forbidden Fruit of Knowledge\n\nSubject: [REDACTED]\n\nAbstract:\nFurther consumption of the anomalous apple yielded greater knowledge, but triggered fear and connection to an angered divine entity perceiving the fruit as forbidden. The subject fainted and reported about potential death from continuation of consumption. The experiment highlights long-term risks and necessitates an inhibitor serum to counter the connection. The anomaly has been reclassified as Class-1 (Caution).\n\nObservations:\nFollowing previous successful trials with partial apple consumption, Subject was instructed to repeat the procedure. [REDACTED] reported a significantly larger influx of knowledge compared to prior experiences. However, Subject also exhibited signs of mild dizziness and expressed a troubling feeling that the acquired knowledge was not meant for them.\nFurther consumption of the apple resulted in a partial loss of consciousness and fear in Subject. [REDACTED] reported establishing a partial connection with a divine entity, who expressed anger at their consumption of The Forbidden Fruit. Subject displayed agitation, screaming about never touching the fruit again and pleading for forgiveness.\n\nOutcome:\n[REDACTED] experienced significant stress and subsequently fainted.\nUpon regaining consciousness, Subject explained that he was able to partially understand the divine entity and its anger regarding the consumption of the forbidden fruit, which was not meant for humans. [REDACTED] further reported that continued interaction with the fruit during this entity's Wrath could result in their death.\n\nDiscussion:\nThis experiment highlights the potential risks associated with long-term exposure to the apple's effects.\nNotably, one researcher proposed the development of an inhibitor serum to potentially counter the subject's connection with the divine entity.\nReclassified holy apple of knowledge as Class-1 (Caution) anomaly, due to reaction and information from [REDACTED].\n\nRecommendations:\nFurther experimentation with the proposed inhibitor serum is necessary to assess its effectiveness in mitigating the negative effects of the apple.</text>
+						<ThreatClass>1</ThreatClass>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyDesc>A normal looking apple, if not for it giant size. Despite its immense size, the apple seems perfectly ripe, its skin giving slightly with the promise of juicy sweetness. It consumtion allow consciousness connection with a higher dimensional being.\n\nThe apple regenerates after being bitten, allowing for partial consumption. Which increases the speed of learning and knowledge acquisition by the consumer. Long term consumption can anger the divine entity, leading to the death of consumer.\n\nClassified as Class-1 (Caution) anomaly.</AnomalyDesc>
+						<threshold>5</threshold>
+						<label>#4/4 Giant apple study report</label>
+						<text>Theory Regarding Giant Apple\n\nSubject: [REDACTED]\n\nAbstract:\nInhibitor serum successfully severed the connection between a [REDACTED] and a higher-dimensional entity triggered by consuming a forbidden knowledge fruit. The disconnection caused a temporary learning speed decline but no lasting harm. Subject theorizes the fruit originates from the entity's garden and facilitates knowledge exchange. The entity fears humanity reaching its level and hinders excessive knowledge gain. Removal or controlled use with safety protocols are recommended for the giant apple.\n\nObservations:\nSubject was instructed to inject giant apple inhibitor serum during divine entity's Wrath period. Following the injection, [REDACTED] reported a significant decrease in stress levels and a diminished ability to perceive the entity's voice. Subject further described a general sense of improvement. \nAfter several days, [REDACTED] confirmed a complete severance of the connection with the divine entity.\n\nOutcome:\nGiant apple inhibitor serum successfully severed Subject's connection with the divine entity. \nHowever, Subject also experienced a temporary decline in learning speed over the course of the observation period.\n\nHypothesis:\nBased on the overall experience, [REDACTED] proposes a theory regarding the origin of The Forbidden Fruit of Knowledge. Subject suggests that the fruit originates from a garden controlled by the encountered divine entity. Consumption of the fruit establishes a connection between the consumer's consciousness and the entity, facilitating the exchange of knowledge and thoughts. [REDACTED] further hypothesizes that the divine entity, existing in a higher dimension, possesses the capability to observe and potentially influence our facility on a level not accessible to humans. The appearance of the fruit outside our facility is attributed to interdimensional travel. While the entity seems indifferent to lower levels of knowledge access, it fears the potential of humanity achieving its level of understanding. This fear manifests as attempts to hinder excessive knowledge acquisition through the fruit. Disconnecting from the entity's mind via the serum injection allows it to gradually forget about our existence, similar to how a human might forget an insignificant ant encountered in an anthill.\n\nDiscussion:\nThe severance of the connection with the entity through the serum requires time and comes with a temporary learning speed penalty. However, post-disconnection observations indicate no lasting negative effects for the subject.\n\nRecommendations:\nRemoval: Given the potential for accidental death due to excessive consumption, it removal from facility may be the most prudent course of action.\nControlled Use: Alternatively, if hypothesis is right, then continued use of giant apple, under controlled and monitored conditions, could offer substantial benefits in terms of learning and knowledge acquisition. This approach, however, necessitates thorough risk assessment and the development of safety protocols to safeguard colonists' well-being.</text>
+						<ThingDefSpawn>AE_ResearchNotesFFA</ThingDefSpawn>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+				</studyNotes>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_StudyNotes</li>
+		</inspectorTabs>
+	</ThingDef>
+	
+	
+
+	<ThingDef>
+		<defName>AE_BakingPies</defName>
+		<label>big pie</label>
+		<description>A round big pie on a plate. It is a baked dish with a pastry crust surrounding the filling.\n\nIt looks appetizing.</description>
+		<thingClass>AnomaliesExpected.ThingWithComps_AE</thingClass>
+		<category>Item</category>
+		<genericMarketSellable>false</genericMarketSellable>
+		<drawerType>MapMeshOnly</drawerType>
+		<tickerType>Long</tickerType>
+		<rotatable>false</rotatable>
+		<altitudeLayer>Item</altitudeLayer>
+		<selectable>true</selectable>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<alwaysHaulable>true</alwaysHaulable>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<pathCost>14</pathCost>
+		<graphicData>
+			<texPath>Things/Item/Consumable/AE_BakingPies</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(0.75,0.75)</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>2</Mass>
+			<Beauty>20</Beauty>
+			<Flammability>0</Flammability>
+			<MarketValue>260</MarketValue>
+		</statBases>
+		<thingCategories>
+			<li>ItemsAnomalies</li>
+		</thingCategories>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+		<allowedArchonexusCount>1</allowedArchonexusCount>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_BakingPies">
+				<ticksToActivate>5000</ticksToActivate>
+				<activateTexPath>Things/Item/Consumable/AE_BakingPies</activateTexPath>
+        
+				<activateLabelString>Consume</activateLabelString>
+				<activateDescString>Make someone pour out concentrated stomach acid and fully consume it. [Will destroy it]</activateDescString>
+				<guiLabelString>Choose who should consume this.</guiLabelString>
+				<jobString>consume</jobString>
+				<activatingStringPending>consuming {0}</activatingStringPending>
+				<activatingString>consuming {0}: {1}s</activatingString>
+
+				<soundActivate>AE_RawVegetableEat</soundActivate>
+				<interactionEffecter>EatVegetarian</interactionEffecter>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<piePiece>AE_BakingPiesPiece</piePiece>
+				<tickPerSpawn>60000</tickPerSpawn>
+				<ConsumptionHediffDef>Hediff_AEDigestingPie</ConsumptionHediffDef>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>60000</frequencyTicks>
+				<knowledgeCategory>Basic</knowledgeCategory>
+				<anomalyKnowledge>0.5</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<showToggleGizmo>true</showToggleGizmo>
+			</li>
+			<li Class="CompProperties_StudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotes>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>vatrushka</AnomalyLabel>
+						<AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>0.01</threshold>
+						<label>#1/4 Big pie study report</label>
+						<text>The Indestructible Vatrushka\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nA seemingly ordinary vatrushka exhibited remarkable resilience. Standard tools and fire failed to damage the pastry or its plate, which displayed self-repair capabilities. Consumption attempts proved impossible due to its impregnability. Classified as Class-0 (Safe) with further investigation recommended.\n\nObservations:\nSubject was presented with a standard steel knife. {PAWN_nameDef} attempted to cut a piece of big pie, but to no avail.\nSubject attempted to smash big pie on a plate onto solid ground. While the plate holding the big pie cracked upon impact, the crack spontaneously repaired itself within moments.\n{PAWN_nameDef} exposed big pie to a controlled fire for 30 minutes. Upon extinguishing the fire, the pie exhibited no signs of charring or melting.\nSubject was instructed to attempt biting a portion of the vatrushka without swallowing. Biting through the outer dough proved impossible.\n\nOutcome:\nThroughout the testing procedures, big pie displayed no hostile reaction\n\nDiscussion:\nThe big pie appears to possess anomalous properties rendering it indestructible by conventional means.\nThe big pie's physical properties prevent human consumption due to its resistance to biting and overall size.\nA possible connection exists between the big pie and its plate, as evidenced by the shared regenerative property displayed upon damage.\nAnalysis of the composition of the big pie showed similarities with vatrushka.\nTemporary big pie has been classified as Class-0 (Safe) anomaly.\n\nRecommendations:\nContinued surveillance of the big pie is recommended to explore the possibility of further anomalous properties.</text>
+						<ThreatClass>0</ThreatClass>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged. It can replicate a piece of itself, which can be consumed.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>1</threshold>
+						<label>#2/4 Big pie study report</label>
+						<text>Vatrushka Replication and its Implications\n\nSubject: [REDACTED]\n\nAbstract:\nAnomalous vatrushka displayed self-replication, generating a consumable piece of pie on it own plate. The consumed piece exhibited normal digestion, but slowed Subject's movement. This suggests that vatrushka might provide sustenance while requiring further study of its risks. Controlled consumption warrants exploration as a solution to food shortages.\n\nObservations:\nSecurity footage revealed the spontaneous appearance of a smaller piece of pie within the containment area.\nThis smaller piece underwent testing identical to the original, exhibiting the same anomalous properties as big pie.\nDue to its smaller size, [REDACTED] was able to fully consume the replicated piece.\nThe subject reported a feeling of heaviness in their stomach but no other abnormalities.\nNotably, the plate previously holding the replicated piece vaporized upon piece consumption\n\nOutcome:\nSubsequent scans revealed the consumed pie piece undergoing a slow digestion process within [REDACTED]'s stomach. Interestingly, this digestion coincided with a decrease in the subject's movement speed.\n\nDiscussion:\nThe big pie appears capable of self-replication, generating smaller pieces that retain the original's anomalous properties. Further investigation is required to understand the mechanism behind this replication\nInterestingly, the consumed piece displayed normal nutritional value during digestion. This suggests the possibility of the vatrushka serving as a potential solution to food shortages within the facility.\n\nRecommendations:\nControlled consumption of replicated pie pieces should be considered as a means to address potential food shortages.\nStrict monitoring of the number of replicated pieces within containment is crucial to prevent overabundance.</text>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged. Each day will replicate a piece of itself based on the amount of existing pieces, which can be consumed.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>2</threshold>
+						<label>#3/4 Big pie study report</label>
+						<text>Possible Containment Overflow\n\nAbstract:\nThe anomalous big pie replicates proportionally to its existing pieces. Consumed pieces don't affect replication rate. Controlled consumption is necessary to prevent overwhelming facility with pie pieces.\n\nObservations:\nAn extensive review of security footage was conducted, focusing on the frequency and quantity of replicated pie pieces appearing within the containment area.\n\nOutcome:\nA clear correlation was identified between the number of existing pie pieces and the number of newly replicated pieces:\n- Big pie = new 1 piece\n- Big pie + 1 piece = new 2 piece\n- Big pie + 3 piece = new 4 piece\n- Big pie + 1 piece + 2 consumed piece = new 2 piece\nThe time interval between the appearance of new pieces was approximately 24 hours.\n\nDiscussion:\nThe number of newly replicated pie pieces appears directly proportional to the total number of existing pieces within the containment area. Notably, the consumption of previously replicated pieces does not seem to impact the rate of new piece generation\nThis uncontrolled replication poses a significant risk of overwhelming the containment area with pie pieces. Careful monitoring and controlled consumption of newly replicated pieces are crucial to maintain a manageable quantity.\n\nRecommendations:\nThe implementation of a controlled consumption program for newly replicated vatrushka pieces is recommended to regulate the total number of pieces within the facility.</text>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>Self-Baking Pies</AnomalyLabel>
+						<AnomalyDesc>A sweet, round roll of dough, shaped with a deep indentation in the center, forms the foundation of this dish on a plate. A delightful filling of mild cottage cheese graces the center. Baked to a golden perfection, this treat is perfect for a satisfying breakfast or a delightful snack. A remarkable colony of sentient yeast that have made cake their primary habitat.\n\nThis dish, despite its invitingly soft appearance, possesses an unexpected resilience. It cannot be cut, bitten, or otherwise damaged. Each day will replicate a piece of itself based on the amount of existing pieces, which can be consumed.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>5</threshold>
+						<label>#4/4 Big pie study report</label>
+						<text>Theory Regarding Big Pie\n\nAbstract:\nSelf-Baking Pies (SBP) exhibits potential for interdimensional travel and exponential growth. Hypothesis suggests offspring drain resources of the planet and mature into similar entities. Humans possess a possible defense mechanism in their genes through digestion. Destruction or controlled use with robust safety protocols are recommended.\n\nHypothesis:\nBased on observations from all experiments, a theory regarding the Self-Baking Pies (SBP) origin and behavior was proposed.\nA remarkable colony of sentient yeast that have made cake their primary habitat.\nIt suggested that it possesses a potential for interdimensional travel. Upon arriving in a world with suitable conditions (oxygen-rich atmosphere and abundant organic/mineral content), it transporting offspring to current dimension\nEach offspring facilitates the SBP's interdimensional travel by gathering energy from the surrounding environment.\nOnce all offspring are transferred, they consume resources of the planet to grow and mature into entities similar to the original SBP, allowing continued exponential propagation across realities.\nThe SBP exhibits exceptional resilience to external damage, but may be susceptible to degradation by concentrated stomach acid within a human digestive system.\nWhile this poses an existential threat due to potential uncontrolled spread, our digestive systems appear to contain unique genes that enable the destruction of SBP regenrative capabilities. This implies a potential past encounter between humanity and SBP entities, resulting in an evolutionary defense mechanism against their colonization efforts.\n\nDiscussion:\nFurther research should explore the possibility of utilizing highly concentrated stomach acid to weaken the main SBP, potentially enabling full consumption. It's important to note that this approach could have a more significant impact on the consumer compared to consuming individual SBP pieces.\nThe current classification of the SBP remains Class-0 (Safe) as it does not pose an immediate threat to personnel within the facility.\n\n[High Level Access Required]:\nThe potential for rapid, uncontrolled SBP replication poses a significant risk. We must closely monitor the number of existing SBP pieces. Loss of control could elevate the threat level to higher than even Class-4, potentially causing our reality to succumb to SBP and end up being consumed. Drawing from simulated reality theory, an uncontrolled spread of SBP pieces could potentially lead to a system crash, if their numbers reach critical levels.\n\nRecommendations:\nDestruction: Given the potential for exponential growth, destruction of the vatrushka using concentrated stomach acid may be the most prudent course of action\nControlled Use: If the hypothesis holds true, continued utilization of the vatrushka under controlled and monitored conditions could offer a sustainable food source for the facility. This approach, however, requires thorough risk assessment and robust safety protocols to prevent uncontrolled replication.</text>
+						<ThingDefSpawn>AE_ResearchNotesBPA</ThingDefSpawn>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+				</studyNotes>
+			</li>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_StudyNotes</li>
+		</inspectorTabs>
+	</ThingDef>
+	
+	
+	
+	<ThingDef>
+		<defName>AE_DogTag</defName>
+		<label>Ripped off dog tag</label>
+		<description>A tiny plasteel tag, bearing basic details about an individual, typically used to identify casualties.\n\nIt's been torn off, and the name on it seems familiar to you. Maybe someone can interact with it.</description>
+		<thingClass>ThingWithComps</thingClass>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Item/Special/AE_AnomalyDogTag</texPath>
+			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+			<drawSize>(0.75,0.75)</drawSize>
+		</graphicData>
+		<category>Item</category>
+		<genericMarketSellable>false</genericMarketSellable>
+		<drawerType>MapMeshOnly</drawerType>
+		<tickerType>Never</tickerType>
+		<rotatable>true</rotatable>
+		<altitudeLayer>Item</altitudeLayer>
+		<selectable>true</selectable>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<alwaysHaulable>true</alwaysHaulable>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<pathCost>1</pathCost>
+		<statBases>
+			<Mass>1</Mass>
+			<Beauty>10</Beauty>
+			<Flammability>0</Flammability>
+			<MarketValue>5</MarketValue>
+		</statBases>
+		<thingCategories>
+			<li>ItemsMisc</li>
+		</thingCategories>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_DogTag">
+				<activeTicks>1</activeTicks>
+				<ticksToActivate>250</ticksToActivate>
+				<activateTexPath>Things/Item/Special/AE_AnomalyDogTag</activateTexPath>
+        
+				<activateLabelString>Touch</activateLabelString>
+				<activateDescString>Make someone touch the dog tag.</activateDescString>
+				<guiLabelString>Choose who should touch this.</guiLabelString>
+				<jobString>touch</jobString>
+				<activatingStringPending>touching {0}</activatingStringPending>
+				<activatingString>touching {0}: {1}s</activatingString>
+
+				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
+				<fleckOnUsedScale>1</fleckOnUsedScale>
+				<soundActivate>PsychicAnimalPulserCast</soundActivate>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<hediffOnUse>Hediff_AEDogTag</hediffOnUse>
+				<chanceToCensor>0.5</chanceToCensor>
+				<symbolsToCensor>/|\—</symbolsToCensor>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	
+  
+	<ThingDef>
+		<defName>AE_StudyNotepad</defName>
+		<label>yellow notepad</label>
+		<description>A normal looking notepad, its yellow pages filled with handwritten notes.\n\nYou can examine it pages.</description>
+		<thingClass>AnomaliesExpected.ThingWithComps_AE</thingClass>
+		<category>Item</category>
+		<genericMarketSellable>false</genericMarketSellable>
+		<drawerType>MapMeshOnly</drawerType>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<altitudeLayer>Item</altitudeLayer>
+		<selectable>true</selectable>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<alwaysHaulable>true</alwaysHaulable>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<pathCost>14</pathCost>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Item/Special/AE_StudyNotepad</texPath>
+			<drawSize>(0.75,0.75)</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>0.18</Mass>
+			<Beauty>3</Beauty>
+			<Flammability>0</Flammability>
+			<MarketValue>200</MarketValue>
+		</statBases>
+		<thingCategories>
+			<li>ItemsAnomalies</li>
+		</thingCategories>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+		<allowedArchonexusCount>1</allowedArchonexusCount>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_StudyNotepad">
+				<activeTicks>1</activeTicks>
+				<cooldownTicks>50000</cooldownTicks>
+				<ticksToActivate>2500</ticksToActivate>
+				<activateTexPath>Things/Item/Special/AE_StudyNotepad</activateTexPath>
+        
+				<activateLabelString>Examine</activateLabelString>
+				<activateDescString>Examining research notes in a study notepad.</activateDescString>
+				<guiLabelString>Choose who should examine this.</guiLabelString>
+				<jobString>examine</jobString>
+				<activatingStringPending>examining {0}</activatingStringPending>
+				<activatingString>examining {0}: {1}s</activatingString>
+				<onCooldownString>restoring</onCooldownString>
+				<messageCooldownEnded>Yellow notepad is ready to use again.</messageCooldownEnded>
+
+				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
+				<fleckOnUsedScale>3</fleckOnUsedScale>
+				<soundActivate>PsychicAnimalPulserCast</soundActivate>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<learnXPPerProgressPoint>120</learnXPPerProgressPoint>
+				<RequiredResearchDef>AEStudyNotepad</RequiredResearchDef>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>60000</frequencyTicks>
+				<knowledgeCategory>Basic</knowledgeCategory>
+				<anomalyKnowledge>1</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<showToggleGizmo>true</showToggleGizmo>
+			</li>
+			<li Class="CompProperties_StudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotes>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>study notepad</AnomalyLabel>
+						<AnomalyDesc>A normal looking notepad, its yellow pages filled with handwritten notes.\n\nYou can examine it pages to learn about the requested skill.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>0.01</threshold>
+						<label>#1/2 Yellow notepad study report</label>
+						<text>Interactive Knowledge Conduit\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nThis report details the examination of yellow notepad. The notepad, upon inputting a specific skill, dynamically generates content related to that skill. The subject who interacted with the notepad experienced a significant increase in their medical knowledge after inputting "Medical". The notepad exhibited no hostile behavior and reverted to its original state post-examination. Given its passive nature and potential for knowledge acquisition, the notepad is provisionally classified as a Class-0 (Safe) anomaly. Further research is recommended to fully understand its capabilities and limitations.\n\nObservations:\nUpon initial examination, {PAWN_nameDef} observed a notepad containing numerous pages filled with research notes on diverse topics.\nSubject reported noticing a field on each page for inputting a specific "Skill".\n{PAWN_nameDef} was instructed to input the "Medical" into this field.\nSubsequently, the content on subsequent pages transformed to focus on medical topics.\nUpon examining this pages, Subject reported that text dissapeared from them.\n\nOutcome:\nThroughout the examination, the notepad displayed no hostile behavior.\nFollowing the examination, all pages within the notepad reverted to a blank state. Additionally {PAWN_nameDef} experienced an improvement in their medical skills.\n\nDiscussion:\nIt appears that the quantity of experience gained by the Subject is correlated with the number of pages that manifested within the notepad. \nGiven the absence of hostile behavior, the notepad has been temporary classified as Class-0 (Safe) anomaly.\n\nRecommendations:\nContinued research and utilization of notepad is required to further investigate its anomalous properties and explore potential applications.</text>
+						<ThreatClass>0</ThreatClass>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>Alexandria's Legacy</AnomalyLabel>
+						<AnomalyDesc>A normal looking notepad, its yellow pages filled with handwritten notes.\n\nYou can examine it pages to learn about the requested skill. Aquired experience correlates with the progress of related research.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>3</threshold>
+						<label>#2/2 Yellow notepad study report</label>
+						<text>Theory Regarding Yellow Notepad\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nThis report details the anomalous properties of a yellow notepad. The notepad seems to be a tool for knowledge acquisition and organization. It responds to user input by generating relevant content, and its capabilities appear to expand as more knowledge is fed into it. The notepad's origins remain unknown, but it is hypothesized to be an ancient artifact that once belonged to a vast library. Continued usage is recommended to utilize its anomalous properties.\n\nOutcome:\nSome of colonists have demonstrated increased motivation to conduct anomaly research within the facility, with the aim of acquiring expertise in their respective fields through the utilization of the notepad.\n\nDiscussion:\nIt appears that the quantity of pages generated by the notepad is correlated with the amount of anomaly research conducted within the facility. \nGiven the consistent and non-hostile behavior of the notepad, its current classification as a Class-0 (Safe) anomaly remains unchanged.\n\nHypothesis:\n{PAWN_nameDef} has proposed a theory suggesting that the notepad may interact with various information carriers, including papers, blueprints, and digital storage devices. It is theorized that the notepad absorbs knowledge gained within the facility and, in exchange, provides requested information to its users. Driven by an insatiable curiosity, the notepad seeks human interaction to expand its knowledge. While its exact origin remains elusive, it is speculated that the notepad may have originated from an ancient library. It is speculated that the notepad was used to organize and access vast amounts of information within the library. Evidence of fire damage on certain pages suggests that the library may have been destroyed by fire, forcing the notepad to seek new owners.\n\nRecommendations:\nControlled Use: Continued anomaly research within the facility and usage of the notepad are recommended to utilize its anomalous properties.</text>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+				</studyNotes>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_StudyNotes</li>
+		</inspectorTabs>
+	</ThingDef>
+	
+	
+  
+	<ThingDef>
+		<defName>AE_ProviderScripture</defName>
+		<label>ancient scripture</label>
+		<description>A dark-covered book bearing the marks of time, featuring a prominent symbol.</description>
+		<thingClass>AnomaliesExpected.ThingWithComps_AE</thingClass>
+		<category>Item</category>
+		<genericMarketSellable>false</genericMarketSellable>
+		<drawerType>MapMeshOnly</drawerType>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<altitudeLayer>Item</altitudeLayer>
+		<selectable>true</selectable>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<alwaysHaulable>true</alwaysHaulable>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<pathCost>14</pathCost>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Item/Special/AE_ProviderScripture</texPath>
+			<drawSize>(0.75,0.75)</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>0.18</Mass>
+			<Beauty>3</Beauty>
+			<Flammability>0</Flammability>
+			<MarketValue>200</MarketValue>
+		</statBases>
+		<thingCategories>
+			<li>ItemsAnomalies</li>
+		</thingCategories>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+		<allowedArchonexusCount>1</allowedArchonexusCount>
+		<comps>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>120000</frequencyTicks>
+				<knowledgeCategory>Advanced</knowledgeCategory>
+				<anomalyKnowledge>2</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<showToggleGizmo>true</showToggleGizmo>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotes>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>provider scripture</AnomalyLabel>
+						<AnomalyDesc>A dark-covered book bearing the marks of time. An ideology symbol of devotion to the Provider deity is displayed prominently on the front cover.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>0.01</threshold>
+						<label>#1/3 Ancient scripture study report</label>
+						<text>The Ideology of Worshiping the Provider Deity\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nThis report details the initial examination of an ancient book containing religious texts related to a deity known as "Provider." The book, despite its age, displayed no damage. Analysis revealed descriptions of the Provider deity, along with blueprints for a specific box and prayers for a ritual. The book's seemingly infinite pages and the lack of hostile reactions led to its temporary classification as a Class-0 (Safe) anomaly. Further research and construction of the box are recommended to gain deeper insights into the Provider deity and its associated ideology.\n\nObservations:\nUpon initial examination, {PAWN_nameDef} observed an aged yet robust book a substantial number of pages related to a some deity.\nSubject reported encountering a blueprint-like image on page [REDACTED].\nThe reading experiment was terminated after several hours.\n\nOutcome:\nThroughout the examination, the scripture displayed no hostile. \nA significant portion of its pages comprises descriptions of a deity referred to as "Provider" by an ancient civilization.\nSeveral pages contained images of a particular box along with detailed instructions for its creation.\nNumerous pages were dedicated to prayers associated with a specific ritual.\nWhile appearing as a conventional book, neither the cover nor the paper pages displayed any signs of damage. \nAdditionally, regardless of the number of pages turned, {PAWN_nameDef} did not reach the end of the book. Due to this, the experiment was terminated prematurely.\n\nDiscussion:\nThis book appears to be a scripture associated with an ideology centered around the Provider deity. Throughout the pages, this deity is depicted positively and is an object of worship.\nGiven the absence of hostile behavior, the scripture has been temporary classified as Class-0 (Safe) anomaly.\n\nRecommendations:\nContinued research and construction of the box based on the provided blueprint are necessary to acquire further knowledge about this deity.</text>
+						<ThreatClass>0</ThreatClass>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyDesc>A dark-covered book bearing the marks of time. An ideology symbol of devotion to the Provider deity is displayed prominently on the front cover. Ideological texts and prayers are inscribed throughout its pages.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>4</threshold>
+						<label>#2/3 Ancient scripture study report</label>
+						<text>Results of the Ritual\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nThis report documents an experiment involving a sacrificial items offering to the Provider deity. A quantity of silver was placed in a designated box during a ritual. Upon completion of the ritual, the silver vanished from the box, and an equivalent amount of silver with altered properties appeared before the chanters. The successful outcome was attributed to the deity's satisfaction with the prayers offered. The findings suggest a correlation between the quality of the prayers and the quantity of the returned offering. Continued research is recommended to optimize the process and further understand the nature of the deity's interactions.\n\nObservations:\nA box was prepared in advance and placed adjacent to the designated ritual spot. \nA quantity of silver was deposited within the box. Upon the commencement of the ritual, the silver within the box vanished. \nFollowing the conclusion of the ritual, an equivalent amount of silver materialized in front of the chanters.\n\nOutcome:\nA detailed analysis of the recovered silver revealed distinct differences from the silver initially placed within the box. While the quantity of silver remained identical in both instances, notable variations were observed. \n{PAWN_nameDef} reported hearing that the deity was pleased with the offered prayers.\n\nDiscussion:\nThe findings suggest the possibility of offering items as sacrifices to the Provider deity. The quantity of appearing equivalent of the sacrificed item seems to be contingent upon the deity's satisfaction with the accompanying prayers. It is hypothesized that the quantity of items received may diminish in cases where the quality of the prayers is deemed insufficient.\n\nRecommendations:\nContinued research of the scripture's pages is deemed necessary to comprehend the mechanisms for enhancing the relationship with this deity and improving the outcomes of future offerings.</text>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>The One Who Provides</AnomalyLabel>
+						<AnomalyDesc>A dark-covered book bearing the marks of time. An ideology symbol of devotion to the Provider deity is displayed prominently on the front cover. Ideological texts and prayers are inscribed throughout its pages. Providing instructions on conducting rituals to obtain specific items from the deity.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>8</threshold>
+						<label>#3/3 Ancient scripture study report</label>
+						<text>Theory Regarding Ancient Scripture\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nThis report outlines the findings from the continued analysis of an ancient scripture related to the Provider deity. A significant portion of the scripture has been digitized, and research indicates that the facility's anomaly research activities are perceived as offerings by the deity, potentially influencing resource acquisition. A hypothesis suggests that an ancient civilization, overly reliant on the Provider, ultimately declined due to resource scarcity and external pressures. The scripture remains classified as Class-0 (Safe), and continued anomaly research is recommended as a controlled means of interacting with the deity and potentially benefiting from this anomalous resource acquisition.\n\nOutcome:\nA substantial portion of the scripture's pages were mapped and subsequently integrated into a comprehensive digital database for archival purposes.\n\nDiscussion:\nIt appears that the facility's ongoing anomaly research activities are also perceived as sacrifices by the Provider deity, resulting in a higher level of divine favor compared to previous observations. This increased favor may manifest as a disproportionate increase in the quantity of received items relative to the amount of sacrificed items.\nGiven the textual content left by the ancient civilization and non-hostile behavior of the scripture, its current classification as a Class-0 (Safe) anomaly remains unchanged.\n\nHypothesis:\n{PAWN_nameDef} has proposed a hypothesis regarding the origins of this ancient scripture. Based on its content, it can be theorized that a long-lost civilization encountered a deity early in its history. This encounter led to the establishment of a worship system centered around the deity, who was believed to provide essential resources. The civilization subsequently flourished, constructing numerous temples and integrating the worship of the Provider deity into its core ideology. In return, the deity continued to bestow a variety of resources, facilitating the progress and development of this civilization. However, over time, the civilization became overly reliant on The One Who Provides, neglecting its own internal development and inadvertently provoking the enmity of neighboring civilizations. As the civilization's progress stagnated, the deity's interest waned, leading to a significant decrease in the provision of resources. Ultimately, the civilization succumbed to external pressures due to resource scarcity, leaving behind only this scripture as a testament to its existence and the existence of the deity.\n\nRecommendations:\nControlled Use: Continued anomaly research within the facility is recommended to utilize this anomalous source of resources through ritual offering to the Provider deity.</text>
+						<ThingDefSpawn>AE_ResearchNotesPSA</ThingDefSpawn>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+				</studyNotes>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_StudyNotes</li>
+		</inspectorTabs>
+	</ThingDef>
+	
+	
+  
+	<ThingDef>
+		<defName>AE_ChristmasStockings</defName>
+		<label>red stockings</label>
+		<description>Vibrant red stockings, featuring white details and a snowflake symbol.\n\nIt appear to be filled with something.</description>
+		<thingClass>AnomaliesExpected.ThingWithComps_AE</thingClass>
+		<category>Item</category>
+		<genericMarketSellable>false</genericMarketSellable>
+		<drawerType>MapMeshOnly</drawerType>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<altitudeLayer>Item</altitudeLayer>
+		<selectable>true</selectable>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<alwaysHaulable>true</alwaysHaulable>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<pathCost>14</pathCost>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Item/Special/AE_ChristmasStockings</texPath>
+		</graphicData>
+		<statBases>
+			<Mass>0.18</Mass>
+			<Beauty>3</Beauty>
+			<Flammability>0</Flammability>
+			<MarketValue>360</MarketValue>
+		</statBases>
+		<thingCategories>
+			<li>ItemsAnomalies</li>
+		</thingCategories>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+		<allowedArchonexusCount>1</allowedArchonexusCount>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_ChristmasStockings">
+				<activeTicks>1</activeTicks>
+				<cooldownTicks>12000</cooldownTicks>
+				<ticksToActivate>1200</ticksToActivate>
+				<activateTexPath>Things/Item/Special/AE_ChristmasStockings</activateTexPath>
+        
+				<activateLabelString>Take gift</activateLabelString>
+				<activateDescString>Take gift from inside.</activateDescString>
+				<guiLabelString>Choose who should take from this.</guiLabelString>
+				<jobString>take gift</jobString>
+				<activatingStringPending>taking gift {0}</activatingStringPending>
+				<activatingString>taking gift {0}: {1}s</activatingString>
+				<onCooldownString>preparing</onCooldownString>
+				<messageCooldownEnded>Red stockings is ready to use again.</messageCooldownEnded>
+
+				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
+				<fleckOnUsedScale>3</fleckOnUsedScale>
+				<soundActivate>PsychicAnimalPulserCast</soundActivate>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<thoughtDefPositive>Thought_AEChristmasCandyCane</thoughtDefPositive>
+				<thoughtDefNegative>Thought_AEChristmasCoal</thoughtDefNegative>
+				<lastGift>AE_ChristmasTree</lastGift>
+				
+				<jobDef>AE_InteractChristmasStockings</jobDef>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>60000</frequencyTicks>
+				<knowledgeCategory>Basic</knowledgeCategory>
+				<anomalyKnowledge>1</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<showToggleGizmo>true</showToggleGizmo>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotes>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>christmas stockings</AnomalyLabel>
+						<AnomalyDesc>Vibrant red Christmas stockings, featuring white details and a snowflake symbol.\n\nYou can retrieve the gifts from within.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>0.01</threshold>
+						<label>#1/3 Red stockings study report</label>
+						<text>Festive Association\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nThis report describes the initial examination of an anomalous Christmas stockings. The stockings displayed an anomalous internal volume, containing multiple gifts. While initial item retrieval was successful, subsequent attempts by same Subject were unsuccessful. Despite this, no hostile behavior was observed. Continued research and item retrieval attempts are recommended to further investigate properties of the stockings.\n\nObservations:\nUpon initial examination, {PAWN_nameDef} observed a red stockings that seems to contain some items inside.\nSubject attempted to take an item from within the stockings.\nIn the result, {PAWN_nameDef} pulled out a candy cane.\nSubject attempted to take another item from within the stockings.\n{PAWN_nameDef} reported an inability to retrieve further items, as if something was preventing further item extraction.\n\nOutcome:\nThroughout the examination, the stockings displayed no hostile behavior.\nAfter recieving this candy cane gift, Subject's mood lifted for quite a long time.\n\nDiscussion:\nSurface analysis indicated similarity in design with stockings used during Christmas to contain gifts inside.\nPreliminary observations suggest the stockings contains a substantial quantity of items. However, following the retrieval of a single item, further extraction attempts by same Subject were unsuccessful.\nThis phenomenon may indicate that the stockings possesses an internal volume exceeding its external dimensions.\nGiven the absence of hostile behavior, the stockings has been temporary classified as Class-0 (Safe) anomaly.\n\nRecommendations:\nFurther research, including continued attempts to retrieve items from the stockings, is necessary to fully understand its anomalous properties.</text>
+						<ThreatClass>0</ThreatClass>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyDesc>Vibrant red Christmas stockings, featuring white details and a snowflake symbol.\n\nYou can retrieve the gifts from within. The type of gift depends on how much person tended others and the number of humans, animals, mechanoids, and entities they killed.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>2</threshold>
+						<label>#2/3 Red stockings study report</label>
+						<text>Acquired Gifts Correlations\n\nSubject: [REDACTED]\n\nAbstract:\nThis report documents the continued examination of an anomalous Christmas stockings. Retrieval of a lump of coal from the stockings correlated with a decline in subject mood. Preliminary data suggests a correlation between retrieved gift type and Subject actions, with negative correlations observed for human and animal kills and positive correlations for tending others, mechanoid and entity kills. Further research is necessary to investigate this phenomenon.\n\nObservations:\n[REDACTED] attempted to retrieve an item from within the stockings.\nIn the result, Subject pulled out a lump of coal.\n\nOutcome:\n[REDACTED] exhibited a significant decline in mood following the retrieval of the lump of coal.\nFurther gift retrieval tests were conducted.\n\nDiscussion:\nThis experiment demonstrates that gifts from within the stockings can lead toward negative Subject's emotional state.\nThe retrieval of a lump of coal, coinciding with [REDACTED]'s recent return from a raid mission with high enemy and civilian casualties, suggests a possible link between the gift type and the Subject's actions.\nPreliminary data analysis indicates the following correlations:\n- Human killed = highly negative\n- Animal killed = negative\n- Mechanoids killed = highly positive\n- Entity killed = highly positive\n- Tended others = positive\n\nRecommendations:\nFurther research, including continued attempts to retrieve items from the stockings, is necessary to further investigate the potential applications.</text>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+				</studyNotes>
+				<studyNotesManualUnlockable>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>3</threshold>
+						<label>#3/3 Red stockings study report</label>
+						<text>Last Gift?\n\nSubject: [REDACTED]\n\nAbstract:\nThis report describes an anomalous event during the retrieval of the final gift from a Christmas stockings. The Subject experienced an influx of cold air and encountered an unexpectedly large object within. Subsequent withdrawal resulted in multiple punctures from spruce needles. Analysis suggests the final gift may be a large object covered in spruce foliage. Extraction requires careful preparation and safety precautions.\n\nObservations:\nUpon retrieval of the final gift from within the stockings, [REDACTED] reported a sensation of cold air emanating from the deep within the stockings.\nSubject was instructed to move their arm further into the stockings.\n[REDACTED] reported that the item within the stockings appeared to be significantly larger than previous gifts.\nSubject screamed and quickly pulled out the hand from inside of stockings.\n\nOutcome:\nSubsequent inspection of [REDACTED]'s hand revealed multiple punctures consistent with green needles.\n\nDiscussion:\nAnalysis of the needles confirmed their origin as belonging to a spruce tree.\nThe presence of spruce needles suggests the final gift within the stockings may be of significant size and covered with spruce needles or even branches.\n\nRecommendations:\nExtraction of the final gift from the stockings is recommended, following appropriate safety precautions and preparation.</text>
+					</li>
+				</studyNotesManualUnlockable>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_CanDestroyedAfterStudy">
+				<ticksToActivate>10000</ticksToActivate>
+				<maintainProgress>true</maintainProgress>
+				<activateTexPath>UI/CodexEntries/AE_ChristmasStockings_Silhouette</activateTexPath>
+ 
+				<activateLabelString>Retrieve last gift</activateLabelString>
+				<activateDescString>Employ winch to pull last gift from within the stockings.</activateDescString>
+				<guiLabelString>Choose who should retrieve from this.</guiLabelString>
+				<jobString>retrieve last gift</jobString>
+				<activatingStringPending>retrieving last gift from {0}</activatingStringPending>
+				<activatingString>retrieving last gift from {0}: {1}s</activatingString>
+
+				<fleckOnAnomaly>Fleck_Vaporize</fleckOnAnomaly>
+				<fleckOnAnomalyScale>2</fleckOnAnomalyScale>
+				<soundActivate>Recipe_Tailor</soundActivate>
+				<interactionEffecter>Tailor</interactionEffecter>
+				
+				<cooldownFleck>SnowBits</cooldownFleck>
+				<cooldownFleckSpawnIntervalTicks>60</cooldownFleckSpawnIntervalTicks>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<jobDef>AE_RemoveAnomaly</jobDef>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_StudyNotes</li>
+		</inspectorTabs>
+	</ThingDef>
+	
+	
+  
+	<ThingDef>
+		<defName>AE_Speedometer</defName>
+		<label>speedometer</label>
+		<description>A dark circular gauge with faded numbers marking increments up to six. A thin, red needle rests near the lower end of the scale, hinting at a mechanism designed to measure some kind of rate or velocity.</description>
+		<thingClass>AnomaliesExpected.ThingWithComps_AE</thingClass>
+		<category>Item</category>
+		<genericMarketSellable>false</genericMarketSellable>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<altitudeLayer>Item</altitudeLayer>
+		<selectable>true</selectable>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<alwaysHaulable>true</alwaysHaulable>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<pathCost>14</pathCost>
+		<graphicData>
+			<graphicClass>Graphic_Random</graphicClass>
+			<texPath>Things/Item/Special/AE_Speedometer</texPath>
+			<drawSize>(0.75,0.75)</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>0.18</Mass>
+			<Beauty>3</Beauty>
+			<Flammability>0</Flammability>
+			<MarketValue>200</MarketValue>
+		</statBases>
+		<thingCategories>
+			<li>ItemsAnomalies</li>
+		</thingCategories>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+		<allowedArchonexusCount>1</allowedArchonexusCount>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_Speedometer">
+				<activeTicks>1</activeTicks>
+				<cooldownTicks>60000</cooldownTicks>
+				<ticksToActivate>500</ticksToActivate>
+				<activateTexPath>Things/Item/Special/AE_Speedometer/AE_Speedometer_b</activateTexPath>
+        
+				<activateLabelString>Implant</activateLabelString>
+				<activateDescString>Implanting speedometer.</activateDescString>
+				<guiLabelString>Choose who should implant this.</guiLabelString>
+				<jobString>implant</jobString>
+				<activatingStringPending>implanting {0}</activatingStringPending>
+				<activatingString>implanting {0}: {1}s</activatingString>
+				<onCooldownString>readjusting</onCooldownString>
+				<messageCooldownEnded>Speedometer is ready to use again.</messageCooldownEnded>
+
+				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
+				<fleckOnUsedScale>5</fleckOnUsedScale>
+				<soundActivate>PsychicAnimalPulserCast</soundActivate>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<tickPerAction>60000</tickPerAction>
+				<DecelerationIntervalRange>
+					<min>45000</min>
+					<max>75000</max>
+				</DecelerationIntervalRange>
+				<deathDamageDef>Bomb</deathDamageDef>
+				<deathDamagePerLevel>35</deathDamagePerLevel>
+				<AccelerationHediffDef>Hediff_AEAcceleration</AccelerationHediffDef>
+				<DecelerationHediffDef>Hediff_AEDeceleration</DecelerationHediffDef>
+				<ChronoDestabilizationHediffDef>Hediff_AEChronoDestabilization</ChronoDestabilizationHediffDef>
+				<ChronoComaHediffDef>Hediff_AEChronoComa</ChronoComaHediffDef>
+				<dropTexPath>UI/Icons/AE_SpeedometerDrop_Icon</dropTexPath>
+				<destabilizationGeneDefs>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Ageless</li>
+					<li MayRequire="RedMattis.BigSmall.Core">BS_TrulyAgeless</li>
+				</destabilizationGeneDefs>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>120000</frequencyTicks>
+				<knowledgeCategory>Advanced</knowledgeCategory>
+				<anomalyKnowledge>1</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<showToggleGizmo>true</showToggleGizmo>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotes>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyDesc>A dark circular gauge with faded numbers marking increments up to six. A thin, red needle rests near the lower end of the scale, hinting at a mechanism designed to measure some kind of rate or velocity.\n\nAppears to be able to merge with flesh.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>0.01</threshold>
+						<label>#1/1 Speedometer study report</label>
+						<text>The Indestructible Speedometer\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nAnomalous speedometer exhibits unusual temporal properties. Initial inspection revealed a seemingly inert device with a stuck indicator. Subsequent attempts at manipulation resulted in a physical interaction with the Subject and its apparent destruction, followed by immediate self-reassembly. Temporal anomalies were also observed in a nearby chronometer during the event. Further investigation into these unique characteristics is warranted, albeit with caution.\n\nObservations:\nUpon initial examination, {PAWN_nameDef} noted no noticable unusual properties of the speedometer.\nThe indicator needle was observed to be immobile, positioned at the lower left part of the gauge.\nAttempts by the Subject to manually adjust a screw component of the speedometer proved unsuccessful.\nUnexpectedly, the {PAWN_nameDef} reported a sensation of the speedometer integrating with their hand's tissue, making them drop it onto solid ground.\nThe impact resulted in the fragmentation of the speedometer into multiple pieces. However, these fragments spontaneously and rapidly reformed into the device's original configuration.\nDuring the interaction, {PAWN_nameDef}'s personal wristwatch displayed erratic temporal fluctuations, exhibiting periods of both deceleration and acceleration.\n\nOutcome:\nThe speedometer did not exhibit any overt hostile behavior during the observation and manipulation process.\nThe Subject's hand, which reportedly interacted with the speedometer, returned to its pre-interaction state with no discernible adverse effects or lasting anomalies.\n\nDiscussion:\nThe observed instantaneous self-reassembly of the speedometer following physical destruction strongly suggests an intrinsic temporal anomaly affecting the object itself, potentially rendering it effectively indestructible through conventional means.\nThe temporal fluctuations detected in the Subject's wristwatch indicate a localized temporal field emanating from the speedometer during periods of significant physical stress or anomalous activity.\nFurther observation of the speedometer's behavior is recommended to elucidate the mechanisms underlying its temporal properties. However, direct physical interaction is temporarily restricted pending a more comprehensive understanding of its effects.\nFuture experimentation involving controlled and monitored interaction between the subject and the speedometer may yield valuable data regarding potential changes in the anomaly's behavior or the extent of its temporal influence.\nGiven the lack of hostile behavior, speedometer has been temporary classified as Class-0 (Safe) anomaly.\n\nRecommendations:\nAdditional study of it anomalous properties is required before further tests could be carried out.</text>
+						<ThreatClass>0</ThreatClass>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+				</studyNotes>				
+				<studyNotesManualUnlockable>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyDesc>A dark circular gauge with faded numbers marking increments up to six. A thin, red needle rests near the lower end of the scale, hinting at a mechanism designed to measure some kind of rate or velocity.\n\nAppears to be able to merge with flesh. Decelerating human-likes nearby in the absence of a host.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>0.02</threshold>
+						<label>Speedometer Deceleration incident report</label>
+						<text>Rapid Deceleration Effect\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nExposure to the anomalous speedometer has induced rapid deceleration effects in personnel, including the Subject. The speedometer's indicator shifted to the lower right part. Attempts to manipulate the device were again halted due to physical integration with the Subject's tissue. The observed deceleration necessitates further investigation into the speedometer's area of influence and potential mitigation strategies.\n\nObservations:\nMultiple personnel within the facility, including {PAWN_nameDef}, exhibited symptoms indicative of rapid deceleration and was sent to medical facility.\nThe speedometer's needle indicator was observed to have rotated to the lower right portion of the gauge.\nAttempts by personnel to manually adjust a screw component of the speedometer, with the aim of returning the needle to the lower left position, proved unsuccessful.\nThe experiment was prematurely terminated when the speedometer began to exhibit the same tissue-integration phenomenon with the Subject as documented in previous encounters.\n\nOutcome:\n{PAWN_nameDef} is currently under medical care and reported to be in a stable condition.\n\nMedical Report:\nThe Speedometer's influence is causing a profound deceleration of the body's processes, extending down to the cellular level. Metabolic rates are plummeting, nerve signals are sluggish, and even the processing of sensory information is affected. As a result, the Subject's speech becomes drawn out and labored, each word taking an agonizingly long time to form. Simultaneously, the outside world for the {PAWN_nameDef} appears to accelerate to an impossible speed, conversations become incomprehensible blurs of sound, and even the gentle sway of trees seems frantic and overwhelming. The individual is trapped in a slowed-down internal reality, observing a world moving at a dizzying pace around them.\n\nDiscussion:\nThe previous restrictions on experimentation with the speedometer have been lifted.\nThe observed deceleration effects on nearby personnel suggest that the speedometer exerts an area of influence when not directly hosted by a biological organism.\nIt is theorized that a stable biological integration of the speedometer with a host body might contain or neutralize the observed deceleration effect on the surrounding environment.\n\nRecommendations:\nFurther experiment with implantation of speedometer on the body must be carried out.</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>Photon 300</AnomalyLabel>
+						<AnomalyDesc>A dark circular gauge with faded numbers marking increments up to six. A thin, red needle rests near the lower end of the scale, hinting at a mechanism designed to measure some kind of rate or velocity.\n\nWhen merged with human body will accelerate them based on selected mode. Decelerating human-likes nearby in the absence of a host.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>0.03</threshold>
+						<label>Speedometer Mode 1 study report</label>
+						<text>Acceleration Mode 1/6\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nExperimentation commenced involving the direct implantation of the anomalous speedometer into the Subject. Initial apprehension was noted, but the integration process proceeded without reported discomfort. Subsequent observations revealed a marked acceleration in the Subject's physical and cognitive functions, extending to the operational speed of manipulated objects. The device's operational mode appears adjustable, suggesting potential for variable effects. Further investigation into higher acceleration modes is recommended.\n\nObservations:\n{PAWN_nameDef} received instructions to implant speedometer into their body.\nDespite initial apprehension and expressed fear, the Subject reported no adverse sensations or discomfort during the apparent assimilation of the speedometer with their bodily tissues.\nFollowing integration, {PAWN_nameDef} exhibited a noticeable increase in both verbal articulation speed and overall physical movement.\nThe Subject demonstrated the capacity to complete tasks with a temporal efficiency exceeding baseline expectations, accomplishing a two-day workload within a single day.\nWhen manipulating a firearm, the weapon displayed an anomalous increase in its operational tempo, allowing for a significantly elevated rate of reloading and discharge beyond its technical specifications.\n\nOutcome:\nAfter a period of approximately one standard day, the speedometer's adjustment screw became manipulable. Rotation to a "Mode 0" setting resulted in the detachment of the device from the host body. Furthermore, rotation to a "Mode 2" setting now appears feasible.\n\nDiscussion:\nSpeedometer Mode 1 appears to induce a significant acceleration of all biological processes within the host's body, approximately x2 of their baseline rate. This manifests as a noticeable increase in metabolic activity, neural transmission speed, cellular division, and other physiological functions. While the subject may exhibit enhanced physical and mental performance in the short term, the long-term consequences of this artificially elevated processing speed are currently unknown and warrant further investigation.\n\nRecommendations:\nFurther experimentation utilizing the speedometer's higher acceleration modes is required to ascertain the full spectrum of its effects and potential risks. Controlled studies with careful monitoring of the subject's physiological responses at each mode are essential.</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>0.04</threshold>
+						<label>Speedometer Mode 2 study report</label>
+						<text>Acceleration Mode 2/6\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nFollowing successful integration in Mode 1, the anomalous speedometer's operational setting was adjusted to Mode 2. Subsequent observations indicate a further significant acceleration of the Subject's biological processes, resulting in a perceived deceleration of the external environment and enhanced evasive capabilities. Further experimentation with higher acceleration modes is warranted.\n\nObservations:\n{PAWN_nameDef} received instructions to maintain the implanted speedometer and manipulate its adjustment screw to the "Mode 2" setting.\n\nOutcome:\nThe Subject reported a pronounced perception of the external world moving at a decelerated rate. This altered temporal perception resulted in a demonstrably enhanced reaction time, allowing {PAWN_nameDef} to successfully evade simulated attacks that would typically exceed their physical capabilities.\nAfter a period of approximately 2 standard days, the speedometer's adjustment screw became manipulable.\n\nDiscussion:\nSpeedometer Mode 2 demonstrably induces a further significant acceleration of the host's biological processes, estimated at approximately x4 times the host's baseline rate. This intensified temporal distortion leads to a subjective experience of time dilation, granting the subject a perceived advantage in reaction speed and situational awareness.\nForced removal of Speedometer before screw becomes manupulable might result in temporary coma.\n\nRecommendations:\nFurther experimentation utilizing the speedometer's higher acceleration modes is required to ascertain the full spectrum of its effects and potential risks. Controlled studies with careful monitoring of the subject's physiological responses at each mode are essential.</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>0.05</threshold>
+						<label>Speedometer Mode 3 study report</label>
+						<text>Acceleration Mode 3/6\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nFollowing successful operation in Modes 1-2, the anomalous speedometer's setting was adjusted to Mode 3. Subsequent observations indicate a further substantial acceleration of the Subject's biological processes, resulting in markedly increased task completion efficiency. Notably, while physical processes are significantly enhanced, metabolism functions appear to be less proportionally affected. Further experimentation with higher acceleration modes is warranted.\n\nObservations:\n{PAWN_nameDef} received instructions to maintain the implanted speedometer and manipulate its adjustment screw to the "Mode 3" setting.\n\nOutcome:\nThe Subject demonstrated an exceptionally high rate of task completion, successfully sanitizing the entirety of the facility's territory within a timeframe of several hours.\nAfter a period of approximately 3 standard days, the speedometer's adjustment screw became manipulable.\n\nDiscussion:\nSpeedometer Mode 3 demonstrably induces a further substantial acceleration of the host's biological processes, estimated at approximately x8 times the host's baseline rate. While the subject's cognitive faculties appear to remain relatively unaffected by this extreme temporal distortion, metabolic activity shows an increase at a lower proportional rate than the overall acceleration of other bodily functions.\n\nRecommendations:\nFurther experimentation utilizing the speedometer's higher acceleration modes is required to ascertain the full spectrum of its effects and potential risks. Controlled studies with careful monitoring of the subject's physiological responses at each mode are essential.</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>0.06</threshold>
+						<label>Speedometer Mode 4 study report</label>
+						<text>Acceleration Mode 4/6\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nFollowing successful operation in Modes 1-3, the anomalous speedometer's setting was adjusted to Mode 4. Subsequent observations indicate a further exponential acceleration of the Subject's biological processes, resulting in physical capabilities exceeding normal human limitations. Accelerated aging was also noted, raising concerns about long-term viability. Further experimentation with higher acceleration modes is warranted, albeit with increased caution.\n\nObservations:\n{PAWN_nameDef} received instructions to maintain the implanted speedometer and manipulate its adjustment screw to the "Mode 4" setting.\n\nOutcome:\nThe Subject demonstrated physical capabilities far beyond typical human capacity, successfully penetrating a thick metallic plate through the sheer velocity and frequency of applied fist attacks, an action normally deemed impossible.\nPhysiological signs of accelerated aging were observed in the Subject following a period of operation in Mode 4.\nAfter a period of approximately 4 standard days, the speedometer's adjustment screw became manipulable.\n\nDiscussion:\nSpeedometer Mode 4 demonstrably induces a further exponential acceleration of the host's biological processes, estimated at approximately x16 times the host's baseline rate. This extreme temporal distortion results in a significant amplification of physical strength and speed. However, preliminary observations suggest a drastic acceleration of the subject's aging process, leading to a theoretical decrease in life expectancy. This potential trade-off between enhanced performance and longevity requires careful consideration.\n\nRecommendations:\nFurther experimentation utilizing the speedometer's higher acceleration modes is required to ascertain the full spectrum of its effects and potential risks. Controlled studies with careful monitoring of the subject's physiological responses at each mode are essential.</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>0.07</threshold>
+						<label>Speedometer Mode 5 study report</label>
+						<text>Acceleration Mode 5/6\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nFollowing successful operation in Modes 1-4, the anomalous speedometer's setting was adjusted to Mode 5. Subsequent observations indicate a further drastic acceleration of the Subject's biological processes, resulting in significantly enhanced regenerative capabilities and extreme temporal manipulation of voluntary actions. Further experimentation with the final acceleration mode is warranted.\n\nObservations:\n{PAWN_nameDef} received instructions to maintain the implanted speedometer and manipulate its adjustment screw to the "Mode 5" setting.\n\nOutcome:\nBodily injuries requiring a period of months for typical healing were observed to regenerate within a single standard day in the Subject.\nSuper speed allowed him to become the fastest cook in the world. He managed to cook dinner in the second while the water was boiling. But then he ate all of this food within the same few seconds.\nAfter a period of approximately 5 standard days, the speedometer's adjustment screw became manipulable.\n\nDiscussion:\nSpeedometer Mode 5 demonstrably induces a further drastic acceleration of the host's biological processes, estimated at approximately x32 times the host's baseline rate. This extreme temporal distortion results in highly accelerated cellular regeneration and the capacity for near-instantaneous execution of complex motor sequences. The implications of such extreme temporal manipulation on the subject's long-term physiological state require careful consideration.\nTo move at such speeds, the Subject's body must contain a large amount of energy, the sudden release of which could lead to dire consequences.\n\nRecommendations:\nFurther experimentation utilizing the speedometer's higher acceleration modes is required to ascertain the full spectrum of its effects and potential risks. Controlled studies with careful monitoring of the subject's physiological responses at each mode are essential.</text>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>0.1</threshold>
+						<AnomalyDesc>A dark circular gauge with faded numbers marking increments up to six. A thin, red needle rests near the lower end of the scale, hinting at a mechanism designed to measure some kind of rate or velocity. \n\nCan affect local photon speed constant.When merged with human body will accelerate them based on selected mode. Decelerating human-likes nearby in the absence of a host.\n\nClassified as Class-1 (Caution) anomaly.</AnomalyDesc>
+						<label>Speedometer Mode 6 study report</label>
+						<text>Acceleration Mode 6/6\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nFollowing successful operation in Modes 1-5, the anomalous speedometer's setting was adjusted to the final Mode 6. Subsequent observations indicate a further extreme acceleration of the Subject's biological processes, resulting in the rapid processing of vast amounts of information. The escalating risk of accelerated aging has necessitated a reclassification of the anomaly. Was proposed a theoretical framework involving alterations to the photon speed constant to explain the observed effects. Controlled utilization protocols are being considered alongside potential removal options.\n\nObservations:\n{PAWN_nameDef} received instructions to maintain the implanted speedometer and manipulate its adjustment screw to the "Mode 6" setting.\n\nOutcome:\nThe Subject demonstrated an unprecedented rate of information processing, successfully reviewing the entirety of the facility's library contents within a period of several standard days.\nAfter a period of approximately 6 standard days, the speedometer's adjustment screw became manipulable.\n\nDiscussion:\nSpeedometer Mode 6 demonstrably induces a further extreme acceleration of the host's biological processes, estimated at approximately x64 times the host's baseline rate. The escalating risk of rapid physiological degradation due to accelerated aging has led to the reclassification of the "Photon 300" anomaly to Class-1 (Caution).\n\nHypothesis:\n{PAWN_nameDef} has proposed a theoretical model suggesting that "Photon 300" influences the photon speed constant for the host subject according to the formula x*(2^X), where X represents the current acceleration mode. The hypothesis posits that higher acceleration modes result in an increased energy-to-mass ratio for the subject, potentially explaining the observed phenomenon of the subject moving at a relativistic velocity relative to the surrounding environment due to a higher intrinsic energy state.\n\nRecommendations:\nRemoval: Given the increasing potential for uncontrolled propagation of temporal anomalies, the removal of "Photon 300" from the facility's territory presents a viable containment strategy.\nControlled Use: Alternatively, the implementation of strict limited usage protocols for "Photon 300" could potentially harness the Rapid Acceleration effect to significantly enhance operational efficiency within the facility. A thorough risk-benefit analysis is required before implementing such protocols.</text>
+						<ThreatClass>1</ThreatClass>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>0.08</threshold>
+						<label>Speedometer Explosion incident report</label>
+						<text>Violent Body Detonation\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nFollowing critical injury and subsequent biological cessation in a Subject hosting the anomalous speedometer, a high-yield detonation event occurred. Post-detonation analysis indicates the speedometer remained intact. The event suggests a correlation between the device's presence, the host's biological state at the time of cessation, and the resultant explosive force. Safety protocols regarding the deployment of the speedometer, particularly at higher operational modes, require immediate reassessment.\n\nObservations:\n{PAWN_nameDef} sustained fatal injuries and succumbed to them while the anomalous speedometer remained integrated within their body.\nImmediately following biological cessation, the Subject's body underwent a rapid and forceful detonation, resulting in a significant explosion.\n\nOutcome:\nThe only identifiable remnant of the host body following the detonation event was the anomalous speedometer, recovered intact at the epicenter.\n\nDiscussion:\nPreliminary analysis suggests that the presence of the speedometer within a biologically terminated host triggers a violent energy release. It is theorized that the accelerated cellular activity induced by the speedometer, upon cessation of life functions, results in a rapid and uncontrolled release of energy proportional to the affected cellular mass and the speedometer's operational mode. The observed correlation between the speedometer's mode and the explosive yield necessitates further investigation to quantify this relationship. The potential for unintended detonation upon host mortality raises significant concerns regarding the safe deployment and utilization of the speedometer, particularly in proximity to allied personnel.\n\nRecommendations:\nThe potential for catastrophic detonation upon the biological cessation of a speedometer host must be considered a critical safety parameter during all future experimentation and potential deployment scenarios. Strict protocols limiting the operational mode and proximity to friendly personnel should be implemented.</text>
+						<ThreatClass>1</ThreatClass>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>0.09</threshold>
+						<label>Speedometer Chrono Destabilization incident report</label>
+						<text>Chrono Destabilized\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nA Subject hosting the anomalous speedometer surpassed typical biological lifespan, coinciding with the onset of physiological irregularities. Subsequent medical evaluation revealed systemic abnormalities necessitating further analysis and eventual removal of the device. Post-removal, a gradual return to baseline health indicators was observed. The findings suggest a temporal destabilization phenomenon linked to prolonged speedometer integration in aged individuals.\n\nObservations:\n{PAWN_nameDef}, bearing the implanted speedometer, reached an age exceeding average life expectancy for their species.\nDuring a routine medical assessment, the Subject presented with notable physiological abnormalities.\n{PAWN_nameDef} was admitted to the medical facility for comprehensive diagnostic testing.\nFollowing the acquisition and analysis of medical data, the anomalous speedometer was surgically removed from the Subject's body.\n\nOutcome:\nPost-removal of the speedometer, the Subject's health status began a slow but progressive recovery towards a normal physiological state.\n\nMedical Report:\nExamination reveals a concerning phenomenon directly correlated with the protracted presence of the implanted Speedometer in an aging host. Cellular analysis indicates a severe temporal dysregulation throughout the organism. Discrete cell populations exhibit markedly divergent temporal activity, with some undergoing extreme acceleration of metabolic and proliferative processes, while others display pronounced deceleration. This asynchronous cellular behavior, designated "Chrono Destabilization", induces significant structural compromise and functional decline across all organ systems. Without neutralization of the Speedometer's influence, this progressive destabilization would likely prove fatal.\nFollowing the extraction of the Speedometer, preliminary data indicates a gradual resolution of the Chrono Destabilization effects. The observed cellular asynchronicity is diminishing over time, suggesting a trajectory towards complete cessation of the temporal disruption and a return to baseline physiological homeostasis following a sufficient period of post-exposure recovery. Extended monitoring is required to fully characterize the timeline and completeness of this recuperation.\n\nDiscussion:\nThe observed onset of Chrono Destabilization in an aged subject suggests a potential limitation in the speedometer's ability to maintain coherent temporal regulation across diverse cell populations in individuals exceeding typical lifespan. This dysregulation, if unchecked, appears to be a terminal condition for the host. A similar destabilization is also theorized to occur upon interaction with ageless cellular structures. Prolonged exposure to Chrono Destabilization for approximately two standard years results in significant cellular degradation. A comparable duration without the speedometer's influence is estimated for the restoration of cellular normalcy. The removal of the speedometer initiates a gradual dissipation of the Chrono Destabilization effects within the host.\n\nRecommendations:\nThe utilization of the speedometer should be restricted to personnel whose age falls within the average life expectancy for their species to mitigate the risk of inducing Chrono Destabilization. </text>
+					</li>
+				</studyNotesManualUnlockable>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_StudyNotes</li>
+		</inspectorTabs>
+	</ThingDef>
+	
+	
+
+	<ThingDef>
+		<defName>AE_BirthdayCake</defName>
+		<label>big cake</label>
+		<description>A round big cake on a red plate. It covered in white frosting and garnished with colorful toppings.\n\nIt looks appetizing.</description>
+		<thingClass>AnomaliesExpected.ThingWithComps_AE</thingClass>
+		<category>Item</category>
+		<genericMarketSellable>false</genericMarketSellable>
+		<drawerType>MapMeshOnly</drawerType>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<altitudeLayer>Item</altitudeLayer>
+		<selectable>true</selectable>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<alwaysHaulable>true</alwaysHaulable>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<pathCost>14</pathCost>
+		<graphicData>
+			<texPath>Things/Item/Consumable/AE_BirthdayCake</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(0.75,0.75)</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>2</Mass>
+			<Beauty>20</Beauty>
+			<Flammability>0</Flammability>
+			<MarketValue>260</MarketValue>
+		</statBases>
+		<thingCategories>
+			<li>ItemsAnomalies</li>
+		</thingCategories>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+		<allowedArchonexusCount>1</allowedArchonexusCount>
+		<comps>
+			<li Class="CompProperties_Interactable">
+				<compClass>AnomaliesExpected.Comp_BirthdayCake</compClass>
+				<activeTicks>1</activeTicks>
+				<ticksToActivate>5000</ticksToActivate>
+				<cooldownTicks>420000</cooldownTicks>
+				<activateTexPath>Things/Item/Consumable/AE_BirthdayCake</activateTexPath>
+        
+				<activateLabelString>Celebrate Birthday</activateLabelString>
+				<activateDescString>Make someone eat the cake on a plate and blow out the candles.</activateDescString>
+				<guiLabelString>Choose who should eat this.</guiLabelString>
+				<jobString>celebrate birthday</jobString>
+				<activatingStringPending>celebrating birthday with {0}</activatingStringPending>
+				<activatingString>celebrating birthday with {0}: {1}s</activatingString>
+				<onCooldownString>restoring</onCooldownString>
+				<messageCooldownEnded>Can celebrate birthday again.</messageCooldownEnded>
+
+				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
+				<fleckOnUsedScale>5</fleckOnUsedScale>
+				<soundActivate>PsychicAnimalPulserCast</soundActivate>
+				<interactionEffecter>EatVegetarian</interactionEffecter>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>120000</frequencyTicks>
+				<knowledgeCategory>Basic</knowledgeCategory>
+				<anomalyKnowledge>1</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<showToggleGizmo>true</showToggleGizmo>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotes>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>Birthday Cake</AnomalyLabel>
+						<AnomalyDesc>A round big cake on a red plate. It covered with white frosting, adorned with pink whipped cream swirls, fresh raspberries, and a delicate chocolate drizzle. This soft cake has a delicious strawberry flavor and bears the inscription "Happy Birthday".\n\nUpon interaction with cake or it plate, lit candles appear on its top.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>0.01</threshold>
+						<label>#1/2 Big cake study report</label>
+						<text>Connection to Birthday Celebration\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nA large, strawberry-flavored cake and its accompanying red plate exhibit anomalous properties: the cake demonstrates self-restoration after damage, while the plate proves indestructible. Upon interaction with a fully restored cake, candles appear, and an inscription personalized to the Subject's name and age materializes, suggesting a direct link to birthday celebrations. The cake lacks nutritional value. Classified as Class-0 (Safe), further controlled experimentation is recommended to confirm its properties and explore its celebratory nature.\n\nObservations:\nSubject was presented with a standard steel knife. {PAWN_nameDef} was able to cleanly cut a piece from the large cake.\nSubject attempted to smash the red plate onto solid ground. The plate remained entirely intact, demonstrating complete resistance to impact. Detached fragments of the large cake that fell during this attempt were subsequently collected for analysis.\n{PAWN_nameDef} exposed big cake to a controlled fire for 30 minutes. Upon extinguishing the fire, the large cake was completely consumed by flames, leaving only the red plate, which exhibited no signs of charring or melting.\nFollowing all tests it took [REDACTED] hours for the cake to return to its initial, complete state, with all missing pieces spontaneously regenerated. Previously separated fragments of the cake exhibited no anomalous effects and did not display restorative capabilities.\nWhen Subject attempted to pick up the plate holding the fully restored cake, multiple lit candles spontaneously appeared on its upper surface. Concurrently, the inscription on the cake's frosting changed to "Happy Birthday, {PAWN_nameDef}".\n\nOutcome:\nThroughout the testing procedures, big cake displayed no hostile reaction.\nThorough analysis of the separated cake fragments revealed no discernible nutritional value, though they did possess a distinct strawberry flavor.\nThe quantity of spontaneously appearing candles precisely coincided with the Subject's documented age at the time of the interaction.\n\nDiscussion:\nThe big cake appears to possess anomalous self-restorative properties, while the red plate's anomalous properties rendering it indestructible by conventional means.\nThe lack of nutritional content in the cake precludes its viability as a sustainable food source.\nThe spontaneous appearance of lit candles and the customized inscription upon interaction strongly suggest a profound connection between cake's properties and the concept of a birthday celebration. This direct correlation warrants further investigation.\nTemporary big cake has been classified as Class-0 (Safe) anomaly.\n\nRecommendations:\nControlled experiments simulating a birthday celebration, involving the designated subject and the cake, are highly recommended to explore the possibility of further anomalous properties.</text>
+						<ThreatClass>0</ThreatClass>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>Today Will Be My Birthday</AnomalyLabel>
+						<AnomalyDesc>A round big cake on a red plate. It covered with white frosting, adorned with pink whipped cream swirls, fresh raspberries, and a delicate chocolate drizzle. This soft cake has a delicious strawberry flavor and bears the inscription "Happy Birthday".\n\nUpon interaction with cake or it plate, lit candles appear on its top. When person using the cake to celebrate birthday, then their age changes to fit date of the closest birthday.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>7</threshold>
+						<label>#2/2 Big cake study report</label>
+						<text>Theory Regarding Big Cake\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nAnalysis of the red plate revealed inscriptions and corroded organic metal, indicating it as the anomaly source. Hypothesized regarding big cake was made. Classified Class-0 (Safe), controlled age manipulation is recommended.\n\nOutcome:\nMultispectral Imaging was applied to analyze the red plate associated with big cake. Analysis revealed residual textual inscriptions, which partially was restored: "May you be able to experience this moment any time. Happy birthday, [REDACTED]. 03.06.[REDACTED]".\nAdditionally, traces of organic metal were identified within the plate's composition, exhibiting signs consistent with galvanic corrosion.\n\nDiscussion:\nObservations indicate varying interests in the cake's age-manipulating properties among different demographic groups within the facility. Adults whose chronological birthdays are within six months prior to today have expressed interest in utilizing the cake to decrease their biological age, presumably for life prolongation. Conversely, adolescent subjects whose chronological birthdays are within six months following today have demonstrated interest in using the cake to accelerate their growth.\nGiven passive and non-hostile behavior of the big cake, its current classification as a Class-0 (Safe) anomaly remains unchanged.\n\nHypothesis:\n{PAWN_nameDef} has proposed a hypothesis regarding the origins of this big cake. Based on conducted experiments, it can be theorized that big cake itself is not anomalous, hile the source of all effects is the red plate itself. What was meant to be a birthday gift made by an Archotech for someone, based on found parts of text, seems to malfunction nowadays due to foreign intervention into its inner structure. Its original purpose was supposed to bring a person back to their last birthday and allow them to enjoy the party with cake, but due to this malfunction, it is now changing a person's age to align with the closest birthday date.\n\nRecommendations:\nControlled Use: Controlled birthday celebration protocols, specifically utilizing the big cake, can be used as a potential means for precise, controlled age manipulation within the facility.</text>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+				</studyNotes>
+				<studyNotesManualUnlockable>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyDesc>A round big cake on a red plate. It covered with white frosting, adorned with pink whipped cream swirls, fresh raspberries, and a delicate chocolate drizzle. This soft cake has a delicious strawberry flavor and bears the inscription "Happy Birthday".\n\nUpon interaction with cake or it plate, lit candles appear on its top. When person using the cake to celebrate birthday, then their age changes to fit date of the closest birthday.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>0.05</threshold>
+						<label>Birthday Cake incident report</label>
+						<text>Birthday Chronological Influence\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nConsumption of the anomalous big cake, following a simulated birthday celebration, resulted in a spontaneous shift in the Subject's perceived and measured biological age to align with the current date as their birthday. Preliminary observations suggest the cake induces age modification based on proximity to the Subject's next or previous chronological birthday. This anomaly presents a potential for controlled age manipulation within the facility.\n\nObservations:\nSubject was instructed to pick up the plate and proceed with normal birthday celebration. Note should be made that Subject's birthday date is different from date of experiment.\nAs previously observed, the inscription on the cake's frosting changed to "Happy Birthday, {PAWN_nameDef}".\nSubject then proceeded to extinguish the spontaneously appeared lit candles and fully consume the entirety of the cake.\nPost-consumption, {PAWN_nameDef} expressed surprise, articulating a strong conviction that the current date was indeed their birthday, despite prior knowledge to the contrary.\n\nOutcome:\nSubsequent biological age analysis of the Subject revealed a measurable physiological alteration, indicating a shift in their age metrics to correspond precisely with the current date being their birth anniversary.\n\nDiscussion:\nThe Subject's post-experiment conviction regarding their birthday's date, despite contradictory official documentation, directly correlates with the observed physiological age alteration. We hypothesize that the full consumption of the big cake, following a simulated birthday celebration, induces a recalibration of the Subject's biological age to align with the current date as their birth date.\nPreliminary evidence suggests that if the Subject's chronological age was closer to their next birthday, their biological age increased to match. Conversely, if their chronological age was closer to their previous birthday, their biological age decreased. This implies a unique age-normalization mechanism relative to the current date.\n\nRecommendations:\nControlled birthday celebration protocols, specifically utilizing the big cake, should be meticulously investigated as a potential means for precise, controlled age manipulation within the facility.</text>
+					</li>
+				</studyNotesManualUnlockable>
+			</li>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_StudyNotes</li>
+		</inspectorTabs>
+	</ThingDef>
+  
+</Defs>

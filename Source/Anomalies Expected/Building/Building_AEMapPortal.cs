@@ -1,11 +1,17 @@
 ﻿using RimWorld;
 using System.Text;
+using UnityEngine;
 using Verse;
 
 namespace AnomaliesExpected
 {
     public class Building_AEMapPortal : MapPortal
     {
+        protected static readonly CachedTexture EnterPitGateTex = new CachedTexture("UI/Commands/EnterCave");
+        protected override Texture2D EnterTex => EnterPitGateTex.Texture;
+
+        protected static readonly CachedTexture ViewSubMapTex = new CachedTexture("UI/Commands/ViewCave");
+
         public CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = GetComp<CompAEStudyUnlocks>());
         private CompAEStudyUnlocks studyUnlocksCached;
 

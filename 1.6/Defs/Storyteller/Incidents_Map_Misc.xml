@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_AnomalyBedSpawn</defName>
+		<label>ordinary bed</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromOrbit</workerClass>
+		<letterLabel>Found ordinary bed</letterLabel>
+		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like an ordinary bed, but with frame made of organic metal. It looks very comfortable to sleep on.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>10</earliestDay>
+		<baseChance>0.2</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+		<minRefireDays>60</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableObjectDef>AE_AnomalyBed</DeployableObjectDef>
+				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>0.3</ChanceFactorPowPerBuilding>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+	
+	
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_AnomalyHospitalBedSpawn</defName>
+		<label>ordinary hospital bed</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromOrbit</workerClass>
+		<letterLabel>Found ordinary hospital bed</letterLabel>
+		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like an ordinary bed specially designed for use in hospitals, but with frame made of organic metal. Medical clipboard lying on the bed with some text written on it.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>30</earliestDay>
+		<baseChance>0.1</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minRefireDays>90</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableObjectDef>AE_AnomalyHospitalBed</DeployableObjectDef>
+				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>0.3</ChanceFactorPowPerBuilding>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+	
+	
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_ForbiddenFruitSpawn</defName>
+		<label>giant apple</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingFromOrbit</workerClass>
+		<letterLabel>Found giant apple</letterLabel>
+		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a quite giant apple.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>30</earliestDay>
+		<baseChance>0.2</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+		<minRefireDays>30</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableThingDefs>
+					<li>AE_ForbiddenFruit</li>
+				</DeployableThingDefs>
+				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
+				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+	
+	
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_MeatGrinderSpawn</defName>
+		<label>industrial metal box</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromOrbit</workerClass>
+		<letterLabel>Found industrial metal box</letterLabel>
+		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like an industrial-looking metal box as tall as a table. Several small doors interrupt the smooth surface on its sides, while a big hole with hidden inside blades sits atop it. A lone button rests next to the hole, hinting at some unknown function.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>60</earliestDay>
+		<baseChance>0.1</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minRefireDays>120</minRefireDays>
+		<tags>
+			<li>AEMeatGrinder</li>
+		</tags>
+		<refireCheckTags>
+			<li>AEMeatGrinder</li>
+		</refireCheckTags>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableObjectDef>AE_MeatGrinder</DeployableObjectDef>
+				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_MeatGrinderMysteriousCargo</defName>
+		<label>industrial metal box</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromQuest</workerClass>
+		<questScriptDef>AE_MysteriousCargoMeatGrinder</questScriptDef>
+		<earliestDay>60</earliestDay>
+		<baseChance>0.1</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minRefireDays>240</minRefireDays>
+		<tags>
+			<li>AEMeatGrinder</li>
+		</tags>
+		<refireCheckTags>
+			<li>AEMeatGrinder</li>
+		</refireCheckTags>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableObjectDef>AE_MeatGrinder</DeployableObjectDef>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_CreepJoinerJoin_Grinder</defName>
+		<label>grinder creepjoiner join</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromQuest</workerClass>
+		<questScriptDef>AE_CreepJoinerArrival_Grinder</questScriptDef>
+		<earliestDay>60</earliestDay>
+		<baseChance>0.3</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minRefireDays>60</minRefireDays>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minThreatPoints>350</minThreatPoints>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<entityCodexEntryDefsRequired>
+					<li>AE_EntityCodexEntry_MeatGrinder</li>
+				</entityCodexEntryDefsRequired>
+				<ChanceFactorPowPerOtherBuildings>
+					<AE_MeatGrinder>
+						<chance>2</chance>
+					</AE_MeatGrinder>
+					<AE_BakingPies>
+						<chance>2</chance>
+					</AE_BakingPies>
+				</ChanceFactorPowPerOtherBuildings>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+	
+	
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_BakingPiesSpawn</defName>
+		<label>big pie</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingWithSkip</workerClass>
+		<letterLabel>Found big pie</letterLabel>
+		<letterText>Your colonist noticed some object appeared nearby. At close inspection it seems like a round big pie on a plate. It looks appetizing.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>30</earliestDay>
+		<baseChance>0.1</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+		<minRefireDays>240</minRefireDays>
+		<tags>
+			<li>AEBakingPies</li>
+		</tags>
+		<refireCheckTags>
+			<li>AEBakingPies</li>
+		</refireCheckTags>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableThingDefs>
+					<li>AE_BakingPies</li>
+				</DeployableThingDefs>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+				<FleckScale>0.25</FleckScale>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_BakingPiesMysteriousCargo</defName>
+		<label>big pie</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromQuest</workerClass>
+		<questScriptDef>AE_MysteriousCargoBakingPies</questScriptDef>
+		<earliestDay>30</earliestDay>
+		<baseChance>0.1</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+		<minRefireDays>240</minRefireDays>
+		<tags>
+			<li>AEBakingPies</li>
+		</tags>
+		<refireCheckTags>
+			<li>AEBakingPies</li>
+		</refireCheckTags>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableThingDefs>
+					<li>AE_BakingPies</li>
+				</DeployableThingDefs>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+	
+	
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_BeamTargetSpawn</defName>
+		<label>transmitter</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingWithSkip</workerClass>
+		<letterLabel>Found transmitter</letterLabel>
+		<letterText>Your colonist noticed some object appeared nearby. At close inspection it seems like a small device with pneumatic retractable stops. On its body there are indicators with lights, an antenna and a small button. It looks like military grade.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>60</earliestDay>
+		<baseChance>0.1</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minRefireDays>180</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableObjectDef>AE_BeamTarget</DeployableObjectDef>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+				<FleckScale>0.42</FleckScale>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_BeamTargetMysteriousCargo</defName>
+		<label>transmitter</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromQuest</workerClass>
+		<questScriptDef>AE_MysteriousCargoBeamTarget</questScriptDef>
+		<earliestDay>60</earliestDay>
+		<baseChance>0.1</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minRefireDays>240</minRefireDays>
+		<tags>
+			<li>AEBeamTarget</li>
+		</tags>
+		<refireCheckTags>
+			<li>AEBeamTarget</li>
+		</refireCheckTags>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableObjectDef>AE_BeamTarget</DeployableObjectDef>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+				<FleckScale>0.42</FleckScale>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+	
+	
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_BloodPuddleSpawn</defName>
+		<label>strange puddle</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromUnderground</workerClass>
+		<letterLabel>Found strange puddle</letterLabel>
+		<letterText>Your colonist noticed some small ground vibration. It seems like a pool of liquid seeping up from beneath the ground.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>5</earliestDay>
+		<baseChance>0.5</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+		<minRefireDays>10</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableObjectDef>AE_BloodPuddle</DeployableObjectDef>
+				<SkyfallerDef>AE_BloodPuddleSpawner</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>1.1</ChanceFactorPowPerBuilding>
+				<ChanceFactorPowPerOtherBuildings>
+					<AE_BloodLake>
+						<chance>1.5</chance>
+					</AE_BloodLake>
+				</ChanceFactorPowPerOtherBuildings>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+	
+	
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_BloodLakeSpawn</defName>
+		<label>strange lake</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromUnderground</workerClass>
+		<letterLabel>Found strange lake</letterLabel>
+		<letterText>Your colonist noticed some strong ground vibration. It seems like a giant pool of liquid seeping up from beneath the ground.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<minThreatPoints>500</minThreatPoints>
+		<earliestDay>90</earliestDay>
+		<baseChance>0.1</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minRefireDays>180</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableObjectDef>AE_BloodLake</DeployableObjectDef>
+				<SkyfallerDef>AE_BloodLakeSpawner</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+				<entityCodexEntryDefsRequired>
+					<li>AE_EntityCodexEntry_BloodPuddle</li>
+				</entityCodexEntryDefsRequired>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+	
+	
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_StudyNotepadSpawn</defName>
+		<label>yellow notepad</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingFromOrbit</workerClass>
+		<letterLabel>Found yellow notepad</letterLabel>
+		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a notepad, its yellow pages filled with handwritten notes.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>120</earliestDay>
+		<baseChance>0.2</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+		<minRefireDays>120</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableThingDefs>
+					<li>AE_StudyNotepad</li>
+				</DeployableThingDefs>
+				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
+				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+	
+	
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_ProviderScriptureSpawn</defName>
+		<label>ancient scripture</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingFromOrbit</workerClass>
+		<letterLabel>Found ancient scripture</letterLabel>
+		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a dark-covered book bearing the marks of time, featuring a prominent symbol.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>180</earliestDay>
+		<baseChance>0.2</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minRefireDays>120</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableThingDefs>
+					<li>AE_ProviderScripture</li>
+				</DeployableThingDefs>
+				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
+				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+	
+	
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_ChristmasStockingsSpawn</defName>
+		<label>red stockings</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingFromOrbit</workerClass>
+		<letterLabel>Found red stockings</letterLabel>
+		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a red stockings, featuring white details and a snowflake symbol. It appear to be filled with something.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>45</earliestDay><!-- 60 -->
+		<baseChance>0.2</baseChance><!-- 0.2 -->
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+		<minRefireDays>60</minRefireDays><!-- 60 -->
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableThingDefs>
+					<li>AE_ChristmasStockings</li>
+				</DeployableThingDefs>
+				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
+				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+				<ChanceFactorPowPerOtherBuildings>
+					<AE_ChristmasTree>
+						<chance>0</chance>
+					</AE_ChristmasTree>
+				</ChanceFactorPowPerOtherBuildings>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_CreepJoinerJoin_IceMan</defName>
+		<label>ice man creepjoiner join</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployFromQuest</workerClass>
+		<questScriptDef>AE_CreepJoinerArrival_IceMan</questScriptDef>
+		<earliestDay>60</earliestDay>
+		<baseChance>0.3</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minRefireDays>60</minRefireDays>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minThreatPoints>350</minThreatPoints>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<entityCodexEntryDefsRequired>
+					<li>AE_EntityCodexEntry_ChristmasStockings</li>
+				</entityCodexEntryDefsRequired>
+				<ChanceFactorPowPerOtherBuildings>
+					<AE_ChristmasStockings>
+						<chance>2</chance>
+					</AE_ChristmasStockings>
+				</ChanceFactorPowPerOtherBuildings>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+	
+	
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_SpeedometerSpawn</defName>
+		<label>speedometer</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingFromOrbit</workerClass>
+		<letterLabel>Found speedometer</letterLabel>
+		<letterText>Your colonist noticed some object falling from the sky nearby. At close inspection it seems like a dark circular gauge with faded numbers and a thin red needle.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>120</earliestDay>
+		<baseChance>0.2</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minRefireDays>120</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableThingDefs>
+					<li>AE_Speedometer</li>
+				</DeployableThingDefs>
+				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
+				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+				<ChanceFactorPowPerHediffDefs>
+					<li>
+						<hediffDef>Hediff_AEAcceleration</hediffDef>
+						<factor>0</factor>
+					</li>
+				</ChanceFactorPowPerHediffDefs>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+	
+	
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_EntityDatabaseSpawn</defName>
+		<label>ancient server</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingWithSkip</workerClass>
+		<letterLabel>Found ancient server</letterLabel>
+		<letterText>Your colonist noticed some object appeared nearby. At close inspection it seems like an ancient server composed of three connected sections. The data it holds, however, remains unknown.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>60</earliestDay>
+		<baseChance>0.2</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+		<minRefireDays>120</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableThingDefs>
+					<li>AE_EntityDatabase</li>
+				</DeployableThingDefs>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+				<FleckScale>0.46</FleckScale>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+	
+	
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_BirthdayCakeSpawn</defName>
+		<label>big cake</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingFromOrbit</workerClass>
+		<letterLabel>Found big cake</letterLabel>
+		<letterText>Your colonist noticed some object appeared nearby. At close inspection it seems like a round big cake on a red plate. It looks appetizing.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>30</earliestDay>
+		<baseChance>0.2</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>1</minAnomalyThreatLevel>
+		<minRefireDays>60</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableThingDefs>
+					<li>AE_BirthdayCake</li>
+				</DeployableThingDefs>
+				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
+				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+			</li>
+		</modExtensions>
+	</IncidentDef>
+
+</Defs>

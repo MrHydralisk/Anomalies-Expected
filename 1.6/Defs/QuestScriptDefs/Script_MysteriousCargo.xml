@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+	<QuestScriptDef ParentName="MysteriousCargoBase">
+		<defName>AE_MysteriousCargoMeatGrinder</defName>
+		<root Class="AnomaliesExpected.QuestNode_Root_AEMysteriousCargo">
+			<DeployableObjectDef>AE_MeatGrinder</DeployableObjectDef>
+		</root>
+		<questContentRules>
+			<rulesStrings>
+				<!-- Letter -->
+				<li>deliveredLetterLabel->Mysterious cargo</li>
+        
+				<li>deliveredLetterText->The mysterious cargo has been delivered. At close inspection it seems like an industrial-looking metal box as tall as a table. Several small doors interrupt the smooth surface on its sides, while a big hole with hidden inside blades sits atop it. A lone button rests next to the hole, hinting at some unknown function.</li>
+			</rulesStrings>
+		</questContentRules>
+	</QuestScriptDef>
+  
+	<QuestScriptDef ParentName="MysteriousCargoBase">
+		<defName>AE_MysteriousCargoBakingPies</defName>
+		<root Class="AnomaliesExpected.QuestNode_Root_AEMysteriousCargo">
+			<DeployableObjectDef>AE_BakingPies</DeployableObjectDef>
+		</root>
+		<questContentRules>
+			<rulesStrings>
+				<!-- Letter -->
+				<li>deliveredLetterLabel->Mysterious cargo</li>
+        
+				<li>deliveredLetterText->The mysterious cargo has been delivered. At close inspection it seems like a round big pie on a plate. It looks appetizing.</li>
+			</rulesStrings>
+		</questContentRules>
+	</QuestScriptDef>
+  
+	<QuestScriptDef ParentName="MysteriousCargoBase">
+		<defName>AE_MysteriousCargoBeamTarget</defName>
+		<root Class="AnomaliesExpected.QuestNode_Root_AEMysteriousCargo">
+			<DeployableObjectDef>AE_BeamTarget</DeployableObjectDef>
+		</root>
+		<questContentRules>
+			<rulesStrings>
+				<!-- Letter -->
+				<li>deliveredLetterLabel->Mysterious cargo</li>
+        
+				<li>deliveredLetterText->The mysterious cargo has been delivered. At close inspection it seems like a small device with pneumatic retractable stops. On its body there are indicators with lights, an antenna and a small button. It looks like military grade.</li>
+			</rulesStrings>
+		</questContentRules>
+	</QuestScriptDef>
+  
+</Defs>

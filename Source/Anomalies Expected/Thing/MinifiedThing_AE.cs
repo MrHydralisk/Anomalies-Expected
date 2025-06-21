@@ -9,7 +9,7 @@ namespace AnomaliesExpected
         public ThingOwner innerContainer => innerContainerCached ?? (innerContainerCached = GetDirectlyHeldThings());
         public ThingOwner innerContainerCached;
 
-        public override void Tick()
+        protected override void Tick()
         {
             if (Spawned)
             {

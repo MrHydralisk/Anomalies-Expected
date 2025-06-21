@@ -104,7 +104,7 @@ namespace AnomaliesExpected
             {
                 if (activateBy != null)
                 {
-                    if (checkOptionalItems && !activateBy.HasReserved(requiredThing.thingDef) && !ReservationUtility.ExistsUnreservedAmountOfDef_NewTemp(parent.MapHeld, requiredThing.thingDef, Faction.OfPlayer, requiredThing.count, (Thing t) => activateBy.CanReserveAndReach(t, PathEndMode.Touch, Danger.None)))
+                    if (checkOptionalItems && !activateBy.HasReserved(requiredThing.thingDef) && !ReservationUtility.ExistsUnreservedAmountOfDef(parent.MapHeld, requiredThing.thingDef, Faction.OfPlayer, requiredThing.count, (Thing t) => activateBy.CanReserveAndReach(t, PathEndMode.Touch, Danger.None)))
                     {
                         return "ObeliskDeactivateMissingShards".Translate(requiredThing.Label);
                     }

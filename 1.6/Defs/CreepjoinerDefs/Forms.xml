@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<CreepJoinerFormKindDef ParentName="BaseCreepJoinerKind">
+		<defName>AE_CreepJoiner_IceMan</defName>
+		<label>frostbitten stranger</label>
+		<weight>1</weight>
+		<canOccurRandomly>false</canOccurRandomly>
+		<letterLabel>A shivering figure is approaching the colony.</letterLabel>
+		<letterPrompt>The stranger stares at you with cold eyes and speaks in a shivering voice. Traces of frostbite are visible on exposed areas of the body. {PAWN_pronoun} claims to have escaped from a harsh heavy snow and begs to join your colony to warm up and recover.</letterPrompt>
+		<minGenerationAge>50</minGenerationAge>
+		<maxGenerationAge>70</maxGenerationAge>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>14~20</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>14~20</range>
+			</li>
+		</skills>
+		<startingHediffs>
+			<li>
+				<def>AESnowCoreImplantHidden</def>
+			</li>
+		</startingHediffs>
+		<existingDamage>
+			<li>
+				<damage>Frostbite</damage>
+				<groups>
+					<li>Arms</li>
+				</groups>
+			</li>
+			<li>
+				<damage>Frostbite</damage>
+				<groups>
+					<li>Arms</li>
+				</groups>
+			</li>
+			<li>
+				<damage>Frostbite</damage>
+				<groups>
+					<li>Legs</li>
+				</groups>
+			</li>
+			<li>
+				<damage>Frostbite</damage>
+				<groups>
+					<li>Legs</li>
+				</groups>
+			</li>
+		</existingDamage>
+		<fixedInventory>
+			<Gun_AESnowBallGun/>
+		</fixedInventory>
+		<apparelRequired>
+			<li>Apparel_Tuque</li>
+			<li>Apparel_Parka</li>
+			<li>Apparel_BasicShirt</li>
+			<li>Apparel_Pants</li>
+		</apparelRequired>
+		<minApparelQuality>Poor</minApparelQuality>
+		<maxApparelQuality>Poor</maxApparelQuality>
+		<forceNormalGearQuality>false</forceNormalGearQuality>
+		<gearHealthRange>0.4~0.6</gearHealthRange>
+		<apparelColor>(0.31, 0.69, 0.835)</apparelColor>
+		<ignoreIdeoApparelColors>true</ignoreIdeoApparelColors>
+		<requires>
+			<li>AESummonSnowMan</li>
+			<li>Aggressive</li>
+			<li>AE_AggressiveIncident_SnowArmyAssault</li>
+			<li>AggressiveRejection</li>
+		</requires>
+	</CreepJoinerFormKindDef>
+
+	<CreepJoinerFormKindDef ParentName="BaseCreepJoinerKind">
+		<defName>AE_CreepJoiner_Grinder</defName>
+		<label>smiling butcher</label>
+		<weight>1</weight>
+		<canOccurRandomly>false</canOccurRandomly>
+		<letterLabel>A smiling figure is approaching the colony.</letterLabel>
+		<letterPrompt>The stranger takes initiative in the conversation, immediately discussing the efficiency of {PAWN_possessive} butchering methods, even without proper instruments at hand. {PAWN_pronoun} claims to be in a long search for a place where {PAWN_possessive} skills can be applied to their maximum potential.</letterPrompt>
+		<minGenerationAge>35</minGenerationAge>
+		<maxGenerationAge>70</maxGenerationAge>
+		<skills>
+			<li>
+				<skill>Melee</skill>
+				<range>14~20</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>14~20</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<Masochist/>
+		</forcedTraits>
+		<startingHediffs>
+			<li>
+				<def>AEGrinderStomachHidden</def>
+			</li>
+			<li>
+				<def>AEGrinderJawHidden</def>
+			</li>
+		</startingHediffs>
+		<existingDamage>
+			<li>
+				<damage>Cut</damage>
+				<groups>
+					<li>Arms</li>
+				</groups>
+			</li>
+			<li>
+				<damage>Cut</damage>
+				<groups>
+					<li>Arms</li>
+				</groups>
+			</li>
+			<li>
+				<damage>Cut</damage>
+				<groups>
+					<li>FullHead</li>
+				</groups>
+			</li>
+		</existingDamage>
+		<fixedInventory>
+			<MeleeWeapon_Knife/>
+		</fixedInventory>
+		<apparelRequired>
+			<li>Apparel_Jacket</li>
+			<li>Apparel_BasicShirt</li>
+			<li>Apparel_Pants</li>
+		</apparelRequired>
+		<minApparelQuality>Poor</minApparelQuality>
+		<maxApparelQuality>Good</maxApparelQuality>
+		<forceNormalGearQuality>false</forceNormalGearQuality>
+		<gearHealthRange>0.6~0.9</gearHealthRange>
+		<apparelColor>(0.208, 0.247, 0.208)</apparelColor>
+		<ignoreIdeoApparelColors>true</ignoreIdeoApparelColors>
+		<requires>
+			<li>AEGrindBody</li>
+			<li>AE_DownsideMentalState_BingingFood</li>
+			<li>Assault</li>
+			<li>AggressiveRejection</li>
+		</requires>
+	</CreepJoinerFormKindDef>
+
+</Defs>

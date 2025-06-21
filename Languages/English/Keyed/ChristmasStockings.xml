@@ -4,7 +4,9 @@
 	<AnomaliesExpected.ChristmasStockings.AlreadyGotGift>Already have a gift</AnomaliesExpected.ChristmasStockings.AlreadyGotGift>
 	<AnomaliesExpected.ChristmasStockings.GiftsLeft>Available gifts {0}/{1}</AnomaliesExpected.ChristmasStockings.GiftsLeft>
 
-	<AnomaliesExpected.ChristmasStockings.Enter>Go under the tree</AnomaliesExpected.ChristmasStockings.Enter>
+	<AnomaliesExpected.ChristmasStockings.Enter>Go under the {0}</AnomaliesExpected.ChristmasStockings.Enter>
+	<AnomaliesExpected.ChristmasStockings.Entering>Going under the {0}</AnomaliesExpected.ChristmasStockings.Entering>
+	<AnomaliesExpected.ChristmasStockings.Exit>Exit through under the {0}</AnomaliesExpected.ChristmasStockings.Exit>
 	<AnomaliesExpected.ChristmasStockings.NewYear>New Year is here. {0} can be interacted again.</AnomaliesExpected.ChristmasStockings.NewYear>
 	<AnomaliesExpected.ChristmasStockings.Reason.CantEnterA>Require some cleaning from snow</AnomaliesExpected.ChristmasStockings.Reason.CantEnterA>
 	<AnomaliesExpected.ChristmasStockings.Reason.CantEnterB>Passage is not available till next New Year</AnomaliesExpected.ChristmasStockings.Reason.CantEnterB>

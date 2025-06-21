@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<GameConditionDef>
+		<defName>AE_BloodFog</defName>
+		<conditionClass>AnomaliesExpected.GameCondition_AEBloodFog</conditionClass>
+		<label>blood-like liquid high concentration</label>
+		<description>A crimson fog, thick and ominous, blankets the surroundings. This mist is a direct consequence of the elevated concentration of blood-like liquid in the air. Despite its apparent harmlessness, a subtle sense of dread creeps in. This phenomenon will undoubtedly affect all beings outside of enclosed spaces.</description>
+		<weatherDef>AE_BloodLakeWeatherBloodFog</weatherDef>
+		<preventNeutralVisitors>true</preventNeutralVisitors>
+		<canBePermanent>true</canBePermanent>
+		<natural>false</natural>
+		<!-- <letterText>Drops of thick blood-like fluid have begun falling from the sky.\n\nAnyone exposed feels a growing anger which strengthens melee attacks but will eventually become a berserk rage. Exposed animals will eventually become manhunters. The intensity of the effect varies between individuals depending on their traits, psychic sensitivity, and random individual factors.</letterText> -->
+		<startMessage>Blood-like liquid concentration in the air rapidly increasing.</startMessage>
+		<endMessage>Blood-like liquid concentration in the air returning to normal.</endMessage>
+		<allowUnderground>false</allowUnderground>
+		<pennedAnimalsSeekShelter>true</pennedAnimalsSeekShelter>
+	</GameConditionDef>
+	
+	
+
+	<GameConditionDef>
+		<defName>AE_TemperatureDrop</defName>
+		<conditionClass>AnomaliesExpected.GameCondition_AETemperatureDrop</conditionClass>
+		<label>temperature shifting</label>
+		<description>Temperature is rapidly shifting due to Snow Army's presence nearby.</description>
+		<weatherDef>AE_SnowArmy</weatherDef>
+		<letterText>Temperature is rapidly shifting due to Snow Army's presence nearby.</letterText>
+		<letterDef>NegativeEvent</letterDef>
+		<natural>false</natural>
+	</GameConditionDef>
+
+	<GameConditionDef>
+		<defName>AE_UnnaturalCold</defName>
+		<conditionClass>AnomaliesExpected.GameCondition_UnnaturalCold</conditionClass>
+		<label>unnatural cold</label>
+		<description>A thermal absorption device is calming gas molecules in the atmosphere, decreasing outdoor temperatures.</description>
+		<displayOnUI>false</displayOnUI>
+	</GameConditionDef>
+
+	<GameConditionDef>
+		<defName>AE_UnnaturalTemperature</defName>
+		<conditionClass>AnomaliesExpected.GameCondition_UnnaturalTemperature</conditionClass>
+		<label>unnatural temperature</label>
+		<description>A hybrid thermal control device is affecting gas molecules in the atmosphere, changing outdoor temperatures.</description>
+		<displayOnUI>false</displayOnUI>
+	</GameConditionDef>
+  
+</Defs>

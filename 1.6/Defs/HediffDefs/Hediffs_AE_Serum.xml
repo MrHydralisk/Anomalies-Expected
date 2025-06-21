@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>Hediff_AESleepEnhancerSerum</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>sleep enhancer serum</label>
+		<description>This person has ingested a drug which enhanced their rest efficiency.</description>
+		<comps>
+			<li Class="HediffCompProperties_DisappearsDisableable">
+				<disappearsAfterTicks>900000</disappearsAfterTicks>
+				<showRemainingTime>true</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+		<stages>
+			<li>
+				<statOffsets>
+					<RestFallRateFactor>-0.15</RestFallRateFactor>
+					<RestRateMultiplier>0.5</RestRateMultiplier>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>Hediff_AERegenSerum</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>regen serum</label>
+		<description>This person has ingested a drug which enhanced their healing factor.</description>
+		<comps>
+			<li Class="HediffCompProperties_DisappearsDisableable">
+				<disappearsAfterTicks>300000</disappearsAfterTicks>
+				<showRemainingTime>true</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+		<stages>
+			<li>
+				<statOffsets>
+					<InjuryHealingFactor>1.5</InjuryHealingFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>Hediff_AEBingingFoodSerum</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>binging food serum</label>
+		<description>This person has ingested a drug which stimulates the digestive system.</description>
+		<comps>
+			<li Class="HediffCompProperties_DisappearsDisableable">
+				<disappearsAfterTicks>45000</disappearsAfterTicks>
+				<showRemainingTime>true</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+		<stages>
+			<li>
+				<statFactors>
+					<EatingSpeed>5</EatingSpeed>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="ImplantHediffBase">
+		<defName>Hediff_AEHungerSuppressorSerum</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>hunger suppressor serum</label>
+		<description>This person has ingested a drug which changing it metabolism to increase efficiency of nutrient breakdown including body reserves.</description>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>4.01</maxSeverity>
+		<comps>
+			<li Class="HediffCompProperties_DisappearsDisableable">
+				<disappearsAfterTicks>240000</disappearsAfterTicks>
+				<showRemainingTime>true</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>1</severityPerDay>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+		<stages>
+			<li>
+				<label>Active effect</label>
+				<statOffsets>
+					<InjuryHealingFactor>-0.25</InjuryHealingFactor>
+					<ImmunityGainSpeedFactor>-0.25</ImmunityGainSpeedFactor>
+				</statOffsets>
+				<hungerRateFactor>0.3</hungerRateFactor>
+			</li>
+			<li>
+				<label>Withdrawal from system</label>
+				<minSeverity>1.01</minSeverity>
+				<statOffsets>
+					<InjuryHealingFactor>-0.1</InjuryHealingFactor>
+					<ImmunityGainSpeedFactor>-0.1</ImmunityGainSpeedFactor>
+				</statOffsets>
+				<hungerRateFactor>0.75</hungerRateFactor>
+			</li>
+			<li>
+				<label>Metabolism restoration</label>
+				<minSeverity>2.01</minSeverity>
+				<hungerRateFactor>1.22</hungerRateFactor>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

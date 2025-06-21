@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<JobDef>
+		<defName>AE_CalledMeatGrinder</defName>
+		<driverClass>AnomaliesExpected.JobDriver_CalledMeatGrinder</driverClass>
+		<reportString>pressing button.</reportString>
+	</JobDef>
+
+	<JobDef>
+		<defName>AE_RemoveAnomaly</defName>
+		<driverClass>AnomaliesExpected.JobDriver_RemoveAnomaly</driverClass>
+		<reportString>removing TargetA.</reportString>
+	</JobDef>
+
+	<JobDef>
+		<defName>AE_ApplyUsableTo</defName>
+		<driverClass>AnomaliesExpected.JobDriver_ApplyUsableTo</driverClass>
+		<reportString>applying TargetA to TargetB.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+
+	<JobDef>
+		<defName>AE_InteractChristmasStockings</defName>
+		<driverClass>JobDriver_InteractThing</driverClass>
+		<reportString>taking gift.</reportString>
+	</JobDef>
+  
+</Defs>

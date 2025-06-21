@@ -24,6 +24,15 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '1.6|AnyCPU'">
+    <OutputPath>..\..\1.6\Assemblies\</OutputPath>
+    <DefineConstants>TRACE;v1_6</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>..\..\..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
@@ -38,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AEDebugTools.cs" />
+    <Compile Include="Building\Building_AEPocketMapExit.cs" />
     <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilityGrindBody.cs" />
     <Compile Include="Comp\CompAbilityEffect\CompAbilityEffect_GrindBody.cs" />
     <Compile Include="CreepJoinerWorker_AEDownsideMentalState.cs" />
@@ -222,7 +232,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>1.5.4409</Version>
+      <Version>1.6.4497-beta</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup />

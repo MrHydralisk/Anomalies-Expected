@@ -11,7 +11,7 @@ namespace AnomaliesExpected
     {
         private List<Building_HoldingPlatform> HoldingPlatforms = new List<Building_HoldingPlatform>();
 
-        public override int DraggableDimensions => 2;
+        public override DrawStyleCategoryDef DrawStyleCategory => DrawStyleCategoryDefOf.FilledRectangle;
 
         protected override DesignationDef Designation => DesignationDefOfLocal.AE_CaptureEntity;
 

@@ -28,7 +28,7 @@ namespace AnomaliesExpected
             GenSpawn.Spawn(obj, base.Position, base.Map);
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             if (!base.Destroyed)

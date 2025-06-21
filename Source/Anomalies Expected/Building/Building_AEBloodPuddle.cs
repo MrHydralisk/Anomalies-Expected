@@ -49,7 +49,7 @@ namespace AnomaliesExpected
             }
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             for (int i = 0; i < SummonHistories.Count(); i++)
@@ -80,7 +80,7 @@ namespace AnomaliesExpected
                     PawnKindCount pawnKindCount = summonPatternStage.pawnKindsWeighted.Where((PawnKindCount pkdc) => pkdc.count <= resourcesAvailable).RandomElement();
                     if (pawnKindCount != null)
                     {
-                        Pawn item = PawnGenerator.GeneratePawn(pawnKindCount.kindDef, FactionUtility.DefaultFactionFrom(pawnKindCount.kindDef.defaultFactionType));
+                        Pawn item = PawnGenerator.GeneratePawn(pawnKindCount.kindDef, FactionUtility.DefaultFactionFrom(pawnKindCount.kindDef.defaultFactionDef));
                         emergingFleshbeasts.Add(item);
                         resourcesAvailable -= pawnKindCount.count;
                     }
@@ -96,7 +96,7 @@ namespace AnomaliesExpected
                 {
                     for (int i = 0; i < pawnKindCount.count; i++)
                     {
-                        Pawn item = PawnGenerator.GeneratePawn(pawnKindCount.kindDef, FactionUtility.DefaultFactionFrom(pawnKindCount.kindDef.defaultFactionType));
+                        Pawn item = PawnGenerator.GeneratePawn(pawnKindCount.kindDef, FactionUtility.DefaultFactionFrom(pawnKindCount.kindDef.defaultFactionDef));
                         emergingFleshbeasts.Add(item);
                     }
                 }

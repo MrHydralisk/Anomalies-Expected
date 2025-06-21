@@ -9,7 +9,7 @@ namespace AnomaliesExpected
 {
     public static class AEDebugTools
     {
-        [DebugAction("Anomalies Expected", "Void Provocation x#...", false, false, false, false, 0, false, actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap, displayPriority = 1300)]
+        [DebugAction("Anomalies Expected", "Void Provocation x#...", false, false, false, true, false, 0, false, actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap, displayPriority = 1300)]
         private static void VoidProvocationMultiple()
         {
             Find.WindowStack.Add(new Dialog_Slider("Void Provocation x{0} times", 1, 10, delegate (int x)

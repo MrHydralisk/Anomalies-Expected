@@ -1,0 +1,976 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef>
+		<defName>Hediff_AEFleshmassTumorIncubation</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>incubating fleshmass tumor</label>
+		<description>All bodily functions are redirected to sustain the growth of the fleshmass tumor, a fatal process, as the cyst has become inextricably intertwined with the organ structure. However, the cyst is dependent on the host's survival.</description>
+		<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
+		<initialSeverity>0.001</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<lethalSeverity>1</lethalSeverity>
+		<isBad>true</isBad>
+		<forceRemoveOnResurrection>true</forceRemoveOnResurrection>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>0.2</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+			<li Class="AnomaliesExpected.HediffCompProperties_SpawnThingOnDeath">
+				<spawnedThingDef>AE_FleshmassTumor</spawnedThingDef>
+				<messageText>Fleshmass tumor incubated from {0}</messageText>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<painOffset>0.75</painOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.01</setMax>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>Hediff_AEFleshmassCystAssimilation</defName>
+		<label>fleshmass cyst assimilates</label>
+		<description>The fleshmass cyst, implanted within the host's body, is undergoing assimilation, resulting in considerable pain. The cyst is dependent on the host's survival.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
+		<initialSeverity>0.001</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<isBad>false</isBad>
+		<forceRemoveOnResurrection>true</forceRemoveOnResurrection>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>1</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+			<li Class="AnomaliesExpected.HediffCompProperties_FleshmassMutation"/>
+		</comps>
+		<stages>
+			<li>
+				<painOffset>0.35</painOffset>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef Name="AEFleshmassBodyMutation" ParentName="AddedBodyPartBase" Abstract="True">
+		<organicAddedBodypart>true</organicAddedBodypart>
+		<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
+		<tags>
+			<li>FleshmassBodyMutation</li>
+		</tags>
+	</HediffDef>
+  
+	<HediffDef ParentName="AEFleshmassBodyMutation">
+		<defName>AE_FleshmassStomach</defName>
+		<label>fleshmass stomach</label>
+		<labelNoun>a fleshmass stomach</labelNoun>
+		<description>A cancerous mass of semi-sentient flesh. The harsh acid it produces is painful, but strong enough to prevent most food poisoning. It can break down and reabsorb nutrients from its own tissue, allowing it to sustain itself for extended periods without external sustenance.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<defaultInstallPart>Stomach</defaultInstallPart>
+		<abilities>
+			<li>AEFleshmassStomach</li>
+		</abilities>
+		<stages>
+			<li>
+				<painOffset>0.08</painOffset>
+				<foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
+			</li>
+		</stages>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.20</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<comps>
+			<li Class="HediffCompProperties_FleshbeastEmerge">
+				<letterLabel>Fleshmass operation</letterLabel>
+				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass stomach has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+			</li>
+			<li Class="HediffCompProperties">
+				<compClass>AnomaliesExpected.HediffComp_FleshmassRestoration</compClass>
+			</li>
+		</comps>
+	</HediffDef>
+  
+	<HediffDef ParentName="AEFleshmassBodyMutation">
+		<defName>AE_FleshmassLung</defName>
+		<label>fleshmass lung</label>
+		<labelNoun>a fleshmass lung</labelNoun>
+		<description>A cancerous mass of semi-sentient flesh. The tissue constantly regrows and replaces itself, making it immune to effects like lung rot and asthma. Infusing the air the host breathes with a calming and mood-enhancing chemical.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<preventsLungRot>true</preventsLungRot>
+		<defaultInstallPart>Lung</defaultInstallPart>
+		<stages>
+			<li>
+				<painOffset>0.06</painOffset>
+				<statOffsets>
+					<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">0.35</ToxicEnvironmentResistance>
+				</statOffsets>
+			</li>
+		</stages>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.20</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<comps>
+			<li Class="HediffCompProperties_FleshbeastEmerge">
+				<letterLabel>Fleshmass operation</letterLabel>
+				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass lung has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+			</li>
+			<li Class="HediffCompProperties">
+				<compClass>AnomaliesExpected.HediffComp_FleshmassRestoration</compClass>
+			</li>
+		</comps>
+	</HediffDef>
+  
+	<HediffDef ParentName="AEFleshmassBodyMutation">
+		<defName>AE_FleshmassLiver</defName>
+		<label>fleshmass liver</label>
+		<labelNoun>a fleshmass liver</labelNoun>
+		<description>A cancerous mass of semi-sentient flesh. Strives to prolong the host's life by mitigating illness or blood loss.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<defaultInstallPart>Liver</defaultInstallPart>
+		<stages>
+			<li>
+				<painOffset>0.06</painOffset>
+				<statOffsets>
+					<ImmunityGainSpeed>0.5</ImmunityGainSpeed>
+				</statOffsets>
+				<totalBleedFactor>0.75</totalBleedFactor>
+			</li>
+		</stages>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.20</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<comps>
+			<li Class="HediffCompProperties_FleshbeastEmerge">
+				<letterLabel>Fleshmass operation</letterLabel>
+				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass liver has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+			</li>
+			<li Class="HediffCompProperties">
+				<compClass>AnomaliesExpected.HediffComp_FleshmassRestoration</compClass>
+			</li>
+		</comps>
+	</HediffDef>
+  
+	<HediffDef ParentName="AEFleshmassBodyMutation">
+		<defName>AE_FleshmassAcidCavity</defName>
+		<hediffClass>Hediff_Implant</hediffClass>
+		<label>fleshmass acid cavity</label>
+		<labelNoun>a fleshmass acid cavity</labelNoun>
+		<description>A cancerous mass of semi-sentient flesh. Generate and store a sticky acid substance within a newly formed cavity in the sternum, along with acid-tolerant tissues in the throat. They can spit this acid to strike a distant target, where it will stick to enemies and burn them.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<defaultInstallPart>Sternum</defaultInstallPart>
+		<abilities>
+			<li>AEAcidSpit</li>
+		</abilities>
+		<stages>
+			<li>
+				<painOffset>0.05</painOffset>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_FleshbeastEmerge">
+				<letterLabel>Fleshmass operation</letterLabel>
+				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass acid cavity has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+			</li>
+		</comps>
+	</HediffDef>
+  
+	<HediffDef ParentName="AEFleshmassBodyMutation">
+		<defName>AE_FleshmassAcidGland</defName>
+		<hediffClass>Hediff_Implant</hediffClass>
+		<label>fleshmass acid gland</label>
+		<labelNoun>a fleshmass acid gland</labelNoun>
+		<description>A cancerous mass of semi-sentient flesh. Generate and store a sticky acid substance withing a newly formed gland, along with acid-tolerant tissues in the mouth. They can spew this acid over an area, where it will stick to enemies and burn them.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<defaultInstallPart>Neck</defaultInstallPart>
+		<abilities>
+			<li>AEAcidSpew</li>
+		</abilities>
+		<stages>
+			<li>
+				<painOffset>0.03</painOffset>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_FleshbeastEmerge">
+				<letterLabel>Fleshmass operation</letterLabel>
+				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass acid gland has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+			</li>
+		</comps>
+	</HediffDef>
+  
+	<HediffDef ParentName="AEFleshmassBodyMutation">
+		<defName>AE_FleshmassNose</defName>
+		<label>fleshmass nose</label>
+		<labelNoun>a fleshmass nose</labelNoun>
+		<description>A cancerous mass of semi-sentient flesh. Its internal structure functions similarly to a rudimentary gas mask filter, partially blocking the entry of toxins into the host's body.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<defaultInstallPart>Nose</defaultInstallPart>
+		<stages>
+			<li>
+				<painOffset>0.04</painOffset>
+				<statOffsets>
+					<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">0.3</ToxicEnvironmentResistance>
+				</statOffsets>
+			</li>
+		</stages>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.20</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<comps>
+			<li Class="HediffCompProperties_FleshbeastEmerge">
+				<letterLabel>Fleshmass operation</letterLabel>
+				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass nose has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+			</li>
+			<li Class="HediffCompProperties">
+				<compClass>AnomaliesExpected.HediffComp_FleshmassRestoration</compClass>
+			</li>
+		</comps>
+	</HediffDef>
+
+
+  
+	<HediffDef>
+		<defName>Hediff_AEFleshmassTumorAssimilation</defName>
+		<label>fleshmass tumor assimilates</label>
+		<description>The fleshmass tumor, implanted within the host's body, is undergoing assimilation, resulting in substantial pain. The tumor is dependent on the host's survival.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
+		<initialSeverity>0.001</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<isBad>false</isBad>
+		<forceRemoveOnResurrection>true</forceRemoveOnResurrection>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>0.5</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+			<li Class="AnomaliesExpected.HediffCompProperties_FleshmassMutation"/>
+		</comps>
+		<stages>
+			<li>
+				<painOffset>0.7</painOffset>
+			</li>
+		</stages>
+	</HediffDef>
+  
+	<HediffDef ParentName="AEFleshmassBodyMutation">
+		<defName>AE_FleshmassEye</defName>
+		<label>fleshmass eye</label>
+		<labelNoun>a fleshmass eye</labelNoun>
+		<description>A cancerous mass of semi-sentient flesh. In addition to improved vision it can generate concentrated burst of psychic energy to strike targets in front of them.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<defaultInstallPart>Eye</defaultInstallPart>
+		<abilities>
+			<li>AEPsychicFlash</li>
+		</abilities>
+		<stages>
+			<li>
+				<painOffset>0.02</painOffset>
+			</li>
+		</stages>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.30</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<comps>
+			<li Class="HediffCompProperties_FleshbeastEmerge">
+				<letterLabel>Fleshmass operation</letterLabel>
+				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass eye has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+			</li>
+			<li Class="HediffCompProperties">
+				<compClass>AnomaliesExpected.HediffComp_FleshmassRestoration</compClass>
+			</li>
+		</comps>
+	</HediffDef>
+  
+	<HediffDef ParentName="AEFleshmassBodyMutation">
+		<defName>AE_FleshmassEar</defName>
+		<label>fleshmass ear</label>
+		<labelNoun>a fleshmass ear</labelNoun>
+		<description>A cancerous mass of semi-sentient flesh. Increasing host's psychic sensitivity and conductivity.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<defaultInstallPart>Ear</defaultInstallPart>
+		<stages>
+			<li>
+				<painOffset>0.02</painOffset>
+				<statOffsets>
+					<PsychicSensitivity>0.1</PsychicSensitivity>
+					<MeditationFocusGain MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">0.07</MeditationFocusGain>
+					<PsychicEntropyRecoveryRate MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">0.06</PsychicEntropyRecoveryRate>
+				</statOffsets>
+			</li>
+		</stages>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.30</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<comps>
+			<li Class="HediffCompProperties_FleshbeastEmerge">
+				<letterLabel>Fleshmass operation</letterLabel>
+				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass ear has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+			</li>
+			<li Class="HediffCompProperties">
+				<compClass>AnomaliesExpected.HediffComp_FleshmassRestoration</compClass>
+			</li>
+		</comps>
+	</HediffDef>
+  
+	<HediffDef ParentName="AEFleshmassBodyMutation">
+		<defName>AE_FleshmassKidney</defName>
+		<label>fleshmass kidney</label>
+		<labelNoun>a fleshmass kidney</labelNoun>
+		<description>A cancerous mass of semi-sentient flesh. Will grow fleshmass that can be mutated into Fingerspike afflicted with by destabilization mutation.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<defaultInstallPart>Kidney</defaultInstallPart>
+		<abilities>
+			<li>AESpawnKidneyFleshbeast</li>
+		</abilities>
+		<stages>
+			<li>
+				<painOffset>0.02</painOffset>
+				<hungerRateFactor>1.1</hungerRateFactor>
+			</li>
+		</stages>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.30</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<comps>
+			<li Class="HediffCompProperties_FleshbeastEmerge">
+				<letterLabel>Fleshmass operation</letterLabel>
+				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass kidney has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+			</li>
+			<li Class="HediffCompProperties">
+				<compClass>AnomaliesExpected.HediffComp_FleshmassRestoration</compClass>
+			</li>
+		</comps>
+	</HediffDef>
+  
+	<HediffDef ParentName="AEFleshmassBodyMutation">
+		<defName>AE_FleshmassHeart</defName>
+		<label>fleshmass heart</label>
+		<labelNoun>a fleshmass heart</labelNoun>
+		<description>A cancerous mass of semi-sentient flesh. Drastically increase regeneration and blood clotting.\n\nThe organ has its own neural structures and may become dangerous if removed.</description>
+		<defaultInstallPart>Heart</defaultInstallPart>
+		<stages>
+			<li>
+				<painOffset>0.04</painOffset>
+				<naturalHealingFactor>2</naturalHealingFactor>
+			</li>
+		</stages>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.30</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<comps>
+			<li>
+				<compClass>AnomaliesExpected.HediffComp_WoundClotting</compClass>
+			</li>
+			<li Class="HediffCompProperties_FleshbeastEmerge">
+				<letterLabel>Fleshmass operation</letterLabel>
+				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass heart has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+			</li>
+			<li Class="HediffCompProperties">
+				<compClass>AnomaliesExpected.HediffComp_FleshmassRestoration</compClass>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>AE_FleshmassBrainTumor</defName>
+		<hediffClass>Hediff_Level</hediffClass>
+		<label>fleshmass brain tumor</label>
+		<description>A cancerous mass of semi-sentient flesh. The tumor possesses its own neural network capable of controlling allied fleshbeasts.\n\nThe organ has its own neural structures and may become dangerous if removed.\n\nIt effect on the brain's pain centers and radius of effect depends on amount of fleshmass tumors assimilated in the host's brain up to 5.</description>
+		<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
+		<isBad>false</isBad>
+		<priceImpact>true</priceImpact>
+		<initialSeverity>1</initialSeverity>
+		<minSeverity>0</minSeverity>
+		<maxSeverity>5</maxSeverity>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<levelIsQuantity>true</levelIsQuantity>
+		<duplicationAllowed>false</duplicationAllowed>
+		<abilities>
+			<li>AEFleshbeastCommandMove</li>
+			<li>AEFleshbeastCommandGather</li>
+		</abilities>
+		<stages>
+			<li>
+				<minSeverity>1</minSeverity>
+				<painOffset>0.3</painOffset>
+			</li>
+			<li>
+				<minSeverity>2</minSeverity>
+				<painOffset>0.15</painOffset>
+			</li>
+			<li>
+				<minSeverity>3</minSeverity>
+				<painOffset>0</painOffset>
+			</li>
+			<li>
+				<minSeverity>4</minSeverity>
+				<painOffset>-0.15</painOffset>
+			</li>
+			<li>
+				<minSeverity>5</minSeverity>
+				<painOffset>-0.3</painOffset>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_FleshbeastEmerge">
+				<letterLabel>Fleshmass operation</letterLabel>
+				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass brain tumor has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+			</li>
+		</comps>
+		<tags>
+			<li>FleshmassBodyMutation</li>
+		</tags>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>AE_FleshmassBodyMutation</defName>
+		<hediffClass>AnomaliesExpected.Hediff_GroupedLevel</hediffClass>
+		<label>fleshmass body mutation</label>
+		<description>A cancerous mass of semi-sentient flesh. Mutate the host's entire body and replacing some tissue with fleshmass, significantly enhancing bodily functions. Will grow fleshmass that can be mutated into Toughspike afflicted with by destabilization mutation.\n\nThe organ has its own neural structures and may become dangerous if removed.\n\nIt effect depends on amount of fleshmass mutations in the host's body up to 15.</description>
+		<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
+		<isBad>false</isBad>
+		<priceImpact>true</priceImpact>
+		<initialSeverity>1</initialSeverity>
+		<minSeverity>0</minSeverity>
+		<maxSeverity>15</maxSeverity>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<levelIsQuantity>true</levelIsQuantity>
+		<duplicationAllowed>false</duplicationAllowed>
+		<defaultInstallPart>Torso</defaultInstallPart>
+		<abilities>
+			<li>AESpawnBodyMutationFleshbeast</li>
+		</abilities>
+		<stages>
+			<li>
+				<minSeverity>1</minSeverity>
+				<painOffset>-0.03</painOffset>
+				<naturalHealingFactor>1.06</naturalHealingFactor>
+				<totalBleedFactor>0.9</totalBleedFactor>
+				<hungerRateFactor>1.3</hungerRateFactor>
+				<statOffsets>
+					<PawnBeauty>-5</PawnBeauty>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>2</minSeverity>
+				<painOffset>-0.06</painOffset>
+				<naturalHealingFactor>1.12</naturalHealingFactor>
+				<totalBleedFactor>0.9</totalBleedFactor>
+				<hungerRateFactor>1.3</hungerRateFactor>
+				<statOffsets>
+					<PawnBeauty>-5</PawnBeauty>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>3</minSeverity>
+				<painOffset>-0.09</painOffset>
+				<naturalHealingFactor>1.18</naturalHealingFactor>
+				<totalBleedFactor>0.9</totalBleedFactor>
+				<hungerRateFactor>1.3</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.02</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.02</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.02</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<PawnBeauty>-5</PawnBeauty>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>4</minSeverity>
+				<painOffset>-0.12</painOffset>
+				<naturalHealingFactor>1.24</naturalHealingFactor>
+				<totalBleedFactor>0.9</totalBleedFactor>
+				<hungerRateFactor>1.2</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.02</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.02</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.02</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<PawnBeauty>-5</PawnBeauty>
+					<ImmunityGainSpeed>0.1</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>5</minSeverity>
+				<painOffset>-0.15</painOffset>
+				<naturalHealingFactor>1.3</naturalHealingFactor>
+				<totalBleedFactor>0.9</totalBleedFactor>
+				<hungerRateFactor>1.2</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.1</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.02</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.02</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.02</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<PawnBeauty>-5</PawnBeauty>
+					<ImmunityGainSpeed>0.1</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>6</minSeverity>
+				<painOffset>-0.18</painOffset>
+				<naturalHealingFactor>1.36</naturalHealingFactor>
+				<totalBleedFactor>0.8</totalBleedFactor>
+				<hungerRateFactor>1.2</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.1</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.04</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.04</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.04</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>0.98</IncomingDamageFactor>
+				</statFactors>
+				<statOffsets>
+					<PawnBeauty>-4</PawnBeauty>
+					<ImmunityGainSpeed>0.1</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>7</minSeverity>
+				<painOffset>-0.21</painOffset>
+				<naturalHealingFactor>1.42</naturalHealingFactor>
+				<totalBleedFactor>0.8</totalBleedFactor>
+				<hungerRateFactor>1.1</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.1</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.04</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.04</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.04</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>0.96</IncomingDamageFactor>
+				</statFactors>
+				<statOffsets>
+					<PawnBeauty>-4</PawnBeauty>
+					<ImmunityGainSpeed>0.2</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>8</minSeverity>
+				<painOffset>-0.24</painOffset>
+				<naturalHealingFactor>1.48</naturalHealingFactor>
+				<totalBleedFactor>0.8</totalBleedFactor>
+				<hungerRateFactor>1.1</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.1</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.04</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.04</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.04</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>0.94</IncomingDamageFactor>
+				</statFactors>
+				<statOffsets>
+					<PawnBeauty>-4</PawnBeauty>
+					<ImmunityGainSpeed>0.2</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>9</minSeverity>
+				<painOffset>-0.27</painOffset>
+				<naturalHealingFactor>1.54</naturalHealingFactor>
+				<totalBleedFactor>0.8</totalBleedFactor>
+				<hungerRateFactor>1</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.1</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.06</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.06</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.06</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>0.92</IncomingDamageFactor>
+				</statFactors>
+				<statOffsets>
+					<PawnBeauty>-4</PawnBeauty>
+					<ImmunityGainSpeed>0.2</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>10</minSeverity>
+				<painOffset>-0.3</painOffset>
+				<naturalHealingFactor>1.6</naturalHealingFactor>
+				<totalBleedFactor>0.8</totalBleedFactor>
+				<hungerRateFactor>0.95</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.2</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.06</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.06</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.06</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>0.9</IncomingDamageFactor>
+				</statFactors>
+				<statOffsets>
+					<PawnBeauty>-4</PawnBeauty>
+					<ImmunityGainSpeed>0.3</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>11</minSeverity>
+				<painOffset>-0.33</painOffset>
+				<naturalHealingFactor>1.66</naturalHealingFactor>
+				<totalBleedFactor>0.7</totalBleedFactor>
+				<hungerRateFactor>0.9</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.2</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.06</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.06</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.06</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>0.88</IncomingDamageFactor>
+				</statFactors>
+				<statOffsets>
+					<PawnBeauty>-3</PawnBeauty>
+					<ImmunityGainSpeed>0.3</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>12</minSeverity>
+				<painOffset>-0.36</painOffset>
+				<naturalHealingFactor>1.72</naturalHealingFactor>
+				<totalBleedFactor>0.7</totalBleedFactor>
+				<hungerRateFactor>0.9</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.2</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.08</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.08</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.08</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>0.86</IncomingDamageFactor>
+				</statFactors>
+				<statOffsets>
+					<PawnBeauty>-3</PawnBeauty>
+					<ImmunityGainSpeed>0.3</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>13</minSeverity>
+				<painOffset>-0.39</painOffset>
+				<naturalHealingFactor>1.78</naturalHealingFactor>
+				<totalBleedFactor>0.7</totalBleedFactor>
+				<hungerRateFactor>0.85</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.2</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.08</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.08</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.08</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>0.84</IncomingDamageFactor>
+				</statFactors>
+				<statOffsets>
+					<PawnBeauty>-3</PawnBeauty>
+					<ImmunityGainSpeed>0.4</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>14</minSeverity>
+				<painOffset>-0.42</painOffset>
+				<naturalHealingFactor>1.84</naturalHealingFactor>
+				<totalBleedFactor>0.7</totalBleedFactor>
+				<hungerRateFactor>0.85</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.2</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.08</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.08</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.08</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>0.82</IncomingDamageFactor>
+				</statFactors>
+				<statOffsets>
+					<PawnBeauty>-3</PawnBeauty>
+					<ImmunityGainSpeed>0.4</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<label>full adaptation</label>
+				<minSeverity>15</minSeverity>
+				<painOffset>-0.45</painOffset>
+				<naturalHealingFactor>1.9</naturalHealingFactor>
+				<totalBleedFactor>0.7</totalBleedFactor>
+				<hungerRateFactor>0.8</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.25</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.1</offset>
+					</li>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.1</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.1</offset>
+					</li>
+				</capMods>
+				<statFactors>
+					<IncomingDamageFactor>0.8</IncomingDamageFactor>
+				</statFactors>
+				<statOffsets>
+					<PawnBeauty>-3</PawnBeauty>
+					<ImmunityGainSpeed>0.4</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_FleshbeastEmerge">
+				<letterLabel>Fleshmass operation</letterLabel>
+				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass body mutation has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+			</li>
+		</comps>
+		<tags>
+			<li>ArmorGland</li>
+		</tags>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>Hediff_AEFleshmassPartRestoration</defName>
+		<label>fleshmass cells restoration</label>
+		<description>The fleshmass cells, left within the host's body, are actively regenerating into a new organ. The cells is dependent on the host's survival.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
+		<initialSeverity>0.001</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<isBad>false</isBad>
+		<forceRemoveOnResurrection>true</forceRemoveOnResurrection>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>0.2</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+			<li Class="AnomaliesExpected.HediffCompProperties_FleshmassMutation"/>
+			<li Class="HediffCompProperties">
+				<compClass>AnomaliesExpected.HediffComp_FleshmassRestoration</compClass>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<painOffset>0.3</painOffset>
+				<partEfficiencyOffset>-0.99</partEfficiencyOffset>
+			</li>
+			<li>
+				<minSeverity>0.05</minSeverity>
+				<painOffset>0.25</painOffset>
+				<partEfficiencyOffset>-0.9</partEfficiencyOffset>
+			</li>
+			<li>
+				<minSeverity>0.2</minSeverity>
+				<painOffset>0.2</painOffset>
+				<partEfficiencyOffset>-0.8</partEfficiencyOffset>
+			</li>
+			<li>
+				<minSeverity>0.4</minSeverity>
+				<painOffset>0.15</painOffset>
+				<partEfficiencyOffset>-0.6</partEfficiencyOffset>
+			</li>
+			<li>
+				<minSeverity>0.6</minSeverity>
+				<painOffset>0.1</painOffset>
+				<partEfficiencyOffset>-0.4</partEfficiencyOffset>
+			</li>
+			<li>
+				<minSeverity>0.8</minSeverity>
+				<painOffset>0.05</painOffset>
+				<partEfficiencyOffset>-0.2</partEfficiencyOffset>
+			</li>
+		</stages>
+	</HediffDef>
+  
+	<HediffDef>
+		<defName>AE_FleshmassOrganogenesisCore</defName>
+		<label>fleshmass organogenesis core</label>
+		<labelNoun>a fleshmass organogenesis core</labelNoun>
+		<description>A cancerous mass of semi-sentient flesh. Seamlessly integrate with fleshmass organs, allowing them to regrow even after full destruction.\n\nThe organ has its own neural structures and may become dangerous if removed.\n\nAffects:\n- Fleshmass stomach;\n- Fleshmass lung;\n- Fleshmass liver;\n- Fleshmass nose;\n- Fleshmass eye;\n- Fleshmass ear;\n- Fleshmass kidney;\n- Fleshmass heart.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.796, 0.6, 0.6)</defaultLabelColor>
+		<isBad>false</isBad>
+		<priceImpact>true</priceImpact>
+		<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<duplicationAllowed>false</duplicationAllowed>
+		<defaultInstallPart>Torso</defaultInstallPart>
+		<stages>
+			<li>
+				<painOffset>0.08</painOffset>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_FleshbeastEmerge">
+				<letterLabel>Fleshmass operation</letterLabel>
+				<letterText>Attempting to remove {PAWN_nameDef}'s fleshmass organogenesis core has caused the twisting mass of flesh to attack. The fleshmass has detached from {PAWN_nameDef} and transformed into a fleshbeast!</letterText>
+			</li>
+		</comps>
+		<tags>
+			<li>FleshmassBodyMutation</li>
+		</tags>
+	</HediffDef>
+	
+</Defs>

@@ -1,5 +1,4 @@
 ﻿using RimWorld;
-using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +11,6 @@ namespace AnomaliesExpected
 {
     public class Building_AEBloodLake : Building_AEMapPortal
     {
-        private static readonly CachedTexture EnterPitGateTex = new CachedTexture("UI/Commands/EnterPitGate");
-        protected override Texture2D EnterTex => EnterPitGateTex.Texture;
-
-        private static readonly CachedTexture ViewUndercaveTex = new CachedTexture("UI/Commands/ViewUndercave");
-
         public AE_BloodLakeExtension ExtBloodLake => extBloodLakeCached ?? (extBloodLakeCached = def.GetModExtension<AE_BloodLakeExtension>());
         private AE_BloodLakeExtension extBloodLakeCached;
 
@@ -32,7 +26,8 @@ namespace AnomaliesExpected
         private bool isBeenEntered;
         private bool isReadyToEnter => (StudyUnlocks?.NextIndex ?? 4) >= 4;
 
-        public override string EnterCommandString => "AnomaliesExpected.BloodLake.Enter".Translate();
+        public override string EnterString => "AnomaliesExpected.BloodLake.Enter".Translate(Label);
+        public override string EnteringString => "AnomaliesExpected.BloodLake.Entering".Translate(Label);
 
         public override bool AutoDraftOnEnter => true;
         public bool isDestroyedMap;
@@ -68,7 +63,7 @@ namespace AnomaliesExpected
             }
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             for (int i = 0; i < SummonHistories.Count(); i++)
@@ -107,7 +102,7 @@ namespace AnomaliesExpected
                     PawnKindCount pawnKindCount = summonPatternStage.pawnKindsWeighted.Where((PawnKindCount pkdc) => pkdc.count <= resourcesAvailable).RandomElement();
                     if (pawnKindCount != null)
                     {
-                        Pawn item = PawnGenerator.GeneratePawn(pawnKindCount.kindDef, FactionUtility.DefaultFactionFrom(pawnKindCount.kindDef.defaultFactionType));
+                        Pawn item = PawnGenerator.GeneratePawn(pawnKindCount.kindDef, FactionUtility.DefaultFactionFrom(pawnKindCount.kindDef.defaultFactionDef));
                         emergingFleshbeasts.Add(item);
                         resourcesAvailable -= pawnKindCount.count;
                     }
@@ -123,7 +118,7 @@ namespace AnomaliesExpected
                 {
                     for (int i = 0; i < pawnKindCount.count; i++)
                     {
-                        Pawn item = PawnGenerator.GeneratePawn(pawnKindCount.kindDef, FactionUtility.DefaultFactionFrom(pawnKindCount.kindDef.defaultFactionType));
+                        Pawn item = PawnGenerator.GeneratePawn(pawnKindCount.kindDef, FactionUtility.DefaultFactionFrom(pawnKindCount.kindDef.defaultFactionDef));
                         emergingFleshbeasts.Add(item);
                     }
                 }
@@ -187,13 +182,9 @@ namespace AnomaliesExpected
 
         public void GenerateSubMap()
         {
-            if (ExtBloodLake.mapGeneratorDef != null)
+            if (def.portal.pocketMapGenerator != null)
             {
-                PocketMapParent pocketMapParent = WorldObjectMaker.MakeWorldObject(WorldObjectDefOf.PocketMap) as PocketMapParent;
-                pocketMapParent.sourceMap = Map;
-                IntVec3 SubMapSize = new IntVec3(Mathf.Min(AEMod.Settings.BloodLakeSubMapMaxSize, Map.Size.x), Mathf.Min(AEMod.Settings.BloodLakeSubMapMaxSize, Map.Size.y), Mathf.Min(AEMod.Settings.BloodLakeSubMapMaxSize, Map.Size.z));
-                subMap = MapGenerator.GenerateMap(SubMapSize, pocketMapParent, ExtBloodLake.mapGeneratorDef, isPocketMap: true);
-                Find.World.pocketMaps.Add(pocketMapParent);
+                subMap = PocketMapUtility.GeneratePocketMap(new IntVec3(Mathf.Min(AEMod.Settings.BloodLakeSubMapMaxSize, Map.Size.x), Mathf.Min(AEMod.Settings.BloodLakeSubMapMaxSize, Map.Size.y), Mathf.Min(AEMod.Settings.BloodLakeSubMapMaxSize, Map.Size.z)), def.portal.pocketMapGenerator, null, Map);
                 mapComponentCached = subMap?.GetComponent<BloodLakeMapComponent>() ?? null;
                 exitBuilding.StudyUnlocks.SetParentThing(this);
                 mapComponent?.Terminal?.StudyUnlocks.SetParentThing(this);
@@ -230,14 +221,6 @@ namespace AnomaliesExpected
                 isBeenEntered = true;
                 Find.LetterStack.ReceiveLetter("AnomaliesExpected.BloodLake.LetterEnter.Label".Translate(), "AnomaliesExpected.BloodLake.LetterEnter.Text".Translate(), LetterDefOf.ThreatBig, new TargetInfo(exitBuilding));
             }
-            if (Find.CurrentMap == base.Map)
-            {
-                SoundDefOf.TraversePitGate.PlayOneShot(this);
-            }
-            else if (Find.CurrentMap == exitBuilding.Map)
-            {
-                SoundDefOf.TraversePitGate.PlayOneShot(exitBuilding);
-            }
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
@@ -256,7 +239,7 @@ namespace AnomaliesExpected
                 {
                     defaultLabel = "AnomaliesExpected.BloodLake.ViewSubMap.Label".Translate(),
                     defaultDesc = "AnomaliesExpected.BloodLake.ViewSubMap.Desc".Translate(),
-                    icon = ViewUndercaveTex.Texture,
+                    icon = ViewSubMapTex.Texture,
                     action = delegate
                     {
                         CameraJumper.TryJumpAndSelect(exitBuilding);

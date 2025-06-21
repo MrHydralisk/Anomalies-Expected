@@ -128,7 +128,7 @@ namespace AnomaliesExpected
             sourceCompCached = null;
         }
 
-        public override void PostDeSpawn(Map map)
+        public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
         {
             base.PostDeSpawn(map);
             if (sustainer != null && !sustainer.Ended)

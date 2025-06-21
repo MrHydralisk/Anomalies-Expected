@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef Name="BodyPartAnomalyAEBase" ParentName="BodyPartBase" Abstract="True">
+		<techLevel>Industrial</techLevel>
+		<thingCategories>
+			<li>BodyPartsAnomalyAE</li>
+		</thingCategories>
+		<graphicData>
+			<texPath>Things/Item/Health/HealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.80</drawSize>
+			<color>(107,56,76)</color>
+		</graphicData>
+		<tradeTags Inherit="False">
+			<li>AEbodyPart</li>
+		</tradeTags>
+		<genericMarketSellable>false</genericMarketSellable>
+		<tradeability>Sellable</tradeability>
+		<techHediffsTags>
+			<li>Advanced</li>
+		</techHediffsTags>
+		<statBases>
+			<WorkToMake>32000</WorkToMake>
+		</statBases>
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<unfinishedThingDef>UnfinishedHealthItemAnomalyAE</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>Bionics</researchPrerequisite>
+			<recipeUsers>
+				<li>FabricationBench</li>
+			</recipeUsers>
+			<displayPriority>1300</displayPriority>
+		</recipeMaker>
+	</ThingDef>
+	
+	
+	
+	<ThingDef ParentName="BodyPartAnomalyAEBase">
+		<defName>AEForbiddenFruitImplant</defName>
+		<label>implant of forbidden knowledge</label>
+		<description>An anomalous brain implant, which maintains connection between the host's consciousness and the entity, facilitating the exchange of knowledge and thoughts, without disturbing the entity.\n\nCreated using seeds from the forbidden fruit of knowledge, utilizing advanced technology derived from the entity's vast wisdom. After seeds extraction, the fruit exhibited a loss of regenerative property.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallAEForbiddenFruitImplant</RecipeDef>
+		</descriptionHyperlinks>
+		<costList>
+			<AE_ForbiddenFruit>1</AE_ForbiddenFruit>
+			<Bioferrite>15</Bioferrite>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<Mass>2</Mass>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>AEForbiddenFruitImplant</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	
+	
+	<ThingDef ParentName="BodyPartAnomalyAEBase">
+		<defName>AEGrinderStomach</defName>
+		<label>grinder stomach</label>
+		<description>An anomalous artificial stomach, which replicate Meat Grinder structure. Internal blades grind up any foreign organic objects to create a nutrient source. A person with this has almost no chance of getting food poisoning, and is immune to some stomach diseases. To sustain itself, it will drain more nutrients from the host. This organic metal possesses self-healing properties, repairing damage on its own. It drastically surpasses its biological counterpart in several aspects.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallAEGrinderStomach</RecipeDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Meat_Twisted>75</Meat_Twisted>
+			<Bioferrite>25</Bioferrite>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<Mass>2</Mass>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>AEGrinderStomach</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	<ThingDef ParentName="BodyPartAnomalyAEBase">
+		<defName>AEGrinderJaw</defName>
+		<label>grinder jaw</label>
+		<description>An anomalous artificial jaw, which replicate Meat Grinder structure. Spinning razor-sharp blades within, pulverizing any food source into a digestible slurry, allowing for significantly faster consumption. Its immense power even enables it to bite off limbs of living opponents. The intense vibrations cause pain to the host. Paradoxically, the jaw also enhances the user's voice, making it more soothing. This organic metal possesses self-healing properties, repairing damage on its own. It drastically surpasses its biological counterpart in several aspects.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallAEGrinderJaw</RecipeDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Meat_Twisted>100</Meat_Twisted>
+			<Bioferrite>35</Bioferrite>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<Mass>1.5</Mass>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>AEGrinderJaw</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	
+	
+	<ThingDef ParentName="BodyPartAnomalyAEBase">
+		<defName>AEThermalReflectiveSkinImplant</defName>
+		<label>thermal-reflective skin gland</label>
+		<description>An anomalous thermal-reflective skin gland, which replicate the reflective surface structure of a Transmitter. The skin's cellular structure is altered to reflect both light and thermal radiation, offering exceptional protection against burns and heat-based attacks. The altered surface beautifully diffracts light, creating a captivating interplay of colors and a radiant glow that enhances the user's attractiveness in a unique and striking manner. However, this transformation also makes the skin more fragile and susceptible to physical damage.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallAEThermalReflectiveSkinImplant</RecipeDef>
+		</descriptionHyperlinks>
+		<costList>
+			<Bioferrite>55</Bioferrite>
+			<ComponentSpacer>6</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>AEThermalReflectiveSkinImplant</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	
+	
+	<ThingDef ParentName="BodyPartAnomalyAEBase">
+		<defName>AESnowCoreImplant</defName>
+		<label>snow core implant</label>
+		<description>An anomalous implant, replicating the Snow Army's snow core, enabling the host to survive in lower temperatures. Nano-scale frostites induce cellular crystallization upon injury, accelerating regeneration in lower temperatures. However, this crystallization makes the cells vulnerable to high temperatures, destabilizing their structure. The host body also lowers the temperature of the surrounding air.\n\nThis replicated snow core represents an attempt to reverse-engineer the advanced cryo-technology found within the remains of the Snow Army SA-05. However, our current understanding of this technology is incomplete, resulting in a less potent replica. This necessitates the expenditure of multiple cores per replication to achieve a functional, albeit diminished, effect.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>InstallAESnowCoreImplant</RecipeDef>
+		</descriptionHyperlinks>
+		<costList>
+			<AE_IceCrystal>4</AE_IceCrystal>
+			<Bioferrite>10</Bioferrite>
+			<ComponentSpacer>2</ComponentSpacer>
+		</costList>
+		<statBases>
+			<Mass>3.4</Mass>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>AENanoInfusedIceCrystal</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+</Defs>

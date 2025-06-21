@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>AE_BloodLiquid</defName>
+		<label>blood-like liquid</label>
+		<description>An exotic blood-like substance which can change it own density. Can be extracted from related anomalies. If it filtered well enough it can be used as any blood substitute.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/AE_BloodLiquid</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<genericMarketSellable>false</genericMarketSellable>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+			<MarketValue>0.2</MarketValue>
+			<Mass>0.05</Mass>
+		</statBases>
+		<tradeability>Sellable</tradeability>
+		<stackLimit>150</stackLimit>
+		<thingCategories>
+			<li>ResourcesRaw</li>
+		</thingCategories>
+	</ThingDef>
+
+</Defs>
