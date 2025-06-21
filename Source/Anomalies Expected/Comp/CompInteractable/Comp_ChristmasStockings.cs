@@ -101,7 +101,7 @@ namespace AnomaliesExpected
         {
             Job job = JobMaker.MakeJob(Props.jobDef, parent);
             Pawn called = (Pawn)GenClosest.ClosestThing_Global_Reachable(parent.Position, parent.Map, parent.Map.mapPawns.AllHumanlikeSpawned, PathEndMode.OnCell, TraverseParms.For(TraverseMode.PassDoors), 9999f,
-                (Thing t) => t is Pawn p && !p.DeadOrDowned && CanInteract(p) && GenClosest.ClosestThing_Global_Reachable(p.Position, p.Map, [parent], PathEndMode.OnCell, TraverseParms.For(p), 9999f) != null);
+                (Thing t) => t is Pawn p && !p.DeadOrDowned && !p.Drafted && CanInteract(p) && GenClosest.ClosestThing_Global_Reachable(p.Position, p.Map, [parent], PathEndMode.OnCell, TraverseParms.For(p), 9999f) != null);
             if (called != null)
             {
                 called.jobs.TryTakeOrderedJob(job, JobTag.Misc);
