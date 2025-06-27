@@ -74,25 +74,26 @@ namespace AnomaliesExpected
             }
         }
 
+        private Command_Action commandAction;
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             foreach (Gizmo gizmo in base.CompGetGizmosExtra())
-            {
                 yield return gizmo;
-            }
+            
             if ((StudyUnlocks?.NextIndex ?? 2) >= 2)
-            {
-                yield return new Command_Action
-                {
-                    action = delegate
+                if(commandAction is null)
+                    commandAction = new Command_Action
                     {
-                        Find.WindowStack.Add(new Dialog_AEEntityDatabaseAnomaly(this));
-                    },
-                    defaultLabel = "AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Label".Translate(),
-                    defaultDesc = "AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Desc".Translate(),
-                    icon = UIIcon
-                };
-            }
+                        action = delegate
+                        {
+                            Find.WindowStack.Add(new Dialog_AEEntityDatabaseAnomaly(this));
+                        },
+                        defaultLabel = "AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Label".Translate(),
+                        defaultDesc = "AnomaliesExpected.EntityDatabaseAnomaly.Dialog.Desc".Translate(),
+                        icon = UIIcon
+                    };
+                else
+                    yield return commandAction;
         }
 
         public override void PostExposeData()
