@@ -200,7 +200,7 @@ namespace AnomaliesExpected
             List<string> inspectStrings = new List<string>();
             if ((StudyUnlocks?.NextIndex ?? 2) >= 2)
             {
-                inspectStrings.Add("AnomaliesExpected.EntityDatabaseAnomaly.Selected".Translate(entityIncidents.FirstOrDefault((AEEntityIncidents aeei) => aeei.entityCodexEntryDef.provocationIncidents?.Any((IncidentDef id) => id == selectedIncidentDef) ?? false)?.entityCodexEntryDef.LabelCap ?? "---"));
+                inspectStrings.Add("AnomaliesExpected.EntityDatabaseAnomaly.Selected".Translate(selectedIncidentDef?.LabelCap ?? "---"));
             }
             return String.Join("\n", inspectStrings);
         }
