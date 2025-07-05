@@ -1568,4 +1568,97 @@
 		</inspectorTabs>
 	</ThingDef>
 	
+	
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>AE_Clockwork</defName>
+		<label>industrial metal box</label>
+		<description>This industrial-looking metal box as tall as a table. Several small doors interrupt the smooth surface on its sides, while a big hole with hidden inside blades sits atop it. A lone button rests next to the hole, hinting at some unknown function.</description>
+		<thingClass>AnomaliesExpected.Building_AE</thingClass>
+    <size>(3,3)</size>
+    <drawerType>RealtimeOnly</drawerType>
+    <fillPercent>1</fillPercent>
+    <graphicData>
+      <texPath>Things/Building/Obelisk_Twisted/TwistedObelisk</texPath>
+      <graphicClass>Graphic_ActivityMask</graphicClass>
+      <shaderType>CutoutComplexBlend</shaderType>
+      <drawSize>(5,5)</drawSize>
+      <addTopAltitudeBias>true</addTopAltitudeBias>
+      <drawOffset>(0,0,0.3)</drawOffset>
+      <colorTwo>(226,53,33)</colorTwo>
+      <shadowData>
+        <volume>(2.5, 5, 2.5)</volume>
+        <offset>(0, 0, -0.3)</offset>
+      </shadowData>
+    </graphicData>
+		<uiIconScale>0.75</uiIconScale>
+		<canOverlapZones>false</canOverlapZones>
+		<minifiedDef>MinifiedThingAE</minifiedDef>
+		<thingCategories>
+			<li>BuildingsMisc</li>
+		</thingCategories>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<altitudeLayer>Building</altitudeLayer>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<costList>
+			<Bioferrite>45</Bioferrite>
+		</costList>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>false</useHitPoints>
+		<rotatable>false</rotatable>
+		<statBases>
+			<Mass>20</Mass>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Cleanliness>-30</Cleanliness>
+		</statBases>
+		<building>
+			<deconstructible>false</deconstructible>
+			<uninstallWork>2500</uninstallWork>
+		</building>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<surfaceType>Item</surfaceType>
+		<tickerType>Normal</tickerType>
+		<designationCategory/>
+		<killedLeavings>
+			<Bioferrite>75</Bioferrite>
+			<Meat_Twisted>150</Meat_Twisted>
+		</killedLeavings>
+		<comps>
+			<li Class="CompProperties_Interactable">
+				<compClass>AnomaliesExpected.CompObelisk_Clockwork</compClass>
+		
+				<activeTicks>250</activeTicks>
+				<cooldownTicks>10000</cooldownTicks>
+				<ticksToActivate>250</ticksToActivate>
+				<activateTexPath>Things/Building/AE_MeatGrinder</activateTexPath>
+ 
+				<activateLabelString>Press button</activateLabelString>
+				<activateDescString>Press button to activate machine.</activateDescString>
+				<guiLabelString>Choose who should activate this.</guiLabelString>
+				<jobString>press button</jobString>
+				<activatingStringPending>pressing button {0}</activatingStringPending>
+				<activatingString>pressing button {0}: {1}s</activatingString>
+				<onCooldownString>reactivating</onCooldownString>
+
+				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
+				<fleckOnUsedScale>4</fleckOnUsedScale>
+				<soundActivate>FlickSwitch</soundActivate>
+				<soundConsume>AE_ButcherCorpseFlesh</soundConsume>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+			</li>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_StudyNotes</li>
+		</inspectorTabs>
+	</ThingDef>
+	
 </Defs>

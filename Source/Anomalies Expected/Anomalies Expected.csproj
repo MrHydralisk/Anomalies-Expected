@@ -50,6 +50,7 @@
     <Compile Include="Building\Building_AEPocketMapExit.cs" />
     <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilityGrindBody.cs" />
     <Compile Include="Comp\CompAbilityEffect\CompAbilityEffect_GrindBody.cs" />
+    <Compile Include="Comp\CompInteractable\CompObelisk_Clockwork.cs" />
     <Compile Include="CreepJoinerWorker_AEDownsideMentalState.cs" />
     <Compile Include="Designator_CaptureEntity.cs" />
     <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilitySpawnSummon.cs" />
