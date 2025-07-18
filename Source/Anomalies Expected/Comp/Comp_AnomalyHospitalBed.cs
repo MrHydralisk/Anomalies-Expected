@@ -63,10 +63,15 @@ namespace AnomaliesExpected
                     3 => DamageDefOf.Cut,
                     _ => null,
                 }, severityDealt, instigator: this.parent));
+                float absorbedDam = severityDealt - damageResult.totalDamageDealt;
                 severityDealt = damageResult.totalDamageDealt;
                 if (severityDealt == 0)
                 {
                     Missed++;
+                }
+                if (absorbedDam > 0)
+                {
+                    severityDealt += absorbedDam * Props.ConsumptionAbsorbMult;
                 }
                 if (isDonorMode)
                 {
