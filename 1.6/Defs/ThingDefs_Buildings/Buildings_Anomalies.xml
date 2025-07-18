@@ -1575,22 +1575,22 @@
 		<label>industrial metal box</label>
 		<description>This industrial-looking metal box as tall as a table. Several small doors interrupt the smooth surface on its sides, while a big hole with hidden inside blades sits atop it. A lone button rests next to the hole, hinting at some unknown function.</description>
 		<thingClass>AnomaliesExpected.Building_AE</thingClass>
-    <size>(3,3)</size>
-    <drawerType>RealtimeOnly</drawerType>
-    <fillPercent>1</fillPercent>
-    <graphicData>
-      <texPath>Things/Building/Obelisk_Twisted/TwistedObelisk</texPath>
-      <graphicClass>Graphic_ActivityMask</graphicClass>
-      <shaderType>CutoutComplexBlend</shaderType>
-      <drawSize>(5,5)</drawSize>
-      <addTopAltitudeBias>true</addTopAltitudeBias>
-      <drawOffset>(0,0,0.3)</drawOffset>
-      <colorTwo>(226,53,33)</colorTwo>
-      <shadowData>
-        <volume>(2.5, 5, 2.5)</volume>
-        <offset>(0, 0, -0.3)</offset>
-      </shadowData>
-    </graphicData>
+		<size>(3,3)</size>
+		<drawerType>RealtimeOnly</drawerType>
+		<fillPercent>1</fillPercent>
+		<graphicData>
+			<texPath>Things/Building/Obelisk_Corrupted/CorruptedObelisk</texPath>
+			<graphicClass>Graphic_ActivityMask</graphicClass>
+			<shaderType>CutoutComplexBlend</shaderType>
+			<drawSize>(5,5)</drawSize>
+			<addTopAltitudeBias>true</addTopAltitudeBias>
+			<drawOffset>(0,0,0.3)</drawOffset>
+			<colorTwo>(226,53,33)</colorTwo>
+			<shadowData>
+				<volume>(2.5, 5, 2.5)</volume>
+				<offset>(0, 0, -0.3)</offset>
+			</shadowData>
+		</graphicData>
 		<uiIconScale>0.75</uiIconScale>
 		<canOverlapZones>false</canOverlapZones>
 		<minifiedDef>MinifiedThingAE</minifiedDef>
@@ -1646,7 +1646,6 @@
 				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
 				<fleckOnUsedScale>4</fleckOnUsedScale>
 				<soundActivate>FlickSwitch</soundActivate>
-				<soundConsume>AE_ButcherCorpseFlesh</soundConsume>
 
 				<targetingParameters>
 					<canTargetBuildings>false</canTargetBuildings>
@@ -1654,6 +1653,20 @@
 					<canTargetMechs>false</canTargetMechs>
 					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
 				</targetingParameters>
+			</li>
+			<li Class="CompProperties_Activity">
+				<startingRange>0.2~0.4</startingRange>
+				<changePerDayBase>0.2</changePerDayBase>
+				<changePerDamage>0.001</changePerDamage>
+				<warning>0.9</warning>
+				<workerClass>ObeliskActivityWorker</workerClass>
+				<activityResearchFactorCurve>
+					<points>
+						<li>0, 0.5</li>
+						<li>0.5, 1</li>
+						<li>0.99, 2</li>
+					</points>
+				</activityResearchFactorCurve>
 			</li>
 		</comps>
 		<inspectorTabs>
