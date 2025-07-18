@@ -38,6 +38,7 @@ namespace AnomaliesExpected
             incidentParms.target = base.Pawn.MapHeld;
             incidentParms.points = StorytellerUtility.DefaultThreatPointsNow(base.Pawn.MapHeld);
             incidentParms.forced = true;
+            incidentParms.bypassStorytellerSettings = true;
             Find.Storyteller.incidentQueue.Add(Ext.incidentDef, Find.TickManager.TicksGame + Ext.ticksBeforeIncident, incidentParms);
 
             IntVec3 position = base.Pawn.PositionHeld;

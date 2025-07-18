@@ -33,6 +33,7 @@ namespace AnomaliesExpected
             IncidentParms incidentParms = new IncidentParms();
             incidentParms.target = invoker.Map;
             incidentParms.forced = true;
+            incidentParms.bypassStorytellerSettings = true;
             Find.Storyteller.incidentQueue.Add(IncidentDefOfLocal.AE_IncidentDef_BloodLakeSpawn, Find.TickManager.TicksGame, incidentParms);
         }
 

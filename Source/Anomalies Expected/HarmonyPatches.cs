@@ -62,7 +62,7 @@ namespace AnomaliesExpected
             val.Patch(AccessTools.Method(typeof(CreepJoinerUtility), "GenerateAndSpawn", new Type[] { typeof(Map), typeof(float) }), transpiler: new HarmonyMethod(patchType, "CJU_GenerateAndSpawn_Transpiler"));
 
             val.Patch(AccessTools.Method(typeof(TerrainGrid), "Notify_TerrainDestroyed"), transpiler: new HarmonyMethod(patchType, "TG_Notify_TerrainDestroyed_Transpiler"));
-            
+
             val.Patch(AccessTools.Method(typeof(MainTabWindow_Research), "ViewSize"), transpiler: new HarmonyMethod(patchType, "MTWR_ViewSize_Transpiler"));
             val.Patch(AccessTools.Method(typeof(MainTabWindow_Research), "UpdateSelectedProject"), transpiler: new HarmonyMethod(patchType, "MTWR_ViewSize_Transpiler"));
             val.Patch(AccessTools.Method(typeof(MainTabWindow_Research), "DrawProjectInfo"), transpiler: new HarmonyMethod(patchType, "MTWR_ViewSize_Transpiler"));
