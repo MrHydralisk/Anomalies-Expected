@@ -67,6 +67,8 @@ namespace AnomaliesExpected
                 Log.Error("Any BloodLakeUndergroundNest not found");
                 return;
             }
+            Exit.StudyUnlocks.SetParentThing(Entrance);
+            Terminal.StudyUnlocks.SetParentThing(Entrance);
             TickNextBloodFog = Find.TickManager.TicksGame + durationBloodFog.RandomInRange;
             TickNextSummon = Find.TickManager.TicksGame + (int)ticksPerSummonRange.Average * 2;
         }

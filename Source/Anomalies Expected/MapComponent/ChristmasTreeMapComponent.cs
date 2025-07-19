@@ -1,6 +1,4 @@
-﻿using RimWorld;
-using RimWorld.Planet;
-using System.Linq;
+﻿using RimWorld.Planet;
 using Verse;
 
 namespace AnomaliesExpected
@@ -22,8 +20,8 @@ namespace AnomaliesExpected
 
         public override void MapGenerated()
         {
-            Entrance = SourceMap?.listerThings?.ThingsOfDef(ThingDefOfLocal.AE_ChristmasTree).FirstOrDefault() as Building_AEChristmasTree;
-            Exit = map.listerThings.ThingsOfDef(ThingDefOfLocal.AE_ChristmasTreeExit).FirstOrDefault() as Building_AEChristmasTreeExit;
+            Entrance = PocketMapUtility.currentlyGeneratingPortal as Building_AEChristmasTree;
+            Exit = Entrance.exitBuilding;
             if (Entrance == null)
             {
                 Log.Warning("ChristmasTree not found");
@@ -42,33 +40,8 @@ namespace AnomaliesExpected
             base.MapComponentTick();
             if (Find.TickManager.TicksGame >= tickOnDestroy)
             {
-                DestroySubMap();
+                Entrance.DestroyPocketMap();
             }
-        }
-
-        public void DestroySubMap()
-        {
-            DamageInfo damageInfo = new DamageInfo(DamageDefOf.Frostbite, 99999f, 999f);
-            for (int num = map.mapPawns.AllPawns.Count - 1; num >= 0; num--)
-            {
-                Pawn pawn = map.mapPawns.AllPawns[num];
-                pawn.TakeDamage(damageInfo);
-                if (!pawn.Dead)
-                {
-                    pawn.Kill(damageInfo);
-                }
-            }
-            if (Entrance.LoadInProgress)
-            {
-                Entrance.CancelLoad();
-            }
-            Alert_ChristmasTreeUnstable.RemoveTarget(Exit);
-            if (!Entrance.isBeenExited)
-            {
-                Entrance.isBeenExited = true;
-                Entrance.StudyUnlocks.UnlockStudyNoteManual(2);
-            }
-            PocketMapUtility.DestroyPocketMap(map);
         }
 
         public override void ExposeData()

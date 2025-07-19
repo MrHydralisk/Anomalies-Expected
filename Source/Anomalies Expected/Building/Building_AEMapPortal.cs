@@ -9,6 +9,7 @@ namespace AnomaliesExpected
     {
         protected static readonly CachedTexture ViewSubMapTex = new CachedTexture("UI/Commands/ViewCave");
 
+        public bool isPocketMapExist => pocketMap != null;
         public virtual bool isHideEntry => false;
 
         public CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = GetComp<CompAEStudyUnlocks>());
@@ -63,6 +64,12 @@ namespace AnomaliesExpected
             PocketMapUtility.currentlyGeneratingPortal = this;
             pocketMap = GeneratePocketMapInt();
             PocketMapUtility.currentlyGeneratingPortal = null;
+        }
+
+        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
+        {
+            DestroyPocketMap();
+            base.Destroy(mode);
         }
 
         public virtual void DestroyPocketMap()

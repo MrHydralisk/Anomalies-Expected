@@ -18,8 +18,6 @@ namespace AnomaliesExpected
         private BloodLakeSummonHistory mainSummonHistory => mainSummonHistoryCached ?? (mainSummonHistoryCached = SummonHistories.FirstOrDefault());
         private BloodLakeSummonHistory mainSummonHistoryCached;
 
-        private BloodLakeMapComponent mapComponent => mapComponentCached ?? (mapComponentCached = pocketMap?.GetComponent<BloodLakeMapComponent>() ?? null);
-        private BloodLakeMapComponent mapComponentCached;
         public Building_AEBloodLakeExit exitBuilding => exit as Building_AEBloodLakeExit;
 
         private bool isReadyToEnter => (StudyUnlocks?.NextIndex ?? 4) >= 4;
@@ -174,15 +172,12 @@ namespace AnomaliesExpected
                     FilthMaker.TryMakeFilth(item, Map, ThingDefOf.Filth_Blood, 1);
                 }
             }
-            DestroyPocketMap();
             base.Destroy(mode);
         }
 
         protected override Map GeneratePocketMapInt()
         {
             Map pocketMap = PocketMapUtility.GeneratePocketMap(new IntVec3(Mathf.Min(AEMod.Settings.BloodLakeSubMapMaxSize, Map.Size.x), Mathf.Min(AEMod.Settings.BloodLakeSubMapMaxSize, Map.Size.y), Mathf.Min(AEMod.Settings.BloodLakeSubMapMaxSize, Map.Size.z)), def.portal.pocketMapGenerator, GetExtraGenSteps(), base.Map);
-            exitBuilding.StudyUnlocks.SetParentThing(this);
-            mapComponent?.Terminal?.StudyUnlocks.SetParentThing(this);
             StudyUnlocks.UnlockStudyNoteManual(0);
             return pocketMap;
         }
@@ -331,7 +326,7 @@ namespace AnomaliesExpected
                     defaultLabel = "Dev: Generate pocket Map",
                     defaultDesc = "Generate pocket map for Blood Lake"
                 };
-                if (pocketMap != null && !isDestroyedMap)
+                if (isPocketMapExist && !isDestroyedMap)
                 {
                     yield return new Command_Action
                     {
