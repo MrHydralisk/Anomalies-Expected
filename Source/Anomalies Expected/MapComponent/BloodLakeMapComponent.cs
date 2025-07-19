@@ -75,7 +75,7 @@ namespace AnomaliesExpected
             int amount = 0;
             foreach (Pawn p in map.mapPawns.AllPawnsSpawned)
             {
-                if (p.Faction.def == FactionDefOf.Entities && PawnDefConvertor.TryGetValue(p.kindDef, out int pawnValue))
+                if (p.Faction?.def == FactionDefOf.Entities && PawnDefConvertor.TryGetValue(p.kindDef, out int pawnValue))
                 {
                     amount += pawnValue;
                 }
