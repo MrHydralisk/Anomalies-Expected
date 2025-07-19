@@ -53,7 +53,6 @@ namespace AnomaliesExpected
                 }
                 Building_Casket building_Casket = ThingMaker.MakeThing(ThingDefOf.FleshSack) as Building_Casket;
                 GenSpawn.Spawn(building_Casket, result, map);
-                Log.Message($"FleshSack {result}");
                 building_Casket.SetFaction(Faction.OfEntities);
                 for (int num2 = list.Count - 1; num2 >= 0; num2--)
                 {

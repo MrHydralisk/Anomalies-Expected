@@ -51,9 +51,7 @@ namespace AnomaliesExpected
                             terrainGrid.SetTerrain(item, TerrainDefOf.MetalTile);
                             MapGenerator.rootsToUnfog.Add(item);
                         }
-                        Log.Message($"");
                         GenSpawn.Spawn(ThingMaker.MakeThing(BloodLakeUndergroundNest), pos, map);
-                        Log.Message($"BloodLakeUndergroundNest {pos}");
                         anySpawned = true;
                     }
                 }

@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using RimWorld.Planet;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -45,7 +46,7 @@ namespace AnomaliesExpected
             Exit = map.listerThings.ThingsOfDef(ThingDefOfLocal.AE_BloodLakeExit).FirstOrDefault() as Building_AEBloodLakeExit;
             Terminal = map.listerThings.ThingsOfDef(ThingDefOfLocal.AE_BloodLakeTerminal).FirstOrDefault() as Building_AE;
             UndergroundNests = map.listerThings.ThingsOfDef(ThingDefOfLocal.AE_BloodLakeUndergroundNest);
-            initialEntityAmount = EntityAmount();
+            initialEntityAmount = EntityAmount(map.mapPawns.AllPawnsSpawned.Where((Pawn p) => p.Faction?.def == FactionDefOf.Entities));
             if (Entrance == null)
             {
                 Log.Warning("BloodLake not found");
@@ -70,12 +71,12 @@ namespace AnomaliesExpected
             TickNextSummon = Find.TickManager.TicksGame + (int)ticksPerSummonRange.Average * 2;
         }
 
-        public int EntityAmount()
+        public int EntityAmount(IEnumerable<Pawn> entity)
         {
             int amount = 0;
-            foreach (Pawn p in map.mapPawns.AllPawnsSpawned)
+            foreach (Pawn p in entity)
             {
-                if (p.Faction?.def == FactionDefOf.Entities && PawnDefConvertor.TryGetValue(p.kindDef, out int pawnValue))
+                if (PawnDefConvertor.TryGetValue(p.kindDef, out int pawnValue))
                 {
                     amount += pawnValue;
                 }
@@ -95,6 +96,10 @@ namespace AnomaliesExpected
                     {
                         TrySpawnWaveFromUndergroundNest(colonists);
                     }
+                    else
+                    {
+                        TrySpawnWaveFromUndergroundNest();
+                    }
                 }
                 if (Find.TickManager.TicksGame > TickNextBloodFog)
                 {
@@ -105,14 +110,16 @@ namespace AnomaliesExpected
             }
         }
 
-        public void TrySpawnWaveFromUndergroundNest(List<Pawn> colonists)
+        public void TrySpawnWaveFromUndergroundNest(List<Pawn> colonists = null)
         {
-            IntVec3 pos = IntVec3.Invalid;
-            IntVec3 total = IntVec3.Zero;
-            float count = colonists.Count();
-            int currentEntityAmount = EntityAmount();
-            if (count > 0)
+            Thing UndergroundNest;
+            int currentEntityAmount = EntityAmount(map.mapPawns.AllPawnsSpawned.Where((Pawn p) => p.Faction?.def == FactionDefOf.Entities));
+            List<Pawn> emergingFleshbeasts = new List<Pawn>();
+            float count;
+            if (colonists != null && (count = colonists.Count()) > 0)
             {
+                IntVec3 pos = IntVec3.Invalid;
+                IntVec3 total = IntVec3.Zero;
                 foreach (Pawn p in colonists)
                 {
                     total += p.Position;
@@ -122,44 +129,80 @@ namespace AnomaliesExpected
                 {
                     pos = map.Center;
                 }
-                Thing UndergroundNest = UndergroundNests.OrderBy((Thing t) => t.Position.DistanceTo(pos)).FirstOrDefault();
-                ThingDef thingDef = ThingDefOfLocal.AE_BloodLakeUndergroundNest;
-                List<Pawn> emergingFleshbeasts = FleshbeastUtility.GetFleshbeastsForPoints(StorytellerUtility.DefaultThreatPointsNow(map) * Mathf.Max(1, (1 + map.gameConditionManager.ActiveConditions.Count())) * AEMod.Settings.UndergroundFleshmassNestMult, map);
-                int EntityToRemove = (currentEntityAmount + emergingFleshbeasts.Count()) - initialEntityAmount;
-                if (EntityToRemove > 0)
+                UndergroundNest = UndergroundNests.OrderBy((Thing t) => t.Position.DistanceTo(pos)).FirstOrDefault();
+                float points = Mathf.Max(StorytellerUtility.DefaultThreatPointsNow(map), 500) * Mathf.Max(1, (1 + map.gameConditionManager.ActiveConditions.Count())) * AEMod.Settings.UndergroundFleshmassNestMult * (colonists.NullOrEmpty() ? AEMod.Settings.UndergroundFleshmassNestRestore : 1);
+                emergingFleshbeasts = FleshbeastUtility.GetFleshbeastsForPoints(points, map);
+                int EntityToRemove = (currentEntityAmount + EntityAmount(emergingFleshbeasts)) - initialEntityAmount;
+                if (AEMod.Settings.DevModeInfo)
                 {
-                    foreach (Pawn p in emergingFleshbeasts.TakeRandom(Mathf.Min(EntityToRemove, emergingFleshbeasts.Count())))
+                    Log.Message($"Attack {points} = ({StorytellerUtility.DefaultThreatPointsNow(map)}, 500) * {Mathf.Max(1, (1 + map.gameConditionManager.ActiveConditions.Count()))} * {AEMod.Settings.UndergroundFleshmassNestMult} * {(colonists.NullOrEmpty() ? AEMod.Settings.UndergroundFleshmassNestRestore : 1)}\n{EntityToRemove} = ({currentEntityAmount} + {EntityAmount(emergingFleshbeasts)}) - {initialEntityAmount}:\n{string.Join("\n", emergingFleshbeasts.Select(e => e.LabelCap))}");
+                }
+                while (EntityToRemove > 0 && emergingFleshbeasts.Count() > 0)
+                {
+                    Pawn p = emergingFleshbeasts.RandomElement();
+                    if (PawnDefConvertor.TryGetValue(p.kindDef, out int pawnValue))
                     {
-                        emergingFleshbeasts.Remove(p);
+                        EntityToRemove -= pawnValue;
+                    }
+                    else
+                    {
+                        EntityToRemove -= 1;
+                    }
+                    emergingFleshbeasts.Remove(p);
+                }
+                if (AEMod.Settings.DevModeInfo)
+                {
+                    Log.Message($"Attack {string.Join("\n", emergingFleshbeasts.Select(e => e.LabelCap))}");
+                }
+
+            }
+            else
+            {
+                UndergroundNest = UndergroundNests.OrderBy((Thing t) => t.Position.DistanceTo(Entrance.Position)).FirstOrDefault();
+                int EntityToRestore = Math.Min(initialEntityAmount - currentEntityAmount, Mathf.CeilToInt(initialEntityAmount * AEMod.Settings.UndergroundFleshmassNestRestore));
+                if (AEMod.Settings.DevModeInfo)
+                {
+                    Log.Message($"Restore {EntityToRestore} = {initialEntityAmount} - {currentEntityAmount}, {initialEntityAmount} * {AEMod.Settings.UndergroundFleshmassNestRestore}");
+                }
+                while (EntityToRestore > 0)
+                {
+                    var entity = PawnDefConvertor.Where(e => e.Value <= EntityToRestore).RandomElement();
+                    Pawn p = PawnGenerator.GeneratePawn(entity.Key, Faction.OfEntities);
+                    emergingFleshbeasts.Add(p);
+                    EntityToRestore -= entity.Value;
+                }
+                if (AEMod.Settings.DevModeInfo)
+                {
+                    Log.Message($"Restore {string.Join("\n", emergingFleshbeasts.Select(e => e.LabelCap))}");
+                }
+            }
+            ThingDef thingDef = ThingDefOfLocal.AE_BloodLakeUndergroundNest;
+            if (emergingFleshbeasts.Count() > 0)
+            {
+                CellRect cellRect = GenAdj.OccupiedRect(UndergroundNest.Position, Rot4.North, thingDef.Size);
+                List<PawnFlyer> list = new List<PawnFlyer>();
+                List<IntVec3> list2 = new List<IntVec3>();
+                foreach (Pawn emergingFleshbeast in emergingFleshbeasts)
+                {
+                    IntVec3 randomCell = cellRect.RandomCell;
+                    GenSpawn.Spawn(emergingFleshbeast, randomCell, map);
+                    if (CellFinder.TryFindRandomCellNear(UndergroundNest.Position, map, Mathf.CeilToInt(thingDef.size.x / 2), (IntVec3 c) => !c.Fogged(map) && c.Walkable(map) && !c.Impassable(map), out var result))
+                    {
+                        emergingFleshbeast.rotationTracker.FaceCell(result);
+                        list.Add(PawnFlyer.MakeFlyer(ThingDefOf.PawnFlyer_Stun, emergingFleshbeast, result, null, null, flyWithCarriedThing: false));
+                        list2.Add(randomCell);
                     }
                 }
-                if (emergingFleshbeasts.Count() > 0)
+                if (list2.Count != 0)
                 {
-                    CellRect cellRect = GenAdj.OccupiedRect(UndergroundNest.Position, Rot4.North, thingDef.Size);
-                    List<PawnFlyer> list = new List<PawnFlyer>();
-                    List<IntVec3> list2 = new List<IntVec3>();
-                    foreach (Pawn emergingFleshbeast in emergingFleshbeasts)
-                    {
-                        IntVec3 randomCell = cellRect.RandomCell;
-                        GenSpawn.Spawn(emergingFleshbeast, randomCell, map);
-                        if (CellFinder.TryFindRandomCellNear(UndergroundNest.Position, map, Mathf.CeilToInt(thingDef.size.x / 2), (IntVec3 c) => !c.Fogged(map) && c.Walkable(map) && !c.Impassable(map), out var result))
-                        {
-                            emergingFleshbeast.rotationTracker.FaceCell(result);
-                            list.Add(PawnFlyer.MakeFlyer(ThingDefOf.PawnFlyer_Stun, emergingFleshbeast, result, null, null, flyWithCarriedThing: false));
-                            list2.Add(randomCell);
-                        }
-                    }
-                    if (list2.Count != 0)
-                    {
-                        SpawnRequest spawnRequest = new SpawnRequest(list.Cast<Thing>().ToList(), list2, 1, 1f);
-                        spawnRequest.initialDelay = 250;
-                        map.deferredSpawner.AddRequest(spawnRequest);
-                        SoundDefOf.Pawn_Fleshbeast_EmergeFromPitGate.PlayOneShot(UndergroundNest);
-                        emergingFleshbeasts.Clear();
-                    }
-                    Messages.Message("AnomaliesExpected.BloodLake.UndergroundNestSpawn".Translate().RawText, UndergroundNest, MessageTypeDefOf.NegativeEvent);
-                    TickNextSummon = Find.TickManager.TicksGame + Mathf.RoundToInt(ticksPerSummonRange.RandomInRange * AEMod.Settings.UndergroundFleshmassNestFrequencyMult);
+                    SpawnRequest spawnRequest = new SpawnRequest(list.Cast<Thing>().ToList(), list2, 1, 1f);
+                    spawnRequest.initialDelay = 250;
+                    map.deferredSpawner.AddRequest(spawnRequest);
+                    SoundDefOf.Pawn_Fleshbeast_EmergeFromPitGate.PlayOneShot(UndergroundNest);
+                    emergingFleshbeasts.Clear();
                 }
+                Messages.Message("AnomaliesExpected.BloodLake.UndergroundNestSpawn".Translate().RawText, UndergroundNest, MessageTypeDefOf.NegativeEvent);
+                TickNextSummon = Find.TickManager.TicksGame + Mathf.RoundToInt(ticksPerSummonRange.RandomInRange * AEMod.Settings.UndergroundFleshmassNestFrequencyMult);
             }
         }
 
