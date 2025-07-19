@@ -18,18 +18,17 @@ namespace AnomaliesExpected
         private BloodLakeSummonHistory mainSummonHistory => mainSummonHistoryCached ?? (mainSummonHistoryCached = SummonHistories.FirstOrDefault());
         private BloodLakeSummonHistory mainSummonHistoryCached;
 
-        public Map subMap;
-        private BloodLakeMapComponent mapComponent => mapComponentCached ?? (mapComponentCached = subMap?.GetComponent<BloodLakeMapComponent>() ?? null);
-        private BloodLakeMapComponent mapComponentCached;
-        public Building_AEBloodLakeExit exitBuilding => mapComponent?.Exit;
+        public Building_AEBloodLakeExit exitBuilding => exit as Building_AEBloodLakeExit;
 
-        private bool isBeenEntered;
         private bool isReadyToEnter => (StudyUnlocks?.NextIndex ?? 4) >= 4;
+
+        public override bool isHideEntry => !isReadyToEnter || isDestroyedMap;
 
         public override string EnterString => "AnomaliesExpected.BloodLake.Enter".Translate(Label);
         public override string EnteringString => "AnomaliesExpected.BloodLake.Entering".Translate(Label);
 
         public override bool AutoDraftOnEnter => true;
+        protected override DamageDef pocketMapDamageDef => DamageDefOf.Bomb;
         public bool isDestroyedMap;
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
@@ -71,7 +70,7 @@ namespace AnomaliesExpected
                 BloodLakeSummonHistory summonHistory = SummonHistories[i];
                 if (Find.TickManager.TicksGame >= summonHistory.tickNextSummon && (!summonHistory.summonPattern.isRaid || !(isDestroyedMap)))
                 {
-                    if (subMap?.mapPawns?.FreeColonistsAndPrisonersSpawned?.NullOrEmpty() ?? true)
+                    if (pocketMap?.mapPawns?.FreeColonistsAndPrisonersSpawned?.NullOrEmpty() ?? true)
                     {
                         Summon(summonHistory);
                         summonHistory.tickNextSummon = Find.TickManager.TicksGame + summonHistory.currentStage.intervalRange.RandomInRange;
@@ -173,23 +172,14 @@ namespace AnomaliesExpected
                     FilthMaker.TryMakeFilth(item, Map, ThingDefOf.Filth_Blood, 1);
                 }
             }
-            if (subMap != null && !isDestroyedMap)
-            {
-                mapComponent.DestroySubMap();
-            }
             base.Destroy(mode);
         }
 
-        public void GenerateSubMap()
+        protected override Map GeneratePocketMapInt()
         {
-            if (def.portal.pocketMapGenerator != null)
-            {
-                subMap = PocketMapUtility.GeneratePocketMap(new IntVec3(Mathf.Min(AEMod.Settings.BloodLakeSubMapMaxSize, Map.Size.x), Mathf.Min(AEMod.Settings.BloodLakeSubMapMaxSize, Map.Size.y), Mathf.Min(AEMod.Settings.BloodLakeSubMapMaxSize, Map.Size.z)), def.portal.pocketMapGenerator, null, Map);
-                mapComponentCached = subMap?.GetComponent<BloodLakeMapComponent>() ?? null;
-                exitBuilding.StudyUnlocks.SetParentThing(this);
-                mapComponent?.Terminal?.StudyUnlocks.SetParentThing(this);
-                StudyUnlocks.UnlockStudyNoteManual(0);
-            }
+            Map pocketMap = PocketMapUtility.GeneratePocketMap(new IntVec3(Mathf.Min(AEMod.Settings.BloodLakeSubMapMaxSize, Map.Size.x), Mathf.Min(AEMod.Settings.BloodLakeSubMapMaxSize, Map.Size.y), Mathf.Min(AEMod.Settings.BloodLakeSubMapMaxSize, Map.Size.z)), def.portal.pocketMapGenerator, GetExtraGenSteps(), base.Map);
+            StudyUnlocks.UnlockStudyNoteManual(0);
+            return pocketMap;
         }
 
         public override bool IsEnterable(out string reason)
@@ -213,38 +203,24 @@ namespace AnomaliesExpected
             return true;
         }
 
-        public override void OnEntered(Pawn pawn)
+        public override void DestroyPocketMap()
         {
-            base.OnEntered(pawn);
-            if (!isBeenEntered)
+            base.DestroyPocketMap();
+            pocketMap = null;
+            isDestroyedMap = true;
+            Comp_CanDestroyedAfterStudy canDestroyedAfterStudy = GetComp<Comp_CanDestroyedAfterStudy>();
+            if (canDestroyedAfterStudy != null)
             {
-                isBeenEntered = true;
-                Find.LetterStack.ReceiveLetter("AnomaliesExpected.BloodLake.LetterEnter.Label".Translate(), "AnomaliesExpected.BloodLake.LetterEnter.Text".Translate(), LetterDefOf.ThreatBig, new TargetInfo(exitBuilding));
+                canDestroyedAfterStudy.isCanDestroyForced = true;
             }
+            Find.CameraDriver.shaker.DoShake(0.2f);
         }
 
         public override IEnumerable<Gizmo> GetGizmos()
         {
             foreach (Gizmo gizmo in base.GetGizmos())
             {
-                if (gizmo is Command_Action command_Action && command_Action.icon == EnterTex && (!isReadyToEnter || isDestroyedMap))
-                {
-                    continue;
-                }
                 yield return gizmo;
-            }
-            if (subMap != null && !isDestroyedMap)
-            {
-                yield return new Command_Action
-                {
-                    defaultLabel = "AnomaliesExpected.BloodLake.ViewSubMap.Label".Translate(),
-                    defaultDesc = "AnomaliesExpected.BloodLake.ViewSubMap.Desc".Translate(),
-                    icon = ViewSubMapTex.Texture,
-                    action = delegate
-                    {
-                        CameraJumper.TryJumpAndSelect(exitBuilding);
-                    }
-                };
             }
             if (DebugSettings.ShowDevGizmos)
             {
@@ -345,55 +321,30 @@ namespace AnomaliesExpected
                 {
                     action = delegate
                     {
-                        GenerateSubMap();
+                        GeneratePocketMap();
                     },
-                    defaultLabel = "Dev: Generate Sub Map",
-                    defaultDesc = "Generate sub map for Blood Lake"
+                    defaultLabel = "Dev: Generate pocket Map",
+                    defaultDesc = "Generate pocket map for Blood Lake"
                 };
-                if (subMap != null && !isDestroyedMap)
+                if (isPocketMapExist && !isDestroyedMap)
                 {
                     yield return new Command_Action
                     {
                         action = delegate
                         {
-                            List<FloatMenuOption> floatMenuOptions = new List<FloatMenuOption>();
-                            floatMenuOptions.Add(new FloatMenuOption($"Destroy false", delegate
-                            {
-                                mapComponent.DestroySubMap();
-                            }));
-                            floatMenuOptions.Add(new FloatMenuOption($"Destroy true", delegate
-                            {
-                                mapComponent.DestroySubMap(true);
-                            }));
-                            Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
+                            DestroyPocketMap();
                         },
-                        defaultLabel = "Dev: Destroy sub map",
-                        defaultDesc = "Destroy sub map"
+                        defaultLabel = "Dev: Destroy pocket map",
+                        defaultDesc = "Destroy pocket map"
                     };
                 }
             }
-        }
-
-        public override Map GetOtherMap()
-        {
-            if (subMap == null)
-            {
-                GenerateSubMap();
-            }
-            return subMap;
-        }
-
-        public override IntVec3 GetDestinationLocation()
-        {
-            return exitBuilding?.Position ?? IntVec3.Invalid;
         }
 
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Collections.Look(ref SummonHistories, "SummonHistories", LookMode.Deep);
-            Scribe_References.Look(ref subMap, "subMap");
-            Scribe_Values.Look(ref isBeenEntered, "beenEntered", defaultValue: false);
             Scribe_Values.Look(ref isDestroyedMap, "isDestroyedMap");
         }
 

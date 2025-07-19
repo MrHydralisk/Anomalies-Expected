@@ -140,6 +140,7 @@
 				<StudyHealMult>0.005</StudyHealMult>
 				<StudyConsumeMult>0.015</StudyConsumeMult>
 				<SeverityPerDmgDonorMult>0.5</SeverityPerDmgDonorMult>
+				<ConsumptionAbsorbMult>0.25</ConsumptionAbsorbMult>
 			</li>
 			<li Class="CompProperties_Studiable">
 				<compClass>AnomaliesExpected.CompStudiableAE</compClass>
@@ -483,7 +484,7 @@
 				<activateTexPath>Things/Building/AE_BeamTarget</activateTexPath>
  
 				<activateLabelString>Press button</activateLabelString>
-				<activateDescString>Press button to activate machine.</activateDescString>
+				<activateDescString>Press button to activate machine and teleport to selected location.</activateDescString>
 				<guiLabelString>Choose who should activate this.</guiLabelString>
 				<jobString>press button</jobString>
 				<activatingStringPending>pressing button {0}</activatingStringPending>
@@ -553,7 +554,7 @@
 						<AnomalyDesc>A military grade small device for transferring data with pneumatic retractable stops to hold it still on ground. On its body there are indicators with lights and a small button. A compact antenna constantly sending and recieving data from somewhere.\n\nAfter recieving enough data will teleport to a location nearby and initiate high intensity energy beam attack on itself once digital dial timer reach zero. Lit lamps on the indicator show the amount of beams that will be utilized. Colonists have 2 hours to pick and move it to somewhere safe. It will not activate as long as the carrier keep holding down the button. Then they will have 12 min to leave the danger zone. Can be manually activated.\n\nClassified as Class-4 (Critical) anomaly.</AnomalyDesc>
 						<threshold>8</threshold>
 						<label>#4/5 Transmitter study report</label>
-						<text>Manual Activation and Combat Application\n\nSubject: [REDACTED]\n\nAbstract:\nTesting transmitter revealed a manual activation method via its base button. Holding the button halts the countdown timer, but accidental release triggers a 12-minute countdown to self-activation. The incident highlights the dangers of transporting the transmitter and the potential for weaponized use. Updated protocols will consider combat applications, while emphasizing safety measures.\n\nObservations:\nTransmitter was transported to a designated outdoor testing area for further experimentation.\nDuring initial interaction, [REDACTED] attempted to activate the button located on the base of the transmitter while the digital timer was inactive.\nThis action unexpectedly initiated a 12-minute countdown on the digital dial.\nSubject then retrieved the transmitter and maintained pressure on the button, successfully halting the countdown timer at 12 minutes.\nWhile attempting to transport the transmitter to a designated location for a controlled attack test, [REDACTED] tripped, causing her leg to become lodged in a crevice in the ground.\nThe transmitter fell from Subject's grasp and landed at a distance beyond immediate reach.\nUpon landing, transmitter's pneumatic retractable stops deployed, preventing retrieval attempts using a nearby stick.\nAs the 12-minute timer expired, a high-intensity energy beam struck the transmitter location, consistent with previous observations.\n\nOutcome:\nTragically, [REDACTED] succumbed to the effects of the energy beam at the incident location, with only residual ash recovered.\n\nDiscussion:\nThis unforeseen event, while being tragic, provided valuable insights into the transmitter functionality.\nThe experiment inadvertently revealed a method for manual activation through interaction with the button. This opens potential avenues for controlled applications in combat scenarios.\nThe incident also highlighted the inherent risks associated with transporting the transmitter, even in a activating state. Accidental release of a button can trigger the countdown timer, posing a serious threat to the carrier, if they stay nearby.\nFurthermore, the activation of the pneumatic retractable stops upon landing suggests internal sensors that detect solid ground, which makes retrieval after accidental release more challenging.\n\nRecommendations:\nThe established protocols for transmitter should be amended to include authorization for its controlled use in combat situations. However, the inherent risks associated with such deployment must be carefully considered and addressed through thorough training and safety protocols.</text>
+						<text>Manual Activation and Combat Application\n\nSubject: [REDACTED]\n\nAbstract:\nTesting transmitter revealed a manual activation method via its base button. Holding the button halts the countdown timer, but accidental release triggers a 12-minute countdown to self-activation. The incident highlights the dangers of transporting the transmitter and the potential for weaponized use. Updated protocols will consider combat applications, while emphasizing safety measures.\n\nObservations:\nTransmitter was transported to a designated outdoor testing area for further experimentation.\nDuring initial interaction, [REDACTED] attempted to activate the button located on the base of the transmitter while the digital timer was inactive.\nThis action unexpectedly initiated a 12-minute countdown on the digital dial.\nSubject then retrieved the transmitter and maintained pressure on the button, successfully halting the countdown timer at 12 minutes.\nWhile attempting to transport the transmitter to a designated location for a controlled attack test, [REDACTED] tripped, causing her leg to become lodged in a crevice in the ground.\nThe transmitter fell from Subject's grasp and landed at a distance beyond immediate reach.\nUpon landing, transmitter's pneumatic retractable stops deployed, preventing retrieval attempts using a nearby stick.\nAs the 12-minute timer expired, a high-intensity energy beam struck the transmitter location, consistent with previous observations.\n\nOutcome:\nTragically, [REDACTED] succumbed to the effects of the energy beam at the incident location, with only residual ash recovered.\n\nDiscussion:\nThis unforeseen event, while being tragic, provided valuable insights into the transmitter functionality.\nThe experiment inadvertently revealed a method for manual activation through interaction with the button. This opens potential avenues for controlled applications in combat scenarios.\nThe incident also highlighted the inherent risks associated with transporting the transmitter, even in a activating state. Accidental release of a button can trigger the countdown timer, posing a serious threat to the carrier, if they stay nearby.\nAnalysis of the data stream sent to the transmitter allowed us to feed it our own data, which forced it to teleport to a specified location before such manual activation. This was done to decrease the chance of such a tragedy in the future.\nFurthermore, the activation of the pneumatic retractable stops upon landing suggests internal sensors that detect solid ground, which makes retrieval after accidental release more challenging.\n\nRecommendations:\nThe established protocols for transmitter should be amended to include authorization for its controlled use in combat situations. However, the inherent risks associated with such deployment must be carefully considered and addressed through thorough training and safety protocols.</text>
 						<isSyncWithDB>true</isSyncWithDB>
 					</li>
 					<li Class="AnomaliesExpected.AEStudyNote">
@@ -695,7 +696,7 @@
 			<li Class="AnomaliesExpected.CompProperties_CanDestroyedAfterStudy">
 				<ticksToActivate>8000</ticksToActivate>
 				<maintainProgress>true</maintainProgress>
-				<activateTexPath>Designations/FillInPitBurrow</activateTexPath>
+				<activateTexPath>Designations/FillCrater</activateTexPath>
  
 				<activateLabelString>Fill with soil</activateLabelString>
 				<activateDescString>Add chemicals to dissolve and fill it with soil. [Will destroy it]</activateDescString>
@@ -707,8 +708,9 @@
 
 				<fleckOnAnomaly>PitGateCollapseDust</fleckOnAnomaly>
 				<fleckOnAnomalyScale>1</fleckOnAnomalyScale>
-				<soundActivate>PitBurrow_Collapse</soundActivate>
-				<interactionEffecter>FillingInPitGate</interactionEffecter>
+				<soundActivate>Crater_FilledIn</soundActivate>
+				<EffecterOnUsed>ImpactSmallDustCloud</EffecterOnUsed>
+				<interactionEffecter>FillingInCrater</interactionEffecter>
 				
 				<cooldownFleck>DirtBitsArching</cooldownFleck>
 				<cooldownFleckSpawnIntervalTicks>60</cooldownFleckSpawnIntervalTicks>
@@ -827,6 +829,9 @@
 		<size>(5,3)</size>
 		<portal>
 			<pocketMapGenerator>AE_BloodLakeMapGenerator</pocketMapGenerator>
+			<enteredLetterLabel>Fleshmass territory</enteredLetterLabel>
+			<enteredLetterText>The open space lies before us, yet it's swarming with different kinds of fleshbeasts. We must brace ourselves for a ferocious attacks from the surrounding fleshmass network.\n\nIf we're not ready to confront this threat, we should fall back to our colony and arm ourselves.</enteredLetterText>
+			<enteredLetterDef>ThreatBig</enteredLetterDef>
 			<traverseSound>TraversePitGate</traverseSound>
 		</portal>
 		<inspectorTabs>
@@ -897,7 +902,7 @@
 			<li Class="AnomaliesExpected.CompProperties_CanDestroyedAfterStudy">
 				<ticksToActivate>120000</ticksToActivate>
 				<maintainProgress>true</maintainProgress>
-				<activateTexPath>Designations/FillInPitBurrow</activateTexPath>
+				<activateTexPath>Designations/FillCrater</activateTexPath>
  
 				<activateLabelString>Fill with soil</activateLabelString>
 				<activateDescString>Add chemicals to dissolve and fill it with soil. [Will destroy it]</activateDescString>
@@ -909,8 +914,9 @@
 
 				<fleckOnAnomaly>PitGateCollapseDust</fleckOnAnomaly>
 				<fleckOnAnomalyScale>5</fleckOnAnomalyScale>
-				<soundActivate>PitBurrow_Collapse</soundActivate>
-				<interactionEffecter>FillingInPitGate</interactionEffecter>
+				<soundActivate>Crater_FilledIn</soundActivate>
+				<EffecterOnUsed>ImpactSmallDustCloud</EffecterOnUsed>
+				<interactionEffecter>FillingInCrater</interactionEffecter>
 				
 				<cooldownFleck>DirtBitsArching</cooldownFleck>
 				<cooldownFleckSpawnIntervalTicks>60</cooldownFleckSpawnIntervalTicks>

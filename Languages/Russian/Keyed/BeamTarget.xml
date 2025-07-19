@@ -8,6 +8,7 @@
 	<AnomaliesExpected.BeamTarget.ButtonHold>Удерживает кнопку</AnomaliesExpected.BeamTarget.ButtonHold>
 	<AnomaliesExpected.BeamTarget.LeftContainment>{0} покинул зону содержания</AnomaliesExpected.BeamTarget.LeftContainment>
 	<AnomaliesExpected.BeamTarget.LeftContainmentText>{0} покинул зону содержания. Необходимо срочно определить его местоположение, чтобы снизить сопутствующий ущерб.</AnomaliesExpected.BeamTarget.LeftContainmentText>
+	<AnomaliesExpected.BeamTarget.ChooseDest>Выберите, куда телепортировать {0}.</AnomaliesExpected.BeamTarget.ChooseDest>
 	
 	<AnomaliesExpected.PowerBeam.BeamTargetMissing>{0} не смог подключиться к Передатчику</AnomaliesExpected.PowerBeam.BeamTargetMissing>
 </LanguageData>

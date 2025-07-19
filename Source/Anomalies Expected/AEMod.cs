@@ -27,7 +27,9 @@ namespace AnomaliesExpected
             options.CheckboxLabeled("AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter".Translate().RawText, ref Settings.BeamTargetLetter);
             options.GapLine();
             options.Label("AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestMult".Translate(Settings.UndergroundFleshmassNestMult.ToString()));
-            Settings.UndergroundFleshmassNestMult = Mathf.Round(options.Slider(Settings.UndergroundFleshmassNestMult, 0.1f, 2f) * 10f) / 10f;
+            Settings.UndergroundFleshmassNestMult = Mathf.Round(options.Slider(Settings.UndergroundFleshmassNestMult, 0.1f, 2f) * 100f) / 100f;
+            options.Label("AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestOffmapMult".Translate(Settings.UndergroundFleshmassNestRestore.ToStringPercent()));
+            Settings.UndergroundFleshmassNestRestore = Mathf.Round(options.Slider(Settings.UndergroundFleshmassNestRestore, 0.05f, 1f) * 100f) / 100f;
             options.Label("AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestFrequencyMult".Translate(Settings.UndergroundFleshmassNestFrequencyMult.ToString()));
             Settings.UndergroundFleshmassNestFrequencyMult = Mathf.Round(options.Slider(Settings.UndergroundFleshmassNestFrequencyMult, 0.1f, 2f) * 10f) / 10f;
             options.Label("AnomaliesExpected.Settings.BloodLake.BloodLakeSubMapMaxSize".Translate(Settings.BloodLakeSubMapMaxSize.ToString()));

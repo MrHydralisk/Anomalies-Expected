@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using Verse;
-using Verse.Sound;
 
 namespace AnomaliesExpected
 {
@@ -13,12 +12,10 @@ namespace AnomaliesExpected
 
         private BloodLakeMapComponent mapComponent => mapComponentCached ?? (mapComponentCached = Map?.GetComponent<BloodLakeMapComponent>() ?? null);
         private BloodLakeMapComponent mapComponentCached;
-        public Building_AEBloodLake entranceBuilding => mapComponent?.Entrance;
+        public Building_AEBloodLake entranceBuilding => entrance as Building_AEBloodLake;
 
         public override string EnterString => "AnomaliesExpected.BloodLake.Exit".Translate(Label);
         public override string EnteringString => "AnomaliesExpected.BloodLake.Entering".Translate(Label);
-
-        public override bool AutoDraftOnEnter => true;
 
         public Building_AE terminal => mapComponent?.Terminal;
 
@@ -50,35 +47,12 @@ namespace AnomaliesExpected
             }
         }
 
-        public override void OnEntered(Pawn pawn)
-        {
-            base.OnEntered(pawn);
-            if (Find.CurrentMap == base.Map)
-            {
-                entranceBuilding.def.portal.traverseSound?.PlayOneShot(this);
-            }
-            else if (Find.CurrentMap == entranceBuilding.Map)
-            {
-                entranceBuilding.def.portal.traverseSound?.PlayOneShot(entranceBuilding);
-            }
-        }
-
         public override IEnumerable<Gizmo> GetGizmos()
         {
             foreach (Gizmo gizmo in base.GetGizmos())
             {
                 yield return gizmo;
             }
-            yield return new Command_Action
-            {
-                defaultLabel = "AnomaliesExpected.BloodLake.ViewSubMap.Label".Translate(),
-                defaultDesc = "AnomaliesExpected.BloodLake.ViewSubMap.Desc".Translate(),
-                icon = ViewSubMapTex.Texture,
-                action = delegate
-                {
-                    CameraJumper.TryJumpAndSelect(entranceBuilding);
-                }
-            };
             if (DebugSettings.ShowDevGizmos)
             {
                 yield return new Command_Action

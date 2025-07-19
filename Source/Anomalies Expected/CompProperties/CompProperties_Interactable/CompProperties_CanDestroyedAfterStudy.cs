@@ -12,6 +12,7 @@ namespace AnomaliesExpected
 
         public FleckDef fleckOnAnomaly;
         public float fleckOnAnomalyScale = 1;
+        public EffecterDef EffecterOnUsed;
 
         public string interactionProgressString;
 

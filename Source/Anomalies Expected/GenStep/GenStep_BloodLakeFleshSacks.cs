@@ -16,8 +16,6 @@ namespace AnomaliesExpected
 
         private bool spawnSurroundingFleshmass = true;
 
-        private bool trySpawnInRoom;
-
         public override int SeedPart => 1234731256;
 
         public override void Generate(Map map, GenStepParams parms)
@@ -26,19 +24,19 @@ namespace AnomaliesExpected
             int num = Mathf.RoundToInt(map.Size.ToIntVec2.Area / (float)numFleshSacksPerTiles);
             for (int i = 0; i < num; i++)
             {
-                if ((!trySpawnInRoom || !CellFinder.TryFindRandomCell(map, (IntVec3 c) => Validator(c, map, mustBeInRoom: true), out var result)) && !CellFinder.TryFindRandomCell(map, (IntVec3 c) => Validator(c, map, mustBeInRoom: false), out result))
+                if (!CellFinder.TryFindRandomCell(map, (IntVec3 c) => Validator(c, map, ThingDefOf.FleshSack), out var result))
                 {
                     continue;
                 }
                 if (spawnSurroundingFleshmass)
                 {
-                    foreach (IntVec3 item in GridShapeMaker.IrregularLump(result, map, sackClumpSize))
+                    foreach (IntVec3 pos in GridShapeMaker.IrregularLump(result, map, sackClumpSize))
                     {
-                        if (Exit == null || item.DistanceTo(Exit.Position) > 5)
+                        if (Validator(pos, map, ThingDefOf.Fleshmass) && (Exit == null || pos.DistanceTo(Exit.Position) > 5))
                         {
-                            GenSpawn.Spawn(ThingMaker.MakeThing(ThingDefOf.Fleshmass), item, map, Rot4.Random).SetFaction(Faction.OfEntities);
+                            GenSpawn.Spawn(ThingMaker.MakeThing(ThingDefOf.Fleshmass), pos, map, Rot4.Random).SetFaction(Faction.OfEntities);
                         }
-                        map.terrainGrid.SetTerrain(item, TerrainDefOf.Flesh);
+                        map.terrainGrid.SetTerrain(pos, TerrainDefOf.Flesh);
                     }
                 }
                 List<Thing> list;
@@ -67,19 +65,14 @@ namespace AnomaliesExpected
             }
         }
 
-        private bool Validator(IntVec3 c, Map map, bool mustBeInRoom)
+        private bool Validator(IntVec3 c, Map map, ThingDef thingDef)
         {
-            if (!c.Standable(map))
+            foreach (IntVec3 pos in GenAdj.CellsOccupiedBy(c, Rot4.North, thingDef.size))
             {
-                return false;
-            }
-            if (c.DistanceToEdge(map) <= 2)
-            {
-                return false;
-            }
-            if ((mustBeInRoom && c.GetRoom(map) == null) || !c.GetRoom(map).ProperRoom)
-            {
-                return false;
+                if (!GenGrid.InBounds(pos, map) || pos.DistanceToEdge(map) <= 2 || pos.Roofed(map) || pos.GetEdifice(map)?.def != ThingDefOf.Fleshmass)
+                {
+                    return false;
+                }
             }
             return true;
         }

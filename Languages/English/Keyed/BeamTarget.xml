@@ -8,6 +8,7 @@
 	<AnomaliesExpected.BeamTarget.ButtonHold>Holding button</AnomaliesExpected.BeamTarget.ButtonHold>
 	<AnomaliesExpected.BeamTarget.LeftContainment>{0} left containment</AnomaliesExpected.BeamTarget.LeftContainment>
 	<AnomaliesExpected.BeamTarget.LeftContainmentText>{0} left the containment zone on its own. Its location must be urgently determined to reduce collateral damage.</AnomaliesExpected.BeamTarget.LeftContainmentText>
+	<AnomaliesExpected.BeamTarget.ChooseDest>Choose a location for {0} to teleport to.</AnomaliesExpected.BeamTarget.ChooseDest>
 	
 	<AnomaliesExpected.PowerBeam.BeamTargetMissing>{0} wasn't able to connect to Transmitter</AnomaliesExpected.PowerBeam.BeamTargetMissing>
 </LanguageData>

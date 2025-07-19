@@ -63,6 +63,12 @@ namespace AnomaliesExpected
             val.Patch(AccessTools.Method(typeof(CreepJoinerUtility), "GetCreepjoinerSpecifics"), transpiler: new HarmonyMethod(patchType, "CJU_GenerateAndSpawn_Transpiler"));
 
             val.Patch(AccessTools.Method(typeof(TerrainGrid), "Notify_TerrainDestroyed"), transpiler: new HarmonyMethod(patchType, "TG_Notify_TerrainDestroyed_Transpiler"));
+
+            val.Patch(AccessTools.Method(typeof(MainTabWindow_Research), "ViewSize"), transpiler: new HarmonyMethod(patchType, "MTWR_ViewSize_Transpiler"));
+            val.Patch(AccessTools.Method(typeof(MainTabWindow_Research), "UpdateSelectedProject"), transpiler: new HarmonyMethod(patchType, "MTWR_ViewSize_Transpiler"));
+            val.Patch(AccessTools.Method(typeof(MainTabWindow_Research), "DrawProjectInfo"), transpiler: new HarmonyMethod(patchType, "MTWR_ViewSize_Transpiler"));
+            val.Patch(AccessTools.Method(typeof(MainTabWindow_Research), "DrawStartButton"), transpiler: new HarmonyMethod(patchType, "MTWR_ViewSize_Transpiler"));
+            val.Patch(AccessTools.Method(typeof(MainTabWindow_Research), "DrawRightRect"), transpiler: new HarmonyMethod(patchType, "MTWR_ViewSize_Transpiler"));
         }
 
         public static bool RPD_IsHidden_Prefix(ref bool __result, ResearchProjectDef __instance)
@@ -425,6 +431,38 @@ namespace AnomaliesExpected
             {
                 return cell.InBounds(map) && cell.Walkable(map) && !cell.Fogged(map);
             }
+        }
+
+
+
+        public static IEnumerable<CodeInstruction> MTWR_ViewSize_Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+            for (int i = 0; i < codes.Count - 1; i++)
+            {
+                if (codes[i].opcode == OpCodes.Ldsfld && codes[i].operand.ToString().Contains("ResearchTabDef Anomaly"))
+                {
+                    codes[i] = new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(HarmonyPatches), "CurrentResearchTabAnomaly"));
+                    if (codes[i + 1].opcode == OpCodes.Bne_Un_S)
+                    {
+                        codes[i + 1].opcode = OpCodes.Brfalse_S;
+                    }
+                    else if (codes[i + 1].opcode == OpCodes.Bne_Un)
+                    {
+                        codes[i + 1].opcode = OpCodes.Brfalse_S;
+                    }
+                    else if (codes[i + 1].opcode == OpCodes.Beq_S)
+                    {
+                        codes[i + 1].opcode = OpCodes.Brtrue_S;
+                    }
+                }
+            }
+            return codes.AsEnumerable();
+        }
+
+        public static bool CurrentResearchTabAnomaly(ResearchTabDef def)
+        {
+            return def == ResearchTabDefOf.Anomaly || (def?.minMonolithLevelVisible ?? 0) > 0;
         }
     }
 }

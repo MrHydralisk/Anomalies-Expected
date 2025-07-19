@@ -17,6 +17,8 @@ namespace AnomaliesExpected
         private int TickUnlockStudy = -1;
         private bool studyMustBeEnabled;
 
+        private IntVec3 sendLocation = IntVec3.Invalid;
+
         private BeamTargetState beamTargetState = BeamTargetState.Searching;
 
         protected CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = parent.TryGetComp<CompAEStudyUnlocks>());
@@ -78,6 +80,17 @@ namespace AnomaliesExpected
 
         public void ManualActivation()
         {
+            if (sendLocation == IntVec3.Invalid || !sendLocation.InBounds(parent.Map) || sendLocation.Fogged(parent.Map))
+            {
+                sendLocation = parent.Position;
+            }
+            TargetInfo targetInfoFrom = new TargetInfo(parent.Position, parent.Map);
+            SoundDefOfLocal.Psycast_Skip_Exit.PlayOneShot(targetInfoFrom);
+            FleckMaker.Static(targetInfoFrom.Cell, targetInfoFrom.Map, FleckDefOf.PsycastSkipInnerExit, Props.teleportationFleckRadius);
+            TargetInfo targetInfoTo = new TargetInfo(sendLocation, parent.Map);
+            SoundDefOf.Psycast_Skip_Entry.PlayOneShot(targetInfoTo);
+            FleckMaker.Static(targetInfoTo.Cell, targetInfoFrom.Map, FleckDefOf.PsycastSkipFlashEntry, Props.teleportationFleckRadius);
+            parent.Position = sendLocation;
             beamTargetState = BeamTargetState.Activating;
             TickNextState = Find.TickManager.TicksGame + Props.ticksWhenCarried;
         }
@@ -222,6 +235,29 @@ namespace AnomaliesExpected
             }
         }
 
+        public override void OrderForceTarget(LocalTargetInfo target)
+        {
+            if (ValidateTarget(target, showMessages: false))
+            {
+                TargetLocation(target.Pawn);
+            }
+        }
+
+        private void TargetLocation(Pawn caster)
+        {
+            TargetingParameters targetingParameters = TargetingParameters.ForCell();
+            targetingParameters.mapBoundsContractedBy = 1;
+            targetingParameters.validator = (TargetInfo c) => c.Cell.InBounds(caster.Map) && !c.Cell.Fogged(caster.Map);
+            Find.Targeter.BeginTargeting(targetingParameters, delegate (LocalTargetInfo target)
+            {
+                sendLocation = target.Cell;
+                base.OrderForceTarget(caster);
+            }, delegate
+            {
+                Widgets.MouseAttachedLabel("AnomaliesExpected.BeamTarget.ChooseDest".Translate(parent.Label));
+            });
+        }
+
         protected override void OnInteracted(Pawn caster)
         {
             ManualActivation();
@@ -236,6 +272,7 @@ namespace AnomaliesExpected
             Scribe_Values.Look(ref TickUnlockStudy, "TickUnlockStudy");
             Scribe_Values.Look(ref studyMustBeEnabled, "studyMustBeEnabled");
             Scribe_Values.Look(ref beamTargetState, "beamTargetState", BeamTargetState.Searching);
+            Scribe_Values.Look(ref sendLocation, "sendLocation", IntVec3.Invalid);
         }
 
         public override string CompInspectStringExtra()

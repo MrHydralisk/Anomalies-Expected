@@ -1,19 +1,21 @@
 ﻿using RimWorld;
+using System.Collections.Generic;
 using System.Text;
-using UnityEngine;
 using Verse;
 
 namespace AnomaliesExpected
 {
     public class Building_AEMapPortal : MapPortal
     {
-        protected static readonly CachedTexture EnterPitGateTex = new CachedTexture("UI/Commands/EnterCave");
-        protected override Texture2D EnterTex => EnterPitGateTex.Texture;
-
         protected static readonly CachedTexture ViewSubMapTex = new CachedTexture("UI/Commands/ViewCave");
+
+        public bool isPocketMapExist => pocketMap != null;
+        public virtual bool isHideEntry => false;
 
         public CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = GetComp<CompAEStudyUnlocks>());
         private CompAEStudyUnlocks studyUnlocksCached;
+
+        protected virtual DamageDef pocketMapDamageDef => DamageDefOf.Crush;
 
         public override string DescriptionFlavor
         {
@@ -45,14 +47,51 @@ namespace AnomaliesExpected
             }
         }
 
-        public override Map GetOtherMap()
+        public override IEnumerable<Gizmo> GetGizmos()
         {
-            return null;
+            foreach (Gizmo gizmo in base.GetGizmos())
+            {
+                if (gizmo is Command_Action command_Action && command_Action.icon == EnterTex && isHideEntry)
+                {
+                    continue;
+                }
+                yield return gizmo;
+            }
         }
 
-        public override IntVec3 GetDestinationLocation()
+        protected void GeneratePocketMap()
         {
-            return IntVec3.Invalid;
+            PocketMapUtility.currentlyGeneratingPortal = this;
+            pocketMap = GeneratePocketMapInt();
+            PocketMapUtility.currentlyGeneratingPortal = null;
+        }
+
+        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
+        {
+            DestroyPocketMap();
+            base.Destroy(mode);
+        }
+
+        public virtual void DestroyPocketMap()
+        {
+            if (LoadInProgress)
+            {
+                CancelLoad();
+            }
+            if (base.PocketMapExists)
+            {
+                DamageInfo damageInfo = new DamageInfo(pocketMapDamageDef, 99999f, 999f);
+                for (int num = pocketMap.mapPawns.AllPawns.Count - 1; num >= 0; num--)
+                {
+                    Pawn pawn = pocketMap.mapPawns.AllPawns[num];
+                    pawn.TakeDamage(damageInfo);
+                    if (!pawn.Dead)
+                    {
+                        pawn.Kill(damageInfo);
+                    }
+                }
+                PocketMapUtility.DestroyPocketMap(pocketMap);
+            }
         }
     }
 }

@@ -91,6 +91,7 @@ namespace AnomaliesExpected
             {
                 FleckMaker.Static(parent.Position, parent.Map, Props.fleckOnAnomaly, Props.fleckOnAnomalyScale);
             }
+            Props.EffecterOnUsed?.Spawn(parent.Position, parent.Map).Cleanup();
             DestroyAnomaly(caster);
         }
 

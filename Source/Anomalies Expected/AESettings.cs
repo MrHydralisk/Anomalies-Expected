@@ -9,7 +9,8 @@ namespace AnomaliesExpected
         public bool SpawnPiePieceNotification = true;
         public bool PoweBeamRequireBeamTarget = true;
         public bool BeamTargetLetter = true;
-        public float UndergroundFleshmassNestMult = 0.3f;
+        public float UndergroundFleshmassNestMult = 0.5f;
+        public float UndergroundFleshmassNestRestore = 0.1f;
         public float UndergroundFleshmassNestFrequencyMult = 1f;
         public int BloodLakeSubMapMaxSize = 200;
         public int VoidProvactionCooldown = 120;
@@ -23,7 +24,8 @@ namespace AnomaliesExpected
             Scribe_Values.Look(ref SpawnPiePieceNotification, "SpawnPiePieceNotification", defaultValue: true);
             Scribe_Values.Look(ref PoweBeamRequireBeamTarget, "PoweBeamRequireBeamTarget", defaultValue: true);
             Scribe_Values.Look(ref BeamTargetLetter, "BeamTargetLetter", defaultValue: true);
-            Scribe_Values.Look(ref UndergroundFleshmassNestMult, "UndergroundFleshmassNestMult", defaultValue: 0.3f);
+            Scribe_Values.Look(ref UndergroundFleshmassNestMult, "UndergroundFleshmassNestMult", defaultValue: 0.5f);
+            Scribe_Values.Look(ref UndergroundFleshmassNestRestore, "UndergroundFleshmassNestRestore", defaultValue: 0.1f);
             Scribe_Values.Look(ref UndergroundFleshmassNestFrequencyMult, "UndergroundFleshmassNestFrequencyMult", defaultValue: 1f);
             Scribe_Values.Look(ref BloodLakeSubMapMaxSize, "BloodLakeSubMapMaxSize", defaultValue: 200);
             Scribe_Values.Look(ref VoidProvactionCooldown, "VoidProvactionCooldown", defaultValue: 120);

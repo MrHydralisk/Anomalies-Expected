@@ -2,20 +2,21 @@
 <LanguageData>
 	<AnomaliesExpected.Settings.Title>Anomalies Expected</AnomaliesExpected.Settings.Title>
 	
-	<AnomaliesExpected.Settings.BakingPies.ReplicationLimit>Limit max amount of Pie Pieces per replication to {0} (0 = unlimited)</AnomaliesExpected.Settings.BakingPies.ReplicationLimit>
-	<AnomaliesExpected.Settings.BakingPies.DespawnPiecesOnDestroy>All Pie Pieces will despawn, when Big Pie destroyed</AnomaliesExpected.Settings.BakingPies.DespawnPiecesOnDestroy>
-	<AnomaliesExpected.Settings.BakingPies.SpawnPiePieceNotification>Will get message during Big Pie replication</AnomaliesExpected.Settings.BakingPies.SpawnPiePieceNotification>
+	<AnomaliesExpected.Settings.BakingPies.ReplicationLimit>Limit max amount of Pie Pieces per replication to {0} (0 = unlimited).</AnomaliesExpected.Settings.BakingPies.ReplicationLimit>
+	<AnomaliesExpected.Settings.BakingPies.DespawnPiecesOnDestroy>All Pie Pieces will despawn, when Big Pie destroyed.</AnomaliesExpected.Settings.BakingPies.DespawnPiecesOnDestroy>
+	<AnomaliesExpected.Settings.BakingPies.SpawnPiePieceNotification>Will get message during Big Pie replication.</AnomaliesExpected.Settings.BakingPies.SpawnPiePieceNotification>
 	
-	<AnomaliesExpected.Settings.BeamTarget.PoweBeamRequireBeamTarget>Precise Orbital Beam Targeter require existence Transmitter to call Beam</AnomaliesExpected.Settings.BeamTarget.PoweBeamRequireBeamTarget>
-	<AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter>Will get letter instead of message, when Transmitter leaving containment</AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter>
+	<AnomaliesExpected.Settings.BeamTarget.PoweBeamRequireBeamTarget>Precise Orbital Beam Targeter require existence Transmitter to call Beam.</AnomaliesExpected.Settings.BeamTarget.PoweBeamRequireBeamTarget>
+	<AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter>Will get letter instead of message, when Transmitter leaving containment.</AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter>
 	
-	<AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestMult>Set multiplier for amount of threat points for fleshbeast generation from nests to {0}</AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestMult>
-	<AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestFrequencyMult>Set multiplier for time between fleshbeast generation from nests to {0}</AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestFrequencyMult>
-	<AnomaliesExpected.Settings.BloodLake.BloodLakeSubMapMaxSize>Set maximum size for Lake sub map generation to {0}x{0} (by default will copy size of colony map)\n(Size affect amount of loot, enemies and required resources from PC)</AnomaliesExpected.Settings.BloodLake.BloodLakeSubMapMaxSize>
+	<AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestMult>Set multiplier for amount of threat points for fleshbeast generation from nests to {0}.</AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestMult>
+	<AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestOffmapMult>Set fleshbeast repopulation percentage from nests to {0}. When there is no colonist in Lake sub map, amount of fleshbeasts will grow back to original.</AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestOffmapMult>
+	<AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestFrequencyMult>Set multiplier for time between fleshbeast generation from nests to {0}.</AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestFrequencyMult>
+	<AnomaliesExpected.Settings.BloodLake.BloodLakeSubMapMaxSize>Set maximum size for Lake sub map generation to {0}x{0} (by default will copy size of colony map).\n(Size affect amount of loot, enemies and required resources from PC)</AnomaliesExpected.Settings.BloodLake.BloodLakeSubMapMaxSize>
 	
-	<AnomaliesExpected.Settings.Patch.VoidProvactionCooldown>Set Void Provaction ritual Cooldown to {0} hours (by default 120h) [Take effect on a game launch]</AnomaliesExpected.Settings.Patch.VoidProvactionCooldown>
+	<AnomaliesExpected.Settings.Patch.VoidProvactionCooldown>Set Void Provaction ritual Cooldown to {0} hours (by default 120h). [Take effect on a game launch]</AnomaliesExpected.Settings.Patch.VoidProvactionCooldown>
 	
 	<AnomaliesExpected.Settings.ResearchTab.Unlock>Try Unlock Anomalies Expected Research Tab</AnomaliesExpected.Settings.ResearchTab.Unlock>
 	
-	<AnomaliesExpected.Settings.DevMode.Info>Show additional information for debug</AnomaliesExpected.Settings.DevMode.Info>
+	<AnomaliesExpected.Settings.DevMode.Info>Show additional information for debug.</AnomaliesExpected.Settings.DevMode.Info>
 </LanguageData>

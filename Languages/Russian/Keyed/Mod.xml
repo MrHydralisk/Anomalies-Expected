@@ -2,20 +2,21 @@
 <LanguageData>
 	<AnomaliesExpected.Settings.Title>Anomalies Expected</AnomaliesExpected.Settings.Title>
 	
-	<AnomaliesExpected.Settings.BakingPies.ReplicationLimit>Ограничение максимального количество создаваемых кусков пирога за раз до {0} (0 = без ограничений)</AnomaliesExpected.Settings.BakingPies.ReplicationLimit>
-	<AnomaliesExpected.Settings.BakingPies.DespawnPiecesOnDestroy>Все куски пирога исчезнут, когда большой пирог будет съеден</AnomaliesExpected.Settings.BakingPies.DespawnPiecesOnDestroy>
-	<AnomaliesExpected.Settings.BakingPies.SpawnPiePieceNotification>Уведомление при создании новых кусков</AnomaliesExpected.Settings.BakingPies.SpawnPiePieceNotification>
+	<AnomaliesExpected.Settings.BakingPies.ReplicationLimit>Ограничение максимального количество создаваемых кусков пирога за раз до {0} (0 = без ограничений).</AnomaliesExpected.Settings.BakingPies.ReplicationLimit>
+	<AnomaliesExpected.Settings.BakingPies.DespawnPiecesOnDestroy>Все куски пирога исчезнут, когда большой пирог будет съеден.</AnomaliesExpected.Settings.BakingPies.DespawnPiecesOnDestroy>
+	<AnomaliesExpected.Settings.BakingPies.SpawnPiePieceNotification>Уведомление при создании новых кусков.</AnomaliesExpected.Settings.BakingPies.SpawnPiePieceNotification>
 	
-	<AnomaliesExpected.Settings.BeamTarget.PoweBeamRequireBeamTarget>Целеуказатель для Точечного Луча требует существование Передатчика для активации Луча</AnomaliesExpected.Settings.BeamTarget.PoweBeamRequireBeamTarget>
-	<AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter>Письмо вместо уведомления, когда Передатчик покидает зону содержания</AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter>
+	<AnomaliesExpected.Settings.BeamTarget.PoweBeamRequireBeamTarget>Целеуказатель для Точечного Луча требует существование Передатчика для активации Луча.</AnomaliesExpected.Settings.BeamTarget.PoweBeamRequireBeamTarget>
+	<AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter>Письмо вместо уведомления, когда Передатчик покидает зону содержания.</AnomaliesExpected.Settings.BeamTarget.BeamTargetLetter>
 	
-	<AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestMult>Установить множитель на количество очков опасности для вычисления количества генерируемых биошматов в гнёздах {0}</AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestMult>
-	<AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestFrequencyMult>Установить множитель на количество времени между генерируемыми биошматами в гнёздах {0}</AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestFrequencyMult>
-	<AnomaliesExpected.Settings.BloodLake.BloodLakeSubMapMaxSize>Установить ограничитель на максимальный размер гененрируемой Озером карты на {0}x{0} (по умолчанию использует тот же размер что и карта колонии)\n(Размер влияет на количество лута, врагов и на требуемые ресурся компьютера)</AnomaliesExpected.Settings.BloodLake.BloodLakeSubMapMaxSize>
+	<AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestMult>Установить множитель на количество очков опасности для вычисления количества генерируемых биошматов в гнёздах {0}.</AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestMult>
+	<AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestOffmapMult>Установить процент восстановления биошматов в гнёздах {0}. Когда нет колнистов на карте Озера, то количество биошматовбудет постепенно возвращаться к изначальному количеству.</AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestOffmapMult>
+	<AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestFrequencyMult>Установить множитель на количество времени между генерируемыми биошматами в гнёздах {0}.</AnomaliesExpected.Settings.BloodLake.UndergroundFleshmassNestFrequencyMult>
+	<AnomaliesExpected.Settings.BloodLake.BloodLakeSubMapMaxSize>Установить ограничитель на максимальный размер гененрируемой Озером карты на {0}x{0} (по умолчанию использует тот же размер что и карта колонии).\n(Размер влияет на количество лута, врагов и на требуемые ресурся компьютера)</AnomaliesExpected.Settings.BloodLake.BloodLakeSubMapMaxSize>
 	
-	<AnomaliesExpected.Settings.Patch.VoidProvactionCooldown>Установить паузу между ритуалами воззвания к пустоте в {0} часов (по умолчанию 120ч) [Вступает в силу при запуске игры]</AnomaliesExpected.Settings.Patch.VoidProvactionCooldown>
+	<AnomaliesExpected.Settings.Patch.VoidProvactionCooldown>Установить паузу между ритуалами воззвания к пустоте в {0} часов (по умолчанию 120ч). [Вступает в силу при запуске игры]</AnomaliesExpected.Settings.Patch.VoidProvactionCooldown>
 	
 	<AnomaliesExpected.Settings.ResearchTab.Unlock>Попытаться разблокировать Anomalies Expected исследовательские проекты</AnomaliesExpected.Settings.ResearchTab.Unlock>
 	
-	<AnomaliesExpected.Settings.DevMode.Info>Показывать дополнительную информации для отладки</AnomaliesExpected.Settings.DevMode.Info>
+	<AnomaliesExpected.Settings.DevMode.Info>Показывать дополнительную информации для отладки.</AnomaliesExpected.Settings.DevMode.Info>
 </LanguageData>

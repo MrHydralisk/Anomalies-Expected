@@ -238,6 +238,7 @@
 		</graphicData>
 		<category>Item</category>
 		<genericMarketSellable>false</genericMarketSellable>
+		<tradeability>Sellable</tradeability>
 		<drawerType>MapMeshOnly</drawerType>
 		<tickerType>Never</tickerType>
 		<rotatable>true</rotatable>

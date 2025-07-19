@@ -40,6 +40,7 @@ namespace AnomaliesExpected
             incidentParms.points = StorytellerUtility.DefaultThreatPointsNow(invoker.Map);
             incidentParms.pointMultiplier = def.CombatPointsMultFromQualityCurve.Evaluate(psychicRitual.PowerPercent);
             incidentParms.forced = true;
+            incidentParms.bypassStorytellerSettings = true;
             if (Find.Anomaly.LevelDef.anomalyThreatTier > 1 || !Find.Anomaly.GenerateMonolith)
             {
                 Find.Storyteller.incidentQueue.Add(def.IncidentDefAdvanced, Find.TickManager.TicksGame, incidentParms);
