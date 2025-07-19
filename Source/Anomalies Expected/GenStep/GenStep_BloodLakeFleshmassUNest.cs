@@ -31,25 +31,40 @@ namespace AnomaliesExpected
                 }
             }
             TerrainGrid terrainGrid = map.terrainGrid;
+
+            bool anySpawned = false;
             foreach (IntVec3 initPos in initPositions)
             {
                 IntVec3 pos = IntVec3.Invalid;
-                CellFinder.TryFindRandomCellNear(initPos, map, num3, (IntVec3 c) => Validator(c, map), out pos, 100);
-                if (pos != IntVec3.Invalid)
+                if (CellFinder.TryFindRandomCellNear(initPos, map, num3, (IntVec3 c) => Validator(c, map), out pos, 100))
                 {
-                    foreach (IntVec3 item in GenAdj.CellsOccupiedBy(pos, Rot4.North, BloodLakeUndergroundNest.size))
+                    if (pos != IntVec3.Invalid)
                     {
-                        foreach (Thing item2 in from t in item.GetThingList(map).ToList()
-                                                where t.def.destroyable
-                                                select t)
+                        foreach (IntVec3 item in GenAdj.CellsOccupiedBy(pos, Rot4.North, BloodLakeUndergroundNest.size))
                         {
-                            item2.Destroy();
+                            foreach (Thing item2 in from t in item.GetThingList(map).ToList()
+                                                    where t.def.destroyable
+                                                    select t)
+                            {
+                                item2.Destroy();
+                            }
+                            terrainGrid.SetTerrain(item, TerrainDefOf.MetalTile);
+                            MapGenerator.rootsToUnfog.Add(item);
                         }
-                        terrainGrid.SetTerrain(item, TerrainDefOf.MetalTile);
-                        MapGenerator.rootsToUnfog.Add(item);
+                        Log.Message($"");
+                        GenSpawn.Spawn(ThingMaker.MakeThing(BloodLakeUndergroundNest), pos, map);
+                        Log.Message($"BloodLakeUndergroundNest {pos}");
+                        anySpawned = true;
                     }
-                    GenSpawn.Spawn(ThingMaker.MakeThing(BloodLakeUndergroundNest), pos, map);
                 }
+                else
+                {
+                    Log.Message($"BloodLakeFleshmassUNest not spawned for {initPos}");
+                }
+            }
+            if (!anySpawned)
+            {
+                Log.Error("Any BloodLakeUndergroundNest not spawned");
             }
         }
 

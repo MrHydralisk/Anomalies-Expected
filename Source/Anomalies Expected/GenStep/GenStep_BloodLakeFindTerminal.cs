@@ -22,15 +22,21 @@ namespace AnomaliesExpected
             List<IntVec3> possiblePos = new List<IntVec3>();
             while (possiblePos.Count() < 10 && initPositions.Count() > 0)
             {
-                CellFinder.TryFindRandomCellNear(initPos, map, map.Size.x / 2, (IntVec3 c) => Validator(c, map), out pos, 100);
-                if (pos == IntVec3.Invalid)
+                if (CellFinder.TryFindRandomCellNear(initPos, map, map.Size.x / 2, (IntVec3 c) => Validator(c, map), out pos, 100))
                 {
-                    initPos = initPositions.RandomElement();
-                    initPositions.Remove(initPos);
+                    if (pos == IntVec3.Invalid)
+                    {
+                        initPos = initPositions.RandomElement();
+                        initPositions.Remove(initPos);
+                    }
+                    else
+                    {
+                        possiblePos.Add(pos);
+                    }
                 }
                 else
                 {
-                    possiblePos.Add(pos);
+                    Log.Error("BloodLakeTerminal not spawned");
                 }
             }
             pos = possiblePos.OrderByDescending((IntVec3 c) => c.DistanceTo(BloodLakeExitPos)).FirstOrDefault();
