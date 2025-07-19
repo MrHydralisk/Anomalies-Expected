@@ -1,4 +1,5 @@
-﻿using Verse;
+﻿using RimWorld;
+using Verse;
 
 namespace AnomaliesExpected
 {
@@ -11,7 +12,8 @@ namespace AnomaliesExpected
         public override void DestroyAnomaly(Pawn caster = null)
         {
             mapComponent.Entrance.StudyUnlocks.UnlockStudyNoteManual(1, caster?.LabelShortCap ?? "");
-            mapComponent.DestroySubMap();
+            mapComponent.Entrance.DestroyPocketMap();
+            Messages.Message("AnomaliesExpected.BloodLake.ReactorMeltdownExplosion".Translate().RawText, mapComponent.Entrance, MessageTypeDefOf.NegativeEvent);
         }
     }
 }

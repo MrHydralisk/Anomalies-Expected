@@ -696,7 +696,7 @@
 			<li Class="AnomaliesExpected.CompProperties_CanDestroyedAfterStudy">
 				<ticksToActivate>8000</ticksToActivate>
 				<maintainProgress>true</maintainProgress>
-				<activateTexPath>Designations/FillInPitBurrow</activateTexPath>
+				<activateTexPath>Designations/FillCrater</activateTexPath>
  
 				<activateLabelString>Fill with soil</activateLabelString>
 				<activateDescString>Add chemicals to dissolve and fill it with soil. [Will destroy it]</activateDescString>
@@ -708,8 +708,9 @@
 
 				<fleckOnAnomaly>PitGateCollapseDust</fleckOnAnomaly>
 				<fleckOnAnomalyScale>1</fleckOnAnomalyScale>
-				<soundActivate>PitBurrow_Collapse</soundActivate>
-				<interactionEffecter>FillingInPitGate</interactionEffecter>
+				<soundActivate>Crater_FilledIn</soundActivate>
+				<EffecterOnUsed>ImpactSmallDustCloud</EffecterOnUsed>
+				<interactionEffecter>FillingInCrater</interactionEffecter>
 				
 				<cooldownFleck>DirtBitsArching</cooldownFleck>
 				<cooldownFleckSpawnIntervalTicks>60</cooldownFleckSpawnIntervalTicks>
@@ -828,6 +829,9 @@
 		<size>(5,3)</size>
 		<portal>
 			<pocketMapGenerator>AE_BloodLakeMapGenerator</pocketMapGenerator>
+			<enteredLetterLabel>Fleshmass territory</enteredLetterLabel>
+			<enteredLetterText>The open space lies before us, yet it's swarming with different kinds of fleshbeasts. We must brace ourselves for a ferocious attacks from the surrounding fleshmass network.\n\nIf we're not ready to confront this threat, we should fall back to our colony and arm ourselves.</enteredLetterText>
+			<enteredLetterDef>ThreatBig</enteredLetterDef>
 			<traverseSound>TraversePitGate</traverseSound>
 		</portal>
 		<inspectorTabs>
@@ -898,7 +902,7 @@
 			<li Class="AnomaliesExpected.CompProperties_CanDestroyedAfterStudy">
 				<ticksToActivate>120000</ticksToActivate>
 				<maintainProgress>true</maintainProgress>
-				<activateTexPath>Designations/FillInPitBurrow</activateTexPath>
+				<activateTexPath>Designations/FillCrater</activateTexPath>
  
 				<activateLabelString>Fill with soil</activateLabelString>
 				<activateDescString>Add chemicals to dissolve and fill it with soil. [Will destroy it]</activateDescString>
@@ -910,8 +914,9 @@
 
 				<fleckOnAnomaly>PitGateCollapseDust</fleckOnAnomaly>
 				<fleckOnAnomalyScale>5</fleckOnAnomalyScale>
-				<soundActivate>PitBurrow_Collapse</soundActivate>
-				<interactionEffecter>FillingInPitGate</interactionEffecter>
+				<soundActivate>Crater_FilledIn</soundActivate>
+				<EffecterOnUsed>ImpactSmallDustCloud</EffecterOnUsed>
+				<interactionEffecter>FillingInCrater</interactionEffecter>
 				
 				<cooldownFleck>DirtBitsArching</cooldownFleck>
 				<cooldownFleckSpawnIntervalTicks>60</cooldownFleckSpawnIntervalTicks>

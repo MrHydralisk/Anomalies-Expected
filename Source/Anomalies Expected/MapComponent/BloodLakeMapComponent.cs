@@ -42,8 +42,8 @@ namespace AnomaliesExpected
 
         public override void MapGenerated()
         {
-            Entrance = SourceMap?.listerThings?.ThingsOfDef(ThingDefOfLocal.AE_BloodLake).FirstOrDefault() as Building_AEBloodLake;
-            Exit = map.listerThings.ThingsOfDef(ThingDefOfLocal.AE_BloodLakeExit).FirstOrDefault() as Building_AEBloodLakeExit;
+            Entrance = PocketMapUtility.currentlyGeneratingPortal as Building_AEBloodLake;
+            Exit = Entrance.exitBuilding;
             Terminal = map.listerThings.ThingsOfDef(ThingDefOfLocal.AE_BloodLakeTerminal).FirstOrDefault() as Building_AE;
             UndergroundNests = map.listerThings.ThingsOfDef(ThingDefOfLocal.AE_BloodLakeUndergroundNest);
             initialEntityAmount = EntityAmount(map.mapPawns.AllPawnsSpawned.Where((Pawn p) => p.Faction?.def == FactionDefOf.Entities));
@@ -92,14 +92,7 @@ namespace AnomaliesExpected
                 if (Find.TickManager.TicksGame > TickNextSummon)
                 {
                     List<Pawn> colonists = map.mapPawns.FreeColonistsAndPrisonersSpawned;
-                    if (colonists.Count() > 0)
-                    {
-                        TrySpawnWaveFromUndergroundNest(colonists);
-                    }
-                    else
-                    {
-                        TrySpawnWaveFromUndergroundNest();
-                    }
+                    TrySpawnWaveFromUndergroundNest(colonists);
                 }
                 if (Find.TickManager.TicksGame > TickNextBloodFog)
                 {
@@ -210,43 +203,6 @@ namespace AnomaliesExpected
         {
             GameCondition gameCondition = GameConditionMaker.MakeCondition(GameConditionDefOfLocal.AE_BloodFog, duration);
             map.gameConditionManager.RegisterCondition(gameCondition);
-        }
-
-        public void DestroySubMap(bool lostConnection = false)
-        {
-            DamageInfo damageInfo = new DamageInfo(DamageDefOf.Bomb, 99999f, 999f);
-            for (int num = map.mapPawns.AllPawns.Count - 1; num >= 0; num--)
-            {
-                Pawn pawn = map.mapPawns.AllPawns[num];
-                if (lostConnection)
-                {
-                    pawn.Kill(null);
-                }
-                else
-                {
-                    pawn.TakeDamage(damageInfo);
-                    if (!pawn.Dead)
-                    {
-                        pawn.Kill(damageInfo);
-                    }
-                }
-            }
-            if (Entrance.LoadInProgress)
-            {
-                Entrance.CancelLoad();
-            }
-            PocketMapUtility.DestroyPocketMap(map);
-            if (!lostConnection)
-            {
-                Messages.Message("AnomaliesExpected.BloodLake.ReactorMeltdownExplosion".Translate().RawText, Entrance, MessageTypeDefOf.NegativeEvent);
-                Entrance.isDestroyedMap = true;
-                Comp_CanDestroyedAfterStudy canDestroyedAfterStudy = Entrance.GetComp<Comp_CanDestroyedAfterStudy>();
-                if (canDestroyedAfterStudy != null)
-                {
-                    canDestroyedAfterStudy.isCanDestroyForced = true;
-                }
-                Find.CameraDriver.shaker.DoShake(0.2f);
-            }
         }
 
         public override void ExposeData()

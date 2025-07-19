@@ -42,23 +42,23 @@ namespace AnomaliesExpected
             }
         }
 
-        public override IEnumerable<Gizmo> GetGizmos()
-        {
-            foreach (Gizmo gizmo in base.GetGizmos())
-            {
-                yield return gizmo;
-            }
-            yield return new Command_Action
-            {
-                defaultLabel = "AnomaliesExpected.BloodLake.ViewSubMap.Label".Translate(),
-                defaultDesc = "AnomaliesExpected.BloodLake.ViewSubMap.Desc".Translate(),
-                icon = ViewSubMapTex.Texture,
-                action = delegate
-                {
-                    CameraJumper.TryJumpAndSelect(entranceBuilding);
-                }
-            };
-        }
+        //public override IEnumerable<Gizmo> GetGizmos()
+        //{
+        //    foreach (Gizmo gizmo in base.GetGizmos())
+        //    {
+        //        yield return gizmo;
+        //    }
+        //    yield return new Command_Action
+        //    {
+        //        defaultLabel = "AnomaliesExpected.BloodLake.ViewSubMap.Label".Translate(),
+        //        defaultDesc = "AnomaliesExpected.BloodLake.ViewSubMap.Desc".Translate(),
+        //        icon = ViewSubMapTex.Texture,
+        //        action = delegate
+        //        {
+        //            CameraJumper.TryJumpAndSelect(entranceBuilding);
+        //        }
+        //    };
+        //}
 
         public override Map GetOtherMap()
         {
