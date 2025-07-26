@@ -1627,7 +1627,7 @@
 			<Meat_Twisted>150</Meat_Twisted>
 		</killedLeavings>
 		<comps>
-			<li Class="CompProperties_Interactable">
+			<li Class="AnomaliesExpected.CompPropertiesObelisk_Clockwork">
 				<compClass>AnomaliesExpected.CompObelisk_Clockwork</compClass>
 		
 				<activeTicks>250</activeTicks>
@@ -1653,6 +1653,27 @@
 					<canTargetMechs>false</canTargetMechs>
 					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
 				</targetingParameters>
+				
+				<topOnBuildingStructures>
+					<li>
+						<type>ClockHandSecond</type>
+						<texPath>Things/Building/Security/TurretMini_Top</texPath>
+						<drawOffset>(0, 0, 1)</drawOffset>
+						<drawSize>1</drawSize>
+					</li>
+					<li>
+						<type>ClockHandMinute</type>
+						<texPath>Things/Building/Security/TurretMini_Top</texPath>
+						<drawOffset>(0, 0, 1)</drawOffset>
+						<drawSize>1.5</drawSize>
+					</li>
+					<li>
+						<type>ClockHandHour</type>
+						<texPath>Things/Building/Security/TurretMini_Top</texPath>
+						<drawOffset>(0, 0, 1)</drawOffset>
+						<drawSize>2</drawSize>
+					</li>
+				</topOnBuildingStructures>
 			</li>
 			<li Class="CompProperties_Activity">
 				<startingRange>0.2~0.4</startingRange>

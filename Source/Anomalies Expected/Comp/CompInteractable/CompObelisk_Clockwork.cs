@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
@@ -11,13 +10,52 @@ namespace AnomaliesExpected
 {
     public class CompObelisk_Clockwork : CompInteractable
     {
+        public new CompPropertiesObelisk_Clockwork Props => (CompPropertiesObelisk_Clockwork)props;
+
         public int radius = 3;
+
+        public Dictionary<TopOnBuildingStructureTypes, TopOnBuilding> topOnBuildings;
+
+        public override void PostPostMake()
+        {
+            base.PostPostMake();
+            topOnBuildings = new Dictionary<TopOnBuildingStructureTypes, TopOnBuilding>();
+            foreach (TopOnBuildingStructure structure in Props.topOnBuildingStructures)
+            {
+                topOnBuildings.Add(structure.type, new TopOnBuilding(structure));
+            }
+        }
+
+        public override void PostSpawnSetup(bool respawningAfterLoad) // Temp
+        {
+            base.PostSpawnSetup(respawningAfterLoad);
+            topOnBuildings = new Dictionary<TopOnBuildingStructureTypes, TopOnBuilding>();
+            foreach (TopOnBuildingStructure structure in Props.topOnBuildingStructures)
+            {
+                topOnBuildings.Add(structure.type, new TopOnBuilding(structure));
+            }
+        }
+
+        public override void DrawAt(Vector3 drawLoc, bool flip = false)
+        {
+            base.DrawAt(drawLoc, flip);
+            Vector3 drawOffset = Vector3.zero;
+            float angleOffset = 0f;
+            foreach (TopOnBuilding topOnBuilding in topOnBuildings.Values)
+            {
+                topOnBuilding.DrawAt(drawLoc, drawOffset, angleOffset);
+            }
+        }
 
         public void StartAgingBeam()
         {
             Map map = parent.Map;
             Vector3 target = map.mapPawns.FreeColonistsSpawned.RandomElement()?.Position.ToVector3Shifted() ?? (parent.Position.ToVector3Shifted() + Vector3.forward);
             Vector3 vector = (target - parent.Position.ToVector3Shifted()).Yto0().normalized;
+            if(topOnBuildings.TryGetValue(TopOnBuildingStructureTypes.ClockHandSecond, out TopOnBuilding clockHandSecond))
+            {
+                clockHandSecond.CurRotation = vector.ToAngleFlat();
+            }
             List<IntVec3> beamPoints = GenSight.BresenhamCellsBetween(parent.Position, parent.Position + (vector * map.Size.Magnitude).ToIntVec3());
             int pointsToCompare = radius * radius * 4;
             List<IntVec3> hitPoints = new List<IntVec3>();
@@ -38,7 +76,13 @@ namespace AnomaliesExpected
         public void StartAgingZone()
         {
             Map map = parent.Map;
-            GenExplosion.DoExplosion(map.mapPawns.FreeColonistsSpawned.RandomElement()?.Position ?? parent.Position, map, 15, DamageDefOf.Bomb, parent, damAmount: 1, propagationSpeed: 3);
+            IntVec3 target = map.mapPawns.FreeColonistsSpawned.RandomElement()?.Position ?? (parent.Position + IntVec3.North);
+            Vector3 vector = (target.ToVector3Shifted() - parent.Position.ToVector3Shifted()).Yto0().normalized;
+            if (topOnBuildings.TryGetValue(TopOnBuildingStructureTypes.ClockHandMinute, out TopOnBuilding clockHandMinute))
+            {
+                clockHandMinute.CurRotation = vector.ToAngleFlat();
+            }
+            GenExplosion.DoExplosion(target, map, 15, DamageDefOf.Bomb, parent, damAmount: 1, propagationSpeed: 3);
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()

@@ -47,8 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AEDebugTools.cs" />
+    <Compile Include="Structures\TopOnBuilding.cs" />
     <Compile Include="Building\Building_AEPocketMapExit.cs" />
     <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilityGrindBody.cs" />
+    <Compile Include="CompProperties\CompProperties_Interactable\CompPropertiesObelisk_Clockwork.cs" />
     <Compile Include="Comp\CompAbilityEffect\CompAbilityEffect_GrindBody.cs" />
     <Compile Include="Comp\CompInteractable\CompObelisk_Clockwork.cs" />
     <Compile Include="CreepJoinerWorker_AEDownsideMentalState.cs" />
@@ -115,7 +117,10 @@
     <Compile Include="PsychicRitual\PsychicRitualToil_AEConnectEntityDatabase.cs" />
     <Compile Include="PsychicRitual\PsychicRitualToil_AESummonSnowArmy.cs" />
     <Compile Include="Structures\AEEntityIncidents.cs" />
+    <Compile Include="Structures\Enum\TopOnBuildingStructureTypes.cs" />
+    <Compile Include="Structures\MeatGrinderMood.cs" />
     <Compile Include="Structures\AssaultSummonPattern.cs" />
+    <Compile Include="Structures\TopOnBuildingStructure.cs" />
     <Compile Include="Structures\Enum\BeamTargetState.cs" />
     <Compile Include="Structures\AEEntityEntry.cs" />
     <Compile Include="Thing\ThingWithComps_AE.cs" />
