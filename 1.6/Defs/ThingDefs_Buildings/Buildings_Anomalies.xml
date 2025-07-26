@@ -1571,7 +1571,7 @@
 	
 	
 	<ThingDef ParentName="BuildingBase">
-		<defName>AE_Clockwork</defName>
+		<defName>AE_Obelisk_Clockwork</defName>
 		<label>industrial metal box</label>
 		<description>This industrial-looking metal box as tall as a table. Several small doors interrupt the smooth surface on its sides, while a big hole with hidden inside blades sits atop it. A lone button rests next to the hole, hinting at some unknown function.</description>
 		<thingClass>AnomaliesExpected.Building_AE</thingClass>
@@ -1600,7 +1600,7 @@
 		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
 		<altitudeLayer>Building</altitudeLayer>
 		<castEdgeShadows>true</castEdgeShadows>
-		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<!-- <staticSunShadowHeight>0.20</staticSunShadowHeight> -->
 		<costList>
 			<Bioferrite>45</Bioferrite>
 		</costList>
