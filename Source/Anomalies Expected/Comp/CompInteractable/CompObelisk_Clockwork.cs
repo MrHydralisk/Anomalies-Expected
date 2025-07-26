@@ -13,9 +13,6 @@ namespace AnomaliesExpected
         public CompActivity ActivityComp => activityInt ?? (activityInt = parent.TryGetComp<CompActivity>());
         private CompActivity activityInt;
 
-        public int radius = 3;
-        public int sizeLocation = 60;
-
         public Dictionary<TopOnBuildingStructureTypes, TopOnBuilding_Clockwork> topOnBuildings;
 
         public override void PostPostMake()
@@ -24,7 +21,9 @@ namespace AnomaliesExpected
             topOnBuildings = new Dictionary<TopOnBuildingStructureTypes, TopOnBuilding_Clockwork>();
             foreach (TopOnBuildingStructure structure in Props.topOnBuildingStructures)
             {
-                topOnBuildings.Add(structure.type, (TopOnBuilding_Clockwork)Activator.CreateInstance(structure.topOnBuildingClass, new object[] { structure }));
+                TopOnBuilding_Clockwork topOnBuilding = (TopOnBuilding_Clockwork)Activator.CreateInstance(structure.topOnBuildingClass, new object[] { structure });
+                topOnBuilding.compObelisk_Clockwork = this;
+                topOnBuildings.Add(structure.type, topOnBuilding);
             }
         }
 
@@ -77,7 +76,7 @@ namespace AnomaliesExpected
                     {
                         if (topOnBuildings.TryGetValue(TopOnBuildingStructureTypes.ClockHandSecond, out TopOnBuilding_Clockwork clockHandSecond))
                         {
-                            clockHandSecond.tickTillFullRotation = 1;
+                            clockHandSecond.ticksTillFullRotation = 1;
                         }
                     },
                     defaultLabel = "Dev: Start Aging Beam",
@@ -89,7 +88,7 @@ namespace AnomaliesExpected
                     {
                         if (topOnBuildings.TryGetValue(TopOnBuildingStructureTypes.ClockHandMinute, out TopOnBuilding_Clockwork clockHandMinute))
                         {
-                            clockHandMinute.tickTillFullRotation = 1;
+                            clockHandMinute.ticksTillFullRotation = 1;
                         }
                     },
                     defaultLabel = "Dev: Start Aging Zone",
@@ -101,7 +100,7 @@ namespace AnomaliesExpected
                     {
                         if (topOnBuildings.TryGetValue(TopOnBuildingStructureTypes.ClockHandHour, out TopOnBuilding_Clockwork clockHandHour))
                         {
-                            clockHandHour.tickTillFullRotation = 1;
+                            clockHandHour.ticksTillFullRotation = 1;
                         }
                     },
                     defaultLabel = "Dev: Start Teleportation",
@@ -113,7 +112,7 @@ namespace AnomaliesExpected
                     {
                         if (topOnBuildings.TryGetValue(TopOnBuildingStructureTypes.ClockHandActivity, out TopOnBuilding_Clockwork clockHandActivity))
                         {
-                            clockHandActivity.tickTillFullRotation = 1;
+                            clockHandActivity.ticksTillFullRotation = 1;
                         }
                     },
                     defaultLabel = "Dev: Toggle Active State",

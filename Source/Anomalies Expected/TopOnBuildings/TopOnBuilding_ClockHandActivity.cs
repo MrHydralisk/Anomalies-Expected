@@ -15,11 +15,11 @@ namespace AnomaliesExpected
 
         public override void Tick()
         {
-            if (tickTillFullRotation > 0)
+            if (ticksTillFullRotation > 0)
             {
-                tickTillFullRotation -= 1;
-                CurRotation = 360 * (1 - tickTillFullRotation / topOnBuildingStructure.tickPerFullRotation) + InitialRotation;
-                if (tickTillFullRotation <= 0)
+                ticksTillFullRotation -= compObelisk_Clockwork.ActivityComp.ActivityResearchFactor;
+                CurRotation = 360 * (1 - ticksTillFullRotation / topOnBuildingStructure.tickPerFullRotation) + InitialRotation;
+                if (ticksTillFullRotation <= 0)
                 {
                     OnTimerEnd();
                 }

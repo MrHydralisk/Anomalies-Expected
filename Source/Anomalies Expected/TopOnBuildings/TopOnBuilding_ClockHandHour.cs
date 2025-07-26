@@ -18,7 +18,7 @@ namespace AnomaliesExpected
                 if (possibleLocations.NullOrEmpty())
                 {
                     Map map = compObelisk_Clockwork.parent.Map;
-                    IntVec2 locationAmount = new IntVec2(Mathf.FloorToInt(map.Size.x / compObelisk_Clockwork.sizeLocation), Mathf.FloorToInt(map.Size.z / compObelisk_Clockwork.sizeLocation));
+                    IntVec2 locationAmount = new IntVec2(Mathf.FloorToInt(map.Size.x / compObelisk_Clockwork.Props.sizeLocation), Mathf.FloorToInt(map.Size.z / compObelisk_Clockwork.Props.sizeLocation));
                     possibleLocations = new List<RectInt>();
                     IntVec2 locationSize = new IntVec2(Mathf.FloorToInt(map.Size.x / locationAmount.x), Mathf.FloorToInt(map.Size.z / locationAmount.z));
                     IntVec2 locationEdge = new IntVec2(map.Size.x, map.Size.z);

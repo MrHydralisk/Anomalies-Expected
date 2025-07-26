@@ -1593,14 +1593,9 @@
 		</graphicData>
 		<uiIconScale>0.75</uiIconScale>
 		<canOverlapZones>false</canOverlapZones>
-		<minifiedDef>MinifiedThingAE</minifiedDef>
-		<thingCategories>
-			<li>BuildingsMisc</li>
-		</thingCategories>
 		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
 		<altitudeLayer>Building</altitudeLayer>
 		<castEdgeShadows>true</castEdgeShadows>
-		<!-- <staticSunShadowHeight>0.20</staticSunShadowHeight> -->
 		<costList>
 			<Bioferrite>45</Bioferrite>
 		</costList>
@@ -1624,7 +1619,6 @@
 		<designationCategory/>
 		<killedLeavings>
 			<Bioferrite>75</Bioferrite>
-			<Meat_Twisted>150</Meat_Twisted>
 		</killedLeavings>
 		<comps>
 			<li Class="AnomaliesExpected.CompPropertiesObelisk_Clockwork">
@@ -1661,7 +1655,7 @@
 						<texPath>Things/Building/Security/TurretMini_Top</texPath>
 						<drawOffset>(0, 0, 1)</drawOffset>
 						<drawSize>2.5</drawSize>
-						<tickPerFullRotation>10000</tickPerFullRotation>
+						<tickPerFullRotation>900000</tickPerFullRotation>
 					</li>
 					<li>
 						<type>ClockHandHour</type>
@@ -1669,7 +1663,7 @@
 						<texPath>Things/Building/Security/TurretMini_Top</texPath>
 						<drawOffset>(0, 0, 1)</drawOffset>
 						<drawSize>2</drawSize>
-						<tickPerFullRotation>5000</tickPerFullRotation>
+						<tickPerFullRotation>240000</tickPerFullRotation>
 						<tickPerWarmup>50</tickPerWarmup>
 					</li>
 					<li>
@@ -1678,7 +1672,7 @@
 						<texPath>Things/Building/Security/TurretMini_Top</texPath>
 						<drawOffset>(0, 0, 1)</drawOffset>
 						<drawSize>1.5</drawSize>
-						<tickPerFullRotation>2500</tickPerFullRotation>
+						<tickPerFullRotation>120000</tickPerFullRotation>
 						<tickPerWarmup>50</tickPerWarmup>
 					</li>
 					<li>
@@ -1687,17 +1681,19 @@
 						<texPath>Things/Building/Security/TurretMini_Top</texPath>
 						<drawOffset>(0, 0, 1)</drawOffset>
 						<drawSize>1</drawSize>
-						<tickPerFullRotation>500</tickPerFullRotation>
+						<tickPerFullRotation>60000</tickPerFullRotation>
 						<tickPerWarmup>50</tickPerWarmup>
 					</li>
 				</topOnBuildingStructures>
+				
+				<ticksFullRotationPerActiveTick>4</ticksFullRotationPerActiveTick>
 			</li>
 			<li Class="CompProperties_Activity">
 				<startingRange>0.2~0.4</startingRange>
 				<changePerDayBase>0.2</changePerDayBase>
 				<changePerDamage>0.001</changePerDamage>
 				<warning>0.9</warning>
-				<workerClass>ObeliskActivityWorker</workerClass>
+				<workerClass>ActivityWorker</workerClass>
 				<activityResearchFactorCurve>
 					<points>
 						<li>0, 0.5</li>

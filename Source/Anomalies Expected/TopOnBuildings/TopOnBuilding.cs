@@ -11,8 +11,11 @@ namespace AnomaliesExpected
 
         public static readonly int InitialRotation = -90;
 
-        public float tickTillFullRotation;
-        public float tickTillWarmup;
+        public float ticksTillFullRotation;
+        public float ticksTillWarmup;
+
+        public virtual float ticksFullRotationPerTick => 1;
+        public virtual float ticksWarmupPerTick => 1;
 
         public float CurRotation
         {
@@ -38,35 +41,35 @@ namespace AnomaliesExpected
         {
             topOnBuildingStructure = TopOnBuildingStructure;
             curRotationInt = InitialRotation;
-            tickTillFullRotation = topOnBuildingStructure.tickPerFullRotation;
+            ticksTillFullRotation = topOnBuildingStructure.tickPerFullRotation;
         }
 
         public virtual void Tick()
         {
-            if (tickTillFullRotation > 0)
+            if (ticksTillFullRotation > 0)
             {
-                tickTillFullRotation -= 1;
-                CurRotation = 360 * (1 - tickTillFullRotation / topOnBuildingStructure.tickPerFullRotation) + InitialRotation;
-                if (tickTillFullRotation <= 0)
+                ticksTillFullRotation -= ticksFullRotationPerTick;
+                CurRotation = 360 * (1 - ticksTillFullRotation / topOnBuildingStructure.tickPerFullRotation) + InitialRotation;
+                if (ticksTillFullRotation <= 0)
                 {
                     OnTimerEnd();
                     if (topOnBuildingStructure.tickPerFullRotation > -1)
                     {
-                        tickTillWarmup = topOnBuildingStructure.tickPerWarmup;
+                        ticksTillWarmup = topOnBuildingStructure.tickPerWarmup;
                     }
                     else
                     {
-                        tickTillFullRotation = topOnBuildingStructure.tickPerFullRotation;
+                        ticksTillFullRotation = topOnBuildingStructure.tickPerFullRotation;
                     }
                 }
             }
-            else if (tickTillWarmup > 0)
+            else if (ticksTillWarmup > 0)
             {
-                tickTillWarmup -= 1;
-                if (tickTillWarmup <= 0)
+                ticksTillWarmup -= ticksWarmupPerTick;
+                if (ticksTillWarmup <= 0)
                 {
                     OnWarmupEnd();
-                    tickTillFullRotation = topOnBuildingStructure.tickPerFullRotation;
+                    ticksTillFullRotation = topOnBuildingStructure.tickPerFullRotation;
                 }
             }
         }
@@ -89,9 +92,9 @@ namespace AnomaliesExpected
             Quaternion q = CurRotation.ToQuat();
             Graphics.DrawMesh(matrix: Matrix4x4.TRS(pos, q, new Vector3(turretTopDrawSize, 1f, turretTopDrawSize)), mesh: MeshPool.plane10, material: topOnBuildingStructure.Material, layer: 0);
 
-            if (tickTillWarmup > 0 /*&& Find.Selector.IsSelected(stanceTracker.pawn)*/)
+            if (ticksTillWarmup > 0 /*&& Find.Selector.IsSelected(stanceTracker.pawn)*/)
             {
-                GenDraw.DrawAimPieRaw(pos, CurRotation - InitialRotation, Mathf.CeilToInt(90 * tickTillWarmup / topOnBuildingStructure.tickPerWarmup));
+                GenDraw.DrawAimPieRaw(pos, CurRotation - InitialRotation, Mathf.CeilToInt(90 * ticksTillWarmup / topOnBuildingStructure.tickPerWarmup));
             }
         }
     }
