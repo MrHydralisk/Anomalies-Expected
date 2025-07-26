@@ -84,11 +84,11 @@ namespace AnomaliesExpected
 
         }
 
-        public void DrawAt(Vector3 drawLoc)
+        public void DrawAt(Vector3 drawLoc, float altIncVectMult = 1)
         {
             Vector3 v = topOnBuildingStructure.drawOffset;
             float turretTopDrawSize = topOnBuildingStructure.drawSize;
-            Vector3 pos = drawLoc + Altitudes.AltIncVect + v;
+            Vector3 pos = drawLoc + Altitudes.AltIncVect * altIncVectMult + v;
             Quaternion q = (CurRotation + topOnBuildingStructure.drawRotation).ToQuat();
             Graphics.DrawMesh(matrix: Matrix4x4.TRS(pos, q, new Vector3(turretTopDrawSize, 1f, turretTopDrawSize)), mesh: MeshPool.plane10, material: topOnBuildingStructure.Material, layer: 0);
 

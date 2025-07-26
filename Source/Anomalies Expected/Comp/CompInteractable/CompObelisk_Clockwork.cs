@@ -39,13 +39,14 @@ namespace AnomaliesExpected
                 topOnBuildings.Add(structure.type, topOnBuilding);
             }
         }
-
         public override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             base.DrawAt(drawLoc, flip);
+            float i = 3;
             foreach (TopOnBuilding_Clockwork topOnBuilding in topOnBuildings.Values)
             {
-                topOnBuilding.DrawAt(drawLoc);
+                topOnBuilding.DrawAt(drawLoc, i);
+                i += 0.01f;
             }
         }
 
