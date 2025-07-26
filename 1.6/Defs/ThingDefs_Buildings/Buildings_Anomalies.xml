@@ -1657,6 +1657,7 @@
 				<topOnBuildingStructures>
 					<li>
 						<type>ClockHandHour</type>
+						<topOnBuildingClass>AnomaliesExpected.TopOnBuilding_Clockwork</topOnBuildingClass>
 						<texPath>Things/Building/Security/TurretMini_Top</texPath>
 						<drawOffset>(0, 0, 1)</drawOffset>
 						<drawSize>2</drawSize>
@@ -1664,6 +1665,7 @@
 					</li>
 					<li>
 						<type>ClockHandMinute</type>
+						<topOnBuildingClass>AnomaliesExpected.TopOnBuilding_ClockHandMinute</topOnBuildingClass>
 						<texPath>Things/Building/Security/TurretMini_Top</texPath>
 						<drawOffset>(0, 0, 1)</drawOffset>
 						<drawSize>1.5</drawSize>
@@ -1671,6 +1673,7 @@
 					</li>
 					<li>
 						<type>ClockHandSecond</type>
+						<topOnBuildingClass>AnomaliesExpected.TopOnBuilding_ClockHandSecond</topOnBuildingClass>
 						<texPath>Things/Building/Security/TurretMini_Top</texPath>
 						<drawOffset>(0, 0, 1)</drawOffset>
 						<drawSize>1</drawSize>

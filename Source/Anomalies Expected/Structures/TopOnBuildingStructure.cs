@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using Verse;
 
@@ -7,6 +7,8 @@ namespace AnomaliesExpected
     public class TopOnBuildingStructure
     {
         public TopOnBuildingStructureTypes type;
+        [TranslationHandle]
+        public Type topOnBuildingClass = typeof(TopOnBuilding);
         [NoTranslate]
         public string texPath;
         public Vector3 drawOffset;
@@ -25,5 +27,6 @@ namespace AnomaliesExpected
         public float drawSize = 1;
 
         public int tickPerFullRotation = 500;
+        public int tickPerWarmup = 50;
     }
 }

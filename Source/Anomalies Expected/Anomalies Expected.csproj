@@ -47,7 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AEDebugTools.cs" />
-    <Compile Include="Structures\TopOnBuilding.cs" />
+    <Compile Include="TopOnBuildings\TopOnBuilding_ClockHandMinute.cs" />
+    <Compile Include="TopOnBuildings\TopOnBuilding_Clockwork.cs" />
+    <Compile Include="TopOnBuildings\TopOnBuilding_ClockHandSecond.cs" />
+    <Compile Include="TopOnBuildings\TopOnBuilding.cs" />
     <Compile Include="Building\Building_AEPocketMapExit.cs" />
     <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilityGrindBody.cs" />
     <Compile Include="CompProperties\CompProperties_Interactable\CompPropertiesObelisk_Clockwork.cs" />
