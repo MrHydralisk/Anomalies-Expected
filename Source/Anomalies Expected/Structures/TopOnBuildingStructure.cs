@@ -25,6 +25,7 @@ namespace AnomaliesExpected
         }
         private Material material = BaseContent.BadMat;
         public float drawSize = 1;
+        public int drawRotation = 90;
 
         public int tickPerFullRotation = 500;
         public int tickPerWarmup = -1;

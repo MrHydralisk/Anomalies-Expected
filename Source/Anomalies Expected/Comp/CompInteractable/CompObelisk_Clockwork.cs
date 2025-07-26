@@ -155,5 +155,11 @@ namespace AnomaliesExpected
         {
             return null;
         }
+
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+
+        }
     }
 }
