@@ -4,6 +4,7 @@
     {
         ClockHandSecond,
         ClockHandMinute,
-        ClockHandHour
+        ClockHandHour,
+        ClockHandActivity
     }
 }

@@ -27,6 +27,6 @@ namespace AnomaliesExpected
         public float drawSize = 1;
 
         public int tickPerFullRotation = 500;
-        public int tickPerWarmup = 50;
+        public int tickPerWarmup = -1;
     }
 }

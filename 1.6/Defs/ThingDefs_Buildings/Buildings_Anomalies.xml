@@ -1656,12 +1656,21 @@
 				
 				<topOnBuildingStructures>
 					<li>
+						<type>ClockHandActivity</type>
+						<topOnBuildingClass>AnomaliesExpected.TopOnBuilding_ClockHandActivity</topOnBuildingClass>
+						<texPath>Things/Building/Security/TurretMini_Top</texPath>
+						<drawOffset>(0, 0, 1)</drawOffset>
+						<drawSize>2.5</drawSize>
+						<tickPerFullRotation>10000</tickPerFullRotation>
+					</li>
+					<li>
 						<type>ClockHandHour</type>
 						<topOnBuildingClass>AnomaliesExpected.TopOnBuilding_ClockHandHour</topOnBuildingClass>
 						<texPath>Things/Building/Security/TurretMini_Top</texPath>
 						<drawOffset>(0, 0, 1)</drawOffset>
 						<drawSize>2</drawSize>
 						<tickPerFullRotation>5000</tickPerFullRotation>
+						<tickPerWarmup>50</tickPerWarmup>
 					</li>
 					<li>
 						<type>ClockHandMinute</type>
@@ -1670,6 +1679,7 @@
 						<drawOffset>(0, 0, 1)</drawOffset>
 						<drawSize>1.5</drawSize>
 						<tickPerFullRotation>2500</tickPerFullRotation>
+						<tickPerWarmup>50</tickPerWarmup>
 					</li>
 					<li>
 						<type>ClockHandSecond</type>
@@ -1678,6 +1688,7 @@
 						<drawOffset>(0, 0, 1)</drawOffset>
 						<drawSize>1</drawSize>
 						<tickPerFullRotation>500</tickPerFullRotation>
+						<tickPerWarmup>50</tickPerWarmup>
 					</li>
 				</topOnBuildingStructures>
 			</li>

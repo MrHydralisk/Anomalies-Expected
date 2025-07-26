@@ -1,14 +1,9 @@
 ﻿using RimWorld;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
-using System.Collections.Generic;
-using System;
-using Verse.Noise;
-using System.Linq;
-using static UnityEngine.Networking.UnityWebRequest;
-using static HarmonyLib.Code;
-using UnityEngine.UIElements;
 
 namespace AnomaliesExpected
 {
@@ -26,7 +21,7 @@ namespace AnomaliesExpected
                     IntVec2 locationAmount = new IntVec2(Mathf.FloorToInt(map.Size.x / compObelisk_Clockwork.sizeLocation), Mathf.FloorToInt(map.Size.z / compObelisk_Clockwork.sizeLocation));
                     possibleLocations = new List<RectInt>();
                     IntVec2 locationSize = new IntVec2(Mathf.FloorToInt(map.Size.x / locationAmount.x), Mathf.FloorToInt(map.Size.z / locationAmount.z));
-                    IntVec2 locationEdge = new IntVec2(map.Size.x,map.Size.z);
+                    IntVec2 locationEdge = new IntVec2(map.Size.x, map.Size.z);
                     for (int i = locationAmount.x - 1; i >= 0; i--)
                     {
                         locationEdge.z = map.Size.z;
@@ -34,7 +29,6 @@ namespace AnomaliesExpected
                         {
                             IntVec2 pos = locationEdge - locationSize;
                             RectInt rect = new RectInt(pos.x, pos.z, locationSize.x, locationSize.z);
-                            Log.Message($"[{i},{j}] {rect}");
                             possibleLocations.Add(rect);
                             locationEdge.z -= locationSize.z;
                         }
@@ -78,6 +72,7 @@ namespace AnomaliesExpected
                 {
                     Vector3 vector = (target.ToVector3Shifted() - position.ToVector3Shifted()).Yto0().normalized;
                     CurRotation = vector.ToAngleFlat();
+                    break;
                 }
             }
         }

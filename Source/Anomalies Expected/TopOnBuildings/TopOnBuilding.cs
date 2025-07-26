@@ -5,7 +5,7 @@ namespace AnomaliesExpected
 {
     public class TopOnBuilding
     {
-        private TopOnBuildingStructure topOnBuildingStructure;
+        protected TopOnBuildingStructure topOnBuildingStructure;
 
         private float curRotationInt;
 
@@ -41,16 +41,16 @@ namespace AnomaliesExpected
             tickTillFullRotation = topOnBuildingStructure.tickPerFullRotation;
         }
 
-        public void Tick()
+        public virtual void Tick()
         {
             if (tickTillFullRotation > 0)
             {
                 tickTillFullRotation -= 1;
-                curRotationInt = 360 * (1 - tickTillFullRotation / topOnBuildingStructure.tickPerFullRotation) + InitialRotation;
+                CurRotation = 360 * (1 - tickTillFullRotation / topOnBuildingStructure.tickPerFullRotation) + InitialRotation;
                 if (tickTillFullRotation <= 0)
                 {
                     OnTimerEnd();
-                    if (topOnBuildingStructure.tickPerFullRotation > 0)
+                    if (topOnBuildingStructure.tickPerFullRotation > -1)
                     {
                         tickTillWarmup = topOnBuildingStructure.tickPerWarmup;
                     }

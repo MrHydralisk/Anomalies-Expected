@@ -3,12 +3,15 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace AnomaliesExpected
 {
-    public class CompObelisk_Clockwork : CompInteractable
+    public class CompObelisk_Clockwork : CompInteractable, IActivity
     {
         public new CompPropertiesObelisk_Clockwork Props => (CompPropertiesObelisk_Clockwork)props;
+        public CompActivity ActivityComp => activityInt ?? (activityInt = parent.TryGetComp<CompActivity>());
+        private CompActivity activityInt;
 
         public int radius = 3;
         public int sizeLocation = 60;
@@ -104,12 +107,54 @@ namespace AnomaliesExpected
                     defaultLabel = "Dev: Start Teleportation",
                     defaultDesc = "Teleport to new location"
                 };
+                yield return new Command_Action
+                {
+                    action = delegate
+                    {
+                        if (topOnBuildings.TryGetValue(TopOnBuildingStructureTypes.ClockHandActivity, out TopOnBuilding_Clockwork clockHandActivity))
+                        {
+                            clockHandActivity.tickTillFullRotation = 1;
+                        }
+                    },
+                    defaultLabel = "Dev: Toggle Active State",
+                    defaultDesc = "Toggle Active State"
+                };
             }
         }
 
         protected override void OnInteracted(Pawn caster)
         {
 
+        }
+
+        public void OnActivityActivated()
+        {
+            Log.Message($"OnActivityActivated");
+        }
+
+        public void OnPassive()
+        {
+            Log.Message($"OnPassive");
+        }
+
+        public bool ShouldGoPassive()
+        {
+            return false;
+        }
+
+        public bool CanBeSuppressed()
+        {
+            return true;
+        }
+
+        public bool CanActivate()
+        {
+            return false;
+        }
+
+        public string ActivityTooltipExtra()
+        {
+            return null;
         }
     }
 }

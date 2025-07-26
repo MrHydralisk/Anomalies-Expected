@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AEDebugTools.cs" />
+    <Compile Include="TopOnBuildings\TopOnBuilding_ClockHandActivity.cs" />
     <Compile Include="TopOnBuildings\TopOnBuilding_ClockHandHour.cs" />
     <Compile Include="TopOnBuildings\TopOnBuilding_ClockHandMinute.cs" />
     <Compile Include="TopOnBuildings\TopOnBuilding_Clockwork.cs" />
