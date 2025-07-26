@@ -11,6 +11,7 @@ namespace AnomaliesExpected
         public new CompPropertiesObelisk_Clockwork Props => (CompPropertiesObelisk_Clockwork)props;
 
         public int radius = 3;
+        public int sizeLocation = 60;
 
         public Dictionary<TopOnBuildingStructureTypes, TopOnBuilding_Clockwork> topOnBuildings;
 
@@ -35,16 +36,6 @@ namespace AnomaliesExpected
                 topOnBuilding.compObelisk_Clockwork = this;
                 topOnBuildings.Add(structure.type, topOnBuilding);
             }
-
-            //if (topOnBuildings.TryGetValue(TopOnBuildingStructureTypes.ClockHandSecond, out TopOnBuilding_Clockwork clockHandSecond))
-            //{
-            //    //clockHandSecond.onTimerEnd = delegate { AimAgingBeam(clockHandSecond); };
-            //    //clockHandSecond.onWarmupEnd = delegate { StartAgingBeam(clockHandSecond); };
-            //}
-            //if (topOnBuildings.TryGetValue(TopOnBuildingStructureTypes.ClockHandMinute, out TopOnBuilding_Clockwork clockHandMinute))
-            //{
-            //    //clockHandMinute.onTimerEnd = delegate { StartAgingZone(); };
-            //}
         }
 
         public override void DrawAt(Vector3 drawLoc, bool flip = false)
@@ -89,9 +80,6 @@ namespace AnomaliesExpected
                     defaultLabel = "Dev: Start Aging Beam",
                     defaultDesc = "Shooting aging beam"
                 };
-            }
-            if (DebugSettings.ShowDevGizmos)
-            {
                 yield return new Command_Action
                 {
                     action = delegate
@@ -104,12 +92,24 @@ namespace AnomaliesExpected
                     defaultLabel = "Dev: Start Aging Zone",
                     defaultDesc = "Explode againg zone"
                 };
+                yield return new Command_Action
+                {
+                    action = delegate
+                    {
+                        if (topOnBuildings.TryGetValue(TopOnBuildingStructureTypes.ClockHandHour, out TopOnBuilding_Clockwork clockHandHour))
+                        {
+                            clockHandHour.tickTillFullRotation = 1;
+                        }
+                    },
+                    defaultLabel = "Dev: Start Teleportation",
+                    defaultDesc = "Teleport to new location"
+                };
             }
         }
 
         protected override void OnInteracted(Pawn caster)
         {
-            //ShootBeam();
+
         }
     }
 }

@@ -1657,7 +1657,7 @@
 				<topOnBuildingStructures>
 					<li>
 						<type>ClockHandHour</type>
-						<topOnBuildingClass>AnomaliesExpected.TopOnBuilding_Clockwork</topOnBuildingClass>
+						<topOnBuildingClass>AnomaliesExpected.TopOnBuilding_ClockHandHour</topOnBuildingClass>
 						<texPath>Things/Building/Security/TurretMini_Top</texPath>
 						<drawOffset>(0, 0, 1)</drawOffset>
 						<drawSize>2</drawSize>
