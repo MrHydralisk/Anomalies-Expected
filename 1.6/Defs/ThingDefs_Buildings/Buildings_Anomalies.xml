@@ -1656,22 +1656,25 @@
 				
 				<topOnBuildingStructures>
 					<li>
-						<type>ClockHandSecond</type>
+						<type>ClockHandHour</type>
 						<texPath>Things/Building/Security/TurretMini_Top</texPath>
 						<drawOffset>(0, 0, 1)</drawOffset>
-						<drawSize>1</drawSize>
+						<drawSize>2</drawSize>
+						<tickPerFullRotation>5000</tickPerFullRotation>
 					</li>
 					<li>
 						<type>ClockHandMinute</type>
 						<texPath>Things/Building/Security/TurretMini_Top</texPath>
 						<drawOffset>(0, 0, 1)</drawOffset>
 						<drawSize>1.5</drawSize>
+						<tickPerFullRotation>2500</tickPerFullRotation>
 					</li>
 					<li>
-						<type>ClockHandHour</type>
+						<type>ClockHandSecond</type>
 						<texPath>Things/Building/Security/TurretMini_Top</texPath>
 						<drawOffset>(0, 0, 1)</drawOffset>
-						<drawSize>2</drawSize>
+						<drawSize>1</drawSize>
+						<tickPerFullRotation>500</tickPerFullRotation>
 					</li>
 				</topOnBuildingStructures>
 			</li>

@@ -1,6 +1,8 @@
 ﻿using RimWorld;
+using System;
 using UnityEngine;
 using Verse;
+using static HarmonyLib.Code;
 
 namespace AnomaliesExpected
 {
@@ -26,7 +28,11 @@ namespace AnomaliesExpected
 
         //private const int IdleTurnIntervalMax = 350;
 
-        public static readonly int ArtworkRotation = -90;
+        public static readonly int InitialRotation = -90;
+
+        public float tickTillFullRotation;
+
+        public Action onTimerEnd;
 
         public float CurRotation
         {
@@ -52,6 +58,8 @@ namespace AnomaliesExpected
         {
             //parentTurret = ParentTurret;
             topOnBuildingStructure = TopOnBuildingStructure;
+            curRotationInt = InitialRotation;
+            tickTillFullRotation = topOnBuildingStructure.tickPerFullRotation;
         }
 
         //public void ForceFaceTarget(LocalTargetInfo targ)
@@ -62,6 +70,22 @@ namespace AnomaliesExpected
         //        CurRotation = curRotation;
         //    }
         //}
+
+        public void Tick()
+        {
+            if (tickTillFullRotation <= 0)
+            {
+                if (onTimerEnd != null)
+                {
+                    onTimerEnd();
+                }
+                tickTillFullRotation = topOnBuildingStructure.tickPerFullRotation;
+            }
+            else
+            {
+                tickTillFullRotation -= 1;
+            }
+        }
 
         //public void TurretTopTick()
         //{
@@ -106,13 +130,10 @@ namespace AnomaliesExpected
         //    }
         //}
 
-        public void DrawAt(Vector3 drawLoc, Vector3 recoilDrawOffset, float recoilAngleOffset)
+        public void DrawAt(Vector3 drawLoc)
         {
-            Vector3 v = topOnBuildingStructure.drawOffset/*.RotatedBy(CurRotation)*/;
+            Vector3 v = topOnBuildingStructure.drawOffset;
             float turretTopDrawSize = topOnBuildingStructure.drawSize;
-            v = v.RotatedBy(recoilAngleOffset);
-            v += recoilDrawOffset;
-            float num = /*parentTurret.CurrentEffectiveVerb?.AimAngleOverride ??*/ CurRotation;
             Vector3 pos = drawLoc + Altitudes.AltIncVect + v;
             Quaternion q = CurRotation.ToQuat();
             Graphics.DrawMesh(matrix: Matrix4x4.TRS(pos, q, new Vector3(turretTopDrawSize, 1f, turretTopDrawSize)), mesh: MeshPool.plane10, material: topOnBuildingStructure.Material, layer: 0);

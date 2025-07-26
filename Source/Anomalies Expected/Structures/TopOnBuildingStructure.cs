@@ -4,7 +4,6 @@ using Verse;
 
 namespace AnomaliesExpected
 {
-
     public class TopOnBuildingStructure
     {
         public TopOnBuildingStructureTypes type;
@@ -24,5 +23,7 @@ namespace AnomaliesExpected
         }
         private Material material = BaseContent.BadMat;
         public float drawSize = 1;
+
+        public int tickPerFullRotation = 500;
     }
 }

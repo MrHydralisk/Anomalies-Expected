@@ -26,24 +26,41 @@ namespace AnomaliesExpected
             }
         }
 
-        public override void PostSpawnSetup(bool respawningAfterLoad) // Temp
+        public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            topOnBuildings = new Dictionary<TopOnBuildingStructureTypes, TopOnBuilding>();
-            foreach (TopOnBuildingStructure structure in Props.topOnBuildingStructures)
+
+            topOnBuildings = new Dictionary<TopOnBuildingStructureTypes, TopOnBuilding>(); // Temp
+            foreach (TopOnBuildingStructure structure in Props.topOnBuildingStructures) // Temp
             {
                 topOnBuildings.Add(structure.type, new TopOnBuilding(structure));
+            }
+
+            if (topOnBuildings.TryGetValue(TopOnBuildingStructureTypes.ClockHandSecond, out TopOnBuilding clockHandSecond))
+            {
+                clockHandSecond.onTimerEnd = delegate { StartAgingBeam(); };
+            }
+            if (topOnBuildings.TryGetValue(TopOnBuildingStructureTypes.ClockHandMinute, out TopOnBuilding clockHandMinute))
+            {
+                clockHandMinute.onTimerEnd = delegate { StartAgingZone(); };
             }
         }
 
         public override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             base.DrawAt(drawLoc, flip);
-            Vector3 drawOffset = Vector3.zero;
-            float angleOffset = 0f;
             foreach (TopOnBuilding topOnBuilding in topOnBuildings.Values)
             {
-                topOnBuilding.DrawAt(drawLoc, drawOffset, angleOffset);
+                topOnBuilding.DrawAt(drawLoc);
+            }
+        }
+
+        public override void CompTick()
+        {
+            base.CompTick();
+            foreach (TopOnBuilding topOnBuilding in topOnBuildings.Values)
+            {
+                topOnBuilding.Tick();
             }
         }
 
