@@ -315,4 +315,19 @@
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>
 
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_Obelisk_Clockwork</defName>
+		<label>clockwork obelisk</label>
+		<category>Advanced</category>
+		<uiIconPath>UI/CodexEntries/AE_ObeliskClockwork</uiIconPath>
+		<useDescriptionFrom>AE_Obelisk_Clockwork</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_Obelisk_Clockwork</li>
+		</linkedThings>
+		<provocationIncidents>
+			<!-- <li>AE_IncidentDef_SpeedometerSpawn</li> -->
+		</provocationIncidents>
+		<orderInCategory>1300</orderInCategory>
+	</EntityCodexEntryDef>
+
 </Defs>
