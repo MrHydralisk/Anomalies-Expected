@@ -84,7 +84,7 @@ namespace AnomaliesExpected
 
         }
 
-        public void DrawAt(Vector3 drawLoc, float altIncVectMult = 1)
+        public void DrawAt(Vector3 drawLoc, float altIncVectMult = 0)
         {
             Vector3 v = topOnBuildingStructure.drawOffset;
             float turretTopDrawSize = topOnBuildingStructure.drawSize;

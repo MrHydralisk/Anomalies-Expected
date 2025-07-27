@@ -1572,7 +1572,7 @@
 	
 	<ThingDef ParentName="BuildingBase">
 		<defName>AE_Obelisk_Clockwork</defName>
-		<label>industrial metal box</label>
+		<label>clockwork obelisk</label>
 		<description>This industrial-looking metal box as tall as a table. Several small doors interrupt the smooth surface on its sides, while a big hole with hidden inside blades sits atop it. A lone button rests next to the hole, hinting at some unknown function.</description>
 		<thingClass>AnomaliesExpected.Building_AE</thingClass>
 		<size>(3,3)</size>
@@ -1587,30 +1587,30 @@
 			<drawOffset>(0,0,0.3)</drawOffset>
 			<colorTwo>(226,53,33)</colorTwo>
 			<shadowData>
-				<volume>(2.5, 5, 2.5)</volume>
-				<offset>(0, 0, -0.3)</offset>
+				<volume>(1, 5, 2.85)</volume>
 			</shadowData>
+			<damageData>
+				<rect>(0.33,0.33,2.34,2.35)</rect>
+			</damageData>
 		</graphicData>
-		<uiIconScale>0.75</uiIconScale>
 		<canOverlapZones>false</canOverlapZones>
 		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
 		<altitudeLayer>Building</altitudeLayer>
-		<castEdgeShadows>true</castEdgeShadows>
 		<costList>
 			<Bioferrite>45</Bioferrite>
 		</costList>
 		<fillPercent>0.5</fillPercent>
-		<useHitPoints>false</useHitPoints>
 		<rotatable>false</rotatable>
 		<statBases>
-			<Mass>20</Mass>
-			<WorkToBuild>2000</WorkToBuild>
+			<MaxHitPoints>3000</MaxHitPoints>
 			<Flammability>0</Flammability>
-			<Cleanliness>-30</Cleanliness>
+			<MeditationFocusStrength>0.3</MeditationFocusStrength>
 		</statBases>
 		<building>
+			<paintable>false</paintable>
 			<deconstructible>false</deconstructible>
-			<uninstallWork>2500</uninstallWork>
+			<claimable>false</claimable>
+			<soundMeleeHitOverride>ObeliskDamaged</soundMeleeHitOverride>
 		</building>
 		<passability>PassThroughOnly</passability>
 		<pathCost>50</pathCost>
@@ -1618,6 +1618,7 @@
 		<tickerType>Normal</tickerType>
 		<designationCategory/>
 		<killedLeavings>
+			<Shard>1</Shard>
 			<Bioferrite>75</Bioferrite>
 		</killedLeavings>
 		<comps>
@@ -1653,7 +1654,7 @@
 						<type>ClockHandActivity</type>
 						<topOnBuildingClass>AnomaliesExpected.TopOnBuilding_ClockHandActivity</topOnBuildingClass>
 						<texPath>Things/Building/AE_ObeliskClockwork/AE_ObeliskClockworkHandActivity</texPath>
-						<drawOffset>(0, 0, 1.297)</drawOffset>
+						<drawOffset>(0, 0.109756, 1.3)</drawOffset>
 						<drawSize>6</drawSize>
 						<drawRotation>90</drawRotation>
 						<tickPerFullRotation>900000</tickPerFullRotation>
@@ -1662,30 +1663,30 @@
 						<type>ClockHandHour</type>
 						<topOnBuildingClass>AnomaliesExpected.TopOnBuilding_ClockHandHour</topOnBuildingClass>
 						<texPath>Things/Building/AE_ObeliskClockwork/AE_ObeliskClockworkHandHour</texPath>
-						<drawOffset>(0, 0, 1.297)</drawOffset>
+						<drawOffset>(0, 0.110122, 1.3)</drawOffset>
 						<drawSize>6</drawSize>
 						<drawRotation>90</drawRotation>
 						<tickPerFullRotation>240000</tickPerFullRotation>
 						<tickPerWarmup>50</tickPerWarmup>
 					</li>
 					<li>
-						<type>ClockHandSecond</type>
-						<topOnBuildingClass>AnomaliesExpected.TopOnBuilding_ClockHandSecond</topOnBuildingClass>
-						<texPath>Things/Building/AE_ObeliskClockwork/AE_ObeliskClockworkHandSecond</texPath>
-						<drawOffset>(0, 0, 1.297)</drawOffset>
-						<drawSize>6</drawSize>
-						<drawRotation>90</drawRotation>
-						<tickPerFullRotation>60000</tickPerFullRotation>
-						<tickPerWarmup>50</tickPerWarmup>
-					</li>
-					<li>
 						<type>ClockHandMinute</type>
 						<topOnBuildingClass>AnomaliesExpected.TopOnBuilding_ClockHandMinute</topOnBuildingClass>
 						<texPath>Things/Building/AE_ObeliskClockwork/AE_ObeliskClockworkHandMinute</texPath>
-						<drawOffset>(0, 0, 1.297)</drawOffset>
+						<drawOffset>(0, 0.110854, 1.3)</drawOffset>
 						<drawSize>6</drawSize>
 						<drawRotation>90</drawRotation>
 						<tickPerFullRotation>120000</tickPerFullRotation>
+						<tickPerWarmup>50</tickPerWarmup>
+					</li>
+					<li>
+						<type>ClockHandSecond</type>
+						<topOnBuildingClass>AnomaliesExpected.TopOnBuilding_ClockHandSecond</topOnBuildingClass>
+						<texPath>Things/Building/AE_ObeliskClockwork/AE_ObeliskClockworkHandSecond</texPath>
+						<drawOffset>(0, 0.110488, 1.3)</drawOffset>
+						<drawSize>6</drawSize>
+						<drawRotation>90</drawRotation>
+						<tickPerFullRotation>60000</tickPerFullRotation>
 						<tickPerWarmup>50</tickPerWarmup>
 					</li>
 				</topOnBuildingStructures>
