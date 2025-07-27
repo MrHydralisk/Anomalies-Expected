@@ -55,5 +55,34 @@
 			</shaderParameters>
 		</graphicData>
 	</ThingDef>
+	
+	
+	
+	<ThingDef Name="MoteAEZoneOfEffect" ParentName="MoteBase">
+		<defName>Mote_AEZoneOfEffect</defName>
+		<graphicData>
+			<texPath>Things/Mote/ZoneOfEffect</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<drawOffscreen>true</drawOffscreen>
+		<mote>
+			<fadeInTime>0.5</fadeInTime>
+			<solidTime>48.5</solidTime>
+			<fadeOutTime>1.0</fadeOutTime>
+		</mote>
+	</ThingDef>
+	
+	<ThingDef ParentName="MoteAEZoneOfEffect">
+		<defName>Mote_AEZoneOfEffect_AgingZone</defName>
+		<graphicData>
+			<color>(1, 0.94, 0.94, 0.25)</color>
+		</graphicData>
+		<mote>
+			<fadeInTime>0.5</fadeInTime>
+			<solidTime>98.5</solidTime>
+			<fadeOutTime>1.0</fadeOutTime>
+		</mote>
+	</ThingDef>
   
 </Defs>

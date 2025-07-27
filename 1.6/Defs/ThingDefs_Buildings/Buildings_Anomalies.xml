@@ -1692,6 +1692,7 @@
 				</topOnBuildingStructures>
 				
 				<ticksFullRotationPerActiveTick>4</ticksFullRotationPerActiveTick>
+				<MinuteHandZoneDef>AEAgingZone</MinuteHandZoneDef>
 			</li>
 			<li Class="CompProperties_Activity">
 				<startingRange>0.2~0.4</startingRange>

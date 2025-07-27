@@ -1,5 +1,4 @@
-﻿using RimWorld;
-using UnityEngine;
+﻿using UnityEngine;
 using Verse;
 
 namespace AnomaliesExpected
@@ -24,7 +23,13 @@ namespace AnomaliesExpected
         public override void OnWarmupEnd()
         {
             Map map = compObelisk_Clockwork.parent.Map;
-            GenExplosion.DoExplosion(target, map, 15, DamageDefOf.Bomb, compObelisk_Clockwork.parent, damAmount: 1, propagationSpeed: 3);
+            Thing zone = ThingMaker.MakeThing(compObelisk_Clockwork.Props.MinuteHandZoneDef);
+            GenSpawn.Spawn(zone, target, compObelisk_Clockwork.parent.Map);
+            Comp_ZoneOfEffect zoneComp = zone.TryGetComp<Comp_ZoneOfEffect>();
+            if (zoneComp != null)
+            {
+                zoneComp.StartAttack(compObelisk_Clockwork.parent, compObelisk_Clockwork.parent.def);
+            }
         }
     }
 }

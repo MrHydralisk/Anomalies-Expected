@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
+using Verse;
 
 namespace AnomaliesExpected
 {
@@ -10,6 +11,7 @@ namespace AnomaliesExpected
         public int radius = 3;
         public int sizeLocation = 60;
         public float ticksFullRotationPerActiveTick = 2;
+        public ThingDef MinuteHandZoneDef;
 
         public CompPropertiesObelisk_Clockwork()
         {

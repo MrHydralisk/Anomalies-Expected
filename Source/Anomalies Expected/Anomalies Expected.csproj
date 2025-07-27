@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AEDebugTools.cs" />
+    <Compile Include="CompProperties\CompProperties_ZoneOfEffect.cs" />
+    <Compile Include="Comp\Comp_ZoneOfEffect.cs" />
+    <Compile Include="Thing\AEZoneOfEffect.cs" />
     <Compile Include="TopOnBuildings\TopOnBuilding_ClockHandActivity.cs" />
     <Compile Include="TopOnBuildings\TopOnBuilding_ClockHandHour.cs" />
     <Compile Include="TopOnBuildings\TopOnBuilding_ClockHandMinute.cs" />
