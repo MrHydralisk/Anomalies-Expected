@@ -7,7 +7,9 @@ namespace AnomaliesExpected
         public SimpleCurve DamageMultiplierCurve = new SimpleCurve();
         public float DamageMultiplierForNonPoweredBuildings = 1;
         public float DamageMultiplierForPoweredBuildings = 1;
+        public float DamageMultiplierForNonOrganic = 1;
         public HediffDef AdditionalHediff;
+        public bool isDealDamageToSelf = true;
         public bool isDealDamageToFriendly = true;
         public bool isDealDamageToDowned = true;
         public bool isDealDamageToPlayer = true;

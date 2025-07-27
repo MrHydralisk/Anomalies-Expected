@@ -1693,6 +1693,9 @@
 				
 				<ticksFullRotationPerActiveTick>4</ticksFullRotationPerActiveTick>
 				<MinuteHandZoneDef>AEAgingZone</MinuteHandZoneDef>
+				<damageDef>AEAging</damageDef>
+				<damageAmountWave>10</damageAmountWave>
+				<DamageMultActive>2</DamageMultActive>
 			</li>
 			<li Class="CompProperties_Activity">
 				<startingRange>0.2~0.4</startingRange>

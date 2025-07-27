@@ -26,5 +26,19 @@
 			<destroyedLabel>Lost to freezing through</destroyedLabel>
 		</injuryProps>
 	</HediffDef>
+	
+	
+
+	<HediffDef ParentName="InjuryBase">
+		<defName>AEAging</defName>
+		<label>rapid aging</label>
+		<description>.</description>
+		<displayWound>false</displayWound>
+		<injuryProps>
+			<painPerSeverity>0.01</painPerSeverity>
+			<canMerge>true</canMerge>
+			<destroyedLabel>Disintegrated to rapid aging</destroyedLabel>
+		</injuryProps>
+	</HediffDef>
 
 </Defs>

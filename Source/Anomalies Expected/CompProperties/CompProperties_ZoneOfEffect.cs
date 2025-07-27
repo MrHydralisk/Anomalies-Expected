@@ -1,13 +1,12 @@
-﻿using RimWorld;
-using Verse;
+﻿using Verse;
 
 namespace AnomaliesExpected
 {
     public class CompProperties_ZoneOfEffect : CompProperties
     {
-        public ThingDef mote = ThingDefOf.Mote_PowerBeam;
+        public ThingDef mote;
 
-        public DamageDef damageDef = DamageDefOf.Flame;
+        public DamageDef damageDef;
 
         public SoundDef sound;
 
@@ -16,7 +15,6 @@ namespace AnomaliesExpected
         public int ticksPerDamage = 50;
 
         public int DamageAmount = 1;
-        public int DamageAmountDowned = 1;
 
         public CompProperties_ZoneOfEffect()
         {

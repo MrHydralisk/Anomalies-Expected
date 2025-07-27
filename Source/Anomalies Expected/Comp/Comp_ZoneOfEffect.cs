@@ -1,5 +1,5 @@
-﻿using RimWorld;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using Verse;
 using Verse.Sound;
 
@@ -21,6 +21,8 @@ namespace AnomaliesExpected
         public ThingDef weaponDef;
 
         private Sustainer sustainer;
+
+        public float damageMult = 1;
 
         private int TicksPassed => Find.TickManager.TicksGame - startTick;
 
@@ -95,19 +97,7 @@ namespace AnomaliesExpected
                 tmpThings.AddRange(cell.GetThingList(map));
                 for (int i = 0; i < tmpThings.Count; i++)
                 {
-                    int num = Props.DamageAmount;
-                    Pawn pawn = tmpThings[i] as Pawn;
-                    BattleLogEntry_DamageTaken battleLogEntry_DamageTaken = null;
-                    if (pawn != null)
-                    {
-                        if (pawn.DeadOrDowned)
-                        {
-                            num = Props.DamageAmountDowned;
-                        }
-                        battleLogEntry_DamageTaken = new BattleLogEntry_DamageTaken(pawn, RulePackDefOf.DamageEvent_PowerBeam, instigator as Pawn);
-                        Find.BattleLog.Add(battleLogEntry_DamageTaken);
-                    }
-                    tmpThings[i].TakeDamage(new DamageInfo(Props.damageDef, num, instigator: instigator, weapon: weaponDef)).AssociateWithLog(battleLogEntry_DamageTaken);
+                    tmpThings[i].TakeDamage(new DamageInfo(Props.damageDef, Mathf.RoundToInt(Props.DamageAmount * damageMult), instigator: instigator, weapon: weaponDef));
                 }
                 tmpThings.Clear();
             }
@@ -119,6 +109,7 @@ namespace AnomaliesExpected
             Scribe_Values.Look(ref startTick, "startTick", 0);
             Scribe_Values.Look(ref totalDuration, "totalDuration", 0);
             Scribe_Values.Look(ref fadeOutDuration, "fadeOutDuration", 0);
+            Scribe_Values.Look(ref damageMult, "damageMult", 1);
             Scribe_References.Look(ref instigator, "instigator");
             Scribe_Defs.Look(ref weaponDef, "weaponDef");
         }

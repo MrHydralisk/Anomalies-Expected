@@ -62,7 +62,7 @@
     <Compile Include="Comp\CompAbilityEffect\CompAbilityEffect_GrindBody.cs" />
     <Compile Include="Comp\CompInteractable\CompObelisk_Clockwork.cs" />
     <Compile Include="CreepJoinerWorker_AEDownsideMentalState.cs" />
-    <Compile Include="DamageWorker\DamageWorker_Beam.cs" />
+    <Compile Include="DamageWorker\DamageWorker_Aging.cs" />
     <Compile Include="Designator_CaptureEntity.cs" />
     <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilitySpawnSummon.cs" />
     <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilitySpawnSnowArmy.cs" />
