@@ -40,6 +40,10 @@ namespace AnomaliesExpected
         }
         public List<RectInt> possibleLocations;
 
+        public TopOnBuilding_ClockHandHour() : base()
+        {
+        }
+
         public TopOnBuilding_ClockHandHour(TopOnBuildingStructure TopOnBuildingStructure) : base(TopOnBuildingStructure)
         {
         }
@@ -75,6 +79,7 @@ namespace AnomaliesExpected
                     break;
                 }
             }
+            base.OnTimerEnd();
         }
 
         public override void OnWarmupEnd()
@@ -85,12 +90,19 @@ namespace AnomaliesExpected
             {
                 TargetInfo targetInfoFrom = new TargetInfo(position, map);
                 SoundDefOfLocal.Psycast_Skip_Exit.PlayOneShot(targetInfoFrom);
-                FleckMaker.Static(targetInfoFrom.Cell, targetInfoFrom.Map, FleckDefOf.PsycastSkipInnerExit/*, Props.teleportationFleckRadius*/);
+                FleckMaker.Static(targetInfoFrom.Cell, targetInfoFrom.Map, FleckDefOf.PsycastSkipInnerExit, compObelisk_Clockwork.Props.teleportationFleckRadius);
                 TargetInfo targetInfoTo = new TargetInfo(position, map);
                 SoundDefOf.Psycast_Skip_Entry.PlayOneShot(targetInfoTo);
-                FleckMaker.Static(targetInfoTo.Cell, targetInfoFrom.Map, FleckDefOf.PsycastSkipFlashEntry/*, Props.teleportationFleckRadius*/);
+                FleckMaker.Static(targetInfoTo.Cell, targetInfoFrom.Map, FleckDefOf.PsycastSkipFlashEntry, compObelisk_Clockwork.Props.teleportationFleckRadius);
                 compObelisk_Clockwork.parent.Position = target;
             }
+            base.OnWarmupEnd();
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref target, "target");
         }
     }
 }

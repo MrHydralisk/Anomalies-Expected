@@ -3,9 +3,10 @@ using Verse;
 
 namespace AnomaliesExpected
 {
-    public class TopOnBuilding
+    public class TopOnBuilding : IExposable
     {
-        protected TopOnBuildingStructure topOnBuildingStructure;
+        public TopOnBuildingStructure topOnBuildingStructure;
+        public TopOnBuildingStructureTypes type;
 
         private float curRotationInt;
 
@@ -37,10 +38,15 @@ namespace AnomaliesExpected
             }
         }
 
-        public TopOnBuilding(TopOnBuildingStructure TopOnBuildingStructure)
+        public TopOnBuilding()
+        {
+            curRotationInt = InitialRotation;
+        }
+
+        public TopOnBuilding(TopOnBuildingStructure TopOnBuildingStructure) : this()
         {
             topOnBuildingStructure = TopOnBuildingStructure;
-            curRotationInt = InitialRotation;
+            type = topOnBuildingStructure.type;
             ticksTillFullRotation = topOnBuildingStructure.tickPerFullRotation;
         }
 
@@ -53,14 +59,6 @@ namespace AnomaliesExpected
                 if (ticksTillFullRotation <= 0)
                 {
                     OnTimerEnd();
-                    if (topOnBuildingStructure.tickPerFullRotation > -1)
-                    {
-                        ticksTillWarmup = topOnBuildingStructure.tickPerWarmup;
-                    }
-                    else
-                    {
-                        ticksTillFullRotation = topOnBuildingStructure.tickPerFullRotation;
-                    }
                 }
             }
             else if (ticksTillWarmup > 0)
@@ -69,19 +67,25 @@ namespace AnomaliesExpected
                 if (ticksTillWarmup <= 0)
                 {
                     OnWarmupEnd();
-                    ticksTillFullRotation = topOnBuildingStructure.tickPerFullRotation;
                 }
             }
         }
 
         public virtual void OnTimerEnd()
         {
-
+            if (topOnBuildingStructure.tickPerFullRotation > -1)
+            {
+                ticksTillWarmup = topOnBuildingStructure.tickPerWarmup;
+            }
+            else
+            {
+                ticksTillFullRotation = topOnBuildingStructure.tickPerFullRotation;
+            }
         }
 
         public virtual void OnWarmupEnd()
         {
-
+            ticksTillFullRotation = topOnBuildingStructure.tickPerFullRotation;
         }
 
         public void DrawAt(Vector3 drawLoc, float altIncVectMult = 0)
@@ -96,6 +100,14 @@ namespace AnomaliesExpected
             {
                 GenDraw.DrawAimPieRaw(pos, CurRotation - InitialRotation, Mathf.CeilToInt(90 * ticksTillWarmup / topOnBuildingStructure.tickPerWarmup));
             }
+        }
+
+        public virtual void ExposeData()
+        {
+            Scribe_Values.Look(ref type, "type");
+            Scribe_Values.Look(ref curRotationInt, "curRotationInt", 0);
+            Scribe_Values.Look(ref ticksTillFullRotation, "ticksTillFullRotation", 0);
+            Scribe_Values.Look(ref ticksTillWarmup, "ticksTillWarmup", 0);
         }
     }
 }

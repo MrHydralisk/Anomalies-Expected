@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Verse;
 
@@ -12,36 +13,24 @@ namespace AnomaliesExpected
         public CompActivity ActivityComp => activityInt ?? (activityInt = parent.TryGetComp<CompActivity>());
         private CompActivity activityInt;
 
-        public Dictionary<TopOnBuildingStructureTypes, TopOnBuilding_Clockwork> topOnBuildings;
+        public List<TopOnBuilding_Clockwork> topOnBuildings;
 
         public override void PostPostMake()
         {
             base.PostPostMake();
-            topOnBuildings = new Dictionary<TopOnBuildingStructureTypes, TopOnBuilding_Clockwork>();
+            topOnBuildings = new List<TopOnBuilding_Clockwork>();
             foreach (TopOnBuildingStructure structure in Props.topOnBuildingStructures)
             {
                 TopOnBuilding_Clockwork topOnBuilding = (TopOnBuilding_Clockwork)Activator.CreateInstance(structure.topOnBuildingClass, new object[] { structure });
-                topOnBuilding.compObelisk_Clockwork = this;
-                topOnBuildings.Add(structure.type, topOnBuilding);
+                topOnBuilding.Obelisk_Clockwork = parent;
+                topOnBuildings.Add(topOnBuilding);
             }
         }
 
-        public override void PostSpawnSetup(bool respawningAfterLoad)
-        {
-            base.PostSpawnSetup(respawningAfterLoad);
-
-            topOnBuildings = new Dictionary<TopOnBuildingStructureTypes, TopOnBuilding_Clockwork>(); // Temp
-            foreach (TopOnBuildingStructure structure in Props.topOnBuildingStructures) // Temp
-            {
-                TopOnBuilding_Clockwork topOnBuilding = (TopOnBuilding_Clockwork)Activator.CreateInstance(structure.topOnBuildingClass, new object[] { structure });
-                topOnBuilding.compObelisk_Clockwork = this;
-                topOnBuildings.Add(structure.type, topOnBuilding);
-            }
-        }
         public override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             base.DrawAt(drawLoc, flip);
-            foreach (TopOnBuilding_Clockwork topOnBuilding in topOnBuildings.Values)
+            foreach (TopOnBuilding_Clockwork topOnBuilding in topOnBuildings)
             {
                 topOnBuilding.DrawAt(drawLoc);
             }
@@ -50,10 +39,15 @@ namespace AnomaliesExpected
         public override void CompTick()
         {
             base.CompTick();
-            foreach (TopOnBuilding_Clockwork topOnBuilding in topOnBuildings.Values)
+            foreach (TopOnBuilding_Clockwork topOnBuilding in topOnBuildings)
             {
                 topOnBuilding.Tick();
             }
+        }
+
+        public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
+        {
+            base.PostPreApplyDamage(ref dinfo, out absorbed);
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -72,7 +66,8 @@ namespace AnomaliesExpected
                 {
                     action = delegate
                     {
-                        if (topOnBuildings.TryGetValue(TopOnBuildingStructureTypes.ClockHandSecond, out TopOnBuilding_Clockwork clockHandSecond))
+                        TopOnBuilding_Clockwork clockHandSecond = topOnBuildings.FirstOrDefault((TopOnBuilding_Clockwork tob) => tob.type == TopOnBuildingStructureTypes.ClockHandSecond);
+                        if (clockHandSecond != null)
                         {
                             clockHandSecond.ticksTillFullRotation = 1;
                         }
@@ -84,7 +79,8 @@ namespace AnomaliesExpected
                 {
                     action = delegate
                     {
-                        if (topOnBuildings.TryGetValue(TopOnBuildingStructureTypes.ClockHandMinute, out TopOnBuilding_Clockwork clockHandMinute))
+                        TopOnBuilding_Clockwork clockHandMinute = topOnBuildings.FirstOrDefault((TopOnBuilding_Clockwork tob) => tob.type == TopOnBuildingStructureTypes.ClockHandMinute);
+                        if (clockHandMinute != null)
                         {
                             clockHandMinute.ticksTillFullRotation = 1;
                         }
@@ -96,7 +92,8 @@ namespace AnomaliesExpected
                 {
                     action = delegate
                     {
-                        if (topOnBuildings.TryGetValue(TopOnBuildingStructureTypes.ClockHandHour, out TopOnBuilding_Clockwork clockHandHour))
+                        TopOnBuilding_Clockwork clockHandHour = topOnBuildings.FirstOrDefault((TopOnBuilding_Clockwork tob) => tob.type == TopOnBuildingStructureTypes.ClockHandHour);
+                        if (clockHandHour != null)
                         {
                             clockHandHour.ticksTillFullRotation = 1;
                         }
@@ -108,7 +105,8 @@ namespace AnomaliesExpected
                 {
                     action = delegate
                     {
-                        if (topOnBuildings.TryGetValue(TopOnBuildingStructureTypes.ClockHandActivity, out TopOnBuilding_Clockwork clockHandActivity))
+                        TopOnBuilding_Clockwork clockHandActivity = topOnBuildings.FirstOrDefault((TopOnBuilding_Clockwork tob) => tob.type == TopOnBuildingStructureTypes.ClockHandActivity);
+                        if (clockHandActivity != null)
                         {
                             clockHandActivity.ticksTillFullRotation = 1;
                         }
@@ -157,7 +155,22 @@ namespace AnomaliesExpected
         public override void PostExposeData()
         {
             base.PostExposeData();
-
+            Scribe_Collections.Look(ref topOnBuildings, "topOnBuildings", LookMode.Deep);
+            if (Scribe.mode == LoadSaveMode.LoadingVars)
+            {
+                foreach (TopOnBuilding topOnBuilding in topOnBuildings)
+                {
+                    TopOnBuildingStructure structure = Props.topOnBuildingStructures.FirstOrDefault((TopOnBuildingStructure tobs) => topOnBuilding != null && tobs.type == topOnBuilding.type);
+                    if (structure != null)
+                    {
+                        topOnBuilding.topOnBuildingStructure = structure;
+                    }
+                    else
+                    {
+                        Log.Error($"Couldn't find TopOnBuildingStructure for {(topOnBuilding == null ? "---" : topOnBuilding.type)}");
+                    }
+                }
+            }
         }
     }
 }

@@ -2,6 +2,11 @@
 {
     public class TopOnBuilding_ClockHandActivity : TopOnBuilding_Clockwork
     {
+
+        public TopOnBuilding_ClockHandActivity() : base()
+        {
+        }
+
         public TopOnBuilding_ClockHandActivity(TopOnBuildingStructure TopOnBuildingStructure) : base(TopOnBuildingStructure)
         {
         }

@@ -7,6 +7,10 @@ namespace AnomaliesExpected
     {
         public IntVec3 target;
 
+        public TopOnBuilding_ClockHandMinute() : base()
+        {
+        }
+
         public TopOnBuilding_ClockHandMinute(TopOnBuildingStructure TopOnBuildingStructure) : base(TopOnBuildingStructure)
         {
         }
@@ -18,6 +22,7 @@ namespace AnomaliesExpected
             target = map.mapPawns.FreeColonistsSpawned.RandomElement()?.Position ?? (position + IntVec3.North);
             Vector3 vector = (target.ToVector3Shifted() - position.ToVector3Shifted()).Yto0().normalized;
             CurRotation = vector.ToAngleFlat();
+            base.OnTimerEnd();
         }
 
         public override void OnWarmupEnd()
@@ -31,6 +36,13 @@ namespace AnomaliesExpected
                 zoneComp.StartAttack(compObelisk_Clockwork.parent, compObelisk_Clockwork.parent.def);
                 zoneComp.damageMult = compObelisk_Clockwork.Props.DamageMultActive;
             }
+            base.OnWarmupEnd();
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref target, "target");
         }
     }
 }
