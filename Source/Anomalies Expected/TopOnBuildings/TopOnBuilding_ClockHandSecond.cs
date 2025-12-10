@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -48,6 +49,12 @@ namespace AnomaliesExpected
             }
             GenExplosion.DoExplosion(position, map, map.Size.Magnitude, compObelisk_Clockwork.Props.damageDef, compObelisk_Clockwork.parent, damAmount: Mathf.RoundToInt(compObelisk_Clockwork.Props.damageAmountWave * (isActive ? compObelisk_Clockwork.Props.DamageMultActive : 1)), overrideCells: hitPoints, propagationSpeed: 3, weapon: compObelisk_Clockwork.parent.def);
             base.OnWarmupEnd();
+        }
+
+        public override void OnAwaken()
+        {
+            Messages.Message("Second", new TargetInfo(Obelisk_Clockwork.Position, Obelisk_Clockwork.Map), MessageTypeDefOf.NeutralEvent);
+            base.OnAwaken();
         }
 
         public override void ExposeData()

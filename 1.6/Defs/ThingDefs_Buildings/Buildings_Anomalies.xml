@@ -1658,6 +1658,7 @@
 						<drawSize>6</drawSize>
 						<drawRotation>90</drawRotation>
 						<tickPerFullRotation>900000</tickPerFullRotation>
+						<ticksTillAwaken>0</ticksTillAwaken>
 					</li>
 					<li>
 						<type>ClockHandHour</type>
@@ -1668,6 +1669,7 @@
 						<drawRotation>90</drawRotation>
 						<tickPerFullRotation>240000</tickPerFullRotation>
 						<tickPerWarmup>50</tickPerWarmup>
+						<ticksTillAwaken>16970</ticksTillAwaken>
 					</li>
 					<li>
 						<type>ClockHandMinute</type>
@@ -1678,6 +1680,7 @@
 						<drawRotation>90</drawRotation>
 						<tickPerFullRotation>120000</tickPerFullRotation>
 						<tickPerWarmup>50</tickPerWarmup>
+						<ticksTillAwaken>8656</ticksTillAwaken>
 					</li>
 					<li>
 						<type>ClockHandSecond</type>
@@ -1688,6 +1691,7 @@
 						<drawRotation>90</drawRotation>
 						<tickPerFullRotation>60000</tickPerFullRotation>
 						<tickPerWarmup>50</tickPerWarmup>
+						<ticksTillAwaken>1288</ticksTillAwaken>
 					</li>
 				</topOnBuildingStructures>
 				

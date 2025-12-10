@@ -99,6 +99,12 @@ namespace AnomaliesExpected
             base.OnWarmupEnd();
         }
 
+        public override void OnAwaken()
+        {
+            Messages.Message("Hour", new TargetInfo(Obelisk_Clockwork.Position, Obelisk_Clockwork.Map), MessageTypeDefOf.NeutralEvent);
+            base.OnAwaken();
+        }
+
         public override void ExposeData()
         {
             base.ExposeData();

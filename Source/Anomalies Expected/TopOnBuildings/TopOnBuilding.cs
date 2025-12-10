@@ -14,9 +14,13 @@ namespace AnomaliesExpected
 
         public float ticksTillFullRotation;
         public float ticksTillWarmup;
+        public float ticksTillAwaken;
+
+        public bool isAwaken;
 
         public virtual float ticksFullRotationPerTick => 1;
         public virtual float ticksWarmupPerTick => 1;
+        public bool isWarmup => ticksTillWarmup > 0;
 
         public float CurRotation
         {
@@ -48,27 +52,56 @@ namespace AnomaliesExpected
             topOnBuildingStructure = TopOnBuildingStructure;
             type = topOnBuildingStructure.type;
             ticksTillFullRotation = topOnBuildingStructure.tickPerFullRotation;
+            ticksTillAwaken = topOnBuildingStructure.ticksTillAwaken;
         }
 
         public virtual void Tick()
         {
-            if (ticksTillFullRotation > 0)
+            if (isAwaken)
             {
-                ticksTillFullRotation -= ticksFullRotationPerTick;
-                CurRotation = 360 * (1 - ticksTillFullRotation / topOnBuildingStructure.tickPerFullRotation) + InitialRotation;
-                if (ticksTillFullRotation <= 0)
+                if (ticksTillFullRotation > 0)
                 {
-                    OnTimerEnd();
+                    ticksTillFullRotation -= ticksFullRotationPerTick;
+                    CurRotation = 360 * (1 - ticksTillFullRotation / topOnBuildingStructure.tickPerFullRotation) + InitialRotation;
+                    if (ticksTillFullRotation <= 0)
+                    {
+                        OnTimerEnd();
+                    }
+                }
+                if (isWarmup)
+                {
+                    ticksTillWarmup -= ticksWarmupPerTick;
+                    if (ticksTillWarmup <= 0)
+                    {
+                        OnWarmupEnd();
+                    }
                 }
             }
-            else if (ticksTillWarmup > 0)
+            else
             {
-                ticksTillWarmup -= ticksWarmupPerTick;
-                if (ticksTillWarmup <= 0)
+                if (ticksTillAwaken > 0)
                 {
-                    OnWarmupEnd();
+                    ticksTillAwaken -= 1;
+                    if (ticksTillAwaken <= 0)
+                    {
+                        Awaken();
+                    }
                 }
             }
+        }
+
+        public void Awaken(bool enable = true)
+        {
+            if (!isAwaken && enable)
+            {
+                OnAwaken();
+            }
+            isAwaken = enable;
+        }
+
+        public virtual void OnAwaken()
+        {
+
         }
 
         public virtual void OnTimerEnd()
@@ -108,6 +141,8 @@ namespace AnomaliesExpected
             Scribe_Values.Look(ref curRotationInt, "curRotationInt", 0);
             Scribe_Values.Look(ref ticksTillFullRotation, "ticksTillFullRotation", 0);
             Scribe_Values.Look(ref ticksTillWarmup, "ticksTillWarmup", 0);
+            Scribe_Values.Look(ref ticksTillAwaken, "ticksTillAwaken", 0);
+            Scribe_Values.Look(ref isAwaken, "isAwaken", false);
         }
     }
 }

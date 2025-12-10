@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace AnomaliesExpected
@@ -37,6 +38,12 @@ namespace AnomaliesExpected
                 zoneComp.damageMult = compObelisk_Clockwork.Props.DamageMultActive;
             }
             base.OnWarmupEnd();
+        }
+
+        public override void OnAwaken()
+        {
+            Messages.Message("Minute", new TargetInfo(Obelisk_Clockwork.Position, Obelisk_Clockwork.Map), MessageTypeDefOf.NeutralEvent);
+            base.OnAwaken();
         }
 
         public override void ExposeData()
