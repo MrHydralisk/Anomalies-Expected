@@ -42,7 +42,7 @@ namespace AnomaliesExpected
 
         public override void OnAwaken()
         {
-            Messages.Message("Minute", new TargetInfo(Obelisk_Clockwork.Position, Obelisk_Clockwork.Map), MessageTypeDefOf.NeutralEvent);
+            Messages.Message("AnomaliesExpected.ObeliskClockwork.HandMinute.Awaken".Translate(), new TargetInfo(Obelisk_Clockwork.Position, Obelisk_Clockwork.Map), MessageTypeDefOf.NeutralEvent);
             base.OnAwaken();
         }
 
