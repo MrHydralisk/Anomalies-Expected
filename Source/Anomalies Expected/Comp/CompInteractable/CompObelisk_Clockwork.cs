@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace AnomaliesExpected
 {
@@ -48,6 +49,20 @@ namespace AnomaliesExpected
         public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
         {
             base.PostPreApplyDamage(ref dinfo, out absorbed);
+            if (parent.HitPoints - dinfo.Amount <= 0)
+            {
+                absorbed = true;
+                parent.HitPoints = parent.MaxHitPoints;
+                Notify_HitPointsExhausted();
+            }
+        }
+
+        public void Notify_HitPointsExhausted()
+        {
+            if (ActivityComp.IsActive)
+            {
+                ActivityComp.EnterPassiveState();
+            }
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -124,12 +139,14 @@ namespace AnomaliesExpected
 
         public void OnActivityActivated()
         {
-            Log.Message($"OnActivityActivated");
+            parent.HitPoints = parent.MaxHitPoints;
+            SoundDefOf.VoidNode_Explode.PlayOneShotOnCamera();
+            EffecterDefOf.VoidNodeDisrupted.SpawnMaintained(parent, parent.Map);
         }
 
         public void OnPassive()
         {
-            Log.Message($"OnPassive");
+            EffecterDefOf.VoidStructureActivated.Spawn(parent, parent.Map);
         }
 
         public bool ShouldGoPassive()

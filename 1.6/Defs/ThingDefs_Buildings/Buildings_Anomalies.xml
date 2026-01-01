@@ -1715,6 +1715,38 @@
 					</points>
 				</activityResearchFactorCurve>
 			</li>
+			<li Class="AnomaliesExpected.CompProperties_CanDestroyedAfterStudy">
+				<ticksToActivate>5000</ticksToActivate>
+				<maintainProgress>false</maintainProgress>
+				<activateTexPath>UI/Commands/LoadTransporter</activateTexPath>
+ 
+				<activateLabelString>Return Speedometer</activateLabelString>
+				<activateDescString>Will insert speedometer into slot. [Will destroy both]</activateDescString>
+				<guiLabelString>Choose who should return Speedometer.</guiLabelString>
+				<jobString>return Speedometer</jobString>
+				<activatingStringPending>returning Speedometer to {0}</activatingStringPending>
+				<activatingString>returning Speedometer to {0}: {1}s</activatingString>
+				<interactionProgressString>Returning Speedometer to</interactionProgressString>
+
+				<soundActivate>Building_Deconstructed</soundActivate>
+				<interactionEffecter>ConstructMetal</interactionEffecter>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<jobDef>AE_RemoveAnomaly</jobDef>
+				<minStudy>6</minStudy>
+				
+				<requiredThings>
+					<AE_Speedometer>1</AE_Speedometer>
+				</requiredThings>
+				
+				<DestroyMode>2</DestroyMode>
+			</li>
 		</comps>
 		<inspectorTabs>
 			<li>ITab_StudyNotes</li>
