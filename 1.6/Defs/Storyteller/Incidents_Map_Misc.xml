@@ -578,5 +578,34 @@
 			</li>
 		</modExtensions>
 	</IncidentDef>
+	
+	
+  
+	<IncidentDef>
+		<defName>AE_IncidentDef_ObeliskClockworkSpawn</defName>
+		<label>clockwork obelisk</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>AnomaliesExpected.IncidentWorker_DeployThingWithSkip</workerClass>
+		<letterLabel>Clockwork obelisk</letterLabel>
+		<letterText>Your colonist with speedometer noticed some object appeared nearby. At close inspection it seems like an obelisk with clockwork mechanism. However it was always there, so you not sure why they so surprised seeing it.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<earliestDay>120</earliestDay>
+		<baseChance>0</baseChance>
+		<requireColonistsPresent>True</requireColonistsPresent>
+		<minAnomalyThreatLevel>2</minAnomalyThreatLevel>
+		<minRefireDays>120</minRefireDays>
+		<modExtensions>
+			<li Class="AnomaliesExpected.IncidentDefExtension">
+				<DeployableThingDefs>
+					<li>AE_Obelisk_Clockwork</li>
+				</DeployableThingDefs>
+				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+				<FleckScale>0</FleckScale>
+			</li>
+		</modExtensions>
+	</IncidentDef>
 
 </Defs>

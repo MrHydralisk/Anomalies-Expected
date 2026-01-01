@@ -12,6 +12,10 @@ namespace AnomaliesExpected
 
         public List<AEEntityEntry> EntityEntries = new List<AEEntityEntry>();
 
+        public bool isHavingSpeedometer;
+        public Thing curClockworkObelisk;
+        public int tickTillClockworkCheck;
+
         public GameComponent_AnomaliesExpected(Game game)
         {
             instance = this;
@@ -29,6 +33,29 @@ namespace AnomaliesExpected
                     if (compAEStudyUnlocks != null)
                     {
                         SyncEntityEntry(compAEStudyUnlocks);
+                    }
+                    if (thing.def == ThingDefOfLocal.AE_Speedometer)
+                    {
+                        FoundSpeedometer(thing);
+                    }
+                }
+                foreach (Pawn pawn in map.mapPawns.AllPawns)
+                {
+                    foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
+                    {
+                        if (!(hediff is IThingHolder thingHolder))
+                        {
+                            continue;
+                        }
+                        ThingOwner thingOwner = thingHolder.GetDirectlyHeldThings();
+                        if (thingOwner.NullOrEmpty())
+                        {
+                            continue;
+                        }
+                        if (thingOwner.FirstOrDefault().def == ThingDefOfLocal.AE_Speedometer)
+                        {
+                            FoundSpeedometer(thingOwner.FirstOrDefault());
+                        }
                     }
                 }
             }
@@ -182,6 +209,28 @@ namespace AnomaliesExpected
         public AEEntityEntry GetEntityEntryFromEntityCodexEntryDef(EntityCodexEntryDef entityCodexEntryDef)
         {
             return EntityEntries.FirstOrDefault((AEEntityEntry aeee) => aeee.EntityCodexEntryDef == entityCodexEntryDef);
+        }
+
+        public override void GameComponentTick()
+        {
+            base.GameComponentTick();
+            if (Find.TickManager.TicksGame % 500 == 0)
+            {
+            }
+        }
+
+        public void FoundSpeedometer(Thing thing)
+        {
+            Comp_Speedometer comp_Speedometer = thing.TryGetComp<Comp_Speedometer>();
+            if (comp_Speedometer != null && !isHavingSpeedometer)
+            {
+                isHavingSpeedometer = true;
+                IncidentParms incidentParms = new IncidentParms();
+                incidentParms.target = comp_Speedometer.parent.MapHeld;
+                incidentParms.forced = true;
+                incidentParms.bypassStorytellerSettings = true;
+                Find.Storyteller.incidentQueue.Add(IncidentDefOfLocal.AE_IncidentDef_ObeliskClockworkSpawn, Find.TickManager.TicksGame, incidentParms);
+            }
         }
 
         public override void ExposeData()

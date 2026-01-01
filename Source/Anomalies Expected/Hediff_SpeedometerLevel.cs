@@ -1,14 +1,16 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
 
 namespace AnomaliesExpected
 {
-    public class Hediff_SpeedometerLevel : Hediff_Level
+    public class Hediff_SpeedometerLevel : Hediff_Level, IThingHolder
     {
-        public Thing Speedometer;
+        private ThingOwner<Thing> innerContainer;
+        public Thing Speedometer => innerContainer.InnerListForReading.FirstOrDefault() as ThingWithComps;
         public Comp_Speedometer SpeedometerComp => speedometerCompCached ?? (speedometerCompCached = Speedometer.TryGetComp<Comp_Speedometer>());
         private Comp_Speedometer speedometerCompCached;
 
@@ -31,7 +33,31 @@ namespace AnomaliesExpected
                 return isDestabilizeCached;
             }
         }
+
+        IThingHolder IThingHolder.ParentHolder => pawn;
+
         private bool isDestabilizeCached;
+
+        public void GetChildHolders(List<IThingHolder> outChildren)
+        {
+            ThingOwnerUtility.AppendThingHoldersFromThings(outChildren, GetDirectlyHeldThings());
+        }
+
+        public ThingOwner GetDirectlyHeldThings()
+        {
+            return innerContainer;
+        }
+
+        public Hediff_SpeedometerLevel()
+        {
+            innerContainer = new ThingOwner<Thing>(this, LookMode.Deep, removeContentsIfDestroyed: false);
+        }
+
+        public void AddSpeedometer(ThingWithComps speedometer)
+        {
+            speedometer.DeSpawn();
+            innerContainer.TryAdd(speedometer);
+        }
 
         public Texture UpdateActiveTexture()
         {
@@ -180,7 +206,24 @@ namespace AnomaliesExpected
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Deep.Look(ref Speedometer, "Speedometer");
+            Scribe_Deep.Look(ref innerContainer, "innerContainer", this);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit && innerContainer.removeContentsIfDestroyed)
+            {
+                innerContainer.removeContentsIfDestroyed = false;
+            }
+            if (Scribe.mode == LoadSaveMode.LoadingVars) // Backcompat
+            {
+                Thing speedometer = null;
+                Scribe_Deep.Look(ref speedometer, "Speedometer");
+                if (speedometer != null)
+                {
+                    if (innerContainer == null)
+                    {
+                        innerContainer = new ThingOwner<Thing>(this, LookMode.Deep, removeContentsIfDestroyed: false);
+                    }
+                    innerContainer.TryAdd(speedometer);
+                }
+            }
             Scribe_Values.Look(ref maxLevel, "maxLevel");
         }
     }

@@ -29,6 +29,7 @@ namespace AnomaliesExpected
             base.PostPostMake();
             TickNextDeceleration = Find.TickManager.TicksGame + (int)Props.DecelerationIntervalRange.Average;
             parent.overrideGraphicIndex = 0;
+            GameComponent_AnomaliesExpected.instance.FoundSpeedometer(parent);
         }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -171,7 +172,7 @@ namespace AnomaliesExpected
         protected override void OnInteracted(Pawn caster)
         {
             Hediff_SpeedometerLevel hediff_SpeedometerLevel = GiveHediff(caster, Props.AccelerationHediffDef) as Hediff_SpeedometerLevel;
-            hediff_SpeedometerLevel.Speedometer = parent;
+            hediff_SpeedometerLevel.AddSpeedometer(parent);
             hediff_SpeedometerLevel.SetLevelTo(1);
             TickNextAction = Find.TickManager.TicksGame + Props.tickPerAction;
             TickCanRemove = Find.TickManager.TicksGame + Props.tickPerAction;
@@ -180,7 +181,6 @@ namespace AnomaliesExpected
                 deceleratedPawns[i]?.health?.hediffSet?.hediffs?.RemoveAll((Hediff h) => h.def == Props.DecelerationHediffDef);
             }
             deceleratedPawns.Clear();
-            parent.DeSpawn();
         }
 
         public override AcceptanceReport CanInteract(Pawn activateBy = null, bool checkOptionalItems = true)
