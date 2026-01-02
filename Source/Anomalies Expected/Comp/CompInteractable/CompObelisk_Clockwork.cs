@@ -26,6 +26,21 @@ namespace AnomaliesExpected
                 topOnBuilding.Obelisk_Clockwork = parent;
                 topOnBuildings.Add(topOnBuilding);
             }
+            GameComponent_AnomaliesExpected.instance.curClockworkObelisk = parent;
+        }
+
+        public override void PostDestroy(DestroyMode mode, Map previousMap)
+        {
+            GameComponent_AnomaliesExpected.instance.curClockworkObelisk = null;
+            if (GameComponent_AnomaliesExpected.instance.isHavingSpeedometer)
+            {
+                GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck = Mathf.Max(GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck, Find.TickManager.TicksGame + 1800000);
+            }
+            else
+            {
+                GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck = -1;
+            }
+            base.PostDestroy(mode, previousMap);
         }
 
         public override void DrawAt(Vector3 drawLoc, bool flip = false)

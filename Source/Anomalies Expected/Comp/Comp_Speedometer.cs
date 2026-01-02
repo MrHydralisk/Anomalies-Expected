@@ -49,6 +49,12 @@ namespace AnomaliesExpected
             }
         }
 
+        public override void PostDestroy(DestroyMode mode, Map previousMap)
+        {
+            GameComponent_AnomaliesExpected.instance.isHavingSpeedometer = false;
+            base.PostDestroy(mode, previousMap);
+        }
+
         public override void CompTick()
         {
             base.CompTick();
