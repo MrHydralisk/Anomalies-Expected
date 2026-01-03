@@ -19,6 +19,8 @@ namespace AnomaliesExpected
         public TopOnBuilding_Clockwork ClockHandHour => clockHandHourCached ?? (clockHandHourCached = topOnBuildings.FirstOrDefault((TopOnBuilding_Clockwork tob) => tob.type == TopOnBuildingStructureTypes.ClockHandHour));
         private TopOnBuilding_Clockwork clockHandHourCached;
 
+        private bool isDeactivated = false;
+
         public override void PostPostMake()
         {
             base.PostPostMake();
@@ -40,15 +42,9 @@ namespace AnomaliesExpected
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
             GameComponent_AnomaliesExpected.instance.curClockworkObelisk = null;
-            if (GameComponent_AnomaliesExpected.instance.isHavingSpeedometer)
+            if (!isDeactivated)
             {
-                //Log.Message($"Clockwork PostDestroy Mathf.Max({GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck}, {Find.TickManager.TicksGame + 1800000})");
-                GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck = Mathf.Max(GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck, Find.TickManager.TicksGame + 20000/*1800000*/);
-            }
-            else
-            {
-                //Log.Message($"Clockwork PostDestroy -1");
-                GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck = -1;
+                GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck = Find.TickManager.TicksGame + 20000;
             }
             base.PostDestroy(mode, previousMap);
         }
@@ -160,6 +156,9 @@ namespace AnomaliesExpected
                 defaultDesc = "AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Desc".Translate(),
                 action = delegate
                 {
+                    isDeactivated = true;
+                    //Log.Message($"Clockwork PostDestroy -1");
+                    GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck = -1;
                     GetSpeedometer(Props.SpeedometerDef).Destroy();
                     parent.Destroy();
                 },
@@ -174,6 +173,9 @@ namespace AnomaliesExpected
                 defaultDesc = "AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Desc".Translate(),
                 action = delegate
                 {
+                    isDeactivated = true;
+                    //Log.Message($"Clockwork PostDestroy Mathf.Max({GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck}, {Find.TickManager.TicksGame + 1800000})");
+                    GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck = Mathf.Max(GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck, Find.TickManager.TicksGame + 20000/*1800000*/);
                     GetSpeedometer(Props.DecoySpeedometerDef).Destroy();
                     parent.Destroy();
                 },
