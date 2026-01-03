@@ -129,6 +129,21 @@ namespace AnomaliesExpected
             }
         }
 
+        public Thing GetSpeedometer(ThingDef speedometerDef)
+        {
+            Thing speedometer = null;
+            foreach (IntVec3 iv3 in GenAdjFast.AdjacentCells8Way(parent.Position, parent.Rotation, parent.def.Size))
+            {
+                speedometer = parent.Map.thingGrid.ThingsListAtFast(iv3).FirstOrDefault((Thing t) => t.def == speedometerDef);
+                if (speedometer != null)
+                {
+                    break;
+                }
+            }
+            return speedometer;
+        } 
+
+
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             foreach (Gizmo gizmo in base.CompGetGizmosExtra())
@@ -141,14 +156,31 @@ namespace AnomaliesExpected
             }
             yield return new Command_Action
             {
+                defaultLabel = "AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Label".Translate(),
+                defaultDesc = "AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Desc".Translate(),
+                action = delegate
+                {
+                    GetSpeedometer(Props.SpeedometerDef).Destroy();
+                    parent.Destroy();
+                },
+                activateSound = SoundDefOf.Tick_Tiny,
+                icon = Props.SpeedometerDef.uiIcon,
+                Disabled = GetSpeedometer(Props.SpeedometerDef) == null,
+                disabledReason = "AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Disabled".Translate(Props.SpeedometerDef.label)
+            };
+            yield return new Command_Action
+            {
                 defaultLabel = "AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Label".Translate(),
                 defaultDesc = "AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Desc".Translate(),
                 action = delegate
                 {
+                    GetSpeedometer(Props.DecoySpeedometerDef).Destroy();
                     parent.Destroy();
                 },
-                Disabled = !Props.fakeSpeedometerResearch.IsFinished,
-                disabledReason = "AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Disabled".Translate()
+                activateSound = SoundDefOf.Tick_Tiny,
+                icon = Props.DecoySpeedometerDef.uiIcon,
+                Disabled = !Props.fakeSpeedometerResearch.IsFinished || GetSpeedometer(Props.DecoySpeedometerDef) == null,
+                disabledReason = Props.fakeSpeedometerResearch.IsFinished ? "AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Disabled".Translate(Props.DecoySpeedometerDef.label) : "AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Disabled".Translate()
             };
             if (DebugSettings.ShowDevGizmos)
             {

@@ -6,7 +6,11 @@
 	
 	<AnomaliesExpected.ObeliskClockwork.Message.NewObeliskResearchReset>{0} has adapted to the decoy's frequency. We must initiate fresh research to find alternative.</AnomaliesExpected.ObeliskClockwork.Message.NewObeliskResearchReset>
 	
+	<AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Label>Place a speedometer into the obelisk.</AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Label>
+	<AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Desc>Insert a real speedometer into the obelisk's socket. Speedometer must be placed next to obelisk. [Will destroy both]</AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Desc>
+	<AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Disabled>No {0} placed nearby.</AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Disabled>
+	
 	<AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Label>Place a decoy speedometer into the obelisk.</AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Label>
-	<AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Desc>Insert a specially designed device that simulates the speedometer's chrono-effect frequency into the obelisk's socket.</AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Desc>
+	<AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Desc>Insert a specially designed device that simulates the speedometer's chrono-effect frequency into the obelisk's socket. Decoy must be placed next to obelisk. [Will destroy it]</AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Desc>
 	<AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Disabled>Research to find decoy's frequency not finished.</AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Disabled>
 </LanguageData>

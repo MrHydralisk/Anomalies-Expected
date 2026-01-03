@@ -1627,16 +1627,16 @@
 		
 				<activeTicks>250</activeTicks>
 				<cooldownTicks>10000</cooldownTicks>
-				<ticksToActivate>250</ticksToActivate>
-				<activateTexPath>Things/Building/AE_MeatGrinder</activateTexPath>
+				<ticksToActivate>750</ticksToActivate>
+				<activateTexPath>UI/Icons/AE_SpeedometerDrop_Icon</activateTexPath>
  
-				<activateLabelString>Press button</activateLabelString>
-				<activateDescString>Press button to activate machine.</activateDescString>
-				<guiLabelString>Choose who should activate this.</guiLabelString>
-				<jobString>press button</jobString>
-				<activatingStringPending>pressing button {0}</activatingStringPending>
-				<activatingString>pressing button {0}: {1}s</activatingString>
-				<onCooldownString>reactivating</onCooldownString>
+				<activateLabelString>Break using speedometer.</activateLabelString>
+				<activateDescString>Person with implanted speedometer will try to break obelisk's socket using max speed. [Will destroy both, but leave a piece]</activateDescString>
+				<guiLabelString>Choose person with implanted speedometer.</guiLabelString>
+				<jobString>break obelisk</jobString>
+				<activatingStringPending>breaking {0}</activatingStringPending>
+				<activatingString>breaking {0}: {1}s</activatingString>
+				<onCooldownString>restoring</onCooldownString>
 
 				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
 				<fleckOnUsedScale>4</fleckOnUsedScale>
@@ -1701,6 +1701,8 @@
 				
 				<ticksFullRotationPerActiveTick>4</ticksFullRotationPerActiveTick>
 				<MinuteHandZoneDef>AEAgingZone</MinuteHandZoneDef>
+				<SpeedometerDef>AE_Speedometer</SpeedometerDef>
+				<DecoySpeedometerDef>AE_Speedometer</DecoySpeedometerDef>
 				<damageDef>AEAging</damageDef>
 				<damageAmountWave>10</damageAmountWave>
 				<DamageMultActive>2</DamageMultActive>
@@ -1721,38 +1723,6 @@
 						<li>0.99, 2</li>
 					</points>
 				</activityResearchFactorCurve>
-			</li>
-			<li Class="AnomaliesExpected.CompProperties_CanDestroyedAfterStudy">
-				<ticksToActivate>5000</ticksToActivate>
-				<maintainProgress>false</maintainProgress>
-				<activateTexPath>UI/Commands/LoadTransporter</activateTexPath>
- 
-				<activateLabelString>Return Speedometer</activateLabelString>
-				<activateDescString>Will insert speedometer into slot. [Will destroy both]</activateDescString>
-				<guiLabelString>Choose who should return Speedometer.</guiLabelString>
-				<jobString>return Speedometer</jobString>
-				<activatingStringPending>returning Speedometer to {0}</activatingStringPending>
-				<activatingString>returning Speedometer to {0}: {1}s</activatingString>
-				<interactionProgressString>Returning Speedometer to</interactionProgressString>
-
-				<soundActivate>Building_Deconstructed</soundActivate>
-				<interactionEffecter>ConstructMetal</interactionEffecter>
-
-				<targetingParameters>
-					<canTargetBuildings>false</canTargetBuildings>
-					<canTargetAnimals>false</canTargetAnimals>
-					<canTargetMechs>false</canTargetMechs>
-					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
-				</targetingParameters>
-				
-				<jobDef>AE_RemoveAnomaly</jobDef>
-				<minStudy>6</minStudy>
-				
-				<requiredThings>
-					<AE_Speedometer>1</AE_Speedometer>
-				</requiredThings>
-				
-				<DestroyMode>2</DestroyMode>
 			</li>
 		</comps>
 		<inspectorTabs>

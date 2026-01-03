@@ -12,6 +12,8 @@ namespace AnomaliesExpected
         public int sizeLocation = 60;
         public float ticksFullRotationPerActiveTick = 2;
         public ThingDef MinuteHandZoneDef;
+        public ThingDef SpeedometerDef;
+        public ThingDef DecoySpeedometerDef;
         public DamageDef damageDef;
         public int damageAmountWave;
         public float DamageMultActive = 2;
