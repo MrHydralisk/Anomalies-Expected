@@ -27,6 +27,11 @@ namespace AnomaliesExpected
                 topOnBuildings.Add(topOnBuilding);
             }
             GameComponent_AnomaliesExpected.instance.curClockworkObelisk = parent;
+            if (Props.fakeSpeedometerResearch.ProgressPercent > 0.1)
+            {
+                Messages.Message("AnomaliesExpected.ObeliskClockwork.Message.NewObeliskResearchReset".Translate(parent.Label), parent, MessageTypeDefOf.NeutralEvent);
+            }
+            Find.ResearchManager.ApplyKnowledge(Props.fakeSpeedometerResearch, -Find.ResearchManager.GetKnowledge(Props.fakeSpeedometerResearch), out _);
         }
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
@@ -34,10 +39,12 @@ namespace AnomaliesExpected
             GameComponent_AnomaliesExpected.instance.curClockworkObelisk = null;
             if (GameComponent_AnomaliesExpected.instance.isHavingSpeedometer)
             {
-                GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck = Mathf.Max(GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck, Find.TickManager.TicksGame + 1800000);
+                //Log.Message($"Clockwork PostDestroy Mathf.Max({GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck}, {Find.TickManager.TicksGame + 1800000})");
+                GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck = Mathf.Max(GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck, Find.TickManager.TicksGame + 20000/*1800000*/);
             }
             else
             {
+                //Log.Message($"Clockwork PostDestroy -1");
                 GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck = -1;
             }
             base.PostDestroy(mode, previousMap);
@@ -90,6 +97,17 @@ namespace AnomaliesExpected
                 }
                 yield return gizmo;
             }
+            yield return new Command_Action
+            {
+                defaultLabel = "AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Label".Translate(),
+                defaultDesc = "AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Desc".Translate(),
+                action = delegate
+                {
+                    parent.Destroy();
+                },
+                Disabled = !Props.fakeSpeedometerResearch.IsFinished,
+                disabledReason = "AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Disabled".Translate()
+            };
             if (DebugSettings.ShowDevGizmos)
             {
                 yield return new Command_Action

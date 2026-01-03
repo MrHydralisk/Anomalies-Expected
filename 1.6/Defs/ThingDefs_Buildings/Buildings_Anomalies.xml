@@ -1700,6 +1700,7 @@
 				<damageDef>AEAging</damageDef>
 				<damageAmountWave>10</damageAmountWave>
 				<DamageMultActive>2</DamageMultActive>
+				<fakeSpeedometerResearch>AEAnalyzeClockworkEmission</fakeSpeedometerResearch>
 			</li>
 			<li Class="CompProperties_Activity">
 				<startingRange>0.2~0.4</startingRange>

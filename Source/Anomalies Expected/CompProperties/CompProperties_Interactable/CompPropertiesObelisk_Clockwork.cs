@@ -16,6 +16,7 @@ namespace AnomaliesExpected
         public int damageAmountWave;
         public float DamageMultActive = 2;
         public float teleportationFleckRadius = 2f;
+        public ResearchProjectDef fakeSpeedometerResearch;
 
         public CompPropertiesObelisk_Clockwork()
         {
