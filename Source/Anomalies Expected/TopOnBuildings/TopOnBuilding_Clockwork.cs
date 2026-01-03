@@ -12,6 +12,23 @@ namespace AnomaliesExpected
 
         public override float ticksFullRotationPerTick => isActive ? compObelisk_Clockwork.Props.ticksFullRotationPerActiveTick : 1;
 
+        public virtual void Rotate(float amount, bool isFromDamage = false)
+        {
+            if (ticksTillFullRotation > 0)
+            {
+                amount = amount * ticksFullRotationPerTick;
+                if (isFromDamage)
+                {
+                    amount = amount * topOnBuildingStructure.rotationPerDmgMult;
+                }
+                ticksTillFullRotation -= amount;
+                if (ticksTillFullRotation <= 0)
+                {
+                    OnTimerEnd();
+                }
+            }
+        }
+
         public TopOnBuilding_Clockwork() : base()
         {
         }

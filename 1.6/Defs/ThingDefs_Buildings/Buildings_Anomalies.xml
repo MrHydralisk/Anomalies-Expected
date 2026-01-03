@@ -1602,7 +1602,7 @@
 		<fillPercent>0.5</fillPercent>
 		<rotatable>false</rotatable>
 		<statBases>
-			<MaxHitPoints>3000</MaxHitPoints>
+			<MaxHitPoints>20000</MaxHitPoints>
 			<Flammability>0</Flammability>
 			<MeditationFocusStrength>0.3</MeditationFocusStrength>
 		</statBases>
@@ -1659,6 +1659,7 @@
 						<drawRotation>90</drawRotation>
 						<tickPerFullRotation>900000</tickPerFullRotation>
 						<ticksTillAwaken>0</ticksTillAwaken>
+						<rotationPerDmgMult>60</rotationPerDmgMult>
 					</li>
 					<li>
 						<type>ClockHandHour</type>
@@ -1670,6 +1671,7 @@
 						<tickPerFullRotation>240000</tickPerFullRotation>
 						<tickPerWarmup>50</tickPerWarmup>
 						<ticksTillAwaken>16970</ticksTillAwaken>
+						<rotationPerDmgMult>6</rotationPerDmgMult>
 					</li>
 					<li>
 						<type>ClockHandMinute</type>
@@ -1681,6 +1683,7 @@
 						<tickPerFullRotation>120000</tickPerFullRotation>
 						<tickPerWarmup>50</tickPerWarmup>
 						<ticksTillAwaken>8656</ticksTillAwaken>
+						<rotationPerDmgMult>6</rotationPerDmgMult>
 					</li>
 					<li>
 						<type>ClockHandSecond</type>
@@ -1692,6 +1695,7 @@
 						<tickPerFullRotation>60000</tickPerFullRotation>
 						<tickPerWarmup>50</tickPerWarmup>
 						<ticksTillAwaken>1288</ticksTillAwaken>
+						<rotationPerDmgMult>8</rotationPerDmgMult>
 					</li>
 				</topOnBuildingStructures>
 				

@@ -30,5 +30,6 @@ namespace AnomaliesExpected
         public int tickPerFullRotation = 500;
         public int tickPerWarmup = -1;
         public int ticksTillAwaken = -1;
+        public float rotationPerDmgMult = 1;
     }
 }

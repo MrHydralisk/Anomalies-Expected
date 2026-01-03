@@ -84,8 +84,15 @@ namespace AnomaliesExpected
         {
             if (!Speedometer.DestroyedOrNull())
             {
-                GenPlace.TryPlaceThing(Speedometer, pawn.PositionHeld, pawn.MapHeld, ThingPlaceMode.Near, null);
                 SpeedometerComp.CooldownsStart(maxLevel);
+                if (!innerContainer.TryDrop(Speedometer, pawn.PositionHeld, pawn.MapHeld, ThingPlaceMode.Near, out var lastResultingThing))
+                {
+                    if (!RCellFinder.TryFindRandomCellNearWith(pawn.PositionHeld, (IntVec3 c) => c.Standable(pawn.MapHeld), pawn.MapHeld, out var result, 1))
+                    {
+                        Debug.LogError("Could not drop Speedometer!");
+                    }
+                    lastResultingThing = GenSpawn.Spawn(innerContainer.Take(Speedometer), result, pawn.MapHeld);
+                }
             }
             base.PostRemoved();
         }
