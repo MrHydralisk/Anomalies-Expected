@@ -101,5 +101,69 @@
 			<color>(0.67, 0.819, 0.953, 0.7)</color>
 		</graphicData>
 	</FleckDef>
+	
+	
+
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>Fleck_AECollapsingRing</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<fadeInTime>0.1</fadeInTime>
+		<solidTime>1</solidTime>
+		<fadeOutTime>0.04</fadeOutTime>
+		<growthRate>-3</growthRate>
+		<graphicData>
+			<texPath>Things/Mote/HoraxianLineGlow</texPath>
+			<graphicClass>Graphic_FleckPulse</graphicClass>
+			<shaderType>MoteMultiplyAddCircular</shaderType>
+			<color>(1, 1, 1, .1)</color>
+			<shaderParameters>
+				<_DistortionTex>/Things/Mote/RadiationDistortion_A</_DistortionTex>
+				<_texAScale>0.5</_texAScale>
+				<_texBScale>2</_texBScale>
+				<_texAScrollSpeed>0</_texAScrollSpeed>
+				<_texBScrollSpeed>-0.4</_texBScrollSpeed>
+				<_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+				<_Intensity>0.5</_Intensity>
+				<_InnerFadeAmount>0</_InnerFadeAmount>
+				<_DistortionIntensity>0.5</_DistortionIntensity>
+				<_TexAScaleDivisorPerProgress>1.5</_TexAScaleDivisorPerProgress>
+				<_brightnessMultiplier>.15</_brightnessMultiplier>
+				<_noiseIntensity>10</_noiseIntensity>
+				<_ageToNoiseRatio>2</_ageToNoiseRatio>
+			</shaderParameters>
+			<drawSize>6</drawSize>
+		</graphicData>
+	</FleckDef>
+
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>Fleck_AEExpandingRing</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<fadeInTime>0.1</fadeInTime>
+		<solidTime>1</solidTime>
+		<fadeOutTime>0.04</fadeOutTime>
+		<growthRate>5</growthRate>
+		<graphicData>
+			<texPath>Things/Mote/HoraxianLineGlow</texPath>
+			<graphicClass>Graphic_FleckPulse</graphicClass>
+			<shaderType>MoteMultiplyAddCircular</shaderType>
+			<color>(1, 1, 1, .1)</color>
+			<shaderParameters>
+				<_DistortionTex>/Things/Mote/RadiationDistortion_A</_DistortionTex>
+				<_texAScale>0.5</_texAScale>
+				<_texBScale>2</_texBScale>
+				<_texAScrollSpeed>0</_texAScrollSpeed>
+				<_texBScrollSpeed>-0.4</_texBScrollSpeed>
+				<_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+				<_Intensity>0.5</_Intensity>
+				<_InnerFadeAmount>0</_InnerFadeAmount>
+				<_DistortionIntensity>0.5</_DistortionIntensity>
+				<_TexAScaleDivisorPerProgress>1.5</_TexAScaleDivisorPerProgress>
+				<_brightnessMultiplier>.15</_brightnessMultiplier>
+				<_noiseIntensity>10</_noiseIntensity>
+				<_ageToNoiseRatio>2</_ageToNoiseRatio>
+			</shaderParameters>
+			<drawSize>6</drawSize>
+		</graphicData>
+	</FleckDef>
   
 </Defs>

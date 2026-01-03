@@ -210,5 +210,53 @@
 			</li>
 		</children>
 	</EffecterDef>
+	
+	
+  
+	<EffecterDef>
+		<defName>AE_ClockworkObeliskAwaken</defName>
+		<maintainTicks>720</maintainTicks>
+		<children>
+			<!-- PULSE INWARD -->
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+				<fleckDef>Fleck_AECollapsingRing</fleckDef>
+				<initialDelayTicks>5</initialDelayTicks>
+				<burstCount>1</burstCount>
+				<positionOffset>(0, -.1, 0)</positionOffset>
+				<positionRadius>0</positionRadius>
+				<positionRadiusMin>0</positionRadiusMin>
+				<scale>5</scale>
+				<speed>0~0</speed>
+				<rotation>0</rotation>
+				<rotationRate>0</rotationRate>
+				<angle>0~0</angle>
+				<spawnLocType>OnSource</spawnLocType>
+			</li>
+		</children>
+	</EffecterDef>
+  
+	<EffecterDef>
+		<defName>AE_ClockworkObeliskPassive</defName>
+		<maintainTicks>720</maintainTicks>
+		<children>
+			<!-- PULSE OUTWARD -->
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+				<fleckDef>Fleck_AEExpandingRing</fleckDef>
+				<initialDelayTicks>5</initialDelayTicks>
+				<burstCount>1</burstCount>
+				<positionOffset>(0, .1, 0)</positionOffset>
+				<positionRadius>0</positionRadius>
+				<positionRadiusMin>0</positionRadiusMin>
+				<scale>1</scale>
+				<speed>0~0</speed>
+				<rotation>0</rotation>
+				<rotationRate>0</rotationRate>
+				<angle>0~0</angle>
+				<spawnLocType>OnSource</spawnLocType>
+			</li>
+		</children>
+	</EffecterDef>
   
 </Defs>

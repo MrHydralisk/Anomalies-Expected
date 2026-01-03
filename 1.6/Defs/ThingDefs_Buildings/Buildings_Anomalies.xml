@@ -1705,6 +1705,8 @@
 				<damageAmountWave>10</damageAmountWave>
 				<DamageMultActive>2</DamageMultActive>
 				<fakeSpeedometerResearch>AEAnalyzeClockworkEmission</fakeSpeedometerResearch>
+				<EffecterOnActive>AE_ClockworkObeliskAwaken</EffecterOnActive>
+				<EffecterOnPassive>AE_ClockworkObeliskPassive</EffecterOnPassive>
 			</li>
 			<li Class="CompProperties_Activity">
 				<startingRange>0.2~0.4</startingRange>

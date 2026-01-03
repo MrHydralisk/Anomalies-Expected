@@ -216,7 +216,7 @@ namespace AnomaliesExpected
         {
             parent.HitPoints = parent.MaxHitPoints;
             SoundDefOf.VoidNode_Explode.PlayOneShotOnCamera();
-            EffecterDefOf.VoidNodeDisrupted.SpawnMaintained(parent, parent.Map);
+            Props.EffecterOnActive.SpawnMaintained(parent, parent.Map);
         }
 
         public void OnPassive()
@@ -226,7 +226,7 @@ namespace AnomaliesExpected
             {
                 clockHandActivity.ticksTillFullRotation = clockHandActivity.topOnBuildingStructure.tickPerFullRotation;
             }
-            EffecterDefOf.VoidStructureActivated.Spawn(parent, parent.Map);
+            Props.EffecterOnPassive.SpawnMaintained(parent, parent.Map);
         }
 
         public bool ShouldGoPassive()
