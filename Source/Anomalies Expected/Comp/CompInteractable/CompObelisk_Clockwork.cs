@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
+using Verse.Noise;
 using Verse.Sound;
 
 namespace AnomaliesExpected
@@ -262,6 +263,14 @@ namespace AnomaliesExpected
                 }
             }
             caster.Destroy();
+            Find.TickManager.Pause();
+            Thing weapon = ThingMaker.MakeThing(Props.WeaponDef);
+            bool isPlaced = GenPlace.TryPlaceThing(weapon, caster.PositionHeld, caster.MapHeld, ThingPlaceMode.Near, null);
+            ChoiceLetter letterEnd = LetterMaker.MakeLetter("AnomaliesExpected.ObeliskClockwork.EndGame.Label".Translate(), "AnomaliesExpected.ObeliskClockwork.EndGame.Text".Translate(caster.LabelShortCap, parent.LabelCap), LetterDefOf.GameEnded, isPlaced ? weapon : caster);
+            ChoiceLetter letterWeapon = LetterMaker.MakeLetter("AnomaliesExpected.ObeliskClockwork.Clockhand.Label".Translate(), "AnomaliesExpected.ObeliskClockwork.Clockhand.Text".Translate(), LetterDefOf.NeutralEvent, isPlaced ? weapon : caster);
+            Find.LetterStack.ReceiveLetter(letterEnd);
+            letterEnd.OpenLetter();
+            Find.LetterStack.ReceiveLetter(letterWeapon);
             parent.Destroy();
         }
 
