@@ -243,7 +243,43 @@ namespace AnomaliesExpected
 
         protected override void OnInteracted(Pawn caster)
         {
+            isDeactivated = true;
+            GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck = -1;
+            foreach (Hediff hediff in caster.health.hediffSet.hediffs)
+            {
+                if (!(hediff is IThingHolder thingHolder))
+                {
+                    continue;
+                }
+                ThingOwner thingOwner = thingHolder.GetDirectlyHeldThings();
+                if (thingOwner.NullOrEmpty())
+                {
+                    continue;
+                }
+                if (thingOwner.FirstOrDefault().def == ThingDefOfLocal.AE_Speedometer)
+                {
+                    thingOwner.ClearAndDestroyContents();
+                }
+            }
+            caster.Destroy();
+            parent.Destroy();
+        }
 
+        public override AcceptanceReport CanInteract(Pawn activateBy = null, bool checkOptionalItems = true)
+        {
+            AcceptanceReport result = base.CanInteract(activateBy, checkOptionalItems);
+            if (!result.Accepted)
+            {
+                return result;
+            }
+            if (activateBy != null)
+            {
+                if (!activateBy.health.hediffSet.hediffs.Any((Hediff h) => h is IThingHolder thingHolder && thingHolder.GetDirectlyHeldThings().Any((Thing t) => t.def == Props.SpeedometerDef)))
+                {
+                    return "MissingMaterials".Translate(Props.SpeedometerDef.label);
+                }
+            }
+            return true;
         }
 
         public void OnActivityActivated()
