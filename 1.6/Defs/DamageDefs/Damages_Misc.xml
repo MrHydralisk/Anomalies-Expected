@@ -182,7 +182,7 @@
 		<label>rapid aging</label>
 		<workerClass>AnomaliesExpected.DamageWorker_Aging</workerClass>
 		<externalViolence>true</externalViolence>
-		<deathMessage>{0} has succumbed to freezing.</deathMessage>
+		<deathMessage>{0} has succumbed to rapid aging.</deathMessage>
 		<hediff>AEAging</hediff>
 		<makesBlood>false</makesBlood>
 		<isRanged>true</isRanged>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="BaseMeleeWeapon">
+		<defName>MeleeWeapon_AEClockworkHand</defName>
+		<label>clockwork hand</label>
+		<description>The weapon made out of thin ice shard, the ice sword can be used for slashing or stabbing. During attack it will spill nitrogen into the wound to make it more fragile for further attacks. Replicating blades of SA-04.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponMelee/AEIceSword</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<equippedAngleOffset>-65</equippedAngleOffset>
+		<possessionCount>1</possessionCount>
+		<techLevel>Ultra</techLevel>
+		<statBases>
+			<Mass>2</Mass>
+		</statBases>
+		<tools>
+			<li>
+				<label>edge</label>
+				<capacities>
+					<li>AEChronoDistortion</li>
+				</capacities>
+				<power>25</power>
+				<cooldownTime>3</cooldownTime>
+			</li>
+		</tools>
+		<tradeTags Inherit="False"/>
+		<weaponTags Inherit="False"/>
+		<smeltable>false</smeltable>
+		<genericMarketSellable>false</genericMarketSellable>
+		<tradeability>Sellable</tradeability>
+		<recipeMaker Inherit="False" IsNull="True"/>
+		<thingCategories>
+			<li>AEWeaponsAnomalies</li>
+		</thingCategories>
+	</ThingDef>
+  
+</Defs>

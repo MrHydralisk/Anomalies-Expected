@@ -10,5 +10,12 @@
 		<defName>AEFreezingStab</defName>
 		<label>freezing stab</label>
 	</ToolCapacityDef>
+	
+	
+
+	<ToolCapacityDef>
+		<defName>AEChronoDistortion</defName>
+		<label>chrono distortion</label>
+	</ToolCapacityDef>
 
 </Defs>

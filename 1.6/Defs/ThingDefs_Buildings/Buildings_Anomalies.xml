@@ -1703,7 +1703,7 @@
 				<MinuteHandZoneDef>AEAgingZone</MinuteHandZoneDef>
 				<SpeedometerDef>AE_Speedometer</SpeedometerDef>
 				<DecoySpeedometerDef>AE_Speedometer</DecoySpeedometerDef>
-				<WeaponDef>Gun_MiniTurret</WeaponDef>
+				<ClockworkPartDef>AE_Clockworkparts</ClockworkPartDef>
 				<damageDef>AEAging</damageDef>
 				<damageAmountWave>10</damageAmountWave>
 				<DamageMultActive>2</DamageMultActive>

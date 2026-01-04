@@ -14,7 +14,7 @@ namespace AnomaliesExpected
         public ThingDef MinuteHandZoneDef;
         public ThingDef SpeedometerDef;
         public ThingDef DecoySpeedometerDef;
-        public ThingDef WeaponDef;
+        public ThingDef ClockworkPartDef;
         public DamageDef damageDef;
         public int damageAmountWave;
         public float DamageMultActive = 2;
