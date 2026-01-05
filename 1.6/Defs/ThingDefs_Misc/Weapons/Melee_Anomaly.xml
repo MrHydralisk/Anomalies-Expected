@@ -6,7 +6,7 @@
 		<label>clockwork hand</label>
 		<description>The weapon made out of thin ice shard, the ice sword can be used for slashing or stabbing. During attack it will spill nitrogen into the wound to make it more fragile for further attacks. Replicating blades of SA-04.</description>
 		<graphicData>
-			<texPath>Things/Item/Equipment/WeaponMelee/AEIceSword</texPath>
+			<texPath>Things/Item/Equipment/WeaponMelee/AEClockworkHand</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<equippedAngleOffset>-65</equippedAngleOffset>
