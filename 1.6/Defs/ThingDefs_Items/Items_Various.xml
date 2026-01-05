@@ -877,6 +877,40 @@
 	
 	
 	<ThingDef>
+		<defName>AE_DecoySpeedometer</defName>
+		<label>decoy speedometer</label>
+		<description>A dark circular gauge with faded numbers marking increments up to six. A thin, red needle rests near the lower end of the scale, hinting at a mechanism designed to measure some kind of rate or velocity.</description>
+		<thingClass>Thing</thingClass>
+		<category>Item</category>
+		<genericMarketSellable>false</genericMarketSellable>
+		<drawerType>MapMeshOnly</drawerType>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<altitudeLayer>Item</altitudeLayer>
+		<selectable>true</selectable>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<alwaysHaulable>true</alwaysHaulable>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<pathCost>14</pathCost>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Item/Special/AE_DecoySpeedometer</texPath>
+			<drawSize>(0.75,0.75)</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>0.18</Mass>
+			<Beauty>3</Beauty>
+			<Flammability>0</Flammability>
+			<MarketValue>400</MarketValue>
+		</statBases>
+		<thingCategories>
+			<li>ItemsAnomalies</li>
+		</thingCategories>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+	</ThingDef>
+	
+	<ThingDef>
 		<defName>AE_Clockworkparts</defName>
 		<label>clockwork parts</label>
 		<description>Vibrant red stockings, featuring white details and a snowflake symbol.\n\nIt appear to be filled with something.</description>
@@ -895,7 +929,7 @@
 		<pathCost>14</pathCost>
 		<graphicData>
 			<graphicClass>Graphic_Single</graphicClass>
-			<texPath>Things/Item/Special/AE_ChristmasStockings</texPath>
+			<texPath>Things/Item/Special/AE_ClockworkParts</texPath>
 		</graphicData>
 		<statBases>
 			<Mass>2</Mass>
@@ -913,7 +947,7 @@
 				<activeTicks>1</activeTicks>
 				<cooldownTicks>12000</cooldownTicks>
 				<ticksToActivate>10000</ticksToActivate>
-				<activateTexPath>Things/Item/Special/AE_ChristmasStockings</activateTexPath>
+				<activateTexPath>Things/Item/Equipment/WeaponMelee/AEClockworkHand</activateTexPath>
         
 				<activateLabelString>Take gift</activateLabelString>
 				<activateDescString>Take gift from inside.</activateDescString>

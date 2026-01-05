@@ -1702,7 +1702,7 @@
 				<ticksFullRotationPerActiveTick>4</ticksFullRotationPerActiveTick>
 				<MinuteHandZoneDef>AEAgingZone</MinuteHandZoneDef>
 				<SpeedometerDef>AE_Speedometer</SpeedometerDef>
-				<DecoySpeedometerDef>AE_Speedometer</DecoySpeedometerDef>
+				<DecoySpeedometerDef>AE_DecoySpeedometer</DecoySpeedometerDef>
 				<ClockworkPartDef>AE_Clockworkparts</ClockworkPartDef>
 				<damageDef>AEAging</damageDef>
 				<damageAmountWave>10</damageAmountWave>
