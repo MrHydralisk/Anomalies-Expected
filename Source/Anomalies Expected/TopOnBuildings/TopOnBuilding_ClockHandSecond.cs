@@ -9,7 +9,7 @@ namespace AnomaliesExpected
 {
     public class TopOnBuilding_ClockHandSecond : TopOnBuilding_Clockwork
     {
-        public Vector3 vector;
+        public IntVec3 target;
 
         public TopOnBuilding_ClockHandSecond() : base()
         {
@@ -23,8 +23,8 @@ namespace AnomaliesExpected
         {
             Map map = compObelisk_Clockwork.parent.Map;
             IntVec3 position = compObelisk_Clockwork.parent.Position;
-            Vector3 target = map.mapPawns.FreeColonistsSpawned.RandomElement()?.Position.ToVector3Shifted() ?? (position.ToVector3Shifted() + Vector3.forward);
-            vector = (target - position.ToVector3Shifted()).Yto0().normalized;
+            target = map.mapPawns.FreeColonistsSpawned.RandomElement()?.Position ?? map.mapPawns.AllPawns.FirstOrDefault((Pawn p) => p.Spawned && !p.DeadOrDowned)?.Position ?? (position + IntVec3.North);
+            Vector3 vector = (target.ToVector3Shifted() - position.ToVector3Shifted()).Yto0().normalized;
             CurRotation = vector.ToAngleFlat();
             base.OnTimerEnd();
         }
@@ -33,6 +33,7 @@ namespace AnomaliesExpected
         {
             Map map = compObelisk_Clockwork.parent.Map;
             IntVec3 position = compObelisk_Clockwork.parent.Position;
+            Vector3 vector = (target.ToVector3Shifted() - position.ToVector3Shifted()).Yto0().normalized;
             List<IntVec3> beamPoints = GenSight.BresenhamCellsBetween(position, position + (vector * map.Size.Magnitude).ToIntVec3());
             int pointsToCompare = compObelisk_Clockwork.Props.radius * compObelisk_Clockwork.Props.radius * 4;
             List<IntVec3> hitPoints = new List<IntVec3>();
@@ -60,7 +61,7 @@ namespace AnomaliesExpected
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref vector, "vector");
+            Scribe_Values.Look(ref target, "target");
         }
     }
 }

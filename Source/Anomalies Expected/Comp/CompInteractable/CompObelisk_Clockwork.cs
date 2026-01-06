@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
-using Verse.Noise;
 using Verse.Sound;
 
 namespace AnomaliesExpected
@@ -138,7 +137,7 @@ namespace AnomaliesExpected
                 }
             }
             return speedometer;
-        } 
+        }
 
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()

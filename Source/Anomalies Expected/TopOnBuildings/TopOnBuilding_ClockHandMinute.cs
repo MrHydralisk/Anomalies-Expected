@@ -1,4 +1,6 @@
 ﻿using RimWorld;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Verse;
 
@@ -20,7 +22,23 @@ namespace AnomaliesExpected
         {
             Map map = compObelisk_Clockwork.parent.Map;
             IntVec3 position = compObelisk_Clockwork.parent.Position;
-            target = map.mapPawns.FreeColonistsSpawned.RandomElement()?.Position ?? (position + IntVec3.North);
+            target = IntVec3.Invalid;
+            float radius = (compObelisk_Clockwork.Props.MinuteHandZoneDef.CompDefFor<Comp_ZoneOfEffect>() as CompProperties_ZoneOfEffect).radius;
+            int score = int.MinValue;
+            List<Pawn> freePawns = map.mapPawns.FreeColonistsSpawned.Where((Pawn p) => !p.DeadOrDowned).ToList();
+            foreach (Pawn pawn in freePawns)
+            {
+                int curScore = freePawns.Count((Pawn p) => p.PositionHeld.DistanceTo(pawn.PositionHeld) < radius);
+                if (score < curScore)
+                {
+                    score = curScore;
+                    target = pawn.PositionHeld;
+                }
+            }
+            if (target == IntVec3.Invalid)
+            {
+                target = map.mapPawns.FreeColonistsSpawned.RandomElement()?.Position ?? map.mapPawns.AllPawns.FirstOrDefault((Pawn p) => p.Spawned && !p.DeadOrDowned)?.Position ?? (position + IntVec3.North);
+            }
             Vector3 vector = (target.ToVector3Shifted() - position.ToVector3Shifted()).Yto0().normalized;
             CurRotation = vector.ToAngleFlat();
             base.OnTimerEnd();
