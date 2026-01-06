@@ -4,7 +4,7 @@
 	<ThingDef ParentName="BaseMeleeWeapon">
 		<defName>MeleeWeapon_AEClockworkHand</defName>
 		<label>clockwork hand</label>
-		<description>The weapon made out of thin ice shard, the ice sword can be used for slashing or stabbing. During attack it will spill nitrogen into the wound to make it more fragile for further attacks. Replicating blades of SA-04.</description>
+		<description>A weapon made out of clockwork parts. Upon impact, it phases through the target, rapidly aging the affected area regardless of its composition.</description>
 		<graphicData>
 			<texPath>Things/Item/Equipment/WeaponMelee/AEClockworkHand</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -34,6 +34,49 @@
 		<thingCategories>
 			<li>AEWeaponsAnomalies</li>
 		</thingCategories>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+		<allowedArchonexusCount>1</allowedArchonexusCount>
+		<comps>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>60000</frequencyTicks>
+				<knowledgeCategory>Advanced</knowledgeCategory>
+				<anomalyKnowledge>1</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<showToggleGizmo>true</showToggleGizmo>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotes>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>christmas stockings</AnomalyLabel>
+						<AnomalyDesc>Vibrant red Christmas stockings, featuring white details and a snowflake symbol.\n\nYou can retrieve the gifts from within.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>0.01</threshold>
+						<label>#1/3 Red stockings study report</label>
+						<text>Festive Association\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nThis report describes the initial examination of an anomalous Christmas stockings. The stockings displayed an anomalous internal volume, containing multiple gifts. While initial item retrieval was successful, subsequent attempts by same Subject were unsuccessful. Despite this, no hostile behavior was observed. Continued research and item retrieval attempts are recommended to further investigate properties of the stockings.\n\nObservations:\nUpon initial examination, {PAWN_nameDef} observed a red stockings that seems to contain some items inside.\nSubject attempted to take an item from within the stockings.\nIn the result, {PAWN_nameDef} pulled out a candy cane.\nSubject attempted to take another item from within the stockings.\n{PAWN_nameDef} reported an inability to retrieve further items, as if something was preventing further item extraction.\n\nOutcome:\nThroughout the examination, the stockings displayed no hostile behavior.\nAfter recieving this candy cane gift, Subject's mood lifted for quite a long time.\n\nDiscussion:\nSurface analysis indicated similarity in design with stockings used during Christmas to contain gifts inside.\nPreliminary observations suggest the stockings contains a substantial quantity of items. However, following the retrieval of a single item, further extraction attempts by same Subject were unsuccessful.\nThis phenomenon may indicate that the stockings possesses an internal volume exceeding its external dimensions.\nGiven the absence of hostile behavior, the stockings has been temporary classified as Class-0 (Safe) anomaly.\n\nRecommendations:\nFurther research, including continued attempts to retrieve items from the stockings, is necessary to fully understand its anomalous properties.</text>
+						<ThreatClass>0</ThreatClass>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyDesc>Vibrant red Christmas stockings, featuring white details and a snowflake symbol.\n\nYou can retrieve the gifts from within. The type of gift depends on how much person tended others and the number of humans, animals, mechanoids, and entities they killed.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>2</threshold>
+						<label>#2/3 Red stockings study report</label>
+						<text>Acquired Gifts Correlations\n\nSubject: [REDACTED]\n\nAbstract:\nThis report documents the continued examination of an anomalous Christmas stockings. Retrieval of a lump of coal from the stockings correlated with a decline in subject mood. Preliminary data suggests a correlation between retrieved gift type and Subject actions, with negative correlations observed for human and animal kills and positive correlations for tending others, mechanoid and entity kills. Further research is necessary to investigate this phenomenon.\n\nObservations:\n[REDACTED] attempted to retrieve an item from within the stockings.\nIn the result, Subject pulled out a lump of coal.\n\nOutcome:\n[REDACTED] exhibited a significant decline in mood following the retrieval of the lump of coal.\nFurther gift retrieval tests were conducted.\n\nDiscussion:\nThis experiment demonstrates that gifts from within the stockings can lead toward negative Subject's emotional state.\nThe retrieval of a lump of coal, coinciding with [REDACTED]'s recent return from a raid mission with high enemy and civilian casualties, suggests a possible link between the gift type and the Subject's actions.\nPreliminary data analysis indicates the following correlations:\n- Human killed = highly negative\n- Animal killed = negative\n- Mechanoids killed = highly positive\n- Entity killed = highly positive\n- Tended others = positive\n\nRecommendations:\nFurther research, including continued attempts to retrieve items from the stockings, is necessary to further investigate the potential applications.</text>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+				</studyNotes>
+				<studyNotesManualUnlockable>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<threshold>3</threshold>
+						<label>#3/3 Red stockings study report</label>
+						<text>Last Gift?\n\nSubject: [REDACTED]\n\nAbstract:\nThis report describes an anomalous event during the retrieval of the final gift from a Christmas stockings. The Subject experienced an influx of cold air and encountered an unexpectedly large object within. Subsequent withdrawal resulted in multiple punctures from spruce needles. Analysis suggests the final gift may be a large object covered in spruce foliage. Extraction requires careful preparation and safety precautions.\n\nObservations:\nUpon retrieval of the final gift from within the stockings, [REDACTED] reported a sensation of cold air emanating from the deep within the stockings.\nSubject was instructed to move their arm further into the stockings.\n[REDACTED] reported that the item within the stockings appeared to be significantly larger than previous gifts.\nSubject screamed and quickly pulled out the hand from inside of stockings.\n\nOutcome:\nSubsequent inspection of [REDACTED]'s hand revealed multiple punctures consistent with green needles.\n\nDiscussion:\nAnalysis of the needles confirmed their origin as belonging to a spruce tree.\nThe presence of spruce needles suggests the final gift within the stockings may be of significant size and covered with spruce needles or even branches.\n\nRecommendations:\nExtraction of the final gift from the stockings is recommended, following appropriate safety precautions and preparation.</text>
+					</li>
+				</studyNotesManualUnlockable>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_StudyNotes</li>
+		</inspectorTabs>
 	</ThingDef>
   
 </Defs>

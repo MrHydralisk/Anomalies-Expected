@@ -11,7 +11,7 @@
 	<AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Disabled>No {0} placed nearby.</AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Disabled>
 	
 	<AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Label>Place a decoy speedometer into the obelisk.</AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Label>
-	<AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Desc>Insert a specially designed device that simulates the speedometer's chrono-effect frequency into the obelisk's socket. Decoy must be placed next to obelisk. [Will destroy it]</AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Desc>
+	<AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Desc>Insert a specially designed device that imitates the speedometer's chrono-effect frequency into the obelisk's socket. Decoy must be placed next to obelisk. [Will destroy it]</AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Desc>
 	<AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Disabled>Research to find decoy's frequency not finished.</AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Disabled>
 	
 	<AnomaliesExpected.ObeliskClockwork.EndGame.Label>Clockwork obelisk cracked.</AnomaliesExpected.ObeliskClockwork.EndGame.Label>

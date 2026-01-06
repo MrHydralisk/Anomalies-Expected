@@ -324,9 +324,6 @@
 		<linkedThings>
 			<li>AE_Obelisk_Clockwork</li>
 		</linkedThings>
-		<provocationIncidents>
-			<!-- <li>AE_IncidentDef_SpeedometerSpawn</li> -->
-		</provocationIncidents>
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>
 

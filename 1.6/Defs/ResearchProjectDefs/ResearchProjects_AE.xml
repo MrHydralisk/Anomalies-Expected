@@ -512,17 +512,16 @@
 
 	<ResearchProjectDef>
 		<defName>AEAnalyzeClockworkEmission</defName>
-		<label>analyze clockwork chrono emission</label>
-		<description>Examining data from clockwork obelisk to create fake speedometer.</description>
+		<label>analyze chrono-emissions</label>
+		<description>Examining clockwork obelisk's data to construct a decoy speedometer.</description>
 		<tab>AnomaliesExpected</tab>
-		<!-- <prerequisites> -->
-			<!-- <li>BasicPsychicRituals</li> -->
-		<!-- </prerequisites> -->
+		<prerequisites>
+			<li>BioferriteShaping</li>
+		</prerequisites>
 		<!-- <requiredAnalyzed> -->
 			<!-- <li>AE_ResearchNotesEDA</li> -->
 		<!-- </requiredAnalyzed> -->
-		<knowledgeCost>35</knowledgeCost>
-		<!-- <knowledgeCost>60</knowledgeCost> -->
+		<knowledgeCost>60</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>6</researchViewX>
 		<researchViewY>4</researchViewY>

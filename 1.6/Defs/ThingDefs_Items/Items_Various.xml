@@ -879,7 +879,7 @@
 	<ThingDef>
 		<defName>AE_DecoySpeedometer</defName>
 		<label>decoy speedometer</label>
-		<description>A dark circular gauge with faded numbers marking increments up to six. A thin, red needle rests near the lower end of the scale, hinting at a mechanism designed to measure some kind of rate or velocity.</description>
+		<description>A dark circular device infused with shard that imitates the speedometer's chrono-effect frequency.</description>
 		<thingClass>Thing</thingClass>
 		<category>Item</category>
 		<genericMarketSellable>false</genericMarketSellable>
@@ -903,17 +903,28 @@
 			<Beauty>3</Beauty>
 			<Flammability>0</Flammability>
 			<MarketValue>400</MarketValue>
+			<WorkToMake>30000</WorkToMake>
 		</statBases>
 		<thingCategories>
 			<li>ItemsAnomalies</li>
 		</thingCategories>
-		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+		<costList>
+			<Shard>1</Shard>
+			<Bioferrite>30</Bioferrite>
+		</costList>
+		<recipeMaker>
+			<recipeUsers Inherit="false">
+				<li>BioferriteShaper</li>
+			</recipeUsers>
+			<researchPrerequisite>AEAnalyzeClockworkEmission</researchPrerequisite>
+			<displayPriority>1300</displayPriority>
+		</recipeMaker>
 	</ThingDef>
 	
 	<ThingDef>
 		<defName>AE_Clockworkparts</defName>
 		<label>clockwork parts</label>
-		<description>Vibrant red stockings, featuring white details and a snowflake symbol.\n\nIt appear to be filled with something.</description>
+		<description>Fragments of a giant clock mechanism. Their origin remains unknown.</description>
 		<thingClass>AnomaliesExpected.ThingWithComps_AE</thingClass>
 		<category>Item</category>
 		<genericMarketSellable>false</genericMarketSellable>
@@ -947,16 +958,16 @@
 				<activeTicks>1</activeTicks>
 				<cooldownTicks>12000</cooldownTicks>
 				<ticksToActivate>10000</ticksToActivate>
-				<activateTexPath>Things/Item/Equipment/WeaponMelee/AEClockworkHand</activateTexPath>
+				<activateTexPath>UI/Icons/AE_Analyze</activateTexPath>
         
-				<activateLabelString>Take gift</activateLabelString>
-				<activateDescString>Take gift from inside.</activateDescString>
-				<guiLabelString>Choose who should take from this.</guiLabelString>
-				<jobString>take gift</jobString>
-				<activatingStringPending>taking gift {0}</activatingStringPending>
-				<activatingString>taking gift {0}: {1}s</activatingString>
-				<onCooldownString>preparing</onCooldownString>
-				<messageCooldownEnded>Red stockings is ready to use again.</messageCooldownEnded>
+				<activateLabelString>Analyze parts</activateLabelString>
+				<activateDescString>Will attempt to manipulate the parts to determine their function.</activateDescString>
+				<guiLabelString>Choose who should analyze this.</guiLabelString>
+				<jobString>analyze parts</jobString>
+				<activatingStringPending>analyzing {0}</activatingStringPending>
+				<activatingString>analyzing {0}: {1}s</activatingString>
+				<onCooldownString>-</onCooldownString>
+				<messageCooldownEnded>-</messageCooldownEnded>
 
 				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
 				<fleckOnUsedScale>3</fleckOnUsedScale>
@@ -973,7 +984,7 @@
 			</li>
 			<li Class="CompProperties_Studiable">
 				<frequencyTicks>60000</frequencyTicks>
-				<knowledgeCategory>Basic</knowledgeCategory>
+				<knowledgeCategory>Advanced</knowledgeCategory>
 				<anomalyKnowledge>1</anomalyKnowledge>
 				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
 				<showToggleGizmo>true</showToggleGizmo>
