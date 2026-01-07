@@ -96,6 +96,7 @@ namespace AnomaliesExpected
                 FleckMaker.Static(targetInfoTo.Cell, targetInfoFrom.Map, FleckDefOf.PsycastSkipFlashEntry, compObelisk_Clockwork.Props.teleportationFleckRadius);
                 compObelisk_Clockwork.parent.Position = target;
             }
+            compObelisk_Clockwork.StudyUnlocks.UnlockStudyNoteManual(2);
             base.OnWarmupEnd();
         }
 

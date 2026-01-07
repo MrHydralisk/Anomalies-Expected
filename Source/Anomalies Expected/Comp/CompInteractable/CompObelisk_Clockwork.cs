@@ -11,6 +11,8 @@ namespace AnomaliesExpected
     public class CompObelisk_Clockwork : CompInteractable, IActivity
     {
         public new CompPropertiesObelisk_Clockwork Props => (CompPropertiesObelisk_Clockwork)props;
+        public CompAEStudyUnlocks StudyUnlocks => studyUnlocksCached ?? (studyUnlocksCached = parent.TryGetComp<CompAEStudyUnlocks>());
+        private CompAEStudyUnlocks studyUnlocksCached;
         public CompActivity ActivityComp => activityInt ?? (activityInt = parent.TryGetComp<CompActivity>());
         private CompActivity activityInt;
 
@@ -113,6 +115,7 @@ namespace AnomaliesExpected
         {
             if (ActivityComp.IsActive)
             {
+                StudyUnlocks.UnlockStudyNoteManual(4);
                 ActivityComp.EnterPassiveState();
             }
         }
@@ -261,14 +264,19 @@ namespace AnomaliesExpected
                     thingOwner.ClearAndDestroyContents();
                 }
             }
+            StudyUnlocks.UnlockStudyNoteManual(5);
             Find.TickManager.Pause();
-            Thing weapon = ThingMaker.MakeThing(Props.ClockworkPartDef);
-            bool isPlaced = GenPlace.TryPlaceThing(weapon, caster.PositionHeld, caster.MapHeld, ThingPlaceMode.Near, null);
-            ChoiceLetter letterEnd = LetterMaker.MakeLetter("AnomaliesExpected.ObeliskClockwork.EndGame.Label".Translate(), "AnomaliesExpected.ObeliskClockwork.EndGame.Text".Translate(caster.LabelShortCap, parent.LabelCap), LetterDefOf.GameEnded, isPlaced ? weapon : caster);
-            ChoiceLetter letterWeapon = LetterMaker.MakeLetter("AnomaliesExpected.ObeliskClockwork.Clockhand.Label".Translate(), "AnomaliesExpected.ObeliskClockwork.Clockhand.Text".Translate(), LetterDefOf.NeutralEvent, isPlaced ? weapon : caster);
-            Find.LetterStack.ReceiveLetter(letterEnd);
-            letterEnd.OpenLetter();
-            Find.LetterStack.ReceiveLetter(letterWeapon);
+            ThingWithComps parts = ThingMaker.MakeThing(Props.ClockworkPartDef) as ThingWithComps;
+            CompAEStudyUnlocks compAEStudyUnlocks = parts.GetComp<CompAEStudyUnlocks>();
+            if (compAEStudyUnlocks != null)
+            {
+                foreach (ChoiceLetter letter in StudyUnlocks.Letters)
+                {
+                    compAEStudyUnlocks.AddStudyNoteLetter(letter);
+                }
+            }
+            bool isPlaced = GenPlace.TryPlaceThing(parts, caster.PositionHeld, caster.MapHeld, ThingPlaceMode.Near, null);
+            Find.LetterStack.ReceiveLetter("AnomaliesExpected.ObeliskClockwork.Clockhand.Label".Translate(), "AnomaliesExpected.ObeliskClockwork.Clockhand.Text".Translate(), LetterDefOf.NeutralEvent, isPlaced ? parts : caster);
             caster.Destroy();
             parent.Destroy();
         }
@@ -295,6 +303,7 @@ namespace AnomaliesExpected
             parent.HitPoints = parent.MaxHitPoints;
             SoundDefOf.VoidNode_Explode.PlayOneShotOnCamera();
             Props.EffecterOnActive.SpawnMaintained(parent, parent.Map);
+            StudyUnlocks.UnlockStudyNoteManual(3);
         }
 
         public void OnPassive()

@@ -46,6 +46,8 @@
 			</li>
 			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
 				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<isCreateEntityEntryWithoutCodexEntry>true</isCreateEntityEntryWithoutCodexEntry>
+				<category>Advanced</category>
 			</li>
 			<li Class="CompProperties_Forbiddable"/>
 		</comps>
