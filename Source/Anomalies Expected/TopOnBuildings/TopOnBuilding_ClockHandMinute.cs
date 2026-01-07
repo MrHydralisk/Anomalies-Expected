@@ -42,6 +42,10 @@ namespace AnomaliesExpected
             Vector3 vector = (target.ToVector3Shifted() - position.ToVector3Shifted()).Yto0().normalized;
             CurRotation = vector.ToAngleFlat();
             base.OnTimerEnd();
+            if (AEMod.Settings.NotifyClockworkHandMinute)
+            {
+                Messages.Message("AnomaliesExpected.ObeliskClockwork.HandMinute.Aiming".Translate(), new TargetInfo(Obelisk_Clockwork.Position, Obelisk_Clockwork.Map), MessageTypeDefOf.NegativeEvent);
+            }
         }
 
         public override void OnWarmupEnd()

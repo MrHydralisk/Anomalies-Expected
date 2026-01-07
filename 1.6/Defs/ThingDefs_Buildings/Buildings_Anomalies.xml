@@ -1693,7 +1693,7 @@
 						<drawSize>6</drawSize>
 						<drawRotation>90</drawRotation>
 						<tickPerFullRotation>60000</tickPerFullRotation>
-						<tickPerWarmup>50</tickPerWarmup>
+						<tickPerWarmup>150</tickPerWarmup>
 						<ticksTillAwaken>1288</ticksTillAwaken>
 						<rotationPerDmgMult>8</rotationPerDmgMult>
 					</li>

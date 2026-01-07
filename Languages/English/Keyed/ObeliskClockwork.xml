@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 	<AnomaliesExpected.ObeliskClockwork.HandSecond.Awaken>Second hand started moving</AnomaliesExpected.ObeliskClockwork.HandSecond.Awaken>
+	<AnomaliesExpected.ObeliskClockwork.HandSecond.Aiming>Second hand completed rotational cycle</AnomaliesExpected.ObeliskClockwork.HandSecond.Aiming>
 	<AnomaliesExpected.ObeliskClockwork.HandMinute.Awaken>Minute hand started moving</AnomaliesExpected.ObeliskClockwork.HandMinute.Awaken>
+	<AnomaliesExpected.ObeliskClockwork.HandMinute.Aiming>Minute hand completed rotational cycle</AnomaliesExpected.ObeliskClockwork.HandMinute.Aiming>
 	<AnomaliesExpected.ObeliskClockwork.HandHour.Awaken>Hour hand started moving</AnomaliesExpected.ObeliskClockwork.HandHour.Awaken>
+	<AnomaliesExpected.ObeliskClockwork.HandHour.Aiming>Hour hand completed rotational cycle</AnomaliesExpected.ObeliskClockwork.HandHour.Aiming>
+	<AnomaliesExpected.ObeliskClockwork.HandDay.Aiming>Day hand completed rotational cycle</AnomaliesExpected.ObeliskClockwork.HandDay.Aiming>
 	
 	<AnomaliesExpected.ObeliskClockwork.Message.NewObeliskResearchReset>{0} has adapted to the decoy's frequency. We must initiate fresh research to find alternative.</AnomaliesExpected.ObeliskClockwork.Message.NewObeliskResearchReset>
 	
@@ -13,10 +17,7 @@
 	<AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Label>Place a decoy speedometer into the obelisk.</AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Label>
 	<AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Desc>Insert a specially designed device that imitates the speedometer's chrono-effect frequency into the obelisk's socket. Decoy must be placed next to obelisk. [Will destroy it]</AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Desc>
 	<AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Disabled>Research to find decoy's frequency not finished.</AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Disabled>
-	
-	<AnomaliesExpected.ObeliskClockwork.EndGame.Label>Clockwork obelisk cracked.</AnomaliesExpected.ObeliskClockwork.EndGame.Label>
-	<AnomaliesExpected.ObeliskClockwork.EndGame.Text>[High Level Access Required]\n\n{0} used highest mode of speedometer and attempted to attack {1} through socket. Pure energy from attack was enough to crack surface of {1} and some parts one of clock hands fall nearby. Speedometer capture mechanism was activated merging {0} with {1}, thus moving back to the confindment space pocket. \n\n[Perception-based error detected]\n\n{0} no longer affected by limitations of time and space, being everywhere and nowhere. As if they never existed.</AnomaliesExpected.ObeliskClockwork.EndGame.Text>
-	
+		
 	<AnomaliesExpected.ObeliskClockwork.Clockhand.Label>Clockwork parts.</AnomaliesExpected.ObeliskClockwork.Clockhand.Label>
 	<AnomaliesExpected.ObeliskClockwork.Clockhand.Text>Your colonists noticed some objects on a ground. We don't know where it come from, but it looks like parts of a giant clockwork.</AnomaliesExpected.ObeliskClockwork.Clockhand.Text>
 </LanguageData>

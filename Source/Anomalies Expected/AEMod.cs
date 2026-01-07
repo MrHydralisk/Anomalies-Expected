@@ -38,6 +38,11 @@ namespace AnomaliesExpected
             options.Label("AnomaliesExpected.Settings.Patch.VoidProvactionCooldown".Translate(Settings.VoidProvactionCooldown.ToString()));
             Settings.VoidProvactionCooldown = Mathf.RoundToInt(options.Slider(Settings.VoidProvactionCooldown, 12, 120));
             options.GapLine();
+            options.CheckboxLabeled("AnomaliesExpected.Settings.ObeliskClockwork.HandSecond".Translate().RawText, ref Settings.NotifyClockworkHandSecond);
+            options.CheckboxLabeled("AnomaliesExpected.Settings.ObeliskClockwork.HandMinute".Translate().RawText, ref Settings.NotifyClockworkHandMinute);
+            options.CheckboxLabeled("AnomaliesExpected.Settings.ObeliskClockwork.HandHour".Translate().RawText, ref Settings.NotifyClockworkHandHour);
+            options.CheckboxLabeled("AnomaliesExpected.Settings.ObeliskClockwork.HandDay".Translate().RawText, ref Settings.NotifyClockworkHandDay);
+            options.GapLine();
             if (Current.Game != null && options.ButtonText("AnomaliesExpected.Settings.ResearchTab.Unlock".Translate().RawText))
             {
                 Find.ResearchManager.Notify_MonolithLevelChanged(Find.Anomaly.Level);

@@ -1,4 +1,7 @@
-﻿namespace AnomaliesExpected
+﻿using RimWorld;
+using Verse;
+
+namespace AnomaliesExpected
 {
     public class TopOnBuilding_ClockHandActivity : TopOnBuilding_Clockwork
     {
@@ -29,6 +32,10 @@
             if (!isActive)
             {
                 compObelisk_Clockwork.ActivityComp.EnterActiveState();
+                if (AEMod.Settings.NotifyClockworkHandDay)
+                {
+                    Messages.Message("AnomaliesExpected.ObeliskClockwork.HandDay.Aiming".Translate(), new TargetInfo(Obelisk_Clockwork.Position, Obelisk_Clockwork.Map), MessageTypeDefOf.NegativeEvent);
+                }
             }
         }
     }
