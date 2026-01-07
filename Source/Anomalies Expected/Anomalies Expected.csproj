@@ -217,6 +217,7 @@
     <Compile Include="DamageWorker\DamageWorker_AddInjuryFleshmass.cs" />
     <Compile Include="Thought_AEMemory.cs" />
     <Compile Include="CreepJoinerWorker_AEAggressiveIncident.cs" />
+    <Compile Include="Graphic_ActivityActiveMask.cs" />
     <Compile Include="Verb_AEPowerBeam.cs" />
     <Compile Include="PlaceWorker\PlaceWorker_ShowBeamTargetRadius.cs" />
     <Compile Include="Thing\MinifiedThing_AE.cs" />

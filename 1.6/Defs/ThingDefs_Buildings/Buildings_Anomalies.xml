@@ -1580,7 +1580,7 @@
 		<fillPercent>1</fillPercent>
 		<graphicData>
 			<texPath>Things/Building/AE_ObeliskClockwork/AE_ObeliskClockwork</texPath>
-			<graphicClass>Graphic_ActivityMask</graphicClass>
+			<graphicClass>AnomaliesExpected.Graphic_ActivityActiveMask</graphicClass>
 			<shaderType>CutoutComplexBlend</shaderType>
 			<drawSize>(5,5)</drawSize>
 			<addTopAltitudeBias>true</addTopAltitudeBias>
