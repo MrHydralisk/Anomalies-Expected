@@ -16,6 +16,10 @@ namespace AnomaliesExpected
 
         public int DamageAmount = 1;
 
+        public EffecterDef effecterOnDamage;
+
+        public SoundDef soundOnDamage;
+
         public CompProperties_ZoneOfEffect()
         {
             compClass = typeof(Comp_ZoneOfEffect);

@@ -259,4 +259,26 @@
 		</children>
 	</EffecterDef>
   
+	<EffecterDef>
+		<defName>AE_ClockworkObeliskAgingZone</defName>
+		<maintainTicks>720</maintainTicks>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+				<burstCount>1</burstCount>
+				<initialDelayTicks>1</initialDelayTicks>
+				<positionOffset>(0, .1, 0)</positionOffset>
+				<fleckDef>DirtyExpandingRingShort</fleckDef>
+				<positionRadius>0</positionRadius>
+				<positionRadiusMin>0</positionRadiusMin>
+				<scale>.75</scale>
+				<speed>0~0</speed>
+				<rotation>0</rotation>
+				<rotationRate>0</rotationRate>
+				<angle>0~0</angle>
+				<spawnLocType>OnSource</spawnLocType>
+			</li>
+		</children>
+	</EffecterDef>
+  
 </Defs>

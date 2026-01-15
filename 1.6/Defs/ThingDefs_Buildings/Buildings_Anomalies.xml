@@ -1709,7 +1709,9 @@
 				<DamageMultActive>2</DamageMultActive>
 				<fakeSpeedometerResearch>AEAnalyzeClockworkEmission</fakeSpeedometerResearch>
 				<EffecterOnActive>AE_ClockworkObeliskAwaken</EffecterOnActive>
+				<SoundActive>AE_ClockworkTickB</SoundActive>
 				<EffecterOnPassive>AE_ClockworkObeliskPassive</EffecterOnPassive>
+				<SoundPassive>AE_ClockworkTickA</SoundPassive>
 			</li>
 			<li Class="CompProperties_Studiable">
 				<frequencyTicks>60000</frequencyTicks>

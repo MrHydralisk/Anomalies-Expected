@@ -56,5 +56,109 @@
 			</li>
 		</subSounds>
 	</SoundDef>
+	
+	
+
+	<SoundDef>
+		<defName>AE_ClockworkBellA</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Building/Clockwork/AE_ClockworkBellA</clipPath>
+					</li>
+				</grains>
+				<volumeRange>12</volumeRange>
+				<pitchRange>0.9311765~1.091765</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>AE_ClockworkBellB</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Building/Clockwork/AE_ClockworkBellB</clipPath>
+					</li>
+				</grains>
+				<volumeRange>12</volumeRange>
+				<pitchRange>0.9311765~1.091765</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>AE_ClockworkBellC</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Building/Clockwork/AE_ClockworkBellC</clipPath>
+					</li>
+				</grains>
+				<volumeRange>12</volumeRange>
+				<pitchRange>0.9311765~1.091765</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>AE_ClockworkBellD</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Building/Clockwork/AE_ClockworkBellD</clipPath>
+					</li>
+				</grains>
+				<volumeRange>12</volumeRange>
+				<pitchRange>0.9311765~1.091765</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>AE_ClockworkBellE</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Building/Clockwork/AE_ClockworkBellE</clipPath>
+					</li>
+				</grains>
+				<volumeRange>12</volumeRange>
+				<pitchRange>0.9311765~1.091765</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>AE_ClockworkPulse</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Building/Clockwork/AE_ClockworkPulse</clipPath>
+					</li>
+				</grains>
+				<volumeRange>100</volumeRange>
+				<pitchRange>0.9311765~1.091765</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
 
 </Defs>

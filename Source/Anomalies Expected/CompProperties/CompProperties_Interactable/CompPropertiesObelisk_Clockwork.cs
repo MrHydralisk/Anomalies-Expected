@@ -21,7 +21,9 @@ namespace AnomaliesExpected
         public float teleportationFleckRadius = 2f;
         public ResearchProjectDef fakeSpeedometerResearch;
         public EffecterDef EffecterOnActive;
+        public SoundDef SoundActive;
         public EffecterDef EffecterOnPassive;
+        public SoundDef SoundPassive;
 
         public CompPropertiesObelisk_Clockwork()
         {

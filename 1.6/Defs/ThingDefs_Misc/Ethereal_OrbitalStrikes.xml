@@ -34,11 +34,13 @@
 		<comps>
 			<li Class="AnomaliesExpected.CompProperties_ZoneOfEffect">
 				<radius>15</radius>
-				<sound>OrbitalBeam</sound>
+				<sound>AE_ClockworkTickC</sound>
 				<mote>Mote_AEZoneOfEffect_AgingZone</mote>
 				<damageDef>AEAging</damageDef>
 				<DamageAmount>2</DamageAmount>
 				<ticksPerDamage>600</ticksPerDamage>
+				<effecterOnDamage>AE_ClockworkObeliskAgingZone</effecterOnDamage>
+				<soundOnDamage>AE_ClockworkPulse</soundOnDamage>
 			</li>
 		</comps>
 	</ThingDef>

@@ -21,6 +21,16 @@ namespace AnomaliesExpected
         public TopOnBuilding_Clockwork ClockHandHour => clockHandHourCached ?? (clockHandHourCached = topOnBuildings.FirstOrDefault((TopOnBuilding_Clockwork tob) => tob.type == TopOnBuildingStructureTypes.ClockHandHour));
         private TopOnBuilding_Clockwork clockHandHourCached;
 
+        private Sustainer passiveSustainer;
+        private Sustainer activeSustainer;
+
+        private static readonly SimpleCurve SustainerActivityCurve = new SimpleCurve
+        {
+            new CurvePoint(0f, 0.25f),
+            new CurvePoint(0.5f, 0.5f),
+            new CurvePoint(1f, 1f)
+        };
+
         private bool isDeactivated = false;
         private int invThresholds;
 
@@ -67,6 +77,25 @@ namespace AnomaliesExpected
             foreach (TopOnBuilding_Clockwork topOnBuilding in topOnBuildings)
             {
                 topOnBuilding.Tick();
+            }
+            if (passiveSustainer == null || passiveSustainer.Ended)
+            {
+                passiveSustainer = Props.SoundPassive.TrySpawnSustainer(SoundInfo.InMap(parent, MaintenanceType.PerTick));
+            }
+            passiveSustainer.info.volumeFactor = SustainerActivityCurve.Evaluate(ActivityComp.ActivityLevel);
+            passiveSustainer.Maintain();
+            if (ActivityComp.IsActive)
+            {
+                if (activeSustainer == null || activeSustainer.Ended)
+                {
+                    activeSustainer = Props.SoundActive.TrySpawnSustainer(SoundInfo.InMap(parent, MaintenanceType.PerTick));
+                }
+                activeSustainer.info.volumeFactor = 0.25f * (1 + invThresholds);
+                activeSustainer.Maintain();
+            }
+            else
+            {
+                activeSustainer?.End();
             }
         }
 

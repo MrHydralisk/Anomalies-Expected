@@ -87,6 +87,8 @@ namespace AnomaliesExpected
         private void DealDamage()
         {
             Map map = parent.Map;
+            Props.effecterOnDamage?.SpawnMaintained(parent, map);
+            Props.soundOnDamage?.PlayOneShot(parent);
             foreach (IntVec3 cell in GenRadial.RadialCellsAround(parent.Position, Props.radius, useCenter: true))
             {
                 if (!cell.InBounds(map))
