@@ -78,6 +78,10 @@ namespace AnomaliesExpected
                 HealthUtility.AdjustSeverity(pawn, SpeedometerComp.Props.ChronoDestabilizationHediffDef, (Mathf.Pow(2, level) + 1) / 60000);
                 SpeedometerComp.Notify_Destabilized(pawn);
             }
+            if (pawn.IsHashIntervalTick(60000) && pawn.IsSlaveOfColony && !SlaveRebellionUtility.IsRebelling(pawn) && Rand.Chance(level / 6f))
+            {
+                SlaveRebellionUtility.StartSlaveRebellion(pawn, true);
+            }
         }
 
         public override void PostRemoved()
