@@ -22,6 +22,7 @@ namespace AnomaliesExpected
         private TopOnBuilding_Clockwork clockHandHourCached;
 
         private bool isDeactivated = false;
+        private int invThresholds;
 
         public override void PostPostMake()
         {
@@ -88,27 +89,19 @@ namespace AnomaliesExpected
                 parent.HitPoints = parent.MaxHitPoints;
                 Notify_HitPointsExhausted();
             }
-            else if (ActivityComp.IsActive)
+        }
+
+        public override void PostPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
+        {
+            if (ActivityComp.IsActive)
             {
-                float partOfHP = parent.MaxHitPoints * 0.75f;
-                if (parent.HitPoints >= partOfHP && parent.HitPoints - dmg < partOfHP)
-                {
-                    Notify_MidHitPointsPassed();
-                    return;
-                }
-                partOfHP = parent.MaxHitPoints * 0.5f;
-                if (parent.HitPoints >= partOfHP && parent.HitPoints - dmg < partOfHP)
-                {
-                    Notify_MidHitPointsPassed();
-                    return;
-                }
-                partOfHP = parent.MaxHitPoints * 0.25f;
-                if (parent.HitPoints >= partOfHP && parent.HitPoints - dmg < partOfHP)
+                if (parent.HitPoints <= parent.MaxHitPoints * 0.25f * invThresholds)
                 {
                     Notify_MidHitPointsPassed();
                     return;
                 }
             }
+            base.PostPostApplyDamage(dinfo, totalDamageDealt);
         }
 
         public void Notify_HitPointsExhausted()
@@ -122,6 +115,7 @@ namespace AnomaliesExpected
 
         public void Notify_MidHitPointsPassed()
         {
+            invThresholds = Mathf.Max(0, invThresholds - 1);
             if (ClockHandHour != null)
             {
                 ClockHandHour.ticksTillFullRotation = 1;
@@ -304,6 +298,7 @@ namespace AnomaliesExpected
             SoundDefOf.VoidNode_Explode.PlayOneShotOnCamera();
             Props.EffecterOnActive.SpawnMaintained(parent, parent.Map);
             StudyUnlocks.UnlockStudyNoteManual(3);
+            invThresholds = 3;
         }
 
         public void OnPassive()
@@ -314,6 +309,7 @@ namespace AnomaliesExpected
                 clockHandActivity.ticksTillFullRotation = clockHandActivity.topOnBuildingStructure.tickPerFullRotation;
             }
             Props.EffecterOnPassive.SpawnMaintained(parent, parent.Map);
+            invThresholds = 0;
         }
 
         public bool ShouldGoPassive()
@@ -339,6 +335,7 @@ namespace AnomaliesExpected
         public override void PostExposeData()
         {
             base.PostExposeData();
+            Scribe_Values.Look(ref invThresholds, "invThresholds", 0);
             Scribe_Collections.Look(ref topOnBuildings, "topOnBuildings", LookMode.Deep);
             if (Scribe.mode == LoadSaveMode.LoadingVars)
             {
