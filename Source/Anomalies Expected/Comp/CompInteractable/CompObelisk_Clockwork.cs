@@ -34,6 +34,8 @@ namespace AnomaliesExpected
         private bool isDeactivated = false;
         private int invThresholds;
 
+        public override bool HideInteraction => !(StudyUnlocks?.isStudyNoteManualUnlocked(4) ?? true);
+
         public override void PostPostMake()
         {
             base.PostPostMake();
@@ -176,40 +178,47 @@ namespace AnomaliesExpected
                 }
                 yield return gizmo;
             }
-            yield return new Command_Action
+            int NextIndex = StudyUnlocks?.NextIndex ?? 2;
+            if (NextIndex > 1)
             {
-                defaultLabel = "AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Label".Translate(),
-                defaultDesc = "AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Desc".Translate(),
-                action = delegate
+                yield return new Command_Action
                 {
-                    isDeactivated = true;
-                    //Log.Message($"Clockwork PostDestroy -1");
-                    GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck = -1;
-                    GetSpeedometer(Props.SpeedometerDef).Destroy();
-                    parent.Destroy();
-                },
-                activateSound = SoundDefOf.Tick_Tiny,
-                icon = Props.SpeedometerDef.uiIcon,
-                Disabled = GetSpeedometer(Props.SpeedometerDef) == null,
-                disabledReason = "AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Disabled".Translate(Props.SpeedometerDef.label)
-            };
-            yield return new Command_Action
-            {
-                defaultLabel = "AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Label".Translate(),
-                defaultDesc = "AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Desc".Translate(),
-                action = delegate
+                    defaultLabel = "AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Label".Translate(),
+                    defaultDesc = "AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Desc".Translate(),
+                    action = delegate
+                    {
+                        isDeactivated = true;
+                        //Log.Message($"Clockwork PostDestroy -1");
+                        GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck = -1;
+                        GetSpeedometer(Props.SpeedometerDef).Destroy();
+                        parent.Destroy();
+                    },
+                    activateSound = SoundDefOf.Tick_Tiny,
+                    icon = Props.SpeedometerDef.uiIcon,
+                    Disabled = GetSpeedometer(Props.SpeedometerDef) == null,
+                    disabledReason = "AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Disabled".Translate(Props.SpeedometerDef.label)
+                };
+                if (NextIndex > 2)
                 {
-                    isDeactivated = true;
-                    //Log.Message($"Clockwork PostDestroy Mathf.Max({GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck}, {Find.TickManager.TicksGame + 1800000})");
-                    GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck = Mathf.Max(GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck, Find.TickManager.TicksGame + 20000/*1800000*/);
-                    GetSpeedometer(Props.DecoySpeedometerDef).Destroy();
-                    parent.Destroy();
-                },
-                activateSound = SoundDefOf.Tick_Tiny,
-                icon = Props.DecoySpeedometerDef.uiIcon,
-                Disabled = !Props.fakeSpeedometerResearch.IsFinished || GetSpeedometer(Props.DecoySpeedometerDef) == null,
-                disabledReason = Props.fakeSpeedometerResearch.IsFinished ? "AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Disabled".Translate(Props.DecoySpeedometerDef.label) : "AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Disabled".Translate()
-            };
+                    yield return new Command_Action
+                    {
+                        defaultLabel = "AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Label".Translate(),
+                        defaultDesc = "AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Desc".Translate(),
+                        action = delegate
+                        {
+                            isDeactivated = true;
+                            //Log.Message($"Clockwork PostDestroy Mathf.Max({GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck}, {Find.TickManager.TicksGame + 1800000})");
+                            GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck = Mathf.Max(GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck, Find.TickManager.TicksGame + 20000/*1800000*/);
+                            GetSpeedometer(Props.DecoySpeedometerDef).Destroy();
+                            parent.Destroy();
+                        },
+                        activateSound = SoundDefOf.Tick_Tiny,
+                        icon = Props.DecoySpeedometerDef.uiIcon,
+                        Disabled = !Props.fakeSpeedometerResearch.IsFinished || GetSpeedometer(Props.DecoySpeedometerDef) == null,
+                        disabledReason = Props.fakeSpeedometerResearch.IsFinished ? "AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Disabled".Translate(Props.DecoySpeedometerDef.label) : "AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Disabled".Translate()
+                    };
+                }
+            }
             if (DebugSettings.ShowDevGizmos)
             {
                 yield return new Command_Action
