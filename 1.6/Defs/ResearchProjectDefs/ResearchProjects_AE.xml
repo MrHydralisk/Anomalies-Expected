@@ -518,9 +518,9 @@
 		<prerequisites>
 			<li>BioferriteShaping</li>
 		</prerequisites>
-		<!-- <requiredAnalyzed> -->
-			<!-- <li>AE_ResearchNotesEDA</li> -->
-		<!-- </requiredAnalyzed> -->
+		<requiredAnalyzed>
+			<li>AE_ResearchNotesCWA</li>
+		</requiredAnalyzed>
 		<knowledgeCost>60</knowledgeCost>
 		<knowledgeCategory>Advanced</knowledgeCategory>
 		<researchViewX>6</researchViewX>

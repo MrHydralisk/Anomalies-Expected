@@ -188,5 +188,17 @@
 	<AE_ResearchNotesEDA.comps.CompAnalyzableUnlockResearch.guiLabelString>Выберите кто должен анализировать это</AE_ResearchNotesEDA.comps.CompAnalyzableUnlockResearch.guiLabelString>
 	<AE_ResearchNotesEDA.comps.CompAnalyzableUnlockResearch.inspectString>Может быть проанализирован колонистом.</AE_ResearchNotesEDA.comps.CompAnalyzableUnlockResearch.inspectString>
 	<AE_ResearchNotesEDA.comps.CompAnalyzableUnlockResearch.jobString>Анализирует исследовательскую заметку</AE_ResearchNotesEDA.comps.CompAnalyzableUnlockResearch.jobString>
+	
+	
+
+	<AE_ResearchNotesCWA.label>исследовательские заметки #CW01</AE_ResearchNotesCWA.label>
+	<AE_ResearchNotesCWA.description>Исследовательские заметки, связанные с аномалией. Их изучение может помочь разблокировать новые исследования аномалий.</AE_ResearchNotesCWA.description>
+	<AE_ResearchNotesCWA.comps.CompAnalyzableUnlockResearch.activateDescString>Анализировать исследовательские заметки.</AE_ResearchNotesCWA.comps.CompAnalyzableUnlockResearch.activateDescString>
+	<AE_ResearchNotesCWA.comps.CompAnalyzableUnlockResearch.activateLabelString>Анализировать...</AE_ResearchNotesCWA.comps.CompAnalyzableUnlockResearch.activateLabelString>
+	<AE_ResearchNotesCWA.comps.CompAnalyzableUnlockResearch.completedLetter>Изучив исследовательские заметки, {PAWN_labelShort} приобрел необходимые знания для исследовательского проектаов {RESEARCH}.\n\nТеперь ваши исследователи могут использовать исследовательские столы, чтобы начать изучение практического применения этой технологии.</AE_ResearchNotesCWA.comps.CompAnalyzableUnlockResearch.completedLetter>
+	<AE_ResearchNotesCWA.comps.CompAnalyzableUnlockResearch.completedLetterLabel>Изучены исследовательские заметки о часовом обелиске: разблокировано исследование {RESEARCH}</AE_ResearchNotesCWA.comps.CompAnalyzableUnlockResearch.completedLetterLabel>
+	<AE_ResearchNotesCWA.comps.CompAnalyzableUnlockResearch.guiLabelString>Выберите кто должен анализировать это</AE_ResearchNotesCWA.comps.CompAnalyzableUnlockResearch.guiLabelString>
+	<AE_ResearchNotesCWA.comps.CompAnalyzableUnlockResearch.inspectString>Может быть проанализирован колонистом.</AE_ResearchNotesCWA.comps.CompAnalyzableUnlockResearch.inspectString>
+	<AE_ResearchNotesCWA.comps.CompAnalyzableUnlockResearch.jobString>Анализирует исследовательскую заметку</AE_ResearchNotesCWA.comps.CompAnalyzableUnlockResearch.jobString>
 
 </LanguageData>
