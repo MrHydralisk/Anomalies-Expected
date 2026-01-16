@@ -109,16 +109,31 @@ namespace AnomaliesExpected
             {
                 clockHand.Rotate(dmg, true);
             }
-            if (ClockHandHour?.isWarmup ?? false)
+            if (dinfo.Def.Worker is DamageWorker_Aging || (ClockHandHour?.isWarmup ?? false))
             {
+                AbsorbedDamage(dinfo);
                 absorbed = true;
                 return;
             }
             if (parent.HitPoints - dmg <= 0)
             {
+                AbsorbedDamage(dinfo);
                 absorbed = true;
                 parent.HitPoints = parent.MaxHitPoints;
                 Notify_HitPointsExhausted();
+            }
+        }
+
+        private void AbsorbedDamage(DamageInfo dinfo)
+        {
+            SoundDefOf.EnergyShield_AbsorbDamage.PlayOneShot(parent);
+            Vector3 loc = parent.TrueCenter() + Vector3Utility.HorizontalVectorFromAngle(dinfo.Angle).RotatedBy(180f);
+            float num = Mathf.Min(10f, 2f + dinfo.Amount / 10f);
+            FleckMaker.Static(loc, parent.Map, FleckDefOf.ExplosionFlash, num);
+            int num2 = (int)num;
+            for (int i = 0; i < num2; i++)
+            {
+                FleckMaker.ThrowDustPuff(loc, parent.Map, Rand.Range(0.8f, 1.2f));
             }
         }
 
