@@ -17,4 +17,9 @@
 	<AEFreezingFragileStab.label>замораживающая хрупкость</AEFreezingFragileStab.label>
 	<AEFreezingFragileStab.deathMessage>{0} стал слишком хрупкими из-за замерзания.</AEFreezingFragileStab.deathMessage>
 
+
+
+	<AEAging.label>быстрое старение</AEAging.label>
+	<AEAging.deathMessage>{0} скончался от быстрого старения.</AEAging.deathMessage>
+
 </LanguageData>

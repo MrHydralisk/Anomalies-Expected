@@ -60,6 +60,7 @@
 	
 	<ThingDef Name="MoteAEZoneOfEffect" ParentName="MoteBase">
 		<defName>Mote_AEZoneOfEffect</defName>
+		<thingClass>MoteAttached</thingClass>
 		<graphicData>
 			<texPath>Things/Mote/ZoneOfEffect</texPath>
 			<shaderType>MoteGlow</shaderType>

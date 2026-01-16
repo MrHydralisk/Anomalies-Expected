@@ -93,5 +93,11 @@
 	<AE_IncidentDef_BirthdayCakeSpawn.label>большой торт</AE_IncidentDef_BirthdayCakeSpawn.label>
 	<AE_IncidentDef_BirthdayCakeSpawn.letterLabel>Найден большой торт</AE_IncidentDef_BirthdayCakeSpawn.letterLabel>
 	<AE_IncidentDef_BirthdayCakeSpawn.letterText>Ваш колонист заметил неподалеку какой-то объект, упавший с неба. При внимательном рассмотрении кажется, что это круглый большой торт на красной тарелке. Выглядит аппетитно.</AE_IncidentDef_BirthdayCakeSpawn.letterText>
+	
+	
+	
+	<AE_IncidentDef_ObeliskClockworkSpawn.label>часовой обелиск</AE_IncidentDef_ObeliskClockworkSpawn.label>
+	<AE_IncidentDef_ObeliskClockworkSpawn.letterLabel>Часовой обелиск</AE_IncidentDef_ObeliskClockworkSpawn.letterLabel>
+	<AE_IncidentDef_ObeliskClockworkSpawn.letterText>Ваш поселенец со Спидометром заметил, что поблизости появился какой-то объект. При ближайшем рассмотрении он оказался похож на обелиск с часовым механизмом. Впрочем, он был здесь всегда, так что не совсем понятно, почему поселенец так удивлён его появлению.</AE_IncidentDef_ObeliskClockworkSpawn.letterText>
 
 </LanguageData>

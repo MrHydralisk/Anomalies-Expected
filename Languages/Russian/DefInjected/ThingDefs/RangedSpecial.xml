@@ -8,5 +8,7 @@
 	<AEOrbitalBeamTargeter.comps.CompApparelReloadable.chargeNoun>заряд</AEOrbitalBeamTargeter.comps.CompApparelReloadable.chargeNoun>
 	<AEOrbitalBeamTargeter.comps.CompApparelReloadable.cooldownGerund>перезаряжается</AEOrbitalBeamTargeter.comps.CompApparelReloadable.cooldownGerund>
 	<AEOrbitalBeamTargeter.verbs.Verb_AEPowerBeam.label>целеуказатель для точечного луча</AEOrbitalBeamTargeter.verbs.Verb_AEPowerBeam.label>
+	
+	<AEAgingZone.label>зона старения</AEAgingZone.label>
 
 </LanguageData>

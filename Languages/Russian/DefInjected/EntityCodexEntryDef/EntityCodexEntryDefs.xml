@@ -35,4 +35,7 @@
 	
 	<AE_EntityCodexEntry_BirthdayCake.label>большой торт</AE_EntityCodexEntry_BirthdayCake.label>
 
+	<AE_EntityCodexEntry_Obelisk_Clockwork.label>часовой обелиск</AE_EntityCodexEntry_Obelisk_Clockwork.label>
+	<AE_EntityCodexEntry_Obelisk_Clockwork.modExtensions.0.groupName>Время истекает</AE_EntityCodexEntry_Obelisk_Clockwork.modExtensions.0.groupName>
+
 </LanguageData>

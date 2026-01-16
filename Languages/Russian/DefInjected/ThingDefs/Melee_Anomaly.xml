@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<MeleeWeapon_AEClockworkHand.label>часовая стрелка</MeleeWeapon_AEClockworkHand.label>
+	<MeleeWeapon_AEClockworkHand.description>Оружие, созданное из деталей часового механизма. При ударе оно проходит сквозь цель, вызывая быстрое старение пораженного участка независимо от его состава.</MeleeWeapon_AEClockworkHand.description>
+	<MeleeWeapon_AEClockworkHand.tools.edge.label>лезвие</MeleeWeapon_AEClockworkHand.tools.edge.label>
+
+</LanguageData>

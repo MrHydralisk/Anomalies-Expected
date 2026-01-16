@@ -6,5 +6,6 @@
 	<AE_SnowArmy.leaderTitle>лидер</AE_SnowArmy.leaderTitle>
 	<AE_SnowArmy.pawnSingular>снежный солдат</AE_SnowArmy.pawnSingular>
 	<AE_SnowArmy.pawnsPlural>снежная армия</AE_SnowArmy.pawnsPlural>
-
+	<AE_SnowArmy.messageDefendersAttacking>{0} из {1} атакуют ваш {2}.</AE_SnowArmy.messageDefendersAttacking>
+	
 </LanguageData>

@@ -134,4 +134,9 @@
 	<AEConnectEntityDatabase.label>подключение к базе данных тёмных феноменов</AEConnectEntityDatabase.label>
 	<AEConnectEntityDatabase.description>Изучение данных из базы данных тёмных феноменов и проведения ритуала подключения к базе данных тёмных феноменов.</AEConnectEntityDatabase.description>
 
+
+
+	<AEAnalyzeClockworkEmission.label>анализировать хроно-излучение</AEAnalyzeClockworkEmission.label>
+	<AEAnalyzeClockworkEmission.description>Изучение часового обелиска</AEAnalyzeClockworkEmission.description>
+
 </LanguageData>
