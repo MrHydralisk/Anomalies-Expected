@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace AnomaliesExpected
 {
@@ -42,6 +43,7 @@ namespace AnomaliesExpected
             Vector3 vector = (target.ToVector3Shifted() - position.ToVector3Shifted()).Yto0().normalized;
             CurRotation = vector.ToAngleFlat();
             base.OnTimerEnd();
+            topOnBuildingStructure.SoundOnAiming?.PlayOneShotOnCamera();
             if (AEMod.Settings.NotifyClockworkHandMinute)
             {
                 Messages.Message("AnomaliesExpected.ObeliskClockwork.HandMinute.Aiming".Translate(), new TargetInfo(Obelisk_Clockwork.Position, Obelisk_Clockwork.Map), MessageTypeDefOf.NegativeEvent);

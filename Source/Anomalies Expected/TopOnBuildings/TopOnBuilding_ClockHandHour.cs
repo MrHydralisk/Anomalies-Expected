@@ -80,6 +80,7 @@ namespace AnomaliesExpected
                 }
             }
             base.OnTimerEnd();
+            topOnBuildingStructure.SoundOnAiming?.PlayOneShotOnCamera();
             if (AEMod.Settings.NotifyClockworkHandHour)
             {
                 Messages.Message("AnomaliesExpected.ObeliskClockwork.HandHour.Aiming".Translate(), new TargetInfo(Obelisk_Clockwork.Position, Obelisk_Clockwork.Map), MessageTypeDefOf.NeutralEvent);

@@ -251,19 +251,34 @@ namespace AnomaliesExpected
                     defaultLabel = "Dev: Start Teleportation",
                     defaultDesc = "Teleport to new location"
                 };
-                yield return new Command_Action
+                if (ActivityComp.IsActive)
                 {
-                    action = delegate
+                    yield return new Command_Action
                     {
-                        TopOnBuilding_Clockwork clockHandActivity = topOnBuildings.FirstOrDefault((TopOnBuilding_Clockwork tob) => tob.type == TopOnBuildingStructureTypes.ClockHandActivity);
-                        if (clockHandActivity != null)
+                        action = delegate
                         {
-                            clockHandActivity.ticksTillFullRotation = 1;
-                        }
-                    },
-                    defaultLabel = "Dev: Toggle Active State",
-                    defaultDesc = "Toggle Active State"
-                };
+                            Notify_HitPointsExhausted();
+                        },
+                        defaultLabel = "Dev: Toggle Active State",
+                        defaultDesc = "Toggle Active State to Passive"
+                    };
+                }
+                else
+                {
+                    yield return new Command_Action
+                    {
+                        action = delegate
+                        {
+                            TopOnBuilding_Clockwork clockHandActivity = topOnBuildings.FirstOrDefault((TopOnBuilding_Clockwork tob) => tob.type == TopOnBuildingStructureTypes.ClockHandActivity);
+                            if (clockHandActivity != null)
+                            {
+                                clockHandActivity.ticksTillFullRotation = 1;
+                            }
+                        },
+                        defaultLabel = "Dev: Toggle Active State",
+                        defaultDesc = "Toggle Active State to Active"
+                    };
+                }
             }
         }
 
@@ -324,8 +339,8 @@ namespace AnomaliesExpected
         public void OnActivityActivated()
         {
             parent.HitPoints = parent.MaxHitPoints;
-            SoundDefOf.VoidNode_Explode.PlayOneShotOnCamera();
             Props.EffecterOnActive.SpawnMaintained(parent, parent.Map);
+            Props.SoundOnActive?.PlayOneShotOnCamera();
             StudyUnlocks.UnlockStudyNoteManual(3);
             invThresholds = 3;
         }
@@ -338,6 +353,7 @@ namespace AnomaliesExpected
                 clockHandActivity.ticksTillFullRotation = clockHandActivity.topOnBuildingStructure.tickPerFullRotation;
             }
             Props.EffecterOnPassive.SpawnMaintained(parent, parent.Map);
+            Props.SoundOnPassive?.PlayOneShotOnCamera();
             invThresholds = 0;
         }
 

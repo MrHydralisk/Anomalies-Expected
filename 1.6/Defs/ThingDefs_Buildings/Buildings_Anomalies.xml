@@ -1672,6 +1672,7 @@
 						<tickPerWarmup>50</tickPerWarmup>
 						<ticksTillAwaken>16970</ticksTillAwaken>
 						<rotationPerDmgMult>6</rotationPerDmgMult>
+						<SoundOnAiming>AE_ClockworkBellC</SoundOnAiming>
 					</li>
 					<li>
 						<type>ClockHandMinute</type>
@@ -1684,6 +1685,7 @@
 						<tickPerWarmup>50</tickPerWarmup>
 						<ticksTillAwaken>8656</ticksTillAwaken>
 						<rotationPerDmgMult>6</rotationPerDmgMult>
+						<SoundOnAiming>AE_ClockworkBellB</SoundOnAiming>
 					</li>
 					<li>
 						<type>ClockHandSecond</type>
@@ -1696,6 +1698,7 @@
 						<tickPerWarmup>150</tickPerWarmup>
 						<ticksTillAwaken>1288</ticksTillAwaken>
 						<rotationPerDmgMult>8</rotationPerDmgMult>
+						<SoundOnAiming>AE_ClockworkBellA</SoundOnAiming>
 					</li>
 				</topOnBuildingStructures>
 				
@@ -1709,8 +1712,10 @@
 				<DamageMultActive>2</DamageMultActive>
 				<fakeSpeedometerResearch>AEAnalyzeClockworkEmission</fakeSpeedometerResearch>
 				<EffecterOnActive>AE_ClockworkObeliskAwaken</EffecterOnActive>
+				<SoundOnActive>AE_ClockworkBellD</SoundOnActive>
 				<SoundActive>AE_ClockworkTickB</SoundActive>
 				<EffecterOnPassive>AE_ClockworkObeliskPassive</EffecterOnPassive>
+				<SoundOnPassive>AE_ClockworkBellE</SoundOnPassive>
 				<SoundPassive>AE_ClockworkTickA</SoundPassive>
 			</li>
 			<li Class="CompProperties_Studiable">

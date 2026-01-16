@@ -65,13 +65,14 @@
 		<maxSimultaneous>1</maxSimultaneous>
 		<subSounds>
 			<li>
+				<onCamera>True</onCamera>
 				<grains>
 					<li Class="AudioGrain_Clip">
 						<clipPath>Building/Clockwork/AE_ClockworkBellA</clipPath>
 					</li>
 				</grains>
-				<volumeRange>12</volumeRange>
-				<pitchRange>0.9311765~1.091765</pitchRange>
+				<volumeRange>100</volumeRange>
+				<pitchRange>0.99~1.01</pitchRange>
 			</li>
 		</subSounds>
 	</SoundDef>
@@ -82,13 +83,14 @@
 		<maxSimultaneous>1</maxSimultaneous>
 		<subSounds>
 			<li>
+				<onCamera>True</onCamera>
 				<grains>
 					<li Class="AudioGrain_Clip">
 						<clipPath>Building/Clockwork/AE_ClockworkBellB</clipPath>
 					</li>
 				</grains>
-				<volumeRange>12</volumeRange>
-				<pitchRange>0.9311765~1.091765</pitchRange>
+				<volumeRange>100</volumeRange>
+				<pitchRange>0.99~1.01</pitchRange>
 			</li>
 		</subSounds>
 	</SoundDef>
@@ -99,13 +101,14 @@
 		<maxSimultaneous>1</maxSimultaneous>
 		<subSounds>
 			<li>
+				<onCamera>True</onCamera>
 				<grains>
 					<li Class="AudioGrain_Clip">
 						<clipPath>Building/Clockwork/AE_ClockworkBellC</clipPath>
 					</li>
 				</grains>
-				<volumeRange>12</volumeRange>
-				<pitchRange>0.9311765~1.091765</pitchRange>
+				<volumeRange>100</volumeRange>
+				<pitchRange>0.99~1.01</pitchRange>
 			</li>
 		</subSounds>
 	</SoundDef>
@@ -116,13 +119,14 @@
 		<maxSimultaneous>1</maxSimultaneous>
 		<subSounds>
 			<li>
+				<onCamera>True</onCamera>
 				<grains>
 					<li Class="AudioGrain_Clip">
 						<clipPath>Building/Clockwork/AE_ClockworkBellD</clipPath>
 					</li>
 				</grains>
-				<volumeRange>12</volumeRange>
-				<pitchRange>0.9311765~1.091765</pitchRange>
+				<volumeRange>100</volumeRange>
+				<pitchRange>0.99~1.01</pitchRange>
 			</li>
 		</subSounds>
 	</SoundDef>
@@ -133,13 +137,14 @@
 		<maxSimultaneous>1</maxSimultaneous>
 		<subSounds>
 			<li>
+				<onCamera>True</onCamera>
 				<grains>
 					<li Class="AudioGrain_Clip">
 						<clipPath>Building/Clockwork/AE_ClockworkBellE</clipPath>
 					</li>
 				</grains>
-				<volumeRange>12</volumeRange>
-				<pitchRange>0.9311765~1.091765</pitchRange>
+				<volumeRange>100</volumeRange>
+				<pitchRange>0.99~1.01</pitchRange>
 			</li>
 		</subSounds>
 	</SoundDef>
@@ -156,7 +161,7 @@
 					</li>
 				</grains>
 				<volumeRange>100</volumeRange>
-				<pitchRange>0.9311765~1.091765</pitchRange>
+				<pitchRange>0.99~1.01</pitchRange>
 			</li>
 		</subSounds>
 	</SoundDef>
