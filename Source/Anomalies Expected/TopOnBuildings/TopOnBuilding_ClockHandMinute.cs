@@ -59,7 +59,7 @@ namespace AnomaliesExpected
             if (zoneComp != null)
             {
                 zoneComp.StartAttack(compObelisk_Clockwork.parent, compObelisk_Clockwork.parent.def);
-                zoneComp.damageMult = compObelisk_Clockwork.Props.DamageMultActive;
+                zoneComp.damageMult = isActive ? compObelisk_Clockwork.Props.DamageMultActive : 1f;
             }
             compObelisk_Clockwork.StudyUnlocks.UnlockStudyNoteManual(1);
             base.OnWarmupEnd();

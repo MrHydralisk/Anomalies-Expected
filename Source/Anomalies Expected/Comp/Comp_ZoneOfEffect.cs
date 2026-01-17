@@ -89,20 +89,20 @@ namespace AnomaliesExpected
             Map map = parent.Map;
             Props.effecterOnDamage?.SpawnMaintained(parent, map);
             Props.soundOnDamage?.PlayOneShot(parent);
+            tmpThings.Clear();
             foreach (IntVec3 cell in GenRadial.RadialCellsAround(parent.Position, Props.radius, useCenter: true))
             {
                 if (!cell.InBounds(map))
                 {
                     continue;
                 }
-                tmpThings.Clear();
-                tmpThings.AddRange(cell.GetThingList(map));
-                for (int i = 0; i < tmpThings.Count; i++)
-                {
-                    tmpThings[i].TakeDamage(new DamageInfo(Props.damageDef, Mathf.RoundToInt(Props.DamageAmount * damageMult), instigator: instigator, weapon: weaponDef));
-                }
-                tmpThings.Clear();
+                tmpThings.AddRangeUnique(cell.GetThingList(map));
             }
+            for (int i = 0; i < tmpThings.Count; i++)
+            {
+                tmpThings[i].TakeDamage(new DamageInfo(Props.damageDef, Mathf.RoundToInt(Props.DamageAmount * damageMult), instigator: instigator, weapon: weaponDef));
+            }
+            tmpThings.Clear();
         }
 
         public override void PostExposeData()
