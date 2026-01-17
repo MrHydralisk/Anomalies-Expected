@@ -28,6 +28,7 @@ While usually I try to explain in mod description how mod content work in detail
 ![Text](/Mod%20Page/Images/Content/AEDesc13.png)
 ![Text](/Mod%20Page/Images/Content/AEDesc14.png)
 ![Text](/Mod%20Page/Images/Content/AEDesc15.png)
+![Text](/Mod%20Page/Images/Content/AEDesc16.png)
 
 Anomalies Classification:
 * Class 0 anomaly "Safe".
@@ -39,6 +40,7 @@ Anomalies Classification:
 Currently available:
 * 8 Anomaly of basic category
 * 7 Anomaly of advanced category
+* 1 Anomaly of ultimate category
 * 3 Mysterious cargo
 * 2 Creepjoiner
 
