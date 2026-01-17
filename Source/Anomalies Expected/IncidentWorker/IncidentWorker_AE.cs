@@ -32,6 +32,27 @@ namespace AnomaliesExpected
                 {
                     return false;
                 }
+                int minEntityDiscoveredRequired = Ext?.minDiscoveredEntityRequired ?? -1;
+                if (minEntityDiscoveredRequired > 0)
+                {
+                    EntityCategoryDef minDiscoveredEntityCategoryDefRequired = Ext?.minDiscoveredEntityCategoryDefRequired ?? null;
+                    if (minDiscoveredEntityCategoryDefRequired == null)
+                    {
+                        int discovered = 0;
+                        foreach (EntityCategoryDef entityCategoryDef in DefDatabase<EntityCategoryDef>.AllDefsListForReading)
+                        {
+                            discovered += Find.EntityCodex.DiscoveredCount(entityCategoryDef);
+                        }
+                        if (discovered < minEntityDiscoveredRequired)
+                        {
+                            return false;
+                        }
+                    }
+                    else if (Find.EntityCodex.DiscoveredCount(minDiscoveredEntityCategoryDefRequired) < minEntityDiscoveredRequired)
+                    {
+                        return false;
+                    }
+                }
             }
             return base.CanFireNowSub(parms);
         }

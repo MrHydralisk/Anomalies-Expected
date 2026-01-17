@@ -356,6 +356,8 @@
 				<entityCodexEntryDefsRequired>
 					<li>AE_EntityCodexEntry_BloodPuddle</li>
 				</entityCodexEntryDefsRequired>
+				<minDiscoveredEntityCategoryDefRequired>Advanced</minDiscoveredEntityCategoryDefRequired>
+				<minDiscoveredEntityRequired>18</minDiscoveredEntityRequired>
 			</li>
 		</modExtensions>
 	</IncidentDef>
@@ -386,6 +388,8 @@
 				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
 				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
 				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+				<minDiscoveredEntityCategoryDefRequired>Basic</minDiscoveredEntityCategoryDefRequired>
+				<minDiscoveredEntityRequired>14</minDiscoveredEntityRequired>
 			</li>
 		</modExtensions>
 	</IncidentDef>
@@ -416,6 +420,8 @@
 				<ActiveDropPodDef>AE_ActiveDropPodAnomaly</ActiveDropPodDef>
 				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
 				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
+				<minDiscoveredEntityCategoryDefRequired>Advanced</minDiscoveredEntityCategoryDefRequired>
+				<minDiscoveredEntityRequired>20</minDiscoveredEntityRequired>
 			</li>
 		</modExtensions>
 	</IncidentDef>
@@ -516,6 +522,8 @@
 						<factor>0</factor>
 					</li>
 				</ChanceFactorPowPerHediffDefs>
+				<minDiscoveredEntityCategoryDefRequired>Advanced</minDiscoveredEntityCategoryDefRequired>
+				<minDiscoveredEntityRequired>18</minDiscoveredEntityRequired>
 			</li>
 		</modExtensions>
 	</IncidentDef>
@@ -545,6 +553,7 @@
 				</DeployableThingDefs>
 				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
 				<FleckScale>0.46</FleckScale>
+				<minDiscoveredEntityRequired>12</minDiscoveredEntityRequired>
 			</li>
 		</modExtensions>
 	</IncidentDef>

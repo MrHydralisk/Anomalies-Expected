@@ -19,5 +19,7 @@ namespace AnomaliesExpected
         public int maxAnomalyThreatLevel = -1;
         public List<AssaultSummonPattern> AssaultSummonPattern = new List<AssaultSummonPattern>();
         public float FleckScale = 1;
+        public int minDiscoveredEntityRequired = -1;
+        public EntityCategoryDef minDiscoveredEntityCategoryDefRequired;
     }
 }
