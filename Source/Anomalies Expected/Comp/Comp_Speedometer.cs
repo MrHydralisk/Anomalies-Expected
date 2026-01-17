@@ -84,7 +84,7 @@ namespace AnomaliesExpected
                     deceleratedPawns.RemoveAt(i);
                 }
             }
-            Pawn[] AvailablePawns = parent.Map.mapPawns.AllHumanlikeSpawned.Where((Pawn p1) => !deceleratedPawns.Any((Pawn p2) => p1 == p2) && !p1.health.hediffSet.HasHediff(Props.DecelerationHediffDef)).ToArray();
+            Pawn[] AvailablePawns = parent.MapHeld.mapPawns.AllHumanlikeSpawned.Where((Pawn p1) => !deceleratedPawns.Any((Pawn p2) => p1 == p2) && !p1.health.hediffSet.HasHediff(Props.DecelerationHediffDef)).ToArray();
             if (AvailablePawns.Count() > 0)
             {
                 Pawn DeceleratedPawn = Rand.Element(AvailablePawns.ToArray());
