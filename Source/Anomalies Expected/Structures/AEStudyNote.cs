@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using System.Collections.Generic;
 using Verse;
 
 namespace AnomaliesExpected
@@ -15,5 +16,6 @@ namespace AnomaliesExpected
         public int AmountStudiedRequirment = -1;
         public bool isSyncWithDB;
         public ThingDef ThingDefSpawn;
+        public List<ThingDef> DiscoveredThingDefs = new List<ThingDef>();
     }
 }

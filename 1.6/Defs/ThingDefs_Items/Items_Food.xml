@@ -34,6 +34,7 @@
 			<li>FoodMeals</li>
 			<li>ItemsAnomalies</li>
 		</thingCategories>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
 		<alwaysHaulable>true</alwaysHaulable>
 		<comps>
 			<li Class="CompProperties_Forbiddable"/>

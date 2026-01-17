@@ -49,6 +49,7 @@
 		<descriptionHyperlinks>
 			<RecipeDef>InstallAEForbiddenFruitImplant</RecipeDef>
 		</descriptionHyperlinks>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
 		<costList>
 			<AE_ForbiddenFruit>1</AE_ForbiddenFruit>
 			<Bioferrite>15</Bioferrite>
@@ -113,6 +114,7 @@
 		<descriptionHyperlinks>
 			<RecipeDef>InstallAEThermalReflectiveSkinImplant</RecipeDef>
 		</descriptionHyperlinks>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
 		<costList>
 			<Bioferrite>55</Bioferrite>
 			<ComponentSpacer>6</ComponentSpacer>

@@ -357,7 +357,7 @@
 					<li>AE_EntityCodexEntry_BloodPuddle</li>
 				</entityCodexEntryDefsRequired>
 				<minDiscoveredEntityCategoryDefRequired>Advanced</minDiscoveredEntityCategoryDefRequired>
-				<minDiscoveredEntityRequired>18</minDiscoveredEntityRequired>
+				<minDiscoveredEntityRequired>14</minDiscoveredEntityRequired>
 			</li>
 		</modExtensions>
 	</IncidentDef>
@@ -421,7 +421,7 @@
 				<SkyfallerDef>AE_AnomalyIncoming</SkyfallerDef>
 				<ChanceFactorPowPerBuilding>0</ChanceFactorPowPerBuilding>
 				<minDiscoveredEntityCategoryDefRequired>Advanced</minDiscoveredEntityCategoryDefRequired>
-				<minDiscoveredEntityRequired>20</minDiscoveredEntityRequired>
+				<minDiscoveredEntityRequired>18</minDiscoveredEntityRequired>
 			</li>
 		</modExtensions>
 	</IncidentDef>
@@ -523,7 +523,7 @@
 					</li>
 				</ChanceFactorPowPerHediffDefs>
 				<minDiscoveredEntityCategoryDefRequired>Advanced</minDiscoveredEntityCategoryDefRequired>
-				<minDiscoveredEntityRequired>18</minDiscoveredEntityRequired>
+				<minDiscoveredEntityRequired>14</minDiscoveredEntityRequired>
 			</li>
 		</modExtensions>
 	</IncidentDef>

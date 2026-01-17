@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using UnityEngine;
 using Verse;
 
@@ -288,6 +289,13 @@ namespace AnomaliesExpected
                     if (aestudyNote.ThingDefSpawn != null && !(entityEntry?.SpawnedRelatedAnalyzableThingDef.Any((ThingDef td) => td == aestudyNote.ThingDefSpawn) ?? true))
                     {
                         entityEntry.SpawnThing(aestudyNote.ThingDefSpawn, parent);
+                    }
+                    if (!aestudyNote.DiscoveredThingDefs.NullOrEmpty())
+                    {
+                        foreach (ThingDef thingDef in aestudyNote.DiscoveredThingDefs)
+                        {
+                            Find.HiddenItemsManager.SetDiscovered(thingDef);
+                        }
                     }
                 }
                 CurrThreshold = studyNote.threshold;

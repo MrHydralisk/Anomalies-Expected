@@ -39,6 +39,7 @@
 				<fat><scale>(0.4,0.4)</scale></fat>
 			</wornGraphicData>
 		</apparel>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
 		<statBases>
 			<MarketValue>600</MarketValue>
 			<WorkToMake>45000</WorkToMake>
