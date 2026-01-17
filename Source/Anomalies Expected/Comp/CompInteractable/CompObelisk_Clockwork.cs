@@ -104,12 +104,17 @@ namespace AnomaliesExpected
         public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
         {
             base.PostPreApplyDamage(ref dinfo, out absorbed);
+            if (dinfo.Def.Worker is DamageWorker_Aging)
+            {
+                absorbed = true;
+                return;
+            }
             float dmg = dinfo.Amount * dinfo.Def.buildingDamageFactor * dinfo.Def.buildingDamageFactorPassable;
             foreach (TopOnBuilding_Clockwork clockHand in topOnBuildings)
             {
                 clockHand.Rotate(dmg, true);
             }
-            if (dinfo.Def.Worker is DamageWorker_Aging || (ClockHandHour?.isWarmup ?? false))
+            if (ClockHandHour?.isWarmup ?? false)
             {
                 AbsorbedDamage(dinfo);
                 absorbed = true;

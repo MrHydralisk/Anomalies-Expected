@@ -36,7 +36,7 @@
 		<displayWound>false</displayWound>
 		<tendable>false</tendable>
 		<injuryProps>
-			<painPerSeverity>0.01</painPerSeverity>
+			<painPerSeverity>0.004</painPerSeverity>
 			<canMerge>true</canMerge>
 			<destroyedLabel>Disintegrated to rapid aging</destroyedLabel>
 		</injuryProps>
