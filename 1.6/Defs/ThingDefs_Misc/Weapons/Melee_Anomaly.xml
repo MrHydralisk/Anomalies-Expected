@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="BaseMeleeWeapon">
+		<defName>MeleeWeapon_AEClockworkHand</defName>
+		<label>clockwork hand</label>
+		<description>A weapon made out of clockwork parts. Upon impact, it phases through the target, rapidly aging the affected area regardless of its composition.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponMelee/AEClockworkHand</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<equippedAngleOffset>-65</equippedAngleOffset>
+		<possessionCount>1</possessionCount>
+		<techLevel>Ultra</techLevel>
+		<statBases>
+			<Mass>2</Mass>
+		</statBases>
+		<tools>
+			<li>
+				<label>edge</label>
+				<capacities>
+					<li>AEChronoDistortion</li>
+				</capacities>
+				<power>25</power>
+				<cooldownTime>3</cooldownTime>
+			</li>
+		</tools>
+		<tradeTags Inherit="False"/>
+		<weaponTags Inherit="False"/>
+		<smeltable>false</smeltable>
+		<genericMarketSellable>false</genericMarketSellable>
+		<tradeability>Sellable</tradeability>
+		<recipeMaker Inherit="False" IsNull="True"/>
+		<thingCategories>
+			<li>AEWeaponsAnomalies</li>
+		</thingCategories>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+		<allowedArchonexusCount>1</allowedArchonexusCount>
+		<comps>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>60000</frequencyTicks>
+				<knowledgeCategory>Advanced</knowledgeCategory>
+				<anomalyKnowledge>2</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<showToggleGizmo>true</showToggleGizmo>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<isCreateEntityEntryWithoutCodexEntry>true</isCreateEntityEntryWithoutCodexEntry>
+				<category>Advanced</category>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_StudyNotes</li>
+		</inspectorTabs>
+	</ThingDef>
+  
+</Defs>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<AnomaliesExpected.ObeliskClockwork.HandSecond.Awaken>Second hand started moving</AnomaliesExpected.ObeliskClockwork.HandSecond.Awaken>
+	<AnomaliesExpected.ObeliskClockwork.HandSecond.Aiming>Second hand completed rotational cycle</AnomaliesExpected.ObeliskClockwork.HandSecond.Aiming>
+	<AnomaliesExpected.ObeliskClockwork.HandMinute.Awaken>Minute hand started moving</AnomaliesExpected.ObeliskClockwork.HandMinute.Awaken>
+	<AnomaliesExpected.ObeliskClockwork.HandMinute.Aiming>Minute hand completed rotational cycle</AnomaliesExpected.ObeliskClockwork.HandMinute.Aiming>
+	<AnomaliesExpected.ObeliskClockwork.HandHour.Awaken>Hour hand started moving</AnomaliesExpected.ObeliskClockwork.HandHour.Awaken>
+	<AnomaliesExpected.ObeliskClockwork.HandHour.Aiming>Hour hand completed rotational cycle</AnomaliesExpected.ObeliskClockwork.HandHour.Aiming>
+	<AnomaliesExpected.ObeliskClockwork.HandDay.Aiming>Day hand completed rotational cycle</AnomaliesExpected.ObeliskClockwork.HandDay.Aiming>
+	
+	<AnomaliesExpected.ObeliskClockwork.Message.NewObeliskResearchReset>{0} has adapted to the decoy's frequency. We must initiate fresh research to find alternative.</AnomaliesExpected.ObeliskClockwork.Message.NewObeliskResearchReset>
+	
+	<AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Label>Place a speedometer into the obelisk.</AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Label>
+	<AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Desc>Insert a real speedometer into the obelisk's socket. Speedometer must be placed next to obelisk. [Will destroy both]</AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Desc>
+	<AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Disabled>No {0} placed nearby.</AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Disabled>
+	
+	<AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Label>Place a decoy speedometer into the obelisk.</AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Label>
+	<AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Desc>Insert a specially designed device that imitates the speedometer's chrono-effect frequency into the obelisk's socket. Decoy must be placed next to obelisk. [Will destroy it]</AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Desc>
+	<AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Disabled>Research to find decoy's frequency not finished.</AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Disabled>
+		
+	<AnomaliesExpected.ObeliskClockwork.Clockhand.Label>Clockwork parts.</AnomaliesExpected.ObeliskClockwork.Clockhand.Label>
+	<AnomaliesExpected.ObeliskClockwork.Clockhand.Text>Your colonists noticed some objects on a ground. We don't know where it come from, but it looks like parts of a giant clockwork.</AnomaliesExpected.ObeliskClockwork.Clockhand.Text>
+</LanguageData>

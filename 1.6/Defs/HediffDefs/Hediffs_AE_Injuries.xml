@@ -26,5 +26,19 @@
 			<destroyedLabel>Lost to freezing through</destroyedLabel>
 		</injuryProps>
 	</HediffDef>
+	
+	
+
+	<HediffDef ParentName="InjuryBase">
+		<defName>AEAging</defName>
+		<label>rapid aging</label>
+		<description>Abnormal cellular acceleration caused by chrono exposure. This condition forces the body to undergo decades of biological decay within moments. As telomeres rapidly deplete, the skin loses elasticity and organs begin to fail from advanced senility, often resulting in systemic collapse.</description>
+		<displayWound>false</displayWound>
+		<injuryProps>
+			<painPerSeverity>0.01</painPerSeverity>
+			<canMerge>true</canMerge>
+			<destroyedLabel>Disintegrated to rapid aging</destroyedLabel>
+		</injuryProps>
+	</HediffDef>
 
 </Defs>

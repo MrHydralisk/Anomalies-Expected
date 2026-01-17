@@ -315,4 +315,28 @@
 		<orderInCategory>1300</orderInCategory>
 	</EntityCodexEntryDef>
 
+	<EntityCodexEntryDef>
+		<defName>AE_EntityCodexEntry_Obelisk_Clockwork</defName>
+		<label>clockwork obelisk</label>
+		<category>Ultimate</category>
+		<uiIconPath>UI/CodexEntries/AE_ObeliskClockwork</uiIconPath>
+		<useDescriptionFrom>AE_Obelisk_Clockwork</useDescriptionFrom>
+		<linkedThings>
+			<li>AE_Obelisk_Clockwork</li>
+		</linkedThings>
+		<orderInCategory>1300</orderInCategory>
+		<modExtensions>
+			<li Class="AnomaliesExpected.EntityCodexEntryDefExtension">
+				<groupName>Clock runs empty</groupName>
+				<groupMembersEntityCodexDefs>
+					<li>AE_EntityCodexEntry_Speedometer</li>
+				</groupMembersEntityCodexDefs>
+				<groupMembersThingDefs>
+					<li>AE_ClockworkParts</li>
+					<li>MeleeWeapon_AEClockworkHand</li>
+				</groupMembersThingDefs>
+			</li>
+		</modExtensions>
+	</EntityCodexEntryDef>
+
 </Defs>

@@ -28,5 +28,6 @@ namespace AnomaliesExpected
         public static ThingDef AE_AtmosphericCooler;
         [MayRequireAnomaly]
         public static ThingDef AE_AtmosphericController;
+        public static ThingDef AE_Speedometer;
     }
 }

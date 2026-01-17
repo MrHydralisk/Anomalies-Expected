@@ -16,6 +16,11 @@
 	
 	<AnomaliesExpected.Settings.Patch.VoidProvactionCooldown>Установить паузу между ритуалами воззвания к пустоте в {0} часов (по умолчанию 120ч). [Вступает в силу при запуске игры]</AnomaliesExpected.Settings.Patch.VoidProvactionCooldown>
 	
+	<AnomaliesExpected.Settings.ObeliskClockwork.HandSecond>Уведомлять о секундной стрелке Часового Обелиска.</AnomaliesExpected.Settings.ObeliskClockwork.HandSecond>
+	<AnomaliesExpected.Settings.ObeliskClockwork.HandMinute>Уведомлять о минутной стрелке Часового Обелиска.</AnomaliesExpected.Settings.ObeliskClockwork.HandMinute>
+	<AnomaliesExpected.Settings.ObeliskClockwork.HandHour>Уведомлять о часовой стрелке Часового Обелиска.</AnomaliesExpected.Settings.ObeliskClockwork.HandHour>
+	<AnomaliesExpected.Settings.ObeliskClockwork.HandDay>Уведомлять о дневной стрелке Часового Обелиска.</AnomaliesExpected.Settings.ObeliskClockwork.HandDay>
+	
 	<AnomaliesExpected.Settings.ResearchTab.Unlock>Попытаться разблокировать Anomalies Expected исследовательские проекты</AnomaliesExpected.Settings.ResearchTab.Unlock>
 	
 	<AnomaliesExpected.Settings.DevMode.Info>Показывать дополнительную информации для отладки.</AnomaliesExpected.Settings.DevMode.Info>

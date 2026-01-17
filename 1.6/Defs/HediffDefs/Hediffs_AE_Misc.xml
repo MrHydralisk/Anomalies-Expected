@@ -572,7 +572,7 @@
 					<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">2</PsychicEntropyGain>
 					
 					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Biotech">2</MeditationFocusGain>
-					<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Biotech">2</PsychicEntropyRecoveryRate>
+					<PsychicEntropyRecoveryRate MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">2</PsychicEntropyRecoveryRate>
 					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">2</MechFormingSpeed>
 					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">2</MechRepairSpeed>
 					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">2</SubcoreEncodingSpeed>
@@ -615,7 +615,7 @@
 					<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">4</PsychicEntropyGain>
 					
 					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Biotech">4</MeditationFocusGain>
-					<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Biotech">4</PsychicEntropyRecoveryRate>
+					<PsychicEntropyRecoveryRate MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">4</PsychicEntropyRecoveryRate>
 					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">4</MechFormingSpeed>
 					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">4</MechRepairSpeed>
 					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">4</SubcoreEncodingSpeed>
@@ -658,7 +658,7 @@
 					<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">8</PsychicEntropyGain>
 					
 					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Biotech">8</MeditationFocusGain>
-					<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Biotech">8</PsychicEntropyRecoveryRate>
+					<PsychicEntropyRecoveryRate MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">8</PsychicEntropyRecoveryRate>
 					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">8</MechFormingSpeed>
 					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">8</MechRepairSpeed>
 					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">8</SubcoreEncodingSpeed>
@@ -701,7 +701,7 @@
 					<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">16</PsychicEntropyGain>
 					
 					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Biotech">16</MeditationFocusGain>
-					<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Biotech">16</PsychicEntropyRecoveryRate>
+					<PsychicEntropyRecoveryRate MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">16</PsychicEntropyRecoveryRate>
 					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">16</MechFormingSpeed>
 					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">16</MechRepairSpeed>
 					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">16</SubcoreEncodingSpeed>
@@ -744,7 +744,7 @@
 					<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">32</PsychicEntropyGain>
 					
 					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Biotech">32</MeditationFocusGain>
-					<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Biotech">32</PsychicEntropyRecoveryRate>
+					<PsychicEntropyRecoveryRate MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">32</PsychicEntropyRecoveryRate>
 					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">32</MechFormingSpeed>
 					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">32</MechRepairSpeed>
 					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">32</SubcoreEncodingSpeed>
@@ -787,7 +787,7 @@
 					<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">64</PsychicEntropyGain>
 					
 					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Biotech">64</MeditationFocusGain>
-					<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Biotech">64</PsychicEntropyRecoveryRate>
+					<PsychicEntropyRecoveryRate MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">64</PsychicEntropyRecoveryRate>
 					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">64</MechFormingSpeed>
 					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">64</MechRepairSpeed>
 					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">64</SubcoreEncodingSpeed>
@@ -844,7 +844,7 @@
 					<PsychicEntropyGain MayRequire="Ludeon.RimWorld.Royalty">0.01</PsychicEntropyGain>
 					
 					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Biotech">0.01</MeditationFocusGain>
-					<PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Biotech">0.01</PsychicEntropyRecoveryRate>
+					<PsychicEntropyRecoveryRate MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Biotech">0.01</PsychicEntropyRecoveryRate>
 					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">0.01</MechFormingSpeed>
 					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">0.01</MechRepairSpeed>
 					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">0.01</SubcoreEncodingSpeed>

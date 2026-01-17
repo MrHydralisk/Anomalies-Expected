@@ -23,14 +23,4 @@ namespace AnomaliesExpected
             compClass = typeof(Comp_MeatGrinder);
         }
     }
-
-    public class MeatGrinderMood
-    {
-        public int tick;
-        public int tickConsumed;
-        public List<BodyPartDef> bodyPartDefs;
-        public float butcherEfficiency;
-        public bool isDanger;
-        public int noise;
-    }
 }

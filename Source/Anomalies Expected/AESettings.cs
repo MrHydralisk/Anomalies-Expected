@@ -14,6 +14,10 @@ namespace AnomaliesExpected
         public float UndergroundFleshmassNestFrequencyMult = 1f;
         public int BloodLakeSubMapMaxSize = 200;
         public int VoidProvactionCooldown = 120;
+        public bool NotifyClockworkHandSecond = true;
+        public bool NotifyClockworkHandMinute = true;
+        public bool NotifyClockworkHandHour = true;
+        public bool NotifyClockworkHandDay = true;
         public bool DevModeInfo = false;
 
         public override void ExposeData()
@@ -29,6 +33,10 @@ namespace AnomaliesExpected
             Scribe_Values.Look(ref UndergroundFleshmassNestFrequencyMult, "UndergroundFleshmassNestFrequencyMult", defaultValue: 1f);
             Scribe_Values.Look(ref BloodLakeSubMapMaxSize, "BloodLakeSubMapMaxSize", defaultValue: 200);
             Scribe_Values.Look(ref VoidProvactionCooldown, "VoidProvactionCooldown", defaultValue: 120);
+            Scribe_Values.Look(ref NotifyClockworkHandSecond, "NotifyClockworkHandSecond", defaultValue: true);
+            Scribe_Values.Look(ref NotifyClockworkHandMinute, "NotifyClockworkHandMinute", defaultValue: true);
+            Scribe_Values.Look(ref NotifyClockworkHandHour, "NotifyClockworkHandHour", defaultValue: true);
+            Scribe_Values.Look(ref NotifyClockworkHandDay, "NotifyClockworkHandDay", defaultValue: true);
             Scribe_Values.Look(ref DevModeInfo, "DevModeInfo", defaultValue: false);
         }
     }

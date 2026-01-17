@@ -873,5 +873,143 @@
 			<li>ITab_StudyNotes</li>
 		</inspectorTabs>
 	</ThingDef>
+	
+	
+	
+	<ThingDef>
+		<defName>AE_DecoySpeedometer</defName>
+		<label>decoy speedometer</label>
+		<description>A dark circular device infused with shard that imitates the speedometer's chrono-effect frequency.</description>
+		<thingClass>Thing</thingClass>
+		<category>Item</category>
+		<genericMarketSellable>false</genericMarketSellable>
+		<drawerType>MapMeshOnly</drawerType>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<altitudeLayer>Item</altitudeLayer>
+		<selectable>true</selectable>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<alwaysHaulable>true</alwaysHaulable>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<pathCost>14</pathCost>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Item/Special/AE_DecoySpeedometer</texPath>
+			<drawSize>(0.75,0.75)</drawSize>
+		</graphicData>
+		<statBases>
+			<Mass>0.18</Mass>
+			<Beauty>3</Beauty>
+			<Flammability>0</Flammability>
+			<MarketValue>400</MarketValue>
+			<WorkToMake>30000</WorkToMake>
+		</statBases>
+		<thingCategories>
+			<li>ItemsAnomalies</li>
+		</thingCategories>
+		<costList>
+			<Shard>1</Shard>
+			<Bioferrite>30</Bioferrite>
+		</costList>
+		<recipeMaker>
+			<recipeUsers Inherit="false">
+				<li>BioferriteShaper</li>
+			</recipeUsers>
+			<researchPrerequisite>AEAnalyzeClockworkEmission</researchPrerequisite>
+			<displayPriority>1300</displayPriority>
+		</recipeMaker>
+	</ThingDef>
+	
+	<ThingDef>
+		<defName>AE_ClockworkParts</defName>
+		<label>clockwork parts</label>
+		<description>Fragments of a colossal mechanism that seem to pulse with a faint, rhythmic vibration. Despite being separated, these jagged shards exert a subtle pull toward one another, as if mourning the loss of their greater whole.</description>
+		<thingClass>AnomaliesExpected.ThingWithComps_AE</thingClass>
+		<category>Item</category>
+		<genericMarketSellable>false</genericMarketSellable>
+		<drawerType>MapMeshOnly</drawerType>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<altitudeLayer>Item</altitudeLayer>
+		<selectable>true</selectable>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<alwaysHaulable>true</alwaysHaulable>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<pathCost>14</pathCost>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Item/Special/AE_ClockworkParts</texPath>
+		</graphicData>
+		<statBases>
+			<Mass>2</Mass>
+			<Beauty>3</Beauty>
+			<Flammability>0</Flammability>
+			<MarketValue>1000</MarketValue>
+		</statBases>
+		<thingCategories>
+			<li>ItemsAnomalies</li>
+		</thingCategories>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+		<allowedArchonexusCount>1</allowedArchonexusCount>
+		<comps>
+			<li Class="AnomaliesExpected.CompProperties_TransformAfterStudy">
+				<activeTicks>1</activeTicks>
+				<cooldownTicks>12000</cooldownTicks>
+				<ticksToActivate>10000</ticksToActivate>
+				<activateTexPath>UI/Icons/AE_Analyze</activateTexPath>
+        
+				<activateLabelString>Analyze parts</activateLabelString>
+				<activateDescString>Will attempt to manipulate the parts to determine their function.</activateDescString>
+				<guiLabelString>Choose who should analyze this.</guiLabelString>
+				<jobString>analyze parts</jobString>
+				<activatingStringPending>analyzing {0}</activatingStringPending>
+				<activatingString>analyzing {0}: {1}s</activatingString>
+				<onCooldownString>-</onCooldownString>
+				<messageCooldownEnded>-</messageCooldownEnded>
+
+				<fleckOnUsed>PsycastAreaEffect</fleckOnUsed>
+				<fleckOnUsedScale>3</fleckOnUsedScale>
+				<soundActivate>PsychicAnimalPulserCast</soundActivate>
+
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<transformedDef>MeleeWeapon_AEClockworkHand</transformedDef>
+			</li>
+			<li Class="CompProperties_Studiable">
+				<frequencyTicks>60000</frequencyTicks>
+				<knowledgeCategory>Advanced</knowledgeCategory>
+				<anomalyKnowledge>2</anomalyKnowledge>
+				<minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+				<showToggleGizmo>true</showToggleGizmo>
+			</li>
+			<li Class="AnomaliesExpected.CompProperties_AEStudyUnlocks">
+				<compClass>AnomaliesExpected.CompAEStudyUnlocks</compClass>
+				<studyNotes>
+					<li Class="AnomaliesExpected.AEStudyNote">
+						<AnomalyLabel>clockwork parts</AnomalyLabel>
+						<AnomalyDesc>Fragments of a colossal mechanism that seem to pulse with a faint, rhythmic vibration. Despite being separated, these jagged shards exert a subtle pull toward one another, as if mourning the loss of their greater whole.\n\nClassified as Class-0 (Safe) anomaly.</AnomalyDesc>
+						<threshold>3</threshold>
+						<label>#1/1 Clockwork parts study report</label>
+						<text>Clockwork Echoes\n\nSubject: {PAWN_nameDef}\n\nAbstract:\nThese anomalous fragment exhibit a passive, mutual attraction and resist physical separation. Despite their unknown origin, they evoke a distinct sense of familiarity. Currently classified as Safe, the parts are pending structural analysis and reassembly to determine their intended function.\n\nObservations:\nUpon initial examination, {PAWN_nameDef} attempted to physically separate the components.\nThese efforts proved futile, as the parts exhibited a persistent tendency to remain in close proximity.\n\nOutcome:\nClockwork parts did not exhibit any overt hostile behavior during the observation and manipulation process.\n\nDiscussion:\nWhile the origin of these fragments remains unknown, they evoke a distinct sense of familiarity. Parts appear to possess an intrinsic attraction to one another, resisting separation. This behavior suggests a high probability that the parts are intended to be integrated into a singular mechanism.\nGiven the current lack of active hostile behavior, clockwork parts has been classified as Class-0 (Safe) anomaly.\n\nRecommendations:\nA comprehensive analysis of the components should be conducted, followed by attempts to reposition and reassemble them into their original configuration.</text>
+						<ThreatClass>0</ThreatClass>
+						<isSyncWithDB>true</isSyncWithDB>
+					</li>
+				</studyNotes>
+				<isCreateEntityEntryWithoutCodexEntry>true</isCreateEntityEntryWithoutCodexEntry>
+				<category>Advanced</category>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_StudyNotes</li>
+		</inspectorTabs>
+	</ThingDef>
   
 </Defs>

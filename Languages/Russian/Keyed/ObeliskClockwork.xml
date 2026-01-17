@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<AnomaliesExpected.ObeliskClockwork.HandSecond.Awaken>Секундная стрелка начала движение</AnomaliesExpected.ObeliskClockwork.HandSecond.Awaken>
+	<AnomaliesExpected.ObeliskClockwork.HandSecond.Aiming>Секундная стрелка завершила цикл вращения</AnomaliesExpected.ObeliskClockwork.HandSecond.Aiming>
+	<AnomaliesExpected.ObeliskClockwork.HandMinute.Awaken>Минутная стрелка начала движение</AnomaliesExpected.ObeliskClockwork.HandMinute.Awaken>
+	<AnomaliesExpected.ObeliskClockwork.HandMinute.Aiming>Минутная стрелка завершила цикл вращения</AnomaliesExpected.ObeliskClockwork.HandMinute.Aiming>
+	<AnomaliesExpected.ObeliskClockwork.HandHour.Awaken>Часовая стрелка начала движение</AnomaliesExpected.ObeliskClockwork.HandHour.Awaken>
+	<AnomaliesExpected.ObeliskClockwork.HandHour.Aiming>Часовая стрелка завершила цикл вращения</AnomaliesExpected.ObeliskClockwork.HandHour.Aiming>
+	<AnomaliesExpected.ObeliskClockwork.HandDay.Aiming>Дневная стрелка завершила цикл вращения</AnomaliesExpected.ObeliskClockwork.HandDay.Aiming>
+	
+	<AnomaliesExpected.ObeliskClockwork.Message.NewObeliskResearchReset>{0} адаптировался к частоте приманки. Мы должны начать новое исследование, чтобы найти альтернативу.</AnomaliesExpected.ObeliskClockwork.Message.NewObeliskResearchReset>
+	
+	<AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Label>Поместить Спидометр в обелиск.</AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Label>
+	<AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Desc>Вставить настоящий Спидометр в разъем обелиска. Спидометр должен быть расположен рядом с обелиском. [Уничтожит оба объекта]</AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Desc>
+	<AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Disabled>{0} не расположен поблизости.</AnomaliesExpected.ObeliskClockwork.PlaceSpeedometer.Disabled>
+	
+	<AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Label>Поместить имитацию Спидометра в обелиск.</AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Label>
+	<AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Desc>Вставить в разъем обелиска специально разработанное устройство, имитирующее частоту хроно-эффекта Спидометра. Приманка должна быть расположена рядом с обелиском. [Уничтожит её]</AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Desc>
+	<AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Disabled>Исследование частоты приманки не завершено.</AnomaliesExpected.ObeliskClockwork.PlaceDecoySpeedometer.Disabled>
+		
+	<AnomaliesExpected.ObeliskClockwork.Clockhand.Label>Детали часового механизма.</AnomaliesExpected.ObeliskClockwork.Clockhand.Label>
+	<AnomaliesExpected.ObeliskClockwork.Clockhand.Text>Ваши поселенцы заметили на земле какие-то объекты. Мы не знаем, откуда они взялись, но они выглядят как детали гигантского часового механизма.</AnomaliesExpected.ObeliskClockwork.Clockhand.Text>
+</LanguageData>

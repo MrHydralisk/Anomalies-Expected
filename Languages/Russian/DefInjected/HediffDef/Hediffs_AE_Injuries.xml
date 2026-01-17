@@ -14,5 +14,12 @@
 	<AEFreezingFragile.description>Воздействие экстремального холода сделало это более уязвимым к повреждениям.</AEFreezingFragile.description>
 	<AEFreezingFragile.labelNoun>Замораживающая хрупкость</AEFreezingFragile.labelNoun>
 	<AEFreezingFragile.labelNounPretty>{0} в {1}</AEFreezingFragile.labelNounPretty>
+	
+	
+	
+	<AEAging.label>быстрое старение</AEAging.label>
+	<AEAging.description>Аномальное клеточное ускорение, вызванное хроно-искажением. Это состояние заставляет организм подвергаться десятилетиям биологического разложения в течение мгновений. По мере быстрого истощения теломер кожа теряет эластичность, а органы начинают отказывать из-за глубокой старости, что часто приводит к системному коллапсу.</AEAging.description>
+	<AEAging.injuryProps.destroyedLabel>Распался из-за быстрого старения</AEAging.injuryProps.destroyedLabel>
+	<AEAging.labelNounPretty>{0} в {1}</AEAging.labelNounPretty>
   
 </LanguageData>

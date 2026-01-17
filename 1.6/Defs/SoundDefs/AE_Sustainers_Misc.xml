@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	
+	<SoundDef>
+		<defName>AE_ClockworkTickA</defName>
+		<sustain>True</sustain>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<priorityMode>PrioritizeExisting</priorityMode>
+		<subSounds>
+			<li>
+				<muteWhenPaused>True</muteWhenPaused>   
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Building/Clockwork/AE_ClockworkTickA</clipPath>
+					</li>
+				</grains>
+				<volumeRange>50~60</volumeRange>
+				<sustainAttack>2.5</sustainAttack>
+				<sustainRelease>2.5</sustainRelease>
+				<distRange>5~60</distRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>AE_ClockworkTickB</defName>
+		<sustain>True</sustain>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<priorityMode>PrioritizeExisting</priorityMode>
+		<subSounds>
+			<li>
+				<muteWhenPaused>True</muteWhenPaused>   
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Building/Clockwork/AE_ClockworkTickB</clipPath>
+					</li>
+				</grains>
+				<volumeRange>90~100</volumeRange>
+				<sustainAttack>2.5</sustainAttack>
+				<sustainRelease>2.5</sustainRelease>
+				<distRange>5~150</distRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>AE_ClockworkTickC</defName>
+		<sustain>True</sustain>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<priorityMode>PrioritizeExisting</priorityMode>
+		<subSounds>
+			<li>
+				<muteWhenPaused>True</muteWhenPaused>    
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Building/Clockwork/AE_ClockworkTickC</clipPath>
+					</li>
+				</grains>
+				<pitchRange>0.99~1.01</pitchRange>
+				<volumeRange>75</volumeRange>
+				<sustainAttack>2.5</sustainAttack>
+				<sustainRelease>2.5</sustainRelease>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+</Defs>

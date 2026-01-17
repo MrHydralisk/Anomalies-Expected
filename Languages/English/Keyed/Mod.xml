@@ -16,6 +16,11 @@
 	
 	<AnomaliesExpected.Settings.Patch.VoidProvactionCooldown>Set Void Provaction ritual Cooldown to {0} hours (by default 120h). [Take effect on a game launch]</AnomaliesExpected.Settings.Patch.VoidProvactionCooldown>
 	
+	<AnomaliesExpected.Settings.ObeliskClockwork.HandSecond>Notify of second hand of Clockwork obelisk.</AnomaliesExpected.Settings.ObeliskClockwork.HandSecond>
+	<AnomaliesExpected.Settings.ObeliskClockwork.HandMinute>Notify of minute hand of Clockwork obelisk.</AnomaliesExpected.Settings.ObeliskClockwork.HandMinute>
+	<AnomaliesExpected.Settings.ObeliskClockwork.HandHour>Notify of hour hand of Clockwork obelisk.</AnomaliesExpected.Settings.ObeliskClockwork.HandHour>
+	<AnomaliesExpected.Settings.ObeliskClockwork.HandDay>Notify of day hand of Clockwork obelisk.</AnomaliesExpected.Settings.ObeliskClockwork.HandDay>
+	
 	<AnomaliesExpected.Settings.ResearchTab.Unlock>Try Unlock Anomalies Expected Research Tab</AnomaliesExpected.Settings.ResearchTab.Unlock>
 	
 	<AnomaliesExpected.Settings.DevMode.Info>Show additional information for debug.</AnomaliesExpected.Settings.DevMode.Info>

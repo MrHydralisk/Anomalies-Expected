@@ -174,5 +174,27 @@
 			</li>
 		</modExtensions>
 	</DamageDef>
+	
+	
+  
+	<DamageDef>
+		<defName>AEAging</defName>
+		<label>rapid aging</label>
+		<workerClass>AnomaliesExpected.DamageWorker_Aging</workerClass>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has succumbed to rapid aging.</deathMessage>
+		<hediff>AEAging</hediff>
+		<makesBlood>false</makesBlood>
+		<isRanged>true</isRanged>
+		<explosionCellFleck>BlastExtinguisher</explosionCellFleck>
+		<explosionColorEdge>(1, 0.94, 0.94, 0.25</explosionColorEdge>
+		<soundExplosion>Explosion_Smoke</soundExplosion>
+		<modExtensions>
+			<li Class="AnomaliesExpected.AE_DamageDefExtension">
+				<DamageMultiplierForNonOrganic>0.5</DamageMultiplierForNonOrganic>
+				<isDealDamageToSelf>false</isDealDamageToSelf>
+			</li>
+		</modExtensions>
+	</DamageDef>
   
 </Defs>
