@@ -32,6 +32,7 @@ namespace AnomaliesExpected
             if (!isActive)
             {
                 compObelisk_Clockwork.ActivityComp.EnterActiveState();
+                Find.TickManager.slower.SignalForceNormalSpeedShort();
                 if (AEMod.Settings.NotifyClockworkHandDay)
                 {
                     Messages.Message("AnomaliesExpected.ObeliskClockwork.HandDay.Aiming".Translate(), new TargetInfo(Obelisk_Clockwork.Position, Obelisk_Clockwork.Map), MessageTypeDefOf.NegativeEvent);

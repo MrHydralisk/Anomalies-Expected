@@ -113,6 +113,7 @@ namespace AnomaliesExpected
         {
             base.Notify_PawnDied(dinfo, culprit);
             pawn.health.RemoveHediff(this);
+            Find.TickManager.slower.SignalForceNormalSpeedShort();
             GenExplosion.DoExplosion(pawn.PositionHeld, pawn.MapHeld, Mathf.Pow(1.8f, level), SpeedometerComp.Props.deathDamageDef, Speedometer, damAmount: SpeedometerComp.Props.deathDamagePerLevel * level);
             SpeedometerComp.Notify_Exploded(pawn);
         }

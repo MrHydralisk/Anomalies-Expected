@@ -150,6 +150,7 @@ namespace AnomaliesExpected
                 TargetInfo targetInfoTo = new TargetInfo(result, parent.Map);
                 SoundDefOf.Psycast_Skip_Entry.PlayOneShot(targetInfoTo);
                 FleckMaker.Static(targetInfoTo.Cell, targetInfoFrom.Map, FleckDefOf.PsycastSkipFlashEntry, Props.teleportationFleckRadius);
+                Find.TickManager.slower.SignalForceNormalSpeedShort();
                 if (AEMod.Settings.BeamTargetLetter)
                 {
                     Find.LetterStack.ReceiveLetter("AnomaliesExpected.BeamTarget.LeftContainment".Translate(parent.LabelCap).RawText, "AnomaliesExpected.BeamTarget.LeftContainmentText".Translate(parent.LabelCap), LetterDefOf.ThreatSmall, targetInfoFrom);

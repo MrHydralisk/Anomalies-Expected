@@ -29,6 +29,7 @@ namespace AnomaliesExpected
             CurRotation = vector.ToAngleFlat();
             base.OnTimerEnd();
             topOnBuildingStructure.SoundOnAiming?.PlayOneShotOnCamera();
+            Find.TickManager.slower.SignalForceNormalSpeedShort();
             if (AEMod.Settings.NotifyClockworkHandSecond)
             {
                 Messages.Message("AnomaliesExpected.ObeliskClockwork.HandSecond.Aiming".Translate(), new TargetInfo(Obelisk_Clockwork.Position, Obelisk_Clockwork.Map), MessageTypeDefOf.NegativeEvent);
