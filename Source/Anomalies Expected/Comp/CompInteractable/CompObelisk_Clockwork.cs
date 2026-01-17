@@ -160,6 +160,17 @@ namespace AnomaliesExpected
             if (ActivityComp.IsActive)
             {
                 StudyUnlocks.UnlockStudyNoteManual(4);
+                foreach (Pawn pawn in parent.Map.mapPawns.AllPawns)
+                {
+                    if (pawn.DestroyedOrNull() || pawn.Dead)
+                    {
+                        continue;
+                    }
+                    foreach (Hediff hediff in pawn.health.hediffSet.hediffs.Where((Hediff h) => h.def == Props.damageDef.hediff).ToList())
+                    {
+                        pawn.health.RemoveHediff(hediff);
+                    }
+                }
                 ActivityComp.EnterPassiveState();
             }
         }
