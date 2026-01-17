@@ -1707,7 +1707,7 @@
 						<drawSize>6</drawSize>
 						<drawRotation>90</drawRotation>
 						<tickPerFullRotation>60000</tickPerFullRotation>
-						<tickPerWarmup>150</tickPerWarmup>
+						<tickPerWarmup>250</tickPerWarmup>
 						<ticksTillAwaken>1288</ticksTillAwaken>
 						<rotationPerDmgMult>8</rotationPerDmgMult>
 						<SoundOnAiming>AE_ClockworkBellA</SoundOnAiming>

@@ -54,7 +54,7 @@ namespace AnomaliesExpected
                 radialPoints = radialPoints.Except(hitPointsLast).ToList();
                 hitPoints.AddRange(radialPoints);
             }
-            GenExplosion.DoExplosion(position, map, map.Size.Magnitude, compObelisk_Clockwork.Props.damageDef, compObelisk_Clockwork.parent, damAmount: Mathf.RoundToInt(compObelisk_Clockwork.Props.damageAmountWave * (isActive ? compObelisk_Clockwork.Props.DamageMultActive : 1)), overrideCells: hitPoints, propagationSpeed: 3, weapon: compObelisk_Clockwork.parent.def);
+            GenExplosion.DoExplosion(position, map, map.Size.Magnitude, compObelisk_Clockwork.Props.damageDef, compObelisk_Clockwork.parent, damAmount: Mathf.RoundToInt(compObelisk_Clockwork.Props.damageAmountWave * (isActive ? compObelisk_Clockwork.Props.DamageMultActive : 1)), overrideCells: hitPoints, propagationSpeed: 2, weapon: compObelisk_Clockwork.parent.def);
             compObelisk_Clockwork.StudyUnlocks.UnlockStudyNoteManual(0);
             base.OnWarmupEnd();
         }
