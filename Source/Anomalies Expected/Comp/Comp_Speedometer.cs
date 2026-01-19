@@ -51,7 +51,40 @@ namespace AnomaliesExpected
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
-            GameComponent_AnomaliesExpected.instance.isHavingSpeedometer = false;
+            bool isFoundSpeedometer = false;
+            foreach (Thing thing in previousMap.listerThings.AllThings)
+            {
+                CompAEStudyUnlocks compAEStudyUnlocks = thing.TryGetComp<CompAEStudyUnlocks>();
+                if (thing != parent && thing.def == ThingDefOfLocal.AE_Speedometer)
+                {
+                    isFoundSpeedometer = true;
+                }
+            }
+            foreach (Pawn pawn in previousMap.mapPawns.AllPawns)
+            {
+                foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
+                {
+                    if (!(hediff is IThingHolder thingHolder))
+                    {
+                        continue;
+                    }
+                    ThingOwner thingOwner = thingHolder.GetDirectlyHeldThings();
+                    if (thingOwner.NullOrEmpty())
+                    {
+                        continue;
+                    }
+                    if (thingOwner.FirstOrDefault() != parent && thingOwner.FirstOrDefault().def == ThingDefOfLocal.AE_Speedometer)
+                    {
+                        isFoundSpeedometer = true;
+                    }
+                }
+            }
+            if (!isFoundSpeedometer)
+            {
+                GameComponent_AnomaliesExpected.instance.isHavingSpeedometer = false;
+                GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck = -1;
+                GameComponent_AnomaliesExpected.instance.curClockworkObelisk.Destroy();
+            }
             base.PostDestroy(mode, previousMap);
         }
 
