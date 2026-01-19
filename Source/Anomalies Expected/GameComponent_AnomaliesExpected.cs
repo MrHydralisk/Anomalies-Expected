@@ -14,7 +14,7 @@ namespace AnomaliesExpected
 
         public bool isHavingSpeedometer;
         public Thing curClockworkObelisk;
-        public int tickToSpawnClockworkCheck;
+        public int tickToSpawnClockworkCheck = -1;
 
         public GameComponent_AnomaliesExpected(Game game)
         {
@@ -244,7 +244,7 @@ namespace AnomaliesExpected
                     levelNext += i;
                 }
                 //Log.Message($"FoundSpeedometer Mathf.Max({tickToSpawnClockworkCheck}, {Find.TickManager.TicksGame} + 500 {SpeedometerComp.Props.tickPerAction} * {levelNext}) = {Find.TickManager.TicksGame + SpeedometerComp.Props.tickPerAction * levelNext}");
-                tickToSpawnClockworkCheck = Mathf.Max(tickToSpawnClockworkCheck, Find.TickManager.TicksGame + 500 /*SpeedometerComp.Props.tickPerAction*/ * levelNext);
+                tickToSpawnClockworkCheck = Mathf.Max(tickToSpawnClockworkCheck, Find.TickManager.TicksGame + SpeedometerComp.Props.tickPerAction * levelNext);
             }
         }
 
