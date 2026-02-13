@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<UnfinishedHealthItemAnomalyAE.label>заготовка аномальной части</UnfinishedHealthItemAnomalyAE.label>
+	<UnfinishedHealthItemAnomalyAE.description>Аномальная часть тела в процессе изготовления.</UnfinishedHealthItemAnomalyAE.description>
+
+	<UnfinishedItemAnomalyAE.label>заготовка аномального предмета</UnfinishedItemAnomalyAE.label>
+	<UnfinishedItemAnomalyAE.description>Аномальный предмет в процессе изготовления.</UnfinishedItemAnomalyAE.description>
+
+</LanguageData>

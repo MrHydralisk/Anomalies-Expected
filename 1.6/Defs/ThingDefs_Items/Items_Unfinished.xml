@@ -15,6 +15,18 @@
 		</graphicData>
 		<stuffCategories Inherit="false"/>
 	</ThingDef>
+	
+	<ThingDef ParentName="UnfinishedBase">
+		<defName>UnfinishedItemAnomalyAE</defName>
+		<label>unfinished anomaly item</label>
+		<description>An unfinished anomaly item.</description>
+		<graphicData>
+			<texPath>Things/Item/Unfinished/UnfinishedMusicalInstrument</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<color>(107,56,76)</color>
+		</graphicData>
+		<stuffCategories Inherit="false"/>
+	</ThingDef>
 
 	<ThingDef ParentName="MinifiedThing">
 		<defName>MinifiedThingAE</defName>

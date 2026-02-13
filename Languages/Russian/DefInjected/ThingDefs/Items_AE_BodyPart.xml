@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-	<UnfinishedHealthItemAnomalyAE.label>заготовка аномальной части</UnfinishedHealthItemAnomalyAE.label>
-	<UnfinishedHealthItemAnomalyAE.description>Аномальная часть тела в процессе изготовления.</UnfinishedHealthItemAnomalyAE.description>
-	
-	
-
 	<AEForbiddenFruitImplant.label>имплант запретного знания</AEForbiddenFruitImplant.label>
 	<AEForbiddenFruitImplant.description>Аномальный имплант коры головного мозга, который поддерживает связь между сознанием носителя и сущностью, способствуя обмену знаниями и мыслями, не тревожа сущность.\n\nСоздан с использованием семян запретного плода познания, используя инновационную технологию, полученную из обширных знаний сущности. После извлечения семян плод утратил свои свойства по самовосстановлению.</AEForbiddenFruitImplant.description>
 	

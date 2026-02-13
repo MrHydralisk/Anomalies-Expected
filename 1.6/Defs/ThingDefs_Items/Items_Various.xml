@@ -920,6 +920,7 @@
 			<recipeUsers Inherit="false">
 				<li>BioferriteShaper</li>
 			</recipeUsers>
+			<unfinishedThingDef>UnfinishedItemAnomalyAE</unfinishedThingDef>
 			<researchPrerequisite>AEAnalyzeClockworkEmission</researchPrerequisite>
 			<displayPriority>1300</displayPriority>
 		</recipeMaker>
