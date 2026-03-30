@@ -12,7 +12,9 @@ namespace AnomaliesExpected
 
         public List<AEEntityEntry> EntityEntries = new List<AEEntityEntry>();
 
-        public bool isHavingSpeedometer;
+        public List<Comp_Speedometer> trackedSpeedometers = new List<Comp_Speedometer>();
+
+        public bool isHavingSpeedometer => trackedSpeedometers.Any((Comp_Speedometer cs) => cs.parent.SpawnedOrAnyParentSpawned);
         public Thing curClockworkObelisk;
         public int tickToSpawnClockworkCheck = -1;
 
@@ -34,30 +36,30 @@ namespace AnomaliesExpected
                     {
                         SyncEntityEntry(compAEStudyUnlocks);
                     }
-                    if (thing.def == ThingDefOfLocal.AE_Speedometer)
-                    {
-                        FoundSpeedometer(thing);
-                    }
+                    //if (thing.def == ThingDefOfLocal.AE_Speedometer)
+                    //{
+                    //    FoundSpeedometer(thing);
+                    //}
                 }
-                foreach (Pawn pawn in map.mapPawns.AllPawns)
-                {
-                    foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
-                    {
-                        if (!(hediff is IThingHolder thingHolder))
-                        {
-                            continue;
-                        }
-                        ThingOwner thingOwner = thingHolder.GetDirectlyHeldThings();
-                        if (thingOwner.NullOrEmpty())
-                        {
-                            continue;
-                        }
-                        if (thingOwner.FirstOrDefault().def == ThingDefOfLocal.AE_Speedometer)
-                        {
-                            FoundSpeedometer(thingOwner.FirstOrDefault());
-                        }
-                    }
-                }
+                //foreach (Pawn pawn in map.mapPawns.AllPawns)
+                //{
+                //    foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
+                //    {
+                //        if (!(hediff is IThingHolder thingHolder))
+                //        {
+                //            continue;
+                //        }
+                //        ThingOwner thingOwner = thingHolder.GetDirectlyHeldThings();
+                //        if (thingOwner.NullOrEmpty())
+                //        {
+                //            continue;
+                //        }
+                //        if (thingOwner.FirstOrDefault().def == ThingDefOfLocal.AE_Speedometer)
+                //        {
+                //            FoundSpeedometer(thingOwner.FirstOrDefault());
+                //        }
+                //    }
+                //}
             }
         }
 
@@ -214,37 +216,74 @@ namespace AnomaliesExpected
         public override void GameComponentTick()
         {
             base.GameComponentTick();
-            if (Find.TickManager.TicksGame % 2500 == 0)
+            //if (Find.TickManager.TicksGame % 250 == 0)
+            //{
+            //    string toLog = $"[Anomalies Expected] [{Find.TickManager.TicksGame}] Clockwork tick {tickToSpawnClockworkCheck}";
+            //    foreach (Comp_Speedometer speedometer in trackedSpeedometers)
+            //        toLog+=$"\n[Anomalies Expected] Speedometer tick {speedometer.parent.Label} {speedometer.parent.Spawned} {speedometer.parent.SpawnedOrAnyParentSpawned} {speedometer.parent.SpawnedParentOrMe}";
+            //    Log.Message(toLog);
+            //}
+            if (Find.TickManager.TicksGame % 2500 == 0 && tickToSpawnClockworkCheck > 0)
             {
-                if (tickToSpawnClockworkCheck > 0 && curClockworkObelisk == null && Find.TickManager.TicksGame > tickToSpawnClockworkCheck)
+                if (isHavingSpeedometer)
                 {
-                    IncidentParms incidentParms = new IncidentParms();
-                    incidentParms.target = Find.AnyPlayerHomeMap;
-                    Thing monolith = Find.Anomaly.monolith;
-                    if (monolith != null && monolith.Spawned)
+                    if (curClockworkObelisk == null && Find.TickManager.TicksGame > tickToSpawnClockworkCheck && !AEMod.Settings.DevDisableClockworkObelisk)
                     {
-                        incidentParms.target = monolith.MapHeld;
+                        tickToSpawnClockworkCheck = -1;
+                        IncidentParms incidentParms = new IncidentParms();
+                        incidentParms.target = Find.AnyPlayerHomeMap;
+                        Thing monolith = Find.Anomaly.monolith;
+                        if (monolith != null && monolith.Spawned)
+                        {
+                            incidentParms.target = monolith.MapHeld;
+                        }
+                        incidentParms.forced = true;
+                        incidentParms.bypassStorytellerSettings = true;
+                        //Log.Message($"[Anomalies Expected] Spawning Clockwork Obelisk incident in hour");
+                        Find.Storyteller.incidentQueue.Add(IncidentDefOfLocal.AE_IncidentDef_ObeliskClockworkSpawn, Find.TickManager.TicksGame + Rand.Range(0, 2500), incidentParms);
                     }
-                    incidentParms.forced = true;
-                    incidentParms.bypassStorytellerSettings = true;
-                    Find.Storyteller.incidentQueue.Add(IncidentDefOfLocal.AE_IncidentDef_ObeliskClockworkSpawn, Find.TickManager.TicksGame + Rand.Range(0, 2500), incidentParms);
+                }
+                else
+                {
+                    tickToSpawnClockworkCheck = -1;
                 }
             }
         }
 
-        public void FoundSpeedometer(Thing thing)
+        public void TrackSpeedometer(Comp_Speedometer speedometer)
         {
-            Comp_Speedometer SpeedometerComp = thing.TryGetComp<Comp_Speedometer>();
-            if (SpeedometerComp != null && !isHavingSpeedometer)
+            //Log.Message($"[Anomalies Expected] tracking Speedometer {trackedSpeedometers.IndexOf(speedometer)}");
+            if (trackedSpeedometers.IndexOf(speedometer) == -1)
             {
-                isHavingSpeedometer = true;
+                trackedSpeedometers.Add(speedometer);
                 int levelNext = 1;
-                for (int i = SpeedometerComp.UnlockedLevel + 1; i <= 6; i++)
+                for (int i = speedometer.UnlockedLevel + 1; i <= 6; i++)
                 {
                     levelNext += i;
                 }
-                //Log.Message($"FoundSpeedometer Mathf.Max({tickToSpawnClockworkCheck}, {Find.TickManager.TicksGame} + 500 {SpeedometerComp.Props.tickPerAction} * {levelNext}) = {Find.TickManager.TicksGame + SpeedometerComp.Props.tickPerAction * levelNext}");
-                tickToSpawnClockworkCheck = Mathf.Max(tickToSpawnClockworkCheck, Find.TickManager.TicksGame + SpeedometerComp.Props.tickPerAction * levelNext);
+                int newTicks = Find.TickManager.TicksGame + speedometer.Props.tickPerAction * levelNext;
+                //Log.Message($"[Anomalies Expected] tracking Speedometer. Clockwork Obelisk incident expected to spawn in Min({tickToSpawnClockworkCheck},{Find.TickManager.TicksGame}+{speedometer.Props.tickPerAction * levelNext}) = {newTicks}");
+                tickToSpawnClockworkCheck = tickToSpawnClockworkCheck == -1 ? newTicks : Mathf.Min(tickToSpawnClockworkCheck, newTicks);
+            }
+        }
+
+        public void UntrackSpeedometer(Comp_Speedometer speedometer)
+        {
+            int index = trackedSpeedometers.IndexOf(speedometer);
+            if (index > -1)
+            {
+                //Log.Message($"[Anomalies Expected] untracking Speedometer. {speedometer.parent.Label} {speedometer.parent.Spawned} {speedometer.parent.SpawnedOrAnyParentSpawned}");
+                trackedSpeedometers.RemoveAt(index);
+            }
+            if (trackedSpeedometers.NullOrEmpty())
+            {
+                tickToSpawnClockworkCheck = -1;
+                //Log.Message($"[Anomalies Expected] Clockwork Obelisk incident cancelled {tickToSpawnClockworkCheck}");
+                if (curClockworkObelisk != null)
+                {
+                    curClockworkObelisk.Destroy();
+                    curClockworkObelisk = null;
+                }
             }
         }
 
@@ -259,7 +298,6 @@ namespace AnomaliesExpected
                     EntityEntries = new List<AEEntityEntry>();
                 }
             }
-            Scribe_Values.Look(ref isHavingSpeedometer, "isHavingSpeedometer", false);
             Scribe_Values.Look(ref tickToSpawnClockworkCheck, "tickToSpawnClockworkCheck", -1);
             Scribe_References.Look(ref curClockworkObelisk, "curClockworkObelisk");
         }

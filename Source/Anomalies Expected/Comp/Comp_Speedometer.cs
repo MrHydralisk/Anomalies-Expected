@@ -29,7 +29,7 @@ namespace AnomaliesExpected
             base.PostPostMake();
             TickNextDeceleration = Find.TickManager.TicksGame + (int)Props.DecelerationIntervalRange.Average;
             parent.overrideGraphicIndex = 0;
-            GameComponent_AnomaliesExpected.instance.FoundSpeedometer(parent);
+            //Log.Message($"[Anomalies Expected] Speedometer created {parent.Label}");
         }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -47,44 +47,20 @@ namespace AnomaliesExpected
             {
                 isDestabilizedOnce = true;
             }
+            GameComponent_AnomaliesExpected.instance.TrackSpeedometer(this);
+            //Log.Message($"[Anomalies Expected] Speedometer spawned {parent.Label} {parent.Spawned} {parent.SpawnedOrAnyParentSpawned}");
         }
+
+        //public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
+        //{
+        //    Log.Message($"[Anomalies Expected] Speedometer despawned {parent.Label} {parent.Spawned} {parent.SpawnedOrAnyParentSpawned}");
+        //    base.PostDeSpawn(map, mode);
+        //}
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
-            bool isFoundSpeedometer = false;
-            foreach (Thing thing in previousMap.listerThings.AllThings)
-            {
-                CompAEStudyUnlocks compAEStudyUnlocks = thing.TryGetComp<CompAEStudyUnlocks>();
-                if (thing != parent && thing.def == ThingDefOfLocal.AE_Speedometer)
-                {
-                    isFoundSpeedometer = true;
-                }
-            }
-            foreach (Pawn pawn in previousMap.mapPawns.AllPawns)
-            {
-                foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
-                {
-                    if (!(hediff is IThingHolder thingHolder))
-                    {
-                        continue;
-                    }
-                    ThingOwner thingOwner = thingHolder.GetDirectlyHeldThings();
-                    if (thingOwner.NullOrEmpty())
-                    {
-                        continue;
-                    }
-                    if (thingOwner.FirstOrDefault() != parent && thingOwner.FirstOrDefault().def == ThingDefOfLocal.AE_Speedometer)
-                    {
-                        isFoundSpeedometer = true;
-                    }
-                }
-            }
-            if (!isFoundSpeedometer)
-            {
-                GameComponent_AnomaliesExpected.instance.isHavingSpeedometer = false;
-                GameComponent_AnomaliesExpected.instance.tickToSpawnClockworkCheck = -1;
-                GameComponent_AnomaliesExpected.instance.curClockworkObelisk.Destroy();
-            }
+            GameComponent_AnomaliesExpected.instance.UntrackSpeedometer(this);
+            //Log.Message($"[Anomalies Expected] Speedometer destroyed {parent.Label}");
             base.PostDestroy(mode, previousMap);
         }
 

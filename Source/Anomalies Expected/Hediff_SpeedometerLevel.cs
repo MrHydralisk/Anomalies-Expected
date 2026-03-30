@@ -53,10 +53,18 @@ namespace AnomaliesExpected
             innerContainer = new ThingOwner<Thing>(this, LookMode.Deep, removeContentsIfDestroyed: false);
         }
 
+        public override void Notify_Spawned()
+        {
+            base.Notify_Spawned();
+            GameComponent_AnomaliesExpected.instance.TrackSpeedometer(SpeedometerComp);
+            //Log.Message($"[Anomalies Expected] Speedometer hediff spawned {Speedometer.Label} {Speedometer.Spawned} {Speedometer.SpawnedOrAnyParentSpawned}");
+        }
+
         public void AddSpeedometer(ThingWithComps speedometer)
         {
             speedometer.DeSpawn();
             innerContainer.TryAdd(speedometer);
+            //Log.Message($"[Anomalies Expected] Speedometer add hediff {Speedometer.Label} {Speedometer.Spawned} {Speedometer.SpawnedOrAnyParentSpawned} {Speedometer.SpawnedParentOrMe}");
         }
 
         public Texture UpdateActiveTexture()
@@ -86,6 +94,7 @@ namespace AnomaliesExpected
 
         public override void PostRemoved()
         {
+            //Log.Message($"[Anomalies Expected] Speedometer remove hediff {Speedometer.Label} {Speedometer.Spawned} {Speedometer.SpawnedOrAnyParentSpawned} {Speedometer.SpawnedParentOrMe}");
             if (!Speedometer.DestroyedOrNull())
             {
                 SpeedometerComp.CooldownsStart(maxLevel);

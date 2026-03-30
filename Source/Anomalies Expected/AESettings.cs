@@ -18,6 +18,7 @@ namespace AnomaliesExpected
         public bool NotifyClockworkHandMinute = true;
         public bool NotifyClockworkHandHour = true;
         public bool NotifyClockworkHandDay = true;
+        public bool DevDisableClockworkObelisk = false;
         public bool DevModeInfo = false;
 
         public override void ExposeData()
@@ -37,6 +38,7 @@ namespace AnomaliesExpected
             Scribe_Values.Look(ref NotifyClockworkHandMinute, "NotifyClockworkHandMinute", defaultValue: true);
             Scribe_Values.Look(ref NotifyClockworkHandHour, "NotifyClockworkHandHour", defaultValue: true);
             Scribe_Values.Look(ref NotifyClockworkHandDay, "NotifyClockworkHandDay", defaultValue: true);
+            Scribe_Values.Look(ref DevDisableClockworkObelisk, "DevDisableClockworkObelisk", defaultValue: false);
             Scribe_Values.Look(ref DevModeInfo, "DevModeInfo", defaultValue: false);
         }
     }
