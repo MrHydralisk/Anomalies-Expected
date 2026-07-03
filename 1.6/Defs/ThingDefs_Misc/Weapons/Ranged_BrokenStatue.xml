@@ -13,10 +13,7 @@
 		<possessionCount>1</possessionCount>
 		<techLevel>Ultra</techLevel>
 		<tradeTags Inherit="False"/>
-		<weaponTags>
-			<li>GunHeavy</li>
-			<li>WeaponBeamRepeater</li>
-		</weaponTags>
+		<weaponTags Inherit="False"/>
 		<genericMarketSellable>false</genericMarketSellable>
 		<tradeability>Sellable</tradeability>
 		<thingCategories>
