@@ -167,6 +167,7 @@ namespace AnomaliesExpected
             BrokenStatue.Name = new NameSingle(parent.LabelCap);
             parent.DeSpawn();
             BrokenStatueComp.GetDirectlyHeldThings().TryAdd(parent);
+            Pawn brokenStatue = BrokenStatue;
             if (!innerContainer.TryDrop(BrokenStatue, intVec3, map, ThingPlaceMode.Near, out var lastResultingThing))
             {
                 if (!RCellFinder.TryFindRandomCellNearWith(intVec3, (IntVec3 c) => c.Standable(map), map, out var result, 1))
@@ -174,14 +175,15 @@ namespace AnomaliesExpected
                     Debug.LogError("Could not drop BrokenStatue!");
                 }
                 lastResultingThing = GenSpawn.Spawn(innerContainer.Take(BrokenStatue), result, map);
-                return (Pawn)lastResultingThing;
             }
+            GetDirectlyHeldThings().RemoveAll(t => t == brokenStatue);
             return (Pawn)lastResultingThing;
         }
 
         public void OnTransform()
         {
             StudyUnlocks.UnlockStudyNoteManual(2);
+            isSuppressable = true;
             ActivityComp.EnterPassiveState();
             TicksTillTransform = Props.ticksPerTransform;
         }

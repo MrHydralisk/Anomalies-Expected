@@ -80,7 +80,8 @@ namespace AnomaliesExpected
             }
             Pawn.DeSpawn();
             BrokenStatueComp.GetDirectlyHeldThings().TryAdd(Pawn);
-            BrokenStatueComp.OnTransform();
+            ThingWithComps brokenStatue = BrokenStatue;
+            Comp_BrokenStatue brokenStatueComp = BrokenStatueComp;
             if (!innerContainer.TryDrop(BrokenStatue, intVec3, map, ThingPlaceMode.Near, out var lastResultingThing))
             {
                 if (!RCellFinder.TryFindRandomCellNearWith(intVec3, (IntVec3 c) => c.Standable(map), map, out var result, 1))
@@ -89,6 +90,8 @@ namespace AnomaliesExpected
                 }
                 lastResultingThing = GenSpawn.Spawn(innerContainer.Take(BrokenStatue), result, map);
             }
+            GetDirectlyHeldThings().RemoveAll(t => t == brokenStatue);
+            brokenStatueComp.OnTransform();
         }
 
         public bool Wander(bool isFoundTarget = false)
