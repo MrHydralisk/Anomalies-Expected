@@ -146,7 +146,7 @@ namespace AnomaliesExpected
             Find.TickManager.slower.SignalForceNormalSpeedShort();
             if (AEMod.Settings.BrokenStatueLetter)
             {
-                Find.LetterStack.ReceiveLetter("AnomaliesExpected.BeamTarget.LeftContainment".Translate(parent.LabelCap).RawText, "AnomaliesExpected.BeamTarget.LeftContainmentText".Translate(parent.LabelCap), LetterDefOf.ThreatSmall, targetInfoFrom);
+                Find.LetterStack.ReceiveLetter("AnomaliesExpected.BeamTarget.LeftContainment".Translate(parent.LabelCap).RawText, "AnomaliesExpected.BeamTarget.LeftContainmentText".Translate(parent.LabelCap), LetterDefOf.ThreatBig, targetInfoFrom);
             }
             else
             {
