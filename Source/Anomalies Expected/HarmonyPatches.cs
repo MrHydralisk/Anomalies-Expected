@@ -52,7 +52,7 @@ namespace AnomaliesExpected
 
             val.Patch(AccessTools.Method(typeof(Thing), "GetGizmos"), postfix: new HarmonyMethod(patchType, "T_GetGizmos_Postfix"));
             val.Patch(AccessTools.Method(typeof(UnnaturalCorpse), "GetGizmos"), postfix: new HarmonyMethod(patchType, "T_GetGizmos_Postfix"));
-            val.Patch(AccessTools.Method(typeof(Pawn_MutantTracker), "GetGizmos"), postfix: new HarmonyMethod(patchType, "T_GetGizmos_Postfix"));
+            val.Patch(AccessTools.Method(typeof(Pawn_MutantTracker), "GetGizmos"), postfix: new HarmonyMethod(patchType, "MutantTracker_GetGizmos_Postfix"));
 
             val.Patch(AccessTools.Property(typeof(ChoiceLetter_EntityDiscovered), "Choices").GetGetMethod(), prefix: new HarmonyMethod(patchType, "CLED_Choices_Prefix"));
             val.Patch(AccessTools.Method(typeof(EntityCodex), "SetDiscovered", new Type[] { typeof(EntityCodexEntryDef), typeof(ThingDef), typeof(Thing) }), transpiler: new HarmonyMethod(patchType, "EC_SetDiscovered_Transpiler"));
@@ -241,8 +241,10 @@ namespace AnomaliesExpected
                 (MainButtonDefOf.Inspect.TabWindow as MainTabWindow_Inspect).CloseOpenTab();
             }
         }
+        public static void T_GetGizmos_Postfix(ref IEnumerable<Gizmo> __result, Thing __instance) => GetGizmos_Postfix(ref __result, __instance);
+        public static void MutantTracker_GetGizmos_Postfix(ref IEnumerable<Gizmo> __result, Pawn_MutantTracker __instance) => GetGizmos_Postfix(ref __result, __instance?.ConstantCaster);
 
-        public static void T_GetGizmos_Postfix(ref IEnumerable<Gizmo> __result, Thing __instance)
+        public static void GetGizmos_Postfix(ref IEnumerable<Gizmo> __result, Thing thing)
         {
             List<Gizmo> NGizmos = __result.ToList();
             int index = NGizmos.FirstIndexOf((Gizmo g) => g is Command_Action ca && ca.defaultLabel == "EntityCodex".Translate() + "...") + 1;
@@ -255,7 +257,7 @@ namespace AnomaliesExpected
                     icon = ContentFinder<Texture2D>.Get("UI/Buttons/AEEntityDB"),
                     action = delegate
                     {
-                        AEEntityEntry selectedEntityEntry = GameComponent_AnomaliesExpected.instance.GetEntityEntryFromThingDef((__instance as Building_HoldingPlatform)?.HeldPawn.def ?? __instance.def);
+                        AEEntityEntry selectedEntityEntry = GameComponent_AnomaliesExpected.instance.GetEntityEntryFromThingDef((thing as Building_HoldingPlatform)?.HeldPawn.def ?? thing.def);
                         Dialog_AEEntityDB dialog = new Dialog_AEEntityDB();
                         if (selectedEntityEntry != null)
                         {
@@ -265,8 +267,8 @@ namespace AnomaliesExpected
                     }
                 };
                 NGizmos.Insert(Mathf.Clamp(0, index, NGizmos.Count()), gizmo);
+                __result = NGizmos;
             }
-            __result = NGizmos;
         }
 
         public static bool CLED_Choices_Prefix(ref IEnumerable<DiaOption> __result, ChoiceLetter_EntityDiscovered __instance)
