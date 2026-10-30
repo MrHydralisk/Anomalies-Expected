@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+	<ThingDef ParentName="BasePawn">
+		<defName>AE_BrokenStatue</defName>
+		<label>broken statue</label>
+		<description>An anomalous statue made of white marble ashlars. Designated as BS-01. The object displays overt hostility when fully assembled, and its individual components utilize an unknown cohesive force to resist any attempts at disassembly. Despite it extreme mass it movement speed drastically increased in the absence of visual surveillance\n\nClassified as Class-3 (Danger) anomaly.</description>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+		<statBases>
+			<MoveSpeed>1</MoveSpeed>
+			<Flammability>0</Flammability>
+			<ComfyTemperatureMin>-2000</ComfyTemperatureMin>
+			<ComfyTemperatureMax>2000</ComfyTemperatureMax>
+			<PsychicSensitivity>0</PsychicSensitivity>
+			<MinimumContainmentStrength>130</MinimumContainmentStrength>
+			<StaggerDurationFactor>0</StaggerDurationFactor>
+			<ArmorRating_Heat>0.75</ArmorRating_Heat>
+			<ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.75</ArmorRating_Blunt>
+			<ToxicResistance>1</ToxicResistance>
+			<EMPResistance>1</EMPResistance>
+			<ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
+			<LeatherAmount>0</LeatherAmount>
+			<MeatAmount>0</MeatAmount>
+		</statBases>
+		<uiIconPath>Things/Pawn/BrokenStatue/AE_BrokenStatue_MenuIcon</uiIconPath>
+		<tradeability>None</tradeability>
+		<hideStats>true</hideStats>
+		<onlyShowInspectString>true</onlyShowInspectString>
+		<hideMainDesc>true</hideMainDesc>
+		<race>
+			<thinkTreeMain>AE_BrokenStatue</thinkTreeMain>
+			<thinkTreeConstant>AE_BrokenStatueConstant</thinkTreeConstant>
+			<body>AE_BrokenStatue</body>
+			<baseBodySize>2</baseBodySize>
+			<baseHealthScale>4</baseHealthScale>
+			<intelligence>ToolUser</intelligence>
+			<needsRest>false</needsRest>
+			<hasGenders>false</hasGenders>
+			<fleshType>EntityMechanical</fleshType>
+			<foodType>None</foodType>
+			<lifeExpectancy>1000</lifeExpectancy>
+			<soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
+			<renderTree>AE_BrokenStatue</renderTree>
+			<startingAnimation>RevenantSpasm</startingAnimation>
+			<soundCallIntervalRange>240~480</soundCallIntervalRange>
+			<disableIgniteVerb>true</disableIgniteVerb>
+			<trainability>None</trainability>
+			<lifeStageAges>
+				<li>
+					<def>EntityFullyFormed</def>
+					<soundCall>AE_BrokenStatue_Call</soundCall>
+					<soundWounded>AE_BrokenStatue_Wounded</soundWounded>
+					<soundDeath>AE_BrokenStatue_Death</soundDeath>
+				</li>
+			</lifeStageAges>
+			<hediffGiverSets>
+				<li>AnomalyEntity</li>
+			</hediffGiverSets>
+		</race>
+		<tools>
+			<li>
+				<label>bricks</label>
+				<capacities>
+					<li>AEPetrification</li>
+				</capacities>
+				<power>100</power>
+				<armorPenetration>100</armorPenetration>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>Torso</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			</li>
+		</tools>
+		<inspectorTabs>
+			<li>ITab_StudyNotes</li>
+		</inspectorTabs>
+	</ThingDef>
+  
+</Defs>

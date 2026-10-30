@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="ActiveDropPod">
+		<defName>AE_ActiveDropPodAnomaly</defName>
+		<label>anomaly drop pod</label>
+		<graphicData>
+			<texPath>Things/Item/Resource/Bioferrite/Bioferrite_c</texPath>
+			<drawSize>(2, 2)</drawSize>
+		</graphicData>
+		<useHitPoints>false</useHitPoints>
+		<selectable>false</selectable>
+	</ThingDef>
+
+</Defs>

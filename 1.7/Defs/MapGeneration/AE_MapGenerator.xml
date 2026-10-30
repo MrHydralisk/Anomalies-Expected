@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<MapGeneratorDef>
+		<defName>AE_BloodLakeMapGenerator</defName>
+		<label>blood lake</label>
+		<forceCaves>true</forceCaves>
+		<ignoreAreaRevealedLetter>true</ignoreAreaRevealedLetter>
+		<disableCallAid>true</disableCallAid>
+		<customMapComponents>
+			<li>AnomaliesExpected.BloodLakeMapComponent</li>
+		</customMapComponents>
+		<pocketMapProperties>
+			<biome>AE_BloodLakeBiome</biome>
+			<temperature>25</temperature>
+		</pocketMapProperties>
+		<genSteps>
+			<li>ElevationFertility</li>
+			<li>RocksFromGrid</li>
+			<li>AE_BloodLakeTerrain</li>
+			<li>AE_BloodLakeScatterRuinsSimple</li>
+			<li>AE_BloodLakeScatterShrines</li>
+			<li>Fleshbulbs</li>
+			<li>RockChunks</li>
+			<li>AE_BloodLakeFindExit</li>
+			<li>AE_BloodLakeFindTerminal</li>
+			<li>AE_BloodLakeFleshmassUndergroundNest</li>
+			<li>AE_BloodLakeFog</li>
+			<li>AE_BloodLakeFleshmass</li>
+			<li>AE_BloodLakeFleshSacks</li>
+			<!-- <li>AE_BloodLakeFleshmassBrood</li> -->
+			<li>AE_BloodLakeFleshmassSpitterGiant</li>
+			<li>AE_BloodLakeFleshmassSpitterMedium</li>
+			<li>AE_BloodLakeFleshmassSpitterSmall</li>
+			<!-- <li>AE_BloodLakeFleshmassLeech</li> -->
+			<li>AE_BloodLakeFindDogTag</li>
+			<li>AE_BloodLakeFleshbeasts</li>
+		</genSteps>
+	</MapGeneratorDef>
+
+	<MapGeneratorDef>
+		<defName>AE_ChristmasTreeMapGenerator</defName>
+		<label>christmas tree</label>
+		<forceCaves>true</forceCaves>
+		<ignoreAreaRevealedLetter>true</ignoreAreaRevealedLetter>
+		<disableCallAid>true</disableCallAid>
+		<customMapComponents>
+			<li>AnomaliesExpected.ChristmasTreeMapComponent</li>
+		</customMapComponents>
+		<pocketMapProperties>
+			<biome>AE_ChristmasTreeBiome</biome>
+			<temperature>-20</temperature>
+		</pocketMapProperties>
+		<genSteps>
+			<li>AE_ChristmasTreeTerrain</li>
+			<li>AE_ChristmasTreeFindExit</li>
+			<li>AE_ChristmasTreeGiftBoxes</li>
+			<li>AE_ChristmasTreeSnowMan</li>
+		</genSteps>
+	</MapGeneratorDef>
+  
+</Defs>

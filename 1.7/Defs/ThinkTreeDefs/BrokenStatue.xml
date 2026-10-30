@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThinkTreeDef>
+		<defName>AE_BrokenStatue</defName>
+		<thinkRoot Class="ThinkNode_Priority">
+			<subNodes>
+				<!-- Despawned -->
+				<li Class="ThinkNode_Subtree">
+					<treeDef>Despawned</treeDef>
+				</li>
+
+				<!-- Downed -->
+				<li Class="ThinkNode_Subtree">
+					<treeDef>Downed</treeDef>
+				</li>
+
+				<!-- Forced goto -->
+				<li Class="ThinkNode_ConditionalForcedGoto">
+					<subNodes>
+						<li Class="ThinkNode_Tagger">
+							<tagToGive>Misc</tagToGive>
+							<subNodes>
+								<li Class="JobGiver_ForcedGoto"/>
+							</subNodes>
+						</li>
+					</subNodes>
+				</li>				
+				
+				<li Class="AnomaliesExpected.ThinkNode_JobGiver_BrokenStatueAttack" />
+
+				<!-- Lord -->
+				<li Class="ThinkNode_Subtree">
+					<treeDef>LordDuty</treeDef>
+				</li>
+				<li Class="JobGiver_AIFightEnemies">
+					<targetAcquireRadius>200</targetAcquireRadius>
+					<targetKeepRadius>220</targetKeepRadius>
+				</li>
+				
+				<li Class="AnomaliesExpected.ThinkNode_BrokenStatueIdle" />
+
+				<!-- Idle -->
+				<li Class="ThinkNode_Tagger">
+					<tagToGive>Idle</tagToGive>
+					<subNodes>
+						<li Class="JobGiver_WanderAnywhere">
+							<maxDanger>Deadly</maxDanger>
+							<ticksBetweenWandersRange>120~240</ticksBetweenWandersRange>
+						</li>
+					</subNodes>
+				</li>
+        
+				<!-- Idle error -->
+				<li Class="JobGiver_IdleError"/>
+			</subNodes>
+		</thinkRoot>
+	</ThinkTreeDef>
+
+	<ThinkTreeDef>
+		<defName>AE_BrokenStatueConstant</defName>
+		<thinkRoot Class="ThinkNode_Priority">
+			<subNodes>
+				<!-- Despawned -->
+				<li Class="ThinkNode_Subtree">
+					<treeDef>Despawned</treeDef>
+				</li>
+
+				<li Class="ThinkNode_ConditionalCanDoLordJobNow">
+					<subNodes>
+						<!-- Lord directives -->
+						<li Class="ThinkNode_Subtree">
+							<treeDef>LordDutyConstant</treeDef>
+						</li>
+					</subNodes>
+				</li>
+			</subNodes>
+		</thinkRoot>
+	</ThinkTreeDef>
+  
+</Defs>

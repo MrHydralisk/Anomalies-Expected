@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<HediffDef>
+		<defName>Hediff_AEBrokenStatue</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>observed</label>
+		<labelNoun>observed</labelNoun>
+		<description>An otherworldly power allows it to ignore the laws of physics and move at high speed whenever no one is watching.</description>
+		<keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+		<defaultLabelColor>(0.54, 0.55, 0.56)</defaultLabelColor>
+		<comps>
+			<li Class="AnomaliesExpected.HediffCompProperties_BrokenStatue">
+				<spawnedThingDef>AE_BrokenStatuePile</spawnedThingDef>
+				<damageDef>AEPetrificationBeam</damageDef>
+				<spineDMG>100</spineDMG>
+				<spinePenetration>1</spinePenetration>
+				<soundTransform>AE_BrokenStatue_Scream</soundTransform>
+				<soundSpineBreak>AE_BrokenStatue_BreakSpine</soundSpineBreak>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<statOffsets>
+					<MeleeHitChance>10</MeleeHitChance>
+				</statOffsets>
+				<statFactors>
+					<MeleeCooldownFactor>5</MeleeCooldownFactor>
+				</statFactors>
+			</li>
+			<li>
+				<overrideLabel>out of sight</overrideLabel>
+				<statOffsets>
+					<MeleeHitChance>60</MeleeHitChance>
+					<MoveSpeed>99</MoveSpeed>
+				</statOffsets>
+				<minSeverity>1</minSeverity>
+			</li>
+		</stages>
+	</HediffDef>
+	
+</Defs>

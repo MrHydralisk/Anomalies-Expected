@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<PawnKindDef>
+		<defName>AE_BrokenStatue</defName>
+		<label>broken statue</label>
+		<race>AE_BrokenStatue</race>
+		<defaultFactionType>Entities</defaultFactionType>
+		<overrideDeathOnDownedChance>1</overrideDeathOnDownedChance>
+		<forceDeathOnDowned>true</forceDeathOnDowned>
+		<immuneToGameConditionEffects>true</immuneToGameConditionEffects>
+		<immuneToTraps>false</immuneToTraps>
+		<collidesWithPawns>true</collidesWithPawns>
+		<overrideDebugActionCategory>Entity</overrideDebugActionCategory>
+		<canOpenAnyDoor>true</canOpenAnyDoor>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/BrokenStatue/AE_BrokenStatue</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<allowFlip>false</allowFlip>
+					<drawSize>2.6</drawSize>
+				</bodyGraphicData>
+				<silhouetteGraphicData>
+					<texPath>Things/Pawn/BrokenStatue/AE_BrokenStatue_MenuIcon</texPath>
+					<graphicClass>Graphic_Single</graphicClass>
+					<drawSize>2.6</drawSize>
+				</silhouetteGraphicData>
+			</li>
+		</lifeStages>
+		<startingHediffs>
+			<li>
+				<def>Hediff_AEBrokenStatue</def>
+				<severity>0.5</severity>
+			</li>
+		</startingHediffs>
+		<combatPower>500</combatPower>
+		<disabledWorkTags>
+			<li>Violent</li>
+		</disabledWorkTags>
+	</PawnKindDef>
+  
+</Defs>

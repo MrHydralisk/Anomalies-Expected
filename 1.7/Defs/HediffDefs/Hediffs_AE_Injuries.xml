@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef ParentName="InjuryBase">
+		<defName>AEFreezing</defName>
+		<label>freezing</label>
+		<description>Frozen tissue and flesh caused by exposure to extreme cold. Due to freezing to the nerves, the feeling of pain is dulled. After completely freezing through body parts are often lost.</description>
+		<displayWound>false</displayWound>
+		<comps>
+			<li Class="HediffCompProperties_TendDuration">
+				<labelTendedWell>bandaged</labelTendedWell>
+				<labelTendedWellInner>tended</labelTendedWellInner>
+				<labelSolidTendedWell>tended</labelSolidTendedWell>
+			</li>
+			<li Class="HediffCompProperties_Infecter">
+				<infectionChance>0.35</infectionChance>
+			</li>
+			<li Class="HediffCompProperties_GetsPermanent">
+				<permanentLabel>frozen through</permanentLabel>
+			</li>
+		</comps>
+		<injuryProps>
+			<painPerSeverity>0.0025</painPerSeverity>
+			<averagePainPerSeverityPermanent>0.00125</averagePainPerSeverityPermanent>
+			<canMerge>true</canMerge>
+			<destroyedLabel>Lost to freezing through</destroyedLabel>
+		</injuryProps>
+	</HediffDef>
+	
+	
+
+	<HediffDef ParentName="InjuryBase">
+		<defName>AEAging</defName>
+		<label>rapid aging</label>
+		<description>Abnormal cellular acceleration caused by chrono exposure. This condition forces the body to undergo decades of biological decay within moments. As telomeres rapidly deplete, the skin loses elasticity and organs begin to fail from advanced senility, often resulting in systemic collapse.</description>
+		<displayWound>false</displayWound>
+		<tendable>false</tendable>
+		<injuryProps>
+			<painPerSeverity>0.004</painPerSeverity>
+			<canMerge>true</canMerge>
+			<destroyedLabel>Disintegrated to rapid aging</destroyedLabel>
+		</injuryProps>
+	</HediffDef>
+	
+	
+
+	<HediffDef ParentName="InjuryBase">
+		<defName>AEPetrification</defName>
+		<label>petrification</label>
+		<labelNoun>a petrification</labelNoun>
+		<description>Abnormal mineral conversion caused by anomalous exposure. This condition forces organic tissue to undergo catastrophic molecular density shifts within moments. As cellular structures rapidly calcify, the skin crystallizes into brittle white marble and blood vessels harden into solid stone, resulting in total vascular arrest and localized systemic petrification.</description>
+		<maxSeverity>20</maxSeverity>
+		<comps>
+			<li Class="HediffCompProperties_TendDuration">
+				<labelTendedWell>softened</labelTendedWell>
+				<labelTendedWellInner>softened</labelTendedWellInner>
+				<labelSolidTendedWell>softened</labelSolidTendedWell>
+			</li>
+			<li Class="HediffCompProperties_GetsPermanent">
+				<permanentLabel>permanent petrification</permanentLabel>
+				<instantlyPermanentLabel>permanent petrification</instantlyPermanentLabel>
+			</li>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-20</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<partEfficiencyOffset>-0.08</partEfficiencyOffset>
+			</li>
+			<li>
+				<minSeverity>2</minSeverity>
+				<partEfficiencyOffset>-0.16</partEfficiencyOffset>
+			</li>
+			<li>
+				<minSeverity>4</minSeverity>
+				<partEfficiencyOffset>-0.24</partEfficiencyOffset>
+			</li>
+			<li>
+				<minSeverity>6</minSeverity>
+				<partEfficiencyOffset>-0.32</partEfficiencyOffset>
+			</li>
+			<li>
+				<minSeverity>8</minSeverity>
+				<partEfficiencyOffset>-0.40</partEfficiencyOffset>
+			</li>
+			<li>
+				<minSeverity>10</minSeverity>
+				<partEfficiencyOffset>-0.48</partEfficiencyOffset>
+			</li>
+			<li>
+				<minSeverity>12</minSeverity>
+				<partEfficiencyOffset>-0.56</partEfficiencyOffset>
+			</li>
+			<li>
+				<minSeverity>14</minSeverity>
+				<partEfficiencyOffset>-0.64</partEfficiencyOffset>
+			</li>
+			<li>
+				<minSeverity>16</minSeverity>
+				<partEfficiencyOffset>-0.72</partEfficiencyOffset>
+			</li>
+			<li>
+				<minSeverity>18</minSeverity>
+				<partEfficiencyOffset>-0.8</partEfficiencyOffset>
+			</li>
+		</stages>
+		<injuryProps>
+			<painPerSeverity>0.01</painPerSeverity>
+			<averagePainPerSeverityPermanent>0.00475</averagePainPerSeverityPermanent>
+			<bleedRate>0</bleedRate>
+			<canMerge>true</canMerge>
+			<destroyedLabel>Eroded</destroyedLabel>
+			<destroyedOutLabel>Eroded</destroyedOutLabel>
+		</injuryProps>
+	</HediffDef>
+
+</Defs>

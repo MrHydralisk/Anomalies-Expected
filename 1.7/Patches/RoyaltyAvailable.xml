@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Royalty</li>
+		</mods>
+		<nomatch Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="AE_BeamTarget"]/comps/li[@Class = "AnomaliesExpected.CompProperties_CanDestroyedAfterStudy"]/fleckOnAnomaly</xpath>
+					<value>
+						<fleckOnAnomaly>PsycastSkipInnerEntry</fleckOnAnomaly>
+					</value>
+				</li>
+			</operations>
+		</nomatch>
+	</Operation>
+
+</Patch>

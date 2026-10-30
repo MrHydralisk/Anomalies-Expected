@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+	<BodyDef>
+		<defName>AE_BrokenStatue</defName>
+		<label>broken statue</label>
+		<corePart>
+			<def>AE_MarbleAshlarA</def>
+			<customLabel>marble ashlar torso</customLabel>
+			<height>Middle</height>
+			<depth>Outside</depth>
+			<groups>
+				<li>Torso</li>
+			</groups>
+			<parts>
+				<li>
+					<def>AE_MarbleAshlarB</def>
+					<customLabel>marble ashlar head</customLabel>
+					<coverage>0.077</coverage>
+					<height>Top</height>
+					<depth>Outside</depth>
+					<groups>
+						<li>Neck</li>
+						<li>UpperHead</li>
+						<li>FullHead</li>
+						<li>HeadAttackTool</li>
+						<li>Eyes</li>
+					</groups>
+				</li>
+				<li>
+					<def>AE_MarbleAshlarC</def>
+					<customLabel>marble ashlar tail</customLabel>
+					<coverage>0.041</coverage>
+					<height>Bottom</height>
+				</li>
+				<li>
+					<def>AE_MarbleAshlarD</def>
+					<customLabel>left marble ashlar arm</customLabel>
+					<coverage>0.061</coverage>
+					<flipGraphic>true</flipGraphic>
+					<groups>
+						<li>Arms</li>
+						<li>LeftHand</li>
+					</groups>
+				</li>
+				<li>
+					<def>AE_MarbleAshlarE</def>
+					<customLabel>right marble ashlar arm</customLabel>
+					<coverage>0.156</coverage>
+					<flipGraphic>true</flipGraphic>
+					<groups>
+						<li>Arms</li>
+						<li>RightHand</li>
+					</groups>
+				</li>
+			</parts>
+		</corePart>
+	</BodyDef>
+  
+</Defs>

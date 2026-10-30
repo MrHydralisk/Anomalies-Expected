@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AnomaliesExpected.PsychicRitualDef_AESummonBloodLake>
+		<defName>AE_SummonBloodLake</defName>
+		<label>provoke strange lake</label>
+		<description>Use a psychic pulse to distort the fabric of reality, resulting in the formation of a crimson lake in the ground somewhere in the local area.</description>
+		<iconPath>UI/PsychicRituals/PsychicRitual_AESummonBloodLake</iconPath>
+		<researchPrerequisite>AEBloodInjector</researchPrerequisite>
+		<outcomeDescription>Use a psychic pulse to distort the fabric of reality, resulting in the formation of a crimson lake in the ground somewhere in the local area.</outcomeDescription>
+		<hoursUntilOutcome>8</hoursUntilOutcome>
+		<castableOnPocketMaps>false</castableOnPocketMaps>
+		<requiredOffering>
+			<filter>
+				<thingDefs>
+					<li>AE_BloodLiquid</li>
+				</thingDefs>
+			</filter>
+			<count>150</count>
+		</requiredOffering>
+		<cooldownHours>1080</cooldownHours>
+		<chanterRole>ChanterAdvanced</chanterRole>
+	</AnomaliesExpected.PsychicRitualDef_AESummonBloodLake>
+
+
+
+	<AnomaliesExpected.PsychicRitualDef_AEAskingProvider>
+		<defName>AE_AskingProvider</defName>
+		<label>asking Provider</label>
+		<description>Utilize prayer and the offering of items for asking Provider deity for resources.</description>
+		<iconPath>UI/PsychicRituals/PsychicRitual_AEAskingProvider</iconPath>
+		<researchPrerequisite>AEProviderScripture</researchPrerequisite>
+		<outcomeDescription>The ritual summons items of the same type as those sacrificed and placed within the Provider Box. The yield is influenced by the quantity of the sacrifice, the quality of the ritual performance, and the level of research progress.</outcomeDescription>
+		<hoursUntilOutcome>4</hoursUntilOutcome>
+		<castableOnPocketMaps>false</castableOnPocketMaps>
+		<requiredOffering>
+			<filter>
+				<thingDefs>
+					<li>Bioferrite</li>
+				</thingDefs>
+			</filter>
+			<count>25</count>
+		</requiredOffering>
+		<cooldownHours>120</cooldownHours>
+		<chanterRole>ChanterAdvanced</chanterRole>
+		<ProviderBoxDef>AE_ProviderBox</ProviderBoxDef>
+		<MaxWealth>500</MaxWealth>
+		<researchProjectDef>AEAskingProvider</researchProjectDef>
+		<maxResearchMult>4</maxResearchMult>
+		<multFromQuality>
+			<li>(0.2, 0)</li>
+			<li>(0.4, 0.25)</li>
+			<li>(0.6, 0.5)</li>
+			<li>(0.8, 0.75)</li>
+			<li>(1, 1)</li>
+		</multFromQuality>
+	</AnomaliesExpected.PsychicRitualDef_AEAskingProvider>
+	
+	
+
+	<AnomaliesExpected.PsychicRitualDef_AESummonSnowArmy>
+		<defName>AE_SummonSnowArmy</defName>
+		<label>draw snow army</label>
+		<description>Create a psychic pulse which will draw a distant group of Snow Army towards your local area. They attack almost anyone that they see immediately. You can capture them for study or extract ice crystals from their corpses.</description>
+		<iconPath>UI/PsychicRituals/PsychicRitual_AESummonSnowArmy</iconPath>
+		<researchPrerequisite>AESummonSnowArmy</researchPrerequisite>
+		<outcomeDescription>Create a psychic pulse which will draw a distant group of Snow Army towards your local area.</outcomeDescription>
+		<hoursUntilOutcome>2</hoursUntilOutcome>
+		<castableOnPocketMaps>false</castableOnPocketMaps>
+		<requiredOffering>
+			<filter>
+				<thingDefs>
+					<li>Bioferrite</li>
+				</thingDefs>
+			</filter>
+			<count>75</count>
+		</requiredOffering>
+		<cooldownHours>120</cooldownHours>
+		<chanterRole>ChanterAdvanced</chanterRole>
+		<CombatPointsMultFromQualityCurve>
+			<points>
+				<li>(0.2, 0.5)</li>
+				<li>(0.6, 1)</li>
+				<li>(0.8, 1)</li>
+				<li>(1, 1.5)</li>
+			</points>
+		</CombatPointsMultFromQualityCurve>
+		<IncidentDefBasic>AE_IncidentDef_SnowArmyAssaultBasic</IncidentDefBasic>
+		<IncidentDefAdvanced>AE_IncidentDef_SnowArmyAssaultAdvanced</IncidentDefAdvanced>
+		<soundDef>Explosion_Stun</soundDef>
+	</AnomaliesExpected.PsychicRitualDef_AESummonSnowArmy>
+	
+	
+
+	<AnomaliesExpected.PsychicRitualDef_AEConnectEntityDatabase>
+		<defName>AE_ConnectEntityDatabase</defName>
+		<label>connect with entity database</label>
+		<description>Psychically commune with the void through connection with Entity Database, attracting previously studied entities again. There’s a chance that the invoker will fall into a coma for several hours.</description>
+		<iconPath>UI/PsychicRituals/PsychicRitual_AEConnectEntityDatabase</iconPath>
+		<researchPrerequisite>AEConnectEntityDatabase</researchPrerequisite>
+		<outcomeDescription>With the current quality, there's a {0} chance the invoker will receive dark psychic shock.</outcomeDescription>
+		<hoursUntilOutcome>4</hoursUntilOutcome>
+		<castableOnPocketMaps>false</castableOnPocketMaps>
+		<psychicShockChanceFromQualityCurve>
+			<points>
+				<li>(0, 0.9)</li>
+				<li>(0.5, 0.25)</li>
+				<li>(0.9, 0.05)</li>
+				<li>(1, 0.01)</li>
+			</points>
+		</psychicShockChanceFromQualityCurve>
+		<darkPsychicShockDurarionHoursRange>2~4</darkPsychicShockDurarionHoursRange>
+		<incidentDelayHoursRange>2~4</incidentDelayHoursRange>
+		<requiredOffering>
+			<filter>
+				<thingDefs>
+					<li>Bioferrite</li>
+				</thingDefs>
+			</filter>
+			<count>30</count>
+		</requiredOffering>
+		<cooldownHours>96</cooldownHours>
+		<chanterRole>ChanterAdvanced</chanterRole>
+		<EntityDatabaseAnomalyDef>AE_EntityDatabase</EntityDatabaseAnomalyDef>
+	</AnomaliesExpected.PsychicRitualDef_AEConnectEntityDatabase>
+
+</Defs>

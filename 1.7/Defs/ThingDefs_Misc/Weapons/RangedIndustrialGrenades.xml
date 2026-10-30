@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="BaseMakeableGrenade">
+		<defName>Weapon_AEGrenadeNitrogen</defName>
+		<label>nitrogen grenades</label>
+		<description>Grenades filled with destabilized ice crystal. They can be thrown a short distance, where they'll explode, spilling nitrogen around that freezing and slowing down anything and anyone nearby.</description>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/AEGrenadeNitrogen</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<uiIconScale>1.3</uiIconScale>
+		<statBases>
+			<Mass>1</Mass>
+			<RangedWeapon_Cooldown>2.66</RangedWeapon_Cooldown>
+			<WorkToMake>12000</WorkToMake>
+		</statBases>
+		<verbs>
+			<li>
+				<label>throw nitrogen grenade</label>
+				<verbClass>Verb_LaunchProjectile</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<range>12.9</range>
+				<forcedMissRadius>1.9</forcedMissRadius>
+				<warmupTime>1.5</warmupTime>
+				<noiseRadius>4</noiseRadius>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<soundCast>ThrowGrenade</soundCast>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<defaultProjectile>Proj_AEGrenadeNitrogen</defaultProjectile>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>4.5</explosiveRadius>
+				<explosiveDamageType>AENitrogen</explosiveDamageType>
+				<damageAmountBase>22</damageAmountBase>
+				<requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
+			</li>
+		</comps>
+		<soundInteract>Interact_Grenade</soundInteract>
+		<thingCategories>
+			<li>AEWeaponsAnomalies</li>
+			<li>Grenades</li>
+		</thingCategories>
+		<smeltable>true</smeltable>
+		<costList>
+			<AE_IceCrystalDestabilized>5</AE_IceCrystalDestabilized>
+			<Bioferrite>25</Bioferrite>
+		</costList>
+		<recipeMaker>
+			<recipeUsers Inherit="false">
+				<li>BioferriteShaper</li>
+			</recipeUsers>
+			<researchPrerequisite>AEIceCrystalDestabilized</researchPrerequisite>
+			<displayPriority>1300</displayPriority>
+		</recipeMaker>
+		<techLevel>Ultra</techLevel>
+		<tradeTags Inherit="False"/>
+		<weaponTags Inherit="False"/>
+		<genericMarketSellable>false</genericMarketSellable>
+		<tradeability>Sellable</tradeability>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseFragGrenadeProjectile">
+		<defName>Proj_AEGrenadeNitrogen</defName>
+		<label>nitrogen grenade</label>
+		<graphicData>
+			<texPath>Things/Projectile/AEGrenadeNitrogen</texPath>
+		</graphicData>
+		<projectile>
+			<explosionRadius>3.5</explosionRadius>
+			<damageDef>AENitrogen</damageDef>
+			<damageAmountBase>15</damageAmountBase>
+			<stoppingPower>1</stoppingPower>
+		</projectile>
+	</ThingDef>
+
+</Defs>

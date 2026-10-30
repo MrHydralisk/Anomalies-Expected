@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingSetMakerDef>
+		<defName>MapGen_AEChristmasTreeGiftBoxLoot</defName>
+		<debugParams>
+		<totalMarketValueRange>400~800</totalMarketValueRange>
+		</debugParams>
+		<root Class="ThingSetMaker_RandomOption">
+			<options>
+				<li>
+					<weight>1.2</weight>
+					<thingSetMaker Class="ThingSetMaker_MarketValue">
+						<fixedParams>
+							<maxThingMarketValue>500</maxThingMarketValue>
+							<filter>
+								<categories>
+									<li>Weapons</li>
+								</categories>
+								<disallowedThingDefs>
+									<li>WoodLog</li>
+									<li>ElephantTusk</li>
+								</disallowedThingDefs>
+								<thingSetMakerTagsToDisallow>
+									<li>RewardStandardHighFreq</li>
+									<li>RewardStandardCore</li>
+								</thingSetMakerTagsToDisallow>
+							</filter>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+				<li>
+					<weight>1.2</weight>
+					<thingSetMaker Class="ThingSetMaker_MarketValue">
+						<fixedParams>
+							<maxThingMarketValue>500</maxThingMarketValue>
+							<filter>
+								<categories>
+									<li>Apparel</li>
+								</categories>
+								<disallowedThingDefs>
+									<li>Apparel_SmokepopBelt</li>
+								</disallowedThingDefs>
+								<thingSetMakerTagsToDisallow>
+									<li>RewardStandardHighFreq</li>
+									<li>RewardStandardCore</li>
+								</thingSetMakerTagsToDisallow>
+							</filter>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+				<li>
+					<weight>1</weight>
+					<thingSetMaker Class="ThingSetMaker_MarketValue">
+						<fixedParams>
+							<maxThingMarketValue>500</maxThingMarketValue>
+							<filter>
+								<categories>
+									<li>ResourcesRaw</li>
+								</categories>
+								<disallowedThingDefs>
+									<li>WoodLog</li>
+									<li>Silver</li>
+								</disallowedThingDefs>
+								<disallowedCategories>
+									<li>PlantMatter</li>
+									<li>StoneBlocks</li>
+								</disallowedCategories>
+								<thingSetMakerTagsToDisallow>
+									<li>RewardStandardHighFreq</li>
+									<li>RewardStandardCore</li>
+								</thingSetMakerTagsToDisallow>
+							</filter>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+				<li>
+					<weight>1</weight>
+					<thingSetMaker Class="ThingSetMaker_MarketValue">
+						<fixedParams>
+							<filter>
+								<thingDefs>
+									<li>MedicineIndustrial</li>
+									<li>MedicineUltratech</li>
+									<li>ComponentIndustrial</li>
+									<li>ComponentSpacer</li>
+								</thingDefs>
+							</filter>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+				<li>
+					<weight>0.8</weight>
+					<thingSetMaker Class="ThingSetMaker_MarketValue">
+						<fixedParams>
+							<filter>
+								<thingDefs>
+									<li>Silver</li>
+								</thingDefs>
+							</filter>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+				<li>
+					<weight>0.8</weight>
+					<thingSetMaker Class="ThingSetMaker_MarketValue">
+						<fixedParams>
+							<filter>
+								<categories>
+									<li>Artifacts</li>
+								</categories>
+							</filter>
+							<countRange>1~2</countRange>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+				<li>
+					<weight>0.8</weight>
+					<thingSetMaker Class="ThingSetMaker_MarketValue">
+						<fixedParams>
+							<filter>
+								<categories>
+									<li>BodyPartsBionic</li>
+								</categories>
+								<disallowedThingDefs>
+									<li>DeathAcidifier</li>
+								</disallowedThingDefs>
+							</filter>
+							<countRange>2~4</countRange>
+						</fixedParams>
+					</thingSetMaker>
+				</li>
+			</options>
+		</root>
+	</ThingSetMakerDef>
+
+</Defs>

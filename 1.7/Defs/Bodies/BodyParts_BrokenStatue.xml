@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<BodyPartDef Name="BodyPart_AEBaseMarbleAshlar" Abstract="True">
+		<label>marble ashlar</label>
+		<skinCovered>true</skinCovered>
+		<canScarify>false</canScarify>
+		<bleedRate>0</bleedRate>
+		<canSuggestAmputation>false</canSuggestAmputation>
+		<executionPartPriority>400</executionPartPriority>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_AEBaseMarbleAshlar">
+		<defName>AE_MarbleAshlarA</defName>
+		<hitPoints>220</hitPoints>
+		<tags>
+			<li>BloodPumpingSource</li>
+			<li>BloodFiltrationSource</li>
+			<li>ConsciousnessSource</li>
+			<li>MovingLimbCore</li>
+			<li>ManipulationLimbCore</li>
+		</tags>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_AEBaseMarbleAshlar">
+		<defName>AE_MarbleAshlarB</defName>
+		<hitPoints>25</hitPoints>
+		<tags>
+			<li>SightSource</li>
+			<li>HearingSource</li>
+		</tags>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_AEBaseMarbleAshlar">
+		<defName>AE_MarbleAshlarC</defName>
+		<hitPoints>14</hitPoints>
+		<frostbiteVulnerability>0.1</frostbiteVulnerability>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_AEBaseMarbleAshlar">
+		<defName>AE_MarbleAshlarD</defName>
+		<hitPoints>20</hitPoints>
+		<tags>
+			<li>Mirrored</li>
+		</tags>
+	</BodyPartDef>
+
+	<BodyPartDef ParentName="BodyPart_AEBaseMarbleAshlar">
+		<defName>AE_MarbleAshlarE</defName>
+		<hitPoints>52</hitPoints>
+		<tags>
+			<li>Mirrored</li>
+		</tags>
+	</BodyPartDef>
+  
+</Defs>

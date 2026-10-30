@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<ThingCategoryDef>
+		<defName>BodyPartsAnomalyAE</defName>
+		<label>anomaly</label>
+		<parent>BodyParts</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>ItemsAnomalies</defName>
+		<label>anomaly</label>
+		<parent>Items</parent>
+	</ThingCategoryDef>
+	
+	<ThingCategoryDef>
+		<defName>AnomalyStudyNotes</defName>
+		<label>research notes</label>
+		<parent>ItemsAnomalies</parent>
+	</ThingCategoryDef>
+  
+	<ThingCategoryDef>
+		<defName>CorpsesEntitySnowArmy</defName>
+		<label>SA corpses</label>
+		<parent>CorpsesEntity</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
+		<defName>AEWeaponsAnomalies</defName>
+		<label>anomaly</label>
+		<parent>Weapons</parent>
+	</ThingCategoryDef>
+  
+</Defs>

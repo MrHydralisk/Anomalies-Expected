@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<ThingDef ParentName="UnfinishedBase">
+		<defName>UnfinishedHealthItemAnomalyAE</defName>
+		<label>unfinished anomaly part</label>
+		<description>An unfinished anomaly part.</description>
+		<statBases>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Item/Unfinished/UnfinishedHealthItem</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<color>(107,56,76)</color>
+		</graphicData>
+		<stuffCategories Inherit="false"/>
+	</ThingDef>
+	
+	<ThingDef ParentName="UnfinishedBase">
+		<defName>UnfinishedItemAnomalyAE</defName>
+		<label>unfinished anomaly item</label>
+		<description>An unfinished anomaly item.</description>
+		<graphicData>
+			<texPath>Things/Item/Unfinished/UnfinishedMusicalInstrument</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<color>(107,56,76)</color>
+		</graphicData>
+		<stuffCategories Inherit="false"/>
+	</ThingDef>
+
+	<ThingDef ParentName="MinifiedThing">
+		<defName>MinifiedThingAE</defName>
+		<thingClass>AnomaliesExpected.MinifiedThing_AE</thingClass>
+		<statBases>
+			<Mass>5</Mass>
+		</statBases>
+	</ThingDef>
+
+</Defs>

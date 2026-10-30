@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<ThingDef ParentName="BaseHumanMakeableGun">
+		<defName>Gun_AEPetrificationGun</defName>
+		<label>petrification repeater</label>
+		<description>An anomalous weapon based on broken statue that emits petrification beam bursts in a rapid sequence. Upon impact, the targeted area rapidly turns into white marble.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/AEPetrificationGun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<possessionCount>1</possessionCount>
+		<techLevel>Ultra</techLevel>
+		<tradeTags Inherit="False"/>
+		<weaponTags Inherit="False"/>
+		<genericMarketSellable>false</genericMarketSellable>
+		<tradeability>Sellable</tradeability>
+		<thingCategories>
+			<li>AEWeaponsAnomalies</li>
+		</thingCategories>
+		<hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+		<weaponClasses>
+			<li>RangedHeavy</li>
+			<li>Ultratech</li>
+		</weaponClasses>
+		<statBases>
+			<WorkToMake>75000</WorkToMake>
+			<Mass>16</Mass>
+			<AccuracyTouch>0.85</AccuracyTouch>
+			<AccuracyShort>0.72</AccuracyShort>
+			<AccuracyMedium>0.60</AccuracyMedium>
+			<AccuracyLong>0.3</AccuracyLong>
+			<RangedWeapon_Cooldown>4</RangedWeapon_Cooldown>
+		</statBases>
+		<costList>
+			<BlocksMarble>160</BlocksMarble>
+			<ComponentSpacer>1</ComponentSpacer>
+			<Shard>1</Shard>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisites>
+				<li>BioferriteShaping</li>
+				<li>AEAnalyzeBrokenStatue</li>
+			</researchPrerequisites>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+			<recipeUsers Inherit="False">
+				<li>BioferriteShaper</li>
+			</recipeUsers>
+			<displayPriority>1300</displayPriority>
+		</recipeMaker>
+		<equippedStatOffsets>
+			<MoveSpeed>-0.35</MoveSpeed>
+		</equippedStatOffsets>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_AEPetrificationBeam</defaultProjectile>
+				<warmupTime>3</warmupTime>
+				<range>21.9</range>
+				<burstShotCount>6</burstShotCount>
+				<ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+				<soundCast>Shot_BeamRepeater</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<aimingChargeMote>Mote_AEPetrificationBeam_Charge</aimingChargeMote>
+				<aimingChargeMoteOffset>1.07</aimingChargeMoteOffset>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>barrels</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>14.4</power>
+				<cooldownTime>3.2</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+  
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_AEPetrificationBeam</defName>
+		<label>petrification beam</label>
+		<thingClass>Beam</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>AEPetrificationBeam</damageDef>
+			<damageAmountBase>5</damageAmountBase>
+			<beamMoteDef>Mote_AEPetrificationBeam</beamMoteDef>
+			<beamStartOffset>0.5</beamStartOffset>
+			<armorPenetrationBase>1</armorPenetrationBase>
+		</projectile>
+	</ThingDef>
+  
+</Defs>

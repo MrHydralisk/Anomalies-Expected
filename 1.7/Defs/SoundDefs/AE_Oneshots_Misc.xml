@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<SoundDef>
+		<defName>AE_ButcherCorpseFlesh</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Folder">
+						<clipFolderPath>Interact/Work/Butcher/Butcher_Meat</clipFolderPath>
+					</li>
+				</grains>
+				<volumeRange>12~12</volumeRange>
+				<pitchRange>0.9311765~1.091765</pitchRange>
+				<distRange>25~50</distRange>
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>AE_RawVegetableEat</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Folder">
+						<clipFolderPath>Pawn/Human/Eating/Raw_Vegetable</clipFolderPath>
+					</li>
+				</grains>
+				<volumeRange>10~10</volumeRange>
+				<distRange>10~50</distRange>
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>AE_RawMeatEat</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Folder">
+						<clipFolderPath>Pawn/Human/Eating/Raw_Meat</clipFolderPath>
+					</li>
+				</grains>
+				<volumeRange>10~10</volumeRange>
+				<pitchRange>0.8852941~1.022941</pitchRange>
+				<distRange>10~50</distRange>
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+	
+	
+
+	<SoundDef>
+		<defName>AE_ClockworkBellA</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<onCamera>True</onCamera>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Building/Clockwork/AE_ClockworkBellA</clipPath>
+					</li>
+				</grains>
+				<volumeRange>100</volumeRange>
+				<pitchRange>0.99~1.01</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>AE_ClockworkBellB</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<onCamera>True</onCamera>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Building/Clockwork/AE_ClockworkBellB</clipPath>
+					</li>
+				</grains>
+				<volumeRange>100</volumeRange>
+				<pitchRange>0.99~1.01</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>AE_ClockworkBellC</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<onCamera>True</onCamera>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Building/Clockwork/AE_ClockworkBellC</clipPath>
+					</li>
+				</grains>
+				<volumeRange>100</volumeRange>
+				<pitchRange>0.99~1.01</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>AE_ClockworkBellD</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<onCamera>True</onCamera>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Building/Clockwork/AE_ClockworkBellD</clipPath>
+					</li>
+				</grains>
+				<volumeRange>100</volumeRange>
+				<pitchRange>0.99~1.01</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>AE_ClockworkBellE</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<onCamera>True</onCamera>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Building/Clockwork/AE_ClockworkBellE</clipPath>
+					</li>
+				</grains>
+				<volumeRange>100</volumeRange>
+				<pitchRange>0.99~1.01</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>AE_ClockworkPulse</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Building/Clockwork/AE_ClockworkPulse</clipPath>
+					</li>
+				</grains>
+				<volumeRange>100</volumeRange>
+				<pitchRange>0.99~1.01</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+	
+	
+	
+	<SoundDef>
+		<defName>AE_BrokenStatue_Call</defName>
+		<context>MapOnly</context>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Folder">
+						<clipFolderPath>Pawn/Revenant/Call</clipFolderPath>
+					</li>
+				</grains>
+				<volumeRange>20~28</volumeRange>
+				<pitchRange>0.7~0.85</pitchRange>
+				<distRange>0~50.40025</distRange>
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+  
+	<SoundDef>
+		<defName>AE_BrokenStatue_Wounded</defName>
+		<context>MapOnly</context>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Folder">
+						<clipFolderPath>Pawn/Revenant/Pain</clipFolderPath>
+					</li>
+				</grains>
+				<volumeRange>25~35</volumeRange>
+				<pitchRange>0.7~0.85</pitchRange>
+				<distRange>0~70</distRange>
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>AE_BrokenStatue_Death</defName>
+		<context>MapOnly</context>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Folder">
+						<clipFolderPath>Pawn/Revenant/Death</clipFolderPath>
+					</li>
+				</grains>
+				<volumeRange>30~35</volumeRange>
+				<pitchRange>0.7~0.85</pitchRange>
+				<distRange>0~70</distRange>
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>AE_BrokenStatue_Scream</defName>
+		<context>MapOnly</context>
+		<subSounds>
+			<li>
+				<onCamera>True</onCamera>
+				<grains>
+					<li Class="AudioGrain_Folder">
+						<clipFolderPath>Pawn/Revenant/StartledScream</clipFolderPath>
+					</li>
+				</grains>
+				<volumeRange>50~60</volumeRange>
+				<pitchRange>0.7~0.85</pitchRange>
+				<distRange>0~70</distRange>
+				<sustainLoop>False</sustainLoop>
+			</li>
+			<li>
+				<onCamera>True</onCamera>
+				<grains>
+					<li Class="AudioGrain_Folder">
+						<clipFolderPath>Interact/Haul/Drop/Stone</clipFolderPath>
+					</li>
+				</grains>
+				<volumeRange>42</volumeRange>
+				<pitchRange>0.9905882~1.068824</pitchRange>
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>AE_BrokenStatue_BreakSpine</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>2</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Folder">
+						<clipFolderPath>Impact/BuildingDestroyed/Stone/Big</clipFolderPath>
+					</li>
+				</grains>
+				<volumeRange>55~65</volumeRange>
+				<pitchRange>0.99~1.01</pitchRange>
+				<distRange>0~70</distRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+</Defs>

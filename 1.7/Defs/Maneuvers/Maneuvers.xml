@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ManeuverDef>
+		<defName>AEFreezingCut</defName>
+		<requiredCapacity>AEFreezingCut</requiredCapacity>
+		<verb>
+			<verbClass>Verb_MeleeAttackDamage</verbClass>
+			<meleeDamageDef>AEFreezingFragileCut</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Slash_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Slash_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Slash_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Slash_MeleeDodge</combatLogRulesDodge>
+	</ManeuverDef>
+
+	<ManeuverDef>
+		<defName>AEFreezingStab</defName>
+		<requiredCapacity>AEFreezingStab</requiredCapacity>
+		<verb>
+			<verbClass>Verb_MeleeAttackDamage</verbClass>
+			<meleeDamageDef>AEFreezingFragileStab</meleeDamageDef>
+			<range>2.42</range>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Stab_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Stab_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Stab_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Stab_MeleeDodge</combatLogRulesDodge>
+	</ManeuverDef>
+	
+	
+
+	<ManeuverDef>
+		<defName>AEChronoDistortion</defName>
+		<requiredCapacity>AEChronoDistortion</requiredCapacity>
+		<verb>
+			<verbClass>Verb_MeleeAttackDamage</verbClass>
+			<meleeDamageDef>AEAging</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Slash_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Slash_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Slash_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Slash_MeleeDodge</combatLogRulesDodge>
+	</ManeuverDef>
+	
+	
+
+	<ManeuverDef>
+		<defName>AEPetrification</defName>
+		<requiredCapacity>AEPetrification</requiredCapacity>
+		<verb>
+			<verbClass>Verb_MeleeAttackDamage</verbClass>
+			<meleeDamageDef>AEPetrificationBeam</meleeDamageDef>
+		</verb>
+		<logEntryDef>MeleeAttack</logEntryDef>
+		<combatLogRulesHit>Maneuver_Smash_MeleeHit</combatLogRulesHit>
+		<combatLogRulesDeflect>Maneuver_Smash_MeleeDeflect</combatLogRulesDeflect>
+		<combatLogRulesMiss>Maneuver_Smash_MeleeMiss</combatLogRulesMiss>
+		<combatLogRulesDodge>Maneuver_Smash_MeleeDodge</combatLogRulesDodge>
+	</ManeuverDef>
+  
+</Defs>
