@@ -52,7 +52,7 @@ namespace AnomaliesExpected
 
             val.Patch(AccessTools.Method(typeof(Thing), "GetGizmos"), postfix: new HarmonyMethod(patchType, "T_GetGizmos_Postfix"));
             val.Patch(AccessTools.Method(typeof(UnnaturalCorpse), "GetGizmos"), postfix: new HarmonyMethod(patchType, "T_GetGizmos_Postfix"));
-            val.Patch(AccessTools.Method(typeof(Pawn_MutantTracker), "GetGizmos"), postfix: new HarmonyMethod(patchType, "T_GetGizmos_Postfix"));
+            val.Patch(AccessTools.Method(typeof(Pawn_MutantTracker), "GetGizmos"), postfix: new HarmonyMethod(patchType, "PMT_GetGizmos_Postfix"));
 
             val.Patch(AccessTools.Property(typeof(ChoiceLetter_EntityDiscovered), "Choices").GetGetMethod(), prefix: new HarmonyMethod(patchType, "CLED_Choices_Prefix"));
             val.Patch(AccessTools.Method(typeof(EntityCodex), "SetDiscovered", new Type[] { typeof(EntityCodexEntryDef), typeof(ThingDef), typeof(Thing) }), transpiler: new HarmonyMethod(patchType, "EC_SetDiscovered_Transpiler"));
@@ -268,6 +268,8 @@ namespace AnomaliesExpected
             }
             __result = NGizmos;
         }
+
+        public static void PMT_GetGizmos_Postfix(ref IEnumerable<Gizmo> __result, Pawn_MutantTracker __instance) => T_GetGizmos_Postfix(ref __result, __instance.ConstantCaster);
 
         public static bool CLED_Choices_Prefix(ref IEnumerable<DiaOption> __result, ChoiceLetter_EntityDiscovered __instance)
         {

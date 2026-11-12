@@ -1,267 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F0033B10-F4CE-47D8-BDC8-58CBE1653E87}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AnomaliesExpected</RootNamespace>
-    <AssemblyName>Anomalies Expected</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '1.5|AnyCPU'">
-    <OutputPath>..\..\1.5\Assemblies\</OutputPath>
-    <DefineConstants>TRACE;v1_5</DefineConstants>
-    <Optimize>true</Optimize>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>latest</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '1.6|AnyCPU'">
-    <OutputPath>..\..\1.6\Assemblies\</OutputPath>
-    <DefineConstants>TRACE;v1_6</DefineConstants>
-    <Optimize>true</Optimize>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>latest</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AEDebugTools.cs" />
-    <Compile Include="CompProperties\CompProperties_Interactable\CompProperties_BrokenStatue.cs" />
-    <Compile Include="CompProperties\CompProperties_Interactable\CompProperties_TransformAfterStudy.cs" />
-    <Compile Include="CompProperties\CompProperties_ZoneOfEffect.cs" />
-    <Compile Include="CompProperties\HediffCompProperties\HediffCompProperties_BrokenStatue.cs" />
-    <Compile Include="Comp\CompInteractable\Comp_BrokenStatue.cs" />
-    <Compile Include="Comp\CompInteractable\Comp_TransformAfterStudy.cs" />
-    <Compile Include="Comp\Comp_ZoneOfEffect.cs" />
-    <Compile Include="Comp\HediffComp\HediffComp_ObservingStage.cs" />
-    <Compile Include="Comp\HediffComp\HediffComp_BrokenStatue.cs" />
-    <Compile Include="DefOfLocal\JobDefOfLocal.cs" />
-    <Compile Include="JobDriver\JobDriver_BrokenStatueAttack.cs" />
-    <Compile Include="ThinkNode\ThinkNode_BrokenStatueIdle.cs" />
-    <Compile Include="ThinkNode\ThinkNode_JobGiver_BrokenStatueAttack.cs" />
-    <Compile Include="Thing\AEZoneOfEffect.cs" />
-    <Compile Include="TopOnBuildings\TopOnBuilding_ClockHandActivity.cs" />
-    <Compile Include="TopOnBuildings\TopOnBuilding_ClockHandHour.cs" />
-    <Compile Include="TopOnBuildings\TopOnBuilding_ClockHandMinute.cs" />
-    <Compile Include="TopOnBuildings\TopOnBuilding_Clockwork.cs" />
-    <Compile Include="TopOnBuildings\TopOnBuilding_ClockHandSecond.cs" />
-    <Compile Include="TopOnBuildings\TopOnBuilding.cs" />
-    <Compile Include="Building\Building_AEPocketMapExit.cs" />
-    <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilityGrindBody.cs" />
-    <Compile Include="CompProperties\CompProperties_Interactable\CompPropertiesObelisk_Clockwork.cs" />
-    <Compile Include="Comp\CompAbilityEffect\CompAbilityEffect_GrindBody.cs" />
-    <Compile Include="Comp\CompInteractable\CompObelisk_Clockwork.cs" />
-    <Compile Include="CreepJoinerWorker_AEDownsideMentalState.cs" />
-    <Compile Include="DamageWorker\DamageWorker_Aging.cs" />
-    <Compile Include="Designator_CaptureEntity.cs" />
-    <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilitySpawnSummon.cs" />
-    <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilitySpawnSnowArmy.cs" />
-    <Compile Include="CompProperties\CompProperties_Interactable\CompProperties_BirthdayCake.cs" />
-    <Compile Include="CompProperties\HediffCompProperties\HediffCompProperties_SpawnPawnOnDeath.cs" />
-    <Compile Include="Comp\CompAbilityEffect\CompAbilityEffect_SpawnSummon.cs" />
-    <Compile Include="Comp\CompAbilityEffect\CompAbilityEffect_SpawnSnowArmy.cs" />
-    <Compile Include="Comp\CompInteractable\Comp_BirthdayCake.cs" />
-    <Compile Include="Comp\HediffComp\HediffComp_SpawnPawnOnDeath.cs" />
-    <Compile Include="DefModExtension\CreepJoinerDefExtension.cs" />
-    <Compile Include="DefOfLocal\DesignationDefOfLocal.cs" />
-    <Compile Include="QuestNode_Root_AEMysteriousCargo.cs" />
-    <Compile Include="CompProperties\CompProperties_EntityDatabaseAnomaly.cs" />
-    <Compile Include="Comp\Comp_EntityDatabaseAnomaly.cs" />
-    <Compile Include="Comp\Comp_EntityDataBaseAccess.cs" />
-    <Compile Include="Comp\HediffComp\HediffComp_FreezingFragile.cs" />
-    <Compile Include="Comp\HediffComp\HediffComp_IceThinBody.cs" />
-    <Compile Include="DamageWorker\DamageWorker_FreezingFragile.cs" />
-    <Compile Include="DefModExtension\EntityCodexEntryDefExtension.cs" />
-    <Compile Include="Dialog\Dialog_AEEntityDatabaseAnomaly.cs" />
-    <Compile Include="Dialog\Dialog_AEEntityDB.cs" />
-    <Compile Include="GameComponent_AnomaliesExpected.cs" />
-    <Compile Include="Alert_ChristmasTreeUnstable.cs" />
-    <Compile Include="Building\Building_AEChristmasGiftBox.cs" />
-    <Compile Include="Building\Building_AEChristmasTreeExit.cs" />
-    <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilityIceCrystalDestabilization.cs" />
-    <Compile Include="CompProperties\HediffCompProperties\HediffCompProperties_SnowBlockCompressor.cs" />
-    <Compile Include="Comp\CompAbilityEffect\CompAbilityEffect_IceCrystalDestabilization.cs" />
-    <Compile Include="Comp\HediffComp\HediffComp_ActivateAbilityOnRemoved.cs" />
-    <Compile Include="Comp\HediffComp\HediffComp_SnowBlockCompressor.cs" />
-    <Compile Include="Comp\HediffComp\HediffComp_SnowArmy.cs" />
-    <Compile Include="DefOfLocal\FactionDefOfLocal.cs" />
-    <Compile Include="DefOfLocal\DamageDefOfLocal.cs" />
-    <Compile Include="DefOfLocal\FleshTypeDefOfLocal.cs" />
-    <Compile Include="IncidentWorker\IncidentWorker_AE.cs" />
-    <Compile Include="IncidentWorker\IncidentWorker_DeployFromQuest.cs" />
-    <Compile Include="IncidentWorker\IncidentWorker_DeployThingWithSkip.cs" />
-    <Compile Include="IncidentWorker\IncidentWorker_EntityAssault.cs" />
-    <Compile Include="MapComponent\SnowArmyMapComponent.cs" />
-    <Compile Include="MapComponent\ChristmasTreeMapComponent.cs" />
-    <Compile Include="Building\Building_AEBloodLake.cs" />
-    <Compile Include="Comp\Comp_AtmosphericController.cs" />
-    <Compile Include="Comp\Comp_HeatPusher.cs" />
-    <Compile Include="Comp\Comp_AtmosphericCooler.cs" />
-    <Compile Include="CompProperties\CompProperties_Speedometer.cs" />
-    <Compile Include="Comp\Comp_EntityWithWeapon.cs" />
-    <Compile Include="Comp\Comp_Speedometer.cs" />
-    <Compile Include="DamageWorker\DamageWorker_Freezing.cs" />
-    <Compile Include="DefModExtension\AE_DamageDefExtension.cs" />
-    <Compile Include="GameCondition\GameCondition_UnnaturalTemperature.cs" />
-    <Compile Include="GameCondition\GameCondition_UnnaturalCold.cs" />
-    <Compile Include="GameCondition\GameCondition_AETemperatureDrop.cs" />
-    <Compile Include="GenStep\GenStep_ChristmasTreeSnowMan.cs" />
-    <Compile Include="GenStep\GenStep_ChristmasTreeGiftBoxes.cs" />
-    <Compile Include="GenStep\GenStep_ChristmasTreeTerrain.cs" />
-    <Compile Include="GenStep\GenStep_ChristmasTreeFindExit.cs" />
-    <Compile Include="Hediff_SpeedometerLevel.cs" />
-    <Compile Include="PsychicRitual\PsychicRitualDef_AEConnectEntityDatabase.cs" />
-    <Compile Include="PsychicRitual\PsychicRitualDef_AESummonSnowArmy.cs" />
-    <Compile Include="PsychicRitual\PsychicRitualToil_AEConnectEntityDatabase.cs" />
-    <Compile Include="PsychicRitual\PsychicRitualToil_AESummonSnowArmy.cs" />
-    <Compile Include="Structures\AEEntityIncidents.cs" />
-    <Compile Include="Structures\Enum\TopOnBuildingStructureTypes.cs" />
-    <Compile Include="Structures\MeatGrinderMood.cs" />
-    <Compile Include="Structures\AssaultSummonPattern.cs" />
-    <Compile Include="Structures\TopOnBuildingStructure.cs" />
-    <Compile Include="Structures\Enum\BeamTargetState.cs" />
-    <Compile Include="Structures\AEEntityEntry.cs" />
-    <Compile Include="Thing\ThingWithComps_AE.cs" />
-    <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilityFleshmassStomach.cs" />
-    <Compile Include="CompProperties\CompProperties_Interactable\CompProperties_ChristmasStockings.cs" />
-    <Compile Include="CompProperties\CompProperties_Interactable\CompProperties_StudyNotepad.cs" />
-    <Compile Include="Comp\CompAbilityEffect\CompAbilityEffect_FleshmassStomach.cs" />
-    <Compile Include="Comp\CompInteractable\Comp_ChristmasStockings.cs" />
-    <Compile Include="Comp\CompInteractable\Comp_StudyNotepad.cs" />
-    <Compile Include="Comp\HediffComp\HediffComp_FleshmassRestoration.cs" />
-    <Compile Include="DefOfLocal\BodyPartDefOfLocal.cs" />
-    <Compile Include="HarmonyPatches.cs" />
-    <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilityFleshbeastCommand.cs" />
-    <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilitySpawnFleshbeast.cs" />
-    <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilitySpewLiquid.cs" />
-    <Compile Include="CompProperties\CompProperties_AEFleshmassSpitter.cs" />
-    <Compile Include="CompProperties\CompProperties_AbilityEffect\CompProperties_AbilitySpitLiquid.cs" />
-    <Compile Include="CompProperties\HediffCompProperties\HediffCompProperties_FleshmassMutation.cs" />
-    <Compile Include="CompProperties\HediffCompProperties\HediffCompProperties_SpawnThingOnDeath.cs" />
-    <Compile Include="CompProperties\HediffCompProperties\HediffCompProperties_FleshbeastEmergeOnStage.cs" />
-    <Compile Include="CompProperties\CompProperties_UseEffect\CompProperties_UseEffectBloodLiquidInjector.cs" />
-    <Compile Include="Comp\CompAbilityEffect\CompAbilityEffect_SpawnFleshbeast.cs" />
-    <Compile Include="Comp\CompAbilityEffect\CompAbilityEffect_SpewLiquid.cs" />
-    <Compile Include="Comp\CompAbilityEffect\CompAbilityEffect_FleshbeastCommand.cs" />
-    <Compile Include="Comp\CompApplyUsableTo.cs" />
-    <Compile Include="Comp\CompTargetable_SinglePawnUseFirstEffect.cs" />
-    <Compile Include="MapComponent\BloodLakeMapComponent.cs" />
-    <Compile Include="DefModExtension\AE_BloodLakeExtension.cs" />
-    <Compile Include="Building\Building_AEBloodPuddle.cs" />
-    <Compile Include="Building\Building_AEBloodLakeExit.cs" />
-    <Compile Include="Building\Building_AEChristmasTree.cs" />
-    <Compile Include="Building\Building_AEMapPortal.cs" />
-    <Compile Include="CompProperties\CompProperties_AEStudyUnlocks.cs" />
-    <Compile Include="CompProperties\CompProperties_BloodSource.cs" />
-    <Compile Include="CompProperties\CompProperties_BloodPump.cs" />
-    <Compile Include="CompProperties\CompProperties_ApplyUsableTo.cs" />
-    <Compile Include="CompProperties\CompProperties_Interactable\CompProperties_DogTag.cs" />
-    <Compile Include="Comp\CompUseEffect\CompUseEffect_BloodLiquidInjector.cs" />
-    <Compile Include="Comp\CompAbilityEffect\CompAbilityEffect_SpitLiquid.cs" />
-    <Compile Include="Comp\Comp_AEFleshmassSpitter.cs" />
-    <Compile Include="Comp\HediffComp\HediffComp_FleshbeastEmergeOnStage.cs" />
-    <Compile Include="Comp\HediffComp\HediffComp_WoundClotting.cs" />
-    <Compile Include="Comp\HediffComp\HediffComp_SpawnThingOnDeath.cs" />
-    <Compile Include="Comp\HediffComp\HediffComp_FleshmassMutation.cs" />
-    <Compile Include="Comp\Comp_BloodLakeTerminal.cs" />
-    <Compile Include="Comp\Comp_BloodSource.cs" />
-    <Compile Include="Comp\Comp_BloodPump.cs" />
-    <Compile Include="Comp\CompInteractable\Comp_DogTag.cs" />
-    <Compile Include="DamageWorker\DamageWorker_PsychicFlash.cs" />
-    <Compile Include="DefOfLocal\GameConditionDefOfLocal.cs" />
-    <Compile Include="DefOfLocal\IncidentDefOfLocal.cs" />
-    <Compile Include="GenStep\GenStep_BloodLakeFindDogTag.cs" />
-    <Compile Include="GenStep\GenStep_BloodLakeFleshmassUNest.cs" />
-    <Compile Include="GenStep\GenStep_BloodLakeFindTerminal.cs" />
-    <Compile Include="GenStep\GenStep_BloodLakeTerrain.cs" />
-    <Compile Include="GenStep\GenStep_BloodLakeFleshbeasts.cs" />
-    <Compile Include="GenStep\GenStep_BloodLakeFleshmassSpitter.cs" />
-    <Compile Include="GenStep\GenStep_BloodLakeFindExit.cs" />
-    <Compile Include="GenStep\GenStep_BloodLakeFleshSacks.cs" />
-    <Compile Include="JobDriver\JobDriver_ApplyUsableTo.cs" />
-    <Compile Include="GameCondition\GameCondition_AEBloodFog.cs" />
-    <Compile Include="Hediff_GroupedLevel.cs" />
-    <Compile Include="PsychicRitual\PsychicRitualDef_AEAskingProvider.cs" />
-    <Compile Include="PsychicRitual\PsychicRitualToil_AEAskingProvider.cs" />
-    <Compile Include="Recipe_AEInitiateFleshmassMutation.cs" />
-    <Compile Include="PsychicRitual\PsychicRitualToil_AESummonBloodLake.cs" />
-    <Compile Include="PsychicRitual\PsychicRitualDef_AESummonBloodLake.cs" />
-    <Compile Include="Structures\AEStudyNote.cs" />
-    <Compile Include="CompProperties\CompProperties_Interactable\CompProperties_CanDestroyedAfterStudy.cs" />
-    <Compile Include="CompProperties\CompProperties_UseEffect\CompProperties_UseEffecRemoveHediff.cs" />
-    <Compile Include="Comp\CompUseEffect\CompUseEffect_RemoveHediff.cs" />
-    <Compile Include="Comp\CompInteractable\Comp_CanDestroyedAfterStudy.cs" />
-    <Compile Include="DefOfLocal\SoundDefOfLocal.cs" />
-    <Compile Include="DefOfLocal\ThingDefOfLocal.cs" />
-    <Compile Include="Thing\AEPowerBeam.cs" />
-    <Compile Include="AEMod.cs" />
-    <Compile Include="AESettings.cs" />
-    <Compile Include="IncidentWorker\IncidentWorker_DeployFromUnderground.cs" />
-    <Compile Include="JobDriver\JobDriver_RemoveAnomaly.cs" />
-    <Compile Include="PlaceWorker\PlaceWorker_ShowBloodPumpConnection.cs" />
-    <Compile Include="Structures\BloodLakeSummonPatternStage.cs" />
-    <Compile Include="Structures\BloodLakeSummonPattern.cs" />
-    <Compile Include="Structures\BloodLakeSummonHistory.cs" />
-    <Compile Include="DamageWorker\DamageWorker_AddInjuryFleshmass.cs" />
-    <Compile Include="Thought_AEMemory.cs" />
-    <Compile Include="CreepJoinerWorker_AEAggressiveIncident.cs" />
-    <Compile Include="Graphic_ActivityActiveMask.cs" />
-    <Compile Include="Verb_AEPowerBeam.cs" />
-    <Compile Include="PlaceWorker\PlaceWorker_ShowBeamTargetRadius.cs" />
-    <Compile Include="Thing\MinifiedThing_AE.cs" />
-    <Compile Include="Building\Building_AE.cs" />
-    <Compile Include="Building\Building_AEBed.cs" />
-    <Compile Include="CompProperties\CompProperties_Interactable\CompProperties_BeamTarget.cs" />
-    <Compile Include="CompProperties\CompProperties_Interactable\CompProperties_MeatGrinder.cs" />
-    <Compile Include="CompProperties\CompProperties_Interactable\CompProperties_BakingPies.cs" />
-    <Compile Include="CompProperties\CompProperties_UseEffect\CompProperties_UseEffectAddMentalState.cs" />
-    <Compile Include="CompProperties\CompProperties_UseEffect\CompProperties_UseEffectReplaceHediff.cs" />
-    <Compile Include="Comp\CompAEStudyUnlocks.cs" />
-    <Compile Include="CompProperties\CompProperties_AnomalyHospitalBed.cs" />
-    <Compile Include="CompProperties\CompProperties_AnomalyBed.cs" />
-    <Compile Include="Comp\CompStudiableAE.cs" />
-    <Compile Include="Comp\CompUseEffect\CompUseEffect_UseEffectAddMentalState.cs" />
-    <Compile Include="Comp\CompInteractable\Comp_BeamTarget.cs" />
-    <Compile Include="Comp\CompInteractable\Comp_BakingPies.cs" />
-    <Compile Include="Comp\CompInteractable\Comp_MeatGrinder.cs" />
-    <Compile Include="Comp\CompInteractable\Comp_ForbiddenFruit.cs" />
-    <Compile Include="Comp\Comp_AnomalyHospitalBed.cs" />
-    <Compile Include="Comp\Comp_AnomalyBed.cs" />
-    <Compile Include="DefOfLocal\HediffDefOfLocal.cs" />
-    <Compile Include="DefOfLocal\ThingCategoryDefOfLocal.cs" />
-    <Compile Include="DefOfLocal\SpecialThingFilterDefOfLocal.cs" />
-    <Compile Include="DefModExtension\IncidentDefExtension.cs" />
-    <Compile Include="JobDriver\JobDriver_CalledMeatGrinder.cs" />
-    <Compile Include="IncidentWorker\IncidentWorker_DeployThingFromOrbit.cs" />
-    <Compile Include="IncidentWorker\IncidentWorker_DeployFromOrbit.cs" />
-    <Compile Include="Comp\CompUseEffect\CompUseEffect_ReplaceHediff.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>1.6.4633</Version>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<OutputType>Library</OutputType>
+		<DebugType>embedded</DebugType>
+		<RootNamespace>AnomaliesExpected</RootNamespace>
+		<AssemblyName>Anomalies Expected</AssemblyName>
+		<LangVersion>latest</LangVersion>
+		<Deterministic>true</Deterministic>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<GenerateDependencyFile>false</GenerateDependencyFile>
+		<CopyOutputSymbolsToOutputDirectory>false</CopyOutputSymbolsToOutputDirectory>
+    
+		<Configurations>1.5;1.6;1.7</Configurations>
+    
+		<AssemblyTitle>Anomalies Expected</AssemblyTitle>
+		<Description/>
+		<Company>Hydra Digital Development</Company>
+		<Product>Anomalies Expected</Product>
+		<Copyright>Copyright © 2026</Copyright>
+		<Version>1.0.0</Version>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == '1.5'">
+		<OutputPath>..\..\1.5\Assemblies\</OutputPath>
+		<DefineConstants>TRACE;v1_5</DefineConstants>
+		<Optimize>true</Optimize>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == '1.6'">
+		<OutputPath>..\..\1.6\Assemblies\</OutputPath>
+		<DefineConstants>TRACE;v1_6</DefineConstants>
+		<Optimize>true</Optimize>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == '1.7'">
+		<OutputPath>..\..\1.7\Assemblies\</OutputPath>
+		<DefineConstants>TRACE;v1_6</DefineConstants>
+		<Optimize>true</Optimize>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="UnityStubs">
+			<HintPath>..\..\..\..\UnityStubs.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Waylith">
+			<HintPath>..\..\..\..\Waylith.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Krafs.Rimworld.Ref" Version="1.7.4982-unstable"/>
+		<PackageReference Include="Lib.Harmony" Version="3.0.0-rc.2" IncludeAssets="compile" PrivateAssets="all"/>
+	</ItemGroup>
+
 </Project>
