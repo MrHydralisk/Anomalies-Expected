@@ -3,6 +3,7 @@ using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Emit;
 using UnityEngine;
 using Verse;
@@ -55,7 +56,8 @@ namespace AnomaliesExpected
             val.Patch(AccessTools.Method(typeof(Pawn_MutantTracker), "GetGizmos"), postfix: new HarmonyMethod(patchType, "PMT_GetGizmos_Postfix"));
 
             val.Patch(AccessTools.Property(typeof(ChoiceLetter_EntityDiscovered), "Choices").GetGetMethod(), prefix: new HarmonyMethod(patchType, "CLED_Choices_Prefix"));
-            val.Patch(AccessTools.Method(typeof(EntityCodex), "SetDiscovered", new Type[] { typeof(EntityCodexEntryDef), typeof(ThingDef), typeof(Thing) }), transpiler: new HarmonyMethod(patchType, "EC_SetDiscovered_Transpiler"));
+            MethodInfo SetDiscovered = AccessTools.Method(patchType, "EC_SetDiscovered_Transpiler");
+            val.Patch(AccessTools.Method(typeof(EntityCodex), "SetDiscovered", new Type[] { typeof(EntityCodexEntryDef), typeof(ThingDef), typeof(Thing) }), transpiler: new HarmonyMethod(SetDiscovered, 800));
 
             val.Patch(AccessTools.Method(typeof(VerbUtility), "IsEMP"), postfix: new HarmonyMethod(patchType, "VU_IsEMP_Postfix"));
 
